@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dhcp_enabled",
+                    "dhcpEnabled",
                     &self.r#dhcp_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dns_servers",
+                    "dnsServers",
                     &self.r#dns_servers,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#gateway,
                 ),
                 to_pulumi_object_field(
-                    "ip_pools",
+                    "ipPools",
                     &self.r#ip_pools,
                 ),
                 to_pulumi_object_field(
-                    "subnet_mask",
+                    "subnetMask",
                     &self.r#subnet_mask,
                 ),
             ];
@@ -84,16 +84,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#dhcp_enabled: {
-                        let field_value = match fields_map.get("dhcp_enabled") {
+                        let field_value = match fields_map.get("dhcpEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dhcp_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dhcpEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_servers: {
-                        let field_value = match fields_map.get("dns_servers") {
+                        let field_value = match fields_map.get("dnsServers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsServers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -105,16 +105,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_pools: {
-                        let field_value = match fields_map.get("ip_pools") {
+                        let field_value = match fields_map.get("ipPools") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipPools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_mask: {
-                        let field_value = match fields_map.get("subnet_mask") {
+                        let field_value = match fields_map.get("subnetMask") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subnet_mask' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subnetMask' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

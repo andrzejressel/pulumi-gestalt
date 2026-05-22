@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gcp_iam_access",
+                    "gcpIamAccess",
                     &self.r#gcp_iam_access,
                 ),
             ];
@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#gcp_iam_access: {
-                        let field_value = match fields_map.get("gcp_iam_access") {
+                        let field_value = match fields_map.get("gcpIamAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcp_iam_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcpIamAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connected_home",
+                    "connectedHome",
                     &self.r#connected_home,
                 ),
                 to_pulumi_object_field(
-                    "face_search",
+                    "faceSearch",
                     &self.r#face_search,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#connected_home: {
-                        let field_value = match fields_map.get("connected_home") {
+                        let field_value = match fields_map.get("connectedHome") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connected_home' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectedHome' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#face_search: {
-                        let field_value = match fields_map.get("face_search") {
+                        let field_value = match fields_map.get("faceSearch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'face_search' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'faceSearch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

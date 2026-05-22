@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#instance,
                 ),
                 to_pulumi_object_field(
-                    "named_ports",
+                    "namedPorts",
                     &self.r#named_ports,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#named_ports: {
-                        let field_value = match fields_map.get("named_ports") {
+                        let field_value = match fields_map.get("namedPorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'named_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namedPorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

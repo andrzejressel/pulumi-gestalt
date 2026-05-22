@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "glue_data_catalog",
+                    "glueDataCatalog",
                     &self.r#glue_data_catalog,
                 ),
             ];
@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#glue_data_catalog: {
-                        let field_value = match fields_map.get("glue_data_catalog") {
+                        let field_value = match fields_map.get("glueDataCatalog") {
                             Some(value) => value,
-                            None => bail!("Missing field 'glue_data_catalog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'glueDataCatalog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

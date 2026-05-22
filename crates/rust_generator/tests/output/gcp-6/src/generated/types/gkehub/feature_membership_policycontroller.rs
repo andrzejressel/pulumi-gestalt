@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "policy_controller_hub_config",
+                    "policyControllerHubConfig",
                     &self.r#policy_controller_hub_config,
                 ),
                 to_pulumi_object_field(
@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#policy_controller_hub_config: {
-                        let field_value = match fields_map.get("policy_controller_hub_config") {
+                        let field_value = match fields_map.get("policyControllerHubConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_controller_hub_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyControllerHubConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

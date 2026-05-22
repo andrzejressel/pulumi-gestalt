@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "routing_type",
+                    "routingType",
                     &self.r#routing_type,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#routing_type: {
-                        let field_value = match fields_map.get("routing_type") {
+                        let field_value = match fields_map.get("routingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'routing_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

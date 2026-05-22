@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_snapshot_overwrites",
+                    "allowSnapshotOverwrites",
                     &self.r#allow_snapshot_overwrites,
                 ),
                 to_pulumi_object_field(
-                    "version_policy",
+                    "versionPolicy",
                     &self.r#version_policy,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#allow_snapshot_overwrites: {
-                        let field_value = match fields_map.get("allow_snapshot_overwrites") {
+                        let field_value = match fields_map.get("allowSnapshotOverwrites") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_snapshot_overwrites' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowSnapshotOverwrites' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_policy: {
-                        let field_value = match fields_map.get("version_policy") {
+                        let field_value = match fields_map.get("versionPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

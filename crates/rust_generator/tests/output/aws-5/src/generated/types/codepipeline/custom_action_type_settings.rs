@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entity_url_template",
+                    "entityUrlTemplate",
                     &self.r#entity_url_template,
                 ),
                 to_pulumi_object_field(
-                    "execution_url_template",
+                    "executionUrlTemplate",
                     &self.r#execution_url_template,
                 ),
                 to_pulumi_object_field(
-                    "revision_url_template",
+                    "revisionUrlTemplate",
                     &self.r#revision_url_template,
                 ),
                 to_pulumi_object_field(
-                    "third_party_configuration_url",
+                    "thirdPartyConfigurationUrl",
                     &self.r#third_party_configuration_url,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#entity_url_template: {
-                        let field_value = match fields_map.get("entity_url_template") {
+                        let field_value = match fields_map.get("entityUrlTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_url_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityUrlTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_url_template: {
-                        let field_value = match fields_map.get("execution_url_template") {
+                        let field_value = match fields_map.get("executionUrlTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_url_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionUrlTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#revision_url_template: {
-                        let field_value = match fields_map.get("revision_url_template") {
+                        let field_value = match fields_map.get("revisionUrlTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revision_url_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revisionUrlTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#third_party_configuration_url: {
-                        let field_value = match fields_map.get("third_party_configuration_url") {
+                        let field_value = match fields_map.get("thirdPartyConfigurationUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'third_party_configuration_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thirdPartyConfigurationUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

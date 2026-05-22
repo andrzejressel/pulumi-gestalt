@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "server_address",
+                    "serverAddress",
                     &self.r#server_address,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_address: {
-                        let field_value = match fields_map.get("server_address") {
+                        let field_value = match fields_map.get("serverAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

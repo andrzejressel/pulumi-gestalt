@@ -48,7 +48,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#host,
                 ),
                 to_pulumi_object_field(
-                    "node_id",
+                    "nodeId",
                     &self.r#node_id,
                 ),
                 to_pulumi_object_field(
@@ -94,9 +94,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_id: {
-                        let field_value = match fields_map.get("node_id") {
+                        let field_value = match fields_map.get("nodeId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

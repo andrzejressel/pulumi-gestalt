@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ope
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_strategy",
+                    "copyStrategy",
                     &self.r#copy_strategy,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_arn",
+                    "snapshotArn",
                     &self.r#snapshot_arn,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#copy_strategy: {
-                        let field_value = match fields_map.get("copy_strategy") {
+                        let field_value = match fields_map.get("copyStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copy_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copyStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_arn: {
-                        let field_value = match fields_map.get("snapshot_arn") {
+                        let field_value = match fields_map.get("snapshotArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

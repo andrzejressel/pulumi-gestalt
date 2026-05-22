@@ -55,19 +55,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_id",
+                    "accountId",
                     &self.r#account_id,
                 ),
                 to_pulumi_object_field(
-                    "detailed_status",
+                    "detailedStatus",
                     &self.r#detailed_status,
                 ),
                 to_pulumi_object_field(
-                    "drift_status",
+                    "driftStatus",
                     &self.r#drift_status,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit_id",
+                    "organizationalUnitId",
                     &self.r#organizational_unit_id,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "stack_id",
+                    "stackId",
                     &self.r#stack_id,
                 ),
                 to_pulumi_object_field(
-                    "stack_set_id",
+                    "stackSetId",
                     &self.r#stack_set_id,
                 ),
                 to_pulumi_object_field(
@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "status_reason",
+                    "statusReason",
                     &self.r#status_reason,
                 ),
             ];
@@ -114,30 +114,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#account_id: {
-                        let field_value = match fields_map.get("account_id") {
+                        let field_value = match fields_map.get("accountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#detailed_status: {
-                        let field_value = match fields_map.get("detailed_status") {
+                        let field_value = match fields_map.get("detailedStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detailed_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detailedStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#drift_status: {
-                        let field_value = match fields_map.get("drift_status") {
+                        let field_value = match fields_map.get("driftStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'drift_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'driftStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#organizational_unit_id: {
-                        let field_value = match fields_map.get("organizational_unit_id") {
+                        let field_value = match fields_map.get("organizationalUnitId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'organizational_unit_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'organizationalUnitId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -149,16 +149,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stack_id: {
-                        let field_value = match fields_map.get("stack_id") {
+                        let field_value = match fields_map.get("stackId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stack_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stackId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stack_set_id: {
-                        let field_value = match fields_map.get("stack_set_id") {
+                        let field_value = match fields_map.get("stackSetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stack_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stackSetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -170,9 +170,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status_reason: {
-                        let field_value = match fields_map.get("status_reason") {
+                        let field_value = match fields_map.get("statusReason") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_reason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusReason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

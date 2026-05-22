@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metadata_field",
+                    "metadataField",
                     &self.r#metadata_field,
                 ),
                 to_pulumi_object_field(
-                    "text_field",
+                    "textField",
                     &self.r#text_field,
                 ),
                 to_pulumi_object_field(
-                    "vector_field",
+                    "vectorField",
                     &self.r#vector_field,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#metadata_field: {
-                        let field_value = match fields_map.get("metadata_field") {
+                        let field_value = match fields_map.get("metadataField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metadata_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metadataField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_field: {
-                        let field_value = match fields_map.get("text_field") {
+                        let field_value = match fields_map.get("textField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vector_field: {
-                        let field_value = match fields_map.get("vector_field") {
+                        let field_value = match fields_map.get("vectorField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vector_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vectorField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

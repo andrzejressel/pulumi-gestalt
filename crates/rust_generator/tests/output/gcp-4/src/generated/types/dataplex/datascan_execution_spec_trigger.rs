@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "on_demand",
+                    "onDemand",
                     &self.r#on_demand,
                 ),
                 to_pulumi_object_field(
@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#on_demand: {
-                        let field_value = match fields_map.get("on_demand") {
+                        let field_value = match fields_map.get("onDemand") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_demand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onDemand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -44,15 +44,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#membership,
                 ),
                 to_pulumi_object_field(
-                    "membership_id",
+                    "membershipId",
                     &self.r#membership_id,
                 ),
                 to_pulumi_object_field(
-                    "membership_location",
+                    "membershipLocation",
                     &self.r#membership_location,
                 ),
                 to_pulumi_object_field(
-                    "pre_registered",
+                    "preRegistered",
                     &self.r#pre_registered,
                 ),
                 to_pulumi_object_field(
@@ -90,23 +90,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#membership_id: {
-                        let field_value = match fields_map.get("membership_id") {
+                        let field_value = match fields_map.get("membershipId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'membership_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'membershipId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#membership_location: {
-                        let field_value = match fields_map.get("membership_location") {
+                        let field_value = match fields_map.get("membershipLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'membership_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'membershipLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_registered: {
-                        let field_value = match fields_map.get("pre_registered") {
+                        let field_value = match fields_map.get("preRegistered") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_registered' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preRegistered' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_batching",
+                    "enableBatching",
                     &self.r#enable_batching,
                 ),
                 to_pulumi_object_field(
-                    "send_after",
+                    "sendAfter",
                     &self.r#send_after,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#enable_batching: {
-                        let field_value = match fields_map.get("enable_batching") {
+                        let field_value = match fields_map.get("enableBatching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_batching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableBatching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_after: {
-                        let field_value = match fields_map.get("send_after") {
+                        let field_value = match fields_map.get("sendAfter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_after' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendAfter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aof_config",
+                    "aofConfig",
                     &self.r#aof_config,
                 ),
                 to_pulumi_object_field(
@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "rdb_config",
+                    "rdbConfig",
                     &self.r#rdb_config,
                 ),
             ];
@@ -72,9 +72,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#aof_config: {
-                        let field_value = match fields_map.get("aof_config") {
+                        let field_value = match fields_map.get("aofConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aof_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aofConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -86,9 +86,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rdb_config: {
-                        let field_value = match fields_map.get("rdb_config") {
+                        let field_value = match fields_map.get("rdbConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rdb_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rdbConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

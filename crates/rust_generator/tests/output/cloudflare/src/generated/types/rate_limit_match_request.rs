@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rat
                     &self.r#schemes,
                 ),
                 to_pulumi_object_field(
-                    "url_pattern",
+                    "urlPattern",
                     &self.r#url_pattern,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_pattern: {
-                        let field_value = match fields_map.get("url_pattern") {
+                        let field_value = match fields_map.get("urlPattern") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlPattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

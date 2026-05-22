@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
                     &self.r#page,
                 ),
                 to_pulumi_object_field(
-                    "tracking_parameters",
+                    "trackingParameters",
                     &self.r#tracking_parameters,
                 ),
             ];
@@ -84,9 +84,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tracking_parameters: {
-                        let field_value = match fields_map.get("tracking_parameters") {
+                        let field_value = match fields_map.get("trackingParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tracking_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trackingParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

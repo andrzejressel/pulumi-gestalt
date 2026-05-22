@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Voi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "configuration_arn",
+                    "configurationArn",
                     &self.r#configuration_arn,
                 ),
                 to_pulumi_object_field(
@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#configuration_arn: {
-                        let field_value = match fields_map.get("configuration_arn") {
+                        let field_value = match fields_map.get("configurationArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configuration_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configurationArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "containerd_config",
+                    "containerdConfig",
                     &self.r#containerd_config,
                 ),
                 to_pulumi_object_field(
-                    "gcfs_config",
+                    "gcfsConfig",
                     &self.r#gcfs_config,
                 ),
                 to_pulumi_object_field(
-                    "insecure_kubelet_readonly_port_enabled",
+                    "insecureKubeletReadonlyPortEnabled",
                     &self.r#insecure_kubelet_readonly_port_enabled,
                 ),
                 to_pulumi_object_field(
-                    "logging_variant",
+                    "loggingVariant",
                     &self.r#logging_variant,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#containerd_config: {
-                        let field_value = match fields_map.get("containerd_config") {
+                        let field_value = match fields_map.get("containerdConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'containerd_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerdConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcfs_config: {
-                        let field_value = match fields_map.get("gcfs_config") {
+                        let field_value = match fields_map.get("gcfsConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcfs_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcfsConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#insecure_kubelet_readonly_port_enabled: {
-                        let field_value = match fields_map.get("insecure_kubelet_readonly_port_enabled") {
+                        let field_value = match fields_map.get("insecureKubeletReadonlyPortEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insecure_kubelet_readonly_port_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insecureKubeletReadonlyPortEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logging_variant: {
-                        let field_value = match fields_map.get("logging_variant") {
+                        let field_value = match fields_map.get("loggingVariant") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logging_variant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loggingVariant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

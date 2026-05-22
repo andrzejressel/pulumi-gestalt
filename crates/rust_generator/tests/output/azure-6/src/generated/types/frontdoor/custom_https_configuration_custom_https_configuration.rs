@@ -49,31 +49,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_key_vault_certificate_secret_name",
+                    "azureKeyVaultCertificateSecretName",
                     &self.r#azure_key_vault_certificate_secret_name,
                 ),
                 to_pulumi_object_field(
-                    "azure_key_vault_certificate_secret_version",
+                    "azureKeyVaultCertificateSecretVersion",
                     &self.r#azure_key_vault_certificate_secret_version,
                 ),
                 to_pulumi_object_field(
-                    "azure_key_vault_certificate_vault_id",
+                    "azureKeyVaultCertificateVaultId",
                     &self.r#azure_key_vault_certificate_vault_id,
                 ),
                 to_pulumi_object_field(
-                    "certificate_source",
+                    "certificateSource",
                     &self.r#certificate_source,
                 ),
                 to_pulumi_object_field(
-                    "minimum_tls_version",
+                    "minimumTlsVersion",
                     &self.r#minimum_tls_version,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_state",
+                    "provisioningState",
                     &self.r#provisioning_state,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_substate",
+                    "provisioningSubstate",
                     &self.r#provisioning_substate,
                 ),
             ];
@@ -100,51 +100,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#azure_key_vault_certificate_secret_name: {
-                        let field_value = match fields_map.get("azure_key_vault_certificate_secret_name") {
+                        let field_value = match fields_map.get("azureKeyVaultCertificateSecretName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_key_vault_certificate_secret_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureKeyVaultCertificateSecretName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#azure_key_vault_certificate_secret_version: {
-                        let field_value = match fields_map.get("azure_key_vault_certificate_secret_version") {
+                        let field_value = match fields_map.get("azureKeyVaultCertificateSecretVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_key_vault_certificate_secret_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureKeyVaultCertificateSecretVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#azure_key_vault_certificate_vault_id: {
-                        let field_value = match fields_map.get("azure_key_vault_certificate_vault_id") {
+                        let field_value = match fields_map.get("azureKeyVaultCertificateVaultId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_key_vault_certificate_vault_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureKeyVaultCertificateVaultId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certificate_source: {
-                        let field_value = match fields_map.get("certificate_source") {
+                        let field_value = match fields_map.get("certificateSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_tls_version: {
-                        let field_value = match fields_map.get("minimum_tls_version") {
+                        let field_value = match fields_map.get("minimumTlsVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_tls_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumTlsVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioning_state: {
-                        let field_value = match fields_map.get("provisioning_state") {
+                        let field_value = match fields_map.get("provisioningState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioning_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisioningState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioning_substate: {
-                        let field_value = match fields_map.get("provisioning_substate") {
+                        let field_value = match fields_map.get("provisioningSubstate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioning_substate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisioningSubstate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

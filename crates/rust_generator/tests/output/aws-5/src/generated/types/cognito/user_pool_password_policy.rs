@@ -49,31 +49,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "minimum_length",
+                    "minimumLength",
                     &self.r#minimum_length,
                 ),
                 to_pulumi_object_field(
-                    "password_history_size",
+                    "passwordHistorySize",
                     &self.r#password_history_size,
                 ),
                 to_pulumi_object_field(
-                    "require_lowercase",
+                    "requireLowercase",
                     &self.r#require_lowercase,
                 ),
                 to_pulumi_object_field(
-                    "require_numbers",
+                    "requireNumbers",
                     &self.r#require_numbers,
                 ),
                 to_pulumi_object_field(
-                    "require_symbols",
+                    "requireSymbols",
                     &self.r#require_symbols,
                 ),
                 to_pulumi_object_field(
-                    "require_uppercase",
+                    "requireUppercase",
                     &self.r#require_uppercase,
                 ),
                 to_pulumi_object_field(
-                    "temporary_password_validity_days",
+                    "temporaryPasswordValidityDays",
                     &self.r#temporary_password_validity_days,
                 ),
             ];
@@ -100,51 +100,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#minimum_length: {
-                        let field_value = match fields_map.get("minimum_length") {
+                        let field_value = match fields_map.get("minimumLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_history_size: {
-                        let field_value = match fields_map.get("password_history_size") {
+                        let field_value = match fields_map.get("passwordHistorySize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_history_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordHistorySize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_lowercase: {
-                        let field_value = match fields_map.get("require_lowercase") {
+                        let field_value = match fields_map.get("requireLowercase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_lowercase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireLowercase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_numbers: {
-                        let field_value = match fields_map.get("require_numbers") {
+                        let field_value = match fields_map.get("requireNumbers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_numbers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireNumbers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_symbols: {
-                        let field_value = match fields_map.get("require_symbols") {
+                        let field_value = match fields_map.get("requireSymbols") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_symbols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireSymbols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_uppercase: {
-                        let field_value = match fields_map.get("require_uppercase") {
+                        let field_value = match fields_map.get("requireUppercase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_uppercase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireUppercase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#temporary_password_validity_days: {
-                        let field_value = match fields_map.get("temporary_password_validity_days") {
+                        let field_value = match fields_map.get("temporaryPasswordValidityDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'temporary_password_validity_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'temporaryPasswordValidityDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

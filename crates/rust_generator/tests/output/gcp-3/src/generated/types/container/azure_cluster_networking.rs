@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Azu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pod_address_cidr_blocks",
+                    "podAddressCidrBlocks",
                     &self.r#pod_address_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "service_address_cidr_blocks",
+                    "serviceAddressCidrBlocks",
                     &self.r#service_address_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_id",
+                    "virtualNetworkId",
                     &self.r#virtual_network_id,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#pod_address_cidr_blocks: {
-                        let field_value = match fields_map.get("pod_address_cidr_blocks") {
+                        let field_value = match fields_map.get("podAddressCidrBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_address_cidr_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podAddressCidrBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_address_cidr_blocks: {
-                        let field_value = match fields_map.get("service_address_cidr_blocks") {
+                        let field_value = match fields_map.get("serviceAddressCidrBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_address_cidr_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAddressCidrBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_network_id: {
-                        let field_value = match fields_map.get("virtual_network_id") {
+                        let field_value = match fields_map.get("virtualNetworkId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_network_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNetworkId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

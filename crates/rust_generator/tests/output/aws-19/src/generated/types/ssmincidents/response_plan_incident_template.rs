@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dedupe_string",
+                    "dedupeString",
                     &self.r#dedupe_string,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#impact,
                 ),
                 to_pulumi_object_field(
-                    "incident_tags",
+                    "incidentTags",
                     &self.r#incident_tags,
                 ),
                 to_pulumi_object_field(
-                    "notification_targets",
+                    "notificationTargets",
                     &self.r#notification_targets,
                 ),
                 to_pulumi_object_field(
@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#dedupe_string: {
-                        let field_value = match fields_map.get("dedupe_string") {
+                        let field_value = match fields_map.get("dedupeString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dedupe_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dedupeString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,16 +104,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#incident_tags: {
-                        let field_value = match fields_map.get("incident_tags") {
+                        let field_value = match fields_map.get("incidentTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'incident_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'incidentTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_targets: {
-                        let field_value = match fields_map.get("notification_targets") {
+                        let field_value = match fields_map.get("notificationTargets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_targets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationTargets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

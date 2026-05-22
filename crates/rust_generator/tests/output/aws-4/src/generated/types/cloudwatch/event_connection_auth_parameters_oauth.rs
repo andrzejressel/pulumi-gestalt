@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorization_endpoint",
+                    "authorizationEndpoint",
                     &self.r#authorization_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "client_parameters",
+                    "clientParameters",
                     &self.r#client_parameters,
                 ),
                 to_pulumi_object_field(
-                    "http_method",
+                    "httpMethod",
                     &self.r#http_method,
                 ),
                 to_pulumi_object_field(
-                    "oauth_http_parameters",
+                    "oauthHttpParameters",
                     &self.r#oauth_http_parameters,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#authorization_endpoint: {
-                        let field_value = match fields_map.get("authorization_endpoint") {
+                        let field_value = match fields_map.get("authorizationEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorization_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizationEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_parameters: {
-                        let field_value = match fields_map.get("client_parameters") {
+                        let field_value = match fields_map.get("clientParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_method: {
-                        let field_value = match fields_map.get("http_method") {
+                        let field_value = match fields_map.get("httpMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_http_parameters: {
-                        let field_value = match fields_map.get("oauth_http_parameters") {
+                        let field_value = match fields_map.get("oauthHttpParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_http_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauthHttpParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

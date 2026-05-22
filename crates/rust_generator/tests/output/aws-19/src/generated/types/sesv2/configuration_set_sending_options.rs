@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "sending_enabled",
+                    "sendingEnabled",
                     &self.r#sending_enabled,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#sending_enabled: {
-                        let field_value = match fields_map.get("sending_enabled") {
+                        let field_value = match fields_map.get("sendingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sending_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Byt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "field_to_match",
+                    "fieldToMatch",
                     &self.r#field_to_match,
                 ),
                 to_pulumi_object_field(
-                    "positional_constraint",
+                    "positionalConstraint",
                     &self.r#positional_constraint,
                 ),
                 to_pulumi_object_field(
-                    "target_string",
+                    "targetString",
                     &self.r#target_string,
                 ),
                 to_pulumi_object_field(
-                    "text_transformation",
+                    "textTransformation",
                     &self.r#text_transformation,
                 ),
             ];
@@ -84,30 +84,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#field_to_match: {
-                        let field_value = match fields_map.get("field_to_match") {
+                        let field_value = match fields_map.get("fieldToMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_to_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldToMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#positional_constraint: {
-                        let field_value = match fields_map.get("positional_constraint") {
+                        let field_value = match fields_map.get("positionalConstraint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'positional_constraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'positionalConstraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_string: {
-                        let field_value = match fields_map.get("target_string") {
+                        let field_value = match fields_map.get("targetString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_transformation: {
-                        let field_value = match fields_map.get("text_transformation") {
+                        let field_value = match fields_map.get("textTransformation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_transformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textTransformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

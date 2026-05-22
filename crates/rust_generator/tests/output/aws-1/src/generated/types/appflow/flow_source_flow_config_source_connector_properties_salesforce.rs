@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_dynamic_field_update",
+                    "enableDynamicFieldUpdate",
                     &self.r#enable_dynamic_field_update,
                 ),
                 to_pulumi_object_field(
-                    "include_deleted_records",
+                    "includeDeletedRecords",
                     &self.r#include_deleted_records,
                 ),
                 to_pulumi_object_field(
@@ -65,16 +65,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#enable_dynamic_field_update: {
-                        let field_value = match fields_map.get("enable_dynamic_field_update") {
+                        let field_value = match fields_map.get("enableDynamicFieldUpdate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_dynamic_field_update' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableDynamicFieldUpdate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_deleted_records: {
-                        let field_value = match fields_map.get("include_deleted_records") {
+                        let field_value = match fields_map.get("includeDeletedRecords") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_deleted_records' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeDeletedRecords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

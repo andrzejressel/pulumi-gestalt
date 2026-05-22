@@ -63,19 +63,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_request_extra_params",
+                    "authenticationRequestExtraParams",
                     &self.r#authentication_request_extra_params,
                 ),
                 to_pulumi_object_field(
-                    "authorization_endpoint",
+                    "authorizationEndpoint",
                     &self.r#authorization_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#issuer,
                 ),
                 to_pulumi_object_field(
-                    "on_unauthenticated_request",
+                    "onUnauthenticatedRequest",
                     &self.r#on_unauthenticated_request,
                 ),
                 to_pulumi_object_field(
@@ -91,19 +91,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#scope,
                 ),
                 to_pulumi_object_field(
-                    "session_cookie_name",
+                    "sessionCookieName",
                     &self.r#session_cookie_name,
                 ),
                 to_pulumi_object_field(
-                    "session_timeout",
+                    "sessionTimeout",
                     &self.r#session_timeout,
                 ),
                 to_pulumi_object_field(
-                    "token_endpoint",
+                    "tokenEndpoint",
                     &self.r#token_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "user_info_endpoint",
+                    "userInfoEndpoint",
                     &self.r#user_info_endpoint,
                 ),
             ];
@@ -130,30 +130,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#authentication_request_extra_params: {
-                        let field_value = match fields_map.get("authentication_request_extra_params") {
+                        let field_value = match fields_map.get("authenticationRequestExtraParams") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_request_extra_params' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationRequestExtraParams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authorization_endpoint: {
-                        let field_value = match fields_map.get("authorization_endpoint") {
+                        let field_value = match fields_map.get("authorizationEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorization_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizationEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_id: {
-                        let field_value = match fields_map.get("client_id") {
+                        let field_value = match fields_map.get("clientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_secret: {
-                        let field_value = match fields_map.get("client_secret") {
+                        let field_value = match fields_map.get("clientSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -165,9 +165,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_unauthenticated_request: {
-                        let field_value = match fields_map.get("on_unauthenticated_request") {
+                        let field_value = match fields_map.get("onUnauthenticatedRequest") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_unauthenticated_request' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onUnauthenticatedRequest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -179,30 +179,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_cookie_name: {
-                        let field_value = match fields_map.get("session_cookie_name") {
+                        let field_value = match fields_map.get("sessionCookieName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_cookie_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionCookieName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_timeout: {
-                        let field_value = match fields_map.get("session_timeout") {
+                        let field_value = match fields_map.get("sessionTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_endpoint: {
-                        let field_value = match fields_map.get("token_endpoint") {
+                        let field_value = match fields_map.get("tokenEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_info_endpoint: {
-                        let field_value = match fields_map.get("user_info_endpoint") {
+                        let field_value = match fields_map.get("userInfoEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_info_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userInfoEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

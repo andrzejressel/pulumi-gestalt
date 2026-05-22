@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "control_plane_node_port",
+                    "controlPlaneNodePort",
                     &self.r#control_plane_node_port,
                 ),
                 to_pulumi_object_field(
-                    "ingress_http_node_port",
+                    "ingressHttpNodePort",
                     &self.r#ingress_http_node_port,
                 ),
                 to_pulumi_object_field(
-                    "ingress_https_node_port",
+                    "ingressHttpsNodePort",
                     &self.r#ingress_https_node_port,
                 ),
                 to_pulumi_object_field(
-                    "konnectivity_server_node_port",
+                    "konnectivityServerNodePort",
                     &self.r#konnectivity_server_node_port,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#control_plane_node_port: {
-                        let field_value = match fields_map.get("control_plane_node_port") {
+                        let field_value = match fields_map.get("controlPlaneNodePort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'control_plane_node_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'controlPlaneNodePort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ingress_http_node_port: {
-                        let field_value = match fields_map.get("ingress_http_node_port") {
+                        let field_value = match fields_map.get("ingressHttpNodePort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingress_http_node_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingressHttpNodePort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ingress_https_node_port: {
-                        let field_value = match fields_map.get("ingress_https_node_port") {
+                        let field_value = match fields_map.get("ingressHttpsNodePort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingress_https_node_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingressHttpsNodePort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#konnectivity_server_node_port: {
-                        let field_value = match fields_map.get("konnectivity_server_node_port") {
+                        let field_value = match fields_map.get("konnectivityServerNodePort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'konnectivity_server_node_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'konnectivityServerNodePort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

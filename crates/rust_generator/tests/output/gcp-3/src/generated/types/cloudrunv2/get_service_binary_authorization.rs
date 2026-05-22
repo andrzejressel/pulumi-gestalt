@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "breakglass_justification",
+                    "breakglassJustification",
                     &self.r#breakglass_justification,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#policy,
                 ),
                 to_pulumi_object_field(
-                    "use_default",
+                    "useDefault",
                     &self.r#use_default,
                 ),
             ];
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#breakglass_justification: {
-                        let field_value = match fields_map.get("breakglass_justification") {
+                        let field_value = match fields_map.get("breakglassJustification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'breakglass_justification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'breakglassJustification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_default: {
-                        let field_value = match fields_map.get("use_default") {
+                        let field_value = match fields_map.get("useDefault") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_default' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useDefault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

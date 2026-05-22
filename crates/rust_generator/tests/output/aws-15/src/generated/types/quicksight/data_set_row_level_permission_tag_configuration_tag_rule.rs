@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_name",
+                    "columnName",
                     &self.r#column_name,
                 ),
                 to_pulumi_object_field(
-                    "match_all_value",
+                    "matchAllValue",
                     &self.r#match_all_value,
                 ),
                 to_pulumi_object_field(
-                    "tag_key",
+                    "tagKey",
                     &self.r#tag_key,
                 ),
                 to_pulumi_object_field(
-                    "tag_multi_value_delimiter",
+                    "tagMultiValueDelimiter",
                     &self.r#tag_multi_value_delimiter,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#column_name: {
-                        let field_value = match fields_map.get("column_name") {
+                        let field_value = match fields_map.get("columnName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'columnName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_all_value: {
-                        let field_value = match fields_map.get("match_all_value") {
+                        let field_value = match fields_map.get("matchAllValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_all_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchAllValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_key: {
-                        let field_value = match fields_map.get("tag_key") {
+                        let field_value = match fields_map.get("tagKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_multi_value_delimiter: {
-                        let field_value = match fields_map.get("tag_multi_value_delimiter") {
+                        let field_value = match fields_map.get("tagMultiValueDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_multi_value_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagMultiValueDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

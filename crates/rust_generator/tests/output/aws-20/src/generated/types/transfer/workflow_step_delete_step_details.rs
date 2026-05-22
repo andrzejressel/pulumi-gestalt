@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "source_file_location",
+                    "sourceFileLocation",
                     &self.r#source_file_location,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_file_location: {
-                        let field_value = match fields_map.get("source_file_location") {
+                        let field_value = match fields_map.get("sourceFileLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_file_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceFileLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

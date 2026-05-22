@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "frame_capture_settings",
+                    "frameCaptureSettings",
                     &self.r#frame_capture_settings,
                 ),
                 to_pulumi_object_field(
-                    "h_264_settings",
+                    "h264Settings",
                     &self.r#h_264_settings,
                 ),
                 to_pulumi_object_field(
-                    "h_265_settings",
+                    "h265Settings",
                     &self.r#h_265_settings,
                 ),
             ];
@@ -65,23 +65,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#frame_capture_settings: {
-                        let field_value = match fields_map.get("frame_capture_settings") {
+                        let field_value = match fields_map.get("frameCaptureSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frame_capture_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frameCaptureSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#h_264_settings: {
-                        let field_value = match fields_map.get("h_264_settings") {
+                        let field_value = match fields_map.get("h264Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'h_264_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'h264Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#h_265_settings: {
-                        let field_value = match fields_map.get("h_265_settings") {
+                        let field_value = match fields_map.get("h265Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'h_265_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'h265Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

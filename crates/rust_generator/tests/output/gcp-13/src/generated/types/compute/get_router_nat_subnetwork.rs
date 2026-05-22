@@ -42,11 +42,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "secondary_ip_range_names",
+                    "secondaryIpRangeNames",
                     &self.r#secondary_ip_range_names,
                 ),
                 to_pulumi_object_field(
-                    "source_ip_ranges_to_nats",
+                    "sourceIpRangesToNats",
                     &self.r#source_ip_ranges_to_nats,
                 ),
             ];
@@ -80,16 +80,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_ip_range_names: {
-                        let field_value = match fields_map.get("secondary_ip_range_names") {
+                        let field_value = match fields_map.get("secondaryIpRangeNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_ip_range_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryIpRangeNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_ip_ranges_to_nats: {
-                        let field_value = match fields_map.get("source_ip_ranges_to_nats") {
+                        let field_value = match fields_map.get("sourceIpRangesToNats") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_ip_ranges_to_nats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceIpRangesToNats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

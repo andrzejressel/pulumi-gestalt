@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ec_2_ssh_key",
+                    "ec2SshKey",
                     &self.r#ec_2_ssh_key,
                 ),
                 to_pulumi_object_field(
-                    "source_security_group_ids",
+                    "sourceSecurityGroupIds",
                     &self.r#source_security_group_ids,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#ec_2_ssh_key: {
-                        let field_value = match fields_map.get("ec_2_ssh_key") {
+                        let field_value = match fields_map.get("ec2SshKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ec_2_ssh_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ec2SshKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_security_group_ids: {
-                        let field_value = match fields_map.get("source_security_group_ids") {
+                        let field_value = match fields_map.get("sourceSecurityGroupIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_security_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceSecurityGroupIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

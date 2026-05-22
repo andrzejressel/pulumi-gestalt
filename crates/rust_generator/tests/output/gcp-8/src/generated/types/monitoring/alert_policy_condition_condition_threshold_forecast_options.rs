@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "forecast_horizon",
+                    "forecastHorizon",
                     &self.r#forecast_horizon,
                 ),
             ];
@@ -55,9 +55,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#forecast_horizon: {
-                        let field_value = match fields_map.get("forecast_horizon") {
+                        let field_value = match fields_map.get("forecastHorizon") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forecast_horizon' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forecastHorizon' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

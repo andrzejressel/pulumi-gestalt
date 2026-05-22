@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#idles,
                 ),
                 to_pulumi_object_field(
-                    "per_requests",
+                    "perRequests",
                     &self.r#per_requests,
                 ),
             ];
@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#per_requests: {
-                        let field_value = match fields_map.get("per_requests") {
+                        let field_value = match fields_map.get("perRequests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'per_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'perRequests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

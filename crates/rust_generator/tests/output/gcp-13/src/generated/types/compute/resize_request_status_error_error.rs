@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#code,
                 ),
                 to_pulumi_object_field(
-                    "error_details",
+                    "errorDetails",
                     &self.r#error_details,
                 ),
                 to_pulumi_object_field(
@@ -86,9 +86,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#error_details: {
-                        let field_value = match fields_map.get("error_details") {
+                        let field_value = match fields_map.get("errorDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

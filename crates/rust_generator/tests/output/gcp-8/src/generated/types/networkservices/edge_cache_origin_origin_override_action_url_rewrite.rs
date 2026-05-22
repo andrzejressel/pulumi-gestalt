@@ -26,7 +26,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_rewrite",
+                    "hostRewrite",
                     &self.r#host_rewrite,
                 ),
             ];
@@ -53,9 +53,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#host_rewrite: {
-                        let field_value = match fields_map.get("host_rewrite") {
+                        let field_value = match fields_map.get("hostRewrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_rewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostRewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

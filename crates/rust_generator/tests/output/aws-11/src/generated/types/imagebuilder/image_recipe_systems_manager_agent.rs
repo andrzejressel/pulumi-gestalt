@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "uninstall_after_build",
+                    "uninstallAfterBuild",
                     &self.r#uninstall_after_build,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#uninstall_after_build: {
-                        let field_value = match fields_map.get("uninstall_after_build") {
+                        let field_value = match fields_map.get("uninstallAfterBuild") {
                             Some(value) => value,
-                            None => bail!("Missing field 'uninstall_after_build' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'uninstallAfterBuild' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "trigger_events",
+                    "triggerEvents",
                     &self.r#trigger_events,
                 ),
                 to_pulumi_object_field(
-                    "trigger_name",
+                    "triggerName",
                     &self.r#trigger_name,
                 ),
                 to_pulumi_object_field(
-                    "trigger_target_arn",
+                    "triggerTargetArn",
                     &self.r#trigger_target_arn,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#trigger_events: {
-                        let field_value = match fields_map.get("trigger_events") {
+                        let field_value = match fields_map.get("triggerEvents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trigger_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'triggerEvents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trigger_name: {
-                        let field_value = match fields_map.get("trigger_name") {
+                        let field_value = match fields_map.get("triggerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trigger_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'triggerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trigger_target_arn: {
-                        let field_value = match fields_map.get("trigger_target_arn") {
+                        let field_value = match fields_map.get("triggerTargetArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trigger_target_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'triggerTargetArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

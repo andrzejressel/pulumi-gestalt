@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authenticate_cognitos",
+                    "authenticateCognitos",
                     &self.r#authenticate_cognitos,
                 ),
                 to_pulumi_object_field(
-                    "authenticate_oidcs",
+                    "authenticateOidcs",
                     &self.r#authenticate_oidcs,
                 ),
                 to_pulumi_object_field(
-                    "fixed_responses",
+                    "fixedResponses",
                     &self.r#fixed_responses,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#redirects,
                 ),
                 to_pulumi_object_field(
-                    "target_group_arn",
+                    "targetGroupArn",
                     &self.r#target_group_arn,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -98,23 +98,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#authenticate_cognitos: {
-                        let field_value = match fields_map.get("authenticate_cognitos") {
+                        let field_value = match fields_map.get("authenticateCognitos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authenticate_cognitos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticateCognitos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authenticate_oidcs: {
-                        let field_value = match fields_map.get("authenticate_oidcs") {
+                        let field_value = match fields_map.get("authenticateOidcs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authenticate_oidcs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticateOidcs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fixed_responses: {
-                        let field_value = match fields_map.get("fixed_responses") {
+                        let field_value = match fields_map.get("fixedResponses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fixed_responses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fixedResponses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,16 +140,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_group_arn: {
-                        let field_value = match fields_map.get("target_group_arn") {
+                        let field_value = match fields_map.get("targetGroupArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_group_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetGroupArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

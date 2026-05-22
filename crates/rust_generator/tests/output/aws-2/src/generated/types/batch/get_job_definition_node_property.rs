@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "main_node",
+                    "mainNode",
                     &self.r#main_node,
                 ),
                 to_pulumi_object_field(
-                    "node_range_properties",
+                    "nodeRangeProperties",
                     &self.r#node_range_properties,
                 ),
                 to_pulumi_object_field(
-                    "num_nodes",
+                    "numNodes",
                     &self.r#num_nodes,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#main_node: {
-                        let field_value = match fields_map.get("main_node") {
+                        let field_value = match fields_map.get("mainNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'main_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mainNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_range_properties: {
-                        let field_value = match fields_map.get("node_range_properties") {
+                        let field_value = match fields_map.get("nodeRangeProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_range_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeRangeProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_nodes: {
-                        let field_value = match fields_map.get("num_nodes") {
+                        let field_value = match fields_map.get("numNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'num_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

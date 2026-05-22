@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
                     &self.r#days,
                 ),
                 to_pulumi_object_field(
-                    "target_instance_count",
+                    "targetInstanceCount",
                     &self.r#target_instance_count,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_instance_count: {
-                        let field_value = match fields_map.get("target_instance_count") {
+                        let field_value = match fields_map.get("targetInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "model_cache_setting",
+                    "modelCacheSetting",
                     &self.r#model_cache_setting,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#model_cache_setting: {
-                        let field_value = match fields_map.get("model_cache_setting") {
+                        let field_value = match fields_map.get("modelCacheSetting") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_cache_setting' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelCacheSetting' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

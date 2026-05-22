@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_storage_container_name",
+                    "autoStorageContainerName",
                     &self.r#auto_storage_container_name,
                 ),
                 to_pulumi_object_field(
-                    "blob_prefix",
+                    "blobPrefix",
                     &self.r#blob_prefix,
                 ),
                 to_pulumi_object_field(
-                    "file_mode",
+                    "fileMode",
                     &self.r#file_mode,
                 ),
                 to_pulumi_object_field(
-                    "file_path",
+                    "filePath",
                     &self.r#file_path,
                 ),
                 to_pulumi_object_field(
-                    "http_url",
+                    "httpUrl",
                     &self.r#http_url,
                 ),
                 to_pulumi_object_field(
-                    "storage_container_url",
+                    "storageContainerUrl",
                     &self.r#storage_container_url,
                 ),
                 to_pulumi_object_field(
-                    "user_assigned_identity_id",
+                    "userAssignedIdentityId",
                     &self.r#user_assigned_identity_id,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#auto_storage_container_name: {
-                        let field_value = match fields_map.get("auto_storage_container_name") {
+                        let field_value = match fields_map.get("autoStorageContainerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_storage_container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoStorageContainerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#blob_prefix: {
-                        let field_value = match fields_map.get("blob_prefix") {
+                        let field_value = match fields_map.get("blobPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'blob_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blobPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_mode: {
-                        let field_value = match fields_map.get("file_mode") {
+                        let field_value = match fields_map.get("fileMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_path: {
-                        let field_value = match fields_map.get("file_path") {
+                        let field_value = match fields_map.get("filePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_url: {
-                        let field_value = match fields_map.get("http_url") {
+                        let field_value = match fields_map.get("httpUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_container_url: {
-                        let field_value = match fields_map.get("storage_container_url") {
+                        let field_value = match fields_map.get("storageContainerUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_container_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageContainerUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_assigned_identity_id: {
-                        let field_value = match fields_map.get("user_assigned_identity_id") {
+                        let field_value = match fields_map.get("userAssignedIdentityId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_assigned_identity_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userAssignedIdentityId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

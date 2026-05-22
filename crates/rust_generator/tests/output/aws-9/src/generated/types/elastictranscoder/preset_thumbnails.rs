@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aspect_ratio",
+                    "aspectRatio",
                     &self.r#aspect_ratio,
                 ),
                 to_pulumi_object_field(
@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "max_height",
+                    "maxHeight",
                     &self.r#max_height,
                 ),
                 to_pulumi_object_field(
-                    "max_width",
+                    "maxWidth",
                     &self.r#max_width,
                 ),
                 to_pulumi_object_field(
-                    "padding_policy",
+                    "paddingPolicy",
                     &self.r#padding_policy,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#resolution,
                 ),
                 to_pulumi_object_field(
-                    "sizing_policy",
+                    "sizingPolicy",
                     &self.r#sizing_policy,
                 ),
             ];
@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#aspect_ratio: {
-                        let field_value = match fields_map.get("aspect_ratio") {
+                        let field_value = match fields_map.get("aspectRatio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aspect_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aspectRatio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -127,23 +127,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_height: {
-                        let field_value = match fields_map.get("max_height") {
+                        let field_value = match fields_map.get("maxHeight") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_height' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxHeight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_width: {
-                        let field_value = match fields_map.get("max_width") {
+                        let field_value = match fields_map.get("maxWidth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_width' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxWidth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#padding_policy: {
-                        let field_value = match fields_map.get("padding_policy") {
+                        let field_value = match fields_map.get("paddingPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'padding_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'paddingPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -155,9 +155,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sizing_policy: {
-                        let field_value = match fields_map.get("sizing_policy") {
+                        let field_value = match fields_map.get("sizingPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sizing_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizingPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

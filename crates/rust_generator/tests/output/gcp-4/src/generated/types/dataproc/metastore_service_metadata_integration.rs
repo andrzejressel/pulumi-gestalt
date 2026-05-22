@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_catalog_config",
+                    "dataCatalogConfig",
                     &self.r#data_catalog_config,
                 ),
             ];
@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#data_catalog_config: {
-                        let field_value = match fields_map.get("data_catalog_config") {
+                        let field_value = match fields_map.get("dataCatalogConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_catalog_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataCatalogConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

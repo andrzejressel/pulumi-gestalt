@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "netbios_name",
+                    "netbiosName",
                     &self.r#netbios_name,
                 ),
                 to_pulumi_object_field(
-                    "self_managed_active_directory_configurations",
+                    "selfManagedActiveDirectoryConfigurations",
                     &self.r#self_managed_active_directory_configurations,
                 ),
             ];
@@ -57,16 +57,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#netbios_name: {
-                        let field_value = match fields_map.get("netbios_name") {
+                        let field_value = match fields_map.get("netbiosName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'netbios_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netbiosName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#self_managed_active_directory_configurations: {
-                        let field_value = match fields_map.get("self_managed_active_directory_configurations") {
+                        let field_value = match fields_map.get("selfManagedActiveDirectoryConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'self_managed_active_directory_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selfManagedActiveDirectoryConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

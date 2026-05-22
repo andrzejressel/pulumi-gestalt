@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#container,
                 ),
                 to_pulumi_object_field(
-                    "elementary_streams",
+                    "elementaryStreams",
                     &self.r#elementary_streams,
                 ),
                 to_pulumi_object_field(
-                    "encryption_id",
+                    "encryptionId",
                     &self.r#encryption_id,
                 ),
                 to_pulumi_object_field(
-                    "file_name",
+                    "fileName",
                     &self.r#file_name,
                 ),
                 to_pulumi_object_field(
@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "segment_settings",
+                    "segmentSettings",
                     &self.r#segment_settings,
                 ),
             ];
@@ -98,23 +98,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#elementary_streams: {
-                        let field_value = match fields_map.get("elementary_streams") {
+                        let field_value = match fields_map.get("elementaryStreams") {
                             Some(value) => value,
-                            None => bail!("Missing field 'elementary_streams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'elementaryStreams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_id: {
-                        let field_value = match fields_map.get("encryption_id") {
+                        let field_value = match fields_map.get("encryptionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_name: {
-                        let field_value = match fields_map.get("file_name") {
+                        let field_value = match fields_map.get("fileName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,9 +126,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#segment_settings: {
-                        let field_value = match fields_map.get("segment_settings") {
+                        let field_value = match fields_map.get("segmentSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'segment_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'segmentSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

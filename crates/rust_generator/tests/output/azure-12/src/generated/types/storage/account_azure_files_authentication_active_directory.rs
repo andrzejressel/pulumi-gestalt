@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "domain_guid",
+                    "domainGuid",
                     &self.r#domain_guid,
                 ),
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "domain_sid",
+                    "domainSid",
                     &self.r#domain_sid,
                 ),
                 to_pulumi_object_field(
-                    "forest_name",
+                    "forestName",
                     &self.r#forest_name,
                 ),
                 to_pulumi_object_field(
-                    "netbios_domain_name",
+                    "netbiosDomainName",
                     &self.r#netbios_domain_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_sid",
+                    "storageSid",
                     &self.r#storage_sid,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#domain_guid: {
-                        let field_value = match fields_map.get("domain_guid") {
+                        let field_value = match fields_map.get("domainGuid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_guid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainGuid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_name: {
-                        let field_value = match fields_map.get("domain_name") {
+                        let field_value = match fields_map.get("domainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_sid: {
-                        let field_value = match fields_map.get("domain_sid") {
+                        let field_value = match fields_map.get("domainSid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_sid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainSid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forest_name: {
-                        let field_value = match fields_map.get("forest_name") {
+                        let field_value = match fields_map.get("forestName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forest_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forestName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#netbios_domain_name: {
-                        let field_value = match fields_map.get("netbios_domain_name") {
+                        let field_value = match fields_map.get("netbiosDomainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'netbios_domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netbiosDomainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_sid: {
-                        let field_value = match fields_map.get("storage_sid") {
+                        let field_value = match fields_map.get("storageSid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_sid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageSid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

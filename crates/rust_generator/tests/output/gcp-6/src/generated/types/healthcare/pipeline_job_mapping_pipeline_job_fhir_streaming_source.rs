@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "fhir_store",
+                    "fhirStore",
                     &self.r#fhir_store,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fhir_store: {
-                        let field_value = match fields_map.get("fhir_store") {
+                        let field_value = match fields_map.get("fhirStore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fhir_store' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fhirStore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

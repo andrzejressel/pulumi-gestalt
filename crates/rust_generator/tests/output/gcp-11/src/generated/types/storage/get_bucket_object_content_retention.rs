@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "retain_until_time",
+                    "retainUntilTime",
                     &self.r#retain_until_time,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retain_until_time: {
-                        let field_value = match fields_map.get("retain_until_time") {
+                        let field_value = match fields_map.get("retainUntilTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retain_until_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retainUntilTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

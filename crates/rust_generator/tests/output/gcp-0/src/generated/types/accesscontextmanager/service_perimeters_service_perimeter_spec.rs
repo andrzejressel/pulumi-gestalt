@@ -67,15 +67,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_levels",
+                    "accessLevels",
                     &self.r#access_levels,
                 ),
                 to_pulumi_object_field(
-                    "egress_policies",
+                    "egressPolicies",
                     &self.r#egress_policies,
                 ),
                 to_pulumi_object_field(
-                    "ingress_policies",
+                    "ingressPolicies",
                     &self.r#ingress_policies,
                 ),
                 to_pulumi_object_field(
@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#resources,
                 ),
                 to_pulumi_object_field(
-                    "restricted_services",
+                    "restrictedServices",
                     &self.r#restricted_services,
                 ),
                 to_pulumi_object_field(
-                    "vpc_accessible_services",
+                    "vpcAccessibleServices",
                     &self.r#vpc_accessible_services,
                 ),
             ];
@@ -114,23 +114,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#access_levels: {
-                        let field_value = match fields_map.get("access_levels") {
+                        let field_value = match fields_map.get("accessLevels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_levels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessLevels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#egress_policies: {
-                        let field_value = match fields_map.get("egress_policies") {
+                        let field_value = match fields_map.get("egressPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'egress_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'egressPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ingress_policies: {
-                        let field_value = match fields_map.get("ingress_policies") {
+                        let field_value = match fields_map.get("ingressPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingress_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingressPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,16 +142,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restricted_services: {
-                        let field_value = match fields_map.get("restricted_services") {
+                        let field_value = match fields_map.get("restrictedServices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restricted_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restrictedServices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_accessible_services: {
-                        let field_value = match fields_map.get("vpc_accessible_services") {
+                        let field_value = match fields_map.get("vpcAccessibleServices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_accessible_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcAccessibleServices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -77,11 +77,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aes_encryption_enabled",
+                    "aesEncryptionEnabled",
                     &self.r#aes_encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dns_servers",
+                    "dnsServers",
                     &self.r#dns_servers,
                 ),
                 to_pulumi_object_field(
@@ -89,27 +89,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#domain,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_ad_name",
+                    "kerberosAdName",
                     &self.r#kerberos_ad_name,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_kdc_ip",
+                    "kerberosKdcIp",
                     &self.r#kerberos_kdc_ip,
                 ),
                 to_pulumi_object_field(
-                    "ldap_over_tls_enabled",
+                    "ldapOverTlsEnabled",
                     &self.r#ldap_over_tls_enabled,
                 ),
                 to_pulumi_object_field(
-                    "ldap_signing_enabled",
+                    "ldapSigningEnabled",
                     &self.r#ldap_signing_enabled,
                 ),
                 to_pulumi_object_field(
-                    "local_nfs_users_with_ldap_allowed",
+                    "localNfsUsersWithLdapAllowed",
                     &self.r#local_nfs_users_with_ldap_allowed,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit",
+                    "organizationalUnit",
                     &self.r#organizational_unit,
                 ),
                 to_pulumi_object_field(
@@ -117,15 +117,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "server_root_ca_certificate",
+                    "serverRootCaCertificate",
                     &self.r#server_root_ca_certificate,
                 ),
                 to_pulumi_object_field(
-                    "site_name",
+                    "siteName",
                     &self.r#site_name,
                 ),
                 to_pulumi_object_field(
-                    "smb_server_name",
+                    "smbServerName",
                     &self.r#smb_server_name,
                 ),
                 to_pulumi_object_field(
@@ -156,16 +156,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#aes_encryption_enabled: {
-                        let field_value = match fields_map.get("aes_encryption_enabled") {
+                        let field_value = match fields_map.get("aesEncryptionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aes_encryption_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aesEncryptionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_servers: {
-                        let field_value = match fields_map.get("dns_servers") {
+                        let field_value = match fields_map.get("dnsServers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsServers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -177,44 +177,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_ad_name: {
-                        let field_value = match fields_map.get("kerberos_ad_name") {
+                        let field_value = match fields_map.get("kerberosAdName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_ad_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberosAdName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_kdc_ip: {
-                        let field_value = match fields_map.get("kerberos_kdc_ip") {
+                        let field_value = match fields_map.get("kerberosKdcIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_kdc_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberosKdcIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ldap_over_tls_enabled: {
-                        let field_value = match fields_map.get("ldap_over_tls_enabled") {
+                        let field_value = match fields_map.get("ldapOverTlsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ldap_over_tls_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ldapOverTlsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ldap_signing_enabled: {
-                        let field_value = match fields_map.get("ldap_signing_enabled") {
+                        let field_value = match fields_map.get("ldapSigningEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ldap_signing_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ldapSigningEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_nfs_users_with_ldap_allowed: {
-                        let field_value = match fields_map.get("local_nfs_users_with_ldap_allowed") {
+                        let field_value = match fields_map.get("localNfsUsersWithLdapAllowed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_nfs_users_with_ldap_allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localNfsUsersWithLdapAllowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#organizational_unit: {
-                        let field_value = match fields_map.get("organizational_unit") {
+                        let field_value = match fields_map.get("organizationalUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'organizational_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'organizationalUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -226,23 +226,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_root_ca_certificate: {
-                        let field_value = match fields_map.get("server_root_ca_certificate") {
+                        let field_value = match fields_map.get("serverRootCaCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_root_ca_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverRootCaCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#site_name: {
-                        let field_value = match fields_map.get("site_name") {
+                        let field_value = match fields_map.get("siteName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'site_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'siteName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#smb_server_name: {
-                        let field_value = match fields_map.get("smb_server_name") {
+                        let field_value = match fields_map.get("smbServerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'smb_server_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'smbServerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

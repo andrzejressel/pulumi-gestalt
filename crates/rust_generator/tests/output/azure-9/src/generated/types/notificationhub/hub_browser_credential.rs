@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hub
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "vapid_private_key",
+                    "vapidPrivateKey",
                     &self.r#vapid_private_key,
                 ),
                 to_pulumi_object_field(
-                    "vapid_public_key",
+                    "vapidPublicKey",
                     &self.r#vapid_public_key,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vapid_private_key: {
-                        let field_value = match fields_map.get("vapid_private_key") {
+                        let field_value = match fields_map.get("vapidPrivateKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vapid_private_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vapidPrivateKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vapid_public_key: {
-                        let field_value = match fields_map.get("vapid_public_key") {
+                        let field_value = match fields_map.get("vapidPublicKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vapid_public_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vapidPublicKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

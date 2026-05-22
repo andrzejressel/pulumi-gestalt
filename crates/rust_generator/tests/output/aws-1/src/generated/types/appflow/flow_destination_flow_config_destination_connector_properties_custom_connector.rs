@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_properties",
+                    "customProperties",
                     &self.r#custom_properties,
                 ),
                 to_pulumi_object_field(
-                    "entity_name",
+                    "entityName",
                     &self.r#entity_name,
                 ),
                 to_pulumi_object_field(
-                    "error_handling_config",
+                    "errorHandlingConfig",
                     &self.r#error_handling_config,
                 ),
                 to_pulumi_object_field(
-                    "id_field_names",
+                    "idFieldNames",
                     &self.r#id_field_names,
                 ),
                 to_pulumi_object_field(
-                    "write_operation_type",
+                    "writeOperationType",
                     &self.r#write_operation_type,
                 ),
             ];
@@ -77,37 +77,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#custom_properties: {
-                        let field_value = match fields_map.get("custom_properties") {
+                        let field_value = match fields_map.get("customProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entity_name: {
-                        let field_value = match fields_map.get("entity_name") {
+                        let field_value = match fields_map.get("entityName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#error_handling_config: {
-                        let field_value = match fields_map.get("error_handling_config") {
+                        let field_value = match fields_map.get("errorHandlingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_handling_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorHandlingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#id_field_names: {
-                        let field_value = match fields_map.get("id_field_names") {
+                        let field_value = match fields_map.get("idFieldNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'id_field_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idFieldNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#write_operation_type: {
-                        let field_value = match fields_map.get("write_operation_type") {
+                        let field_value = match fields_map.get("writeOperationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'write_operation_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'writeOperationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

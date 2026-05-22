@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attribute_name",
+                    "attributeName",
                     &self.r#attribute_name,
                 ),
                 to_pulumi_object_field(
-                    "attribute_value",
+                    "attributeValue",
                     &self.r#attribute_value,
                 ),
                 to_pulumi_object_field(
-                    "identity_provider_id",
+                    "identityProviderId",
                     &self.r#identity_provider_id,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#attribute_name: {
-                        let field_value = match fields_map.get("attribute_name") {
+                        let field_value = match fields_map.get("attributeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attribute_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#attribute_value: {
-                        let field_value = match fields_map.get("attribute_value") {
+                        let field_value = match fields_map.get("attributeValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attribute_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributeValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_provider_id: {
-                        let field_value = match fields_map.get("identity_provider_id") {
+                        let field_value = match fields_map.get("identityProviderId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_provider_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityProviderId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capacity_reservation_id",
+                    "capacityReservationId",
                     &self.r#capacity_reservation_id,
                 ),
                 to_pulumi_object_field(
-                    "capacity_reservation_resource_group_arn",
+                    "capacityReservationResourceGroupArn",
                     &self.r#capacity_reservation_resource_group_arn,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#capacity_reservation_id: {
-                        let field_value = match fields_map.get("capacity_reservation_id") {
+                        let field_value = match fields_map.get("capacityReservationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_reservation_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityReservationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#capacity_reservation_resource_group_arn: {
-                        let field_value = match fields_map.get("capacity_reservation_resource_group_arn") {
+                        let field_value = match fields_map.get("capacityReservationResourceGroupArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_reservation_resource_group_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityReservationResourceGroupArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

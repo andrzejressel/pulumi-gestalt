@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "vpc_endpoints",
+                    "vpcEndpoints",
                     &self.r#vpc_endpoints,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_endpoints: {
-                        let field_value = match fields_map.get("vpc_endpoints") {
+                        let field_value = match fields_map.get("vpcEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

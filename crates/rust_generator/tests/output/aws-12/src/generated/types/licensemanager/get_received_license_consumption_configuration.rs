@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "borrow_configurations",
+                    "borrowConfigurations",
                     &self.r#borrow_configurations,
                 ),
                 to_pulumi_object_field(
-                    "provisional_configurations",
+                    "provisionalConfigurations",
                     &self.r#provisional_configurations,
                 ),
                 to_pulumi_object_field(
-                    "renew_type",
+                    "renewType",
                     &self.r#renew_type,
                 ),
             ];
@@ -65,23 +65,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#borrow_configurations: {
-                        let field_value = match fields_map.get("borrow_configurations") {
+                        let field_value = match fields_map.get("borrowConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'borrow_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'borrowConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisional_configurations: {
-                        let field_value = match fields_map.get("provisional_configurations") {
+                        let field_value = match fields_map.get("provisionalConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisional_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionalConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#renew_type: {
-                        let field_value = match fields_map.get("renew_type") {
+                        let field_value = match fields_map.get("renewType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'renew_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'renewType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

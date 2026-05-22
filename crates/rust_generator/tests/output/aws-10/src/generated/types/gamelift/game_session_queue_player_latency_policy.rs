@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gam
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maximum_individual_player_latency_milliseconds",
+                    "maximumIndividualPlayerLatencyMilliseconds",
                     &self.r#maximum_individual_player_latency_milliseconds,
                 ),
                 to_pulumi_object_field(
-                    "policy_duration_seconds",
+                    "policyDurationSeconds",
                     &self.r#policy_duration_seconds,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#maximum_individual_player_latency_milliseconds: {
-                        let field_value = match fields_map.get("maximum_individual_player_latency_milliseconds") {
+                        let field_value = match fields_map.get("maximumIndividualPlayerLatencyMilliseconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_individual_player_latency_milliseconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumIndividualPlayerLatencyMilliseconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_duration_seconds: {
-                        let field_value = match fields_map.get("policy_duration_seconds") {
+                        let field_value = match fields_map.get("policyDurationSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_duration_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyDurationSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

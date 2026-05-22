@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cross_account_model_register_role_arn",
+                    "crossAccountModelRegisterRoleArn",
                     &self.r#cross_account_model_register_role_arn,
                 ),
                 to_pulumi_object_field(
@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#cross_account_model_register_role_arn: {
-                        let field_value = match fields_map.get("cross_account_model_register_role_arn") {
+                        let field_value = match fields_map.get("crossAccountModelRegisterRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_account_model_register_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossAccountModelRegisterRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

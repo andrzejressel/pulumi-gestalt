@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "json_token_type_configuration",
+                    "jsonTokenTypeConfiguration",
                     &self.r#json_token_type_configuration,
                 ),
                 to_pulumi_object_field(
-                    "jwt_token_type_configuration",
+                    "jwtTokenTypeConfiguration",
                     &self.r#jwt_token_type_configuration,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#json_token_type_configuration: {
-                        let field_value = match fields_map.get("json_token_type_configuration") {
+                        let field_value = match fields_map.get("jsonTokenTypeConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'json_token_type_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsonTokenTypeConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jwt_token_type_configuration: {
-                        let field_value = match fields_map.get("jwt_token_type_configuration") {
+                        let field_value = match fields_map.get("jwtTokenTypeConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jwt_token_type_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jwtTokenTypeConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

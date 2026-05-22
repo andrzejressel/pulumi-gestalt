@@ -62,15 +62,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
                     &self.r#attributes,
                 ),
                 to_pulumi_object_field(
-                    "no_wrapper",
+                    "noWrapper",
                     &self.r#no_wrapper,
                 ),
                 to_pulumi_object_field(
-                    "oidc_token",
+                    "oidcToken",
                     &self.r#oidc_token,
                 ),
                 to_pulumi_object_field(
-                    "push_endpoint",
+                    "pushEndpoint",
                     &self.r#push_endpoint,
                 ),
             ];
@@ -104,23 +104,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_wrapper: {
-                        let field_value = match fields_map.get("no_wrapper") {
+                        let field_value = match fields_map.get("noWrapper") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_wrapper' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noWrapper' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oidc_token: {
-                        let field_value = match fields_map.get("oidc_token") {
+                        let field_value = match fields_map.get("oidcToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oidc_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oidcToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#push_endpoint: {
-                        let field_value = match fields_map.get("push_endpoint") {
+                        let field_value = match fields_map.get("pushEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'push_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pushEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

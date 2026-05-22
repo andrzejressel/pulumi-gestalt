@@ -395,151 +395,151 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "actual_used_data_storage_size_tb",
+                    "actualUsedDataStorageSizeTb",
                     &self.r#actual_used_data_storage_size_tb,
                 ),
                 to_pulumi_object_field(
-                    "allocated_storage_size_tb",
+                    "allocatedStorageSizeTb",
                     &self.r#allocated_storage_size_tb,
                 ),
                 to_pulumi_object_field(
-                    "apex_details",
+                    "apexDetails",
                     &self.r#apex_details,
                 ),
                 to_pulumi_object_field(
-                    "are_primary_allowlisted_ips_used",
+                    "arePrimaryAllowlistedIpsUsed",
                     &self.r#are_primary_allowlisted_ips_used,
                 ),
                 to_pulumi_object_field(
-                    "autonomous_container_database_id",
+                    "autonomousContainerDatabaseId",
                     &self.r#autonomous_container_database_id,
                 ),
                 to_pulumi_object_field(
-                    "available_upgrade_versions",
+                    "availableUpgradeVersions",
                     &self.r#available_upgrade_versions,
                 ),
                 to_pulumi_object_field(
-                    "backup_retention_period_days",
+                    "backupRetentionPeriodDays",
                     &self.r#backup_retention_period_days,
                 ),
                 to_pulumi_object_field(
-                    "character_set",
+                    "characterSet",
                     &self.r#character_set,
                 ),
                 to_pulumi_object_field(
-                    "compute_count",
+                    "computeCount",
                     &self.r#compute_count,
                 ),
                 to_pulumi_object_field(
-                    "connection_strings",
+                    "connectionStrings",
                     &self.r#connection_strings,
                 ),
                 to_pulumi_object_field(
-                    "connection_urls",
+                    "connectionUrls",
                     &self.r#connection_urls,
                 ),
                 to_pulumi_object_field(
-                    "customer_contacts",
+                    "customerContacts",
                     &self.r#customer_contacts,
                 ),
                 to_pulumi_object_field(
-                    "data_safe_state",
+                    "dataSafeState",
                     &self.r#data_safe_state,
                 ),
                 to_pulumi_object_field(
-                    "data_storage_size_gb",
+                    "dataStorageSizeGb",
                     &self.r#data_storage_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "data_storage_size_tb",
+                    "dataStorageSizeTb",
                     &self.r#data_storage_size_tb,
                 ),
                 to_pulumi_object_field(
-                    "database_management_state",
+                    "databaseManagementState",
                     &self.r#database_management_state,
                 ),
                 to_pulumi_object_field(
-                    "db_edition",
+                    "dbEdition",
                     &self.r#db_edition,
                 ),
                 to_pulumi_object_field(
-                    "db_version",
+                    "dbVersion",
                     &self.r#db_version,
                 ),
                 to_pulumi_object_field(
-                    "db_workload",
+                    "dbWorkload",
                     &self.r#db_workload,
                 ),
                 to_pulumi_object_field(
-                    "failed_data_recovery_duration",
+                    "failedDataRecoveryDuration",
                     &self.r#failed_data_recovery_duration,
                 ),
                 to_pulumi_object_field(
-                    "is_auto_scaling_enabled",
+                    "isAutoScalingEnabled",
                     &self.r#is_auto_scaling_enabled,
                 ),
                 to_pulumi_object_field(
-                    "is_local_data_guard_enabled",
+                    "isLocalDataGuardEnabled",
                     &self.r#is_local_data_guard_enabled,
                 ),
                 to_pulumi_object_field(
-                    "is_storage_auto_scaling_enabled",
+                    "isStorageAutoScalingEnabled",
                     &self.r#is_storage_auto_scaling_enabled,
                 ),
                 to_pulumi_object_field(
-                    "license_type",
+                    "licenseType",
                     &self.r#license_type,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_details",
+                    "lifecycleDetails",
                     &self.r#lifecycle_details,
                 ),
                 to_pulumi_object_field(
-                    "local_adg_auto_failover_max_data_loss_limit",
+                    "localAdgAutoFailoverMaxDataLossLimit",
                     &self.r#local_adg_auto_failover_max_data_loss_limit,
                 ),
                 to_pulumi_object_field(
-                    "local_disaster_recovery_type",
+                    "localDisasterRecoveryType",
                     &self.r#local_disaster_recovery_type,
                 ),
                 to_pulumi_object_field(
-                    "local_standby_dbs",
+                    "localStandbyDbs",
                     &self.r#local_standby_dbs,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_begin_time",
+                    "maintenanceBeginTime",
                     &self.r#maintenance_begin_time,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_end_time",
+                    "maintenanceEndTime",
                     &self.r#maintenance_end_time,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_schedule_type",
+                    "maintenanceScheduleType",
                     &self.r#maintenance_schedule_type,
                 ),
                 to_pulumi_object_field(
-                    "memory_per_oracle_compute_unit_gbs",
+                    "memoryPerOracleComputeUnitGbs",
                     &self.r#memory_per_oracle_compute_unit_gbs,
                 ),
                 to_pulumi_object_field(
-                    "memory_table_gbs",
+                    "memoryTableGbs",
                     &self.r#memory_table_gbs,
                 ),
                 to_pulumi_object_field(
-                    "mtls_connection_required",
+                    "mtlsConnectionRequired",
                     &self.r#mtls_connection_required,
                 ),
                 to_pulumi_object_field(
-                    "n_character_set",
+                    "nCharacterSet",
                     &self.r#n_character_set,
                 ),
                 to_pulumi_object_field(
-                    "next_long_term_backup_time",
+                    "nextLongTermBackupTime",
                     &self.r#next_long_term_backup_time,
                 ),
                 to_pulumi_object_field(
-                    "oci_url",
+                    "ociUrl",
                     &self.r#oci_url,
                 ),
                 to_pulumi_object_field(
@@ -547,39 +547,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#ocid,
                 ),
                 to_pulumi_object_field(
-                    "open_mode",
+                    "openMode",
                     &self.r#open_mode,
                 ),
                 to_pulumi_object_field(
-                    "operations_insights_state",
+                    "operationsInsightsState",
                     &self.r#operations_insights_state,
                 ),
                 to_pulumi_object_field(
-                    "peer_db_ids",
+                    "peerDbIds",
                     &self.r#peer_db_ids,
                 ),
                 to_pulumi_object_field(
-                    "permission_level",
+                    "permissionLevel",
                     &self.r#permission_level,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint",
+                    "privateEndpoint",
                     &self.r#private_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_ip",
+                    "privateEndpointIp",
                     &self.r#private_endpoint_ip,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_label",
+                    "privateEndpointLabel",
                     &self.r#private_endpoint_label,
                 ),
                 to_pulumi_object_field(
-                    "refreshable_mode",
+                    "refreshableMode",
                     &self.r#refreshable_mode,
                 ),
                 to_pulumi_object_field(
-                    "refreshable_state",
+                    "refreshableState",
                     &self.r#refreshable_state,
                 ),
                 to_pulumi_object_field(
@@ -587,11 +587,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#role,
                 ),
                 to_pulumi_object_field(
-                    "scheduled_operation_details",
+                    "scheduledOperationDetails",
                     &self.r#scheduled_operation_details,
                 ),
                 to_pulumi_object_field(
-                    "sql_web_developer_url",
+                    "sqlWebDeveloperUrl",
                     &self.r#sql_web_developer_url,
                 ),
                 to_pulumi_object_field(
@@ -599,15 +599,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "supported_clone_regions",
+                    "supportedCloneRegions",
                     &self.r#supported_clone_regions,
                 ),
                 to_pulumi_object_field(
-                    "total_auto_backup_storage_size_gbs",
+                    "totalAutoBackupStorageSizeGbs",
                     &self.r#total_auto_backup_storage_size_gbs,
                 ),
                 to_pulumi_object_field(
-                    "used_data_storage_size_tbs",
+                    "usedDataStorageSizeTbs",
                     &self.r#used_data_storage_size_tbs,
                 ),
             ];
@@ -634,261 +634,261 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#actual_used_data_storage_size_tb: {
-                        let field_value = match fields_map.get("actual_used_data_storage_size_tb") {
+                        let field_value = match fields_map.get("actualUsedDataStorageSizeTb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'actual_used_data_storage_size_tb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actualUsedDataStorageSizeTb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allocated_storage_size_tb: {
-                        let field_value = match fields_map.get("allocated_storage_size_tb") {
+                        let field_value = match fields_map.get("allocatedStorageSizeTb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allocated_storage_size_tb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allocatedStorageSizeTb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#apex_details: {
-                        let field_value = match fields_map.get("apex_details") {
+                        let field_value = match fields_map.get("apexDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apex_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apexDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#are_primary_allowlisted_ips_used: {
-                        let field_value = match fields_map.get("are_primary_allowlisted_ips_used") {
+                        let field_value = match fields_map.get("arePrimaryAllowlistedIpsUsed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'are_primary_allowlisted_ips_used' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'arePrimaryAllowlistedIpsUsed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#autonomous_container_database_id: {
-                        let field_value = match fields_map.get("autonomous_container_database_id") {
+                        let field_value = match fields_map.get("autonomousContainerDatabaseId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autonomous_container_database_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autonomousContainerDatabaseId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_upgrade_versions: {
-                        let field_value = match fields_map.get("available_upgrade_versions") {
+                        let field_value = match fields_map.get("availableUpgradeVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_upgrade_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableUpgradeVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backup_retention_period_days: {
-                        let field_value = match fields_map.get("backup_retention_period_days") {
+                        let field_value = match fields_map.get("backupRetentionPeriodDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_retention_period_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupRetentionPeriodDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#character_set: {
-                        let field_value = match fields_map.get("character_set") {
+                        let field_value = match fields_map.get("characterSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'character_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'characterSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compute_count: {
-                        let field_value = match fields_map.get("compute_count") {
+                        let field_value = match fields_map.get("computeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compute_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_strings: {
-                        let field_value = match fields_map.get("connection_strings") {
+                        let field_value = match fields_map.get("connectionStrings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_strings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionStrings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_urls: {
-                        let field_value = match fields_map.get("connection_urls") {
+                        let field_value = match fields_map.get("connectionUrls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionUrls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#customer_contacts: {
-                        let field_value = match fields_map.get("customer_contacts") {
+                        let field_value = match fields_map.get("customerContacts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customer_contacts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customerContacts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_safe_state: {
-                        let field_value = match fields_map.get("data_safe_state") {
+                        let field_value = match fields_map.get("dataSafeState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_safe_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataSafeState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_storage_size_gb: {
-                        let field_value = match fields_map.get("data_storage_size_gb") {
+                        let field_value = match fields_map.get("dataStorageSizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_storage_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataStorageSizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_storage_size_tb: {
-                        let field_value = match fields_map.get("data_storage_size_tb") {
+                        let field_value = match fields_map.get("dataStorageSizeTb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_storage_size_tb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataStorageSizeTb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_management_state: {
-                        let field_value = match fields_map.get("database_management_state") {
+                        let field_value = match fields_map.get("databaseManagementState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_management_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseManagementState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#db_edition: {
-                        let field_value = match fields_map.get("db_edition") {
+                        let field_value = match fields_map.get("dbEdition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_edition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbEdition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#db_version: {
-                        let field_value = match fields_map.get("db_version") {
+                        let field_value = match fields_map.get("dbVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#db_workload: {
-                        let field_value = match fields_map.get("db_workload") {
+                        let field_value = match fields_map.get("dbWorkload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_workload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbWorkload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failed_data_recovery_duration: {
-                        let field_value = match fields_map.get("failed_data_recovery_duration") {
+                        let field_value = match fields_map.get("failedDataRecoveryDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failed_data_recovery_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failedDataRecoveryDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_auto_scaling_enabled: {
-                        let field_value = match fields_map.get("is_auto_scaling_enabled") {
+                        let field_value = match fields_map.get("isAutoScalingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_auto_scaling_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isAutoScalingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_local_data_guard_enabled: {
-                        let field_value = match fields_map.get("is_local_data_guard_enabled") {
+                        let field_value = match fields_map.get("isLocalDataGuardEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_local_data_guard_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isLocalDataGuardEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_storage_auto_scaling_enabled: {
-                        let field_value = match fields_map.get("is_storage_auto_scaling_enabled") {
+                        let field_value = match fields_map.get("isStorageAutoScalingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_storage_auto_scaling_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isStorageAutoScalingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#license_type: {
-                        let field_value = match fields_map.get("license_type") {
+                        let field_value = match fields_map.get("licenseType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'license_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'licenseType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_details: {
-                        let field_value = match fields_map.get("lifecycle_details") {
+                        let field_value = match fields_map.get("lifecycleDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lifecycle_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifecycleDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_adg_auto_failover_max_data_loss_limit: {
-                        let field_value = match fields_map.get("local_adg_auto_failover_max_data_loss_limit") {
+                        let field_value = match fields_map.get("localAdgAutoFailoverMaxDataLossLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_adg_auto_failover_max_data_loss_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localAdgAutoFailoverMaxDataLossLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_disaster_recovery_type: {
-                        let field_value = match fields_map.get("local_disaster_recovery_type") {
+                        let field_value = match fields_map.get("localDisasterRecoveryType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_disaster_recovery_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localDisasterRecoveryType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_standby_dbs: {
-                        let field_value = match fields_map.get("local_standby_dbs") {
+                        let field_value = match fields_map.get("localStandbyDbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_standby_dbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localStandbyDbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_begin_time: {
-                        let field_value = match fields_map.get("maintenance_begin_time") {
+                        let field_value = match fields_map.get("maintenanceBeginTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_begin_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceBeginTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_end_time: {
-                        let field_value = match fields_map.get("maintenance_end_time") {
+                        let field_value = match fields_map.get("maintenanceEndTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_end_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceEndTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_schedule_type: {
-                        let field_value = match fields_map.get("maintenance_schedule_type") {
+                        let field_value = match fields_map.get("maintenanceScheduleType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_schedule_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceScheduleType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_per_oracle_compute_unit_gbs: {
-                        let field_value = match fields_map.get("memory_per_oracle_compute_unit_gbs") {
+                        let field_value = match fields_map.get("memoryPerOracleComputeUnitGbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_per_oracle_compute_unit_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryPerOracleComputeUnitGbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_table_gbs: {
-                        let field_value = match fields_map.get("memory_table_gbs") {
+                        let field_value = match fields_map.get("memoryTableGbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_table_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryTableGbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mtls_connection_required: {
-                        let field_value = match fields_map.get("mtls_connection_required") {
+                        let field_value = match fields_map.get("mtlsConnectionRequired") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mtls_connection_required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mtlsConnectionRequired' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#n_character_set: {
-                        let field_value = match fields_map.get("n_character_set") {
+                        let field_value = match fields_map.get("nCharacterSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'n_character_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nCharacterSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_long_term_backup_time: {
-                        let field_value = match fields_map.get("next_long_term_backup_time") {
+                        let field_value = match fields_map.get("nextLongTermBackupTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_long_term_backup_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextLongTermBackupTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oci_url: {
-                        let field_value = match fields_map.get("oci_url") {
+                        let field_value = match fields_map.get("ociUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oci_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ociUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -900,65 +900,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#open_mode: {
-                        let field_value = match fields_map.get("open_mode") {
+                        let field_value = match fields_map.get("openMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'open_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'openMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operations_insights_state: {
-                        let field_value = match fields_map.get("operations_insights_state") {
+                        let field_value = match fields_map.get("operationsInsightsState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operations_insights_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operationsInsightsState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peer_db_ids: {
-                        let field_value = match fields_map.get("peer_db_ids") {
+                        let field_value = match fields_map.get("peerDbIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peer_db_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peerDbIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permission_level: {
-                        let field_value = match fields_map.get("permission_level") {
+                        let field_value = match fields_map.get("permissionLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permission_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permissionLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoint: {
-                        let field_value = match fields_map.get("private_endpoint") {
+                        let field_value = match fields_map.get("privateEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoint_ip: {
-                        let field_value = match fields_map.get("private_endpoint_ip") {
+                        let field_value = match fields_map.get("privateEndpointIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoint_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpointIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoint_label: {
-                        let field_value = match fields_map.get("private_endpoint_label") {
+                        let field_value = match fields_map.get("privateEndpointLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoint_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpointLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refreshable_mode: {
-                        let field_value = match fields_map.get("refreshable_mode") {
+                        let field_value = match fields_map.get("refreshableMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'refreshable_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'refreshableMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refreshable_state: {
-                        let field_value = match fields_map.get("refreshable_state") {
+                        let field_value = match fields_map.get("refreshableState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'refreshable_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'refreshableState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -970,16 +970,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scheduled_operation_details: {
-                        let field_value = match fields_map.get("scheduled_operation_details") {
+                        let field_value = match fields_map.get("scheduledOperationDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scheduled_operation_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduledOperationDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_web_developer_url: {
-                        let field_value = match fields_map.get("sql_web_developer_url") {
+                        let field_value = match fields_map.get("sqlWebDeveloperUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_web_developer_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlWebDeveloperUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -991,23 +991,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#supported_clone_regions: {
-                        let field_value = match fields_map.get("supported_clone_regions") {
+                        let field_value = match fields_map.get("supportedCloneRegions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'supported_clone_regions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'supportedCloneRegions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total_auto_backup_storage_size_gbs: {
-                        let field_value = match fields_map.get("total_auto_backup_storage_size_gbs") {
+                        let field_value = match fields_map.get("totalAutoBackupStorageSizeGbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_auto_backup_storage_size_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalAutoBackupStorageSizeGbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#used_data_storage_size_tbs: {
-                        let field_value = match fields_map.get("used_data_storage_size_tbs") {
+                        let field_value = match fields_map.get("usedDataStorageSizeTbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'used_data_storage_size_tbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'usedDataStorageSizeTbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

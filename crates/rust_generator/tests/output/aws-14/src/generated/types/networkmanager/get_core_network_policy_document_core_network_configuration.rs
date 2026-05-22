@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "asn_ranges",
+                    "asnRanges",
                     &self.r#asn_ranges,
                 ),
                 to_pulumi_object_field(
-                    "edge_locations",
+                    "edgeLocations",
                     &self.r#edge_locations,
                 ),
                 to_pulumi_object_field(
-                    "inside_cidr_blocks",
+                    "insideCidrBlocks",
                     &self.r#inside_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "vpn_ecmp_support",
+                    "vpnEcmpSupport",
                     &self.r#vpn_ecmp_support,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#asn_ranges: {
-                        let field_value = match fields_map.get("asn_ranges") {
+                        let field_value = match fields_map.get("asnRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'asn_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'asnRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#edge_locations: {
-                        let field_value = match fields_map.get("edge_locations") {
+                        let field_value = match fields_map.get("edgeLocations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'edge_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'edgeLocations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inside_cidr_blocks: {
-                        let field_value = match fields_map.get("inside_cidr_blocks") {
+                        let field_value = match fields_map.get("insideCidrBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inside_cidr_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insideCidrBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpn_ecmp_support: {
-                        let field_value = match fields_map.get("vpn_ecmp_support") {
+                        let field_value = match fields_map.get("vpnEcmpSupport") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpn_ecmp_support' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpnEcmpSupport' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

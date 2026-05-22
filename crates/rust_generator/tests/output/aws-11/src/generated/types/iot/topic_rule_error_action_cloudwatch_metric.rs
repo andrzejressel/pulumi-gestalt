@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_name",
+                    "metricName",
                     &self.r#metric_name,
                 ),
                 to_pulumi_object_field(
-                    "metric_namespace",
+                    "metricNamespace",
                     &self.r#metric_namespace,
                 ),
                 to_pulumi_object_field(
-                    "metric_timestamp",
+                    "metricTimestamp",
                     &self.r#metric_timestamp,
                 ),
                 to_pulumi_object_field(
-                    "metric_unit",
+                    "metricUnit",
                     &self.r#metric_unit,
                 ),
                 to_pulumi_object_field(
-                    "metric_value",
+                    "metricValue",
                     &self.r#metric_value,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#metric_name: {
-                        let field_value = match fields_map.get("metric_name") {
+                        let field_value = match fields_map.get("metricName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_namespace: {
-                        let field_value = match fields_map.get("metric_namespace") {
+                        let field_value = match fields_map.get("metricNamespace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricNamespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_timestamp: {
-                        let field_value = match fields_map.get("metric_timestamp") {
+                        let field_value = match fields_map.get("metricTimestamp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_timestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricTimestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_unit: {
-                        let field_value = match fields_map.get("metric_unit") {
+                        let field_value = match fields_map.get("metricUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_value: {
-                        let field_value = match fields_map.get("metric_value") {
+                        let field_value = match fields_map.get("metricValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

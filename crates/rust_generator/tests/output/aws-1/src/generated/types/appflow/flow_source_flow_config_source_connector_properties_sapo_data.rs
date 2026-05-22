@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "object_path",
+                    "objectPath",
                     &self.r#object_path,
                 ),
                 to_pulumi_object_field(
-                    "pagination_config",
+                    "paginationConfig",
                     &self.r#pagination_config,
                 ),
                 to_pulumi_object_field(
-                    "parallelism_config",
+                    "parallelismConfig",
                     &self.r#parallelism_config,
                 ),
             ];
@@ -65,23 +65,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#object_path: {
-                        let field_value = match fields_map.get("object_path") {
+                        let field_value = match fields_map.get("objectPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'object_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'objectPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pagination_config: {
-                        let field_value = match fields_map.get("pagination_config") {
+                        let field_value = match fields_map.get("paginationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pagination_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'paginationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parallelism_config: {
-                        let field_value = match fields_map.get("parallelism_config") {
+                        let field_value = match fields_map.get("parallelismConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parallelism_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parallelismConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

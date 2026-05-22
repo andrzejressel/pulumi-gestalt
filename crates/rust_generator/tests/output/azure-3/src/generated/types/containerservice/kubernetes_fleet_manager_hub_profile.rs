@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_prefix",
+                    "dnsPrefix",
                     &self.r#dns_prefix,
                 ),
                 to_pulumi_object_field(
@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
                     &self.r#fqdn,
                 ),
                 to_pulumi_object_field(
-                    "kubernetes_version",
+                    "kubernetesVersion",
                     &self.r#kubernetes_version,
                 ),
             ];
@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#dns_prefix: {
-                        let field_value = match fields_map.get("dns_prefix") {
+                        let field_value = match fields_map.get("dnsPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kubernetes_version: {
-                        let field_value = match fields_map.get("kubernetes_version") {
+                        let field_value = match fields_map.get("kubernetesVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kubernetes_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kubernetesVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

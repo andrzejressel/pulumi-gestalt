@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "selection_criteria",
+                    "selectionCriteria",
                     &self.r#selection_criteria,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selection_criteria: {
-                        let field_value = match fields_map.get("selection_criteria") {
+                        let field_value = match fields_map.get("selectionCriteria") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selection_criteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectionCriteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

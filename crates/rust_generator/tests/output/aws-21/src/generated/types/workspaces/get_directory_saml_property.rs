@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "relay_state_parameter_name",
+                    "relayStateParameterName",
                     &self.r#relay_state_parameter_name,
                 ),
                 to_pulumi_object_field(
@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "user_access_url",
+                    "userAccessUrl",
                     &self.r#user_access_url,
                 ),
             ];
@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#relay_state_parameter_name: {
-                        let field_value = match fields_map.get("relay_state_parameter_name") {
+                        let field_value = match fields_map.get("relayStateParameterName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'relay_state_parameter_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'relayStateParameterName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_access_url: {
-                        let field_value = match fields_map.get("user_access_url") {
+                        let field_value = match fields_map.get("userAccessUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_access_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userAccessUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

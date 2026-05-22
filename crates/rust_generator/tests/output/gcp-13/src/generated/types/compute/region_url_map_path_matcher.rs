@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_service",
+                    "defaultService",
                     &self.r#default_service,
                 ),
                 to_pulumi_object_field(
-                    "default_url_redirect",
+                    "defaultUrlRedirect",
                     &self.r#default_url_redirect,
                 ),
                 to_pulumi_object_field(
@@ -76,11 +76,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "path_rules",
+                    "pathRules",
                     &self.r#path_rules,
                 ),
                 to_pulumi_object_field(
-                    "route_rules",
+                    "routeRules",
                     &self.r#route_rules,
                 ),
             ];
@@ -107,16 +107,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#default_service: {
-                        let field_value = match fields_map.get("default_service") {
+                        let field_value = match fields_map.get("defaultService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_url_redirect: {
-                        let field_value = match fields_map.get("default_url_redirect") {
+                        let field_value = match fields_map.get("defaultUrlRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_url_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultUrlRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -135,16 +135,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_rules: {
-                        let field_value = match fields_map.get("path_rules") {
+                        let field_value = match fields_map.get("pathRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_rules: {
-                        let field_value = match fields_map.get("route_rules") {
+                        let field_value = match fields_map.get("routeRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

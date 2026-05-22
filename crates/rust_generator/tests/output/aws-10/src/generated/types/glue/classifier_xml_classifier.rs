@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
                     &self.r#classification,
                 ),
                 to_pulumi_object_field(
-                    "row_tag",
+                    "rowTag",
                     &self.r#row_tag,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#row_tag: {
-                        let field_value = match fields_map.get("row_tag") {
+                        let field_value = match fields_map.get("rowTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'row_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rowTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

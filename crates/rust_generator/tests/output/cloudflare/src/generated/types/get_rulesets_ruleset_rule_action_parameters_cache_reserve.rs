@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#eligible,
                 ),
                 to_pulumi_object_field(
-                    "minimum_file_size",
+                    "minimumFileSize",
                     &self.r#minimum_file_size,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_file_size: {
-                        let field_value = match fields_map.get("minimum_file_size") {
+                        let field_value = match fields_map.get("minimumFileSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_file_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumFileSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

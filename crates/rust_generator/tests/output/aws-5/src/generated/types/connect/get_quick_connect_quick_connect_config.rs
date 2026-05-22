@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "phone_configs",
+                    "phoneConfigs",
                     &self.r#phone_configs,
                 ),
                 to_pulumi_object_field(
-                    "queue_configs",
+                    "queueConfigs",
                     &self.r#queue_configs,
                 ),
                 to_pulumi_object_field(
-                    "quick_connect_type",
+                    "quickConnectType",
                     &self.r#quick_connect_type,
                 ),
                 to_pulumi_object_field(
-                    "user_configs",
+                    "userConfigs",
                     &self.r#user_configs,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#phone_configs: {
-                        let field_value = match fields_map.get("phone_configs") {
+                        let field_value = match fields_map.get("phoneConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'phone_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'phoneConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#queue_configs: {
-                        let field_value = match fields_map.get("queue_configs") {
+                        let field_value = match fields_map.get("queueConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'queue_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queueConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#quick_connect_type: {
-                        let field_value = match fields_map.get("quick_connect_type") {
+                        let field_value = match fields_map.get("quickConnectType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'quick_connect_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'quickConnectType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_configs: {
-                        let field_value = match fields_map.get("user_configs") {
+                        let field_value = match fields_map.get("userConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

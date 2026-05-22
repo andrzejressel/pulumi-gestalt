@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
@@ -75,19 +75,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "is_active",
+                    "isActive",
                     &self.r#is_active,
                 ),
                 to_pulumi_object_field(
-                    "key_length",
+                    "keyLength",
                     &self.r#key_length,
                 ),
                 to_pulumi_object_field(
-                    "key_tag",
+                    "keyTag",
                     &self.r#key_tag,
                 ),
                 to_pulumi_object_field(
-                    "public_key",
+                    "publicKey",
                     &self.r#public_key,
                 ),
             ];
@@ -121,9 +121,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#creation_time: {
-                        let field_value = match fields_map.get("creation_time") {
+                        let field_value = match fields_map.get("creationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'creation_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'creationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -149,30 +149,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_active: {
-                        let field_value = match fields_map.get("is_active") {
+                        let field_value = match fields_map.get("isActive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_active' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isActive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_length: {
-                        let field_value = match fields_map.get("key_length") {
+                        let field_value = match fields_map.get("keyLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_tag: {
-                        let field_value = match fields_map.get("key_tag") {
+                        let field_value = match fields_map.get("keyTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_key: {
-                        let field_value = match fields_map.get("public_key") {
+                        let field_value = match fields_map.get("publicKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

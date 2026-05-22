@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ipv_6_allowed_for_dual_stack",
+                    "ipv6AllowedForDualStack",
                     &self.r#ipv_6_allowed_for_dual_stack,
                 ),
                 to_pulumi_object_field(
-                    "security_group_ids",
+                    "securityGroupIds",
                     &self.r#security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "subnet_ids",
+                    "subnetIds",
                     &self.r#subnet_ids,
                 ),
                 to_pulumi_object_field(
-                    "vpc_id",
+                    "vpcId",
                     &self.r#vpc_id,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#ipv_6_allowed_for_dual_stack: {
-                        let field_value = match fields_map.get("ipv_6_allowed_for_dual_stack") {
+                        let field_value = match fields_map.get("ipv6AllowedForDualStack") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_6_allowed_for_dual_stack' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv6AllowedForDualStack' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_group_ids: {
-                        let field_value = match fields_map.get("security_group_ids") {
+                        let field_value = match fields_map.get("securityGroupIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityGroupIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_ids: {
-                        let field_value = match fields_map.get("subnet_ids") {
+                        let field_value = match fields_map.get("subnetIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subnet_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subnetIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_id: {
-                        let field_value = match fields_map.get("vpc_id") {
+                        let field_value = match fields_map.get("vpcId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

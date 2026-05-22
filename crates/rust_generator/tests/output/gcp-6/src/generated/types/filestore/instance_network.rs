@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connect_mode",
+                    "connectMode",
                     &self.r#connect_mode,
                 ),
                 to_pulumi_object_field(
-                    "ip_addresses",
+                    "ipAddresses",
                     &self.r#ip_addresses,
                 ),
                 to_pulumi_object_field(
@@ -66,7 +66,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "reserved_ip_range",
+                    "reservedIpRange",
                     &self.r#reserved_ip_range,
                 ),
             ];
@@ -93,16 +93,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#connect_mode: {
-                        let field_value = match fields_map.get("connect_mode") {
+                        let field_value = match fields_map.get("connectMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connect_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_addresses: {
-                        let field_value = match fields_map.get("ip_addresses") {
+                        let field_value = match fields_map.get("ipAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -121,9 +121,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reserved_ip_range: {
-                        let field_value = match fields_map.get("reserved_ip_range") {
+                        let field_value = match fields_map.get("reservedIpRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reserved_ip_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reservedIpRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

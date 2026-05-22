@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "prefer_https",
+                    "preferHttps",
                     &self.r#prefer_https,
                 ),
                 to_pulumi_object_field(
-                    "request_headers",
+                    "requestHeaders",
                     &self.r#request_headers,
                 ),
                 to_pulumi_object_field(
-                    "valid_status_code_ranges",
+                    "validStatusCodeRanges",
                     &self.r#valid_status_code_ranges,
                 ),
             ];
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefer_https: {
-                        let field_value = match fields_map.get("prefer_https") {
+                        let field_value = match fields_map.get("preferHttps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefer_https' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preferHttps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_headers: {
-                        let field_value = match fields_map.get("request_headers") {
+                        let field_value = match fields_map.get("requestHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#valid_status_code_ranges: {
-                        let field_value = match fields_map.get("valid_status_code_ranges") {
+                        let field_value = match fields_map.get("validStatusCodeRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'valid_status_code_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validStatusCodeRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

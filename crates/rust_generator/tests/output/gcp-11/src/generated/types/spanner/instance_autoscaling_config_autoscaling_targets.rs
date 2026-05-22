@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "high_priority_cpu_utilization_percent",
+                    "highPriorityCpuUtilizationPercent",
                     &self.r#high_priority_cpu_utilization_percent,
                 ),
                 to_pulumi_object_field(
-                    "storage_utilization_percent",
+                    "storageUtilizationPercent",
                     &self.r#storage_utilization_percent,
                 ),
             ];
@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#high_priority_cpu_utilization_percent: {
-                        let field_value = match fields_map.get("high_priority_cpu_utilization_percent") {
+                        let field_value = match fields_map.get("highPriorityCpuUtilizationPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'high_priority_cpu_utilization_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'highPriorityCpuUtilizationPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_utilization_percent: {
-                        let field_value = match fields_map.get("storage_utilization_percent") {
+                        let field_value = match fields_map.get("storageUtilizationPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_utilization_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageUtilizationPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

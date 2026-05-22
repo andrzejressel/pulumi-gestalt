@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Glo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "global_node_group_id",
+                    "globalNodeGroupId",
                     &self.r#global_node_group_id,
                 ),
                 to_pulumi_object_field(
@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#global_node_group_id: {
-                        let field_value = match fields_map.get("global_node_group_id") {
+                        let field_value = match fields_map.get("globalNodeGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'global_node_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'globalNodeGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

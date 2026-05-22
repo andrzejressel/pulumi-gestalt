@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "group_rate_limit_by",
+                    "groupRateLimitBy",
                     &self.r#group_rate_limit_by,
                 ),
                 to_pulumi_object_field(
-                    "match_conditions",
+                    "matchConditions",
                     &self.r#match_conditions,
                 ),
                 to_pulumi_object_field(
@@ -79,15 +79,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_duration",
+                    "rateLimitDuration",
                     &self.r#rate_limit_duration,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_threshold",
+                    "rateLimitThreshold",
                     &self.r#rate_limit_threshold,
                 ),
                 to_pulumi_object_field(
-                    "rule_type",
+                    "ruleType",
                     &self.r#rule_type,
                 ),
             ];
@@ -128,16 +128,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_rate_limit_by: {
-                        let field_value = match fields_map.get("group_rate_limit_by") {
+                        let field_value = match fields_map.get("groupRateLimitBy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_rate_limit_by' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupRateLimitBy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_conditions: {
-                        let field_value = match fields_map.get("match_conditions") {
+                        let field_value = match fields_map.get("matchConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -156,23 +156,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_limit_duration: {
-                        let field_value = match fields_map.get("rate_limit_duration") {
+                        let field_value = match fields_map.get("rateLimitDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_limit_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateLimitDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_limit_threshold: {
-                        let field_value = match fields_map.get("rate_limit_threshold") {
+                        let field_value = match fields_map.get("rateLimitThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_limit_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateLimitThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_type: {
-                        let field_value = match fields_map.get("rule_type") {
+                        let field_value = match fields_map.get("ruleType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

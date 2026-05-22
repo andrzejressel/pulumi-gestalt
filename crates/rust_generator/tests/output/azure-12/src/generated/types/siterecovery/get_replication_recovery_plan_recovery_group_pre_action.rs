@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fabric_location",
+                    "fabricLocation",
                     &self.r#fabric_location,
                 ),
                 to_pulumi_object_field(
-                    "fail_over_directions",
+                    "failOverDirections",
                     &self.r#fail_over_directions,
                 ),
                 to_pulumi_object_field(
-                    "fail_over_types",
+                    "failOverTypes",
                     &self.r#fail_over_types,
                 ),
                 to_pulumi_object_field(
-                    "manual_action_instruction",
+                    "manualActionInstruction",
                     &self.r#manual_action_instruction,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "runbook_id",
+                    "runbookId",
                     &self.r#runbook_id,
                 ),
                 to_pulumi_object_field(
-                    "script_path",
+                    "scriptPath",
                     &self.r#script_path,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -106,30 +106,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#fabric_location: {
-                        let field_value = match fields_map.get("fabric_location") {
+                        let field_value = match fields_map.get("fabricLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fabric_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fabricLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fail_over_directions: {
-                        let field_value = match fields_map.get("fail_over_directions") {
+                        let field_value = match fields_map.get("failOverDirections") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fail_over_directions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failOverDirections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fail_over_types: {
-                        let field_value = match fields_map.get("fail_over_types") {
+                        let field_value = match fields_map.get("failOverTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fail_over_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failOverTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#manual_action_instruction: {
-                        let field_value = match fields_map.get("manual_action_instruction") {
+                        let field_value = match fields_map.get("manualActionInstruction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'manual_action_instruction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'manualActionInstruction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -141,23 +141,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runbook_id: {
-                        let field_value = match fields_map.get("runbook_id") {
+                        let field_value = match fields_map.get("runbookId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runbook_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runbookId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#script_path: {
-                        let field_value = match fields_map.get("script_path") {
+                        let field_value = match fields_map.get("scriptPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'script_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scriptPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

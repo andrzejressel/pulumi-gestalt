@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "sha_256",
+                    "sha256",
                     &self.r#sha_256,
                 ),
                 to_pulumi_object_field(
-                    "tls_sockaddr",
+                    "tlsSockaddr",
                     &self.r#tls_sockaddr,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#sha_256: {
-                        let field_value = match fields_map.get("sha_256") {
+                        let field_value = match fields_map.get("sha256") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sha_256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sha256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_sockaddr: {
-                        let field_value = match fields_map.get("tls_sockaddr") {
+                        let field_value = match fields_map.get("tlsSockaddr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_sockaddr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsSockaddr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "failure_codes",
+                    "failureCodes",
                     &self.r#failure_codes,
                 ),
                 to_pulumi_object_field(
-                    "success_codes",
+                    "successCodes",
                     &self.r#success_codes,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#failure_codes: {
-                        let field_value = match fields_map.get("failure_codes") {
+                        let field_value = match fields_map.get("failureCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_codes: {
-                        let field_value = match fields_map.get("success_codes") {
+                        let field_value = match fields_map.get("successCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

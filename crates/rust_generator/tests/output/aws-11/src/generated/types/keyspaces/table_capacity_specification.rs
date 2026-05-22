@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "read_capacity_units",
+                    "readCapacityUnits",
                     &self.r#read_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "throughput_mode",
+                    "throughputMode",
                     &self.r#throughput_mode,
                 ),
                 to_pulumi_object_field(
-                    "write_capacity_units",
+                    "writeCapacityUnits",
                     &self.r#write_capacity_units,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#read_capacity_units: {
-                        let field_value = match fields_map.get("read_capacity_units") {
+                        let field_value = match fields_map.get("readCapacityUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readCapacityUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#throughput_mode: {
-                        let field_value = match fields_map.get("throughput_mode") {
+                        let field_value = match fields_map.get("throughputMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'throughput_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'throughputMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#write_capacity_units: {
-                        let field_value = match fields_map.get("write_capacity_units") {
+                        let field_value = match fields_map.get("writeCapacityUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'write_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'writeCapacityUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Iot
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_weight",
+                    "allocationWeight",
                     &self.r#allocation_weight,
                 ),
                 to_pulumi_object_field(
-                    "apply_allocation_policy",
+                    "applyAllocationPolicy",
                     &self.r#apply_allocation_policy,
                 ),
                 to_pulumi_object_field(
-                    "connection_string",
+                    "connectionString",
                     &self.r#connection_string,
                 ),
                 to_pulumi_object_field(
@@ -82,23 +82,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#allocation_weight: {
-                        let field_value = match fields_map.get("allocation_weight") {
+                        let field_value = match fields_map.get("allocationWeight") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allocation_weight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allocationWeight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#apply_allocation_policy: {
-                        let field_value = match fields_map.get("apply_allocation_policy") {
+                        let field_value = match fields_map.get("applyAllocationPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apply_allocation_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applyAllocationPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_string: {
-                        let field_value = match fields_map.get("connection_string") {
+                        let field_value = match fields_map.get("connectionString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

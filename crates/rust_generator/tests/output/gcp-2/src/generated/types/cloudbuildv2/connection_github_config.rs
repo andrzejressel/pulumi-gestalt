@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_installation_id",
+                    "appInstallationId",
                     &self.r#app_installation_id,
                 ),
                 to_pulumi_object_field(
-                    "authorizer_credential",
+                    "authorizerCredential",
                     &self.r#authorizer_credential,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#app_installation_id: {
-                        let field_value = match fields_map.get("app_installation_id") {
+                        let field_value = match fields_map.get("appInstallationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_installation_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appInstallationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authorizer_credential: {
-                        let field_value = match fields_map.get("authorizer_credential") {
+                        let field_value = match fields_map.get("authorizerCredential") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorizer_credential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizerCredential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

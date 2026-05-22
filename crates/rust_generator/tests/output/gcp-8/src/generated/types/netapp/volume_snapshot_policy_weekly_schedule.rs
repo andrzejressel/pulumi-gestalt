@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
                     &self.r#minute,
                 ),
                 to_pulumi_object_field(
-                    "snapshots_to_keep",
+                    "snapshotsToKeep",
                     &self.r#snapshots_to_keep,
                 ),
             ];
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshots_to_keep: {
-                        let field_value = match fields_map.get("snapshots_to_keep") {
+                        let field_value = match fields_map.get("snapshotsToKeep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshots_to_keep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotsToKeep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

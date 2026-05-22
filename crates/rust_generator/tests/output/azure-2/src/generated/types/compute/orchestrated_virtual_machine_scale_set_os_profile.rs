@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_data",
+                    "customData",
                     &self.r#custom_data,
                 ),
                 to_pulumi_object_field(
-                    "linux_configuration",
+                    "linuxConfiguration",
                     &self.r#linux_configuration,
                 ),
                 to_pulumi_object_field(
-                    "windows_configuration",
+                    "windowsConfiguration",
                     &self.r#windows_configuration,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#custom_data: {
-                        let field_value = match fields_map.get("custom_data") {
+                        let field_value = match fields_map.get("customData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#linux_configuration: {
-                        let field_value = match fields_map.get("linux_configuration") {
+                        let field_value = match fields_map.get("linuxConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linux_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linuxConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#windows_configuration: {
-                        let field_value = match fields_map.get("windows_configuration") {
+                        let field_value = match fields_map.get("windowsConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'windows_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowsConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_recognition_settings",
+                    "advancedRecognitionSettings",
                     &self.r#advanced_recognition_settings,
                 ),
                 to_pulumi_object_field(
-                    "regex_filters",
+                    "regexFilters",
                     &self.r#regex_filters,
                 ),
                 to_pulumi_object_field(
-                    "resolution_strategy",
+                    "resolutionStrategy",
                     &self.r#resolution_strategy,
                 ),
             ];
@@ -70,23 +70,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#advanced_recognition_settings: {
-                        let field_value = match fields_map.get("advanced_recognition_settings") {
+                        let field_value = match fields_map.get("advancedRecognitionSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_recognition_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedRecognitionSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regex_filters: {
-                        let field_value = match fields_map.get("regex_filters") {
+                        let field_value = match fields_map.get("regexFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regex_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regexFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resolution_strategy: {
-                        let field_value = match fields_map.get("resolution_strategy") {
+                        let field_value = match fields_map.get("resolutionStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resolution_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resolutionStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

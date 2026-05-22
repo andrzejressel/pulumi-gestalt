@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ekm
                     &self.r#issuer,
                 ),
                 to_pulumi_object_field(
-                    "not_after_time",
+                    "notAfterTime",
                     &self.r#not_after_time,
                 ),
                 to_pulumi_object_field(
-                    "not_before_time",
+                    "notBeforeTime",
                     &self.r#not_before_time,
                 ),
                 to_pulumi_object_field(
@@ -83,15 +83,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ekm
                     &self.r#parsed,
                 ),
                 to_pulumi_object_field(
-                    "raw_der",
+                    "rawDer",
                     &self.r#raw_der,
                 ),
                 to_pulumi_object_field(
-                    "serial_number",
+                    "serialNumber",
                     &self.r#serial_number,
                 ),
                 to_pulumi_object_field(
-                    "sha_256_fingerprint",
+                    "sha256Fingerprint",
                     &self.r#sha_256_fingerprint,
                 ),
                 to_pulumi_object_field(
@@ -99,7 +99,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ekm
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "subject_alternative_dns_names",
+                    "subjectAlternativeDnsNames",
                     &self.r#subject_alternative_dns_names,
                 ),
             ];
@@ -133,16 +133,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_after_time: {
-                        let field_value = match fields_map.get("not_after_time") {
+                        let field_value = match fields_map.get("notAfterTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_after_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notAfterTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_before_time: {
-                        let field_value = match fields_map.get("not_before_time") {
+                        let field_value = match fields_map.get("notBeforeTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_before_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notBeforeTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -154,23 +154,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#raw_der: {
-                        let field_value = match fields_map.get("raw_der") {
+                        let field_value = match fields_map.get("rawDer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'raw_der' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rawDer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#serial_number: {
-                        let field_value = match fields_map.get("serial_number") {
+                        let field_value = match fields_map.get("serialNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'serial_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serialNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sha_256_fingerprint: {
-                        let field_value = match fields_map.get("sha_256_fingerprint") {
+                        let field_value = match fields_map.get("sha256Fingerprint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sha_256_fingerprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sha256Fingerprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -182,9 +182,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject_alternative_dns_names: {
-                        let field_value = match fields_map.get("subject_alternative_dns_names") {
+                        let field_value = match fields_map.get("subjectAlternativeDnsNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subject_alternative_dns_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subjectAlternativeDnsNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

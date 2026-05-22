@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_for_time",
+                    "disableForTime",
                     &self.r#disable_for_time,
                 ),
                 to_pulumi_object_field(
-                    "root_ca",
+                    "rootCa",
                     &self.r#root_ca,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tea
                     &self.r#udp,
                 ),
                 to_pulumi_object_field(
-                    "virtual_ip",
+                    "virtualIp",
                     &self.r#virtual_ip,
                 ),
             ];
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#disable_for_time: {
-                        let field_value = match fields_map.get("disable_for_time") {
+                        let field_value = match fields_map.get("disableForTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_for_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableForTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_ca: {
-                        let field_value = match fields_map.get("root_ca") {
+                        let field_value = match fields_map.get("rootCa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_ca' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootCa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_ip: {
-                        let field_value = match fields_map.get("virtual_ip") {
+                        let field_value = match fields_map.get("virtualIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acr_authentication",
+                    "acrAuthentication",
                     &self.r#acr_authentication,
                 ),
                 to_pulumi_object_field(
-                    "agent_send_unutilized_msg",
+                    "agentSendUnutilizedMsg",
                     &self.r#agent_send_unutilized_msg,
                 ),
                 to_pulumi_object_field(
@@ -95,55 +95,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
                     &self.r#baseline,
                 ),
                 to_pulumi_object_field(
-                    "edge_hub_mem_optimize",
+                    "edgeHubMemOptimize",
                     &self.r#edge_hub_mem_optimize,
                 ),
                 to_pulumi_object_field(
-                    "edge_logging_option",
+                    "edgeLoggingOption",
                     &self.r#edge_logging_option,
                 ),
                 to_pulumi_object_field(
-                    "inconsistent_module_settings",
+                    "inconsistentModuleSettings",
                     &self.r#inconsistent_module_settings,
                 ),
                 to_pulumi_object_field(
-                    "install_agent",
+                    "installAgent",
                     &self.r#install_agent,
                 ),
                 to_pulumi_object_field(
-                    "ip_filter_deny_all",
+                    "ipFilterDenyAll",
                     &self.r#ip_filter_deny_all,
                 ),
                 to_pulumi_object_field(
-                    "ip_filter_permissive_rule",
+                    "ipFilterPermissiveRule",
                     &self.r#ip_filter_permissive_rule,
                 ),
                 to_pulumi_object_field(
-                    "open_ports",
+                    "openPorts",
                     &self.r#open_ports,
                 ),
                 to_pulumi_object_field(
-                    "permissive_firewall_policy",
+                    "permissiveFirewallPolicy",
                     &self.r#permissive_firewall_policy,
                 ),
                 to_pulumi_object_field(
-                    "permissive_input_firewall_rules",
+                    "permissiveInputFirewallRules",
                     &self.r#permissive_input_firewall_rules,
                 ),
                 to_pulumi_object_field(
-                    "permissive_output_firewall_rules",
+                    "permissiveOutputFirewallRules",
                     &self.r#permissive_output_firewall_rules,
                 ),
                 to_pulumi_object_field(
-                    "privileged_docker_options",
+                    "privilegedDockerOptions",
                     &self.r#privileged_docker_options,
                 ),
                 to_pulumi_object_field(
-                    "shared_credentials",
+                    "sharedCredentials",
                     &self.r#shared_credentials,
                 ),
                 to_pulumi_object_field(
-                    "vulnerable_tls_cipher_suite",
+                    "vulnerableTlsCipherSuite",
                     &self.r#vulnerable_tls_cipher_suite,
                 ),
             ];
@@ -170,16 +170,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#acr_authentication: {
-                        let field_value = match fields_map.get("acr_authentication") {
+                        let field_value = match fields_map.get("acrAuthentication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'acr_authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acrAuthentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#agent_send_unutilized_msg: {
-                        let field_value = match fields_map.get("agent_send_unutilized_msg") {
+                        let field_value = match fields_map.get("agentSendUnutilizedMsg") {
                             Some(value) => value,
-                            None => bail!("Missing field 'agent_send_unutilized_msg' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'agentSendUnutilizedMsg' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -191,93 +191,93 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#edge_hub_mem_optimize: {
-                        let field_value = match fields_map.get("edge_hub_mem_optimize") {
+                        let field_value = match fields_map.get("edgeHubMemOptimize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'edge_hub_mem_optimize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'edgeHubMemOptimize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#edge_logging_option: {
-                        let field_value = match fields_map.get("edge_logging_option") {
+                        let field_value = match fields_map.get("edgeLoggingOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'edge_logging_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'edgeLoggingOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inconsistent_module_settings: {
-                        let field_value = match fields_map.get("inconsistent_module_settings") {
+                        let field_value = match fields_map.get("inconsistentModuleSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inconsistent_module_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inconsistentModuleSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#install_agent: {
-                        let field_value = match fields_map.get("install_agent") {
+                        let field_value = match fields_map.get("installAgent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'install_agent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'installAgent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_filter_deny_all: {
-                        let field_value = match fields_map.get("ip_filter_deny_all") {
+                        let field_value = match fields_map.get("ipFilterDenyAll") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_filter_deny_all' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipFilterDenyAll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_filter_permissive_rule: {
-                        let field_value = match fields_map.get("ip_filter_permissive_rule") {
+                        let field_value = match fields_map.get("ipFilterPermissiveRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_filter_permissive_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipFilterPermissiveRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#open_ports: {
-                        let field_value = match fields_map.get("open_ports") {
+                        let field_value = match fields_map.get("openPorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'open_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'openPorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permissive_firewall_policy: {
-                        let field_value = match fields_map.get("permissive_firewall_policy") {
+                        let field_value = match fields_map.get("permissiveFirewallPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permissive_firewall_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permissiveFirewallPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permissive_input_firewall_rules: {
-                        let field_value = match fields_map.get("permissive_input_firewall_rules") {
+                        let field_value = match fields_map.get("permissiveInputFirewallRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permissive_input_firewall_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permissiveInputFirewallRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permissive_output_firewall_rules: {
-                        let field_value = match fields_map.get("permissive_output_firewall_rules") {
+                        let field_value = match fields_map.get("permissiveOutputFirewallRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permissive_output_firewall_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permissiveOutputFirewallRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#privileged_docker_options: {
-                        let field_value = match fields_map.get("privileged_docker_options") {
+                        let field_value = match fields_map.get("privilegedDockerOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'privileged_docker_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privilegedDockerOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_credentials: {
-                        let field_value = match fields_map.get("shared_credentials") {
+                        let field_value = match fields_map.get("sharedCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vulnerable_tls_cipher_suite: {
-                        let field_value = match fields_map.get("vulnerable_tls_cipher_suite") {
+                        let field_value = match fields_map.get("vulnerableTlsCipherSuite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vulnerable_tls_cipher_suite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vulnerableTlsCipherSuite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

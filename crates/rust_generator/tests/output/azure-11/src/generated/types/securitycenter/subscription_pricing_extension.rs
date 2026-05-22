@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_extension_properties",
+                    "additionalExtensionProperties",
                     &self.r#additional_extension_properties,
                 ),
                 to_pulumi_object_field(
@@ -62,9 +62,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#additional_extension_properties: {
-                        let field_value = match fields_map.get("additional_extension_properties") {
+                        let field_value = match fields_map.get("additionalExtensionProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_extension_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalExtensionProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

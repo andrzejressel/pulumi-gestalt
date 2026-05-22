@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_uri",
+                    "endpointUri",
                     &self.r#endpoint_uri,
                 ),
                 to_pulumi_object_field(
-                    "error_retry_duration",
+                    "errorRetryDuration",
                     &self.r#error_retry_duration,
                 ),
                 to_pulumi_object_field(
-                    "full_load_error_percentage",
+                    "fullLoadErrorPercentage",
                     &self.r#full_load_error_percentage,
                 ),
                 to_pulumi_object_field(
-                    "service_access_role_arn",
+                    "serviceAccessRoleArn",
                     &self.r#service_access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "use_new_mapping_type",
+                    "useNewMappingType",
                     &self.r#use_new_mapping_type,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#endpoint_uri: {
-                        let field_value = match fields_map.get("endpoint_uri") {
+                        let field_value = match fields_map.get("endpointUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#error_retry_duration: {
-                        let field_value = match fields_map.get("error_retry_duration") {
+                        let field_value = match fields_map.get("errorRetryDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_retry_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorRetryDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#full_load_error_percentage: {
-                        let field_value = match fields_map.get("full_load_error_percentage") {
+                        let field_value = match fields_map.get("fullLoadErrorPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'full_load_error_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fullLoadErrorPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_access_role_arn: {
-                        let field_value = match fields_map.get("service_access_role_arn") {
+                        let field_value = match fields_map.get("serviceAccessRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_access_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccessRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_new_mapping_type: {
-                        let field_value = match fields_map.get("use_new_mapping_type") {
+                        let field_value = match fields_map.get("useNewMappingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_new_mapping_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useNewMappingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

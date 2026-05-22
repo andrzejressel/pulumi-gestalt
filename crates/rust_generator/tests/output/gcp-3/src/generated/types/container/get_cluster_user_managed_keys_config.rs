@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aggregation_ca",
+                    "aggregationCa",
                     &self.r#aggregation_ca,
                 ),
                 to_pulumi_object_field(
-                    "cluster_ca",
+                    "clusterCa",
                     &self.r#cluster_ca,
                 ),
                 to_pulumi_object_field(
-                    "control_plane_disk_encryption_key",
+                    "controlPlaneDiskEncryptionKey",
                     &self.r#control_plane_disk_encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "etcd_api_ca",
+                    "etcdApiCa",
                     &self.r#etcd_api_ca,
                 ),
                 to_pulumi_object_field(
-                    "etcd_peer_ca",
+                    "etcdPeerCa",
                     &self.r#etcd_peer_ca,
                 ),
                 to_pulumi_object_field(
-                    "gkeops_etcd_backup_encryption_key",
+                    "gkeopsEtcdBackupEncryptionKey",
                     &self.r#gkeops_etcd_backup_encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "service_account_signing_keys",
+                    "serviceAccountSigningKeys",
                     &self.r#service_account_signing_keys,
                 ),
                 to_pulumi_object_field(
-                    "service_account_verification_keys",
+                    "serviceAccountVerificationKeys",
                     &self.r#service_account_verification_keys,
                 ),
             ];
@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#aggregation_ca: {
-                        let field_value = match fields_map.get("aggregation_ca") {
+                        let field_value = match fields_map.get("aggregationCa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aggregation_ca' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aggregationCa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_ca: {
-                        let field_value = match fields_map.get("cluster_ca") {
+                        let field_value = match fields_map.get("clusterCa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_ca' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterCa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#control_plane_disk_encryption_key: {
-                        let field_value = match fields_map.get("control_plane_disk_encryption_key") {
+                        let field_value = match fields_map.get("controlPlaneDiskEncryptionKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'control_plane_disk_encryption_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'controlPlaneDiskEncryptionKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#etcd_api_ca: {
-                        let field_value = match fields_map.get("etcd_api_ca") {
+                        let field_value = match fields_map.get("etcdApiCa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'etcd_api_ca' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'etcdApiCa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#etcd_peer_ca: {
-                        let field_value = match fields_map.get("etcd_peer_ca") {
+                        let field_value = match fields_map.get("etcdPeerCa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'etcd_peer_ca' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'etcdPeerCa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gkeops_etcd_backup_encryption_key: {
-                        let field_value = match fields_map.get("gkeops_etcd_backup_encryption_key") {
+                        let field_value = match fields_map.get("gkeopsEtcdBackupEncryptionKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gkeops_etcd_backup_encryption_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gkeopsEtcdBackupEncryptionKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_signing_keys: {
-                        let field_value = match fields_map.get("service_account_signing_keys") {
+                        let field_value = match fields_map.get("serviceAccountSigningKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_signing_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountSigningKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_verification_keys: {
-                        let field_value = match fields_map.get("service_account_verification_keys") {
+                        let field_value = match fields_map.get("serviceAccountVerificationKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_verification_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountVerificationKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

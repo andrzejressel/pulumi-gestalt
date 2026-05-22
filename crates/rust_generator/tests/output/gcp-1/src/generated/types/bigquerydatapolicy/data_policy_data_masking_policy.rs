@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "predefined_expression",
+                    "predefinedExpression",
                     &self.r#predefined_expression,
                 ),
                 to_pulumi_object_field(
@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#predefined_expression: {
-                        let field_value = match fields_map.get("predefined_expression") {
+                        let field_value = match fields_map.get("predefinedExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predefined_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predefinedExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

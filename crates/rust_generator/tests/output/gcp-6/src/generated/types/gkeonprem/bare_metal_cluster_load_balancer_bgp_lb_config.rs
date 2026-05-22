@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_pools",
+                    "addressPools",
                     &self.r#address_pools,
                 ),
                 to_pulumi_object_field(
@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "bgp_peer_configs",
+                    "bgpPeerConfigs",
                     &self.r#bgp_peer_configs,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_node_pool_config",
+                    "loadBalancerNodePoolConfig",
                     &self.r#load_balancer_node_pool_config,
                 ),
             ];
@@ -86,9 +86,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#address_pools: {
-                        let field_value = match fields_map.get("address_pools") {
+                        let field_value = match fields_map.get("addressPools") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addressPools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -100,16 +100,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bgp_peer_configs: {
-                        let field_value = match fields_map.get("bgp_peer_configs") {
+                        let field_value = match fields_map.get("bgpPeerConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bgp_peer_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bgpPeerConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancer_node_pool_config: {
-                        let field_value = match fields_map.get("load_balancer_node_pool_config") {
+                        let field_value = match fields_map.get("loadBalancerNodePoolConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancer_node_pool_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancerNodePoolConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

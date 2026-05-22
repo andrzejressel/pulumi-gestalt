@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_output",
+                    "customOutput",
                     &self.r#custom_output,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#recommendation,
                 ),
                 to_pulumi_object_field(
-                    "resource_selector",
+                    "resourceSelector",
                     &self.r#resource_selector,
                 ),
                 to_pulumi_object_field(
@@ -100,9 +100,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#custom_output: {
-                        let field_value = match fields_map.get("custom_output") {
+                        let field_value = match fields_map.get("customOutput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customOutput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -128,9 +128,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_selector: {
-                        let field_value = match fields_map.get("resource_selector") {
+                        let field_value = match fields_map.get("resourceSelector") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_selector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceSelector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

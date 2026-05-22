@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#codec,
                 ),
                 to_pulumi_object_field(
-                    "input_resolution",
+                    "inputResolution",
                     &self.r#input_resolution,
                 ),
                 to_pulumi_object_field(
-                    "maximum_bitrate",
+                    "maximumBitrate",
                     &self.r#maximum_bitrate,
                 ),
             ];
@@ -70,16 +70,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_resolution: {
-                        let field_value = match fields_map.get("input_resolution") {
+                        let field_value = match fields_map.get("inputResolution") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputResolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_bitrate: {
-                        let field_value = match fields_map.get("maximum_bitrate") {
+                        let field_value = match fields_map.get("maximumBitrate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumBitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

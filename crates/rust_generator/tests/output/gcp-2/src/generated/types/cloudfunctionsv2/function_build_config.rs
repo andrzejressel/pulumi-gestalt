@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_update_policy",
+                    "automaticUpdatePolicy",
                     &self.r#automatic_update_policy,
                 ),
                 to_pulumi_object_field(
@@ -77,19 +77,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#build,
                 ),
                 to_pulumi_object_field(
-                    "docker_repository",
+                    "dockerRepository",
                     &self.r#docker_repository,
                 ),
                 to_pulumi_object_field(
-                    "entry_point",
+                    "entryPoint",
                     &self.r#entry_point,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "on_deploy_update_policy",
+                    "onDeployUpdatePolicy",
                     &self.r#on_deploy_update_policy,
                 ),
                 to_pulumi_object_field(
@@ -97,7 +97,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#runtime,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
@@ -105,7 +105,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#source,
                 ),
                 to_pulumi_object_field(
-                    "worker_pool",
+                    "workerPool",
                     &self.r#worker_pool,
                 ),
             ];
@@ -132,9 +132,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#automatic_update_policy: {
-                        let field_value = match fields_map.get("automatic_update_policy") {
+                        let field_value = match fields_map.get("automaticUpdatePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automatic_update_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automaticUpdatePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -146,30 +146,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#docker_repository: {
-                        let field_value = match fields_map.get("docker_repository") {
+                        let field_value = match fields_map.get("dockerRepository") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docker_repository' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dockerRepository' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entry_point: {
-                        let field_value = match fields_map.get("entry_point") {
+                        let field_value = match fields_map.get("entryPoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entry_point' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entryPoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_variables: {
-                        let field_value = match fields_map.get("environment_variables") {
+                        let field_value = match fields_map.get("environmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'environmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_deploy_update_policy: {
-                        let field_value = match fields_map.get("on_deploy_update_policy") {
+                        let field_value = match fields_map.get("onDeployUpdatePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_deploy_update_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onDeployUpdatePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -181,9 +181,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account: {
-                        let field_value = match fields_map.get("service_account") {
+                        let field_value = match fields_map.get("serviceAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -195,9 +195,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#worker_pool: {
-                        let field_value = match fields_map.get("worker_pool") {
+                        let field_value = match fields_map.get("workerPool") {
                             Some(value) => value,
-                            None => bail!("Missing field 'worker_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workerPool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

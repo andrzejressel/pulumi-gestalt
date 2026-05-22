@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#environment,
                 ),
                 to_pulumi_object_field(
-                    "job_name",
+                    "jobName",
                     &self.r#job_name,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "transform_name_mapping",
+                    "transformNameMapping",
                     &self.r#transform_name_mapping,
                 ),
                 to_pulumi_object_field(
@@ -93,9 +93,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_name: {
-                        let field_value = match fields_map.get("job_name") {
+                        let field_value = match fields_map.get("jobName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -107,9 +107,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transform_name_mapping: {
-                        let field_value = match fields_map.get("transform_name_mapping") {
+                        let field_value = match fields_map.get("transformNameMapping") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transform_name_mapping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transformNameMapping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

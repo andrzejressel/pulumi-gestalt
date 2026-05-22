@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
-                    "deletion_time",
+                    "deletionTime",
                     &self.r#deletion_time,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "regional_database_account_instance_id",
+                    "regionalDatabaseAccountInstanceId",
                     &self.r#regional_database_account_instance_id,
                 ),
             ];
@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#creation_time: {
-                        let field_value = match fields_map.get("creation_time") {
+                        let field_value = match fields_map.get("creationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'creation_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'creationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deletion_time: {
-                        let field_value = match fields_map.get("deletion_time") {
+                        let field_value = match fields_map.get("deletionTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deletion_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deletionTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regional_database_account_instance_id: {
-                        let field_value = match fields_map.get("regional_database_account_instance_id") {
+                        let field_value = match fields_map.get("regionalDatabaseAccountInstanceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regional_database_account_instance_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionalDatabaseAccountInstanceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

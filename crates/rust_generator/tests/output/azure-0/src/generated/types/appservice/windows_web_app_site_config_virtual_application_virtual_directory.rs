@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "physical_path",
+                    "physicalPath",
                     &self.r#physical_path,
                 ),
                 to_pulumi_object_field(
-                    "virtual_path",
+                    "virtualPath",
                     &self.r#virtual_path,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#physical_path: {
-                        let field_value = match fields_map.get("physical_path") {
+                        let field_value = match fields_map.get("physicalPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'physical_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'physicalPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_path: {
-                        let field_value = match fields_map.get("virtual_path") {
+                        let field_value = match fields_map.get("virtualPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_fields",
+                    "customFields",
                     &self.r#custom_fields,
                 ),
                 to_pulumi_object_field(
-                    "device_defender_indexing_mode",
+                    "deviceDefenderIndexingMode",
                     &self.r#device_defender_indexing_mode,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "managed_fields",
+                    "managedFields",
                     &self.r#managed_fields,
                 ),
                 to_pulumi_object_field(
-                    "named_shadow_indexing_mode",
+                    "namedShadowIndexingMode",
                     &self.r#named_shadow_indexing_mode,
                 ),
                 to_pulumi_object_field(
-                    "thing_connectivity_indexing_mode",
+                    "thingConnectivityIndexingMode",
                     &self.r#thing_connectivity_indexing_mode,
                 ),
                 to_pulumi_object_field(
-                    "thing_indexing_mode",
+                    "thingIndexingMode",
                     &self.r#thing_indexing_mode,
                 ),
             ];
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#custom_fields: {
-                        let field_value = match fields_map.get("custom_fields") {
+                        let field_value = match fields_map.get("customFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_defender_indexing_mode: {
-                        let field_value = match fields_map.get("device_defender_indexing_mode") {
+                        let field_value = match fields_map.get("deviceDefenderIndexingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_defender_indexing_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceDefenderIndexingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,30 +119,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_fields: {
-                        let field_value = match fields_map.get("managed_fields") {
+                        let field_value = match fields_map.get("managedFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#named_shadow_indexing_mode: {
-                        let field_value = match fields_map.get("named_shadow_indexing_mode") {
+                        let field_value = match fields_map.get("namedShadowIndexingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'named_shadow_indexing_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namedShadowIndexingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#thing_connectivity_indexing_mode: {
-                        let field_value = match fields_map.get("thing_connectivity_indexing_mode") {
+                        let field_value = match fields_map.get("thingConnectivityIndexingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'thing_connectivity_indexing_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thingConnectivityIndexingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#thing_indexing_mode: {
-                        let field_value = match fields_map.get("thing_indexing_mode") {
+                        let field_value = match fields_map.get("thingIndexingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'thing_indexing_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thingIndexingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

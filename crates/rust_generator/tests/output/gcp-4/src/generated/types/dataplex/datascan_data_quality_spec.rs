@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "post_scan_actions",
+                    "postScanActions",
                     &self.r#post_scan_actions,
                 ),
                 to_pulumi_object_field(
-                    "row_filter",
+                    "rowFilter",
                     &self.r#row_filter,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#rules,
                 ),
                 to_pulumi_object_field(
-                    "sampling_percent",
+                    "samplingPercent",
                     &self.r#sampling_percent,
                 ),
             ];
@@ -78,16 +78,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#post_scan_actions: {
-                        let field_value = match fields_map.get("post_scan_actions") {
+                        let field_value = match fields_map.get("postScanActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_scan_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postScanActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#row_filter: {
-                        let field_value = match fields_map.get("row_filter") {
+                        let field_value = match fields_map.get("rowFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'row_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rowFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -99,9 +99,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sampling_percent: {
-                        let field_value = match fields_map.get("sampling_percent") {
+                        let field_value = match fields_map.get("samplingPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sampling_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'samplingPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

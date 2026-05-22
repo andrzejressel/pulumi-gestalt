@@ -48,35 +48,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_output_settings",
+                    "archiveOutputSettings",
                     &self.r#archive_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "frame_capture_output_settings",
+                    "frameCaptureOutputSettings",
                     &self.r#frame_capture_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_output_settings",
+                    "hlsOutputSettings",
                     &self.r#hls_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "media_package_output_settings",
+                    "mediaPackageOutputSettings",
                     &self.r#media_package_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "ms_smooth_output_settings",
+                    "msSmoothOutputSettings",
                     &self.r#ms_smooth_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "multiplex_output_settings",
+                    "multiplexOutputSettings",
                     &self.r#multiplex_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "rtmp_output_settings",
+                    "rtmpOutputSettings",
                     &self.r#rtmp_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "udp_output_settings",
+                    "udpOutputSettings",
                     &self.r#udp_output_settings,
                 ),
             ];
@@ -103,58 +103,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#archive_output_settings: {
-                        let field_value = match fields_map.get("archive_output_settings") {
+                        let field_value = match fields_map.get("archiveOutputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'archive_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'archiveOutputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frame_capture_output_settings: {
-                        let field_value = match fields_map.get("frame_capture_output_settings") {
+                        let field_value = match fields_map.get("frameCaptureOutputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frame_capture_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frameCaptureOutputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hls_output_settings: {
-                        let field_value = match fields_map.get("hls_output_settings") {
+                        let field_value = match fields_map.get("hlsOutputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hls_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hlsOutputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#media_package_output_settings: {
-                        let field_value = match fields_map.get("media_package_output_settings") {
+                        let field_value = match fields_map.get("mediaPackageOutputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'media_package_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mediaPackageOutputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ms_smooth_output_settings: {
-                        let field_value = match fields_map.get("ms_smooth_output_settings") {
+                        let field_value = match fields_map.get("msSmoothOutputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ms_smooth_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'msSmoothOutputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multiplex_output_settings: {
-                        let field_value = match fields_map.get("multiplex_output_settings") {
+                        let field_value = match fields_map.get("multiplexOutputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multiplex_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multiplexOutputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rtmp_output_settings: {
-                        let field_value = match fields_map.get("rtmp_output_settings") {
+                        let field_value = match fields_map.get("rtmpOutputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rtmp_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rtmpOutputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#udp_output_settings: {
-                        let field_value = match fields_map.get("udp_output_settings") {
+                        let field_value = match fields_map.get("udpOutputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'udp_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'udpOutputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

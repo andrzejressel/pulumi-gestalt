@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "channel_mappings",
+                    "channelMappings",
                     &self.r#channel_mappings,
                 ),
                 to_pulumi_object_field(
-                    "channels_in",
+                    "channelsIn",
                     &self.r#channels_in,
                 ),
                 to_pulumi_object_field(
-                    "channels_out",
+                    "channelsOut",
                     &self.r#channels_out,
                 ),
             ];
@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#channel_mappings: {
-                        let field_value = match fields_map.get("channel_mappings") {
+                        let field_value = match fields_map.get("channelMappings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'channel_mappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'channelMappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#channels_in: {
-                        let field_value = match fields_map.get("channels_in") {
+                        let field_value = match fields_map.get("channelsIn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'channels_in' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'channelsIn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#channels_out: {
-                        let field_value = match fields_map.get("channels_out") {
+                        let field_value = match fields_map.get("channelsOut") {
                             Some(value) => value,
-                            None => bail!("Missing field 'channels_out' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'channelsOut' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

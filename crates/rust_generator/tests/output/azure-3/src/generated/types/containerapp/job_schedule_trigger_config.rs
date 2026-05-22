@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cron_expression",
+                    "cronExpression",
                     &self.r#cron_expression,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#parallelism,
                 ),
                 to_pulumi_object_field(
-                    "replica_completion_count",
+                    "replicaCompletionCount",
                     &self.r#replica_completion_count,
                 ),
             ];
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#cron_expression: {
-                        let field_value = match fields_map.get("cron_expression") {
+                        let field_value = match fields_map.get("cronExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cron_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cronExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replica_completion_count: {
-                        let field_value = match fields_map.get("replica_completion_count") {
+                        let field_value = match fields_map.get("replicaCompletionCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replica_completion_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicaCompletionCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

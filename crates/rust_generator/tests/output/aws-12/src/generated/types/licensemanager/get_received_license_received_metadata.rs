@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_operations",
+                    "allowedOperations",
                     &self.r#allowed_operations,
                 ),
                 to_pulumi_object_field(
-                    "received_status",
+                    "receivedStatus",
                     &self.r#received_status,
                 ),
                 to_pulumi_object_field(
-                    "received_status_reason",
+                    "receivedStatusReason",
                     &self.r#received_status_reason,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#allowed_operations: {
-                        let field_value = match fields_map.get("allowed_operations") {
+                        let field_value = match fields_map.get("allowedOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#received_status: {
-                        let field_value = match fields_map.get("received_status") {
+                        let field_value = match fields_map.get("receivedStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'received_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'receivedStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#received_status_reason: {
-                        let field_value = match fields_map.get("received_status_reason") {
+                        let field_value = match fields_map.get("receivedStatusReason") {
                             Some(value) => value,
-                            None => bail!("Missing field 'received_status_reason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'receivedStatusReason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

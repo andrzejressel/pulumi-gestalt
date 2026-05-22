@@ -38,23 +38,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lab_subnet_name",
+                    "labSubnetName",
                     &self.r#lab_subnet_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_id",
+                    "resourceId",
                     &self.r#resource_id,
                 ),
                 to_pulumi_object_field(
-                    "use_in_vm_creation_permission",
+                    "useInVmCreationPermission",
                     &self.r#use_in_vm_creation_permission,
                 ),
                 to_pulumi_object_field(
-                    "use_public_ip_address_permission",
+                    "usePublicIpAddressPermission",
                     &self.r#use_public_ip_address_permission,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_pool_name",
+                    "virtualNetworkPoolName",
                     &self.r#virtual_network_pool_name,
                 ),
             ];
@@ -81,37 +81,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#lab_subnet_name: {
-                        let field_value = match fields_map.get("lab_subnet_name") {
+                        let field_value = match fields_map.get("labSubnetName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lab_subnet_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'labSubnetName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_id: {
-                        let field_value = match fields_map.get("resource_id") {
+                        let field_value = match fields_map.get("resourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_in_vm_creation_permission: {
-                        let field_value = match fields_map.get("use_in_vm_creation_permission") {
+                        let field_value = match fields_map.get("useInVmCreationPermission") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_in_vm_creation_permission' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useInVmCreationPermission' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_public_ip_address_permission: {
-                        let field_value = match fields_map.get("use_public_ip_address_permission") {
+                        let field_value = match fields_map.get("usePublicIpAddressPermission") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_public_ip_address_permission' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'usePublicIpAddressPermission' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_network_pool_name: {
-                        let field_value = match fields_map.get("virtual_network_pool_name") {
+                        let field_value = match fields_map.get("virtualNetworkPoolName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_network_pool_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNetworkPoolName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

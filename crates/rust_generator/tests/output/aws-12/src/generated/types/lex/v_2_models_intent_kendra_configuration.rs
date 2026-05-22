@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kendra_index",
+                    "kendraIndex",
                     &self.r#kendra_index,
                 ),
                 to_pulumi_object_field(
-                    "query_filter_string",
+                    "queryFilterString",
                     &self.r#query_filter_string,
                 ),
                 to_pulumi_object_field(
-                    "query_filter_string_enabled",
+                    "queryFilterStringEnabled",
                     &self.r#query_filter_string_enabled,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#kendra_index: {
-                        let field_value = match fields_map.get("kendra_index") {
+                        let field_value = match fields_map.get("kendraIndex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kendra_index' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kendraIndex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_filter_string: {
-                        let field_value = match fields_map.get("query_filter_string") {
+                        let field_value = match fields_map.get("queryFilterString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_filter_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryFilterString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_filter_string_enabled: {
-                        let field_value = match fields_map.get("query_filter_string_enabled") {
+                        let field_value = match fields_map.get("queryFilterStringEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_filter_string_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryFilterStringEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

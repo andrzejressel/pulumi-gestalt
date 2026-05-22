@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compliance_standards",
+                    "complianceStandards",
                     &self.r#compliance_standards,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "policy_id",
+                    "policyId",
                     &self.r#policy_id,
                 ),
             ];
@@ -76,9 +76,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#compliance_standards: {
-                        let field_value = match fields_map.get("compliance_standards") {
+                        let field_value = match fields_map.get("complianceStandards") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compliance_standards' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'complianceStandards' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_id: {
-                        let field_value = match fields_map.get("policy_id") {
+                        let field_value = match fields_map.get("policyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

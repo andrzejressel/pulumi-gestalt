@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for The
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_color_palette",
+                    "dataColorPalette",
                     &self.r#data_color_palette,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for The
                     &self.r#typography,
                 ),
                 to_pulumi_object_field(
-                    "ui_color_palette",
+                    "uiColorPalette",
                     &self.r#ui_color_palette,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#data_color_palette: {
-                        let field_value = match fields_map.get("data_color_palette") {
+                        let field_value = match fields_map.get("dataColorPalette") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_color_palette' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataColorPalette' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ui_color_palette: {
-                        let field_value = match fields_map.get("ui_color_palette") {
+                        let field_value = match fields_map.get("uiColorPalette") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ui_color_palette' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'uiColorPalette' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

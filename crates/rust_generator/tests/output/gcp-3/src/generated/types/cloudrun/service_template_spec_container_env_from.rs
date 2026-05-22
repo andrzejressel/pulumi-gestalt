@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "config_map_ref",
+                    "configMapRef",
                     &self.r#config_map_ref,
                 ),
                 to_pulumi_object_field(
@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#prefix,
                 ),
                 to_pulumi_object_field(
-                    "secret_ref",
+                    "secretRef",
                     &self.r#secret_ref,
                 ),
             ];
@@ -68,9 +68,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#config_map_ref: {
-                        let field_value = match fields_map.get("config_map_ref") {
+                        let field_value = match fields_map.get("configMapRef") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_map_ref' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configMapRef' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_ref: {
-                        let field_value = match fields_map.get("secret_ref") {
+                        let field_value = match fields_map.get("secretRef") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_ref' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretRef' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

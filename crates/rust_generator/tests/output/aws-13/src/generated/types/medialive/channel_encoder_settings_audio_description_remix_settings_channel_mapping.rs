@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "input_channel_levels",
+                    "inputChannelLevels",
                     &self.r#input_channel_levels,
                 ),
                 to_pulumi_object_field(
-                    "output_channel",
+                    "outputChannel",
                     &self.r#output_channel,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#input_channel_levels: {
-                        let field_value = match fields_map.get("input_channel_levels") {
+                        let field_value = match fields_map.get("inputChannelLevels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_channel_levels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputChannelLevels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_channel: {
-                        let field_value = match fields_map.get("output_channel") {
+                        let field_value = match fields_map.get("outputChannel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_channel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputChannel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "android_key_restrictions",
+                    "androidKeyRestrictions",
                     &self.r#android_key_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "api_targets",
+                    "apiTargets",
                     &self.r#api_targets,
                 ),
                 to_pulumi_object_field(
-                    "browser_key_restrictions",
+                    "browserKeyRestrictions",
                     &self.r#browser_key_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "ios_key_restrictions",
+                    "iosKeyRestrictions",
                     &self.r#ios_key_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "server_key_restrictions",
+                    "serverKeyRestrictions",
                     &self.r#server_key_restrictions,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#android_key_restrictions: {
-                        let field_value = match fields_map.get("android_key_restrictions") {
+                        let field_value = match fields_map.get("androidKeyRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'android_key_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'androidKeyRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#api_targets: {
-                        let field_value = match fields_map.get("api_targets") {
+                        let field_value = match fields_map.get("apiTargets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_targets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiTargets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#browser_key_restrictions: {
-                        let field_value = match fields_map.get("browser_key_restrictions") {
+                        let field_value = match fields_map.get("browserKeyRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'browser_key_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'browserKeyRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ios_key_restrictions: {
-                        let field_value = match fields_map.get("ios_key_restrictions") {
+                        let field_value = match fields_map.get("iosKeyRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ios_key_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iosKeyRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_key_restrictions: {
-                        let field_value = match fields_map.get("server_key_restrictions") {
+                        let field_value = match fields_map.get("serverKeyRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_key_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverKeyRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

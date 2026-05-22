@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ris
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "event_filters",
+                    "eventFilters",
                     &self.r#event_filters,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_filters: {
-                        let field_value = match fields_map.get("event_filters") {
+                        let field_value = match fields_map.get("eventFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

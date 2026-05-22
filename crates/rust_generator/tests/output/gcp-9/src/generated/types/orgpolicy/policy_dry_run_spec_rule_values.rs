@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_values",
+                    "allowedValues",
                     &self.r#allowed_values,
                 ),
                 to_pulumi_object_field(
-                    "denied_values",
+                    "deniedValues",
                     &self.r#denied_values,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#allowed_values: {
-                        let field_value = match fields_map.get("allowed_values") {
+                        let field_value = match fields_map.get("allowedValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#denied_values: {
-                        let field_value = match fields_map.get("denied_values") {
+                        let field_value = match fields_map.get("deniedValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'denied_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deniedValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

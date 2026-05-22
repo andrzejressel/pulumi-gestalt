@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#credential,
                 ),
                 to_pulumi_object_field(
-                    "credential_provider",
+                    "credentialProvider",
                     &self.r#credential_provider,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#credential_provider: {
-                        let field_value = match fields_map.get("credential_provider") {
+                        let field_value = match fields_map.get("credentialProvider") {
                             Some(value) => value,
-                            None => bail!("Missing field 'credential_provider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'credentialProvider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

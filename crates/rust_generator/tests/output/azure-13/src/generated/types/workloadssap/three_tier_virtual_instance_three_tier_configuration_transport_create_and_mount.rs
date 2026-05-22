@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "resource_group_id",
+                    "resourceGroupId",
                     &self.r#resource_group_id,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_name",
+                    "storageAccountName",
                     &self.r#storage_account_name,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#resource_group_id: {
-                        let field_value = match fields_map.get("resource_group_id") {
+                        let field_value = match fields_map.get("resourceGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_name: {
-                        let field_value = match fields_map.get("storage_account_name") {
+                        let field_value = match fields_map.get("storageAccountName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

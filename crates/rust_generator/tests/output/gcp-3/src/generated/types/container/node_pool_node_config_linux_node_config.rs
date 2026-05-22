@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cgroup_mode",
+                    "cgroupMode",
                     &self.r#cgroup_mode,
                 ),
                 to_pulumi_object_field(
-                    "hugepages_config",
+                    "hugepagesConfig",
                     &self.r#hugepages_config,
                 ),
                 to_pulumi_object_field(
@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#cgroup_mode: {
-                        let field_value = match fields_map.get("cgroup_mode") {
+                        let field_value = match fields_map.get("cgroupMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cgroup_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cgroupMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hugepages_config: {
-                        let field_value = match fields_map.get("hugepages_config") {
+                        let field_value = match fields_map.get("hugepagesConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hugepages_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hugepagesConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -59,27 +59,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audit_interval_seconds",
+                    "auditIntervalSeconds",
                     &self.r#audit_interval_seconds,
                 ),
                 to_pulumi_object_field(
-                    "constraint_violation_limit",
+                    "constraintViolationLimit",
                     &self.r#constraint_violation_limit,
                 ),
                 to_pulumi_object_field(
-                    "deployment_configs",
+                    "deploymentConfigs",
                     &self.r#deployment_configs,
                 ),
                 to_pulumi_object_field(
-                    "exemptable_namespaces",
+                    "exemptableNamespaces",
                     &self.r#exemptable_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "install_spec",
+                    "installSpec",
                     &self.r#install_spec,
                 ),
                 to_pulumi_object_field(
-                    "log_denies_enabled",
+                    "logDeniesEnabled",
                     &self.r#log_denies_enabled,
                 ),
                 to_pulumi_object_field(
@@ -87,15 +87,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#monitoring,
                 ),
                 to_pulumi_object_field(
-                    "mutation_enabled",
+                    "mutationEnabled",
                     &self.r#mutation_enabled,
                 ),
                 to_pulumi_object_field(
-                    "policy_content",
+                    "policyContent",
                     &self.r#policy_content,
                 ),
                 to_pulumi_object_field(
-                    "referential_rules_enabled",
+                    "referentialRulesEnabled",
                     &self.r#referential_rules_enabled,
                 ),
             ];
@@ -122,44 +122,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#audit_interval_seconds: {
-                        let field_value = match fields_map.get("audit_interval_seconds") {
+                        let field_value = match fields_map.get("auditIntervalSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audit_interval_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'auditIntervalSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#constraint_violation_limit: {
-                        let field_value = match fields_map.get("constraint_violation_limit") {
+                        let field_value = match fields_map.get("constraintViolationLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'constraint_violation_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'constraintViolationLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deployment_configs: {
-                        let field_value = match fields_map.get("deployment_configs") {
+                        let field_value = match fields_map.get("deploymentConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployment_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exemptable_namespaces: {
-                        let field_value = match fields_map.get("exemptable_namespaces") {
+                        let field_value = match fields_map.get("exemptableNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exemptable_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exemptableNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#install_spec: {
-                        let field_value = match fields_map.get("install_spec") {
+                        let field_value = match fields_map.get("installSpec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'install_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'installSpec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_denies_enabled: {
-                        let field_value = match fields_map.get("log_denies_enabled") {
+                        let field_value = match fields_map.get("logDeniesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_denies_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logDeniesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -171,23 +171,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mutation_enabled: {
-                        let field_value = match fields_map.get("mutation_enabled") {
+                        let field_value = match fields_map.get("mutationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mutation_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mutationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_content: {
-                        let field_value = match fields_map.get("policy_content") {
+                        let field_value = match fields_map.get("policyContent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyContent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#referential_rules_enabled: {
-                        let field_value = match fields_map.get("referential_rules_enabled") {
+                        let field_value = match fields_map.get("referentialRulesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'referential_rules_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'referentialRulesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

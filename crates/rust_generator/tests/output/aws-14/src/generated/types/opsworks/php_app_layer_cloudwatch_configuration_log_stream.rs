@@ -52,19 +52,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Php
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_count",
+                    "batchCount",
                     &self.r#batch_count,
                 ),
                 to_pulumi_object_field(
-                    "batch_size",
+                    "batchSize",
                     &self.r#batch_size,
                 ),
                 to_pulumi_object_field(
-                    "buffer_duration",
+                    "bufferDuration",
                     &self.r#buffer_duration,
                 ),
                 to_pulumi_object_field(
-                    "datetime_format",
+                    "datetimeFormat",
                     &self.r#datetime_format,
                 ),
                 to_pulumi_object_field(
@@ -76,23 +76,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Php
                     &self.r#file,
                 ),
                 to_pulumi_object_field(
-                    "file_fingerprint_lines",
+                    "fileFingerprintLines",
                     &self.r#file_fingerprint_lines,
                 ),
                 to_pulumi_object_field(
-                    "initial_position",
+                    "initialPosition",
                     &self.r#initial_position,
                 ),
                 to_pulumi_object_field(
-                    "log_group_name",
+                    "logGroupName",
                     &self.r#log_group_name,
                 ),
                 to_pulumi_object_field(
-                    "multiline_start_pattern",
+                    "multilineStartPattern",
                     &self.r#multiline_start_pattern,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];
@@ -119,30 +119,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#batch_count: {
-                        let field_value = match fields_map.get("batch_count") {
+                        let field_value = match fields_map.get("batchCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#batch_size: {
-                        let field_value = match fields_map.get("batch_size") {
+                        let field_value = match fields_map.get("batchSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#buffer_duration: {
-                        let field_value = match fields_map.get("buffer_duration") {
+                        let field_value = match fields_map.get("bufferDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'buffer_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bufferDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#datetime_format: {
-                        let field_value = match fields_map.get("datetime_format") {
+                        let field_value = match fields_map.get("datetimeFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'datetime_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'datetimeFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -161,37 +161,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_fingerprint_lines: {
-                        let field_value = match fields_map.get("file_fingerprint_lines") {
+                        let field_value = match fields_map.get("fileFingerprintLines") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_fingerprint_lines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileFingerprintLines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initial_position: {
-                        let field_value = match fields_map.get("initial_position") {
+                        let field_value = match fields_map.get("initialPosition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialPosition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_group_name: {
-                        let field_value = match fields_map.get("log_group_name") {
+                        let field_value = match fields_map.get("logGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multiline_start_pattern: {
-                        let field_value = match fields_map.get("multiline_start_pattern") {
+                        let field_value = match fields_map.get("multilineStartPattern") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multiline_start_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multilineStartPattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_zone: {
-                        let field_value = match fields_map.get("time_zone") {
+                        let field_value = match fields_map.get("timeZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

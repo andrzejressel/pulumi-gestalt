@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudformation_stack_arn",
+                    "cloudformationStackArn",
                     &self.r#cloudformation_stack_arn,
                 ),
                 to_pulumi_object_field(
-                    "tag_filters",
+                    "tagFilters",
                     &self.r#tag_filters,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#cloudformation_stack_arn: {
-                        let field_value = match fields_map.get("cloudformation_stack_arn") {
+                        let field_value = match fields_map.get("cloudformationStackArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudformation_stack_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudformationStackArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_filters: {
-                        let field_value = match fields_map.get("tag_filters") {
+                        let field_value = match fields_map.get("tagFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

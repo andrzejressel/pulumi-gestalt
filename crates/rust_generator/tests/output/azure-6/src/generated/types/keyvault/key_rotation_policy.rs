@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
                     &self.r#automatic,
                 ),
                 to_pulumi_object_field(
-                    "expire_after",
+                    "expireAfter",
                     &self.r#expire_after,
                 ),
                 to_pulumi_object_field(
-                    "notify_before_expiry",
+                    "notifyBeforeExpiry",
                     &self.r#notify_before_expiry,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expire_after: {
-                        let field_value = match fields_map.get("expire_after") {
+                        let field_value = match fields_map.get("expireAfter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expire_after' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expireAfter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notify_before_expiry: {
-                        let field_value = match fields_map.get("notify_before_expiry") {
+                        let field_value = match fields_map.get("notifyBeforeExpiry") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notify_before_expiry' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notifyBeforeExpiry' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

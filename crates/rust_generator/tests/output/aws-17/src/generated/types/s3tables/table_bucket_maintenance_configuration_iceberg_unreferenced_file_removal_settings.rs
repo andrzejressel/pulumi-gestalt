@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "non_current_days",
+                    "nonCurrentDays",
                     &self.r#non_current_days,
                 ),
                 to_pulumi_object_field(
-                    "unreferenced_days",
+                    "unreferencedDays",
                     &self.r#unreferenced_days,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#non_current_days: {
-                        let field_value = match fields_map.get("non_current_days") {
+                        let field_value = match fields_map.get("nonCurrentDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'non_current_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nonCurrentDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unreferenced_days: {
-                        let field_value = match fields_map.get("unreferenced_days") {
+                        let field_value = match fields_map.get("unreferencedDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unreferenced_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unreferencedDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

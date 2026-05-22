@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "facility_names",
+                    "facilityNames",
                     &self.r#facility_names,
                 ),
                 to_pulumi_object_field(
-                    "log_levels",
+                    "logLevels",
                     &self.r#log_levels,
                 ),
                 to_pulumi_object_field(
@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#facility_names: {
-                        let field_value = match fields_map.get("facility_names") {
+                        let field_value = match fields_map.get("facilityNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'facility_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'facilityNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_levels: {
-                        let field_value = match fields_map.get("log_levels") {
+                        let field_value = match fields_map.get("logLevels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_levels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logLevels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "characters_to_ignores",
+                    "charactersToIgnores",
                     &self.r#characters_to_ignores,
                 ),
                 to_pulumi_object_field(
-                    "masking_character",
+                    "maskingCharacter",
                     &self.r#masking_character,
                 ),
                 to_pulumi_object_field(
-                    "number_to_mask",
+                    "numberToMask",
                     &self.r#number_to_mask,
                 ),
                 to_pulumi_object_field(
-                    "reverse_order",
+                    "reverseOrder",
                     &self.r#reverse_order,
                 ),
             ];
@@ -79,30 +79,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#characters_to_ignores: {
-                        let field_value = match fields_map.get("characters_to_ignores") {
+                        let field_value = match fields_map.get("charactersToIgnores") {
                             Some(value) => value,
-                            None => bail!("Missing field 'characters_to_ignores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'charactersToIgnores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#masking_character: {
-                        let field_value = match fields_map.get("masking_character") {
+                        let field_value = match fields_map.get("maskingCharacter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'masking_character' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maskingCharacter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_to_mask: {
-                        let field_value = match fields_map.get("number_to_mask") {
+                        let field_value = match fields_map.get("numberToMask") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_to_mask' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberToMask' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reverse_order: {
-                        let field_value = match fields_map.get("reverse_order") {
+                        let field_value = match fields_map.get("reverseOrder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reverse_order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reverseOrder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

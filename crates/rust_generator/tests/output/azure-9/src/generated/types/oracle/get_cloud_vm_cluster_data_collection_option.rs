@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "diagnostics_events_enabled",
+                    "diagnosticsEventsEnabled",
                     &self.r#diagnostics_events_enabled,
                 ),
                 to_pulumi_object_field(
-                    "health_monitoring_enabled",
+                    "healthMonitoringEnabled",
                     &self.r#health_monitoring_enabled,
                 ),
                 to_pulumi_object_field(
-                    "incident_logs_enabled",
+                    "incidentLogsEnabled",
                     &self.r#incident_logs_enabled,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#diagnostics_events_enabled: {
-                        let field_value = match fields_map.get("diagnostics_events_enabled") {
+                        let field_value = match fields_map.get("diagnosticsEventsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'diagnostics_events_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diagnosticsEventsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_monitoring_enabled: {
-                        let field_value = match fields_map.get("health_monitoring_enabled") {
+                        let field_value = match fields_map.get("healthMonitoringEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_monitoring_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthMonitoringEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#incident_logs_enabled: {
-                        let field_value = match fields_map.get("incident_logs_enabled") {
+                        let field_value = match fields_map.get("incidentLogsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'incident_logs_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'incidentLogsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

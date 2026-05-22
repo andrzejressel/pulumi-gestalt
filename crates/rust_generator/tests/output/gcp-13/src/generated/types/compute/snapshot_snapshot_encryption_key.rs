@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sna
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kms_key_self_link",
+                    "kmsKeySelfLink",
                     &self.r#kms_key_self_link,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_service_account",
+                    "kmsKeyServiceAccount",
                     &self.r#kms_key_service_account,
                 ),
                 to_pulumi_object_field(
-                    "raw_key",
+                    "rawKey",
                     &self.r#raw_key,
                 ),
                 to_pulumi_object_field(
-                    "sha_256",
+                    "sha256",
                     &self.r#sha_256,
                 ),
             ];
@@ -79,30 +79,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#kms_key_self_link: {
-                        let field_value = match fields_map.get("kms_key_self_link") {
+                        let field_value = match fields_map.get("kmsKeySelfLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_self_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeySelfLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_service_account: {
-                        let field_value = match fields_map.get("kms_key_service_account") {
+                        let field_value = match fields_map.get("kmsKeyServiceAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyServiceAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#raw_key: {
-                        let field_value = match fields_map.get("raw_key") {
+                        let field_value = match fields_map.get("rawKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'raw_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rawKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sha_256: {
-                        let field_value = match fields_map.get("sha_256") {
+                        let field_value = match fields_map.get("sha256") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sha_256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sha256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

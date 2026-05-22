@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "ip_address_range",
+                    "ipAddressRange",
                     &self.r#ip_address_range,
                 ),
                 to_pulumi_object_field(
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_address_range: {
-                        let field_value = match fields_map.get("ip_address_range") {
+                        let field_value = match fields_map.get("ipAddressRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_address_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAddressRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

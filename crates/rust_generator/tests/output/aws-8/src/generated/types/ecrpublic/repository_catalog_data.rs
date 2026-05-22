@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "about_text",
+                    "aboutText",
                     &self.r#about_text,
                 ),
                 to_pulumi_object_field(
@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "logo_image_blob",
+                    "logoImageBlob",
                     &self.r#logo_image_blob,
                 ),
                 to_pulumi_object_field(
-                    "operating_systems",
+                    "operatingSystems",
                     &self.r#operating_systems,
                 ),
                 to_pulumi_object_field(
-                    "usage_text",
+                    "usageText",
                     &self.r#usage_text,
                 ),
             ];
@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#about_text: {
-                        let field_value = match fields_map.get("about_text") {
+                        let field_value = match fields_map.get("aboutText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'about_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aboutText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logo_image_blob: {
-                        let field_value = match fields_map.get("logo_image_blob") {
+                        let field_value = match fields_map.get("logoImageBlob") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logo_image_blob' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logoImageBlob' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operating_systems: {
-                        let field_value = match fields_map.get("operating_systems") {
+                        let field_value = match fields_map.get("operatingSystems") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operating_systems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operatingSystems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#usage_text: {
-                        let field_value = match fields_map.get("usage_text") {
+                        let field_value = match fields_map.get("usageText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'usage_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'usageText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

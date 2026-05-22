@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_name",
+                    "certificateName",
                     &self.r#certificate_name,
                 ),
                 to_pulumi_object_field(
-                    "domain_names",
+                    "domainNames",
                     &self.r#domain_names,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#certificate_name: {
-                        let field_value = match fields_map.get("certificate_name") {
+                        let field_value = match fields_map.get("certificateName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_names: {
-                        let field_value = match fields_map.get("domain_names") {
+                        let field_value = match fields_map.get("domainNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

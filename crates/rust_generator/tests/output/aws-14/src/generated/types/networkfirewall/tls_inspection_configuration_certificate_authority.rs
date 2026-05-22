@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tls
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_arn",
+                    "certificateArn",
                     &self.r#certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "certificate_serial",
+                    "certificateSerial",
                     &self.r#certificate_serial,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tls
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "status_message",
+                    "statusMessage",
                     &self.r#status_message,
                 ),
             ];
@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#certificate_arn: {
-                        let field_value = match fields_map.get("certificate_arn") {
+                        let field_value = match fields_map.get("certificateArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certificate_serial: {
-                        let field_value = match fields_map.get("certificate_serial") {
+                        let field_value = match fields_map.get("certificateSerial") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_serial' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateSerial' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status_message: {
-                        let field_value = match fields_map.get("status_message") {
+                        let field_value = match fields_map.get("statusMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

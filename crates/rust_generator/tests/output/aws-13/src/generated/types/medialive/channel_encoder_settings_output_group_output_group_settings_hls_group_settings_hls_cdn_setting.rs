@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hls_akamai_settings",
+                    "hlsAkamaiSettings",
                     &self.r#hls_akamai_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_basic_put_settings",
+                    "hlsBasicPutSettings",
                     &self.r#hls_basic_put_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_media_store_settings",
+                    "hlsMediaStoreSettings",
                     &self.r#hls_media_store_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_s_3_settings",
+                    "hlsS3Settings",
                     &self.r#hls_s_3_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_webdav_settings",
+                    "hlsWebdavSettings",
                     &self.r#hls_webdav_settings,
                 ),
             ];
@@ -77,37 +77,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#hls_akamai_settings: {
-                        let field_value = match fields_map.get("hls_akamai_settings") {
+                        let field_value = match fields_map.get("hlsAkamaiSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hls_akamai_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hlsAkamaiSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hls_basic_put_settings: {
-                        let field_value = match fields_map.get("hls_basic_put_settings") {
+                        let field_value = match fields_map.get("hlsBasicPutSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hls_basic_put_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hlsBasicPutSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hls_media_store_settings: {
-                        let field_value = match fields_map.get("hls_media_store_settings") {
+                        let field_value = match fields_map.get("hlsMediaStoreSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hls_media_store_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hlsMediaStoreSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hls_s_3_settings: {
-                        let field_value = match fields_map.get("hls_s_3_settings") {
+                        let field_value = match fields_map.get("hlsS3Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hls_s_3_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hlsS3Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hls_webdav_settings: {
-                        let field_value = match fields_map.get("hls_webdav_settings") {
+                        let field_value = match fields_map.get("hlsWebdavSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hls_webdav_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hlsWebdavSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

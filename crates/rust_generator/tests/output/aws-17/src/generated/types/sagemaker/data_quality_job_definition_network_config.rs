@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_inter_container_traffic_encryption",
+                    "enableInterContainerTrafficEncryption",
                     &self.r#enable_inter_container_traffic_encryption,
                 ),
                 to_pulumi_object_field(
-                    "enable_network_isolation",
+                    "enableNetworkIsolation",
                     &self.r#enable_network_isolation,
                 ),
                 to_pulumi_object_field(
-                    "vpc_config",
+                    "vpcConfig",
                     &self.r#vpc_config,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#enable_inter_container_traffic_encryption: {
-                        let field_value = match fields_map.get("enable_inter_container_traffic_encryption") {
+                        let field_value = match fields_map.get("enableInterContainerTrafficEncryption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_inter_container_traffic_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableInterContainerTrafficEncryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_network_isolation: {
-                        let field_value = match fields_map.get("enable_network_isolation") {
+                        let field_value = match fields_map.get("enableNetworkIsolation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_network_isolation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableNetworkIsolation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_config: {
-                        let field_value = match fields_map.get("vpc_config") {
+                        let field_value = match fields_map.get("vpcConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -33,19 +33,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "created_time",
+                    "createdTime",
                     &self.r#created_time,
                 ),
                 to_pulumi_object_field(
-                    "last_accessed_date",
+                    "lastAccessedDate",
                     &self.r#last_accessed_date,
                 ),
                 to_pulumi_object_field(
-                    "version_id",
+                    "versionId",
                     &self.r#version_id,
                 ),
                 to_pulumi_object_field(
-                    "version_stages",
+                    "versionStages",
                     &self.r#version_stages,
                 ),
             ];
@@ -72,30 +72,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#created_time: {
-                        let field_value = match fields_map.get("created_time") {
+                        let field_value = match fields_map.get("createdTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'created_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createdTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_accessed_date: {
-                        let field_value = match fields_map.get("last_accessed_date") {
+                        let field_value = match fields_map.get("lastAccessedDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_accessed_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastAccessedDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_id: {
-                        let field_value = match fields_map.get("version_id") {
+                        let field_value = match fields_map.get("versionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_stages: {
-                        let field_value = match fields_map.get("version_stages") {
+                        let field_value = match fields_map.get("versionStages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_stages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionStages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

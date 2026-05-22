@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "external_id",
+                    "externalId",
                     &self.r#external_id,
                 ),
                 to_pulumi_object_field(
-                    "unique_attribute",
+                    "uniqueAttribute",
                     &self.r#unique_attribute,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#external_id: {
-                        let field_value = match fields_map.get("external_id") {
+                        let field_value = match fields_map.get("externalId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unique_attribute: {
-                        let field_value = match fields_map.get("unique_attribute") {
+                        let field_value = match fields_map.get("uniqueAttribute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unique_attribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'uniqueAttribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

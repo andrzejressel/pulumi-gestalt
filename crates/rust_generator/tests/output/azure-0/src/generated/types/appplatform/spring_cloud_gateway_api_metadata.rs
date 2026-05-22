@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "documentation_url",
+                    "documentationUrl",
                     &self.r#documentation_url,
                 ),
                 to_pulumi_object_field(
-                    "server_url",
+                    "serverUrl",
                     &self.r#server_url,
                 ),
                 to_pulumi_object_field(
@@ -89,16 +89,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#documentation_url: {
-                        let field_value = match fields_map.get("documentation_url") {
+                        let field_value = match fields_map.get("documentationUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'documentation_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'documentationUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_url: {
-                        let field_value = match fields_map.get("server_url") {
+                        let field_value = match fields_map.get("serverUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

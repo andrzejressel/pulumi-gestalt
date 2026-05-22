@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_document_id_format",
+                    "defaultDocumentIdFormat",
                     &self.r#default_document_id_format,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#default_document_id_format: {
-                        let field_value = match fields_map.get("default_document_id_format") {
+                        let field_value = match fields_map.get("defaultDocumentIdFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_document_id_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultDocumentIdFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Had
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aadds_resource_id",
+                    "aaddsResourceId",
                     &self.r#aadds_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "cluster_users_group_dns",
+                    "clusterUsersGroupDns",
                     &self.r#cluster_users_group_dns,
                 ),
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "domain_user_password",
+                    "domainUserPassword",
                     &self.r#domain_user_password,
                 ),
                 to_pulumi_object_field(
-                    "domain_username",
+                    "domainUsername",
                     &self.r#domain_username,
                 ),
                 to_pulumi_object_field(
-                    "ldaps_urls",
+                    "ldapsUrls",
                     &self.r#ldaps_urls,
                 ),
                 to_pulumi_object_field(
-                    "msi_resource_id",
+                    "msiResourceId",
                     &self.r#msi_resource_id,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#aadds_resource_id: {
-                        let field_value = match fields_map.get("aadds_resource_id") {
+                        let field_value = match fields_map.get("aaddsResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aadds_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aaddsResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_users_group_dns: {
-                        let field_value = match fields_map.get("cluster_users_group_dns") {
+                        let field_value = match fields_map.get("clusterUsersGroupDns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_users_group_dns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterUsersGroupDns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_name: {
-                        let field_value = match fields_map.get("domain_name") {
+                        let field_value = match fields_map.get("domainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_user_password: {
-                        let field_value = match fields_map.get("domain_user_password") {
+                        let field_value = match fields_map.get("domainUserPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_user_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainUserPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_username: {
-                        let field_value = match fields_map.get("domain_username") {
+                        let field_value = match fields_map.get("domainUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ldaps_urls: {
-                        let field_value = match fields_map.get("ldaps_urls") {
+                        let field_value = match fields_map.get("ldapsUrls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ldaps_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ldapsUrls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#msi_resource_id: {
-                        let field_value = match fields_map.get("msi_resource_id") {
+                        let field_value = match fields_map.get("msiResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'msi_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'msiResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

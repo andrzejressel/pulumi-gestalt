@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "namespace_id",
+                    "namespaceId",
                     &self.r#namespace_id,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#namespace_id: {
-                        let field_value = match fields_map.get("namespace_id") {
+                        let field_value = match fields_map.get("namespaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'namespace_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namespaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_result_statement",
+                    "keyResultStatement",
                     &self.r#key_result_statement,
                 ),
                 to_pulumi_object_field(
-                    "statement_byte_budget",
+                    "statementByteBudget",
                     &self.r#statement_byte_budget,
                 ),
                 to_pulumi_object_field(
-                    "statement_timeout_ms",
+                    "statementTimeoutMs",
                     &self.r#statement_timeout_ms,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#key_result_statement: {
-                        let field_value = match fields_map.get("key_result_statement") {
+                        let field_value = match fields_map.get("keyResultStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_result_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyResultStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#statement_byte_budget: {
-                        let field_value = match fields_map.get("statement_byte_budget") {
+                        let field_value = match fields_map.get("statementByteBudget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'statement_byte_budget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statementByteBudget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#statement_timeout_ms: {
-                        let field_value = match fields_map.get("statement_timeout_ms") {
+                        let field_value = match fields_map.get("statementTimeoutMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'statement_timeout_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statementTimeoutMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

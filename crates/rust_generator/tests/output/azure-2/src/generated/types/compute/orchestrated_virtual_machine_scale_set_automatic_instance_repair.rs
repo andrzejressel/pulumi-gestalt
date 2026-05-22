@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "grace_period",
+                    "gracePeriod",
                     &self.r#grace_period,
                 ),
             ];
@@ -86,9 +86,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#grace_period: {
-                        let field_value = match fields_map.get("grace_period") {
+                        let field_value = match fields_map.get("gracePeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'grace_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gracePeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

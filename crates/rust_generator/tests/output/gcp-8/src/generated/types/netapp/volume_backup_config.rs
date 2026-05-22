@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_policies",
+                    "backupPolicies",
                     &self.r#backup_policies,
                 ),
                 to_pulumi_object_field(
-                    "backup_vault",
+                    "backupVault",
                     &self.r#backup_vault,
                 ),
                 to_pulumi_object_field(
-                    "scheduled_backup_enabled",
+                    "scheduledBackupEnabled",
                     &self.r#scheduled_backup_enabled,
                 ),
             ];
@@ -67,23 +67,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#backup_policies: {
-                        let field_value = match fields_map.get("backup_policies") {
+                        let field_value = match fields_map.get("backupPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backup_vault: {
-                        let field_value = match fields_map.get("backup_vault") {
+                        let field_value = match fields_map.get("backupVault") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_vault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupVault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scheduled_backup_enabled: {
-                        let field_value = match fields_map.get("scheduled_backup_enabled") {
+                        let field_value = match fields_map.get("scheduledBackupEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scheduled_backup_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduledBackupEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

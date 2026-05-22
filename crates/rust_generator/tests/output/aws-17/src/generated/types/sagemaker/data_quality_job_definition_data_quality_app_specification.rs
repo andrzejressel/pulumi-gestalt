@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#environment,
                 ),
                 to_pulumi_object_field(
-                    "image_uri",
+                    "imageUri",
                     &self.r#image_uri,
                 ),
                 to_pulumi_object_field(
-                    "post_analytics_processor_source_uri",
+                    "postAnalyticsProcessorSourceUri",
                     &self.r#post_analytics_processor_source_uri,
                 ),
                 to_pulumi_object_field(
-                    "record_preprocessor_source_uri",
+                    "recordPreprocessorSourceUri",
                     &self.r#record_preprocessor_source_uri,
                 ),
             ];
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_uri: {
-                        let field_value = match fields_map.get("image_uri") {
+                        let field_value = match fields_map.get("imageUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_analytics_processor_source_uri: {
-                        let field_value = match fields_map.get("post_analytics_processor_source_uri") {
+                        let field_value = match fields_map.get("postAnalyticsProcessorSourceUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_analytics_processor_source_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postAnalyticsProcessorSourceUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_preprocessor_source_uri: {
-                        let field_value = match fields_map.get("record_preprocessor_source_uri") {
+                        let field_value = match fields_map.get("recordPreprocessorSourceUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_preprocessor_source_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordPreprocessorSourceUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

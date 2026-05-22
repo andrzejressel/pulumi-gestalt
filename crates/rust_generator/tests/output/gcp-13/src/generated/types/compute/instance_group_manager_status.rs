@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_instances_configs",
+                    "allInstancesConfigs",
                     &self.r#all_instances_configs,
                 ),
                 to_pulumi_object_field(
-                    "is_stable",
+                    "isStable",
                     &self.r#is_stable,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#statefuls,
                 ),
                 to_pulumi_object_field(
-                    "version_targets",
+                    "versionTargets",
                     &self.r#version_targets,
                 ),
             ];
@@ -76,16 +76,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#all_instances_configs: {
-                        let field_value = match fields_map.get("all_instances_configs") {
+                        let field_value = match fields_map.get("allInstancesConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'all_instances_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allInstancesConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_stable: {
-                        let field_value = match fields_map.get("is_stable") {
+                        let field_value = match fields_map.get("isStable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_stable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isStable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_targets: {
-                        let field_value = match fields_map.get("version_targets") {
+                        let field_value = match fields_map.get("versionTargets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_targets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionTargets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "command_line",
+                    "commandLine",
                     &self.r#command_line,
                 ),
                 to_pulumi_object_field(
-                    "common_environment_properties",
+                    "commonEnvironmentProperties",
                     &self.r#common_environment_properties,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "resource_files",
+                    "resourceFiles",
                     &self.r#resource_files,
                 ),
                 to_pulumi_object_field(
-                    "task_retry_maximum",
+                    "taskRetryMaximum",
                     &self.r#task_retry_maximum,
                 ),
                 to_pulumi_object_field(
-                    "user_identities",
+                    "userIdentities",
                     &self.r#user_identities,
                 ),
                 to_pulumi_object_field(
-                    "wait_for_success",
+                    "waitForSuccess",
                     &self.r#wait_for_success,
                 ),
             ];
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#command_line: {
-                        let field_value = match fields_map.get("command_line") {
+                        let field_value = match fields_map.get("commandLine") {
                             Some(value) => value,
-                            None => bail!("Missing field 'command_line' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commandLine' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#common_environment_properties: {
-                        let field_value = match fields_map.get("common_environment_properties") {
+                        let field_value = match fields_map.get("commonEnvironmentProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_environment_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonEnvironmentProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,30 +119,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_files: {
-                        let field_value = match fields_map.get("resource_files") {
+                        let field_value = match fields_map.get("resourceFiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceFiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_retry_maximum: {
-                        let field_value = match fields_map.get("task_retry_maximum") {
+                        let field_value = match fields_map.get("taskRetryMaximum") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_retry_maximum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskRetryMaximum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_identities: {
-                        let field_value = match fields_map.get("user_identities") {
+                        let field_value = match fields_map.get("userIdentities") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_identities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userIdentities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wait_for_success: {
-                        let field_value = match fields_map.get("wait_for_success") {
+                        let field_value = match fields_map.get("waitForSuccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wait_for_success' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'waitForSuccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

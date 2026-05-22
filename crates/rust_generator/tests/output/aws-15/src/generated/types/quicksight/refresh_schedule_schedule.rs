@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ref
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "refresh_type",
+                    "refreshType",
                     &self.r#refresh_type,
                 ),
                 to_pulumi_object_field(
-                    "schedule_frequency",
+                    "scheduleFrequency",
                     &self.r#schedule_frequency,
                 ),
                 to_pulumi_object_field(
-                    "start_after_date_time",
+                    "startAfterDateTime",
                     &self.r#start_after_date_time,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#refresh_type: {
-                        let field_value = match fields_map.get("refresh_type") {
+                        let field_value = match fields_map.get("refreshType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'refresh_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'refreshType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schedule_frequency: {
-                        let field_value = match fields_map.get("schedule_frequency") {
+                        let field_value = match fields_map.get("scheduleFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schedule_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduleFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_after_date_time: {
-                        let field_value = match fields_map.get("start_after_date_time") {
+                        let field_value = match fields_map.get("startAfterDateTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_after_date_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startAfterDateTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

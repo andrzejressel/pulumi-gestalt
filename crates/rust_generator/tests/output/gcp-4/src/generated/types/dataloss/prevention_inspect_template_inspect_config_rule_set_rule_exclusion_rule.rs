@@ -49,15 +49,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#dictionary,
                 ),
                 to_pulumi_object_field(
-                    "exclude_by_hotword",
+                    "excludeByHotword",
                     &self.r#exclude_by_hotword,
                 ),
                 to_pulumi_object_field(
-                    "exclude_info_types",
+                    "excludeInfoTypes",
                     &self.r#exclude_info_types,
                 ),
                 to_pulumi_object_field(
-                    "matching_type",
+                    "matchingType",
                     &self.r#matching_type,
                 ),
                 to_pulumi_object_field(
@@ -95,23 +95,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_by_hotword: {
-                        let field_value = match fields_map.get("exclude_by_hotword") {
+                        let field_value = match fields_map.get("excludeByHotword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_by_hotword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeByHotword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_info_types: {
-                        let field_value = match fields_map.get("exclude_info_types") {
+                        let field_value = match fields_map.get("excludeInfoTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeInfoTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matching_type: {
-                        let field_value = match fields_map.get("matching_type") {
+                        let field_value = match fields_map.get("matchingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'matching_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

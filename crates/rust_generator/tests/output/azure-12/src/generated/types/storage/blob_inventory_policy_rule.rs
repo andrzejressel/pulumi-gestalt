@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
                     &self.r#schedule,
                 ),
                 to_pulumi_object_field(
-                    "schema_fields",
+                    "schemaFields",
                     &self.r#schema_fields,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
                     &self.r#scope,
                 ),
                 to_pulumi_object_field(
-                    "storage_container_name",
+                    "storageContainerName",
                     &self.r#storage_container_name,
                 ),
             ];
@@ -126,9 +126,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_fields: {
-                        let field_value = match fields_map.get("schema_fields") {
+                        let field_value = match fields_map.get("schemaFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_container_name: {
-                        let field_value = match fields_map.get("storage_container_name") {
+                        let field_value = match fields_map.get("storageContainerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageContainerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

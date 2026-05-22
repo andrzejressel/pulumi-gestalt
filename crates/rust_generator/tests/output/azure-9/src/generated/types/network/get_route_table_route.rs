@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_prefix",
+                    "addressPrefix",
                     &self.r#address_prefix,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_in_ip_address",
+                    "nextHopInIpAddress",
                     &self.r#next_hop_in_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_type",
+                    "nextHopType",
                     &self.r#next_hop_type,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#address_prefix: {
-                        let field_value = match fields_map.get("address_prefix") {
+                        let field_value = match fields_map.get("addressPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addressPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_hop_in_ip_address: {
-                        let field_value = match fields_map.get("next_hop_in_ip_address") {
+                        let field_value = match fields_map.get("nextHopInIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_hop_in_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextHopInIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_hop_type: {
-                        let field_value = match fields_map.get("next_hop_type") {
+                        let field_value = match fields_map.get("nextHopType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_hop_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextHopType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

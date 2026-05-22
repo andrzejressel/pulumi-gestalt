@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_transformations",
+                    "imageTransformations",
                     &self.r#image_transformations,
                 ),
                 to_pulumi_object_field(
-                    "info_type_transformations",
+                    "infoTypeTransformations",
                     &self.r#info_type_transformations,
                 ),
                 to_pulumi_object_field(
-                    "record_transformations",
+                    "recordTransformations",
                     &self.r#record_transformations,
                 ),
             ];
@@ -69,23 +69,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#image_transformations: {
-                        let field_value = match fields_map.get("image_transformations") {
+                        let field_value = match fields_map.get("imageTransformations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_transformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageTransformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#info_type_transformations: {
-                        let field_value = match fields_map.get("info_type_transformations") {
+                        let field_value = match fields_map.get("infoTypeTransformations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'info_type_transformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'infoTypeTransformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_transformations: {
-                        let field_value = match fields_map.get("record_transformations") {
+                        let field_value = match fields_map.get("recordTransformations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_transformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordTransformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

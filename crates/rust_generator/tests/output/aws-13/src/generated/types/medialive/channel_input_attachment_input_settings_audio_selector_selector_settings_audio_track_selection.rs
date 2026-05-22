@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dolby_e_decode",
+                    "dolbyEDecode",
                     &self.r#dolby_e_decode,
                 ),
                 to_pulumi_object_field(
@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#dolby_e_decode: {
-                        let field_value = match fields_map.get("dolby_e_decode") {
+                        let field_value = match fields_map.get("dolbyEDecode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dolby_e_decode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dolbyEDecode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_record_name",
+                    "resourceRecordName",
                     &self.r#resource_record_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_record_type",
+                    "resourceRecordType",
                     &self.r#resource_record_type,
                 ),
                 to_pulumi_object_field(
-                    "resource_record_value",
+                    "resourceRecordValue",
                     &self.r#resource_record_value,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#domain_name: {
-                        let field_value = match fields_map.get("domain_name") {
+                        let field_value = match fields_map.get("domainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_record_name: {
-                        let field_value = match fields_map.get("resource_record_name") {
+                        let field_value = match fields_map.get("resourceRecordName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_record_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceRecordName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_record_type: {
-                        let field_value = match fields_map.get("resource_record_type") {
+                        let field_value = match fields_map.get("resourceRecordType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_record_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceRecordType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_record_value: {
-                        let field_value = match fields_map.get("resource_record_value") {
+                        let field_value = match fields_map.get("resourceRecordValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_record_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceRecordValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

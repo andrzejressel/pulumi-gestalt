@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "check_regions",
+                    "checkRegions",
                     &self.r#check_regions,
                 ),
                 to_pulumi_object_field(
-                    "created_on",
+                    "createdOn",
                     &self.r#created_on,
                 ),
                 to_pulumi_object_field(
@@ -99,7 +99,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#latitude,
                 ),
                 to_pulumi_object_field(
-                    "load_sheddings",
+                    "loadSheddings",
                     &self.r#load_sheddings,
                 ),
                 to_pulumi_object_field(
@@ -107,11 +107,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#longitude,
                 ),
                 to_pulumi_object_field(
-                    "minimum_origins",
+                    "minimumOrigins",
                     &self.r#minimum_origins,
                 ),
                 to_pulumi_object_field(
-                    "modified_on",
+                    "modifiedOn",
                     &self.r#modified_on,
                 ),
                 to_pulumi_object_field(
@@ -123,7 +123,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "notification_email",
+                    "notificationEmail",
                     &self.r#notification_email,
                 ),
                 to_pulumi_object_field(
@@ -154,16 +154,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#check_regions: {
-                        let field_value = match fields_map.get("check_regions") {
+                        let field_value = match fields_map.get("checkRegions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'check_regions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkRegions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#created_on: {
-                        let field_value = match fields_map.get("created_on") {
+                        let field_value = match fields_map.get("createdOn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'created_on' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createdOn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -196,9 +196,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_sheddings: {
-                        let field_value = match fields_map.get("load_sheddings") {
+                        let field_value = match fields_map.get("loadSheddings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_sheddings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadSheddings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -210,16 +210,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_origins: {
-                        let field_value = match fields_map.get("minimum_origins") {
+                        let field_value = match fields_map.get("minimumOrigins") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_origins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumOrigins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#modified_on: {
-                        let field_value = match fields_map.get("modified_on") {
+                        let field_value = match fields_map.get("modifiedOn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'modified_on' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modifiedOn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -238,9 +238,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_email: {
-                        let field_value = match fields_map.get("notification_email") {
+                        let field_value = match fields_map.get("notificationEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

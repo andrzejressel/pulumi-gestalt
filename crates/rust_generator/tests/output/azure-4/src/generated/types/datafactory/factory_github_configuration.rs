@@ -45,27 +45,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_name",
+                    "accountName",
                     &self.r#account_name,
                 ),
                 to_pulumi_object_field(
-                    "branch_name",
+                    "branchName",
                     &self.r#branch_name,
                 ),
                 to_pulumi_object_field(
-                    "git_url",
+                    "gitUrl",
                     &self.r#git_url,
                 ),
                 to_pulumi_object_field(
-                    "publishing_enabled",
+                    "publishingEnabled",
                     &self.r#publishing_enabled,
                 ),
                 to_pulumi_object_field(
-                    "repository_name",
+                    "repositoryName",
                     &self.r#repository_name,
                 ),
                 to_pulumi_object_field(
-                    "root_folder",
+                    "rootFolder",
                     &self.r#root_folder,
                 ),
             ];
@@ -92,44 +92,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#account_name: {
-                        let field_value = match fields_map.get("account_name") {
+                        let field_value = match fields_map.get("accountName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accountName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#branch_name: {
-                        let field_value = match fields_map.get("branch_name") {
+                        let field_value = match fields_map.get("branchName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'branch_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'branchName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#git_url: {
-                        let field_value = match fields_map.get("git_url") {
+                        let field_value = match fields_map.get("gitUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'git_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gitUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publishing_enabled: {
-                        let field_value = match fields_map.get("publishing_enabled") {
+                        let field_value = match fields_map.get("publishingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publishing_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repository_name: {
-                        let field_value = match fields_map.get("repository_name") {
+                        let field_value = match fields_map.get("repositoryName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repository_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repositoryName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_folder: {
-                        let field_value = match fields_map.get("root_folder") {
+                        let field_value = match fields_map.get("rootFolder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_folder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootFolder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

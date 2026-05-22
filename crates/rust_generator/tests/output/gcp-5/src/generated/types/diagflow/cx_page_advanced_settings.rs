@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dtmf_settings",
+                    "dtmfSettings",
                     &self.r#dtmf_settings,
                 ),
             ];
@@ -55,9 +55,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#dtmf_settings: {
-                        let field_value = match fields_map.get("dtmf_settings") {
+                        let field_value = match fields_map.get("dtmfSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dtmf_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dtmfSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

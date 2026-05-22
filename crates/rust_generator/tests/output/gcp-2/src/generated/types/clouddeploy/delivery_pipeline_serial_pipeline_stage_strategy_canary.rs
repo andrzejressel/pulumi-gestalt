@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "canary_deployment",
+                    "canaryDeployment",
                     &self.r#canary_deployment,
                 ),
                 to_pulumi_object_field(
-                    "custom_canary_deployment",
+                    "customCanaryDeployment",
                     &self.r#custom_canary_deployment,
                 ),
                 to_pulumi_object_field(
-                    "runtime_config",
+                    "runtimeConfig",
                     &self.r#runtime_config,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#canary_deployment: {
-                        let field_value = match fields_map.get("canary_deployment") {
+                        let field_value = match fields_map.get("canaryDeployment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'canary_deployment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'canaryDeployment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_canary_deployment: {
-                        let field_value = match fields_map.get("custom_canary_deployment") {
+                        let field_value = match fields_map.get("customCanaryDeployment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_canary_deployment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customCanaryDeployment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_config: {
-                        let field_value = match fields_map.get("runtime_config") {
+                        let field_value = match fields_map.get("runtimeConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimeConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "prefix_format",
+                    "prefixFormat",
                     &self.r#prefix_format,
                 ),
                 to_pulumi_object_field(
-                    "prefix_hierarchies",
+                    "prefixHierarchies",
                     &self.r#prefix_hierarchies,
                 ),
                 to_pulumi_object_field(
-                    "prefix_type",
+                    "prefixType",
                     &self.r#prefix_type,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#prefix_format: {
-                        let field_value = match fields_map.get("prefix_format") {
+                        let field_value = match fields_map.get("prefixFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_hierarchies: {
-                        let field_value = match fields_map.get("prefix_hierarchies") {
+                        let field_value = match fields_map.get("prefixHierarchies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_hierarchies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixHierarchies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_type: {
-                        let field_value = match fields_map.get("prefix_type") {
+                        let field_value = match fields_map.get("prefixType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

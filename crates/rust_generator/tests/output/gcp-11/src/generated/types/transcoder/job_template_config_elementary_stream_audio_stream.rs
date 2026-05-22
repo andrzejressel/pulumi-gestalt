@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bitrate_bps",
+                    "bitrateBps",
                     &self.r#bitrate_bps,
                 ),
                 to_pulumi_object_field(
-                    "channel_count",
+                    "channelCount",
                     &self.r#channel_count,
                 ),
                 to_pulumi_object_field(
-                    "channel_layouts",
+                    "channelLayouts",
                     &self.r#channel_layouts,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#codec,
                 ),
                 to_pulumi_object_field(
-                    "sample_rate_hertz",
+                    "sampleRateHertz",
                     &self.r#sample_rate_hertz,
                 ),
             ];
@@ -82,23 +82,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#bitrate_bps: {
-                        let field_value = match fields_map.get("bitrate_bps") {
+                        let field_value = match fields_map.get("bitrateBps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bitrate_bps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bitrateBps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#channel_count: {
-                        let field_value = match fields_map.get("channel_count") {
+                        let field_value = match fields_map.get("channelCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'channel_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'channelCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#channel_layouts: {
-                        let field_value = match fields_map.get("channel_layouts") {
+                        let field_value = match fields_map.get("channelLayouts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'channel_layouts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'channelLayouts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_rate_hertz: {
-                        let field_value = match fields_map.get("sample_rate_hertz") {
+                        let field_value = match fields_map.get("sampleRateHertz") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_rate_hertz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleRateHertz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

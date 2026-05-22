@@ -53,31 +53,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_behavior",
+                    "cacheBehavior",
                     &self.r#cache_behavior,
                 ),
                 to_pulumi_object_field(
-                    "cache_duration",
+                    "cacheDuration",
                     &self.r#cache_duration,
                 ),
                 to_pulumi_object_field(
-                    "cdn_frontdoor_origin_group_id",
+                    "cdnFrontdoorOriginGroupId",
                     &self.r#cdn_frontdoor_origin_group_id,
                 ),
                 to_pulumi_object_field(
-                    "compression_enabled",
+                    "compressionEnabled",
                     &self.r#compression_enabled,
                 ),
                 to_pulumi_object_field(
-                    "forwarding_protocol",
+                    "forwardingProtocol",
                     &self.r#forwarding_protocol,
                 ),
                 to_pulumi_object_field(
-                    "query_string_caching_behavior",
+                    "queryStringCachingBehavior",
                     &self.r#query_string_caching_behavior,
                 ),
                 to_pulumi_object_field(
-                    "query_string_parameters",
+                    "queryStringParameters",
                     &self.r#query_string_parameters,
                 ),
             ];
@@ -104,51 +104,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#cache_behavior: {
-                        let field_value = match fields_map.get("cache_behavior") {
+                        let field_value = match fields_map.get("cacheBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_duration: {
-                        let field_value = match fields_map.get("cache_duration") {
+                        let field_value = match fields_map.get("cacheDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cdn_frontdoor_origin_group_id: {
-                        let field_value = match fields_map.get("cdn_frontdoor_origin_group_id") {
+                        let field_value = match fields_map.get("cdnFrontdoorOriginGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdn_frontdoor_origin_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdnFrontdoorOriginGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compression_enabled: {
-                        let field_value = match fields_map.get("compression_enabled") {
+                        let field_value = match fields_map.get("compressionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compression_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compressionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarding_protocol: {
-                        let field_value = match fields_map.get("forwarding_protocol") {
+                        let field_value = match fields_map.get("forwardingProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarding_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardingProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string_caching_behavior: {
-                        let field_value = match fields_map.get("query_string_caching_behavior") {
+                        let field_value = match fields_map.get("queryStringCachingBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string_caching_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringCachingBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string_parameters: {
-                        let field_value = match fields_map.get("query_string_parameters") {
+                        let field_value = match fields_map.get("queryStringParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

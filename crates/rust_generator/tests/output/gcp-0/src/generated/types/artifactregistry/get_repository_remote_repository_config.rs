@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "apt_repositories",
+                    "aptRepositories",
                     &self.r#apt_repositories,
                 ),
                 to_pulumi_object_field(
-                    "common_repositories",
+                    "commonRepositories",
                     &self.r#common_repositories,
                 ),
                 to_pulumi_object_field(
@@ -72,31 +72,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "disable_upstream_validation",
+                    "disableUpstreamValidation",
                     &self.r#disable_upstream_validation,
                 ),
                 to_pulumi_object_field(
-                    "docker_repositories",
+                    "dockerRepositories",
                     &self.r#docker_repositories,
                 ),
                 to_pulumi_object_field(
-                    "maven_repositories",
+                    "mavenRepositories",
                     &self.r#maven_repositories,
                 ),
                 to_pulumi_object_field(
-                    "npm_repositories",
+                    "npmRepositories",
                     &self.r#npm_repositories,
                 ),
                 to_pulumi_object_field(
-                    "python_repositories",
+                    "pythonRepositories",
                     &self.r#python_repositories,
                 ),
                 to_pulumi_object_field(
-                    "upstream_credentials",
+                    "upstreamCredentials",
                     &self.r#upstream_credentials,
                 ),
                 to_pulumi_object_field(
-                    "yum_repositories",
+                    "yumRepositories",
                     &self.r#yum_repositories,
                 ),
             ];
@@ -123,16 +123,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#apt_repositories: {
-                        let field_value = match fields_map.get("apt_repositories") {
+                        let field_value = match fields_map.get("aptRepositories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apt_repositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aptRepositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#common_repositories: {
-                        let field_value = match fields_map.get("common_repositories") {
+                        let field_value = match fields_map.get("commonRepositories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_repositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonRepositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -144,51 +144,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_upstream_validation: {
-                        let field_value = match fields_map.get("disable_upstream_validation") {
+                        let field_value = match fields_map.get("disableUpstreamValidation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_upstream_validation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableUpstreamValidation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#docker_repositories: {
-                        let field_value = match fields_map.get("docker_repositories") {
+                        let field_value = match fields_map.get("dockerRepositories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docker_repositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dockerRepositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maven_repositories: {
-                        let field_value = match fields_map.get("maven_repositories") {
+                        let field_value = match fields_map.get("mavenRepositories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maven_repositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mavenRepositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#npm_repositories: {
-                        let field_value = match fields_map.get("npm_repositories") {
+                        let field_value = match fields_map.get("npmRepositories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'npm_repositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'npmRepositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#python_repositories: {
-                        let field_value = match fields_map.get("python_repositories") {
+                        let field_value = match fields_map.get("pythonRepositories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'python_repositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pythonRepositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upstream_credentials: {
-                        let field_value = match fields_map.get("upstream_credentials") {
+                        let field_value = match fields_map.get("upstreamCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upstream_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'upstreamCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#yum_repositories: {
-                        let field_value = match fields_map.get("yum_repositories") {
+                        let field_value = match fields_map.get("yumRepositories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'yum_repositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'yumRepositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

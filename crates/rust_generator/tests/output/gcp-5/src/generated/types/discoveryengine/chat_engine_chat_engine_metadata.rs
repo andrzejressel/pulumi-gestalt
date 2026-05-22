@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dialogflow_agent",
+                    "dialogflowAgent",
                     &self.r#dialogflow_agent,
                 ),
             ];
@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#dialogflow_agent: {
-                        let field_value = match fields_map.get("dialogflow_agent") {
+                        let field_value = match fields_map.get("dialogflowAgent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dialogflow_agent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dialogflowAgent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

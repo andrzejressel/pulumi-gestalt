@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_arn",
+                    "bucketArn",
                     &self.r#bucket_arn,
                 ),
                 to_pulumi_object_field(
-                    "bucket_owner_account_id",
+                    "bucketOwnerAccountId",
                     &self.r#bucket_owner_account_id,
                 ),
                 to_pulumi_object_field(
-                    "inclusion_prefixes",
+                    "inclusionPrefixes",
                     &self.r#inclusion_prefixes,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#bucket_arn: {
-                        let field_value = match fields_map.get("bucket_arn") {
+                        let field_value = match fields_map.get("bucketArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_owner_account_id: {
-                        let field_value = match fields_map.get("bucket_owner_account_id") {
+                        let field_value = match fields_map.get("bucketOwnerAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_owner_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketOwnerAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inclusion_prefixes: {
-                        let field_value = match fields_map.get("inclusion_prefixes") {
+                        let field_value = match fields_map.get("inclusionPrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inclusion_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inclusionPrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_auto_population_of_timespan_config",
+                    "enableAutoPopulationOfTimespanConfig",
                     &self.r#enable_auto_population_of_timespan_config,
                 ),
                 to_pulumi_object_field(
-                    "end_time",
+                    "endTime",
                     &self.r#end_time,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_field",
+                    "timestampField",
                     &self.r#timestamp_field,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#enable_auto_population_of_timespan_config: {
-                        let field_value = match fields_map.get("enable_auto_population_of_timespan_config") {
+                        let field_value = match fields_map.get("enableAutoPopulationOfTimespanConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_auto_population_of_timespan_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAutoPopulationOfTimespanConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#end_time: {
-                        let field_value = match fields_map.get("end_time") {
+                        let field_value = match fields_map.get("endTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time: {
-                        let field_value = match fields_map.get("start_time") {
+                        let field_value = match fields_map.get("startTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timestamp_field: {
-                        let field_value = match fields_map.get("timestamp_field") {
+                        let field_value = match fields_map.get("timestampField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timestamp_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timestampField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

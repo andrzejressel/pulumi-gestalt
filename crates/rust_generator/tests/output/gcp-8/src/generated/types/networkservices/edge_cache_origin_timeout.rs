@@ -48,19 +48,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connect_timeout",
+                    "connectTimeout",
                     &self.r#connect_timeout,
                 ),
                 to_pulumi_object_field(
-                    "max_attempts_timeout",
+                    "maxAttemptsTimeout",
                     &self.r#max_attempts_timeout,
                 ),
                 to_pulumi_object_field(
-                    "read_timeout",
+                    "readTimeout",
                     &self.r#read_timeout,
                 ),
                 to_pulumi_object_field(
-                    "response_timeout",
+                    "responseTimeout",
                     &self.r#response_timeout,
                 ),
             ];
@@ -87,30 +87,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#connect_timeout: {
-                        let field_value = match fields_map.get("connect_timeout") {
+                        let field_value = match fields_map.get("connectTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connect_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_attempts_timeout: {
-                        let field_value = match fields_map.get("max_attempts_timeout") {
+                        let field_value = match fields_map.get("maxAttemptsTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_attempts_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAttemptsTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_timeout: {
-                        let field_value = match fields_map.get("read_timeout") {
+                        let field_value = match fields_map.get("readTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_timeout: {
-                        let field_value = match fields_map.get("response_timeout") {
+                        let field_value = match fields_map.get("responseTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

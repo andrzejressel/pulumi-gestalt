@@ -47,23 +47,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "field_name",
+                    "fieldName",
                     &self.r#field_name,
                 ),
                 to_pulumi_object_field(
-                    "only_read_latest",
+                    "onlyReadLatest",
                     &self.r#only_read_latest,
                 ),
                 to_pulumi_object_field(
-                    "qualifier_encoded",
+                    "qualifierEncoded",
                     &self.r#qualifier_encoded,
                 ),
                 to_pulumi_object_field(
-                    "qualifier_string",
+                    "qualifierString",
                     &self.r#qualifier_string,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -97,37 +97,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_name: {
-                        let field_value = match fields_map.get("field_name") {
+                        let field_value = match fields_map.get("fieldName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#only_read_latest: {
-                        let field_value = match fields_map.get("only_read_latest") {
+                        let field_value = match fields_map.get("onlyReadLatest") {
                             Some(value) => value,
-                            None => bail!("Missing field 'only_read_latest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onlyReadLatest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#qualifier_encoded: {
-                        let field_value = match fields_map.get("qualifier_encoded") {
+                        let field_value = match fields_map.get("qualifierEncoded") {
                             Some(value) => value,
-                            None => bail!("Missing field 'qualifier_encoded' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'qualifierEncoded' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#qualifier_string: {
-                        let field_value = match fields_map.get("qualifier_string") {
+                        let field_value = match fields_map.get("qualifierString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'qualifier_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'qualifierString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

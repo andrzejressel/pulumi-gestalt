@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "secret_key_reves",
+                    "secretKeyReves",
                     &self.r#secret_key_reves,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#secret_key_reves: {
-                        let field_value = match fields_map.get("secret_key_reves") {
+                        let field_value = match fields_map.get("secretKeyReves") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_key_reves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretKeyReves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

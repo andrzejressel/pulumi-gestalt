@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "instance_type_configs",
+                    "instanceTypeConfigs",
                     &self.r#instance_type_configs,
                 ),
                 to_pulumi_object_field(
-                    "launch_specifications",
+                    "launchSpecifications",
                     &self.r#launch_specifications,
                 ),
                 to_pulumi_object_field(
@@ -65,19 +65,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_on_demand_capacity",
+                    "provisionedOnDemandCapacity",
                     &self.r#provisioned_on_demand_capacity,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_spot_capacity",
+                    "provisionedSpotCapacity",
                     &self.r#provisioned_spot_capacity,
                 ),
                 to_pulumi_object_field(
-                    "target_on_demand_capacity",
+                    "targetOnDemandCapacity",
                     &self.r#target_on_demand_capacity,
                 ),
                 to_pulumi_object_field(
-                    "target_spot_capacity",
+                    "targetSpotCapacity",
                     &self.r#target_spot_capacity,
                 ),
             ];
@@ -111,16 +111,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_type_configs: {
-                        let field_value = match fields_map.get("instance_type_configs") {
+                        let field_value = match fields_map.get("instanceTypeConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_type_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceTypeConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_specifications: {
-                        let field_value = match fields_map.get("launch_specifications") {
+                        let field_value = match fields_map.get("launchSpecifications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_specifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchSpecifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -132,30 +132,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioned_on_demand_capacity: {
-                        let field_value = match fields_map.get("provisioned_on_demand_capacity") {
+                        let field_value = match fields_map.get("provisionedOnDemandCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioned_on_demand_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionedOnDemandCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioned_spot_capacity: {
-                        let field_value = match fields_map.get("provisioned_spot_capacity") {
+                        let field_value = match fields_map.get("provisionedSpotCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioned_spot_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionedSpotCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_on_demand_capacity: {
-                        let field_value = match fields_map.get("target_on_demand_capacity") {
+                        let field_value = match fields_map.get("targetOnDemandCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_on_demand_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetOnDemandCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_spot_capacity: {
-                        let field_value = match fields_map.get("target_spot_capacity") {
+                        let field_value = match fields_map.get("targetSpotCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_spot_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetSpotCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

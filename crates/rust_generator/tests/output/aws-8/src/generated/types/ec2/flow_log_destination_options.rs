@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "file_format",
+                    "fileFormat",
                     &self.r#file_format,
                 ),
                 to_pulumi_object_field(
-                    "hive_compatible_partitions",
+                    "hiveCompatiblePartitions",
                     &self.r#hive_compatible_partitions,
                 ),
                 to_pulumi_object_field(
-                    "per_hour_partition",
+                    "perHourPartition",
                     &self.r#per_hour_partition,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#file_format: {
-                        let field_value = match fields_map.get("file_format") {
+                        let field_value = match fields_map.get("fileFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hive_compatible_partitions: {
-                        let field_value = match fields_map.get("hive_compatible_partitions") {
+                        let field_value = match fields_map.get("hiveCompatiblePartitions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hive_compatible_partitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hiveCompatiblePartitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#per_hour_partition: {
-                        let field_value = match fields_map.get("per_hour_partition") {
+                        let field_value = match fields_map.get("perHourPartition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'per_hour_partition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'perHourPartition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

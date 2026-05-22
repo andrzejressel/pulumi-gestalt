@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_name",
+                    "connectionName",
                     &self.r#connection_name,
                 ),
                 to_pulumi_object_field(
-                    "create_native_delta_table",
+                    "createNativeDeltaTable",
                     &self.r#create_native_delta_table,
                 ),
                 to_pulumi_object_field(
-                    "delta_tables",
+                    "deltaTables",
                     &self.r#delta_tables,
                 ),
                 to_pulumi_object_field(
-                    "write_manifest",
+                    "writeManifest",
                     &self.r#write_manifest,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#connection_name: {
-                        let field_value = match fields_map.get("connection_name") {
+                        let field_value = match fields_map.get("connectionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_native_delta_table: {
-                        let field_value = match fields_map.get("create_native_delta_table") {
+                        let field_value = match fields_map.get("createNativeDeltaTable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_native_delta_table' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createNativeDeltaTable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#delta_tables: {
-                        let field_value = match fields_map.get("delta_tables") {
+                        let field_value = match fields_map.get("deltaTables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delta_tables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deltaTables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#write_manifest: {
-                        let field_value = match fields_map.get("write_manifest") {
+                        let field_value = match fields_map.get("writeManifest") {
                             Some(value) => value,
-                            None => bail!("Missing field 'write_manifest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'writeManifest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

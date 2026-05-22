@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_public",
+                    "isPublic",
                     &self.r#is_public,
                 ),
                 to_pulumi_object_field(
-                    "last_launched",
+                    "lastLaunched",
                     &self.r#last_launched,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#regions,
                 ),
                 to_pulumi_object_field(
-                    "shared_accounts",
+                    "sharedAccounts",
                     &self.r#shared_accounts,
                 ),
                 to_pulumi_object_field(
-                    "tag_map",
+                    "tagMap",
                     &self.r#tag_map,
                 ),
             ];
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#is_public: {
-                        let field_value = match fields_map.get("is_public") {
+                        let field_value = match fields_map.get("isPublic") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_public' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isPublic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_launched: {
-                        let field_value = match fields_map.get("last_launched") {
+                        let field_value = match fields_map.get("lastLaunched") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_launched' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastLaunched' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_accounts: {
-                        let field_value = match fields_map.get("shared_accounts") {
+                        let field_value = match fields_map.get("sharedAccounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_accounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedAccounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_map: {
-                        let field_value = match fields_map.get("tag_map") {
+                        let field_value = match fields_map.get("tagMap") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_map' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagMap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tun
                     &self.r#hostname,
                 ),
                 to_pulumi_object_field(
-                    "origin_request",
+                    "originRequest",
                     &self.r#origin_request,
                 ),
                 to_pulumi_object_field(
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_request: {
-                        let field_value = match fields_map.get("origin_request") {
+                        let field_value = match fields_map.get("originRequest") {
                             Some(value) => value,
-                            None => bail!("Missing field 'origin_request' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'originRequest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

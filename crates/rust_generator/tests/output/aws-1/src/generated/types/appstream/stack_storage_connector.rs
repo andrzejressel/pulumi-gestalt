@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connector_type",
+                    "connectorType",
                     &self.r#connector_type,
                 ),
                 to_pulumi_object_field(
@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#domains,
                 ),
                 to_pulumi_object_field(
-                    "resource_identifier",
+                    "resourceIdentifier",
                     &self.r#resource_identifier,
                 ),
             ];
@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#connector_type: {
-                        let field_value = match fields_map.get("connector_type") {
+                        let field_value = match fields_map.get("connectorType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connector_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_identifier: {
-                        let field_value = match fields_map.get("resource_identifier") {
+                        let field_value = match fields_map.get("resourceIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

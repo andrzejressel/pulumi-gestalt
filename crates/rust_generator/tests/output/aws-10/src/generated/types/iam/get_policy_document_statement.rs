@@ -67,15 +67,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#effect,
                 ),
                 to_pulumi_object_field(
-                    "not_actions",
+                    "notActions",
                     &self.r#not_actions,
                 ),
                 to_pulumi_object_field(
-                    "not_principals",
+                    "notPrincipals",
                     &self.r#not_principals,
                 ),
                 to_pulumi_object_field(
-                    "not_resources",
+                    "notResources",
                     &self.r#not_resources,
                 ),
                 to_pulumi_object_field(
@@ -135,23 +135,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_actions: {
-                        let field_value = match fields_map.get("not_actions") {
+                        let field_value = match fields_map.get("notActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_principals: {
-                        let field_value = match fields_map.get("not_principals") {
+                        let field_value = match fields_map.get("notPrincipals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_principals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notPrincipals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_resources: {
-                        let field_value = match fields_map.get("not_resources") {
+                        let field_value = match fields_map.get("notResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

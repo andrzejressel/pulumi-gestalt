@@ -67,51 +67,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_s_3_data_source",
+                    "awsS3DataSource",
                     &self.r#aws_s_3_data_source,
                 ),
                 to_pulumi_object_field(
-                    "azure_blob_storage_data_source",
+                    "azureBlobStorageDataSource",
                     &self.r#azure_blob_storage_data_source,
                 ),
                 to_pulumi_object_field(
-                    "gcs_data_sink",
+                    "gcsDataSink",
                     &self.r#gcs_data_sink,
                 ),
                 to_pulumi_object_field(
-                    "gcs_data_source",
+                    "gcsDataSource",
                     &self.r#gcs_data_source,
                 ),
                 to_pulumi_object_field(
-                    "hdfs_data_source",
+                    "hdfsDataSource",
                     &self.r#hdfs_data_source,
                 ),
                 to_pulumi_object_field(
-                    "http_data_source",
+                    "httpDataSource",
                     &self.r#http_data_source,
                 ),
                 to_pulumi_object_field(
-                    "object_conditions",
+                    "objectConditions",
                     &self.r#object_conditions,
                 ),
                 to_pulumi_object_field(
-                    "posix_data_sink",
+                    "posixDataSink",
                     &self.r#posix_data_sink,
                 ),
                 to_pulumi_object_field(
-                    "posix_data_source",
+                    "posixDataSource",
                     &self.r#posix_data_source,
                 ),
                 to_pulumi_object_field(
-                    "sink_agent_pool_name",
+                    "sinkAgentPoolName",
                     &self.r#sink_agent_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "source_agent_pool_name",
+                    "sourceAgentPoolName",
                     &self.r#source_agent_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "transfer_options",
+                    "transferOptions",
                     &self.r#transfer_options,
                 ),
             ];
@@ -138,86 +138,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#aws_s_3_data_source: {
-                        let field_value = match fields_map.get("aws_s_3_data_source") {
+                        let field_value = match fields_map.get("awsS3DataSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_s_3_data_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsS3DataSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#azure_blob_storage_data_source: {
-                        let field_value = match fields_map.get("azure_blob_storage_data_source") {
+                        let field_value = match fields_map.get("azureBlobStorageDataSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_blob_storage_data_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureBlobStorageDataSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcs_data_sink: {
-                        let field_value = match fields_map.get("gcs_data_sink") {
+                        let field_value = match fields_map.get("gcsDataSink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcs_data_sink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcsDataSink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcs_data_source: {
-                        let field_value = match fields_map.get("gcs_data_source") {
+                        let field_value = match fields_map.get("gcsDataSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcs_data_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcsDataSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hdfs_data_source: {
-                        let field_value = match fields_map.get("hdfs_data_source") {
+                        let field_value = match fields_map.get("hdfsDataSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hdfs_data_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hdfsDataSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_data_source: {
-                        let field_value = match fields_map.get("http_data_source") {
+                        let field_value = match fields_map.get("httpDataSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_data_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpDataSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#object_conditions: {
-                        let field_value = match fields_map.get("object_conditions") {
+                        let field_value = match fields_map.get("objectConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'object_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'objectConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#posix_data_sink: {
-                        let field_value = match fields_map.get("posix_data_sink") {
+                        let field_value = match fields_map.get("posixDataSink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'posix_data_sink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'posixDataSink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#posix_data_source: {
-                        let field_value = match fields_map.get("posix_data_source") {
+                        let field_value = match fields_map.get("posixDataSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'posix_data_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'posixDataSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sink_agent_pool_name: {
-                        let field_value = match fields_map.get("sink_agent_pool_name") {
+                        let field_value = match fields_map.get("sinkAgentPoolName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sink_agent_pool_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sinkAgentPoolName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_agent_pool_name: {
-                        let field_value = match fields_map.get("source_agent_pool_name") {
+                        let field_value = match fields_map.get("sourceAgentPoolName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_agent_pool_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceAgentPoolName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transfer_options: {
-                        let field_value = match fields_map.get("transfer_options") {
+                        let field_value = match fields_map.get("transferOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transfer_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transferOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

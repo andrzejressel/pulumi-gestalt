@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_name",
+                    "keyName",
                     &self.r#key_name,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
                     &self.r#permissions,
                 ),
                 to_pulumi_object_field(
-                    "primary_key",
+                    "primaryKey",
                     &self.r#primary_key,
                 ),
                 to_pulumi_object_field(
-                    "secondary_key",
+                    "secondaryKey",
                     &self.r#secondary_key,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#key_name: {
-                        let field_value = match fields_map.get("key_name") {
+                        let field_value = match fields_map.get("keyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_key: {
-                        let field_value = match fields_map.get("primary_key") {
+                        let field_value = match fields_map.get("primaryKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_key: {
-                        let field_value = match fields_map.get("secondary_key") {
+                        let field_value = match fields_map.get("secondaryKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

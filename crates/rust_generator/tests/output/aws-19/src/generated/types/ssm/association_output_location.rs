@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "s_3_bucket_name",
+                    "s3BucketName",
                     &self.r#s_3_bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "s_3_key_prefix",
+                    "s3KeyPrefix",
                     &self.r#s_3_key_prefix,
                 ),
                 to_pulumi_object_field(
-                    "s_3_region",
+                    "s3Region",
                     &self.r#s_3_region,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#s_3_bucket_name: {
-                        let field_value = match fields_map.get("s_3_bucket_name") {
+                        let field_value = match fields_map.get("s3BucketName") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_bucket_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3BucketName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_key_prefix: {
-                        let field_value = match fields_map.get("s_3_key_prefix") {
+                        let field_value = match fields_map.get("s3KeyPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_key_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3KeyPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_region: {
-                        let field_value = match fields_map.get("s_3_region") {
+                        let field_value = match fields_map.get("s3Region") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

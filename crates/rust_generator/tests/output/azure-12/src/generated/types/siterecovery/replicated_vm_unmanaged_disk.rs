@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_uri",
+                    "diskUri",
                     &self.r#disk_uri,
                 ),
                 to_pulumi_object_field(
-                    "staging_storage_account_id",
+                    "stagingStorageAccountId",
                     &self.r#staging_storage_account_id,
                 ),
                 to_pulumi_object_field(
-                    "target_storage_account_id",
+                    "targetStorageAccountId",
                     &self.r#target_storage_account_id,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#disk_uri: {
-                        let field_value = match fields_map.get("disk_uri") {
+                        let field_value = match fields_map.get("diskUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#staging_storage_account_id: {
-                        let field_value = match fields_map.get("staging_storage_account_id") {
+                        let field_value = match fields_map.get("stagingStorageAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'staging_storage_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stagingStorageAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_storage_account_id: {
-                        let field_value = match fields_map.get("target_storage_account_id") {
+                        let field_value = match fields_map.get("targetStorageAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_storage_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetStorageAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

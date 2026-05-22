@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_replica_count",
+                    "maxReplicaCount",
                     &self.r#max_replica_count,
                 ),
                 to_pulumi_object_field(
-                    "min_replica_count",
+                    "minReplicaCount",
                     &self.r#min_replica_count,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#max_replica_count: {
-                        let field_value = match fields_map.get("max_replica_count") {
+                        let field_value = match fields_map.get("maxReplicaCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_replica_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxReplicaCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_replica_count: {
-                        let field_value = match fields_map.get("min_replica_count") {
+                        let field_value = match fields_map.get("minReplicaCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_replica_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minReplicaCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

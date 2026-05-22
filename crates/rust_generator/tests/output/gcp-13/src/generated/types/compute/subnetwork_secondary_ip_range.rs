@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_cidr_range",
+                    "ipCidrRange",
                     &self.r#ip_cidr_range,
                 ),
                 to_pulumi_object_field(
-                    "range_name",
+                    "rangeName",
                     &self.r#range_name,
                 ),
                 to_pulumi_object_field(
-                    "reserved_internal_range",
+                    "reservedInternalRange",
                     &self.r#reserved_internal_range,
                 ),
             ];
@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#ip_cidr_range: {
-                        let field_value = match fields_map.get("ip_cidr_range") {
+                        let field_value = match fields_map.get("ipCidrRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_cidr_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipCidrRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_name: {
-                        let field_value = match fields_map.get("range_name") {
+                        let field_value = match fields_map.get("rangeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reserved_internal_range: {
-                        let field_value = match fields_map.get("reserved_internal_range") {
+                        let field_value = match fields_map.get("reservedInternalRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reserved_internal_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reservedInternalRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

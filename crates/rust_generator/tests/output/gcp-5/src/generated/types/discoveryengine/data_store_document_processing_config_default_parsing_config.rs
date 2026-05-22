@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "digital_parsing_config",
+                    "digitalParsingConfig",
                     &self.r#digital_parsing_config,
                 ),
                 to_pulumi_object_field(
-                    "layout_parsing_config",
+                    "layoutParsingConfig",
                     &self.r#layout_parsing_config,
                 ),
                 to_pulumi_object_field(
-                    "ocr_parsing_config",
+                    "ocrParsingConfig",
                     &self.r#ocr_parsing_config,
                 ),
             ];
@@ -67,23 +67,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#digital_parsing_config: {
-                        let field_value = match fields_map.get("digital_parsing_config") {
+                        let field_value = match fields_map.get("digitalParsingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'digital_parsing_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'digitalParsingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#layout_parsing_config: {
-                        let field_value = match fields_map.get("layout_parsing_config") {
+                        let field_value = match fields_map.get("layoutParsingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'layout_parsing_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'layoutParsingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ocr_parsing_config: {
-                        let field_value = match fields_map.get("ocr_parsing_config") {
+                        let field_value = match fields_map.get("ocrParsingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ocr_parsing_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ocrParsingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

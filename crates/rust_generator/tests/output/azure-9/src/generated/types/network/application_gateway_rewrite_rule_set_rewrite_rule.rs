@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "request_header_configurations",
+                    "requestHeaderConfigurations",
                     &self.r#request_header_configurations,
                 ),
                 to_pulumi_object_field(
-                    "response_header_configurations",
+                    "responseHeaderConfigurations",
                     &self.r#response_header_configurations,
                 ),
                 to_pulumi_object_field(
-                    "rule_sequence",
+                    "ruleSequence",
                     &self.r#rule_sequence,
                 ),
                 to_pulumi_object_field(
@@ -104,23 +104,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_header_configurations: {
-                        let field_value = match fields_map.get("request_header_configurations") {
+                        let field_value = match fields_map.get("requestHeaderConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_header_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestHeaderConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_header_configurations: {
-                        let field_value = match fields_map.get("response_header_configurations") {
+                        let field_value = match fields_map.get("responseHeaderConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_header_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseHeaderConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_sequence: {
-                        let field_value = match fields_map.get("rule_sequence") {
+                        let field_value = match fields_map.get("ruleSequence") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_sequence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleSequence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

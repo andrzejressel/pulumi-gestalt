@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#active,
                 ),
                 to_pulumi_object_field(
-                    "cdn_frontdoor_domain_id",
+                    "cdnFrontdoorDomainId",
                     &self.r#cdn_frontdoor_domain_id,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cdn_frontdoor_domain_id: {
-                        let field_value = match fields_map.get("cdn_frontdoor_domain_id") {
+                        let field_value = match fields_map.get("cdnFrontdoorDomainId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdn_frontdoor_domain_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdnFrontdoorDomainId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

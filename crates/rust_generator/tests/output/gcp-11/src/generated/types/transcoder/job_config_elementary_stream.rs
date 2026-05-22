@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_stream",
+                    "audioStream",
                     &self.r#audio_stream,
                 ),
                 to_pulumi_object_field(
@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "video_stream",
+                    "videoStream",
                     &self.r#video_stream,
                 ),
             ];
@@ -68,9 +68,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#audio_stream: {
-                        let field_value = match fields_map.get("audio_stream") {
+                        let field_value = match fields_map.get("audioStream") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_stream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioStream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#video_stream: {
-                        let field_value = match fields_map.get("video_stream") {
+                        let field_value = match fields_map.get("videoStream") {
                             Some(value) => value,
-                            None => bail!("Missing field 'video_stream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'videoStream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

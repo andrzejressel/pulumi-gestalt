@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "target_bucket",
+                    "targetBucket",
                     &self.r#target_bucket,
                 ),
                 to_pulumi_object_field(
-                    "target_prefix",
+                    "targetPrefix",
                     &self.r#target_prefix,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#target_bucket: {
-                        let field_value = match fields_map.get("target_bucket") {
+                        let field_value = match fields_map.get("targetBucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetBucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_prefix: {
-                        let field_value = match fields_map.get("target_prefix") {
+                        let field_value = match fields_map.get("targetPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

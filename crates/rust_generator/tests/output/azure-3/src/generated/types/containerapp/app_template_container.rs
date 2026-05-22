@@ -89,7 +89,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#envs,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_storage",
+                    "ephemeralStorage",
                     &self.r#ephemeral_storage,
                 ),
                 to_pulumi_object_field(
@@ -97,7 +97,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "liveness_probes",
+                    "livenessProbes",
                     &self.r#liveness_probes,
                 ),
                 to_pulumi_object_field(
@@ -109,15 +109,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "readiness_probes",
+                    "readinessProbes",
                     &self.r#readiness_probes,
                 ),
                 to_pulumi_object_field(
-                    "startup_probes",
+                    "startupProbes",
                     &self.r#startup_probes,
                 ),
                 to_pulumi_object_field(
-                    "volume_mounts",
+                    "volumeMounts",
                     &self.r#volume_mounts,
                 ),
             ];
@@ -172,9 +172,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ephemeral_storage: {
-                        let field_value = match fields_map.get("ephemeral_storage") {
+                        let field_value = match fields_map.get("ephemeralStorage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ephemeral_storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ephemeralStorage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -186,9 +186,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#liveness_probes: {
-                        let field_value = match fields_map.get("liveness_probes") {
+                        let field_value = match fields_map.get("livenessProbes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'liveness_probes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'livenessProbes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -207,23 +207,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#readiness_probes: {
-                        let field_value = match fields_map.get("readiness_probes") {
+                        let field_value = match fields_map.get("readinessProbes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'readiness_probes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readinessProbes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#startup_probes: {
-                        let field_value = match fields_map.get("startup_probes") {
+                        let field_value = match fields_map.get("startupProbes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'startup_probes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startupProbes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_mounts: {
-                        let field_value = match fields_map.get("volume_mounts") {
+                        let field_value = match fields_map.get("volumeMounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_mounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeMounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

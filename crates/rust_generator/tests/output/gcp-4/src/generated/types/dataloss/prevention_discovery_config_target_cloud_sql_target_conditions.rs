@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "database_engines",
+                    "databaseEngines",
                     &self.r#database_engines,
                 ),
                 to_pulumi_object_field(
@@ -60,9 +60,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#database_engines: {
-                        let field_value = match fields_map.get("database_engines") {
+                        let field_value = match fields_map.get("databaseEngines") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_engines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseEngines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

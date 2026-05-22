@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_required",
+                    "actionRequired",
                     &self.r#action_required,
                 ),
                 to_pulumi_object_field(
-                    "connection_id",
+                    "connectionId",
                     &self.r#connection_id,
                 ),
                 to_pulumi_object_field(
-                    "connection_name",
+                    "connectionName",
                     &self.r#connection_name,
                 ),
                 to_pulumi_object_field(
@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_id",
+                    "privateEndpointId",
                     &self.r#private_endpoint_id,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_name",
+                    "privateEndpointName",
                     &self.r#private_endpoint_name,
                 ),
                 to_pulumi_object_field(
@@ -98,23 +98,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#action_required: {
-                        let field_value = match fields_map.get("action_required") {
+                        let field_value = match fields_map.get("actionRequired") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionRequired' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_id: {
-                        let field_value = match fields_map.get("connection_id") {
+                        let field_value = match fields_map.get("connectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_name: {
-                        let field_value = match fields_map.get("connection_name") {
+                        let field_value = match fields_map.get("connectionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,16 +126,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoint_id: {
-                        let field_value = match fields_map.get("private_endpoint_id") {
+                        let field_value = match fields_map.get("privateEndpointId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoint_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpointId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoint_name: {
-                        let field_value = match fields_map.get("private_endpoint_name") {
+                        let field_value = match fields_map.get("privateEndpointName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoint_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpointName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

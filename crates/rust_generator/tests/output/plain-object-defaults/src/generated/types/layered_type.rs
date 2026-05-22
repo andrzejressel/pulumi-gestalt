@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lay
                     &self.r#other,
                 ),
                 to_pulumi_object_field(
-                    "plain_other",
+                    "plainOther",
                     &self.r#plain_other,
                 ),
                 to_pulumi_object_field(
@@ -102,9 +102,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#plain_other: {
-                        let field_value = match fields_map.get("plain_other") {
+                        let field_value = match fields_map.get("plainOther") {
                             Some(value) => value,
-                            None => bail!("Missing field 'plain_other' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'plainOther' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

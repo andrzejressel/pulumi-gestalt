@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "parameter_values",
+                    "parameterValues",
                     &self.r#parameter_values,
                 ),
                 to_pulumi_object_field(
-                    "policy_definition_id",
+                    "policyDefinitionId",
                     &self.r#policy_definition_id,
                 ),
                 to_pulumi_object_field(
-                    "policy_group_names",
+                    "policyGroupNames",
                     &self.r#policy_group_names,
                 ),
                 to_pulumi_object_field(
-                    "reference_id",
+                    "referenceId",
                     &self.r#reference_id,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#parameter_values: {
-                        let field_value = match fields_map.get("parameter_values") {
+                        let field_value = match fields_map.get("parameterValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parameter_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parameterValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_definition_id: {
-                        let field_value = match fields_map.get("policy_definition_id") {
+                        let field_value = match fields_map.get("policyDefinitionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_definition_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyDefinitionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_group_names: {
-                        let field_value = match fields_map.get("policy_group_names") {
+                        let field_value = match fields_map.get("policyGroupNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_group_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyGroupNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reference_id: {
-                        let field_value = match fields_map.get("reference_id") {
+                        let field_value = match fields_map.get("referenceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reference_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'referenceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

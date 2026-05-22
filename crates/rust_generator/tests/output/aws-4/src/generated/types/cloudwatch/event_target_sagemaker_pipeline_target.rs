@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pipeline_parameter_lists",
+                    "pipelineParameterLists",
                     &self.r#pipeline_parameter_lists,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#pipeline_parameter_lists: {
-                        let field_value = match fields_map.get("pipeline_parameter_lists") {
+                        let field_value = match fields_map.get("pipelineParameterLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pipeline_parameter_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pipelineParameterLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -26,7 +26,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxA
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "synthesize_speech_configs",
+                    "synthesizeSpeechConfigs",
                     &self.r#synthesize_speech_configs,
                 ),
             ];
@@ -53,9 +53,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#synthesize_speech_configs: {
-                        let field_value = match fields_map.get("synthesize_speech_configs") {
+                        let field_value = match fields_map.get("synthesizeSpeechConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'synthesize_speech_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'synthesizeSpeechConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

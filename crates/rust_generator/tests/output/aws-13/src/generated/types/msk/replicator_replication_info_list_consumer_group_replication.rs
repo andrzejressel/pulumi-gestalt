@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_groups_to_excludes",
+                    "consumerGroupsToExcludes",
                     &self.r#consumer_groups_to_excludes,
                 ),
                 to_pulumi_object_field(
-                    "consumer_groups_to_replicates",
+                    "consumerGroupsToReplicates",
                     &self.r#consumer_groups_to_replicates,
                 ),
                 to_pulumi_object_field(
-                    "detect_and_copy_new_consumer_groups",
+                    "detectAndCopyNewConsumerGroups",
                     &self.r#detect_and_copy_new_consumer_groups,
                 ),
                 to_pulumi_object_field(
-                    "synchronise_consumer_group_offsets",
+                    "synchroniseConsumerGroupOffsets",
                     &self.r#synchronise_consumer_group_offsets,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#consumer_groups_to_excludes: {
-                        let field_value = match fields_map.get("consumer_groups_to_excludes") {
+                        let field_value = match fields_map.get("consumerGroupsToExcludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_groups_to_excludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerGroupsToExcludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consumer_groups_to_replicates: {
-                        let field_value = match fields_map.get("consumer_groups_to_replicates") {
+                        let field_value = match fields_map.get("consumerGroupsToReplicates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_groups_to_replicates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerGroupsToReplicates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#detect_and_copy_new_consumer_groups: {
-                        let field_value = match fields_map.get("detect_and_copy_new_consumer_groups") {
+                        let field_value = match fields_map.get("detectAndCopyNewConsumerGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detect_and_copy_new_consumer_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detectAndCopyNewConsumerGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#synchronise_consumer_group_offsets: {
-                        let field_value = match fields_map.get("synchronise_consumer_group_offsets") {
+                        let field_value = match fields_map.get("synchroniseConsumerGroupOffsets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'synchronise_consumer_group_offsets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'synchroniseConsumerGroupOffsets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

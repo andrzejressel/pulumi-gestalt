@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_catalog_config",
+                    "dataCatalogConfig",
                     &self.r#data_catalog_config,
                 ),
                 to_pulumi_object_field(
-                    "disable_glue_table_creation",
+                    "disableGlueTableCreation",
                     &self.r#disable_glue_table_creation,
                 ),
                 to_pulumi_object_field(
-                    "s_3_storage_config",
+                    "s3StorageConfig",
                     &self.r#s_3_storage_config,
                 ),
                 to_pulumi_object_field(
-                    "table_format",
+                    "tableFormat",
                     &self.r#table_format,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#data_catalog_config: {
-                        let field_value = match fields_map.get("data_catalog_config") {
+                        let field_value = match fields_map.get("dataCatalogConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_catalog_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataCatalogConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_glue_table_creation: {
-                        let field_value = match fields_map.get("disable_glue_table_creation") {
+                        let field_value = match fields_map.get("disableGlueTableCreation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_glue_table_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableGlueTableCreation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_storage_config: {
-                        let field_value = match fields_map.get("s_3_storage_config") {
+                        let field_value = match fields_map.get("s3StorageConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_storage_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3StorageConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_format: {
-                        let field_value = match fields_map.get("table_format") {
+                        let field_value = match fields_map.get("tableFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tableFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

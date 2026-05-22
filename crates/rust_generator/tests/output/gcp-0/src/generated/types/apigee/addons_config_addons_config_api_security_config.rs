@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Add
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "expires_at",
+                    "expiresAt",
                     &self.r#expires_at,
                 ),
             ];
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expires_at: {
-                        let field_value = match fields_map.get("expires_at") {
+                        let field_value = match fields_map.get("expiresAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expires_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expiresAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

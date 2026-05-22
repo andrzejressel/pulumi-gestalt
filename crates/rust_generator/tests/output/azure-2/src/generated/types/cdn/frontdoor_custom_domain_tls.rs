@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cdn_frontdoor_secret_id",
+                    "cdnFrontdoorSecretId",
                     &self.r#cdn_frontdoor_secret_id,
                 ),
                 to_pulumi_object_field(
-                    "certificate_type",
+                    "certificateType",
                     &self.r#certificate_type,
                 ),
                 to_pulumi_object_field(
-                    "minimum_tls_version",
+                    "minimumTlsVersion",
                     &self.r#minimum_tls_version,
                 ),
             ];
@@ -70,23 +70,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#cdn_frontdoor_secret_id: {
-                        let field_value = match fields_map.get("cdn_frontdoor_secret_id") {
+                        let field_value = match fields_map.get("cdnFrontdoorSecretId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdn_frontdoor_secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdnFrontdoorSecretId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certificate_type: {
-                        let field_value = match fields_map.get("certificate_type") {
+                        let field_value = match fields_map.get("certificateType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_tls_version: {
-                        let field_value = match fields_map.get("minimum_tls_version") {
+                        let field_value = match fields_map.get("minimumTlsVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_tls_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumTlsVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

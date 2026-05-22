@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "component_version",
+                    "componentVersion",
                     &self.r#component_version,
                 ),
                 to_pulumi_object_field(
@@ -61,9 +61,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#component_version: {
-                        let field_value = match fields_map.get("component_version") {
+                        let field_value = match fields_map.get("componentVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'component_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'componentVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

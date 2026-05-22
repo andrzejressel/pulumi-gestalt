@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_version",
+                    "apiVersion",
                     &self.r#api_version,
                 ),
                 to_pulumi_object_field(
-                    "connector_profile_name",
+                    "connectorProfileName",
                     &self.r#connector_profile_name,
                 ),
                 to_pulumi_object_field(
-                    "connector_type",
+                    "connectorType",
                     &self.r#connector_type,
                 ),
                 to_pulumi_object_field(
-                    "incremental_pull_config",
+                    "incrementalPullConfig",
                     &self.r#incremental_pull_config,
                 ),
                 to_pulumi_object_field(
-                    "source_connector_properties",
+                    "sourceConnectorProperties",
                     &self.r#source_connector_properties,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#api_version: {
-                        let field_value = match fields_map.get("api_version") {
+                        let field_value = match fields_map.get("apiVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connector_profile_name: {
-                        let field_value = match fields_map.get("connector_profile_name") {
+                        let field_value = match fields_map.get("connectorProfileName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connector_profile_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorProfileName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connector_type: {
-                        let field_value = match fields_map.get("connector_type") {
+                        let field_value = match fields_map.get("connectorType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connector_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#incremental_pull_config: {
-                        let field_value = match fields_map.get("incremental_pull_config") {
+                        let field_value = match fields_map.get("incrementalPullConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'incremental_pull_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'incrementalPullConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_connector_properties: {
-                        let field_value = match fields_map.get("source_connector_properties") {
+                        let field_value = match fields_map.get("sourceConnectorProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_connector_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceConnectorProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

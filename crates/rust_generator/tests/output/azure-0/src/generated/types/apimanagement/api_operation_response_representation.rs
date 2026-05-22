@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_type",
+                    "contentType",
                     &self.r#content_type,
                 ),
                 to_pulumi_object_field(
@@ -53,15 +53,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
                     &self.r#examples,
                 ),
                 to_pulumi_object_field(
-                    "form_parameters",
+                    "formParameters",
                     &self.r#form_parameters,
                 ),
                 to_pulumi_object_field(
-                    "schema_id",
+                    "schemaId",
                     &self.r#schema_id,
                 ),
                 to_pulumi_object_field(
-                    "type_name",
+                    "typeName",
                     &self.r#type_name,
                 ),
             ];
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#content_type: {
-                        let field_value = match fields_map.get("content_type") {
+                        let field_value = match fields_map.get("contentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -102,23 +102,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#form_parameters: {
-                        let field_value = match fields_map.get("form_parameters") {
+                        let field_value = match fields_map.get("formParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'form_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'formParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_id: {
-                        let field_value = match fields_map.get("schema_id") {
+                        let field_value = match fields_map.get("schemaId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_name: {
-                        let field_value = match fields_map.get("type_name") {
+                        let field_value = match fields_map.get("typeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'typeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

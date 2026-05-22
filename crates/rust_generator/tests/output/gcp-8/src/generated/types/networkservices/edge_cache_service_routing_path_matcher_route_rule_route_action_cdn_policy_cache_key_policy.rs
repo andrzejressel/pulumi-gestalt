@@ -65,31 +65,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_host",
+                    "excludeHost",
                     &self.r#exclude_host,
                 ),
                 to_pulumi_object_field(
-                    "exclude_query_string",
+                    "excludeQueryString",
                     &self.r#exclude_query_string,
                 ),
                 to_pulumi_object_field(
-                    "excluded_query_parameters",
+                    "excludedQueryParameters",
                     &self.r#excluded_query_parameters,
                 ),
                 to_pulumi_object_field(
-                    "include_protocol",
+                    "includeProtocol",
                     &self.r#include_protocol,
                 ),
                 to_pulumi_object_field(
-                    "included_cookie_names",
+                    "includedCookieNames",
                     &self.r#included_cookie_names,
                 ),
                 to_pulumi_object_field(
-                    "included_header_names",
+                    "includedHeaderNames",
                     &self.r#included_header_names,
                 ),
                 to_pulumi_object_field(
-                    "included_query_parameters",
+                    "includedQueryParameters",
                     &self.r#included_query_parameters,
                 ),
             ];
@@ -116,51 +116,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#exclude_host: {
-                        let field_value = match fields_map.get("exclude_host") {
+                        let field_value = match fields_map.get("excludeHost") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_host' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeHost' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_query_string: {
-                        let field_value = match fields_map.get("exclude_query_string") {
+                        let field_value = match fields_map.get("excludeQueryString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeQueryString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_query_parameters: {
-                        let field_value = match fields_map.get("excluded_query_parameters") {
+                        let field_value = match fields_map.get("excludedQueryParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_query_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedQueryParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_protocol: {
-                        let field_value = match fields_map.get("include_protocol") {
+                        let field_value = match fields_map.get("includeProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_cookie_names: {
-                        let field_value = match fields_map.get("included_cookie_names") {
+                        let field_value = match fields_map.get("includedCookieNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_cookie_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedCookieNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_header_names: {
-                        let field_value = match fields_map.get("included_header_names") {
+                        let field_value = match fields_map.get("includedHeaderNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_header_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedHeaderNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_query_parameters: {
-                        let field_value = match fields_map.get("included_query_parameters") {
+                        let field_value = match fields_map.get("includedQueryParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_query_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedQueryParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

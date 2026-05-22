@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_parallel_execution_steps",
+                    "maxParallelExecutionSteps",
                     &self.r#max_parallel_execution_steps,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#max_parallel_execution_steps: {
-                        let field_value = match fields_map.get("max_parallel_execution_steps") {
+                        let field_value = match fields_map.get("maxParallelExecutionSteps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_parallel_execution_steps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxParallelExecutionSteps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

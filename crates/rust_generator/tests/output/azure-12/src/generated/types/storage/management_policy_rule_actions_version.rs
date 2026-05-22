@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "change_tier_to_archive_after_days_since_creation",
+                    "changeTierToArchiveAfterDaysSinceCreation",
                     &self.r#change_tier_to_archive_after_days_since_creation,
                 ),
                 to_pulumi_object_field(
-                    "change_tier_to_cool_after_days_since_creation",
+                    "changeTierToCoolAfterDaysSinceCreation",
                     &self.r#change_tier_to_cool_after_days_since_creation,
                 ),
                 to_pulumi_object_field(
-                    "delete_after_days_since_creation",
+                    "deleteAfterDaysSinceCreation",
                     &self.r#delete_after_days_since_creation,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_archive_after_days_since_last_tier_change_greater_than",
+                    "tierToArchiveAfterDaysSinceLastTierChangeGreaterThan",
                     &self.r#tier_to_archive_after_days_since_last_tier_change_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_cold_after_days_since_creation_greater_than",
+                    "tierToColdAfterDaysSinceCreationGreaterThan",
                     &self.r#tier_to_cold_after_days_since_creation_greater_than,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#change_tier_to_archive_after_days_since_creation: {
-                        let field_value = match fields_map.get("change_tier_to_archive_after_days_since_creation") {
+                        let field_value = match fields_map.get("changeTierToArchiveAfterDaysSinceCreation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'change_tier_to_archive_after_days_since_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'changeTierToArchiveAfterDaysSinceCreation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#change_tier_to_cool_after_days_since_creation: {
-                        let field_value = match fields_map.get("change_tier_to_cool_after_days_since_creation") {
+                        let field_value = match fields_map.get("changeTierToCoolAfterDaysSinceCreation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'change_tier_to_cool_after_days_since_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'changeTierToCoolAfterDaysSinceCreation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#delete_after_days_since_creation: {
-                        let field_value = match fields_map.get("delete_after_days_since_creation") {
+                        let field_value = match fields_map.get("deleteAfterDaysSinceCreation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delete_after_days_since_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deleteAfterDaysSinceCreation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tier_to_archive_after_days_since_last_tier_change_greater_than: {
-                        let field_value = match fields_map.get("tier_to_archive_after_days_since_last_tier_change_greater_than") {
+                        let field_value = match fields_map.get("tierToArchiveAfterDaysSinceLastTierChangeGreaterThan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tier_to_archive_after_days_since_last_tier_change_greater_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tierToArchiveAfterDaysSinceLastTierChangeGreaterThan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tier_to_cold_after_days_since_creation_greater_than: {
-                        let field_value = match fields_map.get("tier_to_cold_after_days_since_creation_greater_than") {
+                        let field_value = match fields_map.get("tierToColdAfterDaysSinceCreationGreaterThan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tier_to_cold_after_days_since_creation_greater_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tierToColdAfterDaysSinceCreationGreaterThan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

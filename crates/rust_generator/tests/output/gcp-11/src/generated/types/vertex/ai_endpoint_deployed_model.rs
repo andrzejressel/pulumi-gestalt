@@ -81,27 +81,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_resources",
+                    "automaticResources",
                     &self.r#automatic_resources,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
-                    "dedicated_resources",
+                    "dedicatedResources",
                     &self.r#dedicated_resources,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "enable_access_logging",
+                    "enableAccessLogging",
                     &self.r#enable_access_logging,
                 ),
                 to_pulumi_object_field(
-                    "enable_container_logging",
+                    "enableContainerLogging",
                     &self.r#enable_container_logging,
                 ),
                 to_pulumi_object_field(
@@ -113,19 +113,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiE
                     &self.r#model,
                 ),
                 to_pulumi_object_field(
-                    "model_version_id",
+                    "modelVersionId",
                     &self.r#model_version_id,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoints",
+                    "privateEndpoints",
                     &self.r#private_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "shared_resources",
+                    "sharedResources",
                     &self.r#shared_resources,
                 ),
             ];
@@ -152,44 +152,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#automatic_resources: {
-                        let field_value = match fields_map.get("automatic_resources") {
+                        let field_value = match fields_map.get("automaticResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automatic_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automaticResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_time: {
-                        let field_value = match fields_map.get("create_time") {
+                        let field_value = match fields_map.get("createTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dedicated_resources: {
-                        let field_value = match fields_map.get("dedicated_resources") {
+                        let field_value = match fields_map.get("dedicatedResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dedicated_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dedicatedResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_access_logging: {
-                        let field_value = match fields_map.get("enable_access_logging") {
+                        let field_value = match fields_map.get("enableAccessLogging") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_access_logging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAccessLogging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_container_logging: {
-                        let field_value = match fields_map.get("enable_container_logging") {
+                        let field_value = match fields_map.get("enableContainerLogging") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_container_logging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableContainerLogging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -208,30 +208,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_version_id: {
-                        let field_value = match fields_map.get("model_version_id") {
+                        let field_value = match fields_map.get("modelVersionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_version_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelVersionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoints: {
-                        let field_value = match fields_map.get("private_endpoints") {
+                        let field_value = match fields_map.get("privateEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account: {
-                        let field_value = match fields_map.get("service_account") {
+                        let field_value = match fields_map.get("serviceAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_resources: {
-                        let field_value = match fields_map.get("shared_resources") {
+                        let field_value = match fields_map.get("sharedResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

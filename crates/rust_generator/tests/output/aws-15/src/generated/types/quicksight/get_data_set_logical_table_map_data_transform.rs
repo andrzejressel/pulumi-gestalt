@@ -40,31 +40,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cast_column_type_operations",
+                    "castColumnTypeOperations",
                     &self.r#cast_column_type_operations,
                 ),
                 to_pulumi_object_field(
-                    "create_columns_operations",
+                    "createColumnsOperations",
                     &self.r#create_columns_operations,
                 ),
                 to_pulumi_object_field(
-                    "filter_operations",
+                    "filterOperations",
                     &self.r#filter_operations,
                 ),
                 to_pulumi_object_field(
-                    "project_operations",
+                    "projectOperations",
                     &self.r#project_operations,
                 ),
                 to_pulumi_object_field(
-                    "rename_column_operations",
+                    "renameColumnOperations",
                     &self.r#rename_column_operations,
                 ),
                 to_pulumi_object_field(
-                    "tag_column_operations",
+                    "tagColumnOperations",
                     &self.r#tag_column_operations,
                 ),
                 to_pulumi_object_field(
-                    "untag_column_operations",
+                    "untagColumnOperations",
                     &self.r#untag_column_operations,
                 ),
             ];
@@ -91,51 +91,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#cast_column_type_operations: {
-                        let field_value = match fields_map.get("cast_column_type_operations") {
+                        let field_value = match fields_map.get("castColumnTypeOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cast_column_type_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'castColumnTypeOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_columns_operations: {
-                        let field_value = match fields_map.get("create_columns_operations") {
+                        let field_value = match fields_map.get("createColumnsOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_columns_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createColumnsOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_operations: {
-                        let field_value = match fields_map.get("filter_operations") {
+                        let field_value = match fields_map.get("filterOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filter_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#project_operations: {
-                        let field_value = match fields_map.get("project_operations") {
+                        let field_value = match fields_map.get("projectOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rename_column_operations: {
-                        let field_value = match fields_map.get("rename_column_operations") {
+                        let field_value = match fields_map.get("renameColumnOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rename_column_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'renameColumnOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_column_operations: {
-                        let field_value = match fields_map.get("tag_column_operations") {
+                        let field_value = match fields_map.get("tagColumnOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_column_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagColumnOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#untag_column_operations: {
-                        let field_value = match fields_map.get("untag_column_operations") {
+                        let field_value = match fields_map.get("untagColumnOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'untag_column_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'untagColumnOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

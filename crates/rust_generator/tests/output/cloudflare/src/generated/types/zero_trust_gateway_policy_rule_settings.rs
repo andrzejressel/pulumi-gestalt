@@ -99,39 +99,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "add_headers",
+                    "addHeaders",
                     &self.r#add_headers,
                 ),
                 to_pulumi_object_field(
-                    "allow_child_bypass",
+                    "allowChildBypass",
                     &self.r#allow_child_bypass,
                 ),
                 to_pulumi_object_field(
-                    "audit_ssh",
+                    "auditSsh",
                     &self.r#audit_ssh,
                 ),
                 to_pulumi_object_field(
-                    "biso_admin_controls",
+                    "bisoAdminControls",
                     &self.r#biso_admin_controls,
                 ),
                 to_pulumi_object_field(
-                    "block_page_enabled",
+                    "blockPageEnabled",
                     &self.r#block_page_enabled,
                 ),
                 to_pulumi_object_field(
-                    "block_page_reason",
+                    "blockPageReason",
                     &self.r#block_page_reason,
                 ),
                 to_pulumi_object_field(
-                    "bypass_parent_rule",
+                    "bypassParentRule",
                     &self.r#bypass_parent_rule,
                 ),
                 to_pulumi_object_field(
-                    "check_session",
+                    "checkSession",
                     &self.r#check_session,
                 ),
                 to_pulumi_object_field(
-                    "dns_resolvers",
+                    "dnsResolvers",
                     &self.r#dns_resolvers,
                 ),
                 to_pulumi_object_field(
@@ -139,43 +139,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#egress,
                 ),
                 to_pulumi_object_field(
-                    "ignore_cname_category_matches",
+                    "ignoreCnameCategoryMatches",
                     &self.r#ignore_cname_category_matches,
                 ),
                 to_pulumi_object_field(
-                    "insecure_disable_dnssec_validation",
+                    "insecureDisableDnssecValidation",
                     &self.r#insecure_disable_dnssec_validation,
                 ),
                 to_pulumi_object_field(
-                    "ip_categories",
+                    "ipCategories",
                     &self.r#ip_categories,
                 ),
                 to_pulumi_object_field(
-                    "l_4_override",
+                    "l4override",
                     &self.r#l_4_override,
                 ),
                 to_pulumi_object_field(
-                    "notification_settings",
+                    "notificationSettings",
                     &self.r#notification_settings,
                 ),
                 to_pulumi_object_field(
-                    "override_host",
+                    "overrideHost",
                     &self.r#override_host,
                 ),
                 to_pulumi_object_field(
-                    "override_ips",
+                    "overrideIps",
                     &self.r#override_ips,
                 ),
                 to_pulumi_object_field(
-                    "payload_log",
+                    "payloadLog",
                     &self.r#payload_log,
                 ),
                 to_pulumi_object_field(
-                    "resolve_dns_through_cloudflare",
+                    "resolveDnsThroughCloudflare",
                     &self.r#resolve_dns_through_cloudflare,
                 ),
                 to_pulumi_object_field(
-                    "untrusted_cert",
+                    "untrustedCert",
                     &self.r#untrusted_cert,
                 ),
             ];
@@ -202,65 +202,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#add_headers: {
-                        let field_value = match fields_map.get("add_headers") {
+                        let field_value = match fields_map.get("addHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'add_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_child_bypass: {
-                        let field_value = match fields_map.get("allow_child_bypass") {
+                        let field_value = match fields_map.get("allowChildBypass") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_child_bypass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowChildBypass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audit_ssh: {
-                        let field_value = match fields_map.get("audit_ssh") {
+                        let field_value = match fields_map.get("auditSsh") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audit_ssh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'auditSsh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#biso_admin_controls: {
-                        let field_value = match fields_map.get("biso_admin_controls") {
+                        let field_value = match fields_map.get("bisoAdminControls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'biso_admin_controls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bisoAdminControls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#block_page_enabled: {
-                        let field_value = match fields_map.get("block_page_enabled") {
+                        let field_value = match fields_map.get("blockPageEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_page_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockPageEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#block_page_reason: {
-                        let field_value = match fields_map.get("block_page_reason") {
+                        let field_value = match fields_map.get("blockPageReason") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_page_reason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockPageReason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bypass_parent_rule: {
-                        let field_value = match fields_map.get("bypass_parent_rule") {
+                        let field_value = match fields_map.get("bypassParentRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bypass_parent_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bypassParentRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#check_session: {
-                        let field_value = match fields_map.get("check_session") {
+                        let field_value = match fields_map.get("checkSession") {
                             Some(value) => value,
-                            None => bail!("Missing field 'check_session' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkSession' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_resolvers: {
-                        let field_value = match fields_map.get("dns_resolvers") {
+                        let field_value = match fields_map.get("dnsResolvers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_resolvers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsResolvers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -272,72 +272,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_cname_category_matches: {
-                        let field_value = match fields_map.get("ignore_cname_category_matches") {
+                        let field_value = match fields_map.get("ignoreCnameCategoryMatches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_cname_category_matches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreCnameCategoryMatches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#insecure_disable_dnssec_validation: {
-                        let field_value = match fields_map.get("insecure_disable_dnssec_validation") {
+                        let field_value = match fields_map.get("insecureDisableDnssecValidation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insecure_disable_dnssec_validation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insecureDisableDnssecValidation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_categories: {
-                        let field_value = match fields_map.get("ip_categories") {
+                        let field_value = match fields_map.get("ipCategories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_categories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipCategories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#l_4_override: {
-                        let field_value = match fields_map.get("l_4_override") {
+                        let field_value = match fields_map.get("l4override") {
                             Some(value) => value,
-                            None => bail!("Missing field 'l_4_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'l4override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_settings: {
-                        let field_value = match fields_map.get("notification_settings") {
+                        let field_value = match fields_map.get("notificationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#override_host: {
-                        let field_value = match fields_map.get("override_host") {
+                        let field_value = match fields_map.get("overrideHost") {
                             Some(value) => value,
-                            None => bail!("Missing field 'override_host' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'overrideHost' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#override_ips: {
-                        let field_value = match fields_map.get("override_ips") {
+                        let field_value = match fields_map.get("overrideIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'override_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'overrideIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#payload_log: {
-                        let field_value = match fields_map.get("payload_log") {
+                        let field_value = match fields_map.get("payloadLog") {
                             Some(value) => value,
-                            None => bail!("Missing field 'payload_log' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'payloadLog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resolve_dns_through_cloudflare: {
-                        let field_value = match fields_map.get("resolve_dns_through_cloudflare") {
+                        let field_value = match fields_map.get("resolveDnsThroughCloudflare") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resolve_dns_through_cloudflare' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resolveDnsThroughCloudflare' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#untrusted_cert: {
-                        let field_value = match fields_map.get("untrusted_cert") {
+                        let field_value = match fields_map.get("untrustedCert") {
                             Some(value) => value,
-                            None => bail!("Missing field 'untrusted_cert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'untrustedCert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

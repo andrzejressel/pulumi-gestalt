@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_pool_health_probe_ids",
+                    "backendPoolHealthProbeIds",
                     &self.r#backend_pool_health_probe_ids,
                 ),
                 to_pulumi_object_field(
-                    "backend_pool_ids",
+                    "backendPoolIds",
                     &self.r#backend_pool_ids,
                 ),
                 to_pulumi_object_field(
-                    "backend_pool_load_balancing_ids",
+                    "backendPoolLoadBalancingIds",
                     &self.r#backend_pool_load_balancing_ids,
                 ),
                 to_pulumi_object_field(
-                    "frontend_endpoint_ids",
+                    "frontendEndpointIds",
                     &self.r#frontend_endpoint_ids,
                 ),
                 to_pulumi_object_field(
-                    "routing_rule_ids",
+                    "routingRuleIds",
                     &self.r#routing_rule_ids,
                 ),
             ];
@@ -77,37 +77,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#backend_pool_health_probe_ids: {
-                        let field_value = match fields_map.get("backend_pool_health_probe_ids") {
+                        let field_value = match fields_map.get("backendPoolHealthProbeIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_pool_health_probe_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPoolHealthProbeIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backend_pool_ids: {
-                        let field_value = match fields_map.get("backend_pool_ids") {
+                        let field_value = match fields_map.get("backendPoolIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_pool_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPoolIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backend_pool_load_balancing_ids: {
-                        let field_value = match fields_map.get("backend_pool_load_balancing_ids") {
+                        let field_value = match fields_map.get("backendPoolLoadBalancingIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_pool_load_balancing_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPoolLoadBalancingIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frontend_endpoint_ids: {
-                        let field_value = match fields_map.get("frontend_endpoint_ids") {
+                        let field_value = match fields_map.get("frontendEndpointIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frontend_endpoint_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frontendEndpointIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#routing_rule_ids: {
-                        let field_value = match fields_map.get("routing_rule_ids") {
+                        let field_value = match fields_map.get("routingRuleIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'routing_rule_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routingRuleIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

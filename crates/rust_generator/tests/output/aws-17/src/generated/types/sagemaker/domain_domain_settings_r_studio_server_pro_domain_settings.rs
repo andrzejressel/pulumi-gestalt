@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_resource_spec",
+                    "defaultResourceSpec",
                     &self.r#default_resource_spec,
                 ),
                 to_pulumi_object_field(
-                    "domain_execution_role_arn",
+                    "domainExecutionRoleArn",
                     &self.r#domain_execution_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "r_studio_connect_url",
+                    "rStudioConnectUrl",
                     &self.r#r_studio_connect_url,
                 ),
                 to_pulumi_object_field(
-                    "r_studio_package_manager_url",
+                    "rStudioPackageManagerUrl",
                     &self.r#r_studio_package_manager_url,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#default_resource_spec: {
-                        let field_value = match fields_map.get("default_resource_spec") {
+                        let field_value = match fields_map.get("defaultResourceSpec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_resource_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultResourceSpec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_execution_role_arn: {
-                        let field_value = match fields_map.get("domain_execution_role_arn") {
+                        let field_value = match fields_map.get("domainExecutionRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_execution_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainExecutionRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#r_studio_connect_url: {
-                        let field_value = match fields_map.get("r_studio_connect_url") {
+                        let field_value = match fields_map.get("rStudioConnectUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'r_studio_connect_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rStudioConnectUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#r_studio_package_manager_url: {
-                        let field_value = match fields_map.get("r_studio_package_manager_url") {
+                        let field_value = match fields_map.get("rStudioPackageManagerUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'r_studio_package_manager_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rStudioPackageManagerUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

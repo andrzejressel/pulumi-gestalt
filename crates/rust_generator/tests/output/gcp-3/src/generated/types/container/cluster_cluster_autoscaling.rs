@@ -50,15 +50,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_provisioning_defaults",
+                    "autoProvisioningDefaults",
                     &self.r#auto_provisioning_defaults,
                 ),
                 to_pulumi_object_field(
-                    "auto_provisioning_locations",
+                    "autoProvisioningLocations",
                     &self.r#auto_provisioning_locations,
                 ),
                 to_pulumi_object_field(
-                    "autoscaling_profile",
+                    "autoscalingProfile",
                     &self.r#autoscaling_profile,
                 ),
                 to_pulumi_object_field(
@@ -66,7 +66,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "resource_limits",
+                    "resourceLimits",
                     &self.r#resource_limits,
                 ),
             ];
@@ -93,23 +93,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#auto_provisioning_defaults: {
-                        let field_value = match fields_map.get("auto_provisioning_defaults") {
+                        let field_value = match fields_map.get("autoProvisioningDefaults") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_provisioning_defaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoProvisioningDefaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_provisioning_locations: {
-                        let field_value = match fields_map.get("auto_provisioning_locations") {
+                        let field_value = match fields_map.get("autoProvisioningLocations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_provisioning_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoProvisioningLocations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#autoscaling_profile: {
-                        let field_value = match fields_map.get("autoscaling_profile") {
+                        let field_value = match fields_map.get("autoscalingProfile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_profile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingProfile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -121,9 +121,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_limits: {
-                        let field_value = match fields_map.get("resource_limits") {
+                        let field_value = match fields_map.get("resourceLimits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_limits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceLimits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "storage_descriptor",
+                    "storageDescriptor",
                     &self.r#storage_descriptor,
                 ),
                 to_pulumi_object_field(
-                    "table_type",
+                    "tableType",
                     &self.r#table_type,
                 ),
             ];
@@ -76,16 +76,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_descriptor: {
-                        let field_value = match fields_map.get("storage_descriptor") {
+                        let field_value = match fields_map.get("storageDescriptor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_descriptor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageDescriptor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_type: {
-                        let field_value = match fields_map.get("table_type") {
+                        let field_value = match fields_map.get("tableType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tableType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

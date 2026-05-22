@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_repair",
+                    "autoRepair",
                     &self.r#auto_repair,
                 ),
                 to_pulumi_object_field(
-                    "auto_upgrade",
+                    "autoUpgrade",
                     &self.r#auto_upgrade,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#auto_repair: {
-                        let field_value = match fields_map.get("auto_repair") {
+                        let field_value = match fields_map.get("autoRepair") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_repair' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoRepair' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_upgrade: {
-                        let field_value = match fields_map.get("auto_upgrade") {
+                        let field_value = match fields_map.get("autoUpgrade") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_upgrade' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoUpgrade' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

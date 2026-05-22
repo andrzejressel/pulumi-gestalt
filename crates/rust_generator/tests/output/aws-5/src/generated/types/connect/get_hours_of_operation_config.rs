@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#day,
                 ),
                 to_pulumi_object_field(
-                    "end_times",
+                    "endTimes",
                     &self.r#end_times,
                 ),
                 to_pulumi_object_field(
-                    "start_times",
+                    "startTimes",
                     &self.r#start_times,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#end_times: {
-                        let field_value = match fields_map.get("end_times") {
+                        let field_value = match fields_map.get("endTimes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_times' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endTimes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_times: {
-                        let field_value = match fields_map.get("start_times") {
+                        let field_value = match fields_map.get("startTimes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_times' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTimes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

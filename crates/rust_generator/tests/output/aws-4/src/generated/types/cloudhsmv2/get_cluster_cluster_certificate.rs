@@ -40,23 +40,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_hardware_certificate",
+                    "awsHardwareCertificate",
                     &self.r#aws_hardware_certificate,
                 ),
                 to_pulumi_object_field(
-                    "cluster_certificate",
+                    "clusterCertificate",
                     &self.r#cluster_certificate,
                 ),
                 to_pulumi_object_field(
-                    "cluster_csr",
+                    "clusterCsr",
                     &self.r#cluster_csr,
                 ),
                 to_pulumi_object_field(
-                    "hsm_certificate",
+                    "hsmCertificate",
                     &self.r#hsm_certificate,
                 ),
                 to_pulumi_object_field(
-                    "manufacturer_hardware_certificate",
+                    "manufacturerHardwareCertificate",
                     &self.r#manufacturer_hardware_certificate,
                 ),
             ];
@@ -83,37 +83,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#aws_hardware_certificate: {
-                        let field_value = match fields_map.get("aws_hardware_certificate") {
+                        let field_value = match fields_map.get("awsHardwareCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_hardware_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsHardwareCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_certificate: {
-                        let field_value = match fields_map.get("cluster_certificate") {
+                        let field_value = match fields_map.get("clusterCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_csr: {
-                        let field_value = match fields_map.get("cluster_csr") {
+                        let field_value = match fields_map.get("clusterCsr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_csr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterCsr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hsm_certificate: {
-                        let field_value = match fields_map.get("hsm_certificate") {
+                        let field_value = match fields_map.get("hsmCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hsm_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hsmCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#manufacturer_hardware_certificate: {
-                        let field_value = match fields_map.get("manufacturer_hardware_certificate") {
+                        let field_value = match fields_map.get("manufacturerHardwareCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'manufacturer_hardware_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'manufacturerHardwareCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

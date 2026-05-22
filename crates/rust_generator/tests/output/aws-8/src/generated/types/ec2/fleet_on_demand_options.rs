@@ -44,27 +44,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_strategy",
+                    "allocationStrategy",
                     &self.r#allocation_strategy,
                 ),
                 to_pulumi_object_field(
-                    "capacity_reservation_options",
+                    "capacityReservationOptions",
                     &self.r#capacity_reservation_options,
                 ),
                 to_pulumi_object_field(
-                    "max_total_price",
+                    "maxTotalPrice",
                     &self.r#max_total_price,
                 ),
                 to_pulumi_object_field(
-                    "min_target_capacity",
+                    "minTargetCapacity",
                     &self.r#min_target_capacity,
                 ),
                 to_pulumi_object_field(
-                    "single_availability_zone",
+                    "singleAvailabilityZone",
                     &self.r#single_availability_zone,
                 ),
                 to_pulumi_object_field(
-                    "single_instance_type",
+                    "singleInstanceType",
                     &self.r#single_instance_type,
                 ),
             ];
@@ -91,44 +91,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#allocation_strategy: {
-                        let field_value = match fields_map.get("allocation_strategy") {
+                        let field_value = match fields_map.get("allocationStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allocation_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allocationStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#capacity_reservation_options: {
-                        let field_value = match fields_map.get("capacity_reservation_options") {
+                        let field_value = match fields_map.get("capacityReservationOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_reservation_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityReservationOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_total_price: {
-                        let field_value = match fields_map.get("max_total_price") {
+                        let field_value = match fields_map.get("maxTotalPrice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_total_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxTotalPrice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_target_capacity: {
-                        let field_value = match fields_map.get("min_target_capacity") {
+                        let field_value = match fields_map.get("minTargetCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_target_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minTargetCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#single_availability_zone: {
-                        let field_value = match fields_map.get("single_availability_zone") {
+                        let field_value = match fields_map.get("singleAvailabilityZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'single_availability_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'singleAvailabilityZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#single_instance_type: {
-                        let field_value = match fields_map.get("single_instance_type") {
+                        let field_value = match fields_map.get("singleInstanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'single_instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'singleInstanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

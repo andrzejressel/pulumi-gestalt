@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "comparison_operator",
+                    "comparisonOperator",
                     &self.r#comparison_operator,
                 ),
                 to_pulumi_object_field(
-                    "notification_type",
+                    "notificationType",
                     &self.r#notification_type,
                 ),
                 to_pulumi_object_field(
-                    "subscriber_email_addresses",
+                    "subscriberEmailAddresses",
                     &self.r#subscriber_email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "subscriber_sns_topic_arns",
+                    "subscriberSnsTopicArns",
                     &self.r#subscriber_sns_topic_arns,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
                     &self.r#threshold,
                 ),
                 to_pulumi_object_field(
-                    "threshold_type",
+                    "thresholdType",
                     &self.r#threshold_type,
                 ),
             ];
@@ -90,30 +90,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#comparison_operator: {
-                        let field_value = match fields_map.get("comparison_operator") {
+                        let field_value = match fields_map.get("comparisonOperator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'comparison_operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'comparisonOperator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_type: {
-                        let field_value = match fields_map.get("notification_type") {
+                        let field_value = match fields_map.get("notificationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subscriber_email_addresses: {
-                        let field_value = match fields_map.get("subscriber_email_addresses") {
+                        let field_value = match fields_map.get("subscriberEmailAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subscriber_email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subscriberEmailAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subscriber_sns_topic_arns: {
-                        let field_value = match fields_map.get("subscriber_sns_topic_arns") {
+                        let field_value = match fields_map.get("subscriberSnsTopicArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subscriber_sns_topic_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subscriberSnsTopicArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,9 +125,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threshold_type: {
-                        let field_value = match fields_map.get("threshold_type") {
+                        let field_value = match fields_map.get("thresholdType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'threshold_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thresholdType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

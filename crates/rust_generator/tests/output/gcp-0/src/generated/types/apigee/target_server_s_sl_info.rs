@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#ciphers,
                 ),
                 to_pulumi_object_field(
-                    "client_auth_enabled",
+                    "clientAuthEnabled",
                     &self.r#client_auth_enabled,
                 ),
                 to_pulumi_object_field(
-                    "common_name",
+                    "commonName",
                     &self.r#common_name,
                 ),
                 to_pulumi_object_field(
@@ -72,15 +72,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "ignore_validation_errors",
+                    "ignoreValidationErrors",
                     &self.r#ignore_validation_errors,
                 ),
                 to_pulumi_object_field(
-                    "key_alias",
+                    "keyAlias",
                     &self.r#key_alias,
                 ),
                 to_pulumi_object_field(
-                    "key_store",
+                    "keyStore",
                     &self.r#key_store,
                 ),
                 to_pulumi_object_field(
@@ -88,7 +88,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "trust_store",
+                    "trustStore",
                     &self.r#trust_store,
                 ),
             ];
@@ -122,16 +122,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_auth_enabled: {
-                        let field_value = match fields_map.get("client_auth_enabled") {
+                        let field_value = match fields_map.get("clientAuthEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_auth_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientAuthEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#common_name: {
-                        let field_value = match fields_map.get("common_name") {
+                        let field_value = match fields_map.get("commonName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -143,23 +143,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_validation_errors: {
-                        let field_value = match fields_map.get("ignore_validation_errors") {
+                        let field_value = match fields_map.get("ignoreValidationErrors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_validation_errors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreValidationErrors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_alias: {
-                        let field_value = match fields_map.get("key_alias") {
+                        let field_value = match fields_map.get("keyAlias") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_alias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyAlias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_store: {
-                        let field_value = match fields_map.get("key_store") {
+                        let field_value = match fields_map.get("keyStore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_store' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyStore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -171,9 +171,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trust_store: {
-                        let field_value = match fields_map.get("trust_store") {
+                        let field_value = match fields_map.get("trustStore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trust_store' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustStore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

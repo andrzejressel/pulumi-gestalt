@@ -161,7 +161,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "absent_input_audio_behavior",
+                    "absentInputAudioBehavior",
                     &self.r#absent_input_audio_behavior,
                 ),
                 to_pulumi_object_field(
@@ -169,27 +169,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#arib,
                 ),
                 to_pulumi_object_field(
-                    "arib_captions_pid",
+                    "aribCaptionsPid",
                     &self.r#arib_captions_pid,
                 ),
                 to_pulumi_object_field(
-                    "arib_captions_pid_control",
+                    "aribCaptionsPidControl",
                     &self.r#arib_captions_pid_control,
                 ),
                 to_pulumi_object_field(
-                    "audio_buffer_model",
+                    "audioBufferModel",
                     &self.r#audio_buffer_model,
                 ),
                 to_pulumi_object_field(
-                    "audio_frames_per_pes",
+                    "audioFramesPerPes",
                     &self.r#audio_frames_per_pes,
                 ),
                 to_pulumi_object_field(
-                    "audio_pids",
+                    "audioPids",
                     &self.r#audio_pids,
                 ),
                 to_pulumi_object_field(
-                    "audio_stream_type",
+                    "audioStreamType",
                     &self.r#audio_stream_type,
                 ),
                 to_pulumi_object_field(
@@ -197,31 +197,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "buffer_model",
+                    "bufferModel",
                     &self.r#buffer_model,
                 ),
                 to_pulumi_object_field(
-                    "cc_descriptor",
+                    "ccDescriptor",
                     &self.r#cc_descriptor,
                 ),
                 to_pulumi_object_field(
-                    "dvb_nit_settings",
+                    "dvbNitSettings",
                     &self.r#dvb_nit_settings,
                 ),
                 to_pulumi_object_field(
-                    "dvb_sdt_settings",
+                    "dvbSdtSettings",
                     &self.r#dvb_sdt_settings,
                 ),
                 to_pulumi_object_field(
-                    "dvb_sub_pids",
+                    "dvbSubPids",
                     &self.r#dvb_sub_pids,
                 ),
                 to_pulumi_object_field(
-                    "dvb_tdt_settings",
+                    "dvbTdtSettings",
                     &self.r#dvb_tdt_settings,
                 ),
                 to_pulumi_object_field(
-                    "dvb_teletext_pid",
+                    "dvbTeletextPid",
                     &self.r#dvb_teletext_pid,
                 ),
                 to_pulumi_object_field(
@@ -229,35 +229,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#ebif,
                 ),
                 to_pulumi_object_field(
-                    "ebp_audio_interval",
+                    "ebpAudioInterval",
                     &self.r#ebp_audio_interval,
                 ),
                 to_pulumi_object_field(
-                    "ebp_lookahead_ms",
+                    "ebpLookaheadMs",
                     &self.r#ebp_lookahead_ms,
                 ),
                 to_pulumi_object_field(
-                    "ebp_placement",
+                    "ebpPlacement",
                     &self.r#ebp_placement,
                 ),
                 to_pulumi_object_field(
-                    "ecm_pid",
+                    "ecmPid",
                     &self.r#ecm_pid,
                 ),
                 to_pulumi_object_field(
-                    "es_rate_in_pes",
+                    "esRateInPes",
                     &self.r#es_rate_in_pes,
                 ),
                 to_pulumi_object_field(
-                    "etv_platform_pid",
+                    "etvPlatformPid",
                     &self.r#etv_platform_pid,
                 ),
                 to_pulumi_object_field(
-                    "etv_signal_pid",
+                    "etvSignalPid",
                     &self.r#etv_signal_pid,
                 ),
                 to_pulumi_object_field(
-                    "fragment_time",
+                    "fragmentTime",
                     &self.r#fragment_time,
                 ),
                 to_pulumi_object_field(
@@ -265,87 +265,87 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#klv,
                 ),
                 to_pulumi_object_field(
-                    "klv_data_pids",
+                    "klvDataPids",
                     &self.r#klv_data_pids,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_id_3_behavior",
+                    "nielsenId3Behavior",
                     &self.r#nielsen_id_3_behavior,
                 ),
                 to_pulumi_object_field(
-                    "null_packet_bitrate",
+                    "nullPacketBitrate",
                     &self.r#null_packet_bitrate,
                 ),
                 to_pulumi_object_field(
-                    "pat_interval",
+                    "patInterval",
                     &self.r#pat_interval,
                 ),
                 to_pulumi_object_field(
-                    "pcr_control",
+                    "pcrControl",
                     &self.r#pcr_control,
                 ),
                 to_pulumi_object_field(
-                    "pcr_period",
+                    "pcrPeriod",
                     &self.r#pcr_period,
                 ),
                 to_pulumi_object_field(
-                    "pcr_pid",
+                    "pcrPid",
                     &self.r#pcr_pid,
                 ),
                 to_pulumi_object_field(
-                    "pmt_interval",
+                    "pmtInterval",
                     &self.r#pmt_interval,
                 ),
                 to_pulumi_object_field(
-                    "pmt_pid",
+                    "pmtPid",
                     &self.r#pmt_pid,
                 ),
                 to_pulumi_object_field(
-                    "program_num",
+                    "programNum",
                     &self.r#program_num,
                 ),
                 to_pulumi_object_field(
-                    "rate_mode",
+                    "rateMode",
                     &self.r#rate_mode,
                 ),
                 to_pulumi_object_field(
-                    "scte_27_pids",
+                    "scte27Pids",
                     &self.r#scte_27_pids,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_control",
+                    "scte35Control",
                     &self.r#scte_35_control,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_pid",
+                    "scte35Pid",
                     &self.r#scte_35_pid,
                 ),
                 to_pulumi_object_field(
-                    "segmentation_markers",
+                    "segmentationMarkers",
                     &self.r#segmentation_markers,
                 ),
                 to_pulumi_object_field(
-                    "segmentation_style",
+                    "segmentationStyle",
                     &self.r#segmentation_style,
                 ),
                 to_pulumi_object_field(
-                    "segmentation_time",
+                    "segmentationTime",
                     &self.r#segmentation_time,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_behavior",
+                    "timedMetadataBehavior",
                     &self.r#timed_metadata_behavior,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_pid",
+                    "timedMetadataPid",
                     &self.r#timed_metadata_pid,
                 ),
                 to_pulumi_object_field(
-                    "transport_stream_id",
+                    "transportStreamId",
                     &self.r#transport_stream_id,
                 ),
                 to_pulumi_object_field(
-                    "video_pid",
+                    "videoPid",
                     &self.r#video_pid,
                 ),
             ];
@@ -372,9 +372,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#absent_input_audio_behavior: {
-                        let field_value = match fields_map.get("absent_input_audio_behavior") {
+                        let field_value = match fields_map.get("absentInputAudioBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'absent_input_audio_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'absentInputAudioBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -386,44 +386,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#arib_captions_pid: {
-                        let field_value = match fields_map.get("arib_captions_pid") {
+                        let field_value = match fields_map.get("aribCaptionsPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'arib_captions_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aribCaptionsPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#arib_captions_pid_control: {
-                        let field_value = match fields_map.get("arib_captions_pid_control") {
+                        let field_value = match fields_map.get("aribCaptionsPidControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'arib_captions_pid_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aribCaptionsPidControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_buffer_model: {
-                        let field_value = match fields_map.get("audio_buffer_model") {
+                        let field_value = match fields_map.get("audioBufferModel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_buffer_model' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioBufferModel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_frames_per_pes: {
-                        let field_value = match fields_map.get("audio_frames_per_pes") {
+                        let field_value = match fields_map.get("audioFramesPerPes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_frames_per_pes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioFramesPerPes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_pids: {
-                        let field_value = match fields_map.get("audio_pids") {
+                        let field_value = match fields_map.get("audioPids") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_pids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioPids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_stream_type: {
-                        let field_value = match fields_map.get("audio_stream_type") {
+                        let field_value = match fields_map.get("audioStreamType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_stream_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioStreamType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -435,51 +435,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#buffer_model: {
-                        let field_value = match fields_map.get("buffer_model") {
+                        let field_value = match fields_map.get("bufferModel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'buffer_model' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bufferModel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cc_descriptor: {
-                        let field_value = match fields_map.get("cc_descriptor") {
+                        let field_value = match fields_map.get("ccDescriptor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cc_descriptor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ccDescriptor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dvb_nit_settings: {
-                        let field_value = match fields_map.get("dvb_nit_settings") {
+                        let field_value = match fields_map.get("dvbNitSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dvb_nit_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dvbNitSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dvb_sdt_settings: {
-                        let field_value = match fields_map.get("dvb_sdt_settings") {
+                        let field_value = match fields_map.get("dvbSdtSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dvb_sdt_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dvbSdtSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dvb_sub_pids: {
-                        let field_value = match fields_map.get("dvb_sub_pids") {
+                        let field_value = match fields_map.get("dvbSubPids") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dvb_sub_pids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dvbSubPids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dvb_tdt_settings: {
-                        let field_value = match fields_map.get("dvb_tdt_settings") {
+                        let field_value = match fields_map.get("dvbTdtSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dvb_tdt_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dvbTdtSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dvb_teletext_pid: {
-                        let field_value = match fields_map.get("dvb_teletext_pid") {
+                        let field_value = match fields_map.get("dvbTeletextPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dvb_teletext_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dvbTeletextPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -491,58 +491,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ebp_audio_interval: {
-                        let field_value = match fields_map.get("ebp_audio_interval") {
+                        let field_value = match fields_map.get("ebpAudioInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ebp_audio_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ebpAudioInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ebp_lookahead_ms: {
-                        let field_value = match fields_map.get("ebp_lookahead_ms") {
+                        let field_value = match fields_map.get("ebpLookaheadMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ebp_lookahead_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ebpLookaheadMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ebp_placement: {
-                        let field_value = match fields_map.get("ebp_placement") {
+                        let field_value = match fields_map.get("ebpPlacement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ebp_placement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ebpPlacement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ecm_pid: {
-                        let field_value = match fields_map.get("ecm_pid") {
+                        let field_value = match fields_map.get("ecmPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ecm_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ecmPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#es_rate_in_pes: {
-                        let field_value = match fields_map.get("es_rate_in_pes") {
+                        let field_value = match fields_map.get("esRateInPes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'es_rate_in_pes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'esRateInPes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#etv_platform_pid: {
-                        let field_value = match fields_map.get("etv_platform_pid") {
+                        let field_value = match fields_map.get("etvPlatformPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'etv_platform_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'etvPlatformPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#etv_signal_pid: {
-                        let field_value = match fields_map.get("etv_signal_pid") {
+                        let field_value = match fields_map.get("etvSignalPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'etv_signal_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'etvSignalPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fragment_time: {
-                        let field_value = match fields_map.get("fragment_time") {
+                        let field_value = match fields_map.get("fragmentTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fragment_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fragmentTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -554,149 +554,149 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#klv_data_pids: {
-                        let field_value = match fields_map.get("klv_data_pids") {
+                        let field_value = match fields_map.get("klvDataPids") {
                             Some(value) => value,
-                            None => bail!("Missing field 'klv_data_pids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'klvDataPids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nielsen_id_3_behavior: {
-                        let field_value = match fields_map.get("nielsen_id_3_behavior") {
+                        let field_value = match fields_map.get("nielsenId3Behavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nielsen_id_3_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nielsenId3Behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#null_packet_bitrate: {
-                        let field_value = match fields_map.get("null_packet_bitrate") {
+                        let field_value = match fields_map.get("nullPacketBitrate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'null_packet_bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nullPacketBitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pat_interval: {
-                        let field_value = match fields_map.get("pat_interval") {
+                        let field_value = match fields_map.get("patInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pat_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'patInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pcr_control: {
-                        let field_value = match fields_map.get("pcr_control") {
+                        let field_value = match fields_map.get("pcrControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pcr_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pcrControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pcr_period: {
-                        let field_value = match fields_map.get("pcr_period") {
+                        let field_value = match fields_map.get("pcrPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pcr_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pcrPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pcr_pid: {
-                        let field_value = match fields_map.get("pcr_pid") {
+                        let field_value = match fields_map.get("pcrPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pcr_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pcrPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pmt_interval: {
-                        let field_value = match fields_map.get("pmt_interval") {
+                        let field_value = match fields_map.get("pmtInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pmt_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pmtInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pmt_pid: {
-                        let field_value = match fields_map.get("pmt_pid") {
+                        let field_value = match fields_map.get("pmtPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pmt_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pmtPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#program_num: {
-                        let field_value = match fields_map.get("program_num") {
+                        let field_value = match fields_map.get("programNum") {
                             Some(value) => value,
-                            None => bail!("Missing field 'program_num' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'programNum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_mode: {
-                        let field_value = match fields_map.get("rate_mode") {
+                        let field_value = match fields_map.get("rateMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_27_pids: {
-                        let field_value = match fields_map.get("scte_27_pids") {
+                        let field_value = match fields_map.get("scte27Pids") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scte_27_pids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scte27Pids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_35_control: {
-                        let field_value = match fields_map.get("scte_35_control") {
+                        let field_value = match fields_map.get("scte35Control") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scte_35_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scte35Control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_35_pid: {
-                        let field_value = match fields_map.get("scte_35_pid") {
+                        let field_value = match fields_map.get("scte35Pid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scte_35_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scte35Pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#segmentation_markers: {
-                        let field_value = match fields_map.get("segmentation_markers") {
+                        let field_value = match fields_map.get("segmentationMarkers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'segmentation_markers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'segmentationMarkers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#segmentation_style: {
-                        let field_value = match fields_map.get("segmentation_style") {
+                        let field_value = match fields_map.get("segmentationStyle") {
                             Some(value) => value,
-                            None => bail!("Missing field 'segmentation_style' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'segmentationStyle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#segmentation_time: {
-                        let field_value = match fields_map.get("segmentation_time") {
+                        let field_value = match fields_map.get("segmentationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'segmentation_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'segmentationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timed_metadata_behavior: {
-                        let field_value = match fields_map.get("timed_metadata_behavior") {
+                        let field_value = match fields_map.get("timedMetadataBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timed_metadata_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timedMetadataBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timed_metadata_pid: {
-                        let field_value = match fields_map.get("timed_metadata_pid") {
+                        let field_value = match fields_map.get("timedMetadataPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timed_metadata_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timedMetadataPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transport_stream_id: {
-                        let field_value = match fields_map.get("transport_stream_id") {
+                        let field_value = match fields_map.get("transportStreamId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transport_stream_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transportStreamId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#video_pid: {
-                        let field_value = match fields_map.get("video_pid") {
+                        let field_value = match fields_map.get("videoPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'video_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'videoPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

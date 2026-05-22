@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#base,
                 ),
                 to_pulumi_object_field(
-                    "capacity_provider",
+                    "capacityProvider",
                     &self.r#capacity_provider,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#capacity_provider: {
-                        let field_value = match fields_map.get("capacity_provider") {
+                        let field_value = match fields_map.get("capacityProvider") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_provider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityProvider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

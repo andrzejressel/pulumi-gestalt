@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_extensions",
+                    "additionalExtensions",
                     &self.r#additional_extensions,
                 ),
                 to_pulumi_object_field(
-                    "known_extensions",
+                    "knownExtensions",
                     &self.r#known_extensions,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#additional_extensions: {
-                        let field_value = match fields_map.get("additional_extensions") {
+                        let field_value = match fields_map.get("additionalExtensions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_extensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalExtensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#known_extensions: {
-                        let field_value = match fields_map.get("known_extensions") {
+                        let field_value = match fields_map.get("knownExtensions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'known_extensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'knownExtensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

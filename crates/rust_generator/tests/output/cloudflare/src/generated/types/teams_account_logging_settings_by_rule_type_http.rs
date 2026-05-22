@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_all",
+                    "logAll",
                     &self.r#log_all,
                 ),
                 to_pulumi_object_field(
-                    "log_blocks",
+                    "logBlocks",
                     &self.r#log_blocks,
                 ),
             ];
@@ -57,16 +57,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#log_all: {
-                        let field_value = match fields_map.get("log_all") {
+                        let field_value = match fields_map.get("logAll") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_all' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logAll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_blocks: {
-                        let field_value = match fields_map.get("log_blocks") {
+                        let field_value = match fields_map.get("logBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

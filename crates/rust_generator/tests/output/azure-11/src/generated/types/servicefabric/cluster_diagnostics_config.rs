@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_endpoint",
+                    "blobEndpoint",
                     &self.r#blob_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "protected_account_key_name",
+                    "protectedAccountKeyName",
                     &self.r#protected_account_key_name,
                 ),
                 to_pulumi_object_field(
-                    "queue_endpoint",
+                    "queueEndpoint",
                     &self.r#queue_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_name",
+                    "storageAccountName",
                     &self.r#storage_account_name,
                 ),
                 to_pulumi_object_field(
-                    "table_endpoint",
+                    "tableEndpoint",
                     &self.r#table_endpoint,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#blob_endpoint: {
-                        let field_value = match fields_map.get("blob_endpoint") {
+                        let field_value = match fields_map.get("blobEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'blob_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blobEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protected_account_key_name: {
-                        let field_value = match fields_map.get("protected_account_key_name") {
+                        let field_value = match fields_map.get("protectedAccountKeyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protected_account_key_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protectedAccountKeyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#queue_endpoint: {
-                        let field_value = match fields_map.get("queue_endpoint") {
+                        let field_value = match fields_map.get("queueEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'queue_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queueEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_name: {
-                        let field_value = match fields_map.get("storage_account_name") {
+                        let field_value = match fields_map.get("storageAccountName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_endpoint: {
-                        let field_value = match fields_map.get("table_endpoint") {
+                        let field_value = match fields_map.get("tableEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tableEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "common_name",
+                    "commonName",
                     &self.r#common_name,
                 ),
                 to_pulumi_object_field(
-                    "is_admin",
+                    "isAdmin",
                     &self.r#is_admin,
                 ),
                 to_pulumi_object_field(
-                    "issuer_thumbprint",
+                    "issuerThumbprint",
                     &self.r#issuer_thumbprint,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#common_name: {
-                        let field_value = match fields_map.get("common_name") {
+                        let field_value = match fields_map.get("commonName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_admin: {
-                        let field_value = match fields_map.get("is_admin") {
+                        let field_value = match fields_map.get("isAdmin") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_admin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isAdmin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#issuer_thumbprint: {
-                        let field_value = match fields_map.get("issuer_thumbprint") {
+                        let field_value = match fields_map.get("issuerThumbprint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'issuer_thumbprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'issuerThumbprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

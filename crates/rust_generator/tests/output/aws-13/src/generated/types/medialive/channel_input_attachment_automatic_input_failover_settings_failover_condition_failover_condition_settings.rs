@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_silence_settings",
+                    "audioSilenceSettings",
                     &self.r#audio_silence_settings,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_settings",
+                    "inputLossSettings",
                     &self.r#input_loss_settings,
                 ),
                 to_pulumi_object_field(
-                    "video_black_settings",
+                    "videoBlackSettings",
                     &self.r#video_black_settings,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_silence_settings: {
-                        let field_value = match fields_map.get("audio_silence_settings") {
+                        let field_value = match fields_map.get("audioSilenceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_silence_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioSilenceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_loss_settings: {
-                        let field_value = match fields_map.get("input_loss_settings") {
+                        let field_value = match fields_map.get("inputLossSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_loss_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLossSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#video_black_settings: {
-                        let field_value = match fields_map.get("video_black_settings") {
+                        let field_value = match fields_map.get("videoBlackSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'video_black_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'videoBlackSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

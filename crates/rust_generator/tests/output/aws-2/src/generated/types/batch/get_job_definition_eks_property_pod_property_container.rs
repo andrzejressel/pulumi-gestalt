@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "image_pull_policy",
+                    "imagePullPolicy",
                     &self.r#image_pull_policy,
                 ),
                 to_pulumi_object_field(
@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#resources,
                 ),
                 to_pulumi_object_field(
-                    "security_contexts",
+                    "securityContexts",
                     &self.r#security_contexts,
                 ),
                 to_pulumi_object_field(
-                    "volume_mounts",
+                    "volumeMounts",
                     &self.r#volume_mounts,
                 ),
             ];
@@ -142,9 +142,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_pull_policy: {
-                        let field_value = match fields_map.get("image_pull_policy") {
+                        let field_value = match fields_map.get("imagePullPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_pull_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imagePullPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -163,16 +163,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_contexts: {
-                        let field_value = match fields_map.get("security_contexts") {
+                        let field_value = match fields_map.get("securityContexts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_contexts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityContexts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_mounts: {
-                        let field_value = match fields_map.get("volume_mounts") {
+                        let field_value = match fields_map.get("volumeMounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_mounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeMounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

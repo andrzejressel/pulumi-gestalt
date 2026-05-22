@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enabled_standard_arns",
+                    "enabledStandardArns",
                     &self.r#enabled_standard_arns,
                 ),
                 to_pulumi_object_field(
-                    "security_controls_configuration",
+                    "securityControlsConfiguration",
                     &self.r#security_controls_configuration,
                 ),
                 to_pulumi_object_field(
-                    "service_enabled",
+                    "serviceEnabled",
                     &self.r#service_enabled,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#enabled_standard_arns: {
-                        let field_value = match fields_map.get("enabled_standard_arns") {
+                        let field_value = match fields_map.get("enabledStandardArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enabled_standard_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enabledStandardArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_controls_configuration: {
-                        let field_value = match fields_map.get("security_controls_configuration") {
+                        let field_value = match fields_map.get("securityControlsConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_controls_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityControlsConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_enabled: {
-                        let field_value = match fields_map.get("service_enabled") {
+                        let field_value = match fields_map.get("serviceEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

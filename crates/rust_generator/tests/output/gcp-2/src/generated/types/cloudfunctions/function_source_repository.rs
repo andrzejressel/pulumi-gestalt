@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deployed_url",
+                    "deployedUrl",
                     &self.r#deployed_url,
                 ),
                 to_pulumi_object_field(
@@ -62,9 +62,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#deployed_url: {
-                        let field_value = match fields_map.get("deployed_url") {
+                        let field_value = match fields_map.get("deployedUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployed_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deployedUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

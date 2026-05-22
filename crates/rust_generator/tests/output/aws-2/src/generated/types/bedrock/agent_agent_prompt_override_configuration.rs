@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "override_lambda",
+                    "overrideLambda",
                     &self.r#override_lambda,
                 ),
                 to_pulumi_object_field(
-                    "prompt_configurations",
+                    "promptConfigurations",
                     &self.r#prompt_configurations,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#override_lambda: {
-                        let field_value = match fields_map.get("override_lambda") {
+                        let field_value = match fields_map.get("overrideLambda") {
                             Some(value) => value,
-                            None => bail!("Missing field 'override_lambda' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'overrideLambda' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prompt_configurations: {
-                        let field_value = match fields_map.get("prompt_configurations") {
+                        let field_value = match fields_map.get("promptConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prompt_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'promptConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

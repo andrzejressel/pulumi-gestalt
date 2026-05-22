@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "logical_zone",
+                    "logicalZone",
                     &self.r#logical_zone,
                 ),
                 to_pulumi_object_field(
-                    "physical_zone",
+                    "physicalZone",
                     &self.r#physical_zone,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#logical_zone: {
-                        let field_value = match fields_map.get("logical_zone") {
+                        let field_value = match fields_map.get("logicalZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logical_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logicalZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#physical_zone: {
-                        let field_value = match fields_map.get("physical_zone") {
+                        let field_value = match fields_map.get("physicalZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'physical_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'physicalZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

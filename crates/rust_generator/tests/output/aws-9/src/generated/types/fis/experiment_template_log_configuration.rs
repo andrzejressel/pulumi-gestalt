@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_logs_configuration",
+                    "cloudwatchLogsConfiguration",
                     &self.r#cloudwatch_logs_configuration,
                 ),
                 to_pulumi_object_field(
-                    "log_schema_version",
+                    "logSchemaVersion",
                     &self.r#log_schema_version,
                 ),
                 to_pulumi_object_field(
-                    "s_3_configuration",
+                    "s3Configuration",
                     &self.r#s_3_configuration,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#cloudwatch_logs_configuration: {
-                        let field_value = match fields_map.get("cloudwatch_logs_configuration") {
+                        let field_value = match fields_map.get("cloudwatchLogsConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudwatch_logs_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudwatchLogsConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_schema_version: {
-                        let field_value = match fields_map.get("log_schema_version") {
+                        let field_value = match fields_map.get("logSchemaVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_schema_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logSchemaVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_configuration: {
-                        let field_value = match fields_map.get("s_3_configuration") {
+                        let field_value = match fields_map.get("s3Configuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

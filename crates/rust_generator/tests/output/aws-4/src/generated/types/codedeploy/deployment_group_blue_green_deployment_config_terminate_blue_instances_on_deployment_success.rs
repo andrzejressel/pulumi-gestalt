@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "termination_wait_time_in_minutes",
+                    "terminationWaitTimeInMinutes",
                     &self.r#termination_wait_time_in_minutes,
                 ),
             ];
@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#termination_wait_time_in_minutes: {
-                        let field_value = match fields_map.get("termination_wait_time_in_minutes") {
+                        let field_value = match fields_map.get("terminationWaitTimeInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'termination_wait_time_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'terminationWaitTimeInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

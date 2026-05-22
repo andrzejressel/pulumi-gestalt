@@ -42,27 +42,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_zones",
+                    "availabilityZones",
                     &self.r#availability_zones,
                 ),
                 to_pulumi_object_field(
-                    "connect_ips",
+                    "connectIps",
                     &self.r#connect_ips,
                 ),
                 to_pulumi_object_field(
-                    "customer_dns_ips",
+                    "customerDnsIps",
                     &self.r#customer_dns_ips,
                 ),
                 to_pulumi_object_field(
-                    "customer_username",
+                    "customerUsername",
                     &self.r#customer_username,
                 ),
                 to_pulumi_object_field(
-                    "subnet_ids",
+                    "subnetIds",
                     &self.r#subnet_ids,
                 ),
                 to_pulumi_object_field(
-                    "vpc_id",
+                    "vpcId",
                     &self.r#vpc_id,
                 ),
             ];
@@ -89,44 +89,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#availability_zones: {
-                        let field_value = match fields_map.get("availability_zones") {
+                        let field_value = match fields_map.get("availabilityZones") {
                             Some(value) => value,
-                            None => bail!("Missing field 'availability_zones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availabilityZones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connect_ips: {
-                        let field_value = match fields_map.get("connect_ips") {
+                        let field_value = match fields_map.get("connectIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connect_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#customer_dns_ips: {
-                        let field_value = match fields_map.get("customer_dns_ips") {
+                        let field_value = match fields_map.get("customerDnsIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customer_dns_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customerDnsIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#customer_username: {
-                        let field_value = match fields_map.get("customer_username") {
+                        let field_value = match fields_map.get("customerUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customer_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customerUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_ids: {
-                        let field_value = match fields_map.get("subnet_ids") {
+                        let field_value = match fields_map.get("subnetIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subnet_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subnetIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_id: {
-                        let field_value = match fields_map.get("vpc_id") {
+                        let field_value = match fields_map.get("vpcId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

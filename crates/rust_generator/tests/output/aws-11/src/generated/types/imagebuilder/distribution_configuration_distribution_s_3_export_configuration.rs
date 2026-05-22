@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_image_format",
+                    "diskImageFormat",
                     &self.r#disk_image_format,
                 ),
                 to_pulumi_object_field(
-                    "role_name",
+                    "roleName",
                     &self.r#role_name,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket",
+                    "s3Bucket",
                     &self.r#s_3_bucket,
                 ),
                 to_pulumi_object_field(
-                    "s_3_prefix",
+                    "s3Prefix",
                     &self.r#s_3_prefix,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#disk_image_format: {
-                        let field_value = match fields_map.get("disk_image_format") {
+                        let field_value = match fields_map.get("diskImageFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_image_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskImageFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_name: {
-                        let field_value = match fields_map.get("role_name") {
+                        let field_value = match fields_map.get("roleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_bucket: {
-                        let field_value = match fields_map.get("s_3_bucket") {
+                        let field_value = match fields_map.get("s3Bucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_prefix: {
-                        let field_value = match fields_map.get("s_3_prefix") {
+                        let field_value = match fields_map.get("s3Prefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

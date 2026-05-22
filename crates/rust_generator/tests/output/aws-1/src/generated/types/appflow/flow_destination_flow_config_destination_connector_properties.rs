@@ -70,15 +70,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_connector",
+                    "customConnector",
                     &self.r#custom_connector,
                 ),
                 to_pulumi_object_field(
-                    "customer_profiles",
+                    "customerProfiles",
                     &self.r#customer_profiles,
                 ),
                 to_pulumi_object_field(
-                    "event_bridge",
+                    "eventBridge",
                     &self.r#event_bridge,
                 ),
                 to_pulumi_object_field(
@@ -86,7 +86,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#honeycode,
                 ),
                 to_pulumi_object_field(
-                    "lookout_metrics",
+                    "lookoutMetrics",
                     &self.r#lookout_metrics,
                 ),
                 to_pulumi_object_field(
@@ -98,7 +98,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#redshift,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
                 to_pulumi_object_field(
@@ -106,7 +106,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#salesforce,
                 ),
                 to_pulumi_object_field(
-                    "sapo_data",
+                    "sapoData",
                     &self.r#sapo_data,
                 ),
                 to_pulumi_object_field(
@@ -145,23 +145,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#custom_connector: {
-                        let field_value = match fields_map.get("custom_connector") {
+                        let field_value = match fields_map.get("customConnector") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_connector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customConnector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#customer_profiles: {
-                        let field_value = match fields_map.get("customer_profiles") {
+                        let field_value = match fields_map.get("customerProfiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customer_profiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customerProfiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_bridge: {
-                        let field_value = match fields_map.get("event_bridge") {
+                        let field_value = match fields_map.get("eventBridge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_bridge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventBridge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -173,9 +173,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lookout_metrics: {
-                        let field_value = match fields_map.get("lookout_metrics") {
+                        let field_value = match fields_map.get("lookoutMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lookout_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lookoutMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -194,9 +194,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3: {
-                        let field_value = match fields_map.get("s_3") {
+                        let field_value = match fields_map.get("s3") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -208,9 +208,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sapo_data: {
-                        let field_value = match fields_map.get("sapo_data") {
+                        let field_value = match fields_map.get("sapoData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sapo_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sapoData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

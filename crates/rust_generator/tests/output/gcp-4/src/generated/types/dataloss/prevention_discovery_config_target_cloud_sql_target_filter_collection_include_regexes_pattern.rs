@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "database_regex",
+                    "databaseRegex",
                     &self.r#database_regex,
                 ),
                 to_pulumi_object_field(
-                    "database_resource_name_regex",
+                    "databaseResourceNameRegex",
                     &self.r#database_resource_name_regex,
                 ),
                 to_pulumi_object_field(
-                    "instance_regex",
+                    "instanceRegex",
                     &self.r#instance_regex,
                 ),
                 to_pulumi_object_field(
-                    "project_id_regex",
+                    "projectIdRegex",
                     &self.r#project_id_regex,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#database_regex: {
-                        let field_value = match fields_map.get("database_regex") {
+                        let field_value = match fields_map.get("databaseRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_resource_name_regex: {
-                        let field_value = match fields_map.get("database_resource_name_regex") {
+                        let field_value = match fields_map.get("databaseResourceNameRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_resource_name_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseResourceNameRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_regex: {
-                        let field_value = match fields_map.get("instance_regex") {
+                        let field_value = match fields_map.get("instanceRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#project_id_regex: {
-                        let field_value = match fields_map.get("project_id_regex") {
+                        let field_value = match fields_map.get("projectIdRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_id_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectIdRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

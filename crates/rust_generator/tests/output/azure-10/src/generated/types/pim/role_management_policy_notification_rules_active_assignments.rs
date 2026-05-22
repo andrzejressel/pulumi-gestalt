@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_notifications",
+                    "adminNotifications",
                     &self.r#admin_notifications,
                 ),
                 to_pulumi_object_field(
-                    "approver_notifications",
+                    "approverNotifications",
                     &self.r#approver_notifications,
                 ),
                 to_pulumi_object_field(
-                    "assignee_notifications",
+                    "assigneeNotifications",
                     &self.r#assignee_notifications,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#admin_notifications: {
-                        let field_value = match fields_map.get("admin_notifications") {
+                        let field_value = match fields_map.get("adminNotifications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_notifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminNotifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#approver_notifications: {
-                        let field_value = match fields_map.get("approver_notifications") {
+                        let field_value = match fields_map.get("approverNotifications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'approver_notifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'approverNotifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#assignee_notifications: {
-                        let field_value = match fields_map.get("assignee_notifications") {
+                        let field_value = match fields_map.get("assigneeNotifications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'assignee_notifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'assigneeNotifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

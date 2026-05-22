@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "password_param",
+                    "passwordParam",
                     &self.r#password_param,
                 ),
                 to_pulumi_object_field(
@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#password_param: {
-                        let field_value = match fields_map.get("password_param") {
+                        let field_value = match fields_map.get("passwordParam") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_param' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordParam' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

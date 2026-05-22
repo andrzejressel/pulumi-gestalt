@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "value_expression",
+                    "valueExpression",
                     &self.r#value_expression,
                 ),
             ];
@@ -68,9 +68,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_expression: {
-                        let field_value = match fields_map.get("value_expression") {
+                        let field_value = match fields_map.get("valueExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

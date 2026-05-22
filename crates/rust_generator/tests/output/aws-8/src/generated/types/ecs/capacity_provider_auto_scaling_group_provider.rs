@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cap
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_scaling_group_arn",
+                    "autoScalingGroupArn",
                     &self.r#auto_scaling_group_arn,
                 ),
                 to_pulumi_object_field(
-                    "managed_draining",
+                    "managedDraining",
                     &self.r#managed_draining,
                 ),
                 to_pulumi_object_field(
-                    "managed_scaling",
+                    "managedScaling",
                     &self.r#managed_scaling,
                 ),
                 to_pulumi_object_field(
-                    "managed_termination_protection",
+                    "managedTerminationProtection",
                     &self.r#managed_termination_protection,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#auto_scaling_group_arn: {
-                        let field_value = match fields_map.get("auto_scaling_group_arn") {
+                        let field_value = match fields_map.get("autoScalingGroupArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_scaling_group_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoScalingGroupArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_draining: {
-                        let field_value = match fields_map.get("managed_draining") {
+                        let field_value = match fields_map.get("managedDraining") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_draining' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedDraining' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_scaling: {
-                        let field_value = match fields_map.get("managed_scaling") {
+                        let field_value = match fields_map.get("managedScaling") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_scaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedScaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_termination_protection: {
-                        let field_value = match fields_map.get("managed_termination_protection") {
+                        let field_value = match fields_map.get("managedTerminationProtection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_termination_protection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedTerminationProtection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gateway_load_balancer_frontend_ip_configuration_id",
+                    "gatewayLoadBalancerFrontendIpConfigurationId",
                     &self.r#gateway_load_balancer_frontend_ip_configuration_id,
                 ),
                 to_pulumi_object_field(
@@ -67,23 +67,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#primary,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address_allocation",
+                    "privateIpAddressAllocation",
                     &self.r#private_ip_address_allocation,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address_version",
+                    "privateIpAddressVersion",
                     &self.r#private_ip_address_version,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_address_id",
+                    "publicIpAddressId",
                     &self.r#public_ip_address_id,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#gateway_load_balancer_frontend_ip_configuration_id: {
-                        let field_value = match fields_map.get("gateway_load_balancer_frontend_ip_configuration_id") {
+                        let field_value = match fields_map.get("gatewayLoadBalancerFrontendIpConfigurationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gateway_load_balancer_frontend_ip_configuration_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gatewayLoadBalancerFrontendIpConfigurationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -131,37 +131,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip_address: {
-                        let field_value = match fields_map.get("private_ip_address") {
+                        let field_value = match fields_map.get("privateIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip_address_allocation: {
-                        let field_value = match fields_map.get("private_ip_address_allocation") {
+                        let field_value = match fields_map.get("privateIpAddressAllocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip_address_allocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIpAddressAllocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip_address_version: {
-                        let field_value = match fields_map.get("private_ip_address_version") {
+                        let field_value = match fields_map.get("privateIpAddressVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip_address_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIpAddressVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_ip_address_id: {
-                        let field_value = match fields_map.get("public_ip_address_id") {
+                        let field_value = match fields_map.get("publicIpAddressId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_ip_address_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicIpAddressId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_id: {
-                        let field_value = match fields_map.get("subnet_id") {
+                        let field_value = match fields_map.get("subnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

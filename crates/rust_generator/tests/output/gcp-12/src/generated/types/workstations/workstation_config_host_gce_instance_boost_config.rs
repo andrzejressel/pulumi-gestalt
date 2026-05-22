@@ -49,11 +49,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#accelerators,
                 ),
                 to_pulumi_object_field(
-                    "boot_disk_size_gb",
+                    "bootDiskSizeGb",
                     &self.r#boot_disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "enable_nested_virtualization",
+                    "enableNestedVirtualization",
                     &self.r#enable_nested_virtualization,
                 ),
                 to_pulumi_object_field(
@@ -61,11 +61,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "pool_size",
+                    "poolSize",
                     &self.r#pool_size,
                 ),
             ];
@@ -99,16 +99,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#boot_disk_size_gb: {
-                        let field_value = match fields_map.get("boot_disk_size_gb") {
+                        let field_value = match fields_map.get("bootDiskSizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'boot_disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bootDiskSizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_nested_virtualization: {
-                        let field_value = match fields_map.get("enable_nested_virtualization") {
+                        let field_value = match fields_map.get("enableNestedVirtualization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_nested_virtualization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableNestedVirtualization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,16 +120,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#machine_type: {
-                        let field_value = match fields_map.get("machine_type") {
+                        let field_value = match fields_map.get("machineType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'machine_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'machineType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pool_size: {
-                        let field_value = match fields_map.get("pool_size") {
+                        let field_value = match fields_map.get("poolSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pool_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'poolSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

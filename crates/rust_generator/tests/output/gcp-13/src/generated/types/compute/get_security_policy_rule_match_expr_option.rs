@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "recaptcha_options",
+                    "recaptchaOptions",
                     &self.r#recaptcha_options,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#recaptcha_options: {
-                        let field_value = match fields_map.get("recaptcha_options") {
+                        let field_value = match fields_map.get("recaptchaOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recaptcha_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recaptchaOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "job_expires_at",
+                    "jobExpiresAt",
                     &self.r#job_expires_at,
                 ),
                 to_pulumi_object_field(
-                    "job_imminent_expiration_health_event_arn",
+                    "jobImminentExpirationHealthEventArn",
                     &self.r#job_imminent_expiration_health_event_arn,
                 ),
                 to_pulumi_object_field(
-                    "job_paused_at",
+                    "jobPausedAt",
                     &self.r#job_paused_at,
                 ),
             ];
@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#job_expires_at: {
-                        let field_value = match fields_map.get("job_expires_at") {
+                        let field_value = match fields_map.get("jobExpiresAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_expires_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobExpiresAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_imminent_expiration_health_event_arn: {
-                        let field_value = match fields_map.get("job_imminent_expiration_health_event_arn") {
+                        let field_value = match fields_map.get("jobImminentExpirationHealthEventArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_imminent_expiration_health_event_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobImminentExpirationHealthEventArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_paused_at: {
-                        let field_value = match fields_map.get("job_paused_at") {
+                        let field_value = match fields_map.get("jobPausedAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_paused_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobPausedAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

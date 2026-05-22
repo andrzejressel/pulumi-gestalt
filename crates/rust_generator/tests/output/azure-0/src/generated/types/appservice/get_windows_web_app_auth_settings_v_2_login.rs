@@ -63,47 +63,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_external_redirect_urls",
+                    "allowedExternalRedirectUrls",
                     &self.r#allowed_external_redirect_urls,
                 ),
                 to_pulumi_object_field(
-                    "cookie_expiration_convention",
+                    "cookieExpirationConvention",
                     &self.r#cookie_expiration_convention,
                 ),
                 to_pulumi_object_field(
-                    "cookie_expiration_time",
+                    "cookieExpirationTime",
                     &self.r#cookie_expiration_time,
                 ),
                 to_pulumi_object_field(
-                    "logout_endpoint",
+                    "logoutEndpoint",
                     &self.r#logout_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "nonce_expiration_time",
+                    "nonceExpirationTime",
                     &self.r#nonce_expiration_time,
                 ),
                 to_pulumi_object_field(
-                    "preserve_url_fragments_for_logins",
+                    "preserveUrlFragmentsForLogins",
                     &self.r#preserve_url_fragments_for_logins,
                 ),
                 to_pulumi_object_field(
-                    "token_refresh_extension_time",
+                    "tokenRefreshExtensionTime",
                     &self.r#token_refresh_extension_time,
                 ),
                 to_pulumi_object_field(
-                    "token_store_enabled",
+                    "tokenStoreEnabled",
                     &self.r#token_store_enabled,
                 ),
                 to_pulumi_object_field(
-                    "token_store_path",
+                    "tokenStorePath",
                     &self.r#token_store_path,
                 ),
                 to_pulumi_object_field(
-                    "token_store_sas_setting_name",
+                    "tokenStoreSasSettingName",
                     &self.r#token_store_sas_setting_name,
                 ),
                 to_pulumi_object_field(
-                    "validate_nonce",
+                    "validateNonce",
                     &self.r#validate_nonce,
                 ),
             ];
@@ -130,79 +130,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#allowed_external_redirect_urls: {
-                        let field_value = match fields_map.get("allowed_external_redirect_urls") {
+                        let field_value = match fields_map.get("allowedExternalRedirectUrls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_external_redirect_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedExternalRedirectUrls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cookie_expiration_convention: {
-                        let field_value = match fields_map.get("cookie_expiration_convention") {
+                        let field_value = match fields_map.get("cookieExpirationConvention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cookie_expiration_convention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cookieExpirationConvention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cookie_expiration_time: {
-                        let field_value = match fields_map.get("cookie_expiration_time") {
+                        let field_value = match fields_map.get("cookieExpirationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cookie_expiration_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cookieExpirationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logout_endpoint: {
-                        let field_value = match fields_map.get("logout_endpoint") {
+                        let field_value = match fields_map.get("logoutEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logout_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logoutEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nonce_expiration_time: {
-                        let field_value = match fields_map.get("nonce_expiration_time") {
+                        let field_value = match fields_map.get("nonceExpirationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nonce_expiration_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nonceExpirationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_url_fragments_for_logins: {
-                        let field_value = match fields_map.get("preserve_url_fragments_for_logins") {
+                        let field_value = match fields_map.get("preserveUrlFragmentsForLogins") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_url_fragments_for_logins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preserveUrlFragmentsForLogins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_refresh_extension_time: {
-                        let field_value = match fields_map.get("token_refresh_extension_time") {
+                        let field_value = match fields_map.get("tokenRefreshExtensionTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_refresh_extension_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenRefreshExtensionTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_store_enabled: {
-                        let field_value = match fields_map.get("token_store_enabled") {
+                        let field_value = match fields_map.get("tokenStoreEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_store_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenStoreEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_store_path: {
-                        let field_value = match fields_map.get("token_store_path") {
+                        let field_value = match fields_map.get("tokenStorePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_store_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenStorePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_store_sas_setting_name: {
-                        let field_value = match fields_map.get("token_store_sas_setting_name") {
+                        let field_value = match fields_map.get("tokenStoreSasSettingName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_store_sas_setting_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenStoreSasSettingName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#validate_nonce: {
-                        let field_value = match fields_map.get("validate_nonce") {
+                        let field_value = match fields_map.get("validateNonce") {
                             Some(value) => value,
-                            None => bail!("Missing field 'validate_nonce' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validateNonce' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_types",
+                    "blobTypes",
                     &self.r#blob_types,
                 ),
                 to_pulumi_object_field(
-                    "match_blob_index_tags",
+                    "matchBlobIndexTags",
                     &self.r#match_blob_index_tags,
                 ),
                 to_pulumi_object_field(
-                    "prefix_matches",
+                    "prefixMatches",
                     &self.r#prefix_matches,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#blob_types: {
-                        let field_value = match fields_map.get("blob_types") {
+                        let field_value = match fields_map.get("blobTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'blob_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blobTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_blob_index_tags: {
-                        let field_value = match fields_map.get("match_blob_index_tags") {
+                        let field_value = match fields_map.get("matchBlobIndexTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_blob_index_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchBlobIndexTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_matches: {
-                        let field_value = match fields_map.get("prefix_matches") {
+                        let field_value = match fields_map.get("prefixMatches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_matches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixMatches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

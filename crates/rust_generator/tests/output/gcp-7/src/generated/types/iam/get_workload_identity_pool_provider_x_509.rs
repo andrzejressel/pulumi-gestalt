@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "trust_stores",
+                    "trustStores",
                     &self.r#trust_stores,
                 ),
             ];
@@ -54,9 +54,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#trust_stores: {
-                        let field_value = match fields_map.get("trust_stores") {
+                        let field_value = match fields_map.get("trustStores") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trust_stores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustStores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

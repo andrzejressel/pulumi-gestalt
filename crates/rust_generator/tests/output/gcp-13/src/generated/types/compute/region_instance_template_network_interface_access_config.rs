@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "nat_ip",
+                    "natIp",
                     &self.r#nat_ip,
                 ),
                 to_pulumi_object_field(
-                    "network_tier",
+                    "networkTier",
                     &self.r#network_tier,
                 ),
                 to_pulumi_object_field(
-                    "public_ptr_domain_name",
+                    "publicPtrDomainName",
                     &self.r#public_ptr_domain_name,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#nat_ip: {
-                        let field_value = match fields_map.get("nat_ip") {
+                        let field_value = match fields_map.get("natIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nat_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'natIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_tier: {
-                        let field_value = match fields_map.get("network_tier") {
+                        let field_value = match fields_map.get("networkTier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkTier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_ptr_domain_name: {
-                        let field_value = match fields_map.get("public_ptr_domain_name") {
+                        let field_value = match fields_map.get("publicPtrDomainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_ptr_domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicPtrDomainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

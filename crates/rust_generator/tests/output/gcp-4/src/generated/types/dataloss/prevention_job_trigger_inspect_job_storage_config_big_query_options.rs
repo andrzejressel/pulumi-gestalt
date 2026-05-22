@@ -61,31 +61,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "excluded_fields",
+                    "excludedFields",
                     &self.r#excluded_fields,
                 ),
                 to_pulumi_object_field(
-                    "identifying_fields",
+                    "identifyingFields",
                     &self.r#identifying_fields,
                 ),
                 to_pulumi_object_field(
-                    "included_fields",
+                    "includedFields",
                     &self.r#included_fields,
                 ),
                 to_pulumi_object_field(
-                    "rows_limit",
+                    "rowsLimit",
                     &self.r#rows_limit,
                 ),
                 to_pulumi_object_field(
-                    "rows_limit_percent",
+                    "rowsLimitPercent",
                     &self.r#rows_limit_percent,
                 ),
                 to_pulumi_object_field(
-                    "sample_method",
+                    "sampleMethod",
                     &self.r#sample_method,
                 ),
                 to_pulumi_object_field(
-                    "table_reference",
+                    "tableReference",
                     &self.r#table_reference,
                 ),
             ];
@@ -112,51 +112,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#excluded_fields: {
-                        let field_value = match fields_map.get("excluded_fields") {
+                        let field_value = match fields_map.get("excludedFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identifying_fields: {
-                        let field_value = match fields_map.get("identifying_fields") {
+                        let field_value = match fields_map.get("identifyingFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identifying_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identifyingFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_fields: {
-                        let field_value = match fields_map.get("included_fields") {
+                        let field_value = match fields_map.get("includedFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rows_limit: {
-                        let field_value = match fields_map.get("rows_limit") {
+                        let field_value = match fields_map.get("rowsLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rows_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rowsLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rows_limit_percent: {
-                        let field_value = match fields_map.get("rows_limit_percent") {
+                        let field_value = match fields_map.get("rowsLimitPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rows_limit_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rowsLimitPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_method: {
-                        let field_value = match fields_map.get("sample_method") {
+                        let field_value = match fields_map.get("sampleMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_reference: {
-                        let field_value = match fields_map.get("table_reference") {
+                        let field_value = match fields_map.get("tableReference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_reference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tableReference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

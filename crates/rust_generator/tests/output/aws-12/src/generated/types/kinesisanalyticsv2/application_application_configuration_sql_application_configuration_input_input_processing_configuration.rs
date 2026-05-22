@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "input_lambda_processor",
+                    "inputLambdaProcessor",
                     &self.r#input_lambda_processor,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#input_lambda_processor: {
-                        let field_value = match fields_map.get("input_lambda_processor") {
+                        let field_value = match fields_map.get("inputLambdaProcessor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_lambda_processor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLambdaProcessor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

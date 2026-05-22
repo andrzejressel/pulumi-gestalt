@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
                     &self.r#access,
                 ),
                 to_pulumi_object_field(
-                    "anonymous_gid",
+                    "anonymousGid",
                     &self.r#anonymous_gid,
                 ),
                 to_pulumi_object_field(
-                    "anonymous_uid",
+                    "anonymousUid",
                     &self.r#anonymous_uid,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "root_squash_enabled",
+                    "rootSquashEnabled",
                     &self.r#root_squash_enabled,
                 ),
                 to_pulumi_object_field(
@@ -77,11 +77,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
                     &self.r#scope,
                 ),
                 to_pulumi_object_field(
-                    "submount_access_enabled",
+                    "submountAccessEnabled",
                     &self.r#submount_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "suid_enabled",
+                    "suidEnabled",
                     &self.r#suid_enabled,
                 ),
             ];
@@ -115,16 +115,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#anonymous_gid: {
-                        let field_value = match fields_map.get("anonymous_gid") {
+                        let field_value = match fields_map.get("anonymousGid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'anonymous_gid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'anonymousGid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#anonymous_uid: {
-                        let field_value = match fields_map.get("anonymous_uid") {
+                        let field_value = match fields_map.get("anonymousUid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'anonymous_uid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'anonymousUid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -136,9 +136,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_squash_enabled: {
-                        let field_value = match fields_map.get("root_squash_enabled") {
+                        let field_value = match fields_map.get("rootSquashEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_squash_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootSquashEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -150,16 +150,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#submount_access_enabled: {
-                        let field_value = match fields_map.get("submount_access_enabled") {
+                        let field_value = match fields_map.get("submountAccessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'submount_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'submountAccessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#suid_enabled: {
-                        let field_value = match fields_map.get("suid_enabled") {
+                        let field_value = match fields_map.get("suidEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'suid_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'suidEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

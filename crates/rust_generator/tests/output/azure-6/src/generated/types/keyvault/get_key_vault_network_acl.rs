@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#bypass,
                 ),
                 to_pulumi_object_field(
-                    "default_action",
+                    "defaultAction",
                     &self.r#default_action,
                 ),
                 to_pulumi_object_field(
-                    "ip_rules",
+                    "ipRules",
                     &self.r#ip_rules,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_subnet_ids",
+                    "virtualNetworkSubnetIds",
                     &self.r#virtual_network_subnet_ids,
                 ),
             ];
@@ -77,23 +77,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_action: {
-                        let field_value = match fields_map.get("default_action") {
+                        let field_value = match fields_map.get("defaultAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_rules: {
-                        let field_value = match fields_map.get("ip_rules") {
+                        let field_value = match fields_map.get("ipRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_network_subnet_ids: {
-                        let field_value = match fields_map.get("virtual_network_subnet_ids") {
+                        let field_value = match fields_map.get("virtualNetworkSubnetIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_network_subnet_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNetworkSubnetIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

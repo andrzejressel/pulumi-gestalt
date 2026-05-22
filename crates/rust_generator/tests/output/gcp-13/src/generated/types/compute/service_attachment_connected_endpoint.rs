@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_network",
+                    "consumerNetwork",
                     &self.r#consumer_network,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#endpoint,
                 ),
                 to_pulumi_object_field(
-                    "propagated_connection_count",
+                    "propagatedConnectionCount",
                     &self.r#propagated_connection_count,
                 ),
                 to_pulumi_object_field(
-                    "psc_connection_id",
+                    "pscConnectionId",
                     &self.r#psc_connection_id,
                 ),
                 to_pulumi_object_field(
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#consumer_network: {
-                        let field_value = match fields_map.get("consumer_network") {
+                        let field_value = match fields_map.get("consumerNetwork") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerNetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -102,16 +102,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#propagated_connection_count: {
-                        let field_value = match fields_map.get("propagated_connection_count") {
+                        let field_value = match fields_map.get("propagatedConnectionCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'propagated_connection_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'propagatedConnectionCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#psc_connection_id: {
-                        let field_value = match fields_map.get("psc_connection_id") {
+                        let field_value = match fields_map.get("pscConnectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'psc_connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pscConnectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_enabled",
+                    "autoscalingEnabled",
                     &self.r#autoscaling_enabled,
                 ),
                 to_pulumi_object_field(
-                    "limit_configs",
+                    "limitConfigs",
                     &self.r#limit_configs,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#autoscaling_enabled: {
-                        let field_value = match fields_map.get("autoscaling_enabled") {
+                        let field_value = match fields_map.get("autoscalingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#limit_configs: {
-                        let field_value = match fields_map.get("limit_configs") {
+                        let field_value = match fields_map.get("limitConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'limit_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'limitConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

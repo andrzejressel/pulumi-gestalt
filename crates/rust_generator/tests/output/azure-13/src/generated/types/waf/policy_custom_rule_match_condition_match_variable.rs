@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#selector,
                 ),
                 to_pulumi_object_field(
-                    "variable_name",
+                    "variableName",
                     &self.r#variable_name,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#variable_name: {
-                        let field_value = match fields_map.get("variable_name") {
+                        let field_value = match fields_map.get("variableName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'variable_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'variableName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

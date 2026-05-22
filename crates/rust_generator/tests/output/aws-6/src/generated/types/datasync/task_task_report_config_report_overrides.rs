@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deleted_override",
+                    "deletedOverride",
                     &self.r#deleted_override,
                 ),
                 to_pulumi_object_field(
-                    "skipped_override",
+                    "skippedOverride",
                     &self.r#skipped_override,
                 ),
                 to_pulumi_object_field(
-                    "transferred_override",
+                    "transferredOverride",
                     &self.r#transferred_override,
                 ),
                 to_pulumi_object_field(
-                    "verified_override",
+                    "verifiedOverride",
                     &self.r#verified_override,
                 ),
             ];
@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#deleted_override: {
-                        let field_value = match fields_map.get("deleted_override") {
+                        let field_value = match fields_map.get("deletedOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deleted_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deletedOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skipped_override: {
-                        let field_value = match fields_map.get("skipped_override") {
+                        let field_value = match fields_map.get("skippedOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skipped_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skippedOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transferred_override: {
-                        let field_value = match fields_map.get("transferred_override") {
+                        let field_value = match fields_map.get("transferredOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transferred_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transferredOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verified_override: {
-                        let field_value = match fields_map.get("verified_override") {
+                        let field_value = match fields_map.get("verifiedOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verified_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifiedOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

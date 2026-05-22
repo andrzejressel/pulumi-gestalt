@@ -61,7 +61,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#parallelism,
                 ),
                 to_pulumi_object_field(
-                    "task_count",
+                    "taskCount",
                     &self.r#task_count,
                 ),
                 to_pulumi_object_field(
@@ -113,9 +113,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_count: {
-                        let field_value = match fields_map.get("task_count") {
+                        let field_value = match fields_map.get("taskCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

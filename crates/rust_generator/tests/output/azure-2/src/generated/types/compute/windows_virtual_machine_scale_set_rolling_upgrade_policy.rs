@@ -49,31 +49,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cross_zone_upgrades_enabled",
+                    "crossZoneUpgradesEnabled",
                     &self.r#cross_zone_upgrades_enabled,
                 ),
                 to_pulumi_object_field(
-                    "max_batch_instance_percent",
+                    "maxBatchInstancePercent",
                     &self.r#max_batch_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unhealthy_instance_percent",
+                    "maxUnhealthyInstancePercent",
                     &self.r#max_unhealthy_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unhealthy_upgraded_instance_percent",
+                    "maxUnhealthyUpgradedInstancePercent",
                     &self.r#max_unhealthy_upgraded_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "maximum_surge_instances_enabled",
+                    "maximumSurgeInstancesEnabled",
                     &self.r#maximum_surge_instances_enabled,
                 ),
                 to_pulumi_object_field(
-                    "pause_time_between_batches",
+                    "pauseTimeBetweenBatches",
                     &self.r#pause_time_between_batches,
                 ),
                 to_pulumi_object_field(
-                    "prioritize_unhealthy_instances_enabled",
+                    "prioritizeUnhealthyInstancesEnabled",
                     &self.r#prioritize_unhealthy_instances_enabled,
                 ),
             ];
@@ -100,51 +100,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#cross_zone_upgrades_enabled: {
-                        let field_value = match fields_map.get("cross_zone_upgrades_enabled") {
+                        let field_value = match fields_map.get("crossZoneUpgradesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_zone_upgrades_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossZoneUpgradesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_batch_instance_percent: {
-                        let field_value = match fields_map.get("max_batch_instance_percent") {
+                        let field_value = match fields_map.get("maxBatchInstancePercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_batch_instance_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxBatchInstancePercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unhealthy_instance_percent: {
-                        let field_value = match fields_map.get("max_unhealthy_instance_percent") {
+                        let field_value = match fields_map.get("maxUnhealthyInstancePercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unhealthy_instance_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnhealthyInstancePercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unhealthy_upgraded_instance_percent: {
-                        let field_value = match fields_map.get("max_unhealthy_upgraded_instance_percent") {
+                        let field_value = match fields_map.get("maxUnhealthyUpgradedInstancePercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unhealthy_upgraded_instance_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnhealthyUpgradedInstancePercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_surge_instances_enabled: {
-                        let field_value = match fields_map.get("maximum_surge_instances_enabled") {
+                        let field_value = match fields_map.get("maximumSurgeInstancesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_surge_instances_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumSurgeInstancesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pause_time_between_batches: {
-                        let field_value = match fields_map.get("pause_time_between_batches") {
+                        let field_value = match fields_map.get("pauseTimeBetweenBatches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pause_time_between_batches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pauseTimeBetweenBatches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prioritize_unhealthy_instances_enabled: {
-                        let field_value = match fields_map.get("prioritize_unhealthy_instances_enabled") {
+                        let field_value = match fields_map.get("prioritizeUnhealthyInstancesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prioritize_unhealthy_instances_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prioritizeUnhealthyInstancesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -68,27 +68,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "condition_absent",
+                    "conditionAbsent",
                     &self.r#condition_absent,
                 ),
                 to_pulumi_object_field(
-                    "condition_matched_log",
+                    "conditionMatchedLog",
                     &self.r#condition_matched_log,
                 ),
                 to_pulumi_object_field(
-                    "condition_monitoring_query_language",
+                    "conditionMonitoringQueryLanguage",
                     &self.r#condition_monitoring_query_language,
                 ),
                 to_pulumi_object_field(
-                    "condition_prometheus_query_language",
+                    "conditionPrometheusQueryLanguage",
                     &self.r#condition_prometheus_query_language,
                 ),
                 to_pulumi_object_field(
-                    "condition_threshold",
+                    "conditionThreshold",
                     &self.r#condition_threshold,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
@@ -119,44 +119,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#condition_absent: {
-                        let field_value = match fields_map.get("condition_absent") {
+                        let field_value = match fields_map.get("conditionAbsent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_absent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionAbsent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#condition_matched_log: {
-                        let field_value = match fields_map.get("condition_matched_log") {
+                        let field_value = match fields_map.get("conditionMatchedLog") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_matched_log' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionMatchedLog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#condition_monitoring_query_language: {
-                        let field_value = match fields_map.get("condition_monitoring_query_language") {
+                        let field_value = match fields_map.get("conditionMonitoringQueryLanguage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_monitoring_query_language' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionMonitoringQueryLanguage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#condition_prometheus_query_language: {
-                        let field_value = match fields_map.get("condition_prometheus_query_language") {
+                        let field_value = match fields_map.get("conditionPrometheusQueryLanguage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_prometheus_query_language' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionPrometheusQueryLanguage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#condition_threshold: {
-                        let field_value = match fields_map.get("condition_threshold") {
+                        let field_value = match fields_map.get("conditionThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_detail_type",
+                    "additionalDetailType",
                     &self.r#additional_detail_type,
                 ),
                 to_pulumi_object_field(
@@ -56,9 +56,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#additional_detail_type: {
-                        let field_value = match fields_map.get("additional_detail_type") {
+                        let field_value = match fields_map.get("additionalDetailType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_detail_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalDetailType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

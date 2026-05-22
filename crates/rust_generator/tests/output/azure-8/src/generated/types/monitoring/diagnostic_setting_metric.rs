@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dia
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "retention_policy",
+                    "retentionPolicy",
                     &self.r#retention_policy,
                 ),
             ];
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_policy: {
-                        let field_value = match fields_map.get("retention_policy") {
+                        let field_value = match fields_map.get("retentionPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

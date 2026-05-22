@@ -54,15 +54,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mem
                     &self.r#iops,
                 ),
                 to_pulumi_object_field(
-                    "mount_point",
+                    "mountPoint",
                     &self.r#mount_point,
                 ),
                 to_pulumi_object_field(
-                    "number_of_disks",
+                    "numberOfDisks",
                     &self.r#number_of_disks,
                 ),
                 to_pulumi_object_field(
-                    "raid_level",
+                    "raidLevel",
                     &self.r#raid_level,
                 ),
                 to_pulumi_object_field(
@@ -70,7 +70,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mem
                     &self.r#size,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mount_point: {
-                        let field_value = match fields_map.get("mount_point") {
+                        let field_value = match fields_map.get("mountPoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mount_point' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mountPoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_of_disks: {
-                        let field_value = match fields_map.get("number_of_disks") {
+                        let field_value = match fields_map.get("numberOfDisks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_of_disks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberOfDisks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#raid_level: {
-                        let field_value = match fields_map.get("raid_level") {
+                        let field_value = match fields_map.get("raidLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'raid_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'raidLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -139,9 +139,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

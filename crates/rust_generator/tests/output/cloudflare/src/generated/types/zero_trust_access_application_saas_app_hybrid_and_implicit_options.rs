@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "return_access_token_from_authorization_endpoint",
+                    "returnAccessTokenFromAuthorizationEndpoint",
                     &self.r#return_access_token_from_authorization_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "return_id_token_from_authorization_endpoint",
+                    "returnIdTokenFromAuthorizationEndpoint",
                     &self.r#return_id_token_from_authorization_endpoint,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#return_access_token_from_authorization_endpoint: {
-                        let field_value = match fields_map.get("return_access_token_from_authorization_endpoint") {
+                        let field_value = match fields_map.get("returnAccessTokenFromAuthorizationEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'return_access_token_from_authorization_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'returnAccessTokenFromAuthorizationEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#return_id_token_from_authorization_endpoint: {
-                        let field_value = match fields_map.get("return_id_token_from_authorization_endpoint") {
+                        let field_value = match fields_map.get("returnIdTokenFromAuthorizationEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'return_id_token_from_authorization_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'returnIdTokenFromAuthorizationEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

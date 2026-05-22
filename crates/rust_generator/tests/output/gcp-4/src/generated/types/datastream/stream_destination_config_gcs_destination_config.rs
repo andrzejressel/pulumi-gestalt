@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "avro_file_format",
+                    "avroFileFormat",
                     &self.r#avro_file_format,
                 ),
                 to_pulumi_object_field(
-                    "file_rotation_interval",
+                    "fileRotationInterval",
                     &self.r#file_rotation_interval,
                 ),
                 to_pulumi_object_field(
-                    "file_rotation_mb",
+                    "fileRotationMb",
                     &self.r#file_rotation_mb,
                 ),
                 to_pulumi_object_field(
-                    "json_file_format",
+                    "jsonFileFormat",
                     &self.r#json_file_format,
                 ),
                 to_pulumi_object_field(
@@ -84,30 +84,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#avro_file_format: {
-                        let field_value = match fields_map.get("avro_file_format") {
+                        let field_value = match fields_map.get("avroFileFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'avro_file_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'avroFileFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_rotation_interval: {
-                        let field_value = match fields_map.get("file_rotation_interval") {
+                        let field_value = match fields_map.get("fileRotationInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_rotation_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileRotationInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_rotation_mb: {
-                        let field_value = match fields_map.get("file_rotation_mb") {
+                        let field_value = match fields_map.get("fileRotationMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_rotation_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileRotationMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#json_file_format: {
-                        let field_value = match fields_map.get("json_file_format") {
+                        let field_value = match fields_map.get("jsonFileFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'json_file_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsonFileFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "match_conditions",
+                    "matchConditions",
                     &self.r#match_conditions,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_duration_in_minutes",
+                    "rateLimitDurationInMinutes",
                     &self.r#rate_limit_duration_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_threshold",
+                    "rateLimitThreshold",
                     &self.r#rate_limit_threshold,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -120,9 +120,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_conditions: {
-                        let field_value = match fields_map.get("match_conditions") {
+                        let field_value = match fields_map.get("matchConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -141,23 +141,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_limit_duration_in_minutes: {
-                        let field_value = match fields_map.get("rate_limit_duration_in_minutes") {
+                        let field_value = match fields_map.get("rateLimitDurationInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_limit_duration_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateLimitDurationInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_limit_threshold: {
-                        let field_value = match fields_map.get("rate_limit_threshold") {
+                        let field_value = match fields_map.get("rateLimitThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_limit_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateLimitThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

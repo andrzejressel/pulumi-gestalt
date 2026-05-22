@@ -37,27 +37,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "daily_settings",
+                    "dailySettings",
                     &self.r#daily_settings,
                 ),
                 to_pulumi_object_field(
-                    "monthly_settings",
+                    "monthlySettings",
                     &self.r#monthly_settings,
                 ),
                 to_pulumi_object_field(
-                    "number_of_on_calls",
+                    "numberOfOnCalls",
                     &self.r#number_of_on_calls,
                 ),
                 to_pulumi_object_field(
-                    "recurrence_multiplier",
+                    "recurrenceMultiplier",
                     &self.r#recurrence_multiplier,
                 ),
                 to_pulumi_object_field(
-                    "shift_coverages",
+                    "shiftCoverages",
                     &self.r#shift_coverages,
                 ),
                 to_pulumi_object_field(
-                    "weekly_settings",
+                    "weeklySettings",
                     &self.r#weekly_settings,
                 ),
             ];
@@ -84,44 +84,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#daily_settings: {
-                        let field_value = match fields_map.get("daily_settings") {
+                        let field_value = match fields_map.get("dailySettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'daily_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dailySettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monthly_settings: {
-                        let field_value = match fields_map.get("monthly_settings") {
+                        let field_value = match fields_map.get("monthlySettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monthly_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monthlySettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_of_on_calls: {
-                        let field_value = match fields_map.get("number_of_on_calls") {
+                        let field_value = match fields_map.get("numberOfOnCalls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_of_on_calls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberOfOnCalls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recurrence_multiplier: {
-                        let field_value = match fields_map.get("recurrence_multiplier") {
+                        let field_value = match fields_map.get("recurrenceMultiplier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recurrence_multiplier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recurrenceMultiplier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shift_coverages: {
-                        let field_value = match fields_map.get("shift_coverages") {
+                        let field_value = match fields_map.get("shiftCoverages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shift_coverages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shiftCoverages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weekly_settings: {
-                        let field_value = match fields_map.get("weekly_settings") {
+                        let field_value = match fields_map.get("weeklySettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weekly_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weeklySettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

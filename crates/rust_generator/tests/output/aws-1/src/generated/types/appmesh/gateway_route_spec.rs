@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "grpc_route",
+                    "grpcRoute",
                     &self.r#grpc_route,
                 ),
                 to_pulumi_object_field(
-                    "http_2_route",
+                    "http2Route",
                     &self.r#http_2_route,
                 ),
                 to_pulumi_object_field(
-                    "http_route",
+                    "httpRoute",
                     &self.r#http_route,
                 ),
                 to_pulumi_object_field(
@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#grpc_route: {
-                        let field_value = match fields_map.get("grpc_route") {
+                        let field_value = match fields_map.get("grpcRoute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'grpc_route' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'grpcRoute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_2_route: {
-                        let field_value = match fields_map.get("http_2_route") {
+                        let field_value = match fields_map.get("http2Route") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_2_route' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'http2Route' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_route: {
-                        let field_value = match fields_map.get("http_route") {
+                        let field_value = match fields_map.get("httpRoute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_route' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpRoute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

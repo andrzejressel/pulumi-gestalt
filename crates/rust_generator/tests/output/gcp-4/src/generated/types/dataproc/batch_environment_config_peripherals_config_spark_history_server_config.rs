@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dataproc_cluster",
+                    "dataprocCluster",
                     &self.r#dataproc_cluster,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#dataproc_cluster: {
-                        let field_value = match fields_map.get("dataproc_cluster") {
+                        let field_value = match fields_map.get("dataprocCluster") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dataproc_cluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataprocCluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

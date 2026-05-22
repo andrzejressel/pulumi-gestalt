@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Roo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fallback_result",
+                    "fallbackResult",
                     &self.r#fallback_result,
                 ),
                 to_pulumi_object_field(
@@ -60,9 +60,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#fallback_result: {
-                        let field_value = match fields_map.get("fallback_result") {
+                        let field_value = match fields_map.get("fallbackResult") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fallback_result' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fallbackResult' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

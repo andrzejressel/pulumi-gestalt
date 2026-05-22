@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "project_maps",
+                    "projectMaps",
                     &self.r#project_maps,
                 ),
                 to_pulumi_object_field(
-                    "share_type",
+                    "shareType",
                     &self.r#share_type,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#project_maps: {
-                        let field_value = match fields_map.get("project_maps") {
+                        let field_value = match fields_map.get("projectMaps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_maps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectMaps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_type: {
-                        let field_value = match fields_map.get("share_type") {
+                        let field_value = match fields_map.get("shareType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'share_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shareType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

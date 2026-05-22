@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ope
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_tags_to_snapshots",
+                    "copyTagsToSnapshots",
                     &self.r#copy_tags_to_snapshots,
                 ),
                 to_pulumi_object_field(
-                    "data_compression_type",
+                    "dataCompressionType",
                     &self.r#data_compression_type,
                 ),
                 to_pulumi_object_field(
-                    "nfs_exports",
+                    "nfsExports",
                     &self.r#nfs_exports,
                 ),
                 to_pulumi_object_field(
-                    "read_only",
+                    "readOnly",
                     &self.r#read_only,
                 ),
                 to_pulumi_object_field(
-                    "record_size_kib",
+                    "recordSizeKib",
                     &self.r#record_size_kib,
                 ),
                 to_pulumi_object_field(
-                    "user_and_group_quotas",
+                    "userAndGroupQuotas",
                     &self.r#user_and_group_quotas,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#copy_tags_to_snapshots: {
-                        let field_value = match fields_map.get("copy_tags_to_snapshots") {
+                        let field_value = match fields_map.get("copyTagsToSnapshots") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copy_tags_to_snapshots' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copyTagsToSnapshots' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_compression_type: {
-                        let field_value = match fields_map.get("data_compression_type") {
+                        let field_value = match fields_map.get("dataCompressionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_compression_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataCompressionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfs_exports: {
-                        let field_value = match fields_map.get("nfs_exports") {
+                        let field_value = match fields_map.get("nfsExports") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nfs_exports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nfsExports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_only: {
-                        let field_value = match fields_map.get("read_only") {
+                        let field_value = match fields_map.get("readOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_size_kib: {
-                        let field_value = match fields_map.get("record_size_kib") {
+                        let field_value = match fields_map.get("recordSizeKib") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_size_kib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordSizeKib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_and_group_quotas: {
-                        let field_value = match fields_map.get("user_and_group_quotas") {
+                        let field_value = match fields_map.get("userAndGroupQuotas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_and_group_quotas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userAndGroupQuotas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

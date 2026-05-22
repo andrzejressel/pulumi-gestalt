@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_supported",
+                    "allSupported",
                     &self.r#all_supported,
                 ),
                 to_pulumi_object_field(
-                    "exclusion_by_resource_types",
+                    "exclusionByResourceTypes",
                     &self.r#exclusion_by_resource_types,
                 ),
                 to_pulumi_object_field(
-                    "include_global_resource_types",
+                    "includeGlobalResourceTypes",
                     &self.r#include_global_resource_types,
                 ),
                 to_pulumi_object_field(
-                    "recording_strategies",
+                    "recordingStrategies",
                     &self.r#recording_strategies,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#all_supported: {
-                        let field_value = match fields_map.get("all_supported") {
+                        let field_value = match fields_map.get("allSupported") {
                             Some(value) => value,
-                            None => bail!("Missing field 'all_supported' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allSupported' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclusion_by_resource_types: {
-                        let field_value = match fields_map.get("exclusion_by_resource_types") {
+                        let field_value = match fields_map.get("exclusionByResourceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclusion_by_resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exclusionByResourceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_global_resource_types: {
-                        let field_value = match fields_map.get("include_global_resource_types") {
+                        let field_value = match fields_map.get("includeGlobalResourceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_global_resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeGlobalResourceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recording_strategies: {
-                        let field_value = match fields_map.get("recording_strategies") {
+                        let field_value = match fields_map.get("recordingStrategies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recording_strategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordingStrategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_types: {
-                        let field_value = match fields_map.get("resource_types") {
+                        let field_value = match fields_map.get("resourceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

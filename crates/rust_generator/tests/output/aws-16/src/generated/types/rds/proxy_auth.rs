@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_scheme",
+                    "authScheme",
                     &self.r#auth_scheme,
                 ),
                 to_pulumi_object_field(
-                    "client_password_auth_type",
+                    "clientPasswordAuthType",
                     &self.r#client_password_auth_type,
                 ),
                 to_pulumi_object_field(
@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "iam_auth",
+                    "iamAuth",
                     &self.r#iam_auth,
                 ),
                 to_pulumi_object_field(
-                    "secret_arn",
+                    "secretArn",
                     &self.r#secret_arn,
                 ),
                 to_pulumi_object_field(
@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#auth_scheme: {
-                        let field_value = match fields_map.get("auth_scheme") {
+                        let field_value = match fields_map.get("authScheme") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_scheme' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authScheme' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_password_auth_type: {
-                        let field_value = match fields_map.get("client_password_auth_type") {
+                        let field_value = match fields_map.get("clientPasswordAuthType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_password_auth_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientPasswordAuthType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,16 +111,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iam_auth: {
-                        let field_value = match fields_map.get("iam_auth") {
+                        let field_value = match fields_map.get("iamAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iam_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iamAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_arn: {
-                        let field_value = match fields_map.get("secret_arn") {
+                        let field_value = match fields_map.get("secretArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "collection_name",
+                    "collectionName",
                     &self.r#collection_name,
                 ),
                 to_pulumi_object_field(
-                    "db_name",
+                    "dbName",
                     &self.r#db_name,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#collection_name: {
-                        let field_value = match fields_map.get("collection_name") {
+                        let field_value = match fields_map.get("collectionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'collection_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'collectionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#db_name: {
-                        let field_value = match fields_map.get("db_name") {
+                        let field_value = match fields_map.get("dbName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_objects",
+                    "excludeObjects",
                     &self.r#exclude_objects,
                 ),
                 to_pulumi_object_field(
-                    "include_objects",
+                    "includeObjects",
                     &self.r#include_objects,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_backfill_tasks",
+                    "maxConcurrentBackfillTasks",
                     &self.r#max_concurrent_backfill_tasks,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_cdc_tasks",
+                    "maxConcurrentCdcTasks",
                     &self.r#max_concurrent_cdc_tasks,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#exclude_objects: {
-                        let field_value = match fields_map.get("exclude_objects") {
+                        let field_value = match fields_map.get("excludeObjects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeObjects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_objects: {
-                        let field_value = match fields_map.get("include_objects") {
+                        let field_value = match fields_map.get("includeObjects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeObjects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrent_backfill_tasks: {
-                        let field_value = match fields_map.get("max_concurrent_backfill_tasks") {
+                        let field_value = match fields_map.get("maxConcurrentBackfillTasks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_backfill_tasks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentBackfillTasks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrent_cdc_tasks: {
-                        let field_value = match fields_map.get("max_concurrent_cdc_tasks") {
+                        let field_value = match fields_map.get("maxConcurrentCdcTasks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_cdc_tasks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentCdcTasks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

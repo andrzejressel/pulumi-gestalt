@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "month_day",
+                    "monthDay",
                     &self.r#month_day,
                 ),
                 to_pulumi_object_field(
-                    "week_day_of_month",
+                    "weekDayOfMonth",
                     &self.r#week_day_of_month,
                 ),
             ];
@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#month_day: {
-                        let field_value = match fields_map.get("month_day") {
+                        let field_value = match fields_map.get("monthDay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'month_day' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monthDay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#week_day_of_month: {
-                        let field_value = match fields_map.get("week_day_of_month") {
+                        let field_value = match fields_map.get("weekDayOfMonth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'week_day_of_month' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weekDayOfMonth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "amazon_code_guru_profilers",
+                    "amazonCodeGuruProfilers",
                     &self.r#amazon_code_guru_profilers,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#amazon_code_guru_profilers: {
-                        let field_value = match fields_map.get("amazon_code_guru_profilers") {
+                        let field_value = match fields_map.get("amazonCodeGuruProfilers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'amazon_code_guru_profilers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'amazonCodeGuruProfilers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

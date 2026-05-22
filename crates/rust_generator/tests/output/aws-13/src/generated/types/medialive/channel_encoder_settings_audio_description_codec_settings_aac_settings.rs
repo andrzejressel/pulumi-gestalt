@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "coding_mode",
+                    "codingMode",
                     &self.r#coding_mode,
                 ),
                 to_pulumi_object_field(
-                    "input_type",
+                    "inputType",
                     &self.r#input_type,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#profile,
                 ),
                 to_pulumi_object_field(
-                    "rate_control_mode",
+                    "rateControlMode",
                     &self.r#rate_control_mode,
                 ),
                 to_pulumi_object_field(
-                    "raw_format",
+                    "rawFormat",
                     &self.r#raw_format,
                 ),
                 to_pulumi_object_field(
-                    "sample_rate",
+                    "sampleRate",
                     &self.r#sample_rate,
                 ),
                 to_pulumi_object_field(
@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#spec,
                 ),
                 to_pulumi_object_field(
-                    "vbr_quality",
+                    "vbrQuality",
                     &self.r#vbr_quality,
                 ),
             ];
@@ -121,16 +121,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#coding_mode: {
-                        let field_value = match fields_map.get("coding_mode") {
+                        let field_value = match fields_map.get("codingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'coding_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_type: {
-                        let field_value = match fields_map.get("input_type") {
+                        let field_value = match fields_map.get("inputType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,23 +142,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_control_mode: {
-                        let field_value = match fields_map.get("rate_control_mode") {
+                        let field_value = match fields_map.get("rateControlMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_control_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateControlMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#raw_format: {
-                        let field_value = match fields_map.get("raw_format") {
+                        let field_value = match fields_map.get("rawFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'raw_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rawFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_rate: {
-                        let field_value = match fields_map.get("sample_rate") {
+                        let field_value = match fields_map.get("sampleRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -170,9 +170,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vbr_quality: {
-                        let field_value = match fields_map.get("vbr_quality") {
+                        let field_value = match fields_map.get("vbrQuality") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vbr_quality' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vbrQuality' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

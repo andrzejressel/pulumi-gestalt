@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_search_domains",
+                    "dnsSearchDomains",
                     &self.r#dns_search_domains,
                 ),
                 to_pulumi_object_field(
-                    "dns_servers",
+                    "dnsServers",
                     &self.r#dns_servers,
                 ),
                 to_pulumi_object_field(
-                    "ntp_servers",
+                    "ntpServers",
                     &self.r#ntp_servers,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#dns_search_domains: {
-                        let field_value = match fields_map.get("dns_search_domains") {
+                        let field_value = match fields_map.get("dnsSearchDomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_search_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsSearchDomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_servers: {
-                        let field_value = match fields_map.get("dns_servers") {
+                        let field_value = match fields_map.get("dnsServers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsServers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ntp_servers: {
-                        let field_value = match fields_map.get("ntp_servers") {
+                        let field_value = match fields_map.get("ntpServers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ntp_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ntpServers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

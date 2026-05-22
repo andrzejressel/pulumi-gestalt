@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "game_session_activation_timeout_seconds",
+                    "gameSessionActivationTimeoutSeconds",
                     &self.r#game_session_activation_timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_game_session_activations",
+                    "maxConcurrentGameSessionActivations",
                     &self.r#max_concurrent_game_session_activations,
                 ),
                 to_pulumi_object_field(
-                    "server_processes",
+                    "serverProcesses",
                     &self.r#server_processes,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#game_session_activation_timeout_seconds: {
-                        let field_value = match fields_map.get("game_session_activation_timeout_seconds") {
+                        let field_value = match fields_map.get("gameSessionActivationTimeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'game_session_activation_timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gameSessionActivationTimeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrent_game_session_activations: {
-                        let field_value = match fields_map.get("max_concurrent_game_session_activations") {
+                        let field_value = match fields_map.get("maxConcurrentGameSessionActivations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_game_session_activations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentGameSessionActivations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_processes: {
-                        let field_value = match fields_map.get("server_processes") {
+                        let field_value = match fields_map.get("serverProcesses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_processes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverProcesses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,15 +50,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#context,
                 ),
                 to_pulumi_object_field(
-                    "encryption_algorithm",
+                    "encryptionAlgorithm",
                     &self.r#encryption_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "grant_tokens",
+                    "grantTokens",
                     &self.r#grant_tokens,
                 ),
                 to_pulumi_object_field(
-                    "key_id",
+                    "keyId",
                     &self.r#key_id,
                 ),
                 to_pulumi_object_field(
@@ -100,23 +100,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_algorithm: {
-                        let field_value = match fields_map.get("encryption_algorithm") {
+                        let field_value = match fields_map.get("encryptionAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#grant_tokens: {
-                        let field_value = match fields_map.get("grant_tokens") {
+                        let field_value = match fields_map.get("grantTokens") {
                             Some(value) => value,
-                            None => bail!("Missing field 'grant_tokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'grantTokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_id: {
-                        let field_value = match fields_map.get("key_id") {
+                        let field_value = match fields_map.get("keyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

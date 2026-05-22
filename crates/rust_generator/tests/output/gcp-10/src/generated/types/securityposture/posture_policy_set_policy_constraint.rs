@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "org_policy_constraint",
+                    "orgPolicyConstraint",
                     &self.r#org_policy_constraint,
                 ),
                 to_pulumi_object_field(
-                    "org_policy_constraint_custom",
+                    "orgPolicyConstraintCustom",
                     &self.r#org_policy_constraint_custom,
                 ),
                 to_pulumi_object_field(
-                    "security_health_analytics_custom_module",
+                    "securityHealthAnalyticsCustomModule",
                     &self.r#security_health_analytics_custom_module,
                 ),
                 to_pulumi_object_field(
-                    "security_health_analytics_module",
+                    "securityHealthAnalyticsModule",
                     &self.r#security_health_analytics_module,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#org_policy_constraint: {
-                        let field_value = match fields_map.get("org_policy_constraint") {
+                        let field_value = match fields_map.get("orgPolicyConstraint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'org_policy_constraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'orgPolicyConstraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#org_policy_constraint_custom: {
-                        let field_value = match fields_map.get("org_policy_constraint_custom") {
+                        let field_value = match fields_map.get("orgPolicyConstraintCustom") {
                             Some(value) => value,
-                            None => bail!("Missing field 'org_policy_constraint_custom' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'orgPolicyConstraintCustom' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_health_analytics_custom_module: {
-                        let field_value = match fields_map.get("security_health_analytics_custom_module") {
+                        let field_value = match fields_map.get("securityHealthAnalyticsCustomModule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_health_analytics_custom_module' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityHealthAnalyticsCustomModule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_health_analytics_module: {
-                        let field_value = match fields_map.get("security_health_analytics_module") {
+                        let field_value = match fields_map.get("securityHealthAnalyticsModule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_health_analytics_module' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityHealthAnalyticsModule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

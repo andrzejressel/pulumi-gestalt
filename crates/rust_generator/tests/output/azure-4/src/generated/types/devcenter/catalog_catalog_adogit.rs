@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
                     &self.r#branch,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_key_url",
+                    "keyVaultKeyUrl",
                     &self.r#key_vault_key_url,
                 ),
                 to_pulumi_object_field(
@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_vault_key_url: {
-                        let field_value = match fields_map.get("key_vault_key_url") {
+                        let field_value = match fields_map.get("keyVaultKeyUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_vault_key_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyVaultKeyUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

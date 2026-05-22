@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
                     &self.r#cpu,
                 ),
                 to_pulumi_object_field(
-                    "memory_gb",
+                    "memoryGb",
                     &self.r#memory_gb,
                 ),
                 to_pulumi_object_field(
-                    "storage_gb",
+                    "storageGb",
                     &self.r#storage_gb,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_gb: {
-                        let field_value = match fields_map.get("memory_gb") {
+                        let field_value = match fields_map.get("memoryGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_gb: {
-                        let field_value = match fields_map.get("storage_gb") {
+                        let field_value = match fields_map.get("storageGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

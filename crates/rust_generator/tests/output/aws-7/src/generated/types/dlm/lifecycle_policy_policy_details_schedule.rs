@@ -55,23 +55,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_tags",
+                    "copyTags",
                     &self.r#copy_tags,
                 ),
                 to_pulumi_object_field(
-                    "create_rule",
+                    "createRule",
                     &self.r#create_rule,
                 ),
                 to_pulumi_object_field(
-                    "cross_region_copy_rules",
+                    "crossRegionCopyRules",
                     &self.r#cross_region_copy_rules,
                 ),
                 to_pulumi_object_field(
-                    "deprecate_rule",
+                    "deprecateRule",
                     &self.r#deprecate_rule,
                 ),
                 to_pulumi_object_field(
-                    "fast_restore_rule",
+                    "fastRestoreRule",
                     &self.r#fast_restore_rule,
                 ),
                 to_pulumi_object_field(
@@ -79,19 +79,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "retain_rule",
+                    "retainRule",
                     &self.r#retain_rule,
                 ),
                 to_pulumi_object_field(
-                    "share_rule",
+                    "shareRule",
                     &self.r#share_rule,
                 ),
                 to_pulumi_object_field(
-                    "tags_to_add",
+                    "tagsToAdd",
                     &self.r#tags_to_add,
                 ),
                 to_pulumi_object_field(
-                    "variable_tags",
+                    "variableTags",
                     &self.r#variable_tags,
                 ),
             ];
@@ -118,37 +118,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#copy_tags: {
-                        let field_value = match fields_map.get("copy_tags") {
+                        let field_value = match fields_map.get("copyTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copy_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copyTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_rule: {
-                        let field_value = match fields_map.get("create_rule") {
+                        let field_value = match fields_map.get("createRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cross_region_copy_rules: {
-                        let field_value = match fields_map.get("cross_region_copy_rules") {
+                        let field_value = match fields_map.get("crossRegionCopyRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_region_copy_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossRegionCopyRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deprecate_rule: {
-                        let field_value = match fields_map.get("deprecate_rule") {
+                        let field_value = match fields_map.get("deprecateRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deprecate_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deprecateRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fast_restore_rule: {
-                        let field_value = match fields_map.get("fast_restore_rule") {
+                        let field_value = match fields_map.get("fastRestoreRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fast_restore_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fastRestoreRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -160,30 +160,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retain_rule: {
-                        let field_value = match fields_map.get("retain_rule") {
+                        let field_value = match fields_map.get("retainRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retain_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retainRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_rule: {
-                        let field_value = match fields_map.get("share_rule") {
+                        let field_value = match fields_map.get("shareRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'share_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shareRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tags_to_add: {
-                        let field_value = match fields_map.get("tags_to_add") {
+                        let field_value = match fields_map.get("tagsToAdd") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tags_to_add' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagsToAdd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#variable_tags: {
-                        let field_value = match fields_map.get("variable_tags") {
+                        let field_value = match fields_map.get("variableTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'variable_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'variableTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

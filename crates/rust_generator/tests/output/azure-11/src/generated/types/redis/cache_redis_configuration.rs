@@ -108,27 +108,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directory_authentication_enabled",
+                    "activeDirectoryAuthenticationEnabled",
                     &self.r#active_directory_authentication_enabled,
                 ),
                 to_pulumi_object_field(
-                    "aof_backup_enabled",
+                    "aofBackupEnabled",
                     &self.r#aof_backup_enabled,
                 ),
                 to_pulumi_object_field(
-                    "aof_storage_connection_string_0",
+                    "aofStorageConnectionString0",
                     &self.r#aof_storage_connection_string_0,
                 ),
                 to_pulumi_object_field(
-                    "aof_storage_connection_string_1",
+                    "aofStorageConnectionString1",
                     &self.r#aof_storage_connection_string_1,
                 ),
                 to_pulumi_object_field(
-                    "authentication_enabled",
+                    "authenticationEnabled",
                     &self.r#authentication_enabled,
                 ),
                 to_pulumi_object_field(
-                    "data_persistence_authentication_method",
+                    "dataPersistenceAuthenticationMethod",
                     &self.r#data_persistence_authentication_method,
                 ),
                 to_pulumi_object_field(
@@ -136,43 +136,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
                     &self.r#maxclients,
                 ),
                 to_pulumi_object_field(
-                    "maxfragmentationmemory_reserved",
+                    "maxfragmentationmemoryReserved",
                     &self.r#maxfragmentationmemory_reserved,
                 ),
                 to_pulumi_object_field(
-                    "maxmemory_delta",
+                    "maxmemoryDelta",
                     &self.r#maxmemory_delta,
                 ),
                 to_pulumi_object_field(
-                    "maxmemory_policy",
+                    "maxmemoryPolicy",
                     &self.r#maxmemory_policy,
                 ),
                 to_pulumi_object_field(
-                    "maxmemory_reserved",
+                    "maxmemoryReserved",
                     &self.r#maxmemory_reserved,
                 ),
                 to_pulumi_object_field(
-                    "notify_keyspace_events",
+                    "notifyKeyspaceEvents",
                     &self.r#notify_keyspace_events,
                 ),
                 to_pulumi_object_field(
-                    "rdb_backup_enabled",
+                    "rdbBackupEnabled",
                     &self.r#rdb_backup_enabled,
                 ),
                 to_pulumi_object_field(
-                    "rdb_backup_frequency",
+                    "rdbBackupFrequency",
                     &self.r#rdb_backup_frequency,
                 ),
                 to_pulumi_object_field(
-                    "rdb_backup_max_snapshot_count",
+                    "rdbBackupMaxSnapshotCount",
                     &self.r#rdb_backup_max_snapshot_count,
                 ),
                 to_pulumi_object_field(
-                    "rdb_storage_connection_string",
+                    "rdbStorageConnectionString",
                     &self.r#rdb_storage_connection_string,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_subscription_id",
+                    "storageAccountSubscriptionId",
                     &self.r#storage_account_subscription_id,
                 ),
             ];
@@ -199,44 +199,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#active_directory_authentication_enabled: {
-                        let field_value = match fields_map.get("active_directory_authentication_enabled") {
+                        let field_value = match fields_map.get("activeDirectoryAuthenticationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_directory_authentication_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeDirectoryAuthenticationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aof_backup_enabled: {
-                        let field_value = match fields_map.get("aof_backup_enabled") {
+                        let field_value = match fields_map.get("aofBackupEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aof_backup_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aofBackupEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aof_storage_connection_string_0: {
-                        let field_value = match fields_map.get("aof_storage_connection_string_0") {
+                        let field_value = match fields_map.get("aofStorageConnectionString0") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aof_storage_connection_string_0' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aofStorageConnectionString0' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aof_storage_connection_string_1: {
-                        let field_value = match fields_map.get("aof_storage_connection_string_1") {
+                        let field_value = match fields_map.get("aofStorageConnectionString1") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aof_storage_connection_string_1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aofStorageConnectionString1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authentication_enabled: {
-                        let field_value = match fields_map.get("authentication_enabled") {
+                        let field_value = match fields_map.get("authenticationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_persistence_authentication_method: {
-                        let field_value = match fields_map.get("data_persistence_authentication_method") {
+                        let field_value = match fields_map.get("dataPersistenceAuthenticationMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_persistence_authentication_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataPersistenceAuthenticationMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -248,72 +248,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maxfragmentationmemory_reserved: {
-                        let field_value = match fields_map.get("maxfragmentationmemory_reserved") {
+                        let field_value = match fields_map.get("maxfragmentationmemoryReserved") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maxfragmentationmemory_reserved' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxfragmentationmemoryReserved' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maxmemory_delta: {
-                        let field_value = match fields_map.get("maxmemory_delta") {
+                        let field_value = match fields_map.get("maxmemoryDelta") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maxmemory_delta' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxmemoryDelta' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maxmemory_policy: {
-                        let field_value = match fields_map.get("maxmemory_policy") {
+                        let field_value = match fields_map.get("maxmemoryPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maxmemory_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxmemoryPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maxmemory_reserved: {
-                        let field_value = match fields_map.get("maxmemory_reserved") {
+                        let field_value = match fields_map.get("maxmemoryReserved") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maxmemory_reserved' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxmemoryReserved' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notify_keyspace_events: {
-                        let field_value = match fields_map.get("notify_keyspace_events") {
+                        let field_value = match fields_map.get("notifyKeyspaceEvents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notify_keyspace_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notifyKeyspaceEvents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rdb_backup_enabled: {
-                        let field_value = match fields_map.get("rdb_backup_enabled") {
+                        let field_value = match fields_map.get("rdbBackupEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rdb_backup_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rdbBackupEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rdb_backup_frequency: {
-                        let field_value = match fields_map.get("rdb_backup_frequency") {
+                        let field_value = match fields_map.get("rdbBackupFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rdb_backup_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rdbBackupFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rdb_backup_max_snapshot_count: {
-                        let field_value = match fields_map.get("rdb_backup_max_snapshot_count") {
+                        let field_value = match fields_map.get("rdbBackupMaxSnapshotCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rdb_backup_max_snapshot_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rdbBackupMaxSnapshotCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rdb_storage_connection_string: {
-                        let field_value = match fields_map.get("rdb_storage_connection_string") {
+                        let field_value = match fields_map.get("rdbStorageConnectionString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rdb_storage_connection_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rdbStorageConnectionString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_subscription_id: {
-                        let field_value = match fields_map.get("storage_account_subscription_id") {
+                        let field_value = match fields_map.get("storageAccountSubscriptionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_subscription_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountSubscriptionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_creation_schedule",
+                    "snapshotCreationSchedule",
                     &self.r#snapshot_creation_schedule,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_location",
+                    "snapshotLocation",
                     &self.r#snapshot_location,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_creation_schedule: {
-                        let field_value = match fields_map.get("snapshot_creation_schedule") {
+                        let field_value = match fields_map.get("snapshotCreationSchedule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_creation_schedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotCreationSchedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_location: {
-                        let field_value = match fields_map.get("snapshot_location") {
+                        let field_value = match fields_map.get("snapshotLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_zone: {
-                        let field_value = match fields_map.get("time_zone") {
+                        let field_value = match fields_map.get("timeZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#grpcs,
                 ),
                 to_pulumi_object_field(
-                    "http_2_s",
+                    "http2s",
                     &self.r#http_2_s,
                 ),
                 to_pulumi_object_field(
@@ -70,9 +70,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_2_s: {
-                        let field_value = match fields_map.get("http_2_s") {
+                        let field_value = match fields_map.get("http2s") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_2_s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'http2s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_type",
+                    "connectionType",
                     &self.r#connection_type,
                 ),
                 to_pulumi_object_field(
-                    "ip_allocation",
+                    "ipAllocation",
                     &self.r#ip_allocation,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "private_service_connect_config",
+                    "privateServiceConnectConfig",
                     &self.r#private_service_connect_config,
                 ),
             ];
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#connection_type: {
-                        let field_value = match fields_map.get("connection_type") {
+                        let field_value = match fields_map.get("connectionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_allocation: {
-                        let field_value = match fields_map.get("ip_allocation") {
+                        let field_value = match fields_map.get("ipAllocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_allocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAllocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_service_connect_config: {
-                        let field_value = match fields_map.get("private_service_connect_config") {
+                        let field_value = match fields_map.get("privateServiceConnectConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_service_connect_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateServiceConnectConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

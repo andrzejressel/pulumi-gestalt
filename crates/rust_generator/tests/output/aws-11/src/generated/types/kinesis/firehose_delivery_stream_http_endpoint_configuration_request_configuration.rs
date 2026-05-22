@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "common_attributes",
+                    "commonAttributes",
                     &self.r#common_attributes,
                 ),
                 to_pulumi_object_field(
-                    "content_encoding",
+                    "contentEncoding",
                     &self.r#content_encoding,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#common_attributes: {
-                        let field_value = match fields_map.get("common_attributes") {
+                        let field_value = match fields_map.get("commonAttributes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonAttributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_encoding: {
-                        let field_value = match fields_map.get("content_encoding") {
+                        let field_value = match fields_map.get("contentEncoding") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_encoding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentEncoding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

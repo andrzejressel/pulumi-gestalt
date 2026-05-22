@@ -29,15 +29,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "origin_keepalive_timeout",
+                    "originKeepaliveTimeout",
                     &self.r#origin_keepalive_timeout,
                 ),
                 to_pulumi_object_field(
-                    "origin_read_timeout",
+                    "originReadTimeout",
                     &self.r#origin_read_timeout,
                 ),
                 to_pulumi_object_field(
-                    "vpc_origin_id",
+                    "vpcOriginId",
                     &self.r#vpc_origin_id,
                 ),
             ];
@@ -64,23 +64,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#origin_keepalive_timeout: {
-                        let field_value = match fields_map.get("origin_keepalive_timeout") {
+                        let field_value = match fields_map.get("originKeepaliveTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'origin_keepalive_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'originKeepaliveTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_read_timeout: {
-                        let field_value = match fields_map.get("origin_read_timeout") {
+                        let field_value = match fields_map.get("originReadTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'origin_read_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'originReadTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_origin_id: {
-                        let field_value = match fields_map.get("vpc_origin_id") {
+                        let field_value = match fields_map.get("vpcOriginId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_origin_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcOriginId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

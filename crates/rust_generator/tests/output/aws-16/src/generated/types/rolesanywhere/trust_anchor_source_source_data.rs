@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tru
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acm_pca_arn",
+                    "acmPcaArn",
                     &self.r#acm_pca_arn,
                 ),
                 to_pulumi_object_field(
-                    "x_509_certificate_data",
+                    "x509CertificateData",
                     &self.r#x_509_certificate_data,
                 ),
             ];
@@ -57,16 +57,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#acm_pca_arn: {
-                        let field_value = match fields_map.get("acm_pca_arn") {
+                        let field_value = match fields_map.get("acmPcaArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'acm_pca_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acmPcaArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_509_certificate_data: {
-                        let field_value = match fields_map.get("x_509_certificate_data") {
+                        let field_value = match fields_map.get("x509CertificateData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_509_certificate_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'x509CertificateData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

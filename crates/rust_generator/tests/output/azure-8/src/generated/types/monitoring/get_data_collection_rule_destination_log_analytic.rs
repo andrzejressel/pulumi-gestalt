@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "workspace_resource_id",
+                    "workspaceResourceId",
                     &self.r#workspace_resource_id,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workspace_resource_id: {
-                        let field_value = match fields_map.get("workspace_resource_id") {
+                        let field_value = match fields_map.get("workspaceResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workspace_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workspaceResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

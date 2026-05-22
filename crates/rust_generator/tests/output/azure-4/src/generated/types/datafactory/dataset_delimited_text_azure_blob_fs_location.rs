@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dynamic_file_system_enabled",
+                    "dynamicFileSystemEnabled",
                     &self.r#dynamic_file_system_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_filename_enabled",
+                    "dynamicFilenameEnabled",
                     &self.r#dynamic_filename_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_path_enabled",
+                    "dynamicPathEnabled",
                     &self.r#dynamic_path_enabled,
                 ),
                 to_pulumi_object_field(
-                    "file_system",
+                    "fileSystem",
                     &self.r#file_system,
                 ),
                 to_pulumi_object_field(
@@ -90,30 +90,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#dynamic_file_system_enabled: {
-                        let field_value = match fields_map.get("dynamic_file_system_enabled") {
+                        let field_value = match fields_map.get("dynamicFileSystemEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_file_system_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicFileSystemEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dynamic_filename_enabled: {
-                        let field_value = match fields_map.get("dynamic_filename_enabled") {
+                        let field_value = match fields_map.get("dynamicFilenameEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_filename_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicFilenameEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dynamic_path_enabled: {
-                        let field_value = match fields_map.get("dynamic_path_enabled") {
+                        let field_value = match fields_map.get("dynamicPathEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_path_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicPathEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_system: {
-                        let field_value = match fields_map.get("file_system") {
+                        let field_value = match fields_map.get("fileSystem") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_system' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

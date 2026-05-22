@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_port",
+                    "backendPort",
                     &self.r#backend_port,
                 ),
                 to_pulumi_object_field(
-                    "frontend_port",
+                    "frontendPort",
                     &self.r#frontend_port,
                 ),
                 to_pulumi_object_field(
-                    "inbound_nat_rule_name",
+                    "inboundNatRuleName",
                     &self.r#inbound_nat_rule_name,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#backend_port: {
-                        let field_value = match fields_map.get("backend_port") {
+                        let field_value = match fields_map.get("backendPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frontend_port: {
-                        let field_value = match fields_map.get("frontend_port") {
+                        let field_value = match fields_map.get("frontendPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frontend_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frontendPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inbound_nat_rule_name: {
-                        let field_value = match fields_map.get("inbound_nat_rule_name") {
+                        let field_value = match fields_map.get("inboundNatRuleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inbound_nat_rule_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inboundNatRuleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

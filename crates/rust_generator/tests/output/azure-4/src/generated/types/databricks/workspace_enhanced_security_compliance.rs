@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_cluster_update_enabled",
+                    "automaticClusterUpdateEnabled",
                     &self.r#automatic_cluster_update_enabled,
                 ),
                 to_pulumi_object_field(
-                    "compliance_security_profile_enabled",
+                    "complianceSecurityProfileEnabled",
                     &self.r#compliance_security_profile_enabled,
                 ),
                 to_pulumi_object_field(
-                    "compliance_security_profile_standards",
+                    "complianceSecurityProfileStandards",
                     &self.r#compliance_security_profile_standards,
                 ),
                 to_pulumi_object_field(
-                    "enhanced_security_monitoring_enabled",
+                    "enhancedSecurityMonitoringEnabled",
                     &self.r#enhanced_security_monitoring_enabled,
                 ),
             ];
@@ -82,30 +82,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#automatic_cluster_update_enabled: {
-                        let field_value = match fields_map.get("automatic_cluster_update_enabled") {
+                        let field_value = match fields_map.get("automaticClusterUpdateEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automatic_cluster_update_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automaticClusterUpdateEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compliance_security_profile_enabled: {
-                        let field_value = match fields_map.get("compliance_security_profile_enabled") {
+                        let field_value = match fields_map.get("complianceSecurityProfileEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compliance_security_profile_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'complianceSecurityProfileEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compliance_security_profile_standards: {
-                        let field_value = match fields_map.get("compliance_security_profile_standards") {
+                        let field_value = match fields_map.get("complianceSecurityProfileStandards") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compliance_security_profile_standards' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'complianceSecurityProfileStandards' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enhanced_security_monitoring_enabled: {
-                        let field_value = match fields_map.get("enhanced_security_monitoring_enabled") {
+                        let field_value = match fields_map.get("enhancedSecurityMonitoringEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enhanced_security_monitoring_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enhancedSecurityMonitoringEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

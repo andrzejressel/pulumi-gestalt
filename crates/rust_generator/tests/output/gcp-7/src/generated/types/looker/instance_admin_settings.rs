@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_email_domains",
+                    "allowedEmailDomains",
                     &self.r#allowed_email_domains,
                 ),
             ];
@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#allowed_email_domains: {
-                        let field_value = match fields_map.get("allowed_email_domains") {
+                        let field_value = match fields_map.get("allowedEmailDomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_email_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedEmailDomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

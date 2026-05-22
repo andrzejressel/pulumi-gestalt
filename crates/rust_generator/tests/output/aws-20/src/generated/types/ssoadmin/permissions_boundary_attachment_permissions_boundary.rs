@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Per
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customer_managed_policy_reference",
+                    "customerManagedPolicyReference",
                     &self.r#customer_managed_policy_reference,
                 ),
                 to_pulumi_object_field(
-                    "managed_policy_arn",
+                    "managedPolicyArn",
                     &self.r#managed_policy_arn,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#customer_managed_policy_reference: {
-                        let field_value = match fields_map.get("customer_managed_policy_reference") {
+                        let field_value = match fields_map.get("customerManagedPolicyReference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customer_managed_policy_reference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customerManagedPolicyReference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_policy_arn: {
-                        let field_value = match fields_map.get("managed_policy_arn") {
+                        let field_value = match fields_map.get("managedPolicyArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_policy_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedPolicyArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

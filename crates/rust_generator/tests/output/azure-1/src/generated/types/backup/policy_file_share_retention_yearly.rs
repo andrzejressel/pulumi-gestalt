@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#days,
                 ),
                 to_pulumi_object_field(
-                    "include_last_days",
+                    "includeLastDays",
                     &self.r#include_last_days,
                 ),
                 to_pulumi_object_field(
@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_last_days: {
-                        let field_value = match fields_map.get("include_last_days") {
+                        let field_value = match fields_map.get("includeLastDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_last_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeLastDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

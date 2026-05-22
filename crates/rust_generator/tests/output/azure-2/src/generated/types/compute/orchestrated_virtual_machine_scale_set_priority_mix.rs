@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_regular_count",
+                    "baseRegularCount",
                     &self.r#base_regular_count,
                 ),
                 to_pulumi_object_field(
-                    "regular_percentage_above_base",
+                    "regularPercentageAboveBase",
                     &self.r#regular_percentage_above_base,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#base_regular_count: {
-                        let field_value = match fields_map.get("base_regular_count") {
+                        let field_value = match fields_map.get("baseRegularCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'base_regular_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baseRegularCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regular_percentage_above_base: {
-                        let field_value = match fields_map.get("regular_percentage_above_base") {
+                        let field_value = match fields_map.get("regularPercentageAboveBase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regular_percentage_above_base' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regularPercentageAboveBase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

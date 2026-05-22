@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_id",
+                    "containerId",
                     &self.r#container_id,
                 ),
                 to_pulumi_object_field(
-                    "root_folder_path",
+                    "rootFolderPath",
                     &self.r#root_folder_path,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#container_id: {
-                        let field_value = match fields_map.get("container_id") {
+                        let field_value = match fields_map.get("containerId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_folder_path: {
-                        let field_value = match fields_map.get("root_folder_path") {
+                        let field_value = match fields_map.get("rootFolderPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_folder_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootFolderPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

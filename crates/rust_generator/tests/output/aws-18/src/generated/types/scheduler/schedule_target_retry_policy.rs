@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maximum_event_age_in_seconds",
+                    "maximumEventAgeInSeconds",
                     &self.r#maximum_event_age_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "maximum_retry_attempts",
+                    "maximumRetryAttempts",
                     &self.r#maximum_retry_attempts,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#maximum_event_age_in_seconds: {
-                        let field_value = match fields_map.get("maximum_event_age_in_seconds") {
+                        let field_value = match fields_map.get("maximumEventAgeInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_event_age_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumEventAgeInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_retry_attempts: {
-                        let field_value = match fields_map.get("maximum_retry_attempts") {
+                        let field_value = match fields_map.get("maximumRetryAttempts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_retry_attempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumRetryAttempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

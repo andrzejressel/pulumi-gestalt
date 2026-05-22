@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_snapshot_age_hours",
+                    "maxSnapshotAgeHours",
                     &self.r#max_snapshot_age_hours,
                 ),
                 to_pulumi_object_field(
-                    "min_snapshots_to_keep",
+                    "minSnapshotsToKeep",
                     &self.r#min_snapshots_to_keep,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#max_snapshot_age_hours: {
-                        let field_value = match fields_map.get("max_snapshot_age_hours") {
+                        let field_value = match fields_map.get("maxSnapshotAgeHours") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_snapshot_age_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxSnapshotAgeHours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_snapshots_to_keep: {
-                        let field_value = match fields_map.get("min_snapshots_to_keep") {
+                        let field_value = match fields_map.get("minSnapshotsToKeep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_snapshots_to_keep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minSnapshotsToKeep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "add_hosts",
+                    "addHosts",
                     &self.r#add_hosts,
                 ),
                 to_pulumi_object_field(
@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
                     &self.r#args,
                 ),
                 to_pulumi_object_field(
-                    "builder_version",
+                    "builderVersion",
                     &self.r#builder_version,
                 ),
                 to_pulumi_object_field(
-                    "cache_from",
+                    "cacheFrom",
                     &self.r#cache_from,
                 ),
                 to_pulumi_object_field(
@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#add_hosts: {
-                        let field_value = match fields_map.get("add_hosts") {
+                        let field_value = match fields_map.get("addHosts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'add_hosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addHosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -128,16 +128,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#builder_version: {
-                        let field_value = match fields_map.get("builder_version") {
+                        let field_value = match fields_map.get("builderVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'builder_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'builderVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_from: {
-                        let field_value = match fields_map.get("cache_from") {
+                        let field_value = match fields_map.get("cacheFrom") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_from' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheFrom' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

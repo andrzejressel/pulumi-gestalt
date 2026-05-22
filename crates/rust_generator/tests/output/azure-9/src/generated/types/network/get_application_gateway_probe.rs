@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#matches,
                 ),
                 to_pulumi_object_field(
-                    "minimum_servers",
+                    "minimumServers",
                     &self.r#minimum_servers,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "pick_host_name_from_backend_http_settings",
+                    "pickHostNameFromBackendHttpSettings",
                     &self.r#pick_host_name_from_backend_http_settings,
                 ),
                 to_pulumi_object_field(
@@ -111,7 +111,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#timeout,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_threshold",
+                    "unhealthyThreshold",
                     &self.r#unhealthy_threshold,
                 ),
             ];
@@ -166,9 +166,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_servers: {
-                        let field_value = match fields_map.get("minimum_servers") {
+                        let field_value = match fields_map.get("minimumServers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumServers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -187,9 +187,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pick_host_name_from_backend_http_settings: {
-                        let field_value = match fields_map.get("pick_host_name_from_backend_http_settings") {
+                        let field_value = match fields_map.get("pickHostNameFromBackendHttpSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pick_host_name_from_backend_http_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pickHostNameFromBackendHttpSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -215,9 +215,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unhealthy_threshold: {
-                        let field_value = match fields_map.get("unhealthy_threshold") {
+                        let field_value = match fields_map.get("unhealthyThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unhealthy_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unhealthyThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

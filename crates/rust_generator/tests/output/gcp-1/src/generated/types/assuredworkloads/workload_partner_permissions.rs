@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "assured_workloads_monitoring",
+                    "assuredWorkloadsMonitoring",
                     &self.r#assured_workloads_monitoring,
                 ),
                 to_pulumi_object_field(
-                    "data_logs_viewer",
+                    "dataLogsViewer",
                     &self.r#data_logs_viewer,
                 ),
                 to_pulumi_object_field(
-                    "service_access_approver",
+                    "serviceAccessApprover",
                     &self.r#service_access_approver,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#assured_workloads_monitoring: {
-                        let field_value = match fields_map.get("assured_workloads_monitoring") {
+                        let field_value = match fields_map.get("assuredWorkloadsMonitoring") {
                             Some(value) => value,
-                            None => bail!("Missing field 'assured_workloads_monitoring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'assuredWorkloadsMonitoring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_logs_viewer: {
-                        let field_value = match fields_map.get("data_logs_viewer") {
+                        let field_value = match fields_map.get("dataLogsViewer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_logs_viewer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataLogsViewer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_access_approver: {
-                        let field_value = match fields_map.get("service_access_approver") {
+                        let field_value = match fields_map.get("serviceAccessApprover") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_access_approver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccessApprover' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

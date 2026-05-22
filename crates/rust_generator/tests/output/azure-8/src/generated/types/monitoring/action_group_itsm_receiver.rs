@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_id",
+                    "connectionId",
                     &self.r#connection_id,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "ticket_configuration",
+                    "ticketConfiguration",
                     &self.r#ticket_configuration,
                 ),
                 to_pulumi_object_field(
-                    "workspace_id",
+                    "workspaceId",
                     &self.r#workspace_id,
                 ),
             ];
@@ -84,9 +84,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#connection_id: {
-                        let field_value = match fields_map.get("connection_id") {
+                        let field_value = match fields_map.get("connectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -105,16 +105,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ticket_configuration: {
-                        let field_value = match fields_map.get("ticket_configuration") {
+                        let field_value = match fields_map.get("ticketConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ticket_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ticketConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workspace_id: {
-                        let field_value = match fields_map.get("workspace_id") {
+                        let field_value = match fields_map.get("workspaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workspace_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workspaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

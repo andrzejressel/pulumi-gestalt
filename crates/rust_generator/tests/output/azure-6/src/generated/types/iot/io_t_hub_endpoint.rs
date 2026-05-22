@@ -75,19 +75,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_type",
+                    "authenticationType",
                     &self.r#authentication_type,
                 ),
                 to_pulumi_object_field(
-                    "batch_frequency_in_seconds",
+                    "batchFrequencyInSeconds",
                     &self.r#batch_frequency_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "connection_string",
+                    "connectionString",
                     &self.r#connection_string,
                 ),
                 to_pulumi_object_field(
-                    "container_name",
+                    "containerName",
                     &self.r#container_name,
                 ),
                 to_pulumi_object_field(
@@ -95,23 +95,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_uri",
+                    "endpointUri",
                     &self.r#endpoint_uri,
                 ),
                 to_pulumi_object_field(
-                    "entity_path",
+                    "entityPath",
                     &self.r#entity_path,
                 ),
                 to_pulumi_object_field(
-                    "file_name_format",
+                    "fileNameFormat",
                     &self.r#file_name_format,
                 ),
                 to_pulumi_object_field(
-                    "identity_id",
+                    "identityId",
                     &self.r#identity_id,
                 ),
                 to_pulumi_object_field(
-                    "max_chunk_size_in_bytes",
+                    "maxChunkSizeInBytes",
                     &self.r#max_chunk_size_in_bytes,
                 ),
                 to_pulumi_object_field(
@@ -119,11 +119,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "resource_group_name",
+                    "resourceGroupName",
                     &self.r#resource_group_name,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -150,30 +150,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#authentication_type: {
-                        let field_value = match fields_map.get("authentication_type") {
+                        let field_value = match fields_map.get("authenticationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#batch_frequency_in_seconds: {
-                        let field_value = match fields_map.get("batch_frequency_in_seconds") {
+                        let field_value = match fields_map.get("batchFrequencyInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_frequency_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchFrequencyInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_string: {
-                        let field_value = match fields_map.get("connection_string") {
+                        let field_value = match fields_map.get("connectionString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_name: {
-                        let field_value = match fields_map.get("container_name") {
+                        let field_value = match fields_map.get("containerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -185,37 +185,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#endpoint_uri: {
-                        let field_value = match fields_map.get("endpoint_uri") {
+                        let field_value = match fields_map.get("endpointUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entity_path: {
-                        let field_value = match fields_map.get("entity_path") {
+                        let field_value = match fields_map.get("entityPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_name_format: {
-                        let field_value = match fields_map.get("file_name_format") {
+                        let field_value = match fields_map.get("fileNameFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_name_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileNameFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_id: {
-                        let field_value = match fields_map.get("identity_id") {
+                        let field_value = match fields_map.get("identityId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_chunk_size_in_bytes: {
-                        let field_value = match fields_map.get("max_chunk_size_in_bytes") {
+                        let field_value = match fields_map.get("maxChunkSizeInBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_chunk_size_in_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxChunkSizeInBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -227,16 +227,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_group_name: {
-                        let field_value = match fields_map.get("resource_group_name") {
+                        let field_value = match fields_map.get("resourceGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "airflow_config_overrides",
+                    "airflowConfigOverrides",
                     &self.r#airflow_config_overrides,
                 ),
                 to_pulumi_object_field(
-                    "cloud_data_lineage_integration",
+                    "cloudDataLineageIntegration",
                     &self.r#cloud_data_lineage_integration,
                 ),
                 to_pulumi_object_field(
-                    "env_variables",
+                    "envVariables",
                     &self.r#env_variables,
                 ),
                 to_pulumi_object_field(
-                    "image_version",
+                    "imageVersion",
                     &self.r#image_version,
                 ),
                 to_pulumi_object_field(
-                    "pypi_packages",
+                    "pypiPackages",
                     &self.r#pypi_packages,
                 ),
                 to_pulumi_object_field(
-                    "python_version",
+                    "pythonVersion",
                     &self.r#python_version,
                 ),
                 to_pulumi_object_field(
-                    "scheduler_count",
+                    "schedulerCount",
                     &self.r#scheduler_count,
                 ),
                 to_pulumi_object_field(
-                    "web_server_plugins_mode",
+                    "webServerPluginsMode",
                     &self.r#web_server_plugins_mode,
                 ),
             ];
@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#airflow_config_overrides: {
-                        let field_value = match fields_map.get("airflow_config_overrides") {
+                        let field_value = match fields_map.get("airflowConfigOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'airflow_config_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'airflowConfigOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_data_lineage_integration: {
-                        let field_value = match fields_map.get("cloud_data_lineage_integration") {
+                        let field_value = match fields_map.get("cloudDataLineageIntegration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_data_lineage_integration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudDataLineageIntegration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#env_variables: {
-                        let field_value = match fields_map.get("env_variables") {
+                        let field_value = match fields_map.get("envVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'env_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'envVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_version: {
-                        let field_value = match fields_map.get("image_version") {
+                        let field_value = match fields_map.get("imageVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pypi_packages: {
-                        let field_value = match fields_map.get("pypi_packages") {
+                        let field_value = match fields_map.get("pypiPackages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pypi_packages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pypiPackages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#python_version: {
-                        let field_value = match fields_map.get("python_version") {
+                        let field_value = match fields_map.get("pythonVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'python_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pythonVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scheduler_count: {
-                        let field_value = match fields_map.get("scheduler_count") {
+                        let field_value = match fields_map.get("schedulerCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scheduler_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schedulerCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#web_server_plugins_mode: {
-                        let field_value = match fields_map.get("web_server_plugins_mode") {
+                        let field_value = match fields_map.get("webServerPluginsMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'web_server_plugins_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webServerPluginsMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

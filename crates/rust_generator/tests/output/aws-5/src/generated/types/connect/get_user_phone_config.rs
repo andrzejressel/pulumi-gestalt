@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "after_contact_work_time_limit",
+                    "afterContactWorkTimeLimit",
                     &self.r#after_contact_work_time_limit,
                 ),
                 to_pulumi_object_field(
-                    "auto_accept",
+                    "autoAccept",
                     &self.r#auto_accept,
                 ),
                 to_pulumi_object_field(
-                    "desk_phone_number",
+                    "deskPhoneNumber",
                     &self.r#desk_phone_number,
                 ),
                 to_pulumi_object_field(
-                    "phone_type",
+                    "phoneType",
                     &self.r#phone_type,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#after_contact_work_time_limit: {
-                        let field_value = match fields_map.get("after_contact_work_time_limit") {
+                        let field_value = match fields_map.get("afterContactWorkTimeLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'after_contact_work_time_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'afterContactWorkTimeLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_accept: {
-                        let field_value = match fields_map.get("auto_accept") {
+                        let field_value = match fields_map.get("autoAccept") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_accept' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoAccept' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#desk_phone_number: {
-                        let field_value = match fields_map.get("desk_phone_number") {
+                        let field_value = match fields_map.get("deskPhoneNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desk_phone_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deskPhoneNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#phone_type: {
-                        let field_value = match fields_map.get("phone_type") {
+                        let field_value = match fields_map.get("phoneType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'phone_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'phoneType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

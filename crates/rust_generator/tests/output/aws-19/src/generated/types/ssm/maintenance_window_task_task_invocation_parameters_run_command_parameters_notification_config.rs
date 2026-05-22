@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mai
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "notification_arn",
+                    "notificationArn",
                     &self.r#notification_arn,
                 ),
                 to_pulumi_object_field(
-                    "notification_events",
+                    "notificationEvents",
                     &self.r#notification_events,
                 ),
                 to_pulumi_object_field(
-                    "notification_type",
+                    "notificationType",
                     &self.r#notification_type,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#notification_arn: {
-                        let field_value = match fields_map.get("notification_arn") {
+                        let field_value = match fields_map.get("notificationArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_events: {
-                        let field_value = match fields_map.get("notification_events") {
+                        let field_value = match fields_map.get("notificationEvents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationEvents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_type: {
-                        let field_value = match fields_map.get("notification_type") {
+                        let field_value = match fields_map.get("notificationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

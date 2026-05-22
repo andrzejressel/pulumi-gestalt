@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "activemq_broker_parameters",
+                    "activemqBrokerParameters",
                     &self.r#activemq_broker_parameters,
                 ),
                 to_pulumi_object_field(
-                    "dynamodb_stream_parameters",
+                    "dynamodbStreamParameters",
                     &self.r#dynamodb_stream_parameters,
                 ),
                 to_pulumi_object_field(
-                    "filter_criteria",
+                    "filterCriteria",
                     &self.r#filter_criteria,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_stream_parameters",
+                    "kinesisStreamParameters",
                     &self.r#kinesis_stream_parameters,
                 ),
                 to_pulumi_object_field(
-                    "managed_streaming_kafka_parameters",
+                    "managedStreamingKafkaParameters",
                     &self.r#managed_streaming_kafka_parameters,
                 ),
                 to_pulumi_object_field(
-                    "rabbitmq_broker_parameters",
+                    "rabbitmqBrokerParameters",
                     &self.r#rabbitmq_broker_parameters,
                 ),
                 to_pulumi_object_field(
-                    "self_managed_kafka_parameters",
+                    "selfManagedKafkaParameters",
                     &self.r#self_managed_kafka_parameters,
                 ),
                 to_pulumi_object_field(
-                    "sqs_queue_parameters",
+                    "sqsQueueParameters",
                     &self.r#sqs_queue_parameters,
                 ),
             ];
@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#activemq_broker_parameters: {
-                        let field_value = match fields_map.get("activemq_broker_parameters") {
+                        let field_value = match fields_map.get("activemqBrokerParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'activemq_broker_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activemqBrokerParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dynamodb_stream_parameters: {
-                        let field_value = match fields_map.get("dynamodb_stream_parameters") {
+                        let field_value = match fields_map.get("dynamodbStreamParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamodb_stream_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamodbStreamParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_criteria: {
-                        let field_value = match fields_map.get("filter_criteria") {
+                        let field_value = match fields_map.get("filterCriteria") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filter_criteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterCriteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_stream_parameters: {
-                        let field_value = match fields_map.get("kinesis_stream_parameters") {
+                        let field_value = match fields_map.get("kinesisStreamParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_stream_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisStreamParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_streaming_kafka_parameters: {
-                        let field_value = match fields_map.get("managed_streaming_kafka_parameters") {
+                        let field_value = match fields_map.get("managedStreamingKafkaParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_streaming_kafka_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedStreamingKafkaParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rabbitmq_broker_parameters: {
-                        let field_value = match fields_map.get("rabbitmq_broker_parameters") {
+                        let field_value = match fields_map.get("rabbitmqBrokerParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rabbitmq_broker_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rabbitmqBrokerParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#self_managed_kafka_parameters: {
-                        let field_value = match fields_map.get("self_managed_kafka_parameters") {
+                        let field_value = match fields_map.get("selfManagedKafkaParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'self_managed_kafka_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selfManagedKafkaParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sqs_queue_parameters: {
-                        let field_value = match fields_map.get("sqs_queue_parameters") {
+                        let field_value = match fields_map.get("sqsQueueParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sqs_queue_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqsQueueParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

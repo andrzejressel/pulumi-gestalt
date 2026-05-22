@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_encryption_set_id",
+                    "diskEncryptionSetId",
                     &self.r#disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "exclude_from_latest_enabled",
+                    "excludeFromLatestEnabled",
                     &self.r#exclude_from_latest_enabled,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "regional_replica_count",
+                    "regionalReplicaCount",
                     &self.r#regional_replica_count,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_type",
+                    "storageAccountType",
                     &self.r#storage_account_type,
                 ),
             ];
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#disk_encryption_set_id: {
-                        let field_value = match fields_map.get("disk_encryption_set_id") {
+                        let field_value = match fields_map.get("diskEncryptionSetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_encryption_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskEncryptionSetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_from_latest_enabled: {
-                        let field_value = match fields_map.get("exclude_from_latest_enabled") {
+                        let field_value = match fields_map.get("excludeFromLatestEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_from_latest_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeFromLatestEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regional_replica_count: {
-                        let field_value = match fields_map.get("regional_replica_count") {
+                        let field_value = match fields_map.get("regionalReplicaCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regional_replica_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionalReplicaCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_type: {
-                        let field_value = match fields_map.get("storage_account_type") {
+                        let field_value = match fields_map.get("storageAccountType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

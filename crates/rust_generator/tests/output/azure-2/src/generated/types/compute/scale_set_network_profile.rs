@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerated_networking",
+                    "acceleratedNetworking",
                     &self.r#accelerated_networking,
                 ),
                 to_pulumi_object_field(
-                    "dns_settings",
+                    "dnsSettings",
                     &self.r#dns_settings,
                 ),
                 to_pulumi_object_field(
-                    "ip_configurations",
+                    "ipConfigurations",
                     &self.r#ip_configurations,
                 ),
                 to_pulumi_object_field(
-                    "ip_forwarding",
+                    "ipForwarding",
                     &self.r#ip_forwarding,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "network_security_group_id",
+                    "networkSecurityGroupId",
                     &self.r#network_security_group_id,
                 ),
                 to_pulumi_object_field(
@@ -98,30 +98,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#accelerated_networking: {
-                        let field_value = match fields_map.get("accelerated_networking") {
+                        let field_value = match fields_map.get("acceleratedNetworking") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerated_networking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratedNetworking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_settings: {
-                        let field_value = match fields_map.get("dns_settings") {
+                        let field_value = match fields_map.get("dnsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_configurations: {
-                        let field_value = match fields_map.get("ip_configurations") {
+                        let field_value = match fields_map.get("ipConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_forwarding: {
-                        let field_value = match fields_map.get("ip_forwarding") {
+                        let field_value = match fields_map.get("ipForwarding") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_forwarding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipForwarding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,9 +133,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_security_group_id: {
-                        let field_value = match fields_map.get("network_security_group_id") {
+                        let field_value = match fields_map.get("networkSecurityGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_security_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkSecurityGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

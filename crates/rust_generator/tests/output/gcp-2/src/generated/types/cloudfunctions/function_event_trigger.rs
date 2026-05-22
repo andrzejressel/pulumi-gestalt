@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_type",
+                    "eventType",
                     &self.r#event_type,
                 ),
                 to_pulumi_object_field(
-                    "failure_policy",
+                    "failurePolicy",
                     &self.r#failure_policy,
                 ),
                 to_pulumi_object_field(
@@ -69,16 +69,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#event_type: {
-                        let field_value = match fields_map.get("event_type") {
+                        let field_value = match fields_map.get("eventType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_policy: {
-                        let field_value = match fields_map.get("failure_policy") {
+                        let field_value = match fields_map.get("failurePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failurePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

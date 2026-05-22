@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_token",
+                    "accessToken",
                     &self.r#access_token,
                 ),
                 to_pulumi_object_field(
-                    "id_token",
+                    "idToken",
                     &self.r#id_token,
                 ),
                 to_pulumi_object_field(
-                    "refresh_token",
+                    "refreshToken",
                     &self.r#refresh_token,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#access_token: {
-                        let field_value = match fields_map.get("access_token") {
+                        let field_value = match fields_map.get("accessToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#id_token: {
-                        let field_value = match fields_map.get("id_token") {
+                        let field_value = match fields_map.get("idToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'id_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refresh_token: {
-                        let field_value = match fields_map.get("refresh_token") {
+                        let field_value = match fields_map.get("refreshToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'refresh_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'refreshToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

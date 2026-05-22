@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "head_node",
+                    "headNode",
                     &self.r#head_node,
                 ),
                 to_pulumi_object_field(
-                    "worker_node",
+                    "workerNode",
                     &self.r#worker_node,
                 ),
                 to_pulumi_object_field(
-                    "zookeeper_node",
+                    "zookeeperNode",
                     &self.r#zookeeper_node,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#head_node: {
-                        let field_value = match fields_map.get("head_node") {
+                        let field_value = match fields_map.get("headNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'head_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#worker_node: {
-                        let field_value = match fields_map.get("worker_node") {
+                        let field_value = match fields_map.get("workerNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'worker_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workerNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#zookeeper_node: {
-                        let field_value = match fields_map.get("zookeeper_node") {
+                        let field_value = match fields_map.get("zookeeperNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'zookeeper_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'zookeeperNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

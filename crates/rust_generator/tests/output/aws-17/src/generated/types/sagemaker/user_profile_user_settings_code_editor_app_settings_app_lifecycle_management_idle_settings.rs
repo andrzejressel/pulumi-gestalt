@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "idle_timeout_in_minutes",
+                    "idleTimeoutInMinutes",
                     &self.r#idle_timeout_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_management",
+                    "lifecycleManagement",
                     &self.r#lifecycle_management,
                 ),
                 to_pulumi_object_field(
-                    "max_idle_timeout_in_minutes",
+                    "maxIdleTimeoutInMinutes",
                     &self.r#max_idle_timeout_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "min_idle_timeout_in_minutes",
+                    "minIdleTimeoutInMinutes",
                     &self.r#min_idle_timeout_in_minutes,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#idle_timeout_in_minutes: {
-                        let field_value = match fields_map.get("idle_timeout_in_minutes") {
+                        let field_value = match fields_map.get("idleTimeoutInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleTimeoutInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_management: {
-                        let field_value = match fields_map.get("lifecycle_management") {
+                        let field_value = match fields_map.get("lifecycleManagement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lifecycle_management' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifecycleManagement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_idle_timeout_in_minutes: {
-                        let field_value = match fields_map.get("max_idle_timeout_in_minutes") {
+                        let field_value = match fields_map.get("maxIdleTimeoutInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_idle_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxIdleTimeoutInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_idle_timeout_in_minutes: {
-                        let field_value = match fields_map.get("min_idle_timeout_in_minutes") {
+                        let field_value = match fields_map.get("minIdleTimeoutInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_idle_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minIdleTimeoutInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

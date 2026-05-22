@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acy
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "foo_6",
+                    "foo6",
                     &self.r#foo_6,
                 ),
             ];
@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#foo_6: {
-                        let field_value = match fields_map.get("foo_6") {
+                        let field_value = match fields_map.get("foo6") {
                             Some(value) => value,
-                            None => bail!("Missing field 'foo_6' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'foo6' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

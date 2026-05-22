@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "json_custom_configs",
+                    "jsonCustomConfigs",
                     &self.r#json_custom_configs,
                 ),
                 to_pulumi_object_field(
-                    "json_parsing",
+                    "jsonParsing",
                     &self.r#json_parsing,
                 ),
                 to_pulumi_object_field(
-                    "log_level",
+                    "logLevel",
                     &self.r#log_level,
                 ),
                 to_pulumi_object_field(
-                    "user_ip_request_headers",
+                    "userIpRequestHeaders",
                     &self.r#user_ip_request_headers,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#json_custom_configs: {
-                        let field_value = match fields_map.get("json_custom_configs") {
+                        let field_value = match fields_map.get("jsonCustomConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'json_custom_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsonCustomConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#json_parsing: {
-                        let field_value = match fields_map.get("json_parsing") {
+                        let field_value = match fields_map.get("jsonParsing") {
                             Some(value) => value,
-                            None => bail!("Missing field 'json_parsing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsonParsing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_level: {
-                        let field_value = match fields_map.get("log_level") {
+                        let field_value = match fields_map.get("logLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_ip_request_headers: {
-                        let field_value = match fields_map.get("user_ip_request_headers") {
+                        let field_value = match fields_map.get("userIpRequestHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_ip_request_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userIpRequestHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

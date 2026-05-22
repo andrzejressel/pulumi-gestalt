@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_selection_lists",
+                    "instanceSelectionLists",
                     &self.r#instance_selection_lists,
                 ),
                 to_pulumi_object_field(
-                    "instance_selection_results",
+                    "instanceSelectionResults",
                     &self.r#instance_selection_results,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_model_mix",
+                    "provisioningModelMix",
                     &self.r#provisioning_model_mix,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#instance_selection_lists: {
-                        let field_value = match fields_map.get("instance_selection_lists") {
+                        let field_value = match fields_map.get("instanceSelectionLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_selection_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceSelectionLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_selection_results: {
-                        let field_value = match fields_map.get("instance_selection_results") {
+                        let field_value = match fields_map.get("instanceSelectionResults") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_selection_results' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceSelectionResults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioning_model_mix: {
-                        let field_value = match fields_map.get("provisioning_model_mix") {
+                        let field_value = match fields_map.get("provisioningModelMix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioning_model_mix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisioningModelMix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "restart_server_on_configuration_value_change",
+                    "restartServerOnConfigurationValueChange",
                     &self.r#restart_server_on_configuration_value_change,
                 ),
             ];
@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#restart_server_on_configuration_value_change: {
-                        let field_value = match fields_map.get("restart_server_on_configuration_value_change") {
+                        let field_value = match fields_map.get("restartServerOnConfigurationValueChange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restart_server_on_configuration_value_change' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restartServerOnConfigurationValueChange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

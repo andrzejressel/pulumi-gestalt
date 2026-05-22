@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_id_client_regex",
+                    "appIdClientRegex",
                     &self.r#app_id_client_regex,
                 ),
                 to_pulumi_object_field(
-                    "aws_region",
+                    "awsRegion",
                     &self.r#aws_region,
                 ),
                 to_pulumi_object_field(
-                    "default_action",
+                    "defaultAction",
                     &self.r#default_action,
                 ),
                 to_pulumi_object_field(
-                    "user_pool_id",
+                    "userPoolId",
                     &self.r#user_pool_id,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#app_id_client_regex: {
-                        let field_value = match fields_map.get("app_id_client_regex") {
+                        let field_value = match fields_map.get("appIdClientRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_id_client_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appIdClientRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aws_region: {
-                        let field_value = match fields_map.get("aws_region") {
+                        let field_value = match fields_map.get("awsRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_action: {
-                        let field_value = match fields_map.get("default_action") {
+                        let field_value = match fields_map.get("defaultAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_pool_id: {
-                        let field_value = match fields_map.get("user_pool_id") {
+                        let field_value = match fields_map.get("userPoolId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_pool_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userPoolId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

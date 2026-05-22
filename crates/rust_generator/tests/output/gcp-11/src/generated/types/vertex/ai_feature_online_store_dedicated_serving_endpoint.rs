@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "private_service_connect_config",
+                    "privateServiceConnectConfig",
                     &self.r#private_service_connect_config,
                 ),
                 to_pulumi_object_field(
-                    "public_endpoint_domain_name",
+                    "publicEndpointDomainName",
                     &self.r#public_endpoint_domain_name,
                 ),
                 to_pulumi_object_field(
-                    "service_attachment",
+                    "serviceAttachment",
                     &self.r#service_attachment,
                 ),
             ];
@@ -69,23 +69,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#private_service_connect_config: {
-                        let field_value = match fields_map.get("private_service_connect_config") {
+                        let field_value = match fields_map.get("privateServiceConnectConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_service_connect_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateServiceConnectConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_endpoint_domain_name: {
-                        let field_value = match fields_map.get("public_endpoint_domain_name") {
+                        let field_value = match fields_map.get("publicEndpointDomainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_endpoint_domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicEndpointDomainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_attachment: {
-                        let field_value = match fields_map.get("service_attachment") {
+                        let field_value = match fields_map.get("serviceAttachment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_attachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAttachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

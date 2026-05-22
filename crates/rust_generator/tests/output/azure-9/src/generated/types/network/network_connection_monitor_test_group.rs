@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_endpoints",
+                    "destinationEndpoints",
                     &self.r#destination_endpoints,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "source_endpoints",
+                    "sourceEndpoints",
                     &self.r#source_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "test_configuration_names",
+                    "testConfigurationNames",
                     &self.r#test_configuration_names,
                 ),
             ];
@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#destination_endpoints: {
-                        let field_value = match fields_map.get("destination_endpoints") {
+                        let field_value = match fields_map.get("destinationEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_endpoints: {
-                        let field_value = match fields_map.get("source_endpoints") {
+                        let field_value = match fields_map.get("sourceEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#test_configuration_names: {
-                        let field_value = match fields_map.get("test_configuration_names") {
+                        let field_value = match fields_map.get("testConfigurationNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'test_configuration_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'testConfigurationNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

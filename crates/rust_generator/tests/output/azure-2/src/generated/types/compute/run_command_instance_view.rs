@@ -40,23 +40,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "end_time",
+                    "endTime",
                     &self.r#end_time,
                 ),
                 to_pulumi_object_field(
-                    "error_message",
+                    "errorMessage",
                     &self.r#error_message,
                 ),
                 to_pulumi_object_field(
-                    "execution_message",
+                    "executionMessage",
                     &self.r#execution_message,
                 ),
                 to_pulumi_object_field(
-                    "execution_state",
+                    "executionState",
                     &self.r#execution_state,
                 ),
                 to_pulumi_object_field(
-                    "exit_code",
+                    "exitCode",
                     &self.r#exit_code,
                 ),
                 to_pulumi_object_field(
@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#output,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
             ];
@@ -91,37 +91,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#end_time: {
-                        let field_value = match fields_map.get("end_time") {
+                        let field_value = match fields_map.get("endTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#error_message: {
-                        let field_value = match fields_map.get("error_message") {
+                        let field_value = match fields_map.get("errorMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_message: {
-                        let field_value = match fields_map.get("execution_message") {
+                        let field_value = match fields_map.get("executionMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_state: {
-                        let field_value = match fields_map.get("execution_state") {
+                        let field_value = match fields_map.get("executionState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exit_code: {
-                        let field_value = match fields_map.get("exit_code") {
+                        let field_value = match fields_map.get("exitCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exit_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exitCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,9 +133,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time: {
-                        let field_value = match fields_map.get("start_time") {
+                        let field_value = match fields_map.get("startTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "match_attributes",
+                    "matchAttributes",
                     &self.r#match_attributes,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_attributes: {
-                        let field_value = match fields_map.get("match_attributes") {
+                        let field_value = match fields_map.get("matchAttributes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchAttributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

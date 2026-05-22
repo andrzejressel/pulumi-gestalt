@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_id",
+                    "appId",
                     &self.r#app_id,
                 ),
                 to_pulumi_object_field(
-                    "app_port",
+                    "appPort",
                     &self.r#app_port,
                 ),
                 to_pulumi_object_field(
-                    "app_protocol",
+                    "appProtocol",
                     &self.r#app_protocol,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#app_id: {
-                        let field_value = match fields_map.get("app_id") {
+                        let field_value = match fields_map.get("appId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_port: {
-                        let field_value = match fields_map.get("app_port") {
+                        let field_value = match fields_map.get("appPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_protocol: {
-                        let field_value = match fields_map.get("app_protocol") {
+                        let field_value = match fields_map.get("appProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

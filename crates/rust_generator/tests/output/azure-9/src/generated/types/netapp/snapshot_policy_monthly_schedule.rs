@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sna
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "days_of_months",
+                    "daysOfMonths",
                     &self.r#days_of_months,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sna
                     &self.r#minute,
                 ),
                 to_pulumi_object_field(
-                    "snapshots_to_keep",
+                    "snapshotsToKeep",
                     &self.r#snapshots_to_keep,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#days_of_months: {
-                        let field_value = match fields_map.get("days_of_months") {
+                        let field_value = match fields_map.get("daysOfMonths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_months' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfMonths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshots_to_keep: {
-                        let field_value = match fields_map.get("snapshots_to_keep") {
+                        let field_value = match fields_map.get("snapshotsToKeep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshots_to_keep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotsToKeep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

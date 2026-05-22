@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_resources",
+                    "dataResources",
                     &self.r#data_resources,
                 ),
                 to_pulumi_object_field(
-                    "exclude_management_event_sources",
+                    "excludeManagementEventSources",
                     &self.r#exclude_management_event_sources,
                 ),
                 to_pulumi_object_field(
-                    "include_management_events",
+                    "includeManagementEvents",
                     &self.r#include_management_events,
                 ),
                 to_pulumi_object_field(
-                    "read_write_type",
+                    "readWriteType",
                     &self.r#read_write_type,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#data_resources: {
-                        let field_value = match fields_map.get("data_resources") {
+                        let field_value = match fields_map.get("dataResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_management_event_sources: {
-                        let field_value = match fields_map.get("exclude_management_event_sources") {
+                        let field_value = match fields_map.get("excludeManagementEventSources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_management_event_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeManagementEventSources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_management_events: {
-                        let field_value = match fields_map.get("include_management_events") {
+                        let field_value = match fields_map.get("includeManagementEvents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_management_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeManagementEvents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_write_type: {
-                        let field_value = match fields_map.get("read_write_type") {
+                        let field_value = match fields_map.get("readWriteType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_write_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readWriteType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

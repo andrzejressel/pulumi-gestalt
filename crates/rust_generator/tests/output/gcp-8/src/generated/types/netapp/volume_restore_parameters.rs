@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_backup",
+                    "sourceBackup",
                     &self.r#source_backup,
                 ),
                 to_pulumi_object_field(
-                    "source_snapshot",
+                    "sourceSnapshot",
                     &self.r#source_snapshot,
                 ),
             ];
@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#source_backup: {
-                        let field_value = match fields_map.get("source_backup") {
+                        let field_value = match fields_map.get("sourceBackup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_backup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceBackup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_snapshot: {
-                        let field_value = match fields_map.get("source_snapshot") {
+                        let field_value = match fields_map.get("sourceSnapshot") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_snapshot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceSnapshot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

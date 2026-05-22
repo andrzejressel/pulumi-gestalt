@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "codec_settings",
+                    "codecSettings",
                     &self.r#codec_settings,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "respond_to_afd",
+                    "respondToAfd",
                     &self.r#respond_to_afd,
                 ),
                 to_pulumi_object_field(
-                    "scaling_behavior",
+                    "scalingBehavior",
                     &self.r#scaling_behavior,
                 ),
                 to_pulumi_object_field(
@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#codec_settings: {
-                        let field_value = match fields_map.get("codec_settings") {
+                        let field_value = match fields_map.get("codecSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'codec_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codecSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,16 +119,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#respond_to_afd: {
-                        let field_value = match fields_map.get("respond_to_afd") {
+                        let field_value = match fields_map.get("respondToAfd") {
                             Some(value) => value,
-                            None => bail!("Missing field 'respond_to_afd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'respondToAfd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scaling_behavior: {
-                        let field_value = match fields_map.get("scaling_behavior") {
+                        let field_value = match fields_map.get("scalingBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scaling_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scalingBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

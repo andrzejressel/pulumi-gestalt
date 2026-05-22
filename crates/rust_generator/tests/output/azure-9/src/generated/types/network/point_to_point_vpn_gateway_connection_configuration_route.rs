@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "associated_route_table_id",
+                    "associatedRouteTableId",
                     &self.r#associated_route_table_id,
                 ),
                 to_pulumi_object_field(
-                    "inbound_route_map_id",
+                    "inboundRouteMapId",
                     &self.r#inbound_route_map_id,
                 ),
                 to_pulumi_object_field(
-                    "outbound_route_map_id",
+                    "outboundRouteMapId",
                     &self.r#outbound_route_map_id,
                 ),
                 to_pulumi_object_field(
-                    "propagated_route_table",
+                    "propagatedRouteTable",
                     &self.r#propagated_route_table,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#associated_route_table_id: {
-                        let field_value = match fields_map.get("associated_route_table_id") {
+                        let field_value = match fields_map.get("associatedRouteTableId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'associated_route_table_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'associatedRouteTableId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inbound_route_map_id: {
-                        let field_value = match fields_map.get("inbound_route_map_id") {
+                        let field_value = match fields_map.get("inboundRouteMapId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inbound_route_map_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inboundRouteMapId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outbound_route_map_id: {
-                        let field_value = match fields_map.get("outbound_route_map_id") {
+                        let field_value = match fields_map.get("outboundRouteMapId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_route_map_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundRouteMapId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#propagated_route_table: {
-                        let field_value = match fields_map.get("propagated_route_table") {
+                        let field_value = match fields_map.get("propagatedRouteTable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'propagated_route_table' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'propagatedRouteTable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

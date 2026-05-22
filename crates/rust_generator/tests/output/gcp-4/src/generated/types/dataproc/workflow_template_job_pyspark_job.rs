@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_uris",
+                    "archiveUris",
                     &self.r#archive_uris,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#args,
                 ),
                 to_pulumi_object_field(
-                    "file_uris",
+                    "fileUris",
                     &self.r#file_uris,
                 ),
                 to_pulumi_object_field(
-                    "jar_file_uris",
+                    "jarFileUris",
                     &self.r#jar_file_uris,
                 ),
                 to_pulumi_object_field(
-                    "logging_config",
+                    "loggingConfig",
                     &self.r#logging_config,
                 ),
                 to_pulumi_object_field(
-                    "main_python_file_uri",
+                    "mainPythonFileUri",
                     &self.r#main_python_file_uri,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "python_file_uris",
+                    "pythonFileUris",
                     &self.r#python_file_uris,
                 ),
             ];
@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#archive_uris: {
-                        let field_value = match fields_map.get("archive_uris") {
+                        let field_value = match fields_map.get("archiveUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'archive_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'archiveUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,30 +120,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_uris: {
-                        let field_value = match fields_map.get("file_uris") {
+                        let field_value = match fields_map.get("fileUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jar_file_uris: {
-                        let field_value = match fields_map.get("jar_file_uris") {
+                        let field_value = match fields_map.get("jarFileUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jar_file_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jarFileUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logging_config: {
-                        let field_value = match fields_map.get("logging_config") {
+                        let field_value = match fields_map.get("loggingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logging_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loggingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#main_python_file_uri: {
-                        let field_value = match fields_map.get("main_python_file_uri") {
+                        let field_value = match fields_map.get("mainPythonFileUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'main_python_file_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mainPythonFileUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -155,9 +155,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#python_file_uris: {
-                        let field_value = match fields_map.get("python_file_uris") {
+                        let field_value = match fields_map.get("pythonFileUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'python_file_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pythonFileUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

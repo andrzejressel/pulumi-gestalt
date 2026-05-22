@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_basic_auths",
+                    "httpBasicAuths",
                     &self.r#http_basic_auths,
                 ),
                 to_pulumi_object_field(
@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#patterns,
                 ),
                 to_pulumi_object_field(
-                    "search_paths",
+                    "searchPaths",
                     &self.r#search_paths,
                 ),
                 to_pulumi_object_field(
-                    "ssh_auths",
+                    "sshAuths",
                     &self.r#ssh_auths,
                 ),
                 to_pulumi_object_field(
@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#http_basic_auths: {
-                        let field_value = match fields_map.get("http_basic_auths") {
+                        let field_value = match fields_map.get("httpBasicAuths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_basic_auths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpBasicAuths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,16 +126,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#search_paths: {
-                        let field_value = match fields_map.get("search_paths") {
+                        let field_value = match fields_map.get("searchPaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'search_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'searchPaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssh_auths: {
-                        let field_value = match fields_map.get("ssh_auths") {
+                        let field_value = match fields_map.get("sshAuths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssh_auths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sshAuths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

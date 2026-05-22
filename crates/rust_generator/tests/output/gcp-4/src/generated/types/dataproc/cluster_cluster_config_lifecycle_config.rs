@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_delete_time",
+                    "autoDeleteTime",
                     &self.r#auto_delete_time,
                 ),
                 to_pulumi_object_field(
-                    "idle_delete_ttl",
+                    "idleDeleteTtl",
                     &self.r#idle_delete_ttl,
                 ),
                 to_pulumi_object_field(
-                    "idle_start_time",
+                    "idleStartTime",
                     &self.r#idle_start_time,
                 ),
             ];
@@ -72,23 +72,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#auto_delete_time: {
-                        let field_value = match fields_map.get("auto_delete_time") {
+                        let field_value = match fields_map.get("autoDeleteTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_delete_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoDeleteTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idle_delete_ttl: {
-                        let field_value = match fields_map.get("idle_delete_ttl") {
+                        let field_value = match fields_map.get("idleDeleteTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_delete_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleDeleteTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idle_start_time: {
-                        let field_value = match fields_map.get("idle_start_time") {
+                        let field_value = match fields_map.get("idleStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

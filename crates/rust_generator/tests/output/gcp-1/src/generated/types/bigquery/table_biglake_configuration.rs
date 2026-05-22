@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_id",
+                    "connectionId",
                     &self.r#connection_id,
                 ),
                 to_pulumi_object_field(
-                    "file_format",
+                    "fileFormat",
                     &self.r#file_format,
                 ),
                 to_pulumi_object_field(
-                    "storage_uri",
+                    "storageUri",
                     &self.r#storage_uri,
                 ),
                 to_pulumi_object_field(
-                    "table_format",
+                    "tableFormat",
                     &self.r#table_format,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#connection_id: {
-                        let field_value = match fields_map.get("connection_id") {
+                        let field_value = match fields_map.get("connectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_format: {
-                        let field_value = match fields_map.get("file_format") {
+                        let field_value = match fields_map.get("fileFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_uri: {
-                        let field_value = match fields_map.get("storage_uri") {
+                        let field_value = match fields_map.get("storageUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_format: {
-                        let field_value = match fields_map.get("table_format") {
+                        let field_value = match fields_map.get("tableFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tableFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -54,7 +54,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_readable",
+                    "applicationReadable",
                     &self.r#application_readable,
                 ),
                 to_pulumi_object_field(
@@ -62,11 +62,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#expiration,
                 ),
                 to_pulumi_object_field(
-                    "http_headers",
+                    "httpHeaders",
                     &self.r#http_headers,
                 ),
                 to_pulumi_object_field(
-                    "mime_type",
+                    "mimeType",
                     &self.r#mime_type,
                 ),
                 to_pulumi_object_field(
@@ -74,11 +74,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "require_matching_file",
+                    "requireMatchingFile",
                     &self.r#require_matching_file,
                 ),
                 to_pulumi_object_field(
-                    "upload_path_regex",
+                    "uploadPathRegex",
                     &self.r#upload_path_regex,
                 ),
             ];
@@ -105,9 +105,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#application_readable: {
-                        let field_value = match fields_map.get("application_readable") {
+                        let field_value = match fields_map.get("applicationReadable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_readable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationReadable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,16 +119,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_headers: {
-                        let field_value = match fields_map.get("http_headers") {
+                        let field_value = match fields_map.get("httpHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mime_type: {
-                        let field_value = match fields_map.get("mime_type") {
+                        let field_value = match fields_map.get("mimeType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mime_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mimeType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,16 +140,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_matching_file: {
-                        let field_value = match fields_map.get("require_matching_file") {
+                        let field_value = match fields_map.get("requireMatchingFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_matching_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireMatchingFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upload_path_regex: {
-                        let field_value = match fields_map.get("upload_path_regex") {
+                        let field_value = match fields_map.get("uploadPathRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upload_path_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'uploadPathRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

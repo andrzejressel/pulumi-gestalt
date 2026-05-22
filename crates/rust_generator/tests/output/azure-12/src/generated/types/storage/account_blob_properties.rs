@@ -67,39 +67,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "change_feed_enabled",
+                    "changeFeedEnabled",
                     &self.r#change_feed_enabled,
                 ),
                 to_pulumi_object_field(
-                    "change_feed_retention_in_days",
+                    "changeFeedRetentionInDays",
                     &self.r#change_feed_retention_in_days,
                 ),
                 to_pulumi_object_field(
-                    "container_delete_retention_policy",
+                    "containerDeleteRetentionPolicy",
                     &self.r#container_delete_retention_policy,
                 ),
                 to_pulumi_object_field(
-                    "cors_rules",
+                    "corsRules",
                     &self.r#cors_rules,
                 ),
                 to_pulumi_object_field(
-                    "default_service_version",
+                    "defaultServiceVersion",
                     &self.r#default_service_version,
                 ),
                 to_pulumi_object_field(
-                    "delete_retention_policy",
+                    "deleteRetentionPolicy",
                     &self.r#delete_retention_policy,
                 ),
                 to_pulumi_object_field(
-                    "last_access_time_enabled",
+                    "lastAccessTimeEnabled",
                     &self.r#last_access_time_enabled,
                 ),
                 to_pulumi_object_field(
-                    "restore_policy",
+                    "restorePolicy",
                     &self.r#restore_policy,
                 ),
                 to_pulumi_object_field(
-                    "versioning_enabled",
+                    "versioningEnabled",
                     &self.r#versioning_enabled,
                 ),
             ];
@@ -126,65 +126,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#change_feed_enabled: {
-                        let field_value = match fields_map.get("change_feed_enabled") {
+                        let field_value = match fields_map.get("changeFeedEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'change_feed_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'changeFeedEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#change_feed_retention_in_days: {
-                        let field_value = match fields_map.get("change_feed_retention_in_days") {
+                        let field_value = match fields_map.get("changeFeedRetentionInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'change_feed_retention_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'changeFeedRetentionInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_delete_retention_policy: {
-                        let field_value = match fields_map.get("container_delete_retention_policy") {
+                        let field_value = match fields_map.get("containerDeleteRetentionPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_delete_retention_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerDeleteRetentionPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cors_rules: {
-                        let field_value = match fields_map.get("cors_rules") {
+                        let field_value = match fields_map.get("corsRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cors_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'corsRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_service_version: {
-                        let field_value = match fields_map.get("default_service_version") {
+                        let field_value = match fields_map.get("defaultServiceVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_service_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultServiceVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#delete_retention_policy: {
-                        let field_value = match fields_map.get("delete_retention_policy") {
+                        let field_value = match fields_map.get("deleteRetentionPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delete_retention_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deleteRetentionPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_access_time_enabled: {
-                        let field_value = match fields_map.get("last_access_time_enabled") {
+                        let field_value = match fields_map.get("lastAccessTimeEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_access_time_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastAccessTimeEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restore_policy: {
-                        let field_value = match fields_map.get("restore_policy") {
+                        let field_value = match fields_map.get("restorePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restore_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restorePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#versioning_enabled: {
-                        let field_value = match fields_map.get("versioning_enabled") {
+                        let field_value = match fields_map.get("versioningEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'versioning_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versioningEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

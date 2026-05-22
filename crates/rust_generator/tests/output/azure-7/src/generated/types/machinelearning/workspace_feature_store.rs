@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "computer_spark_runtime_version",
+                    "computerSparkRuntimeVersion",
                     &self.r#computer_spark_runtime_version,
                 ),
                 to_pulumi_object_field(
-                    "offline_connection_name",
+                    "offlineConnectionName",
                     &self.r#offline_connection_name,
                 ),
                 to_pulumi_object_field(
-                    "online_connection_name",
+                    "onlineConnectionName",
                     &self.r#online_connection_name,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#computer_spark_runtime_version: {
-                        let field_value = match fields_map.get("computer_spark_runtime_version") {
+                        let field_value = match fields_map.get("computerSparkRuntimeVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'computer_spark_runtime_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computerSparkRuntimeVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#offline_connection_name: {
-                        let field_value = match fields_map.get("offline_connection_name") {
+                        let field_value = match fields_map.get("offlineConnectionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'offline_connection_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'offlineConnectionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#online_connection_name: {
-                        let field_value = match fields_map.get("online_connection_name") {
+                        let field_value = match fields_map.get("onlineConnectionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'online_connection_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onlineConnectionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

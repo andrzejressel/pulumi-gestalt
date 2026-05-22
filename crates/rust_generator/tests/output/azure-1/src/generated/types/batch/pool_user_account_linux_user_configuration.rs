@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
                     &self.r#gid,
                 ),
                 to_pulumi_object_field(
-                    "ssh_private_key",
+                    "sshPrivateKey",
                     &self.r#ssh_private_key,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssh_private_key: {
-                        let field_value = match fields_map.get("ssh_private_key") {
+                        let field_value = match fields_map.get("sshPrivateKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssh_private_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sshPrivateKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

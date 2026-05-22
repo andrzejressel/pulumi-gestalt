@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#accessibility,
                 ),
                 to_pulumi_object_field(
-                    "caption_selector_name",
+                    "captionSelectorName",
                     &self.r#caption_selector_name,
                 ),
                 to_pulumi_object_field(
-                    "destination_settings",
+                    "destinationSettings",
                     &self.r#destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "language_code",
+                    "languageCode",
                     &self.r#language_code,
                 ),
                 to_pulumi_object_field(
-                    "language_description",
+                    "languageDescription",
                     &self.r#language_description,
                 ),
                 to_pulumi_object_field(
@@ -97,30 +97,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#caption_selector_name: {
-                        let field_value = match fields_map.get("caption_selector_name") {
+                        let field_value = match fields_map.get("captionSelectorName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'caption_selector_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'captionSelectorName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_settings: {
-                        let field_value = match fields_map.get("destination_settings") {
+                        let field_value = match fields_map.get("destinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#language_code: {
-                        let field_value = match fields_map.get("language_code") {
+                        let field_value = match fields_map.get("languageCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'language_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'languageCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#language_description: {
-                        let field_value = match fields_map.get("language_description") {
+                        let field_value = match fields_map.get("languageDescription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'language_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'languageDescription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

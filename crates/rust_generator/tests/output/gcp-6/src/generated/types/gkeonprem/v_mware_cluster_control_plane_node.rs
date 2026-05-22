@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_resize_config",
+                    "autoResizeConfig",
                     &self.r#auto_resize_config,
                 ),
                 to_pulumi_object_field(
@@ -61,7 +61,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#replicas,
                 ),
                 to_pulumi_object_field(
-                    "vsphere_configs",
+                    "vsphereConfigs",
                     &self.r#vsphere_configs,
                 ),
             ];
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#auto_resize_config: {
-                        let field_value = match fields_map.get("auto_resize_config") {
+                        let field_value = match fields_map.get("autoResizeConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_resize_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoResizeConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -116,9 +116,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vsphere_configs: {
-                        let field_value = match fields_map.get("vsphere_configs") {
+                        let field_value = match fields_map.get("vsphereConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vsphere_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vsphereConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

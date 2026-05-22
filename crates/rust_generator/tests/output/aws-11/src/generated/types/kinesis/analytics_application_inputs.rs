@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_firehose",
+                    "kinesisFirehose",
                     &self.r#kinesis_firehose,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_stream",
+                    "kinesisStream",
                     &self.r#kinesis_stream,
                 ),
                 to_pulumi_object_field(
-                    "name_prefix",
+                    "namePrefix",
                     &self.r#name_prefix,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#parallelism,
                 ),
                 to_pulumi_object_field(
-                    "processing_configuration",
+                    "processingConfiguration",
                     &self.r#processing_configuration,
                 ),
                 to_pulumi_object_field(
@@ -87,11 +87,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#schema,
                 ),
                 to_pulumi_object_field(
-                    "starting_position_configurations",
+                    "startingPositionConfigurations",
                     &self.r#starting_position_configurations,
                 ),
                 to_pulumi_object_field(
-                    "stream_names",
+                    "streamNames",
                     &self.r#stream_names,
                 ),
             ];
@@ -125,23 +125,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_firehose: {
-                        let field_value = match fields_map.get("kinesis_firehose") {
+                        let field_value = match fields_map.get("kinesisFirehose") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_firehose' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisFirehose' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_stream: {
-                        let field_value = match fields_map.get("kinesis_stream") {
+                        let field_value = match fields_map.get("kinesisStream") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_stream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisStream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name_prefix: {
-                        let field_value = match fields_map.get("name_prefix") {
+                        let field_value = match fields_map.get("namePrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'name_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namePrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -153,9 +153,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#processing_configuration: {
-                        let field_value = match fields_map.get("processing_configuration") {
+                        let field_value = match fields_map.get("processingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'processing_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'processingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -167,16 +167,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#starting_position_configurations: {
-                        let field_value = match fields_map.get("starting_position_configurations") {
+                        let field_value = match fields_map.get("startingPositionConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'starting_position_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startingPositionConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_names: {
-                        let field_value = match fields_map.get("stream_names") {
+                        let field_value = match fields_map.get("streamNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stream_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'streamNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

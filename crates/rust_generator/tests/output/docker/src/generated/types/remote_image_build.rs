@@ -159,27 +159,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_configs",
+                    "authConfigs",
                     &self.r#auth_configs,
                 ),
                 to_pulumi_object_field(
-                    "build_arg",
+                    "buildArg",
                     &self.r#build_arg,
                 ),
                 to_pulumi_object_field(
-                    "build_args",
+                    "buildArgs",
                     &self.r#build_args,
                 ),
                 to_pulumi_object_field(
-                    "build_id",
+                    "buildId",
                     &self.r#build_id,
                 ),
                 to_pulumi_object_field(
-                    "cache_froms",
+                    "cacheFroms",
                     &self.r#cache_froms,
                 ),
                 to_pulumi_object_field(
-                    "cgroup_parent",
+                    "cgroupParent",
                     &self.r#cgroup_parent,
                 ),
                 to_pulumi_object_field(
@@ -187,23 +187,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#context,
                 ),
                 to_pulumi_object_field(
-                    "cpu_period",
+                    "cpuPeriod",
                     &self.r#cpu_period,
                 ),
                 to_pulumi_object_field(
-                    "cpu_quota",
+                    "cpuQuota",
                     &self.r#cpu_quota,
                 ),
                 to_pulumi_object_field(
-                    "cpu_set_cpus",
+                    "cpuSetCpus",
                     &self.r#cpu_set_cpus,
                 ),
                 to_pulumi_object_field(
-                    "cpu_set_mems",
+                    "cpuSetMems",
                     &self.r#cpu_set_mems,
                 ),
                 to_pulumi_object_field(
-                    "cpu_shares",
+                    "cpuShares",
                     &self.r#cpu_shares,
                 ),
                 to_pulumi_object_field(
@@ -211,11 +211,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#dockerfile,
                 ),
                 to_pulumi_object_field(
-                    "extra_hosts",
+                    "extraHosts",
                     &self.r#extra_hosts,
                 ),
                 to_pulumi_object_field(
-                    "force_remove",
+                    "forceRemove",
                     &self.r#force_remove,
                 ),
                 to_pulumi_object_field(
@@ -235,15 +235,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#memory,
                 ),
                 to_pulumi_object_field(
-                    "memory_swap",
+                    "memorySwap",
                     &self.r#memory_swap,
                 ),
                 to_pulumi_object_field(
-                    "network_mode",
+                    "networkMode",
                     &self.r#network_mode,
                 ),
                 to_pulumi_object_field(
-                    "no_cache",
+                    "noCache",
                     &self.r#no_cache,
                 ),
                 to_pulumi_object_field(
@@ -251,11 +251,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#platform,
                 ),
                 to_pulumi_object_field(
-                    "pull_parent",
+                    "pullParent",
                     &self.r#pull_parent,
                 ),
                 to_pulumi_object_field(
-                    "remote_context",
+                    "remoteContext",
                     &self.r#remote_context,
                 ),
                 to_pulumi_object_field(
@@ -263,15 +263,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#remove,
                 ),
                 to_pulumi_object_field(
-                    "security_opts",
+                    "securityOpts",
                     &self.r#security_opts,
                 ),
                 to_pulumi_object_field(
-                    "session_id",
+                    "sessionId",
                     &self.r#session_id,
                 ),
                 to_pulumi_object_field(
-                    "shm_size",
+                    "shmSize",
                     &self.r#shm_size,
                 ),
                 to_pulumi_object_field(
@@ -279,7 +279,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#squash,
                 ),
                 to_pulumi_object_field(
-                    "suppress_output",
+                    "suppressOutput",
                     &self.r#suppress_output,
                 ),
                 to_pulumi_object_field(
@@ -322,44 +322,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#auth_configs: {
-                        let field_value = match fields_map.get("auth_configs") {
+                        let field_value = match fields_map.get("authConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#build_arg: {
-                        let field_value = match fields_map.get("build_arg") {
+                        let field_value = match fields_map.get("buildArg") {
                             Some(value) => value,
-                            None => bail!("Missing field 'build_arg' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'buildArg' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#build_args: {
-                        let field_value = match fields_map.get("build_args") {
+                        let field_value = match fields_map.get("buildArgs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'build_args' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'buildArgs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#build_id: {
-                        let field_value = match fields_map.get("build_id") {
+                        let field_value = match fields_map.get("buildId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'build_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'buildId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_froms: {
-                        let field_value = match fields_map.get("cache_froms") {
+                        let field_value = match fields_map.get("cacheFroms") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_froms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheFroms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cgroup_parent: {
-                        let field_value = match fields_map.get("cgroup_parent") {
+                        let field_value = match fields_map.get("cgroupParent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cgroup_parent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cgroupParent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -371,37 +371,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_period: {
-                        let field_value = match fields_map.get("cpu_period") {
+                        let field_value = match fields_map.get("cpuPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_quota: {
-                        let field_value = match fields_map.get("cpu_quota") {
+                        let field_value = match fields_map.get("cpuQuota") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_quota' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuQuota' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_set_cpus: {
-                        let field_value = match fields_map.get("cpu_set_cpus") {
+                        let field_value = match fields_map.get("cpuSetCpus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_set_cpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuSetCpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_set_mems: {
-                        let field_value = match fields_map.get("cpu_set_mems") {
+                        let field_value = match fields_map.get("cpuSetMems") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_set_mems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuSetMems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_shares: {
-                        let field_value = match fields_map.get("cpu_shares") {
+                        let field_value = match fields_map.get("cpuShares") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_shares' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuShares' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -413,16 +413,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extra_hosts: {
-                        let field_value = match fields_map.get("extra_hosts") {
+                        let field_value = match fields_map.get("extraHosts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extra_hosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extraHosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#force_remove: {
-                        let field_value = match fields_map.get("force_remove") {
+                        let field_value = match fields_map.get("forceRemove") {
                             Some(value) => value,
-                            None => bail!("Missing field 'force_remove' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forceRemove' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -455,23 +455,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_swap: {
-                        let field_value = match fields_map.get("memory_swap") {
+                        let field_value = match fields_map.get("memorySwap") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_swap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memorySwap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_mode: {
-                        let field_value = match fields_map.get("network_mode") {
+                        let field_value = match fields_map.get("networkMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_cache: {
-                        let field_value = match fields_map.get("no_cache") {
+                        let field_value = match fields_map.get("noCache") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_cache' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noCache' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -483,16 +483,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pull_parent: {
-                        let field_value = match fields_map.get("pull_parent") {
+                        let field_value = match fields_map.get("pullParent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pull_parent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pullParent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_context: {
-                        let field_value = match fields_map.get("remote_context") {
+                        let field_value = match fields_map.get("remoteContext") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_context' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remoteContext' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -504,23 +504,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_opts: {
-                        let field_value = match fields_map.get("security_opts") {
+                        let field_value = match fields_map.get("securityOpts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_opts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityOpts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_id: {
-                        let field_value = match fields_map.get("session_id") {
+                        let field_value = match fields_map.get("sessionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shm_size: {
-                        let field_value = match fields_map.get("shm_size") {
+                        let field_value = match fields_map.get("shmSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shm_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shmSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -532,9 +532,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#suppress_output: {
-                        let field_value = match fields_map.get("suppress_output") {
+                        let field_value = match fields_map.get("suppressOutput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'suppress_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'suppressOutput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

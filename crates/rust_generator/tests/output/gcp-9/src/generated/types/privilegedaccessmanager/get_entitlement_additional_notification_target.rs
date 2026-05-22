@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_email_recipients",
+                    "adminEmailRecipients",
                     &self.r#admin_email_recipients,
                 ),
                 to_pulumi_object_field(
-                    "requester_email_recipients",
+                    "requesterEmailRecipients",
                     &self.r#requester_email_recipients,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#admin_email_recipients: {
-                        let field_value = match fields_map.get("admin_email_recipients") {
+                        let field_value = match fields_map.get("adminEmailRecipients") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_email_recipients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminEmailRecipients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#requester_email_recipients: {
-                        let field_value = match fields_map.get("requester_email_recipients") {
+                        let field_value = match fields_map.get("requesterEmailRecipients") {
                             Some(value) => value,
-                            None => bail!("Missing field 'requester_email_recipients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requesterEmailRecipients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

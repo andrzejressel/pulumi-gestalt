@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_key",
+                    "apiKey",
                     &self.r#api_key,
                 ),
                 to_pulumi_object_field(
-                    "api_secret_key",
+                    "apiSecretKey",
                     &self.r#api_secret_key,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#api_key: {
-                        let field_value = match fields_map.get("api_key") {
+                        let field_value = match fields_map.get("apiKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#api_secret_key: {
-                        let field_value = match fields_map.get("api_secret_key") {
+                        let field_value = match fields_map.get("apiSecretKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_secret_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiSecretKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

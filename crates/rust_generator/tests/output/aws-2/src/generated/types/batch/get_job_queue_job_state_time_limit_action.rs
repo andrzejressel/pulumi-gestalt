@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "max_time_seconds",
+                    "maxTimeSeconds",
                     &self.r#max_time_seconds,
                 ),
                 to_pulumi_object_field(
@@ -78,9 +78,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_time_seconds: {
-                        let field_value = match fields_map.get("max_time_seconds") {
+                        let field_value = match fields_map.get("maxTimeSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_time_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxTimeSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

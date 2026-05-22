@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_network_resource_group",
+                    "appNetworkResourceGroup",
                     &self.r#app_network_resource_group,
                 ),
                 to_pulumi_object_field(
-                    "app_subnet_id",
+                    "appSubnetId",
                     &self.r#app_subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "cidr_ranges",
+                    "cidrRanges",
                     &self.r#cidr_ranges,
                 ),
                 to_pulumi_object_field(
-                    "outbound_type",
+                    "outboundType",
                     &self.r#outbound_type,
                 ),
                 to_pulumi_object_field(
-                    "read_timeout_seconds",
+                    "readTimeoutSeconds",
                     &self.r#read_timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "service_runtime_network_resource_group",
+                    "serviceRuntimeNetworkResourceGroup",
                     &self.r#service_runtime_network_resource_group,
                 ),
                 to_pulumi_object_field(
-                    "service_runtime_subnet_id",
+                    "serviceRuntimeSubnetId",
                     &self.r#service_runtime_subnet_id,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#app_network_resource_group: {
-                        let field_value = match fields_map.get("app_network_resource_group") {
+                        let field_value = match fields_map.get("appNetworkResourceGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_network_resource_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appNetworkResourceGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_subnet_id: {
-                        let field_value = match fields_map.get("app_subnet_id") {
+                        let field_value = match fields_map.get("appSubnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appSubnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cidr_ranges: {
-                        let field_value = match fields_map.get("cidr_ranges") {
+                        let field_value = match fields_map.get("cidrRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cidr_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cidrRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outbound_type: {
-                        let field_value = match fields_map.get("outbound_type") {
+                        let field_value = match fields_map.get("outboundType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_timeout_seconds: {
-                        let field_value = match fields_map.get("read_timeout_seconds") {
+                        let field_value = match fields_map.get("readTimeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readTimeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_runtime_network_resource_group: {
-                        let field_value = match fields_map.get("service_runtime_network_resource_group") {
+                        let field_value = match fields_map.get("serviceRuntimeNetworkResourceGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_runtime_network_resource_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceRuntimeNetworkResourceGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_runtime_subnet_id: {
-                        let field_value = match fields_map.get("service_runtime_subnet_id") {
+                        let field_value = match fields_map.get("serviceRuntimeSubnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_runtime_subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceRuntimeSubnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

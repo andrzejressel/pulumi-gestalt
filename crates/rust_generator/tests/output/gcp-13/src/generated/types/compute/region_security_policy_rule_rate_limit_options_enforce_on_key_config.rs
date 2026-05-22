@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enforce_on_key_name",
+                    "enforceOnKeyName",
                     &self.r#enforce_on_key_name,
                 ),
                 to_pulumi_object_field(
-                    "enforce_on_key_type",
+                    "enforceOnKeyType",
                     &self.r#enforce_on_key_type,
                 ),
             ];
@@ -71,16 +71,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#enforce_on_key_name: {
-                        let field_value = match fields_map.get("enforce_on_key_name") {
+                        let field_value = match fields_map.get("enforceOnKeyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforce_on_key_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforceOnKeyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enforce_on_key_type: {
-                        let field_value = match fields_map.get("enforce_on_key_type") {
+                        let field_value = match fields_map.get("enforceOnKeyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforce_on_key_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforceOnKeyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

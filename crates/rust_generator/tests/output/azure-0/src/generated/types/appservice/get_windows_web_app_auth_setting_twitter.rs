@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_key",
+                    "consumerKey",
                     &self.r#consumer_key,
                 ),
                 to_pulumi_object_field(
-                    "consumer_secret",
+                    "consumerSecret",
                     &self.r#consumer_secret,
                 ),
                 to_pulumi_object_field(
-                    "consumer_secret_setting_name",
+                    "consumerSecretSettingName",
                     &self.r#consumer_secret_setting_name,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#consumer_key: {
-                        let field_value = match fields_map.get("consumer_key") {
+                        let field_value = match fields_map.get("consumerKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consumer_secret: {
-                        let field_value = match fields_map.get("consumer_secret") {
+                        let field_value = match fields_map.get("consumerSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consumer_secret_setting_name: {
-                        let field_value = match fields_map.get("consumer_secret_setting_name") {
+                        let field_value = match fields_map.get("consumerSecretSettingName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_secret_setting_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerSecretSettingName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

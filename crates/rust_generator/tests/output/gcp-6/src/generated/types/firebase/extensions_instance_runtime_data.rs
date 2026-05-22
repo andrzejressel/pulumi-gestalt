@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ext
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fatal_error",
+                    "fatalError",
                     &self.r#fatal_error,
                 ),
                 to_pulumi_object_field(
-                    "processing_state",
+                    "processingState",
                     &self.r#processing_state,
                 ),
                 to_pulumi_object_field(
-                    "state_update_time",
+                    "stateUpdateTime",
                     &self.r#state_update_time,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#fatal_error: {
-                        let field_value = match fields_map.get("fatal_error") {
+                        let field_value = match fields_map.get("fatalError") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fatal_error' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fatalError' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#processing_state: {
-                        let field_value = match fields_map.get("processing_state") {
+                        let field_value = match fields_map.get("processingState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'processing_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'processingState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#state_update_time: {
-                        let field_value = match fields_map.get("state_update_time") {
+                        let field_value = match fields_map.get("stateUpdateTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'state_update_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stateUpdateTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

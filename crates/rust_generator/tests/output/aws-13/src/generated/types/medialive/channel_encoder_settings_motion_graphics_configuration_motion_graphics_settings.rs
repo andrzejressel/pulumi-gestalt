@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "html_motion_graphics_settings",
+                    "htmlMotionGraphicsSettings",
                     &self.r#html_motion_graphics_settings,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#html_motion_graphics_settings: {
-                        let field_value = match fields_map.get("html_motion_graphics_settings") {
+                        let field_value = match fields_map.get("htmlMotionGraphicsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'html_motion_graphics_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'htmlMotionGraphicsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

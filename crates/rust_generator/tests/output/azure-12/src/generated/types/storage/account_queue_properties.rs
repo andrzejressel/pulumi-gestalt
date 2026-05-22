@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cors_rules",
+                    "corsRules",
                     &self.r#cors_rules,
                 ),
                 to_pulumi_object_field(
-                    "hour_metrics",
+                    "hourMetrics",
                     &self.r#hour_metrics,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#logging,
                 ),
                 to_pulumi_object_field(
-                    "minute_metrics",
+                    "minuteMetrics",
                     &self.r#minute_metrics,
                 ),
             ];
@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#cors_rules: {
-                        let field_value = match fields_map.get("cors_rules") {
+                        let field_value = match fields_map.get("corsRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cors_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'corsRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hour_metrics: {
-                        let field_value = match fields_map.get("hour_metrics") {
+                        let field_value = match fields_map.get("hourMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hour_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hourMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minute_metrics: {
-                        let field_value = match fields_map.get("minute_metrics") {
+                        let field_value = match fields_map.get("minuteMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minute_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minuteMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

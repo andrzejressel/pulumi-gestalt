@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "msk_cluster_arn",
+                    "mskClusterArn",
                     &self.r#msk_cluster_arn,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#msk_cluster_arn: {
-                        let field_value = match fields_map.get("msk_cluster_arn") {
+                        let field_value = match fields_map.get("mskClusterArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'msk_cluster_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mskClusterArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

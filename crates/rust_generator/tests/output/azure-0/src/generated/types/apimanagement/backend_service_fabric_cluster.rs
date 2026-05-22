@@ -46,27 +46,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_certificate_id",
+                    "clientCertificateId",
                     &self.r#client_certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_thumbprint",
+                    "clientCertificateThumbprint",
                     &self.r#client_certificate_thumbprint,
                 ),
                 to_pulumi_object_field(
-                    "management_endpoints",
+                    "managementEndpoints",
                     &self.r#management_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "max_partition_resolution_retries",
+                    "maxPartitionResolutionRetries",
                     &self.r#max_partition_resolution_retries,
                 ),
                 to_pulumi_object_field(
-                    "server_certificate_thumbprints",
+                    "serverCertificateThumbprints",
                     &self.r#server_certificate_thumbprints,
                 ),
                 to_pulumi_object_field(
-                    "server_x_509_names",
+                    "serverX509Names",
                     &self.r#server_x_509_names,
                 ),
             ];
@@ -93,44 +93,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#client_certificate_id: {
-                        let field_value = match fields_map.get("client_certificate_id") {
+                        let field_value = match fields_map.get("clientCertificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientCertificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_certificate_thumbprint: {
-                        let field_value = match fields_map.get("client_certificate_thumbprint") {
+                        let field_value = match fields_map.get("clientCertificateThumbprint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_certificate_thumbprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientCertificateThumbprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#management_endpoints: {
-                        let field_value = match fields_map.get("management_endpoints") {
+                        let field_value = match fields_map.get("managementEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'management_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managementEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_partition_resolution_retries: {
-                        let field_value = match fields_map.get("max_partition_resolution_retries") {
+                        let field_value = match fields_map.get("maxPartitionResolutionRetries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_partition_resolution_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxPartitionResolutionRetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_certificate_thumbprints: {
-                        let field_value = match fields_map.get("server_certificate_thumbprints") {
+                        let field_value = match fields_map.get("serverCertificateThumbprints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_certificate_thumbprints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverCertificateThumbprints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_x_509_names: {
-                        let field_value = match fields_map.get("server_x_509_names") {
+                        let field_value = match fields_map.get("serverX509Names") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_x_509_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverX509Names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

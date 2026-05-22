@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "linux_node_configs",
+                    "linuxNodeConfigs",
                     &self.r#linux_node_configs,
                 ),
                 to_pulumi_object_field(
-                    "network_tags",
+                    "networkTags",
                     &self.r#network_tags,
                 ),
                 to_pulumi_object_field(
-                    "node_kubelet_configs",
+                    "nodeKubeletConfigs",
                     &self.r#node_kubelet_configs,
                 ),
                 to_pulumi_object_field(
-                    "resource_manager_tags",
+                    "resourceManagerTags",
                     &self.r#resource_manager_tags,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#linux_node_configs: {
-                        let field_value = match fields_map.get("linux_node_configs") {
+                        let field_value = match fields_map.get("linuxNodeConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linux_node_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linuxNodeConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_tags: {
-                        let field_value = match fields_map.get("network_tags") {
+                        let field_value = match fields_map.get("networkTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_kubelet_configs: {
-                        let field_value = match fields_map.get("node_kubelet_configs") {
+                        let field_value = match fields_map.get("nodeKubeletConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_kubelet_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeKubeletConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_manager_tags: {
-                        let field_value = match fields_map.get("resource_manager_tags") {
+                        let field_value = match fields_map.get("resourceManagerTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_manager_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceManagerTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

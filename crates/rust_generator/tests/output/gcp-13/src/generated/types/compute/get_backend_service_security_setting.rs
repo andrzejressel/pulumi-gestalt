@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_v_4_authentications",
+                    "awsV4Authentications",
                     &self.r#aws_v_4_authentications,
                 ),
                 to_pulumi_object_field(
-                    "client_tls_policy",
+                    "clientTlsPolicy",
                     &self.r#client_tls_policy,
                 ),
                 to_pulumi_object_field(
-                    "subject_alt_names",
+                    "subjectAltNames",
                     &self.r#subject_alt_names,
                 ),
             ];
@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#aws_v_4_authentications: {
-                        let field_value = match fields_map.get("aws_v_4_authentications") {
+                        let field_value = match fields_map.get("awsV4Authentications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_v_4_authentications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsV4Authentications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_tls_policy: {
-                        let field_value = match fields_map.get("client_tls_policy") {
+                        let field_value = match fields_map.get("clientTlsPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_tls_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientTlsPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject_alt_names: {
-                        let field_value = match fields_map.get("subject_alt_names") {
+                        let field_value = match fields_map.get("subjectAltNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subject_alt_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subjectAltNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

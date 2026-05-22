@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_rollback_configuration",
+                    "autoRollbackConfiguration",
                     &self.r#auto_rollback_configuration,
                 ),
                 to_pulumi_object_field(
-                    "blue_green_update_policy",
+                    "blueGreenUpdatePolicy",
                     &self.r#blue_green_update_policy,
                 ),
                 to_pulumi_object_field(
-                    "rolling_update_policy",
+                    "rollingUpdatePolicy",
                     &self.r#rolling_update_policy,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#auto_rollback_configuration: {
-                        let field_value = match fields_map.get("auto_rollback_configuration") {
+                        let field_value = match fields_map.get("autoRollbackConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_rollback_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoRollbackConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#blue_green_update_policy: {
-                        let field_value = match fields_map.get("blue_green_update_policy") {
+                        let field_value = match fields_map.get("blueGreenUpdatePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'blue_green_update_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blueGreenUpdatePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rolling_update_policy: {
-                        let field_value = match fields_map.get("rolling_update_policy") {
+                        let field_value = match fields_map.get("rollingUpdatePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rolling_update_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rollingUpdatePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

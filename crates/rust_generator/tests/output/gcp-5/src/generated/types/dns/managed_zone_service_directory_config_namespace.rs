@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "namespace_url",
+                    "namespaceUrl",
                     &self.r#namespace_url,
                 ),
             ];
@@ -54,9 +54,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#namespace_url: {
-                        let field_value = match fields_map.get("namespace_url") {
+                        let field_value = match fields_map.get("namespaceUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'namespace_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namespaceUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

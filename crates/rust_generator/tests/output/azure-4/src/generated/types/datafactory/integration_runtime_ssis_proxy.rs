@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "self_hosted_integration_runtime_name",
+                    "selfHostedIntegrationRuntimeName",
                     &self.r#self_hosted_integration_runtime_name,
                 ),
                 to_pulumi_object_field(
-                    "staging_storage_linked_service_name",
+                    "stagingStorageLinkedServiceName",
                     &self.r#staging_storage_linked_service_name,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#self_hosted_integration_runtime_name: {
-                        let field_value = match fields_map.get("self_hosted_integration_runtime_name") {
+                        let field_value = match fields_map.get("selfHostedIntegrationRuntimeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'self_hosted_integration_runtime_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selfHostedIntegrationRuntimeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#staging_storage_linked_service_name: {
-                        let field_value = match fields_map.get("staging_storage_linked_service_name") {
+                        let field_value = match fields_map.get("stagingStorageLinkedServiceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'staging_storage_linked_service_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stagingStorageLinkedServiceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

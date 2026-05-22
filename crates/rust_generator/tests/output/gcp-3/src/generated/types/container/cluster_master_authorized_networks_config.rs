@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cidr_blocks",
+                    "cidrBlocks",
                     &self.r#cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "gcp_public_cidrs_access_enabled",
+                    "gcpPublicCidrsAccessEnabled",
                     &self.r#gcp_public_cidrs_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_enforcement_enabled",
+                    "privateEndpointEnforcementEnabled",
                     &self.r#private_endpoint_enforcement_enabled,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cidr_blocks: {
-                        let field_value = match fields_map.get("cidr_blocks") {
+                        let field_value = match fields_map.get("cidrBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cidr_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cidrBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcp_public_cidrs_access_enabled: {
-                        let field_value = match fields_map.get("gcp_public_cidrs_access_enabled") {
+                        let field_value = match fields_map.get("gcpPublicCidrsAccessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcp_public_cidrs_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcpPublicCidrsAccessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoint_enforcement_enabled: {
-                        let field_value = match fields_map.get("private_endpoint_enforcement_enabled") {
+                        let field_value = match fields_map.get("privateEndpointEnforcementEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoint_enforcement_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpointEnforcementEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

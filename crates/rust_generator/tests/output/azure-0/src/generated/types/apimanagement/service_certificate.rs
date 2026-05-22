@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_password",
+                    "certificatePassword",
                     &self.r#certificate_password,
                 ),
                 to_pulumi_object_field(
-                    "encoded_certificate",
+                    "encodedCertificate",
                     &self.r#encoded_certificate,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#expiry,
                 ),
                 to_pulumi_object_field(
-                    "store_name",
+                    "storeName",
                     &self.r#store_name,
                 ),
                 to_pulumi_object_field(
@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#certificate_password: {
-                        let field_value = match fields_map.get("certificate_password") {
+                        let field_value = match fields_map.get("certificatePassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificatePassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encoded_certificate: {
-                        let field_value = match fields_map.get("encoded_certificate") {
+                        let field_value = match fields_map.get("encodedCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encoded_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encodedCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,9 +111,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#store_name: {
-                        let field_value = match fields_map.get("store_name") {
+                        let field_value = match fields_map.get("storeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'store_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

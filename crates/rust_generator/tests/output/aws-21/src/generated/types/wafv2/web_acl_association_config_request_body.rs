@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_gateways",
+                    "apiGateways",
                     &self.r#api_gateways,
                 ),
                 to_pulumi_object_field(
-                    "app_runner_services",
+                    "appRunnerServices",
                     &self.r#app_runner_services,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#cloudfronts,
                 ),
                 to_pulumi_object_field(
-                    "cognito_user_pools",
+                    "cognitoUserPools",
                     &self.r#cognito_user_pools,
                 ),
                 to_pulumi_object_field(
-                    "verified_access_instances",
+                    "verifiedAccessInstances",
                     &self.r#verified_access_instances,
                 ),
             ];
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#api_gateways: {
-                        let field_value = match fields_map.get("api_gateways") {
+                        let field_value = match fields_map.get("apiGateways") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_gateways' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiGateways' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_runner_services: {
-                        let field_value = match fields_map.get("app_runner_services") {
+                        let field_value = match fields_map.get("appRunnerServices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_runner_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appRunnerServices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cognito_user_pools: {
-                        let field_value = match fields_map.get("cognito_user_pools") {
+                        let field_value = match fields_map.get("cognitoUserPools") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cognito_user_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cognitoUserPools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verified_access_instances: {
-                        let field_value = match fields_map.get("verified_access_instances") {
+                        let field_value = match fields_map.get("verifiedAccessInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verified_access_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifiedAccessInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

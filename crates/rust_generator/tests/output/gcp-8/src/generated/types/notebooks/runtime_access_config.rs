@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_type",
+                    "accessType",
                     &self.r#access_type,
                 ),
                 to_pulumi_object_field(
-                    "proxy_uri",
+                    "proxyUri",
                     &self.r#proxy_uri,
                 ),
                 to_pulumi_object_field(
-                    "runtime_owner",
+                    "runtimeOwner",
                     &self.r#runtime_owner,
                 ),
             ];
@@ -70,23 +70,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#access_type: {
-                        let field_value = match fields_map.get("access_type") {
+                        let field_value = match fields_map.get("accessType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#proxy_uri: {
-                        let field_value = match fields_map.get("proxy_uri") {
+                        let field_value = match fields_map.get("proxyUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'proxy_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'proxyUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_owner: {
-                        let field_value = match fields_map.get("runtime_owner") {
+                        let field_value = match fields_map.get("runtimeOwner") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_owner' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimeOwner' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

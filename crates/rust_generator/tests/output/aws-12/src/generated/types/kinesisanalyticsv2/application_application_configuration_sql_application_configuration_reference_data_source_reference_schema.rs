@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "record_columns",
+                    "recordColumns",
                     &self.r#record_columns,
                 ),
                 to_pulumi_object_field(
-                    "record_encoding",
+                    "recordEncoding",
                     &self.r#record_encoding,
                 ),
                 to_pulumi_object_field(
-                    "record_format",
+                    "recordFormat",
                     &self.r#record_format,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#record_columns: {
-                        let field_value = match fields_map.get("record_columns") {
+                        let field_value = match fields_map.get("recordColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_encoding: {
-                        let field_value = match fields_map.get("record_encoding") {
+                        let field_value = match fields_map.get("recordEncoding") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_encoding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordEncoding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_format: {
-                        let field_value = match fields_map.get("record_format") {
+                        let field_value = match fields_map.get("recordFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

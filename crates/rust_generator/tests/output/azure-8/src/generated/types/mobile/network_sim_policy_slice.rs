@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_networks",
+                    "dataNetworks",
                     &self.r#data_networks,
                 ),
                 to_pulumi_object_field(
-                    "default_data_network_id",
+                    "defaultDataNetworkId",
                     &self.r#default_data_network_id,
                 ),
                 to_pulumi_object_field(
-                    "slice_id",
+                    "sliceId",
                     &self.r#slice_id,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#data_networks: {
-                        let field_value = match fields_map.get("data_networks") {
+                        let field_value = match fields_map.get("dataNetworks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_networks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataNetworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_data_network_id: {
-                        let field_value = match fields_map.get("default_data_network_id") {
+                        let field_value = match fields_map.get("defaultDataNetworkId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_data_network_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultDataNetworkId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slice_id: {
-                        let field_value = match fields_map.get("slice_id") {
+                        let field_value = match fields_map.get("sliceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slice_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sliceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#cluster,
                 ),
                 to_pulumi_object_field(
-                    "internal_ip",
+                    "internalIp",
                     &self.r#internal_ip,
                 ),
                 to_pulumi_object_field(
-                    "proxy_url",
+                    "proxyUrl",
                     &self.r#proxy_url,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#internal_ip: {
-                        let field_value = match fields_map.get("internal_ip") {
+                        let field_value = match fields_map.get("internalIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'internal_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'internalIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#proxy_url: {
-                        let field_value = match fields_map.get("proxy_url") {
+                        let field_value = match fields_map.get("proxyUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'proxy_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'proxyUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

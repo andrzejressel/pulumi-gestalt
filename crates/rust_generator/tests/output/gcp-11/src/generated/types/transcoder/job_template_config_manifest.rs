@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "file_name",
+                    "fileName",
                     &self.r#file_name,
                 ),
                 to_pulumi_object_field(
-                    "mux_streams",
+                    "muxStreams",
                     &self.r#mux_streams,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -67,23 +67,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#file_name: {
-                        let field_value = match fields_map.get("file_name") {
+                        let field_value = match fields_map.get("fileName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mux_streams: {
-                        let field_value = match fields_map.get("mux_streams") {
+                        let field_value = match fields_map.get("muxStreams") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mux_streams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'muxStreams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

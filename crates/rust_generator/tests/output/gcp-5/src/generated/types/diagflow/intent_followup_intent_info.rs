@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "followup_intent_name",
+                    "followupIntentName",
                     &self.r#followup_intent_name,
                 ),
                 to_pulumi_object_field(
-                    "parent_followup_intent_name",
+                    "parentFollowupIntentName",
                     &self.r#parent_followup_intent_name,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#followup_intent_name: {
-                        let field_value = match fields_map.get("followup_intent_name") {
+                        let field_value = match fields_map.get("followupIntentName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'followup_intent_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'followupIntentName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parent_followup_intent_name: {
-                        let field_value = match fields_map.get("parent_followup_intent_name") {
+                        let field_value = match fields_map.get("parentFollowupIntentName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parent_followup_intent_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parentFollowupIntentName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

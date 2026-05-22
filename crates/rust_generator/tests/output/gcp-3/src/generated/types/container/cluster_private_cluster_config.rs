@@ -69,35 +69,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_private_endpoint",
+                    "enablePrivateEndpoint",
                     &self.r#enable_private_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "enable_private_nodes",
+                    "enablePrivateNodes",
                     &self.r#enable_private_nodes,
                 ),
                 to_pulumi_object_field(
-                    "master_global_access_config",
+                    "masterGlobalAccessConfig",
                     &self.r#master_global_access_config,
                 ),
                 to_pulumi_object_field(
-                    "master_ipv_4_cidr_block",
+                    "masterIpv4CidrBlock",
                     &self.r#master_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "peering_name",
+                    "peeringName",
                     &self.r#peering_name,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint",
+                    "privateEndpoint",
                     &self.r#private_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_subnetwork",
+                    "privateEndpointSubnetwork",
                     &self.r#private_endpoint_subnetwork,
                 ),
                 to_pulumi_object_field(
-                    "public_endpoint",
+                    "publicEndpoint",
                     &self.r#public_endpoint,
                 ),
             ];
@@ -124,58 +124,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#enable_private_endpoint: {
-                        let field_value = match fields_map.get("enable_private_endpoint") {
+                        let field_value = match fields_map.get("enablePrivateEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_private_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePrivateEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_private_nodes: {
-                        let field_value = match fields_map.get("enable_private_nodes") {
+                        let field_value = match fields_map.get("enablePrivateNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_private_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePrivateNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#master_global_access_config: {
-                        let field_value = match fields_map.get("master_global_access_config") {
+                        let field_value = match fields_map.get("masterGlobalAccessConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'master_global_access_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'masterGlobalAccessConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#master_ipv_4_cidr_block: {
-                        let field_value = match fields_map.get("master_ipv_4_cidr_block") {
+                        let field_value = match fields_map.get("masterIpv4CidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'master_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'masterIpv4CidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peering_name: {
-                        let field_value = match fields_map.get("peering_name") {
+                        let field_value = match fields_map.get("peeringName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peering_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peeringName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoint: {
-                        let field_value = match fields_map.get("private_endpoint") {
+                        let field_value = match fields_map.get("privateEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoint_subnetwork: {
-                        let field_value = match fields_map.get("private_endpoint_subnetwork") {
+                        let field_value = match fields_map.get("privateEndpointSubnetwork") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoint_subnetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpointSubnetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_endpoint: {
-                        let field_value = match fields_map.get("public_endpoint") {
+                        let field_value = match fields_map.get("publicEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

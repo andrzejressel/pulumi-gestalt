@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#dollars,
                 ),
                 to_pulumi_object_field(
-                    "tenth_fractions_of_a_cent",
+                    "tenthFractionsOfACent",
                     &self.r#tenth_fractions_of_a_cent,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tenth_fractions_of_a_cent: {
-                        let field_value = match fields_map.get("tenth_fractions_of_a_cent") {
+                        let field_value = match fields_map.get("tenthFractionsOfACent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tenth_fractions_of_a_cent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tenthFractionsOfACent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

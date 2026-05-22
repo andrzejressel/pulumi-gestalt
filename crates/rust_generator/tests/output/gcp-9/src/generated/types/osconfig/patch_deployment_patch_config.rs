@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#goo,
                 ),
                 to_pulumi_object_field(
-                    "mig_instances_allowed",
+                    "migInstancesAllowed",
                     &self.r#mig_instances_allowed,
                 ),
                 to_pulumi_object_field(
-                    "post_step",
+                    "postStep",
                     &self.r#post_step,
                 ),
                 to_pulumi_object_field(
-                    "pre_step",
+                    "preStep",
                     &self.r#pre_step,
                 ),
                 to_pulumi_object_field(
-                    "reboot_config",
+                    "rebootConfig",
                     &self.r#reboot_config,
                 ),
                 to_pulumi_object_field(
-                    "windows_update",
+                    "windowsUpdate",
                     &self.r#windows_update,
                 ),
                 to_pulumi_object_field(
@@ -136,37 +136,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mig_instances_allowed: {
-                        let field_value = match fields_map.get("mig_instances_allowed") {
+                        let field_value = match fields_map.get("migInstancesAllowed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mig_instances_allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'migInstancesAllowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_step: {
-                        let field_value = match fields_map.get("post_step") {
+                        let field_value = match fields_map.get("postStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_step: {
-                        let field_value = match fields_map.get("pre_step") {
+                        let field_value = match fields_map.get("preStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reboot_config: {
-                        let field_value = match fields_map.get("reboot_config") {
+                        let field_value = match fields_map.get("rebootConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reboot_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rebootConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#windows_update: {
-                        let field_value = match fields_map.get("windows_update") {
+                        let field_value = match fields_map.get("windowsUpdate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'windows_update' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowsUpdate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

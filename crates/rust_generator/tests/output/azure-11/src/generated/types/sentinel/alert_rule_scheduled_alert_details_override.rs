@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "description_format",
+                    "descriptionFormat",
                     &self.r#description_format,
                 ),
                 to_pulumi_object_field(
-                    "display_name_format",
+                    "displayNameFormat",
                     &self.r#display_name_format,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_properties",
+                    "dynamicProperties",
                     &self.r#dynamic_properties,
                 ),
                 to_pulumi_object_field(
-                    "severity_column_name",
+                    "severityColumnName",
                     &self.r#severity_column_name,
                 ),
                 to_pulumi_object_field(
-                    "tactics_column_name",
+                    "tacticsColumnName",
                     &self.r#tactics_column_name,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#description_format: {
-                        let field_value = match fields_map.get("description_format") {
+                        let field_value = match fields_map.get("descriptionFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'description_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'descriptionFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name_format: {
-                        let field_value = match fields_map.get("display_name_format") {
+                        let field_value = match fields_map.get("displayNameFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayNameFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dynamic_properties: {
-                        let field_value = match fields_map.get("dynamic_properties") {
+                        let field_value = match fields_map.get("dynamicProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#severity_column_name: {
-                        let field_value = match fields_map.get("severity_column_name") {
+                        let field_value = match fields_map.get("severityColumnName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'severity_column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'severityColumnName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tactics_column_name: {
-                        let field_value = match fields_map.get("tactics_column_name") {
+                        let field_value = match fields_map.get("tacticsColumnName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tactics_column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tacticsColumnName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

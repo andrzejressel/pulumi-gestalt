@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_size",
+                    "batchSize",
                     &self.r#batch_size,
                 ),
                 to_pulumi_object_field(
-                    "dead_letter_config",
+                    "deadLetterConfig",
                     &self.r#dead_letter_config,
                 ),
                 to_pulumi_object_field(
-                    "maximum_batching_window_in_seconds",
+                    "maximumBatchingWindowInSeconds",
                     &self.r#maximum_batching_window_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "maximum_record_age_in_seconds",
+                    "maximumRecordAgeInSeconds",
                     &self.r#maximum_record_age_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "maximum_retry_attempts",
+                    "maximumRetryAttempts",
                     &self.r#maximum_retry_attempts,
                 ),
                 to_pulumi_object_field(
-                    "on_partial_batch_item_failure",
+                    "onPartialBatchItemFailure",
                     &self.r#on_partial_batch_item_failure,
                 ),
                 to_pulumi_object_field(
-                    "parallelization_factor",
+                    "parallelizationFactor",
                     &self.r#parallelization_factor,
                 ),
                 to_pulumi_object_field(
-                    "starting_position",
+                    "startingPosition",
                     &self.r#starting_position,
                 ),
             ];
@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#batch_size: {
-                        let field_value = match fields_map.get("batch_size") {
+                        let field_value = match fields_map.get("batchSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dead_letter_config: {
-                        let field_value = match fields_map.get("dead_letter_config") {
+                        let field_value = match fields_map.get("deadLetterConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dead_letter_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deadLetterConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_batching_window_in_seconds: {
-                        let field_value = match fields_map.get("maximum_batching_window_in_seconds") {
+                        let field_value = match fields_map.get("maximumBatchingWindowInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_batching_window_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumBatchingWindowInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_record_age_in_seconds: {
-                        let field_value = match fields_map.get("maximum_record_age_in_seconds") {
+                        let field_value = match fields_map.get("maximumRecordAgeInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_record_age_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumRecordAgeInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_retry_attempts: {
-                        let field_value = match fields_map.get("maximum_retry_attempts") {
+                        let field_value = match fields_map.get("maximumRetryAttempts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_retry_attempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumRetryAttempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_partial_batch_item_failure: {
-                        let field_value = match fields_map.get("on_partial_batch_item_failure") {
+                        let field_value = match fields_map.get("onPartialBatchItemFailure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_partial_batch_item_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onPartialBatchItemFailure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parallelization_factor: {
-                        let field_value = match fields_map.get("parallelization_factor") {
+                        let field_value = match fields_map.get("parallelizationFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parallelization_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parallelizationFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#starting_position: {
-                        let field_value = match fields_map.get("starting_position") {
+                        let field_value = match fields_map.get("startingPosition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'starting_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startingPosition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

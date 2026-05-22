@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "os_architecture",
+                    "osArchitecture",
                     &self.r#os_architecture,
                 ),
                 to_pulumi_object_field(
-                    "os_short_name",
+                    "osShortName",
                     &self.r#os_short_name,
                 ),
                 to_pulumi_object_field(
-                    "os_version",
+                    "osVersion",
                     &self.r#os_version,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#os_architecture: {
-                        let field_value = match fields_map.get("os_architecture") {
+                        let field_value = match fields_map.get("osArchitecture") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_architecture' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osArchitecture' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_short_name: {
-                        let field_value = match fields_map.get("os_short_name") {
+                        let field_value = match fields_map.get("osShortName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_short_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osShortName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_version: {
-                        let field_value = match fields_map.get("os_version") {
+                        let field_value = match fields_map.get("osVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

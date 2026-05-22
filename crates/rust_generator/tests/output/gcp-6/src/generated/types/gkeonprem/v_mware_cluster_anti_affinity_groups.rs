@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aag_config_disabled",
+                    "aagConfigDisabled",
                     &self.r#aag_config_disabled,
                 ),
             ];
@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#aag_config_disabled: {
-                        let field_value = match fields_map.get("aag_config_disabled") {
+                        let field_value = match fields_map.get("aagConfigDisabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aag_config_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aagConfigDisabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

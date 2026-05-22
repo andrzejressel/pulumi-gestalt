@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lambda_function_name",
+                    "lambdaFunctionName",
                     &self.r#lambda_function_name,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "web_url",
+                    "webUrl",
                     &self.r#web_url,
                 ),
             ];
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#lambda_function_name: {
-                        let field_value = match fields_map.get("lambda_function_name") {
+                        let field_value = match fields_map.get("lambdaFunctionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_function_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaFunctionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#web_url: {
-                        let field_value = match fields_map.get("web_url") {
+                        let field_value = match fields_map.get("webUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'web_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

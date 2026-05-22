@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "request_buffering_enabled",
+                    "requestBufferingEnabled",
                     &self.r#request_buffering_enabled,
                 ),
                 to_pulumi_object_field(
-                    "response_buffering_enabled",
+                    "responseBufferingEnabled",
                     &self.r#response_buffering_enabled,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#request_buffering_enabled: {
-                        let field_value = match fields_map.get("request_buffering_enabled") {
+                        let field_value = match fields_map.get("requestBufferingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_buffering_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestBufferingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_buffering_enabled: {
-                        let field_value = match fields_map.get("response_buffering_enabled") {
+                        let field_value = match fields_map.get("responseBufferingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_buffering_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseBufferingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

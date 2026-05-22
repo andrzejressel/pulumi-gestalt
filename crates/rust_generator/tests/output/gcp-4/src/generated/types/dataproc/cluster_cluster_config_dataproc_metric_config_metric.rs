@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_overrides",
+                    "metricOverrides",
                     &self.r#metric_overrides,
                 ),
                 to_pulumi_object_field(
-                    "metric_source",
+                    "metricSource",
                     &self.r#metric_source,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#metric_overrides: {
-                        let field_value = match fields_map.get("metric_overrides") {
+                        let field_value = match fields_map.get("metricOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_source: {
-                        let field_value = match fields_map.get("metric_source") {
+                        let field_value = match fields_map.get("metricSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

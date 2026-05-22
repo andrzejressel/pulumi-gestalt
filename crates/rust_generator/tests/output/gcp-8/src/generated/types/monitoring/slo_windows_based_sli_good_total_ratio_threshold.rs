@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Slo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_sli_performance",
+                    "basicSliPerformance",
                     &self.r#basic_sli_performance,
                 ),
                 to_pulumi_object_field(
@@ -69,9 +69,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#basic_sli_performance: {
-                        let field_value = match fields_map.get("basic_sli_performance") {
+                        let field_value = match fields_map.get("basicSliPerformance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'basic_sli_performance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'basicSliPerformance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

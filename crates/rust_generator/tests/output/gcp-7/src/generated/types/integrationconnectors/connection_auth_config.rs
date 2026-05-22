@@ -58,35 +58,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_variables",
+                    "additionalVariables",
                     &self.r#additional_variables,
                 ),
                 to_pulumi_object_field(
-                    "auth_key",
+                    "authKey",
                     &self.r#auth_key,
                 ),
                 to_pulumi_object_field(
-                    "auth_type",
+                    "authType",
                     &self.r#auth_type,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_auth_code_flow",
+                    "oauth2AuthCodeFlow",
                     &self.r#oauth_2_auth_code_flow,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_client_credentials",
+                    "oauth2ClientCredentials",
                     &self.r#oauth_2_client_credentials,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_jwt_bearer",
+                    "oauth2JwtBearer",
                     &self.r#oauth_2_jwt_bearer,
                 ),
                 to_pulumi_object_field(
-                    "ssh_public_key",
+                    "sshPublicKey",
                     &self.r#ssh_public_key,
                 ),
                 to_pulumi_object_field(
-                    "user_password",
+                    "userPassword",
                     &self.r#user_password,
                 ),
             ];
@@ -113,58 +113,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#additional_variables: {
-                        let field_value = match fields_map.get("additional_variables") {
+                        let field_value = match fields_map.get("additionalVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_key: {
-                        let field_value = match fields_map.get("auth_key") {
+                        let field_value = match fields_map.get("authKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_type: {
-                        let field_value = match fields_map.get("auth_type") {
+                        let field_value = match fields_map.get("authType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_2_auth_code_flow: {
-                        let field_value = match fields_map.get("oauth_2_auth_code_flow") {
+                        let field_value = match fields_map.get("oauth2AuthCodeFlow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2_auth_code_flow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2AuthCodeFlow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_2_client_credentials: {
-                        let field_value = match fields_map.get("oauth_2_client_credentials") {
+                        let field_value = match fields_map.get("oauth2ClientCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2_client_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2ClientCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_2_jwt_bearer: {
-                        let field_value = match fields_map.get("oauth_2_jwt_bearer") {
+                        let field_value = match fields_map.get("oauth2JwtBearer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2_jwt_bearer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2JwtBearer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssh_public_key: {
-                        let field_value = match fields_map.get("ssh_public_key") {
+                        let field_value = match fields_map.get("sshPublicKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssh_public_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sshPublicKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_password: {
-                        let field_value = match fields_map.get("user_password") {
+                        let field_value = match fields_map.get("userPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

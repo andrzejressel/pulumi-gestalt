@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_secret_store_arn",
+                    "awsSecretStoreArn",
                     &self.r#aws_secret_store_arn,
                 ),
                 to_pulumi_object_field(
-                    "database_name",
+                    "databaseName",
                     &self.r#database_name,
                 ),
                 to_pulumi_object_field(
-                    "db_cluster_identifier",
+                    "dbClusterIdentifier",
                     &self.r#db_cluster_identifier,
                 ),
                 to_pulumi_object_field(
@@ -82,23 +82,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#aws_secret_store_arn: {
-                        let field_value = match fields_map.get("aws_secret_store_arn") {
+                        let field_value = match fields_map.get("awsSecretStoreArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_secret_store_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsSecretStoreArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_name: {
-                        let field_value = match fields_map.get("database_name") {
+                        let field_value = match fields_map.get("databaseName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#db_cluster_identifier: {
-                        let field_value = match fields_map.get("db_cluster_identifier") {
+                        let field_value = match fields_map.get("dbClusterIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_cluster_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbClusterIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

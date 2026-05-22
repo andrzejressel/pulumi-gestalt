@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "slot_to_elicit",
+                    "slotToElicit",
                     &self.r#slot_to_elicit,
                 ),
                 to_pulumi_object_field(
-                    "suppress_next_message",
+                    "suppressNextMessage",
                     &self.r#suppress_next_message,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#slot_to_elicit: {
-                        let field_value = match fields_map.get("slot_to_elicit") {
+                        let field_value = match fields_map.get("slotToElicit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slot_to_elicit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'slotToElicit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#suppress_next_message: {
-                        let field_value = match fields_map.get("suppress_next_message") {
+                        let field_value = match fields_map.get("suppressNextMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'suppress_next_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'suppressNextMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

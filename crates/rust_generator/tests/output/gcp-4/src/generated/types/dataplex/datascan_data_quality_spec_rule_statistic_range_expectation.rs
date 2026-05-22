@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_value",
+                    "maxValue",
                     &self.r#max_value,
                 ),
                 to_pulumi_object_field(
-                    "min_value",
+                    "minValue",
                     &self.r#min_value,
                 ),
                 to_pulumi_object_field(
@@ -56,11 +56,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#statistic,
                 ),
                 to_pulumi_object_field(
-                    "strict_max_enabled",
+                    "strictMaxEnabled",
                     &self.r#strict_max_enabled,
                 ),
                 to_pulumi_object_field(
-                    "strict_min_enabled",
+                    "strictMinEnabled",
                     &self.r#strict_min_enabled,
                 ),
             ];
@@ -87,16 +87,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#max_value: {
-                        let field_value = match fields_map.get("max_value") {
+                        let field_value = match fields_map.get("maxValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_value: {
-                        let field_value = match fields_map.get("min_value") {
+                        let field_value = match fields_map.get("minValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -108,16 +108,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#strict_max_enabled: {
-                        let field_value = match fields_map.get("strict_max_enabled") {
+                        let field_value = match fields_map.get("strictMaxEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'strict_max_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'strictMaxEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#strict_min_enabled: {
-                        let field_value = match fields_map.get("strict_min_enabled") {
+                        let field_value = match fields_map.get("strictMinEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'strict_min_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'strictMinEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

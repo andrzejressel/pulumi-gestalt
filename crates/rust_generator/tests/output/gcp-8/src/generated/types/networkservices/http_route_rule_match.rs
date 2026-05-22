@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Htt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "full_path_match",
+                    "fullPathMatch",
                     &self.r#full_path_match,
                 ),
                 to_pulumi_object_field(
@@ -53,19 +53,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Htt
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "ignore_case",
+                    "ignoreCase",
                     &self.r#ignore_case,
                 ),
                 to_pulumi_object_field(
-                    "prefix_match",
+                    "prefixMatch",
                     &self.r#prefix_match,
                 ),
                 to_pulumi_object_field(
-                    "query_parameters",
+                    "queryParameters",
                     &self.r#query_parameters,
                 ),
                 to_pulumi_object_field(
-                    "regex_match",
+                    "regexMatch",
                     &self.r#regex_match,
                 ),
             ];
@@ -92,9 +92,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#full_path_match: {
-                        let field_value = match fields_map.get("full_path_match") {
+                        let field_value = match fields_map.get("fullPathMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'full_path_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fullPathMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -106,30 +106,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_case: {
-                        let field_value = match fields_map.get("ignore_case") {
+                        let field_value = match fields_map.get("ignoreCase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_case' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreCase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_match: {
-                        let field_value = match fields_map.get("prefix_match") {
+                        let field_value = match fields_map.get("prefixMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_parameters: {
-                        let field_value = match fields_map.get("query_parameters") {
+                        let field_value = match fields_map.get("queryParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regex_match: {
-                        let field_value = match fields_map.get("regex_match") {
+                        let field_value = match fields_map.get("regexMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regex_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regexMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

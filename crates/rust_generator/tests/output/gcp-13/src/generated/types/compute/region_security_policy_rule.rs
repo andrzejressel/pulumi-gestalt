@@ -79,15 +79,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "match_",
+                    "match",
                     &self.r#match_,
                 ),
                 to_pulumi_object_field(
-                    "network_match",
+                    "networkMatch",
                     &self.r#network_match,
                 ),
                 to_pulumi_object_field(
-                    "preconfigured_waf_config",
+                    "preconfiguredWafConfig",
                     &self.r#preconfigured_waf_config,
                 ),
                 to_pulumi_object_field(
@@ -99,7 +99,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_options",
+                    "rateLimitOptions",
                     &self.r#rate_limit_options,
                 ),
             ];
@@ -140,23 +140,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_: {
-                        let field_value = match fields_map.get("match_") {
+                        let field_value = match fields_map.get("match") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_match: {
-                        let field_value = match fields_map.get("network_match") {
+                        let field_value = match fields_map.get("networkMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preconfigured_waf_config: {
-                        let field_value = match fields_map.get("preconfigured_waf_config") {
+                        let field_value = match fields_map.get("preconfiguredWafConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preconfigured_waf_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preconfiguredWafConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -175,9 +175,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_limit_options: {
-                        let field_value = match fields_map.get("rate_limit_options") {
+                        let field_value = match fields_map.get("rateLimitOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_limit_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateLimitOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "desired_state",
+                    "desiredState",
                     &self.r#desired_state,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_schedules",
+                    "maintenanceSchedules",
                     &self.r#maintenance_schedules,
                 ),
                 to_pulumi_object_field(
-                    "rollback_on_disable",
+                    "rollbackOnDisable",
                     &self.r#rollback_on_disable,
                 ),
                 to_pulumi_object_field(
-                    "use_off_peak_window",
+                    "useOffPeakWindow",
                     &self.r#use_off_peak_window,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#desired_state: {
-                        let field_value = match fields_map.get("desired_state") {
+                        let field_value = match fields_map.get("desiredState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_schedules: {
-                        let field_value = match fields_map.get("maintenance_schedules") {
+                        let field_value = match fields_map.get("maintenanceSchedules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_schedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceSchedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rollback_on_disable: {
-                        let field_value = match fields_map.get("rollback_on_disable") {
+                        let field_value = match fields_map.get("rollbackOnDisable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rollback_on_disable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rollbackOnDisable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_off_peak_window: {
-                        let field_value = match fields_map.get("use_off_peak_window") {
+                        let field_value = match fields_map.get("useOffPeakWindow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_off_peak_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useOffPeakWindow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

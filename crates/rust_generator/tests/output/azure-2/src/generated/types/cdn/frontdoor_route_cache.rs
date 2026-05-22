@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compression_enabled",
+                    "compressionEnabled",
                     &self.r#compression_enabled,
                 ),
                 to_pulumi_object_field(
-                    "content_types_to_compresses",
+                    "contentTypesToCompresses",
                     &self.r#content_types_to_compresses,
                 ),
                 to_pulumi_object_field(
-                    "query_string_caching_behavior",
+                    "queryStringCachingBehavior",
                     &self.r#query_string_caching_behavior,
                 ),
                 to_pulumi_object_field(
-                    "query_strings",
+                    "queryStrings",
                     &self.r#query_strings,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#compression_enabled: {
-                        let field_value = match fields_map.get("compression_enabled") {
+                        let field_value = match fields_map.get("compressionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compression_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compressionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_types_to_compresses: {
-                        let field_value = match fields_map.get("content_types_to_compresses") {
+                        let field_value = match fields_map.get("contentTypesToCompresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_types_to_compresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentTypesToCompresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string_caching_behavior: {
-                        let field_value = match fields_map.get("query_string_caching_behavior") {
+                        let field_value = match fields_map.get("queryStringCachingBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string_caching_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringCachingBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_strings: {
-                        let field_value = match fields_map.get("query_strings") {
+                        let field_value = match fields_map.get("queryStrings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_strings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStrings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

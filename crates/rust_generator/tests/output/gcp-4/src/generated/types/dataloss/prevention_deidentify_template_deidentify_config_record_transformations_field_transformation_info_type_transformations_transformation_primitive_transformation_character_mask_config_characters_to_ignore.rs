@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "characters_to_skip",
+                    "charactersToSkip",
                     &self.r#characters_to_skip,
                 ),
                 to_pulumi_object_field(
-                    "common_characters_to_ignore",
+                    "commonCharactersToIgnore",
                     &self.r#common_characters_to_ignore,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#characters_to_skip: {
-                        let field_value = match fields_map.get("characters_to_skip") {
+                        let field_value = match fields_map.get("charactersToSkip") {
                             Some(value) => value,
-                            None => bail!("Missing field 'characters_to_skip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'charactersToSkip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#common_characters_to_ignore: {
-                        let field_value = match fields_map.get("common_characters_to_ignore") {
+                        let field_value = match fields_map.get("commonCharactersToIgnore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_characters_to_ignore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonCharactersToIgnore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

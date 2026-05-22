@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "module_enablement_state",
+                    "moduleEnablementState",
                     &self.r#module_enablement_state,
                 ),
                 to_pulumi_object_field(
-                    "module_name",
+                    "moduleName",
                     &self.r#module_name,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#module_enablement_state: {
-                        let field_value = match fields_map.get("module_enablement_state") {
+                        let field_value = match fields_map.get("moduleEnablementState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'module_enablement_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'moduleEnablementState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#module_name: {
-                        let field_value = match fields_map.get("module_name") {
+                        let field_value = match fields_map.get("moduleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'module_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'moduleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

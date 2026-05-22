@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auxiliary_services_config",
+                    "auxiliaryServicesConfig",
                     &self.r#auxiliary_services_config,
                 ),
                 to_pulumi_object_field(
-                    "kubernetes_cluster_config",
+                    "kubernetesClusterConfig",
                     &self.r#kubernetes_cluster_config,
                 ),
                 to_pulumi_object_field(
-                    "staging_bucket",
+                    "stagingBucket",
                     &self.r#staging_bucket,
                 ),
             ];
@@ -75,23 +75,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#auxiliary_services_config: {
-                        let field_value = match fields_map.get("auxiliary_services_config") {
+                        let field_value = match fields_map.get("auxiliaryServicesConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auxiliary_services_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'auxiliaryServicesConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kubernetes_cluster_config: {
-                        let field_value = match fields_map.get("kubernetes_cluster_config") {
+                        let field_value = match fields_map.get("kubernetesClusterConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kubernetes_cluster_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kubernetesClusterConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#staging_bucket: {
-                        let field_value = match fields_map.get("staging_bucket") {
+                        let field_value = match fields_map.get("stagingBucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'staging_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stagingBucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "at_these_hours",
+                    "atTheseHours",
                     &self.r#at_these_hours,
                 ),
                 to_pulumi_object_field(
-                    "at_these_minutes",
+                    "atTheseMinutes",
                     &self.r#at_these_minutes,
                 ),
                 to_pulumi_object_field(
-                    "on_these_days",
+                    "onTheseDays",
                     &self.r#on_these_days,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#at_these_hours: {
-                        let field_value = match fields_map.get("at_these_hours") {
+                        let field_value = match fields_map.get("atTheseHours") {
                             Some(value) => value,
-                            None => bail!("Missing field 'at_these_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'atTheseHours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#at_these_minutes: {
-                        let field_value = match fields_map.get("at_these_minutes") {
+                        let field_value = match fields_map.get("atTheseMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'at_these_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'atTheseMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_these_days: {
-                        let field_value = match fields_map.get("on_these_days") {
+                        let field_value = match fields_map.get("onTheseDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_these_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onTheseDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

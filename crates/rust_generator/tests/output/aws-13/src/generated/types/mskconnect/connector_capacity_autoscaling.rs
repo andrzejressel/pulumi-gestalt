@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_worker_count",
+                    "maxWorkerCount",
                     &self.r#max_worker_count,
                 ),
                 to_pulumi_object_field(
-                    "mcu_count",
+                    "mcuCount",
                     &self.r#mcu_count,
                 ),
                 to_pulumi_object_field(
-                    "min_worker_count",
+                    "minWorkerCount",
                     &self.r#min_worker_count,
                 ),
                 to_pulumi_object_field(
-                    "scale_in_policy",
+                    "scaleInPolicy",
                     &self.r#scale_in_policy,
                 ),
                 to_pulumi_object_field(
-                    "scale_out_policy",
+                    "scaleOutPolicy",
                     &self.r#scale_out_policy,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#max_worker_count: {
-                        let field_value = match fields_map.get("max_worker_count") {
+                        let field_value = match fields_map.get("maxWorkerCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_worker_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxWorkerCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mcu_count: {
-                        let field_value = match fields_map.get("mcu_count") {
+                        let field_value = match fields_map.get("mcuCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mcu_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mcuCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_worker_count: {
-                        let field_value = match fields_map.get("min_worker_count") {
+                        let field_value = match fields_map.get("minWorkerCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_worker_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minWorkerCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_in_policy: {
-                        let field_value = match fields_map.get("scale_in_policy") {
+                        let field_value = match fields_map.get("scaleInPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_in_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleInPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_out_policy: {
-                        let field_value = match fields_map.get("scale_out_policy") {
+                        let field_value = match fields_map.get("scaleOutPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_out_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleOutPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

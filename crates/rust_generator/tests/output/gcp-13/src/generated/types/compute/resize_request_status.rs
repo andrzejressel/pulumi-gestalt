@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#errors,
                 ),
                 to_pulumi_object_field(
-                    "last_attempts",
+                    "lastAttempts",
                     &self.r#last_attempts,
                 ),
             ];
@@ -69,9 +69,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_attempts: {
-                        let field_value = match fields_map.get("last_attempts") {
+                        let field_value = match fields_map.get("lastAttempts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_attempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastAttempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

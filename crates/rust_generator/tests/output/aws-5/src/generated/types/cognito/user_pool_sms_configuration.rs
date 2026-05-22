@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "external_id",
+                    "externalId",
                     &self.r#external_id,
                 ),
                 to_pulumi_object_field(
-                    "sns_caller_arn",
+                    "snsCallerArn",
                     &self.r#sns_caller_arn,
                 ),
                 to_pulumi_object_field(
-                    "sns_region",
+                    "snsRegion",
                     &self.r#sns_region,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#external_id: {
-                        let field_value = match fields_map.get("external_id") {
+                        let field_value = match fields_map.get("externalId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sns_caller_arn: {
-                        let field_value = match fields_map.get("sns_caller_arn") {
+                        let field_value = match fields_map.get("snsCallerArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sns_caller_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snsCallerArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sns_region: {
-                        let field_value = match fields_map.get("sns_region") {
+                        let field_value = match fields_map.get("snsRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sns_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snsRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "sensitivity_score",
+                    "sensitivityScore",
                     &self.r#sensitivity_score,
                 ),
                 to_pulumi_object_field(
@@ -75,9 +75,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sensitivity_score: {
-                        let field_value = match fields_map.get("sensitivity_score") {
+                        let field_value = match fields_map.get("sensitivityScore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sensitivity_score' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sensitivityScore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

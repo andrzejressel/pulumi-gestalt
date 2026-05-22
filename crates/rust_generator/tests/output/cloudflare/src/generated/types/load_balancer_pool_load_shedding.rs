@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_percent",
+                    "defaultPercent",
                     &self.r#default_percent,
                 ),
                 to_pulumi_object_field(
-                    "default_policy",
+                    "defaultPolicy",
                     &self.r#default_policy,
                 ),
                 to_pulumi_object_field(
-                    "session_percent",
+                    "sessionPercent",
                     &self.r#session_percent,
                 ),
                 to_pulumi_object_field(
-                    "session_policy",
+                    "sessionPolicy",
                     &self.r#session_policy,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#default_percent: {
-                        let field_value = match fields_map.get("default_percent") {
+                        let field_value = match fields_map.get("defaultPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_policy: {
-                        let field_value = match fields_map.get("default_policy") {
+                        let field_value = match fields_map.get("defaultPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_percent: {
-                        let field_value = match fields_map.get("session_percent") {
+                        let field_value = match fields_map.get("sessionPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_policy: {
-                        let field_value = match fields_map.get("session_policy") {
+                        let field_value = match fields_map.get("sessionPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

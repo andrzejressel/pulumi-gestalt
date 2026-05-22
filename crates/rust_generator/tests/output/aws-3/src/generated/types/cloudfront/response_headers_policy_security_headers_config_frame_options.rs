@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "frame_option",
+                    "frameOption",
                     &self.r#frame_option,
                 ),
                 to_pulumi_object_field(
-                    "override_",
+                    "override",
                     &self.r#override_,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#frame_option: {
-                        let field_value = match fields_map.get("frame_option") {
+                        let field_value = match fields_map.get("frameOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frame_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frameOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#override_: {
-                        let field_value = match fields_map.get("override_") {
+                        let field_value = match fields_map.get("override") {
                             Some(value) => value,
-                            None => bail!("Missing field 'override_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

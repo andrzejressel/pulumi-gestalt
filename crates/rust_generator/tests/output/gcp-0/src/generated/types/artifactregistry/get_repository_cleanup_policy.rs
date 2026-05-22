@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "most_recent_versions",
+                    "mostRecentVersions",
                     &self.r#most_recent_versions,
                 ),
             ];
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#most_recent_versions: {
-                        let field_value = match fields_map.get("most_recent_versions") {
+                        let field_value = match fields_map.get("mostRecentVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'most_recent_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mostRecentVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -54,31 +54,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_extraction",
+                    "archiveExtraction",
                     &self.r#archive_extraction,
                 ),
                 to_pulumi_object_field(
-                    "dpkg_installation",
+                    "dpkgInstallation",
                     &self.r#dpkg_installation,
                 ),
                 to_pulumi_object_field(
-                    "file_copy",
+                    "fileCopy",
                     &self.r#file_copy,
                 ),
                 to_pulumi_object_field(
-                    "file_exec",
+                    "fileExec",
                     &self.r#file_exec,
                 ),
                 to_pulumi_object_field(
-                    "msi_installation",
+                    "msiInstallation",
                     &self.r#msi_installation,
                 ),
                 to_pulumi_object_field(
-                    "rpm_installation",
+                    "rpmInstallation",
                     &self.r#rpm_installation,
                 ),
                 to_pulumi_object_field(
-                    "script_run",
+                    "scriptRun",
                     &self.r#script_run,
                 ),
             ];
@@ -105,51 +105,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#archive_extraction: {
-                        let field_value = match fields_map.get("archive_extraction") {
+                        let field_value = match fields_map.get("archiveExtraction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'archive_extraction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'archiveExtraction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dpkg_installation: {
-                        let field_value = match fields_map.get("dpkg_installation") {
+                        let field_value = match fields_map.get("dpkgInstallation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dpkg_installation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dpkgInstallation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_copy: {
-                        let field_value = match fields_map.get("file_copy") {
+                        let field_value = match fields_map.get("fileCopy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_copy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileCopy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_exec: {
-                        let field_value = match fields_map.get("file_exec") {
+                        let field_value = match fields_map.get("fileExec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_exec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileExec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#msi_installation: {
-                        let field_value = match fields_map.get("msi_installation") {
+                        let field_value = match fields_map.get("msiInstallation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'msi_installation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'msiInstallation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rpm_installation: {
-                        let field_value = match fields_map.get("rpm_installation") {
+                        let field_value = match fields_map.get("rpmInstallation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rpm_installation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rpmInstallation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#script_run: {
-                        let field_value = match fields_map.get("script_run") {
+                        let field_value = match fields_map.get("scriptRun") {
                             Some(value) => value,
-                            None => bail!("Missing field 'script_run' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scriptRun' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

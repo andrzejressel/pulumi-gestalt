@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deploy_action",
+                    "deployAction",
                     &self.r#deploy_action,
                 ),
                 to_pulumi_object_field(
-                    "include_skaffold_modules",
+                    "includeSkaffoldModules",
                     &self.r#include_skaffold_modules,
                 ),
                 to_pulumi_object_field(
-                    "render_action",
+                    "renderAction",
                     &self.r#render_action,
                 ),
             ];
@@ -67,23 +67,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#deploy_action: {
-                        let field_value = match fields_map.get("deploy_action") {
+                        let field_value = match fields_map.get("deployAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deploy_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deployAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_skaffold_modules: {
-                        let field_value = match fields_map.get("include_skaffold_modules") {
+                        let field_value = match fields_map.get("includeSkaffoldModules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_skaffold_modules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeSkaffoldModules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#render_action: {
-                        let field_value = match fields_map.get("render_action") {
+                        let field_value = match fields_map.get("renderAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'render_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'renderAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

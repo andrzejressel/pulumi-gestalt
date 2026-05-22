@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "description_regex",
+                    "descriptionRegex",
                     &self.r#description_regex,
                 ),
                 to_pulumi_object_field(
-                    "event_type",
+                    "eventType",
                     &self.r#event_type,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_owners",
+                    "snapshotOwners",
                     &self.r#snapshot_owners,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#description_regex: {
-                        let field_value = match fields_map.get("description_regex") {
+                        let field_value = match fields_map.get("descriptionRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'description_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'descriptionRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_type: {
-                        let field_value = match fields_map.get("event_type") {
+                        let field_value = match fields_map.get("eventType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_owners: {
-                        let field_value = match fields_map.get("snapshot_owners") {
+                        let field_value = match fields_map.get("snapshotOwners") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_owners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotOwners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

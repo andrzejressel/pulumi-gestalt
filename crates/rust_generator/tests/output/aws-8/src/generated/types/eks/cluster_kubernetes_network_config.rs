@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "elastic_load_balancing",
+                    "elasticLoadBalancing",
                     &self.r#elastic_load_balancing,
                 ),
                 to_pulumi_object_field(
-                    "ip_family",
+                    "ipFamily",
                     &self.r#ip_family,
                 ),
                 to_pulumi_object_field(
-                    "service_ipv_4_cidr",
+                    "serviceIpv4Cidr",
                     &self.r#service_ipv_4_cidr,
                 ),
                 to_pulumi_object_field(
-                    "service_ipv_6_cidr",
+                    "serviceIpv6Cidr",
                     &self.r#service_ipv_6_cidr,
                 ),
             ];
@@ -80,30 +80,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#elastic_load_balancing: {
-                        let field_value = match fields_map.get("elastic_load_balancing") {
+                        let field_value = match fields_map.get("elasticLoadBalancing") {
                             Some(value) => value,
-                            None => bail!("Missing field 'elastic_load_balancing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'elasticLoadBalancing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_family: {
-                        let field_value = match fields_map.get("ip_family") {
+                        let field_value = match fields_map.get("ipFamily") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_family' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipFamily' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_ipv_4_cidr: {
-                        let field_value = match fields_map.get("service_ipv_4_cidr") {
+                        let field_value = match fields_map.get("serviceIpv4Cidr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_ipv_4_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceIpv4Cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_ipv_6_cidr: {
-                        let field_value = match fields_map.get("service_ipv_6_cidr") {
+                        let field_value = match fields_map.get("serviceIpv6Cidr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_ipv_6_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceIpv6Cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

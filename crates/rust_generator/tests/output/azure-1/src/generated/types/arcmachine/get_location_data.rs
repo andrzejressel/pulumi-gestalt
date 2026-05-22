@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#city,
                 ),
                 to_pulumi_object_field(
-                    "country_or_region",
+                    "countryOrRegion",
                     &self.r#country_or_region,
                 ),
                 to_pulumi_object_field(
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#country_or_region: {
-                        let field_value = match fields_map.get("country_or_region") {
+                        let field_value = match fields_map.get("countryOrRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'country_or_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'countryOrRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

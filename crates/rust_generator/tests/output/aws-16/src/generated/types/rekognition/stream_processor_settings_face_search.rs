@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "collection_id",
+                    "collectionId",
                     &self.r#collection_id,
                 ),
                 to_pulumi_object_field(
-                    "face_match_threshold",
+                    "faceMatchThreshold",
                     &self.r#face_match_threshold,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#collection_id: {
-                        let field_value = match fields_map.get("collection_id") {
+                        let field_value = match fields_map.get("collectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'collection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'collectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#face_match_threshold: {
-                        let field_value = match fields_map.get("face_match_threshold") {
+                        let field_value = match fields_map.get("faceMatchThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'face_match_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'faceMatchThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

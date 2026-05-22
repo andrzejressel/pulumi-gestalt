@@ -61,35 +61,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_password",
+                    "adminPassword",
                     &self.r#admin_password,
                 ),
                 to_pulumi_object_field(
-                    "admin_ssh_keys",
+                    "adminSshKeys",
                     &self.r#admin_ssh_keys,
                 ),
                 to_pulumi_object_field(
-                    "admin_username",
+                    "adminUsername",
                     &self.r#admin_username,
                 ),
                 to_pulumi_object_field(
-                    "computer_name_prefix",
+                    "computerNamePrefix",
                     &self.r#computer_name_prefix,
                 ),
                 to_pulumi_object_field(
-                    "disable_password_authentication",
+                    "disablePasswordAuthentication",
                     &self.r#disable_password_authentication,
                 ),
                 to_pulumi_object_field(
-                    "patch_assessment_mode",
+                    "patchAssessmentMode",
                     &self.r#patch_assessment_mode,
                 ),
                 to_pulumi_object_field(
-                    "patch_mode",
+                    "patchMode",
                     &self.r#patch_mode,
                 ),
                 to_pulumi_object_field(
-                    "provision_vm_agent",
+                    "provisionVmAgent",
                     &self.r#provision_vm_agent,
                 ),
                 to_pulumi_object_field(
@@ -120,58 +120,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#admin_password: {
-                        let field_value = match fields_map.get("admin_password") {
+                        let field_value = match fields_map.get("adminPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#admin_ssh_keys: {
-                        let field_value = match fields_map.get("admin_ssh_keys") {
+                        let field_value = match fields_map.get("adminSshKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_ssh_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminSshKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#admin_username: {
-                        let field_value = match fields_map.get("admin_username") {
+                        let field_value = match fields_map.get("adminUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#computer_name_prefix: {
-                        let field_value = match fields_map.get("computer_name_prefix") {
+                        let field_value = match fields_map.get("computerNamePrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'computer_name_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computerNamePrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_password_authentication: {
-                        let field_value = match fields_map.get("disable_password_authentication") {
+                        let field_value = match fields_map.get("disablePasswordAuthentication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_password_authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disablePasswordAuthentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#patch_assessment_mode: {
-                        let field_value = match fields_map.get("patch_assessment_mode") {
+                        let field_value = match fields_map.get("patchAssessmentMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'patch_assessment_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'patchAssessmentMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#patch_mode: {
-                        let field_value = match fields_map.get("patch_mode") {
+                        let field_value = match fields_map.get("patchMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'patch_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'patchMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provision_vm_agent: {
-                        let field_value = match fields_map.get("provision_vm_agent") {
+                        let field_value = match fields_map.get("provisionVmAgent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provision_vm_agent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionVmAgent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

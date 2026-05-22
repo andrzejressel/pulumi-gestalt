@@ -62,23 +62,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_options",
+                    "contentOptions",
                     &self.r#content_options,
                 ),
                 to_pulumi_object_field(
-                    "custom_info_types",
+                    "customInfoTypes",
                     &self.r#custom_info_types,
                 ),
                 to_pulumi_object_field(
-                    "exclude_info_types",
+                    "excludeInfoTypes",
                     &self.r#exclude_info_types,
                 ),
                 to_pulumi_object_field(
-                    "include_quote",
+                    "includeQuote",
                     &self.r#include_quote,
                 ),
                 to_pulumi_object_field(
-                    "info_types",
+                    "infoTypes",
                     &self.r#info_types,
                 ),
                 to_pulumi_object_field(
@@ -86,11 +86,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#limits,
                 ),
                 to_pulumi_object_field(
-                    "min_likelihood",
+                    "minLikelihood",
                     &self.r#min_likelihood,
                 ),
                 to_pulumi_object_field(
-                    "rule_sets",
+                    "ruleSets",
                     &self.r#rule_sets,
                 ),
             ];
@@ -117,37 +117,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#content_options: {
-                        let field_value = match fields_map.get("content_options") {
+                        let field_value = match fields_map.get("contentOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_info_types: {
-                        let field_value = match fields_map.get("custom_info_types") {
+                        let field_value = match fields_map.get("customInfoTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customInfoTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_info_types: {
-                        let field_value = match fields_map.get("exclude_info_types") {
+                        let field_value = match fields_map.get("excludeInfoTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeInfoTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_quote: {
-                        let field_value = match fields_map.get("include_quote") {
+                        let field_value = match fields_map.get("includeQuote") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_quote' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeQuote' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#info_types: {
-                        let field_value = match fields_map.get("info_types") {
+                        let field_value = match fields_map.get("infoTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'infoTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -159,16 +159,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_likelihood: {
-                        let field_value = match fields_map.get("min_likelihood") {
+                        let field_value = match fields_map.get("minLikelihood") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_likelihood' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minLikelihood' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_sets: {
-                        let field_value = match fields_map.get("rule_sets") {
+                        let field_value = match fields_map.get("ruleSets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleSets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

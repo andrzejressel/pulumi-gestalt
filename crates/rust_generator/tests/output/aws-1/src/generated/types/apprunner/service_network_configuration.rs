@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "egress_configuration",
+                    "egressConfiguration",
                     &self.r#egress_configuration,
                 ),
                 to_pulumi_object_field(
-                    "ingress_configuration",
+                    "ingressConfiguration",
                     &self.r#ingress_configuration,
                 ),
                 to_pulumi_object_field(
-                    "ip_address_type",
+                    "ipAddressType",
                     &self.r#ip_address_type,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#egress_configuration: {
-                        let field_value = match fields_map.get("egress_configuration") {
+                        let field_value = match fields_map.get("egressConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'egress_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'egressConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ingress_configuration: {
-                        let field_value = match fields_map.get("ingress_configuration") {
+                        let field_value = match fields_map.get("ingressConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingress_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingressConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_address_type: {
-                        let field_value = match fields_map.get("ip_address_type") {
+                        let field_value = match fields_map.get("ipAddressType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_address_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAddressType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

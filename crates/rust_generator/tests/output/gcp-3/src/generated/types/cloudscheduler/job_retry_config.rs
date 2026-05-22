@@ -48,23 +48,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_backoff_duration",
+                    "maxBackoffDuration",
                     &self.r#max_backoff_duration,
                 ),
                 to_pulumi_object_field(
-                    "max_doublings",
+                    "maxDoublings",
                     &self.r#max_doublings,
                 ),
                 to_pulumi_object_field(
-                    "max_retry_duration",
+                    "maxRetryDuration",
                     &self.r#max_retry_duration,
                 ),
                 to_pulumi_object_field(
-                    "min_backoff_duration",
+                    "minBackoffDuration",
                     &self.r#min_backoff_duration,
                 ),
                 to_pulumi_object_field(
-                    "retry_count",
+                    "retryCount",
                     &self.r#retry_count,
                 ),
             ];
@@ -91,37 +91,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#max_backoff_duration: {
-                        let field_value = match fields_map.get("max_backoff_duration") {
+                        let field_value = match fields_map.get("maxBackoffDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_backoff_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxBackoffDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_doublings: {
-                        let field_value = match fields_map.get("max_doublings") {
+                        let field_value = match fields_map.get("maxDoublings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_doublings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxDoublings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_retry_duration: {
-                        let field_value = match fields_map.get("max_retry_duration") {
+                        let field_value = match fields_map.get("maxRetryDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_retry_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRetryDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_backoff_duration: {
-                        let field_value = match fields_map.get("min_backoff_duration") {
+                        let field_value = match fields_map.get("minBackoffDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_backoff_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minBackoffDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_count: {
-                        let field_value = match fields_map.get("retry_count") {
+                        let field_value = match fields_map.get("retryCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retry_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retryCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

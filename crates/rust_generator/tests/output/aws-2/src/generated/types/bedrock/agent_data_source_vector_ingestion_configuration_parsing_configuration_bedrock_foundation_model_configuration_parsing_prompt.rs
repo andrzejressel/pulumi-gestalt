@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "parsing_prompt_string",
+                    "parsingPromptString",
                     &self.r#parsing_prompt_string,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#parsing_prompt_string: {
-                        let field_value = match fields_map.get("parsing_prompt_string") {
+                        let field_value = match fields_map.get("parsingPromptString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parsing_prompt_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parsingPromptString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

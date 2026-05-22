@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "clean_expired_files",
+                    "cleanExpiredFiles",
                     &self.r#clean_expired_files,
                 ),
                 to_pulumi_object_field(
-                    "number_of_snapshots_to_retain",
+                    "numberOfSnapshotsToRetain",
                     &self.r#number_of_snapshots_to_retain,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_retention_period_in_days",
+                    "snapshotRetentionPeriodInDays",
                     &self.r#snapshot_retention_period_in_days,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#clean_expired_files: {
-                        let field_value = match fields_map.get("clean_expired_files") {
+                        let field_value = match fields_map.get("cleanExpiredFiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'clean_expired_files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cleanExpiredFiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_of_snapshots_to_retain: {
-                        let field_value = match fields_map.get("number_of_snapshots_to_retain") {
+                        let field_value = match fields_map.get("numberOfSnapshotsToRetain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_of_snapshots_to_retain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberOfSnapshotsToRetain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_retention_period_in_days: {
-                        let field_value = match fields_map.get("snapshot_retention_period_in_days") {
+                        let field_value = match fields_map.get("snapshotRetentionPeriodInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_retention_period_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotRetentionPeriodInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#binauthz,
                 ),
                 to_pulumi_object_field(
-                    "config_sync",
+                    "configSync",
                     &self.r#config_sync,
                 ),
                 to_pulumi_object_field(
-                    "hierarchy_controller",
+                    "hierarchyController",
                     &self.r#hierarchy_controller,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#management,
                 ),
                 to_pulumi_object_field(
-                    "policy_controller",
+                    "policyController",
                     &self.r#policy_controller,
                 ),
                 to_pulumi_object_field(
@@ -105,16 +105,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#config_sync: {
-                        let field_value = match fields_map.get("config_sync") {
+                        let field_value = match fields_map.get("configSync") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_sync' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configSync' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hierarchy_controller: {
-                        let field_value = match fields_map.get("hierarchy_controller") {
+                        let field_value = match fields_map.get("hierarchyController") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hierarchy_controller' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hierarchyController' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,9 +126,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_controller: {
-                        let field_value = match fields_map.get("policy_controller") {
+                        let field_value = match fields_map.get("policyController") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_controller' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyController' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

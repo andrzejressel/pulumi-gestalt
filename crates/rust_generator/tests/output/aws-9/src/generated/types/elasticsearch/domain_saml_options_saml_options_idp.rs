@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entity_id",
+                    "entityId",
                     &self.r#entity_id,
                 ),
                 to_pulumi_object_field(
-                    "metadata_content",
+                    "metadataContent",
                     &self.r#metadata_content,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#entity_id: {
-                        let field_value = match fields_map.get("entity_id") {
+                        let field_value = match fields_map.get("entityId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metadata_content: {
-                        let field_value = match fields_map.get("metadata_content") {
+                        let field_value = match fields_map.get("metadataContent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metadata_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metadataContent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

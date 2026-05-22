@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Grp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "case_sensitive",
+                    "caseSensitive",
                     &self.r#case_sensitive,
                 ),
                 to_pulumi_object_field(
-                    "grpc_method",
+                    "grpcMethod",
                     &self.r#grpc_method,
                 ),
                 to_pulumi_object_field(
-                    "grpc_service",
+                    "grpcService",
                     &self.r#grpc_service,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#case_sensitive: {
-                        let field_value = match fields_map.get("case_sensitive") {
+                        let field_value = match fields_map.get("caseSensitive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'case_sensitive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caseSensitive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#grpc_method: {
-                        let field_value = match fields_map.get("grpc_method") {
+                        let field_value = match fields_map.get("grpcMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'grpc_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'grpcMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#grpc_service: {
-                        let field_value = match fields_map.get("grpc_service") {
+                        let field_value = match fields_map.get("grpcService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'grpc_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'grpcService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

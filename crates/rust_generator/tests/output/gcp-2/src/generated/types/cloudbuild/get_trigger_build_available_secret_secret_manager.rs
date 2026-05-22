@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#env,
                 ),
                 to_pulumi_object_field(
-                    "version_name",
+                    "versionName",
                     &self.r#version_name,
                 ),
             ];
@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_name: {
-                        let field_value = match fields_map.get("version_name") {
+                        let field_value = match fields_map.get("versionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_configs",
+                    "ipConfigs",
                     &self.r#ip_configs,
                 ),
                 to_pulumi_object_field(
-                    "target_https_proxy",
+                    "targetHttpsProxy",
                     &self.r#target_https_proxy,
                 ),
                 to_pulumi_object_field(
-                    "target_ssl_proxy",
+                    "targetSslProxy",
                     &self.r#target_ssl_proxy,
                 ),
             ];
@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#ip_configs: {
-                        let field_value = match fields_map.get("ip_configs") {
+                        let field_value = match fields_map.get("ipConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_https_proxy: {
-                        let field_value = match fields_map.get("target_https_proxy") {
+                        let field_value = match fields_map.get("targetHttpsProxy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_https_proxy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetHttpsProxy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_ssl_proxy: {
-                        let field_value = match fields_map.get("target_ssl_proxy") {
+                        let field_value = match fields_map.get("targetSslProxy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_ssl_proxy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetSslProxy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "os_profile",
+                    "osProfile",
                     &self.r#os_profile,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine_size",
+                    "virtualMachineSize",
                     &self.r#virtual_machine_size,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_profile: {
-                        let field_value = match fields_map.get("os_profile") {
+                        let field_value = match fields_map.get("osProfile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_profile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osProfile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_machine_size: {
-                        let field_value = match fields_map.get("virtual_machine_size") {
+                        let field_value = match fields_map.get("virtualMachineSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_machine_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualMachineSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

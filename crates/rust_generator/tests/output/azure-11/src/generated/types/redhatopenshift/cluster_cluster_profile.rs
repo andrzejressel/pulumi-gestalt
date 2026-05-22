@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#domain,
                 ),
                 to_pulumi_object_field(
-                    "fips_enabled",
+                    "fipsEnabled",
                     &self.r#fips_enabled,
                 ),
                 to_pulumi_object_field(
-                    "managed_resource_group_name",
+                    "managedResourceGroupName",
                     &self.r#managed_resource_group_name,
                 ),
                 to_pulumi_object_field(
-                    "pull_secret",
+                    "pullSecret",
                     &self.r#pull_secret,
                 ),
                 to_pulumi_object_field(
-                    "resource_group_id",
+                    "resourceGroupId",
                     &self.r#resource_group_id,
                 ),
                 to_pulumi_object_field(
@@ -97,30 +97,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fips_enabled: {
-                        let field_value = match fields_map.get("fips_enabled") {
+                        let field_value = match fields_map.get("fipsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fips_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fipsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_resource_group_name: {
-                        let field_value = match fields_map.get("managed_resource_group_name") {
+                        let field_value = match fields_map.get("managedResourceGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_resource_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedResourceGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pull_secret: {
-                        let field_value = match fields_map.get("pull_secret") {
+                        let field_value = match fields_map.get("pullSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pull_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pullSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_group_id: {
-                        let field_value = match fields_map.get("resource_group_id") {
+                        let field_value = match fields_map.get("resourceGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

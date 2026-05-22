@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "friendly_name",
+                    "friendlyName",
                     &self.r#friendly_name,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "name_format",
+                    "nameFormat",
                     &self.r#name_format,
                 ),
                 to_pulumi_object_field(
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#friendly_name: {
-                        let field_value = match fields_map.get("friendly_name") {
+                        let field_value = match fields_map.get("friendlyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'friendly_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'friendlyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name_format: {
-                        let field_value = match fields_map.get("name_format") {
+                        let field_value = match fields_map.get("nameFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'name_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nameFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

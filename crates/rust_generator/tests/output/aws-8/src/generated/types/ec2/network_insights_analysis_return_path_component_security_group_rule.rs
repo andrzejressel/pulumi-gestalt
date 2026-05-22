@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#direction,
                 ),
                 to_pulumi_object_field(
-                    "port_ranges",
+                    "portRanges",
                     &self.r#port_ranges,
                 ),
                 to_pulumi_object_field(
-                    "prefix_list_id",
+                    "prefixListId",
                     &self.r#prefix_list_id,
                 ),
                 to_pulumi_object_field(
@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "security_group_id",
+                    "securityGroupId",
                     &self.r#security_group_id,
                 ),
             ];
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_ranges: {
-                        let field_value = match fields_map.get("port_ranges") {
+                        let field_value = match fields_map.get("portRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_list_id: {
-                        let field_value = match fields_map.get("prefix_list_id") {
+                        let field_value = match fields_map.get("prefixListId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_list_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixListId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,9 +119,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_group_id: {
-                        let field_value = match fields_map.get("security_group_id") {
+                        let field_value = match fields_map.get("securityGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

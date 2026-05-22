@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "drain_timeout_in_minutes",
+                    "drainTimeoutInMinutes",
                     &self.r#drain_timeout_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "max_surge",
+                    "maxSurge",
                     &self.r#max_surge,
                 ),
                 to_pulumi_object_field(
-                    "node_soak_duration_in_minutes",
+                    "nodeSoakDurationInMinutes",
                     &self.r#node_soak_duration_in_minutes,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#drain_timeout_in_minutes: {
-                        let field_value = match fields_map.get("drain_timeout_in_minutes") {
+                        let field_value = match fields_map.get("drainTimeoutInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'drain_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'drainTimeoutInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_surge: {
-                        let field_value = match fields_map.get("max_surge") {
+                        let field_value = match fields_map.get("maxSurge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_surge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxSurge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_soak_duration_in_minutes: {
-                        let field_value = match fields_map.get("node_soak_duration_in_minutes") {
+                        let field_value = match fields_map.get("nodeSoakDurationInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_soak_duration_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeSoakDurationInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

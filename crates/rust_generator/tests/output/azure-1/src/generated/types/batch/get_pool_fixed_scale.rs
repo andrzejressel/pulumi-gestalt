@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "resize_timeout",
+                    "resizeTimeout",
                     &self.r#resize_timeout,
                 ),
                 to_pulumi_object_field(
-                    "target_dedicated_nodes",
+                    "targetDedicatedNodes",
                     &self.r#target_dedicated_nodes,
                 ),
                 to_pulumi_object_field(
-                    "target_low_priority_nodes",
+                    "targetLowPriorityNodes",
                     &self.r#target_low_priority_nodes,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#resize_timeout: {
-                        let field_value = match fields_map.get("resize_timeout") {
+                        let field_value = match fields_map.get("resizeTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resize_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resizeTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_dedicated_nodes: {
-                        let field_value = match fields_map.get("target_dedicated_nodes") {
+                        let field_value = match fields_map.get("targetDedicatedNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_dedicated_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetDedicatedNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_low_priority_nodes: {
-                        let field_value = match fields_map.get("target_low_priority_nodes") {
+                        let field_value = match fields_map.get("targetLowPriorityNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_low_priority_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetLowPriorityNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "content_base_64",
+                    "contentBase64",
                     &self.r#content_base_64,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#source,
                 ),
                 to_pulumi_object_field(
-                    "source_hash",
+                    "sourceHash",
                     &self.r#source_hash,
                 ),
             ];
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_base_64: {
-                        let field_value = match fields_map.get("content_base_64") {
+                        let field_value = match fields_map.get("contentBase64") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_base_64' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentBase64' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,9 +125,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_hash: {
-                        let field_value = match fields_map.get("source_hash") {
+                        let field_value = match fields_map.get("sourceHash") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_hash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceHash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

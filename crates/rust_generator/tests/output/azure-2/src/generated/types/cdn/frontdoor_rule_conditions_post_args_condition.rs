@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "match_values",
+                    "matchValues",
                     &self.r#match_values,
                 ),
                 to_pulumi_object_field(
-                    "negate_condition",
+                    "negateCondition",
                     &self.r#negate_condition,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#operator,
                 ),
                 to_pulumi_object_field(
-                    "post_args_name",
+                    "postArgsName",
                     &self.r#post_args_name,
                 ),
                 to_pulumi_object_field(
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#match_values: {
-                        let field_value = match fields_map.get("match_values") {
+                        let field_value = match fields_map.get("matchValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#negate_condition: {
-                        let field_value = match fields_map.get("negate_condition") {
+                        let field_value = match fields_map.get("negateCondition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'negate_condition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'negateCondition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_args_name: {
-                        let field_value = match fields_map.get("post_args_name") {
+                        let field_value = match fields_map.get("postArgsName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_args_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postArgsName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

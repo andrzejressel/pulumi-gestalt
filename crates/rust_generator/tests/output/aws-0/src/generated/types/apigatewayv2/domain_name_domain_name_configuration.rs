@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_arn",
+                    "certificateArn",
                     &self.r#certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_type",
+                    "endpointType",
                     &self.r#endpoint_type,
                 ),
                 to_pulumi_object_field(
-                    "hosted_zone_id",
+                    "hostedZoneId",
                     &self.r#hosted_zone_id,
                 ),
                 to_pulumi_object_field(
-                    "ownership_verification_certificate_arn",
+                    "ownershipVerificationCertificateArn",
                     &self.r#ownership_verification_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "security_policy",
+                    "securityPolicy",
                     &self.r#security_policy,
                 ),
                 to_pulumi_object_field(
-                    "target_domain_name",
+                    "targetDomainName",
                     &self.r#target_domain_name,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#certificate_arn: {
-                        let field_value = match fields_map.get("certificate_arn") {
+                        let field_value = match fields_map.get("certificateArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#endpoint_type: {
-                        let field_value = match fields_map.get("endpoint_type") {
+                        let field_value = match fields_map.get("endpointType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hosted_zone_id: {
-                        let field_value = match fields_map.get("hosted_zone_id") {
+                        let field_value = match fields_map.get("hostedZoneId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hosted_zone_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostedZoneId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ownership_verification_certificate_arn: {
-                        let field_value = match fields_map.get("ownership_verification_certificate_arn") {
+                        let field_value = match fields_map.get("ownershipVerificationCertificateArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ownership_verification_certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ownershipVerificationCertificateArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_policy: {
-                        let field_value = match fields_map.get("security_policy") {
+                        let field_value = match fields_map.get("securityPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_domain_name: {
-                        let field_value = match fields_map.get("target_domain_name") {
+                        let field_value = match fields_map.get("targetDomainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetDomainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

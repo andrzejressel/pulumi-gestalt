@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "delegation_enabled_date",
+                    "delegationEnabledDate",
                     &self.r#delegation_enabled_date,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "joined_method",
+                    "joinedMethod",
                     &self.r#joined_method,
                 ),
                 to_pulumi_object_field(
-                    "joined_timestamp",
+                    "joinedTimestamp",
                     &self.r#joined_timestamp,
                 ),
                 to_pulumi_object_field(
@@ -113,9 +113,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#delegation_enabled_date: {
-                        let field_value = match fields_map.get("delegation_enabled_date") {
+                        let field_value = match fields_map.get("delegationEnabledDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delegation_enabled_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'delegationEnabledDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,16 +134,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#joined_method: {
-                        let field_value = match fields_map.get("joined_method") {
+                        let field_value = match fields_map.get("joinedMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'joined_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'joinedMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#joined_timestamp: {
-                        let field_value = match fields_map.get("joined_timestamp") {
+                        let field_value = match fields_map.get("joinedTimestamp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'joined_timestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'joinedTimestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

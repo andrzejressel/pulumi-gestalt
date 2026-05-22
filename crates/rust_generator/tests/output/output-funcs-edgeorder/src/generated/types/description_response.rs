@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Des
                     &self.r#attributes,
                 ),
                 to_pulumi_object_field(
-                    "description_type",
+                    "descriptionType",
                     &self.r#description_type,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Des
                     &self.r#links,
                 ),
                 to_pulumi_object_field(
-                    "long_description",
+                    "longDescription",
                     &self.r#long_description,
                 ),
                 to_pulumi_object_field(
-                    "short_description",
+                    "shortDescription",
                     &self.r#short_description,
                 ),
             ];
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#description_type: {
-                        let field_value = match fields_map.get("description_type") {
+                        let field_value = match fields_map.get("descriptionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'description_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'descriptionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -118,16 +118,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#long_description: {
-                        let field_value = match fields_map.get("long_description") {
+                        let field_value = match fields_map.get("longDescription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'long_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'longDescription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#short_description: {
-                        let field_value = match fields_map.get("short_description") {
+                        let field_value = match fields_map.get("shortDescription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'short_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shortDescription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

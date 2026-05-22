@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "port_set",
+                    "portSet",
                     &self.r#port_set,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_set: {
-                        let field_value = match fields_map.get("port_set") {
+                        let field_value = match fields_map.get("portSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_trigger",
+                    "metricTrigger",
                     &self.r#metric_trigger,
                 ),
                 to_pulumi_object_field(
-                    "scale_action",
+                    "scaleAction",
                     &self.r#scale_action,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#metric_trigger: {
-                        let field_value = match fields_map.get("metric_trigger") {
+                        let field_value = match fields_map.get("metricTrigger") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_trigger' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricTrigger' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_action: {
-                        let field_value = match fields_map.get("scale_action") {
+                        let field_value = match fields_map.get("scaleAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "s_3_sub_prefix",
+                    "s3SubPrefix",
                     &self.r#s_3_sub_prefix,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#s_3_sub_prefix: {
-                        let field_value = match fields_map.get("s_3_sub_prefix") {
+                        let field_value = match fields_map.get("s3SubPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_sub_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3SubPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

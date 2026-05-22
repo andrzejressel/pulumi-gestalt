@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mutate_time",
+                    "mutateTime",
                     &self.r#mutate_time,
                 ),
                 to_pulumi_object_field(
-                    "mutated_by",
+                    "mutatedBy",
                     &self.r#mutated_by,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#mutate_time: {
-                        let field_value = match fields_map.get("mutate_time") {
+                        let field_value = match fields_map.get("mutateTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mutate_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mutateTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mutated_by: {
-                        let field_value = match fields_map.get("mutated_by") {
+                        let field_value = match fields_map.get("mutatedBy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mutated_by' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mutatedBy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

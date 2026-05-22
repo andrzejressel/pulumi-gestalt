@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_definition",
+                    "actionDefinition",
                     &self.r#action_definition,
                 ),
                 to_pulumi_object_field(
-                    "action_name",
+                    "actionName",
                     &self.r#action_name,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#action_definition: {
-                        let field_value = match fields_map.get("action_definition") {
+                        let field_value = match fields_map.get("actionDefinition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionDefinition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#action_name: {
-                        let field_value = match fields_map.get("action_name") {
+                        let field_value = match fields_map.get("actionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

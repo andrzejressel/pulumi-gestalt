@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_appliance_backup_configs",
+                    "backupApplianceBackupConfigs",
                     &self.r#backup_appliance_backup_configs,
                 ),
                 to_pulumi_object_field(
-                    "gcp_backup_configs",
+                    "gcpBackupConfigs",
                     &self.r#gcp_backup_configs,
                 ),
                 to_pulumi_object_field(
-                    "last_backup_error",
+                    "lastBackupError",
                     &self.r#last_backup_error,
                 ),
                 to_pulumi_object_field(
-                    "last_backup_state",
+                    "lastBackupState",
                     &self.r#last_backup_state,
                 ),
                 to_pulumi_object_field(
-                    "last_successful_backup_consistency_time",
+                    "lastSuccessfulBackupConsistencyTime",
                     &self.r#last_successful_backup_consistency_time,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#backup_appliance_backup_configs: {
-                        let field_value = match fields_map.get("backup_appliance_backup_configs") {
+                        let field_value = match fields_map.get("backupApplianceBackupConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_appliance_backup_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupApplianceBackupConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcp_backup_configs: {
-                        let field_value = match fields_map.get("gcp_backup_configs") {
+                        let field_value = match fields_map.get("gcpBackupConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcp_backup_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcpBackupConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_backup_error: {
-                        let field_value = match fields_map.get("last_backup_error") {
+                        let field_value = match fields_map.get("lastBackupError") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_backup_error' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastBackupError' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_backup_state: {
-                        let field_value = match fields_map.get("last_backup_state") {
+                        let field_value = match fields_map.get("lastBackupState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_backup_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastBackupState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_successful_backup_consistency_time: {
-                        let field_value = match fields_map.get("last_successful_backup_consistency_time") {
+                        let field_value = match fields_map.get("lastSuccessfulBackupConsistencyTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_successful_backup_consistency_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastSuccessfulBackupConsistencyTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -57,19 +57,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "encryption_key",
+                    "encryptionKey",
                     &self.r#encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "execution_environment",
+                    "executionEnvironment",
                     &self.r#execution_environment,
                 ),
                 to_pulumi_object_field(
-                    "max_retries",
+                    "maxRetries",
                     &self.r#max_retries,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
@@ -81,7 +81,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#volumes,
                 ),
                 to_pulumi_object_field(
-                    "vpc_accesses",
+                    "vpcAccesses",
                     &self.r#vpc_accesses,
                 ),
             ];
@@ -115,30 +115,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_key: {
-                        let field_value = match fields_map.get("encryption_key") {
+                        let field_value = match fields_map.get("encryptionKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_environment: {
-                        let field_value = match fields_map.get("execution_environment") {
+                        let field_value = match fields_map.get("executionEnvironment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_environment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionEnvironment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_retries: {
-                        let field_value = match fields_map.get("max_retries") {
+                        let field_value = match fields_map.get("maxRetries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account: {
-                        let field_value = match fields_map.get("service_account") {
+                        let field_value = match fields_map.get("serviceAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -157,9 +157,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_accesses: {
-                        let field_value = match fields_map.get("vpc_accesses") {
+                        let field_value = match fields_map.get("vpcAccesses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_accesses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcAccesses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscale_policy_id",
+                    "autoscalePolicyId",
                     &self.r#autoscale_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "consumed_memory_thresholds",
+                    "consumedMemoryThresholds",
                     &self.r#consumed_memory_thresholds,
                 ),
                 to_pulumi_object_field(
-                    "cpu_thresholds",
+                    "cpuThresholds",
                     &self.r#cpu_thresholds,
                 ),
                 to_pulumi_object_field(
-                    "node_type_id",
+                    "nodeTypeId",
                     &self.r#node_type_id,
                 ),
                 to_pulumi_object_field(
-                    "scale_out_size",
+                    "scaleOutSize",
                     &self.r#scale_out_size,
                 ),
                 to_pulumi_object_field(
-                    "storage_thresholds",
+                    "storageThresholds",
                     &self.r#storage_thresholds,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#autoscale_policy_id: {
-                        let field_value = match fields_map.get("autoscale_policy_id") {
+                        let field_value = match fields_map.get("autoscalePolicyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscale_policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalePolicyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consumed_memory_thresholds: {
-                        let field_value = match fields_map.get("consumed_memory_thresholds") {
+                        let field_value = match fields_map.get("consumedMemoryThresholds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumed_memory_thresholds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumedMemoryThresholds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_thresholds: {
-                        let field_value = match fields_map.get("cpu_thresholds") {
+                        let field_value = match fields_map.get("cpuThresholds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_thresholds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuThresholds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_type_id: {
-                        let field_value = match fields_map.get("node_type_id") {
+                        let field_value = match fields_map.get("nodeTypeId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_type_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeTypeId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_out_size: {
-                        let field_value = match fields_map.get("scale_out_size") {
+                        let field_value = match fields_map.get("scaleOutSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_out_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleOutSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_thresholds: {
-                        let field_value = match fields_map.get("storage_thresholds") {
+                        let field_value = match fields_map.get("storageThresholds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_thresholds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageThresholds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

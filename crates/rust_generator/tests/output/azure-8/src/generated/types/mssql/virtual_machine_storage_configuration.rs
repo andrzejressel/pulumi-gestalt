@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_settings",
+                    "dataSettings",
                     &self.r#data_settings,
                 ),
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
-                    "log_settings",
+                    "logSettings",
                     &self.r#log_settings,
                 ),
                 to_pulumi_object_field(
-                    "storage_workload_type",
+                    "storageWorkloadType",
                     &self.r#storage_workload_type,
                 ),
                 to_pulumi_object_field(
-                    "system_db_on_data_disk_enabled",
+                    "systemDbOnDataDiskEnabled",
                     &self.r#system_db_on_data_disk_enabled,
                 ),
                 to_pulumi_object_field(
-                    "temp_db_settings",
+                    "tempDbSettings",
                     &self.r#temp_db_settings,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#data_settings: {
-                        let field_value = match fields_map.get("data_settings") {
+                        let field_value = match fields_map.get("dataSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_type: {
-                        let field_value = match fields_map.get("disk_type") {
+                        let field_value = match fields_map.get("diskType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_settings: {
-                        let field_value = match fields_map.get("log_settings") {
+                        let field_value = match fields_map.get("logSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_workload_type: {
-                        let field_value = match fields_map.get("storage_workload_type") {
+                        let field_value = match fields_map.get("storageWorkloadType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_workload_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageWorkloadType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#system_db_on_data_disk_enabled: {
-                        let field_value = match fields_map.get("system_db_on_data_disk_enabled") {
+                        let field_value = match fields_map.get("systemDbOnDataDiskEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'system_db_on_data_disk_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'systemDbOnDataDiskEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#temp_db_settings: {
-                        let field_value = match fields_map.get("temp_db_settings") {
+                        let field_value = match fields_map.get("tempDbSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'temp_db_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tempDbSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

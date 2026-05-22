@@ -58,31 +58,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_domains_settings",
+                    "allowedDomainsSettings",
                     &self.r#allowed_domains_settings,
                 ),
                 to_pulumi_object_field(
-                    "cors_settings",
+                    "corsSettings",
                     &self.r#cors_settings,
                 ),
                 to_pulumi_object_field(
-                    "gcip_settings",
+                    "gcipSettings",
                     &self.r#gcip_settings,
                 ),
                 to_pulumi_object_field(
-                    "identity_sources",
+                    "identitySources",
                     &self.r#identity_sources,
                 ),
                 to_pulumi_object_field(
-                    "oauth_settings",
+                    "oauthSettings",
                     &self.r#oauth_settings,
                 ),
                 to_pulumi_object_field(
-                    "reauth_settings",
+                    "reauthSettings",
                     &self.r#reauth_settings,
                 ),
                 to_pulumi_object_field(
-                    "workforce_identity_settings",
+                    "workforceIdentitySettings",
                     &self.r#workforce_identity_settings,
                 ),
             ];
@@ -109,51 +109,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#allowed_domains_settings: {
-                        let field_value = match fields_map.get("allowed_domains_settings") {
+                        let field_value = match fields_map.get("allowedDomainsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_domains_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedDomainsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cors_settings: {
-                        let field_value = match fields_map.get("cors_settings") {
+                        let field_value = match fields_map.get("corsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cors_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'corsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcip_settings: {
-                        let field_value = match fields_map.get("gcip_settings") {
+                        let field_value = match fields_map.get("gcipSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcip_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcipSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_sources: {
-                        let field_value = match fields_map.get("identity_sources") {
+                        let field_value = match fields_map.get("identitySources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identitySources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_settings: {
-                        let field_value = match fields_map.get("oauth_settings") {
+                        let field_value = match fields_map.get("oauthSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauthSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reauth_settings: {
-                        let field_value = match fields_map.get("reauth_settings") {
+                        let field_value = match fields_map.get("reauthSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reauth_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reauthSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workforce_identity_settings: {
-                        let field_value = match fields_map.get("workforce_identity_settings") {
+                        let field_value = match fields_map.get("workforceIdentitySettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workforce_identity_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workforceIdentitySettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

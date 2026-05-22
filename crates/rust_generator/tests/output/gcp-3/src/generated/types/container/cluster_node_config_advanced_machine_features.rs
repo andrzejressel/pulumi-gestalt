@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_nested_virtualization",
+                    "enableNestedVirtualization",
                     &self.r#enable_nested_virtualization,
                 ),
                 to_pulumi_object_field(
-                    "threads_per_core",
+                    "threadsPerCore",
                     &self.r#threads_per_core,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#enable_nested_virtualization: {
-                        let field_value = match fields_map.get("enable_nested_virtualization") {
+                        let field_value = match fields_map.get("enableNestedVirtualization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_nested_virtualization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableNestedVirtualization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threads_per_core: {
-                        let field_value = match fields_map.get("threads_per_core") {
+                        let field_value = match fields_map.get("threadsPerCore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'threads_per_core' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'threadsPerCore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

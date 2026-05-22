@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "crypto_key",
+                    "cryptoKey",
                     &self.r#crypto_key,
                 ),
                 to_pulumi_object_field(
@@ -62,11 +62,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "protection_level",
+                    "protectionLevel",
                     &self.r#protection_level,
                 ),
                 to_pulumi_object_field(
-                    "public_keys",
+                    "publicKeys",
                     &self.r#public_keys,
                 ),
                 to_pulumi_object_field(
@@ -108,9 +108,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crypto_key: {
-                        let field_value = match fields_map.get("crypto_key") {
+                        let field_value = match fields_map.get("cryptoKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crypto_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cryptoKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -129,16 +129,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protection_level: {
-                        let field_value = match fields_map.get("protection_level") {
+                        let field_value = match fields_map.get("protectionLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protection_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protectionLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_keys: {
-                        let field_value = match fields_map.get("public_keys") {
+                        let field_value = match fields_map.get("publicKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

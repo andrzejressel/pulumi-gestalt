@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_emails",
+                    "customEmails",
                     &self.r#custom_emails,
                 ),
                 to_pulumi_object_field(
-                    "send_to_subscription_administrator",
+                    "sendToSubscriptionAdministrator",
                     &self.r#send_to_subscription_administrator,
                 ),
                 to_pulumi_object_field(
-                    "send_to_subscription_co_administrator",
+                    "sendToSubscriptionCoAdministrator",
                     &self.r#send_to_subscription_co_administrator,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#custom_emails: {
-                        let field_value = match fields_map.get("custom_emails") {
+                        let field_value = match fields_map.get("customEmails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_emails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customEmails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_to_subscription_administrator: {
-                        let field_value = match fields_map.get("send_to_subscription_administrator") {
+                        let field_value = match fields_map.get("sendToSubscriptionAdministrator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_to_subscription_administrator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendToSubscriptionAdministrator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_to_subscription_co_administrator: {
-                        let field_value = match fields_map.get("send_to_subscription_co_administrator") {
+                        let field_value = match fields_map.get("sendToSubscriptionCoAdministrator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_to_subscription_co_administrator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendToSubscriptionCoAdministrator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

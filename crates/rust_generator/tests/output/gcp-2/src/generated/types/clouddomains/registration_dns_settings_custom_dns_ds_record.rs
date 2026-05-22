@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#digest,
                 ),
                 to_pulumi_object_field(
-                    "digest_type",
+                    "digestType",
                     &self.r#digest_type,
                 ),
                 to_pulumi_object_field(
-                    "key_tag",
+                    "keyTag",
                     &self.r#key_tag,
                 ),
             ];
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#digest_type: {
-                        let field_value = match fields_map.get("digest_type") {
+                        let field_value = match fields_map.get("digestType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'digest_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'digestType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_tag: {
-                        let field_value = match fields_map.get("key_tag") {
+                        let field_value = match fields_map.get("keyTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

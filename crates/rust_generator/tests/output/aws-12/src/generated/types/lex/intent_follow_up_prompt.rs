@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#prompt,
                 ),
                 to_pulumi_object_field(
-                    "rejection_statement",
+                    "rejectionStatement",
                     &self.r#rejection_statement,
                 ),
             ];
@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rejection_statement: {
-                        let field_value = match fields_map.get("rejection_statement") {
+                        let field_value = match fields_map.get("rejectionStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rejection_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rejectionStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

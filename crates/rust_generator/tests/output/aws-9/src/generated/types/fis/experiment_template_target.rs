@@ -61,19 +61,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "resource_arns",
+                    "resourceArns",
                     &self.r#resource_arns,
                 ),
                 to_pulumi_object_field(
-                    "resource_tags",
+                    "resourceTags",
                     &self.r#resource_tags,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
                 to_pulumi_object_field(
-                    "selection_mode",
+                    "selectionMode",
                     &self.r#selection_mode,
                 ),
             ];
@@ -121,30 +121,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_arns: {
-                        let field_value = match fields_map.get("resource_arns") {
+                        let field_value = match fields_map.get("resourceArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_tags: {
-                        let field_value = match fields_map.get("resource_tags") {
+                        let field_value = match fields_map.get("resourceTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_type: {
-                        let field_value = match fields_map.get("resource_type") {
+                        let field_value = match fields_map.get("resourceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selection_mode: {
-                        let field_value = match fields_map.get("selection_mode") {
+                        let field_value = match fields_map.get("selectionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selection_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

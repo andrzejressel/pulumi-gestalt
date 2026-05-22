@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loc
                     &self.r#feeds,
                 ),
                 to_pulumi_object_field(
-                    "local_rulestack_prefix_list_ids",
+                    "localRulestackPrefixListIds",
                     &self.r#local_rulestack_prefix_list_ids,
                 ),
             ];
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_rulestack_prefix_list_ids: {
-                        let field_value = match fields_map.get("local_rulestack_prefix_list_ids") {
+                        let field_value = match fields_map.get("localRulestackPrefixListIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_rulestack_prefix_list_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localRulestackPrefixListIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

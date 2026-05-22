@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "crawl_state",
+                    "crawlState",
                     &self.r#crawl_state,
                 ),
                 to_pulumi_object_field(
-                    "crawler_name",
+                    "crawlerName",
                     &self.r#crawler_name,
                 ),
                 to_pulumi_object_field(
-                    "job_name",
+                    "jobName",
                     &self.r#job_name,
                 ),
                 to_pulumi_object_field(
-                    "logical_operator",
+                    "logicalOperator",
                     &self.r#logical_operator,
                 ),
                 to_pulumi_object_field(
@@ -82,30 +82,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#crawl_state: {
-                        let field_value = match fields_map.get("crawl_state") {
+                        let field_value = match fields_map.get("crawlState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crawl_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crawlState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crawler_name: {
-                        let field_value = match fields_map.get("crawler_name") {
+                        let field_value = match fields_map.get("crawlerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crawler_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crawlerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_name: {
-                        let field_value = match fields_map.get("job_name") {
+                        let field_value = match fields_map.get("jobName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logical_operator: {
-                        let field_value = match fields_map.get("logical_operator") {
+                        let field_value = match fields_map.get("logicalOperator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logical_operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logicalOperator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

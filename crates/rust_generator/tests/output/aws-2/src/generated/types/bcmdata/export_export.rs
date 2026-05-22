@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_queries",
+                    "dataQueries",
                     &self.r#data_queries,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "destination_configurations",
+                    "destinationConfigurations",
                     &self.r#destination_configurations,
                 ),
                 to_pulumi_object_field(
-                    "export_arn",
+                    "exportArn",
                     &self.r#export_arn,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "refresh_cadences",
+                    "refreshCadences",
                     &self.r#refresh_cadences,
                 ),
             ];
@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#data_queries: {
-                        let field_value = match fields_map.get("data_queries") {
+                        let field_value = match fields_map.get("dataQueries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_queries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataQueries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,16 +104,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_configurations: {
-                        let field_value = match fields_map.get("destination_configurations") {
+                        let field_value = match fields_map.get("destinationConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#export_arn: {
-                        let field_value = match fields_map.get("export_arn") {
+                        let field_value = match fields_map.get("exportArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'export_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exportArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,9 +125,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refresh_cadences: {
-                        let field_value = match fields_map.get("refresh_cadences") {
+                        let field_value = match fields_map.get("refreshCadences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'refresh_cadences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'refreshCadences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

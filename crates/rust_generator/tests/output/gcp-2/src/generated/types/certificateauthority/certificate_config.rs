@@ -42,19 +42,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "public_key",
+                    "publicKey",
                     &self.r#public_key,
                 ),
                 to_pulumi_object_field(
-                    "subject_config",
+                    "subjectConfig",
                     &self.r#subject_config,
                 ),
                 to_pulumi_object_field(
-                    "subject_key_id",
+                    "subjectKeyId",
                     &self.r#subject_key_id,
                 ),
                 to_pulumi_object_field(
-                    "x_509_config",
+                    "x509Config",
                     &self.r#x_509_config,
                 ),
             ];
@@ -81,30 +81,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#public_key: {
-                        let field_value = match fields_map.get("public_key") {
+                        let field_value = match fields_map.get("publicKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject_config: {
-                        let field_value = match fields_map.get("subject_config") {
+                        let field_value = match fields_map.get("subjectConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subject_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subjectConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject_key_id: {
-                        let field_value = match fields_map.get("subject_key_id") {
+                        let field_value = match fields_map.get("subjectKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subject_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subjectKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_509_config: {
-                        let field_value = match fields_map.get("x_509_config") {
+                        let field_value = match fields_map.get("x509Config") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_509_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'x509Config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

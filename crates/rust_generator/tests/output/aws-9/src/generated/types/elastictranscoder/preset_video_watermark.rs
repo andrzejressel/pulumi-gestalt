@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "horizontal_align",
+                    "horizontalAlign",
                     &self.r#horizontal_align,
                 ),
                 to_pulumi_object_field(
-                    "horizontal_offset",
+                    "horizontalOffset",
                     &self.r#horizontal_offset,
                 ),
                 to_pulumi_object_field(
@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "max_height",
+                    "maxHeight",
                     &self.r#max_height,
                 ),
                 to_pulumi_object_field(
-                    "max_width",
+                    "maxWidth",
                     &self.r#max_width,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#opacity,
                 ),
                 to_pulumi_object_field(
-                    "sizing_policy",
+                    "sizingPolicy",
                     &self.r#sizing_policy,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#target,
                 ),
                 to_pulumi_object_field(
-                    "vertical_align",
+                    "verticalAlign",
                     &self.r#vertical_align,
                 ),
                 to_pulumi_object_field(
-                    "vertical_offset",
+                    "verticalOffset",
                     &self.r#vertical_offset,
                 ),
             ];
@@ -122,16 +122,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#horizontal_align: {
-                        let field_value = match fields_map.get("horizontal_align") {
+                        let field_value = match fields_map.get("horizontalAlign") {
                             Some(value) => value,
-                            None => bail!("Missing field 'horizontal_align' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'horizontalAlign' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#horizontal_offset: {
-                        let field_value = match fields_map.get("horizontal_offset") {
+                        let field_value = match fields_map.get("horizontalOffset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'horizontal_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'horizontalOffset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -143,16 +143,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_height: {
-                        let field_value = match fields_map.get("max_height") {
+                        let field_value = match fields_map.get("maxHeight") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_height' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxHeight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_width: {
-                        let field_value = match fields_map.get("max_width") {
+                        let field_value = match fields_map.get("maxWidth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_width' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxWidth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -164,9 +164,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sizing_policy: {
-                        let field_value = match fields_map.get("sizing_policy") {
+                        let field_value = match fields_map.get("sizingPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sizing_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizingPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -178,16 +178,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vertical_align: {
-                        let field_value = match fields_map.get("vertical_align") {
+                        let field_value = match fields_map.get("verticalAlign") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vertical_align' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verticalAlign' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vertical_offset: {
-                        let field_value = match fields_map.get("vertical_offset") {
+                        let field_value = match fields_map.get("verticalOffset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vertical_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verticalOffset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

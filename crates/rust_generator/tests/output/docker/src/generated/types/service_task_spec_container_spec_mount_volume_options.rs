@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "driver_name",
+                    "driverName",
                     &self.r#driver_name,
                 ),
                 to_pulumi_object_field(
-                    "driver_options",
+                    "driverOptions",
                     &self.r#driver_options,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "no_copy",
+                    "noCopy",
                     &self.r#no_copy,
                 ),
             ];
@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#driver_name: {
-                        let field_value = match fields_map.get("driver_name") {
+                        let field_value = match fields_map.get("driverName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'driver_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'driverName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#driver_options: {
-                        let field_value = match fields_map.get("driver_options") {
+                        let field_value = match fields_map.get("driverOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'driver_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'driverOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_copy: {
-                        let field_value = match fields_map.get("no_copy") {
+                        let field_value = match fields_map.get("noCopy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_copy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noCopy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fie
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "profile_id",
+                    "profileId",
                     &self.r#profile_id,
                 ),
                 to_pulumi_object_field(
-                    "query_arg",
+                    "queryArg",
                     &self.r#query_arg,
                 ),
             ];
@@ -57,16 +57,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#profile_id: {
-                        let field_value = match fields_map.get("profile_id") {
+                        let field_value = match fields_map.get("profileId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'profile_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'profileId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_arg: {
-                        let field_value = match fields_map.get("query_arg") {
+                        let field_value = match fields_map.get("queryArg") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_arg' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryArg' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

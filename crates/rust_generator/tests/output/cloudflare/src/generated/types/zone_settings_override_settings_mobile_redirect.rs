@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mobile_subdomain",
+                    "mobileSubdomain",
                     &self.r#mobile_subdomain,
                 ),
                 to_pulumi_object_field(
@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "strip_uri",
+                    "stripUri",
                     &self.r#strip_uri,
                 ),
             ];
@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#mobile_subdomain: {
-                        let field_value = match fields_map.get("mobile_subdomain") {
+                        let field_value = match fields_map.get("mobileSubdomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mobile_subdomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mobileSubdomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#strip_uri: {
-                        let field_value = match fields_map.get("strip_uri") {
+                        let field_value = match fields_map.get("stripUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'strip_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stripUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

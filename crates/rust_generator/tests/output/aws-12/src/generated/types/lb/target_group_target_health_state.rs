@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_unhealthy_connection_termination",
+                    "enableUnhealthyConnectionTermination",
                     &self.r#enable_unhealthy_connection_termination,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_draining_interval",
+                    "unhealthyDrainingInterval",
                     &self.r#unhealthy_draining_interval,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#enable_unhealthy_connection_termination: {
-                        let field_value = match fields_map.get("enable_unhealthy_connection_termination") {
+                        let field_value = match fields_map.get("enableUnhealthyConnectionTermination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_unhealthy_connection_termination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableUnhealthyConnectionTermination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unhealthy_draining_interval: {
-                        let field_value = match fields_map.get("unhealthy_draining_interval") {
+                        let field_value = match fields_map.get("unhealthyDrainingInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unhealthy_draining_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unhealthyDrainingInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

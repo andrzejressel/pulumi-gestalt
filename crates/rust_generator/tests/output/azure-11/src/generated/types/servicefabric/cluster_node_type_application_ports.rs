@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "end_port",
+                    "endPort",
                     &self.r#end_port,
                 ),
                 to_pulumi_object_field(
-                    "start_port",
+                    "startPort",
                     &self.r#start_port,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#end_port: {
-                        let field_value = match fields_map.get("end_port") {
+                        let field_value = match fields_map.get("endPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_port: {
-                        let field_value = match fields_map.get("start_port") {
+                        let field_value = match fields_map.get("startPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

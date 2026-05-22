@@ -34,19 +34,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_of_trust_for_user_defined_routes",
+                    "ipOfTrustForUserDefinedRoutes",
                     &self.r#ip_of_trust_for_user_defined_routes,
                 ),
                 to_pulumi_object_field(
-                    "trusted_subnet_id",
+                    "trustedSubnetId",
                     &self.r#trusted_subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "untrusted_subnet_id",
+                    "untrustedSubnetId",
                     &self.r#untrusted_subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_id",
+                    "virtualNetworkId",
                     &self.r#virtual_network_id,
                 ),
             ];
@@ -73,30 +73,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#ip_of_trust_for_user_defined_routes: {
-                        let field_value = match fields_map.get("ip_of_trust_for_user_defined_routes") {
+                        let field_value = match fields_map.get("ipOfTrustForUserDefinedRoutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_of_trust_for_user_defined_routes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipOfTrustForUserDefinedRoutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_subnet_id: {
-                        let field_value = match fields_map.get("trusted_subnet_id") {
+                        let field_value = match fields_map.get("trustedSubnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trusted_subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustedSubnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#untrusted_subnet_id: {
-                        let field_value = match fields_map.get("untrusted_subnet_id") {
+                        let field_value = match fields_map.get("untrustedSubnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'untrusted_subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'untrustedSubnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_network_id: {
-                        let field_value = match fields_map.get("virtual_network_id") {
+                        let field_value = match fields_map.get("virtualNetworkId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_network_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNetworkId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -44,15 +44,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "registry_burst",
+                    "registryBurst",
                     &self.r#registry_burst,
                 ),
                 to_pulumi_object_field(
-                    "registry_pull_qps",
+                    "registryPullQps",
                     &self.r#registry_pull_qps,
                 ),
                 to_pulumi_object_field(
-                    "serialize_image_pulls_disabled",
+                    "serializeImagePullsDisabled",
                     &self.r#serialize_image_pulls_disabled,
                 ),
             ];
@@ -79,23 +79,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#registry_burst: {
-                        let field_value = match fields_map.get("registry_burst") {
+                        let field_value = match fields_map.get("registryBurst") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registry_burst' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registryBurst' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registry_pull_qps: {
-                        let field_value = match fields_map.get("registry_pull_qps") {
+                        let field_value = match fields_map.get("registryPullQps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registry_pull_qps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registryPullQps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#serialize_image_pulls_disabled: {
-                        let field_value = match fields_map.get("serialize_image_pulls_disabled") {
+                        let field_value = match fields_map.get("serializeImagePullsDisabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'serialize_image_pulls_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serializeImagePullsDisabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

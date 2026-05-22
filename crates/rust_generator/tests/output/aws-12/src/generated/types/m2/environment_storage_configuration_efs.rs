@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "file_system_id",
+                    "fileSystemId",
                     &self.r#file_system_id,
                 ),
                 to_pulumi_object_field(
-                    "mount_point",
+                    "mountPoint",
                     &self.r#mount_point,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#file_system_id: {
-                        let field_value = match fields_map.get("file_system_id") {
+                        let field_value = match fields_map.get("fileSystemId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_system_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystemId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mount_point: {
-                        let field_value = match fields_map.get("mount_point") {
+                        let field_value = match fields_map.get("mountPoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mount_point' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mountPoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

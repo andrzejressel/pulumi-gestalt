@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "drop_unknown_fields",
+                    "dropUnknownFields",
                     &self.r#drop_unknown_fields,
                 ),
                 to_pulumi_object_field(
-                    "service_account_email",
+                    "serviceAccountEmail",
                     &self.r#service_account_email,
                 ),
                 to_pulumi_object_field(
@@ -62,15 +62,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#table,
                 ),
                 to_pulumi_object_field(
-                    "use_table_schema",
+                    "useTableSchema",
                     &self.r#use_table_schema,
                 ),
                 to_pulumi_object_field(
-                    "use_topic_schema",
+                    "useTopicSchema",
                     &self.r#use_topic_schema,
                 ),
                 to_pulumi_object_field(
-                    "write_metadata",
+                    "writeMetadata",
                     &self.r#write_metadata,
                 ),
             ];
@@ -97,16 +97,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#drop_unknown_fields: {
-                        let field_value = match fields_map.get("drop_unknown_fields") {
+                        let field_value = match fields_map.get("dropUnknownFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'drop_unknown_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dropUnknownFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_email: {
-                        let field_value = match fields_map.get("service_account_email") {
+                        let field_value = match fields_map.get("serviceAccountEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -118,23 +118,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_table_schema: {
-                        let field_value = match fields_map.get("use_table_schema") {
+                        let field_value = match fields_map.get("useTableSchema") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_table_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useTableSchema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_topic_schema: {
-                        let field_value = match fields_map.get("use_topic_schema") {
+                        let field_value = match fields_map.get("useTopicSchema") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_topic_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useTopicSchema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#write_metadata: {
-                        let field_value = match fields_map.get("write_metadata") {
+                        let field_value = match fields_map.get("writeMetadata") {
                             Some(value) => value,
-                            None => bail!("Missing field 'write_metadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'writeMetadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

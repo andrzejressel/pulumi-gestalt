@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_export_ranges",
+                    "excludeExportRanges",
                     &self.r#exclude_export_ranges,
                 ),
                 to_pulumi_object_field(
-                    "include_export_ranges",
+                    "includeExportRanges",
                     &self.r#include_export_ranges,
                 ),
                 to_pulumi_object_field(
@@ -56,7 +56,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
                     &self.r#peering,
                 ),
                 to_pulumi_object_field(
-                    "producer_network",
+                    "producerNetwork",
                     &self.r#producer_network,
                 ),
             ];
@@ -83,16 +83,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#exclude_export_ranges: {
-                        let field_value = match fields_map.get("exclude_export_ranges") {
+                        let field_value = match fields_map.get("excludeExportRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_export_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeExportRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_export_ranges: {
-                        let field_value = match fields_map.get("include_export_ranges") {
+                        let field_value = match fields_map.get("includeExportRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_export_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeExportRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,9 +111,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#producer_network: {
-                        let field_value = match fields_map.get("producer_network") {
+                        let field_value = match fields_map.get("producerNetwork") {
                             Some(value) => value,
-                            None => bail!("Missing field 'producer_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'producerNetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

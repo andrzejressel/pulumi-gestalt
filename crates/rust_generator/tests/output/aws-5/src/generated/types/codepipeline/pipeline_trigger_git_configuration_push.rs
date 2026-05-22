@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#branches,
                 ),
                 to_pulumi_object_field(
-                    "file_paths",
+                    "filePaths",
                     &self.r#file_paths,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_paths: {
-                        let field_value = match fields_map.get("file_paths") {
+                        let field_value = match fields_map.get("filePaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filePaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

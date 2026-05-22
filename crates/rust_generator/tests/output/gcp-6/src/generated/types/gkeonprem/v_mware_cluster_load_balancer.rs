@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "f_5_config",
+                    "f5Config",
                     &self.r#f_5_config,
                 ),
                 to_pulumi_object_field(
-                    "manual_lb_config",
+                    "manualLbConfig",
                     &self.r#manual_lb_config,
                 ),
                 to_pulumi_object_field(
-                    "metal_lb_config",
+                    "metalLbConfig",
                     &self.r#metal_lb_config,
                 ),
                 to_pulumi_object_field(
-                    "vip_config",
+                    "vipConfig",
                     &self.r#vip_config,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#f_5_config: {
-                        let field_value = match fields_map.get("f_5_config") {
+                        let field_value = match fields_map.get("f5Config") {
                             Some(value) => value,
-                            None => bail!("Missing field 'f_5_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'f5Config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#manual_lb_config: {
-                        let field_value = match fields_map.get("manual_lb_config") {
+                        let field_value = match fields_map.get("manualLbConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'manual_lb_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'manualLbConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metal_lb_config: {
-                        let field_value = match fields_map.get("metal_lb_config") {
+                        let field_value = match fields_map.get("metalLbConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metal_lb_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metalLbConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vip_config: {
-                        let field_value = match fields_map.get("vip_config") {
+                        let field_value = match fields_map.get("vipConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vip_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vipConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

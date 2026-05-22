@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "log_group",
+                    "logGroup",
                     &self.r#log_group,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_group: {
-                        let field_value = match fields_map.get("log_group") {
+                        let field_value = match fields_map.get("logGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "multi_region_key_type",
+                    "multiRegionKeyType",
                     &self.r#multi_region_key_type,
                 ),
                 to_pulumi_object_field(
-                    "primary_keys",
+                    "primaryKeys",
                     &self.r#primary_keys,
                 ),
                 to_pulumi_object_field(
-                    "replica_keys",
+                    "replicaKeys",
                     &self.r#replica_keys,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#multi_region_key_type: {
-                        let field_value = match fields_map.get("multi_region_key_type") {
+                        let field_value = match fields_map.get("multiRegionKeyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multi_region_key_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multiRegionKeyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_keys: {
-                        let field_value = match fields_map.get("primary_keys") {
+                        let field_value = match fields_map.get("primaryKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replica_keys: {
-                        let field_value = match fields_map.get("replica_keys") {
+                        let field_value = match fields_map.get("replicaKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replica_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicaKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

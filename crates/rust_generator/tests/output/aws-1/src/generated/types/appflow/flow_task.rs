@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connector_operators",
+                    "connectorOperators",
                     &self.r#connector_operators,
                 ),
                 to_pulumi_object_field(
-                    "destination_field",
+                    "destinationField",
                     &self.r#destination_field,
                 ),
                 to_pulumi_object_field(
-                    "source_fields",
+                    "sourceFields",
                     &self.r#source_fields,
                 ),
                 to_pulumi_object_field(
-                    "task_properties",
+                    "taskProperties",
                     &self.r#task_properties,
                 ),
                 to_pulumi_object_field(
-                    "task_type",
+                    "taskType",
                     &self.r#task_type,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#connector_operators: {
-                        let field_value = match fields_map.get("connector_operators") {
+                        let field_value = match fields_map.get("connectorOperators") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connector_operators' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorOperators' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_field: {
-                        let field_value = match fields_map.get("destination_field") {
+                        let field_value = match fields_map.get("destinationField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_fields: {
-                        let field_value = match fields_map.get("source_fields") {
+                        let field_value = match fields_map.get("sourceFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_properties: {
-                        let field_value = match fields_map.get("task_properties") {
+                        let field_value = match fields_map.get("taskProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_type: {
-                        let field_value = match fields_map.get("task_type") {
+                        let field_value = match fields_map.get("taskType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

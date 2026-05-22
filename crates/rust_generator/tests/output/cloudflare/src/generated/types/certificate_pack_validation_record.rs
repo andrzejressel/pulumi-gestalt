@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cname_name",
+                    "cnameName",
                     &self.r#cname_name,
                 ),
                 to_pulumi_object_field(
-                    "cname_target",
+                    "cnameTarget",
                     &self.r#cname_target,
                 ),
                 to_pulumi_object_field(
@@ -52,19 +52,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#emails,
                 ),
                 to_pulumi_object_field(
-                    "http_body",
+                    "httpBody",
                     &self.r#http_body,
                 ),
                 to_pulumi_object_field(
-                    "http_url",
+                    "httpUrl",
                     &self.r#http_url,
                 ),
                 to_pulumi_object_field(
-                    "txt_name",
+                    "txtName",
                     &self.r#txt_name,
                 ),
                 to_pulumi_object_field(
-                    "txt_value",
+                    "txtValue",
                     &self.r#txt_value,
                 ),
             ];
@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cname_name: {
-                        let field_value = match fields_map.get("cname_name") {
+                        let field_value = match fields_map.get("cnameName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cname_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cnameName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cname_target: {
-                        let field_value = match fields_map.get("cname_target") {
+                        let field_value = match fields_map.get("cnameTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cname_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cnameTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,30 +112,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_body: {
-                        let field_value = match fields_map.get("http_body") {
+                        let field_value = match fields_map.get("httpBody") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_body' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpBody' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_url: {
-                        let field_value = match fields_map.get("http_url") {
+                        let field_value = match fields_map.get("httpUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#txt_name: {
-                        let field_value = match fields_map.get("txt_name") {
+                        let field_value = match fields_map.get("txtName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'txt_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'txtName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#txt_value: {
-                        let field_value = match fields_map.get("txt_value") {
+                        let field_value = match fields_map.get("txtValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'txt_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'txtValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

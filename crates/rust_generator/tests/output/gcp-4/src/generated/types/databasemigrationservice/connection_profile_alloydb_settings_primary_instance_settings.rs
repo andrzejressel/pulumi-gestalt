@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "database_flags",
+                    "databaseFlags",
                     &self.r#database_flags,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "machine_config",
+                    "machineConfig",
                     &self.r#machine_config,
                 ),
                 to_pulumi_object_field(
-                    "private_ip",
+                    "privateIp",
                     &self.r#private_ip,
                 ),
             ];
@@ -84,9 +84,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#database_flags: {
-                        let field_value = match fields_map.get("database_flags") {
+                        let field_value = match fields_map.get("databaseFlags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_flags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseFlags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -105,16 +105,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#machine_config: {
-                        let field_value = match fields_map.get("machine_config") {
+                        let field_value = match fields_map.get("machineConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'machine_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'machineConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip: {
-                        let field_value = match fields_map.get("private_ip") {
+                        let field_value = match fields_map.get("privateIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

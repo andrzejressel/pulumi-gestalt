@@ -54,27 +54,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#deidentify,
                 ),
                 to_pulumi_object_field(
-                    "job_notification_emails",
+                    "jobNotificationEmails",
                     &self.r#job_notification_emails,
                 ),
                 to_pulumi_object_field(
-                    "pub_sub",
+                    "pubSub",
                     &self.r#pub_sub,
                 ),
                 to_pulumi_object_field(
-                    "publish_findings_to_cloud_data_catalog",
+                    "publishFindingsToCloudDataCatalog",
                     &self.r#publish_findings_to_cloud_data_catalog,
                 ),
                 to_pulumi_object_field(
-                    "publish_summary_to_cscc",
+                    "publishSummaryToCscc",
                     &self.r#publish_summary_to_cscc,
                 ),
                 to_pulumi_object_field(
-                    "publish_to_stackdriver",
+                    "publishToStackdriver",
                     &self.r#publish_to_stackdriver,
                 ),
                 to_pulumi_object_field(
-                    "save_findings",
+                    "saveFindings",
                     &self.r#save_findings,
                 ),
             ];
@@ -108,44 +108,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_notification_emails: {
-                        let field_value = match fields_map.get("job_notification_emails") {
+                        let field_value = match fields_map.get("jobNotificationEmails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_notification_emails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobNotificationEmails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pub_sub: {
-                        let field_value = match fields_map.get("pub_sub") {
+                        let field_value = match fields_map.get("pubSub") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pub_sub' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pubSub' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publish_findings_to_cloud_data_catalog: {
-                        let field_value = match fields_map.get("publish_findings_to_cloud_data_catalog") {
+                        let field_value = match fields_map.get("publishFindingsToCloudDataCatalog") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_findings_to_cloud_data_catalog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishFindingsToCloudDataCatalog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publish_summary_to_cscc: {
-                        let field_value = match fields_map.get("publish_summary_to_cscc") {
+                        let field_value = match fields_map.get("publishSummaryToCscc") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_summary_to_cscc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishSummaryToCscc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publish_to_stackdriver: {
-                        let field_value = match fields_map.get("publish_to_stackdriver") {
+                        let field_value = match fields_map.get("publishToStackdriver") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_to_stackdriver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishToStackdriver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#save_findings: {
-                        let field_value = match fields_map.get("save_findings") {
+                        let field_value = match fields_map.get("saveFindings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'save_findings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'saveFindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

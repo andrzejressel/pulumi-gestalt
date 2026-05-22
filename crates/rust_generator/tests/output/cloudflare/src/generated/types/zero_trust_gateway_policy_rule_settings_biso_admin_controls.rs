@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_clipboard_redirection",
+                    "disableClipboardRedirection",
                     &self.r#disable_clipboard_redirection,
                 ),
                 to_pulumi_object_field(
-                    "disable_copy_paste",
+                    "disableCopyPaste",
                     &self.r#disable_copy_paste,
                 ),
                 to_pulumi_object_field(
-                    "disable_download",
+                    "disableDownload",
                     &self.r#disable_download,
                 ),
                 to_pulumi_object_field(
-                    "disable_keyboard",
+                    "disableKeyboard",
                     &self.r#disable_keyboard,
                 ),
                 to_pulumi_object_field(
-                    "disable_printing",
+                    "disablePrinting",
                     &self.r#disable_printing,
                 ),
                 to_pulumi_object_field(
-                    "disable_upload",
+                    "disableUpload",
                     &self.r#disable_upload,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#disable_clipboard_redirection: {
-                        let field_value = match fields_map.get("disable_clipboard_redirection") {
+                        let field_value = match fields_map.get("disableClipboardRedirection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_clipboard_redirection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableClipboardRedirection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_copy_paste: {
-                        let field_value = match fields_map.get("disable_copy_paste") {
+                        let field_value = match fields_map.get("disableCopyPaste") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_copy_paste' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableCopyPaste' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_download: {
-                        let field_value = match fields_map.get("disable_download") {
+                        let field_value = match fields_map.get("disableDownload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_download' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableDownload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_keyboard: {
-                        let field_value = match fields_map.get("disable_keyboard") {
+                        let field_value = match fields_map.get("disableKeyboard") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_keyboard' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableKeyboard' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_printing: {
-                        let field_value = match fields_map.get("disable_printing") {
+                        let field_value = match fields_map.get("disablePrinting") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_printing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disablePrinting' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_upload: {
-                        let field_value = match fields_map.get("disable_upload") {
+                        let field_value = match fields_map.get("disableUpload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_upload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableUpload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

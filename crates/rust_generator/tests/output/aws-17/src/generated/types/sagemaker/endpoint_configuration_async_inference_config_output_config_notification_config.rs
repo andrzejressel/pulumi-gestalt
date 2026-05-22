@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_topic",
+                    "errorTopic",
                     &self.r#error_topic,
                 ),
                 to_pulumi_object_field(
-                    "include_inference_response_ins",
+                    "includeInferenceResponseIns",
                     &self.r#include_inference_response_ins,
                 ),
                 to_pulumi_object_field(
-                    "success_topic",
+                    "successTopic",
                     &self.r#success_topic,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#error_topic: {
-                        let field_value = match fields_map.get("error_topic") {
+                        let field_value = match fields_map.get("errorTopic") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_topic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorTopic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_inference_response_ins: {
-                        let field_value = match fields_map.get("include_inference_response_ins") {
+                        let field_value = match fields_map.get("includeInferenceResponseIns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_inference_response_ins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeInferenceResponseIns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_topic: {
-                        let field_value = match fields_map.get("success_topic") {
+                        let field_value = match fields_map.get("successTopic") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_topic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successTopic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

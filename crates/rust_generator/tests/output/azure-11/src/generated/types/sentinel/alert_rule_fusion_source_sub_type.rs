@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "severities_alloweds",
+                    "severitiesAlloweds",
                     &self.r#severities_alloweds,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#severities_alloweds: {
-                        let field_value = match fields_map.get("severities_alloweds") {
+                        let field_value = match fields_map.get("severitiesAlloweds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'severities_alloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'severitiesAlloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

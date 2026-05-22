@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_authority_arns",
+                    "certificateAuthorityArns",
                     &self.r#certificate_authority_arns,
                 ),
             ];
@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#certificate_authority_arns: {
-                        let field_value = match fields_map.get("certificate_authority_arns") {
+                        let field_value = match fields_map.get("certificateAuthorityArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_authority_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateAuthorityArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

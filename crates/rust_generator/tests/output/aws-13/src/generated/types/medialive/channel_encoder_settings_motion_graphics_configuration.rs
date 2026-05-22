@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "motion_graphics_insertion",
+                    "motionGraphicsInsertion",
                     &self.r#motion_graphics_insertion,
                 ),
                 to_pulumi_object_field(
-                    "motion_graphics_settings",
+                    "motionGraphicsSettings",
                     &self.r#motion_graphics_settings,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#motion_graphics_insertion: {
-                        let field_value = match fields_map.get("motion_graphics_insertion") {
+                        let field_value = match fields_map.get("motionGraphicsInsertion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'motion_graphics_insertion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'motionGraphicsInsertion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#motion_graphics_settings: {
-                        let field_value = match fields_map.get("motion_graphics_settings") {
+                        let field_value = match fields_map.get("motionGraphicsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'motion_graphics_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'motionGraphicsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "control_plane_vip",
+                    "controlPlaneVip",
                     &self.r#control_plane_vip,
                 ),
                 to_pulumi_object_field(
-                    "ingress_vip",
+                    "ingressVip",
                     &self.r#ingress_vip,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#control_plane_vip: {
-                        let field_value = match fields_map.get("control_plane_vip") {
+                        let field_value = match fields_map.get("controlPlaneVip") {
                             Some(value) => value,
-                            None => bail!("Missing field 'control_plane_vip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'controlPlaneVip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ingress_vip: {
-                        let field_value = match fields_map.get("ingress_vip") {
+                        let field_value = match fields_map.get("ingressVip") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingress_vip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingressVip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_os_disk_on_deletion",
+                    "deleteOsDiskOnDeletion",
                     &self.r#delete_os_disk_on_deletion,
                 ),
                 to_pulumi_object_field(
-                    "detach_implicit_data_disk_on_deletion",
+                    "detachImplicitDataDiskOnDeletion",
                     &self.r#detach_implicit_data_disk_on_deletion,
                 ),
                 to_pulumi_object_field(
-                    "graceful_shutdown",
+                    "gracefulShutdown",
                     &self.r#graceful_shutdown,
                 ),
                 to_pulumi_object_field(
-                    "skip_shutdown_and_force_delete",
+                    "skipShutdownAndForceDelete",
                     &self.r#skip_shutdown_and_force_delete,
                 ),
             ];
@@ -70,30 +70,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#delete_os_disk_on_deletion: {
-                        let field_value = match fields_map.get("delete_os_disk_on_deletion") {
+                        let field_value = match fields_map.get("deleteOsDiskOnDeletion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delete_os_disk_on_deletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deleteOsDiskOnDeletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#detach_implicit_data_disk_on_deletion: {
-                        let field_value = match fields_map.get("detach_implicit_data_disk_on_deletion") {
+                        let field_value = match fields_map.get("detachImplicitDataDiskOnDeletion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detach_implicit_data_disk_on_deletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detachImplicitDataDiskOnDeletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#graceful_shutdown: {
-                        let field_value = match fields_map.get("graceful_shutdown") {
+                        let field_value = match fields_map.get("gracefulShutdown") {
                             Some(value) => value,
-                            None => bail!("Missing field 'graceful_shutdown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gracefulShutdown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skip_shutdown_and_force_delete: {
-                        let field_value = match fields_map.get("skip_shutdown_and_force_delete") {
+                        let field_value = match fields_map.get("skipShutdownAndForceDelete") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skip_shutdown_and_force_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skipShutdownAndForceDelete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

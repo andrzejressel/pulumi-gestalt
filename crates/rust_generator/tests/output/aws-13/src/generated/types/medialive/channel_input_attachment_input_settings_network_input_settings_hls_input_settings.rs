@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bandwidth,
                 ),
                 to_pulumi_object_field(
-                    "buffer_segments",
+                    "bufferSegments",
                     &self.r#buffer_segments,
                 ),
                 to_pulumi_object_field(
@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#retries,
                 ),
                 to_pulumi_object_field(
-                    "retry_interval",
+                    "retryInterval",
                     &self.r#retry_interval,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_source",
+                    "scte35Source",
                     &self.r#scte_35_source,
                 ),
             ];
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#buffer_segments: {
-                        let field_value = match fields_map.get("buffer_segments") {
+                        let field_value = match fields_map.get("bufferSegments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'buffer_segments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bufferSegments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -102,16 +102,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_interval: {
-                        let field_value = match fields_map.get("retry_interval") {
+                        let field_value = match fields_map.get("retryInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retry_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retryInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_35_source: {
-                        let field_value = match fields_map.get("scte_35_source") {
+                        let field_value = match fields_map.get("scte35Source") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scte_35_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scte35Source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

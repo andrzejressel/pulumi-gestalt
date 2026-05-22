@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "bgp_peering_address",
+                    "bgpPeeringAddress",
                     &self.r#bgp_peering_address,
                 ),
                 to_pulumi_object_field(
-                    "instance_0_bgp_peering_addresses",
+                    "instance0BgpPeeringAddresses",
                     &self.r#instance_0_bgp_peering_addresses,
                 ),
                 to_pulumi_object_field(
-                    "instance_1_bgp_peering_addresses",
+                    "instance1BgpPeeringAddresses",
                     &self.r#instance_1_bgp_peering_addresses,
                 ),
                 to_pulumi_object_field(
-                    "peer_weight",
+                    "peerWeight",
                     &self.r#peer_weight,
                 ),
             ];
@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bgp_peering_address: {
-                        let field_value = match fields_map.get("bgp_peering_address") {
+                        let field_value = match fields_map.get("bgpPeeringAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bgp_peering_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bgpPeeringAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_0_bgp_peering_addresses: {
-                        let field_value = match fields_map.get("instance_0_bgp_peering_addresses") {
+                        let field_value = match fields_map.get("instance0BgpPeeringAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_0_bgp_peering_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instance0BgpPeeringAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_1_bgp_peering_addresses: {
-                        let field_value = match fields_map.get("instance_1_bgp_peering_addresses") {
+                        let field_value = match fields_map.get("instance1BgpPeeringAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_1_bgp_peering_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instance1BgpPeeringAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peer_weight: {
-                        let field_value = match fields_map.get("peer_weight") {
+                        let field_value = match fields_map.get("peerWeight") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peer_weight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peerWeight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

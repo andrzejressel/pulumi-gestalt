@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "from_port",
+                    "fromPort",
                     &self.r#from_port,
                 ),
                 to_pulumi_object_field(
-                    "ip_range",
+                    "ipRange",
                     &self.r#ip_range,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "to_port",
+                    "toPort",
                     &self.r#to_port,
                 ),
             ];
@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#from_port: {
-                        let field_value = match fields_map.get("from_port") {
+                        let field_value = match fields_map.get("fromPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'from_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fromPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_range: {
-                        let field_value = match fields_map.get("ip_range") {
+                        let field_value = match fields_map.get("ipRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#to_port: {
-                        let field_value = match fields_map.get("to_port") {
+                        let field_value = match fields_map.get("toPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'to_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'toPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

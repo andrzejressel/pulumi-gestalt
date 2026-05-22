@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_depth",
+                    "columnDepth",
                     &self.r#column_depth,
                 ),
                 to_pulumi_object_field(
-                    "include_fec",
+                    "includeFec",
                     &self.r#include_fec,
                 ),
                 to_pulumi_object_field(
-                    "row_length",
+                    "rowLength",
                     &self.r#row_length,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#column_depth: {
-                        let field_value = match fields_map.get("column_depth") {
+                        let field_value = match fields_map.get("columnDepth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'column_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'columnDepth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_fec: {
-                        let field_value = match fields_map.get("include_fec") {
+                        let field_value = match fields_map.get("includeFec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_fec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeFec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#row_length: {
-                        let field_value = match fields_map.get("row_length") {
+                        let field_value = match fields_map.get("rowLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'row_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rowLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

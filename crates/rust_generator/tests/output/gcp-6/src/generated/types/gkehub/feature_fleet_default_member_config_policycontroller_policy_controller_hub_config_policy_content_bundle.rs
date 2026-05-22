@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#bundle,
                 ),
                 to_pulumi_object_field(
-                    "exempted_namespaces",
+                    "exemptedNamespaces",
                     &self.r#exempted_namespaces,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exempted_namespaces: {
-                        let field_value = match fields_map.get("exempted_namespaces") {
+                        let field_value = match fields_map.get("exemptedNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exempted_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exemptedNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

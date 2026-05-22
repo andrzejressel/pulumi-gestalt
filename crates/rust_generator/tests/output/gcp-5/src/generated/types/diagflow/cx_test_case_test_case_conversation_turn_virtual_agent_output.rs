@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "current_page",
+                    "currentPage",
                     &self.r#current_page,
                 ),
                 to_pulumi_object_field(
-                    "session_parameters",
+                    "sessionParameters",
                     &self.r#session_parameters,
                 ),
                 to_pulumi_object_field(
-                    "text_responses",
+                    "textResponses",
                     &self.r#text_responses,
                 ),
                 to_pulumi_object_field(
-                    "triggered_intent",
+                    "triggeredIntent",
                     &self.r#triggered_intent,
                 ),
             ];
@@ -77,30 +77,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#current_page: {
-                        let field_value = match fields_map.get("current_page") {
+                        let field_value = match fields_map.get("currentPage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'current_page' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'currentPage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_parameters: {
-                        let field_value = match fields_map.get("session_parameters") {
+                        let field_value = match fields_map.get("sessionParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_responses: {
-                        let field_value = match fields_map.get("text_responses") {
+                        let field_value = match fields_map.get("textResponses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_responses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textResponses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#triggered_intent: {
-                        let field_value = match fields_map.get("triggered_intent") {
+                        let field_value = match fields_map.get("triggeredIntent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'triggered_intent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'triggeredIntent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

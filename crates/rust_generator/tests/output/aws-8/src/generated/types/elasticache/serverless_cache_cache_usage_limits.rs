@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_storage",
+                    "dataStorage",
                     &self.r#data_storage,
                 ),
                 to_pulumi_object_field(
-                    "ecpu_per_seconds",
+                    "ecpuPerSeconds",
                     &self.r#ecpu_per_seconds,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#data_storage: {
-                        let field_value = match fields_map.get("data_storage") {
+                        let field_value = match fields_map.get("dataStorage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataStorage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ecpu_per_seconds: {
-                        let field_value = match fields_map.get("ecpu_per_seconds") {
+                        let field_value = match fields_map.get("ecpuPerSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ecpu_per_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ecpuPerSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

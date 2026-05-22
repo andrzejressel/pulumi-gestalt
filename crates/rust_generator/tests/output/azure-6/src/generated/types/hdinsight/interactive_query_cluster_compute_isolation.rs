@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compute_isolation_enabled",
+                    "computeIsolationEnabled",
                     &self.r#compute_isolation_enabled,
                 ),
                 to_pulumi_object_field(
-                    "host_sku",
+                    "hostSku",
                     &self.r#host_sku,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#compute_isolation_enabled: {
-                        let field_value = match fields_map.get("compute_isolation_enabled") {
+                        let field_value = match fields_map.get("computeIsolationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compute_isolation_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computeIsolationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_sku: {
-                        let field_value = match fields_map.get("host_sku") {
+                        let field_value = match fields_map.get("hostSku") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_sku' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostSku' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

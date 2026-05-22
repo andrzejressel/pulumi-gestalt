@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "file_path",
+                    "filePath",
                     &self.r#file_path,
                 ),
                 to_pulumi_object_field(
-                    "size_bytes",
+                    "sizeBytes",
                     &self.r#size_bytes,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#file_path: {
-                        let field_value = match fields_map.get("file_path") {
+                        let field_value = match fields_map.get("filePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#size_bytes: {
-                        let field_value = match fields_map.get("size_bytes") {
+                        let field_value = match fields_map.get("sizeBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizeBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

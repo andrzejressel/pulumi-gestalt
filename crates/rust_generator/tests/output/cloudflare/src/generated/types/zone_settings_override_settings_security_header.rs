@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "include_subdomains",
+                    "includeSubdomains",
                     &self.r#include_subdomains,
                 ),
                 to_pulumi_object_field(
-                    "max_age",
+                    "maxAge",
                     &self.r#max_age,
                 ),
                 to_pulumi_object_field(
@@ -84,16 +84,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_subdomains: {
-                        let field_value = match fields_map.get("include_subdomains") {
+                        let field_value = match fields_map.get("includeSubdomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_subdomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeSubdomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_age: {
-                        let field_value = match fields_map.get("max_age") {
+                        let field_value = match fields_map.get("maxAge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_age' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

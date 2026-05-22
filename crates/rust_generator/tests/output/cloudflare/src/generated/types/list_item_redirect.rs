@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "include_subdomains",
+                    "includeSubdomains",
                     &self.r#include_subdomains,
                 ),
                 to_pulumi_object_field(
-                    "preserve_path_suffix",
+                    "preservePathSuffix",
                     &self.r#preserve_path_suffix,
                 ),
                 to_pulumi_object_field(
-                    "preserve_query_string",
+                    "preserveQueryString",
                     &self.r#preserve_query_string,
                 ),
                 to_pulumi_object_field(
-                    "source_url",
+                    "sourceUrl",
                     &self.r#source_url,
                 ),
                 to_pulumi_object_field(
-                    "status_code",
+                    "statusCode",
                     &self.r#status_code,
                 ),
                 to_pulumi_object_field(
-                    "subpath_matching",
+                    "subpathMatching",
                     &self.r#subpath_matching,
                 ),
                 to_pulumi_object_field(
-                    "target_url",
+                    "targetUrl",
                     &self.r#target_url,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#include_subdomains: {
-                        let field_value = match fields_map.get("include_subdomains") {
+                        let field_value = match fields_map.get("includeSubdomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_subdomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeSubdomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_path_suffix: {
-                        let field_value = match fields_map.get("preserve_path_suffix") {
+                        let field_value = match fields_map.get("preservePathSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_path_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preservePathSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_query_string: {
-                        let field_value = match fields_map.get("preserve_query_string") {
+                        let field_value = match fields_map.get("preserveQueryString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preserveQueryString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_url: {
-                        let field_value = match fields_map.get("source_url") {
+                        let field_value = match fields_map.get("sourceUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status_code: {
-                        let field_value = match fields_map.get("status_code") {
+                        let field_value = match fields_map.get("statusCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subpath_matching: {
-                        let field_value = match fields_map.get("subpath_matching") {
+                        let field_value = match fields_map.get("subpathMatching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subpath_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subpathMatching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_url: {
-                        let field_value = match fields_map.get("target_url") {
+                        let field_value = match fields_map.get("targetUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

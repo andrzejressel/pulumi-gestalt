@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_headers",
+                    "customHeaders",
                     &self.r#custom_headers,
                 ),
                 to_pulumi_object_field(
-                    "expected_status_code_ranges",
+                    "expectedStatusCodeRanges",
                     &self.r#expected_status_code_ranges,
                 ),
                 to_pulumi_object_field(
-                    "interval_in_seconds",
+                    "intervalInSeconds",
                     &self.r#interval_in_seconds,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_seconds",
+                    "timeoutInSeconds",
                     &self.r#timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "tolerated_number_of_failures",
+                    "toleratedNumberOfFailures",
                     &self.r#tolerated_number_of_failures,
                 ),
             ];
@@ -106,23 +106,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#custom_headers: {
-                        let field_value = match fields_map.get("custom_headers") {
+                        let field_value = match fields_map.get("customHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expected_status_code_ranges: {
-                        let field_value = match fields_map.get("expected_status_code_ranges") {
+                        let field_value = match fields_map.get("expectedStatusCodeRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expected_status_code_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expectedStatusCodeRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#interval_in_seconds: {
-                        let field_value = match fields_map.get("interval_in_seconds") {
+                        let field_value = match fields_map.get("intervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -148,16 +148,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_in_seconds: {
-                        let field_value = match fields_map.get("timeout_in_seconds") {
+                        let field_value = match fields_map.get("timeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tolerated_number_of_failures: {
-                        let field_value = match fields_map.get("tolerated_number_of_failures") {
+                        let field_value = match fields_map.get("toleratedNumberOfFailures") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tolerated_number_of_failures' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'toleratedNumberOfFailures' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

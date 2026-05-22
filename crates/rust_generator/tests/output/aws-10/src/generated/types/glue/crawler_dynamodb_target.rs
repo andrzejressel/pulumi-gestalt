@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cra
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "scan_all",
+                    "scanAll",
                     &self.r#scan_all,
                 ),
                 to_pulumi_object_field(
-                    "scan_rate",
+                    "scanRate",
                     &self.r#scan_rate,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scan_all: {
-                        let field_value = match fields_map.get("scan_all") {
+                        let field_value = match fields_map.get("scanAll") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scan_all' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scanAll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scan_rate: {
-                        let field_value = match fields_map.get("scan_rate") {
+                        let field_value = match fields_map.get("scanRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scan_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scanRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

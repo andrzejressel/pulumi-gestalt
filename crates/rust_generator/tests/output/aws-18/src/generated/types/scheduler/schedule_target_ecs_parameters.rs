@@ -77,15 +77,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capacity_provider_strategies",
+                    "capacityProviderStrategies",
                     &self.r#capacity_provider_strategies,
                 ),
                 to_pulumi_object_field(
-                    "enable_ecs_managed_tags",
+                    "enableEcsManagedTags",
                     &self.r#enable_ecs_managed_tags,
                 ),
                 to_pulumi_object_field(
-                    "enable_execute_command",
+                    "enableExecuteCommand",
                     &self.r#enable_execute_command,
                 ),
                 to_pulumi_object_field(
@@ -93,31 +93,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#group,
                 ),
                 to_pulumi_object_field(
-                    "launch_type",
+                    "launchType",
                     &self.r#launch_type,
                 ),
                 to_pulumi_object_field(
-                    "network_configuration",
+                    "networkConfiguration",
                     &self.r#network_configuration,
                 ),
                 to_pulumi_object_field(
-                    "placement_constraints",
+                    "placementConstraints",
                     &self.r#placement_constraints,
                 ),
                 to_pulumi_object_field(
-                    "placement_strategies",
+                    "placementStrategies",
                     &self.r#placement_strategies,
                 ),
                 to_pulumi_object_field(
-                    "platform_version",
+                    "platformVersion",
                     &self.r#platform_version,
                 ),
                 to_pulumi_object_field(
-                    "propagate_tags",
+                    "propagateTags",
                     &self.r#propagate_tags,
                 ),
                 to_pulumi_object_field(
-                    "reference_id",
+                    "referenceId",
                     &self.r#reference_id,
                 ),
                 to_pulumi_object_field(
@@ -125,11 +125,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "task_count",
+                    "taskCount",
                     &self.r#task_count,
                 ),
                 to_pulumi_object_field(
-                    "task_definition_arn",
+                    "taskDefinitionArn",
                     &self.r#task_definition_arn,
                 ),
             ];
@@ -156,23 +156,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#capacity_provider_strategies: {
-                        let field_value = match fields_map.get("capacity_provider_strategies") {
+                        let field_value = match fields_map.get("capacityProviderStrategies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_provider_strategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityProviderStrategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_ecs_managed_tags: {
-                        let field_value = match fields_map.get("enable_ecs_managed_tags") {
+                        let field_value = match fields_map.get("enableEcsManagedTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_ecs_managed_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableEcsManagedTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_execute_command: {
-                        let field_value = match fields_map.get("enable_execute_command") {
+                        let field_value = match fields_map.get("enableExecuteCommand") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_execute_command' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableExecuteCommand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -184,51 +184,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_type: {
-                        let field_value = match fields_map.get("launch_type") {
+                        let field_value = match fields_map.get("launchType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_configuration: {
-                        let field_value = match fields_map.get("network_configuration") {
+                        let field_value = match fields_map.get("networkConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#placement_constraints: {
-                        let field_value = match fields_map.get("placement_constraints") {
+                        let field_value = match fields_map.get("placementConstraints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'placement_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'placementConstraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#placement_strategies: {
-                        let field_value = match fields_map.get("placement_strategies") {
+                        let field_value = match fields_map.get("placementStrategies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'placement_strategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'placementStrategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#platform_version: {
-                        let field_value = match fields_map.get("platform_version") {
+                        let field_value = match fields_map.get("platformVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'platform_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'platformVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#propagate_tags: {
-                        let field_value = match fields_map.get("propagate_tags") {
+                        let field_value = match fields_map.get("propagateTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'propagate_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'propagateTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reference_id: {
-                        let field_value = match fields_map.get("reference_id") {
+                        let field_value = match fields_map.get("referenceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reference_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'referenceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -240,16 +240,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_count: {
-                        let field_value = match fields_map.get("task_count") {
+                        let field_value = match fields_map.get("taskCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_definition_arn: {
-                        let field_value = match fields_map.get("task_definition_arn") {
+                        let field_value = match fields_map.get("taskDefinitionArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_definition_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskDefinitionArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_description_names",
+                    "audioDescriptionNames",
                     &self.r#audio_description_names,
                 ),
                 to_pulumi_object_field(
-                    "caption_description_names",
+                    "captionDescriptionNames",
                     &self.r#caption_description_names,
                 ),
                 to_pulumi_object_field(
-                    "output_name",
+                    "outputName",
                     &self.r#output_name,
                 ),
                 to_pulumi_object_field(
-                    "output_settings",
+                    "outputSettings",
                     &self.r#output_settings,
                 ),
                 to_pulumi_object_field(
-                    "video_description_name",
+                    "videoDescriptionName",
                     &self.r#video_description_name,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_description_names: {
-                        let field_value = match fields_map.get("audio_description_names") {
+                        let field_value = match fields_map.get("audioDescriptionNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_description_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioDescriptionNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#caption_description_names: {
-                        let field_value = match fields_map.get("caption_description_names") {
+                        let field_value = match fields_map.get("captionDescriptionNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'caption_description_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'captionDescriptionNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_name: {
-                        let field_value = match fields_map.get("output_name") {
+                        let field_value = match fields_map.get("outputName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_settings: {
-                        let field_value = match fields_map.get("output_settings") {
+                        let field_value = match fields_map.get("outputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#video_description_name: {
-                        let field_value = match fields_map.get("video_description_name") {
+                        let field_value = match fields_map.get("videoDescriptionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'video_description_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'videoDescriptionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

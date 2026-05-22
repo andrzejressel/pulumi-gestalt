@@ -49,11 +49,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_retention_settings",
+                    "backupRetentionSettings",
                     &self.r#backup_retention_settings,
                 ),
                 to_pulumi_object_field(
-                    "binary_log_enabled",
+                    "binaryLogEnabled",
                     &self.r#binary_log_enabled,
                 ),
                 to_pulumi_object_field(
@@ -65,15 +65,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "point_in_time_recovery_enabled",
+                    "pointInTimeRecoveryEnabled",
                     &self.r#point_in_time_recovery_enabled,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "transaction_log_retention_days",
+                    "transactionLogRetentionDays",
                     &self.r#transaction_log_retention_days,
                 ),
             ];
@@ -100,16 +100,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#backup_retention_settings: {
-                        let field_value = match fields_map.get("backup_retention_settings") {
+                        let field_value = match fields_map.get("backupRetentionSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_retention_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupRetentionSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#binary_log_enabled: {
-                        let field_value = match fields_map.get("binary_log_enabled") {
+                        let field_value = match fields_map.get("binaryLogEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'binary_log_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'binaryLogEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -128,23 +128,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#point_in_time_recovery_enabled: {
-                        let field_value = match fields_map.get("point_in_time_recovery_enabled") {
+                        let field_value = match fields_map.get("pointInTimeRecoveryEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'point_in_time_recovery_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pointInTimeRecoveryEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time: {
-                        let field_value = match fields_map.get("start_time") {
+                        let field_value = match fields_map.get("startTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transaction_log_retention_days: {
-                        let field_value = match fields_map.get("transaction_log_retention_days") {
+                        let field_value = match fields_map.get("transactionLogRetentionDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transaction_log_retention_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transactionLogRetentionDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

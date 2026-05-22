@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_locked",
+                    "isLocked",
                     &self.r#is_locked,
                 ),
                 to_pulumi_object_field(
-                    "retention_period",
+                    "retentionPeriod",
                     &self.r#retention_period,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#is_locked: {
-                        let field_value = match fields_map.get("is_locked") {
+                        let field_value = match fields_map.get("isLocked") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_locked' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isLocked' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_period: {
-                        let field_value = match fields_map.get("retention_period") {
+                        let field_value = match fields_map.get("retentionPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

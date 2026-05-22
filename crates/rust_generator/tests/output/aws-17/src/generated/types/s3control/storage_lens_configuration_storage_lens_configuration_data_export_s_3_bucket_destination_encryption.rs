@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "sse_kms",
+                    "sseKms",
                     &self.r#sse_kms,
                 ),
                 to_pulumi_object_field(
-                    "sse_s_3_s",
+                    "sseS3s",
                     &self.r#sse_s_3_s,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#sse_kms: {
-                        let field_value = match fields_map.get("sse_kms") {
+                        let field_value = match fields_map.get("sseKms") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sse_kms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sseKms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sse_s_3_s: {
-                        let field_value = match fields_map.get("sse_s_3_s") {
+                        let field_value = match fields_map.get("sseS3s") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sse_s_3_s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sseS3s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

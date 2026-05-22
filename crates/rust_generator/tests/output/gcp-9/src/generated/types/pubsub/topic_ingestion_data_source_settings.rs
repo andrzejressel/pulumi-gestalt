@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_kinesis",
+                    "awsKinesis",
                     &self.r#aws_kinesis,
                 ),
                 to_pulumi_object_field(
-                    "cloud_storage",
+                    "cloudStorage",
                     &self.r#cloud_storage,
                 ),
                 to_pulumi_object_field(
-                    "platform_logs_settings",
+                    "platformLogsSettings",
                     &self.r#platform_logs_settings,
                 ),
             ];
@@ -70,23 +70,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#aws_kinesis: {
-                        let field_value = match fields_map.get("aws_kinesis") {
+                        let field_value = match fields_map.get("awsKinesis") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_kinesis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsKinesis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_storage: {
-                        let field_value = match fields_map.get("cloud_storage") {
+                        let field_value = match fields_map.get("cloudStorage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudStorage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#platform_logs_settings: {
-                        let field_value = match fields_map.get("platform_logs_settings") {
+                        let field_value = match fields_map.get("platformLogsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'platform_logs_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'platformLogsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

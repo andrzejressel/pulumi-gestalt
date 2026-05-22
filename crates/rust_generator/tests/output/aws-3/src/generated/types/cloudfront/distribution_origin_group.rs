@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "failover_criteria",
+                    "failoverCriteria",
                     &self.r#failover_criteria,
                 ),
                 to_pulumi_object_field(
@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#members,
                 ),
                 to_pulumi_object_field(
-                    "origin_id",
+                    "originId",
                     &self.r#origin_id,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#failover_criteria: {
-                        let field_value = match fields_map.get("failover_criteria") {
+                        let field_value = match fields_map.get("failoverCriteria") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failover_criteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failoverCriteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -79,9 +79,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_id: {
-                        let field_value = match fields_map.get("origin_id") {
+                        let field_value = match fields_map.get("originId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'origin_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'originId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

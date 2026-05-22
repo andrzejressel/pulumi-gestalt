@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_debug_log_delivery",
+                    "enableDebugLogDelivery",
                     &self.r#enable_debug_log_delivery,
                 ),
                 to_pulumi_object_field(
-                    "policy_runtime",
+                    "policyRuntime",
                     &self.r#policy_runtime,
                 ),
                 to_pulumi_object_field(
-                    "policy_text",
+                    "policyText",
                     &self.r#policy_text,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#enable_debug_log_delivery: {
-                        let field_value = match fields_map.get("enable_debug_log_delivery") {
+                        let field_value = match fields_map.get("enableDebugLogDelivery") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_debug_log_delivery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableDebugLogDelivery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_runtime: {
-                        let field_value = match fields_map.get("policy_runtime") {
+                        let field_value = match fields_map.get("policyRuntime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_runtime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyRuntime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_text: {
-                        let field_value = match fields_map.get("policy_text") {
+                        let field_value = match fields_map.get("policyText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

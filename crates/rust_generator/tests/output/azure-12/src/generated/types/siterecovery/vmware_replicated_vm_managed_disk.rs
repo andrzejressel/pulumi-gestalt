@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vmw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_id",
+                    "diskId",
                     &self.r#disk_id,
                 ),
                 to_pulumi_object_field(
-                    "log_storage_account_id",
+                    "logStorageAccountId",
                     &self.r#log_storage_account_id,
                 ),
                 to_pulumi_object_field(
-                    "target_disk_encryption_set_id",
+                    "targetDiskEncryptionSetId",
                     &self.r#target_disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "target_disk_type",
+                    "targetDiskType",
                     &self.r#target_disk_type,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#disk_id: {
-                        let field_value = match fields_map.get("disk_id") {
+                        let field_value = match fields_map.get("diskId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_storage_account_id: {
-                        let field_value = match fields_map.get("log_storage_account_id") {
+                        let field_value = match fields_map.get("logStorageAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_storage_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logStorageAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_disk_encryption_set_id: {
-                        let field_value = match fields_map.get("target_disk_encryption_set_id") {
+                        let field_value = match fields_map.get("targetDiskEncryptionSetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_disk_encryption_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetDiskEncryptionSetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_disk_type: {
-                        let field_value = match fields_map.get("target_disk_type") {
+                        let field_value = match fields_map.get("targetDiskType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetDiskType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

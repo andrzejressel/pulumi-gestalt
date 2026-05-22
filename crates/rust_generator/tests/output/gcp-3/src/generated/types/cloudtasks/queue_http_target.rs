@@ -57,23 +57,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "header_overrides",
+                    "headerOverrides",
                     &self.r#header_overrides,
                 ),
                 to_pulumi_object_field(
-                    "http_method",
+                    "httpMethod",
                     &self.r#http_method,
                 ),
                 to_pulumi_object_field(
-                    "oauth_token",
+                    "oauthToken",
                     &self.r#oauth_token,
                 ),
                 to_pulumi_object_field(
-                    "oidc_token",
+                    "oidcToken",
                     &self.r#oidc_token,
                 ),
                 to_pulumi_object_field(
-                    "uri_override",
+                    "uriOverride",
                     &self.r#uri_override,
                 ),
             ];
@@ -100,37 +100,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
 
                 Ok(Self {
                     r#header_overrides: {
-                        let field_value = match fields_map.get("header_overrides") {
+                        let field_value = match fields_map.get("headerOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_method: {
-                        let field_value = match fields_map.get("http_method") {
+                        let field_value = match fields_map.get("httpMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_token: {
-                        let field_value = match fields_map.get("oauth_token") {
+                        let field_value = match fields_map.get("oauthToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauthToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oidc_token: {
-                        let field_value = match fields_map.get("oidc_token") {
+                        let field_value = match fields_map.get("oidcToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oidc_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oidcToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#uri_override: {
-                        let field_value = match fields_map.get("uri_override") {
+                        let field_value = match fields_map.get("uriOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'uri_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'uriOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

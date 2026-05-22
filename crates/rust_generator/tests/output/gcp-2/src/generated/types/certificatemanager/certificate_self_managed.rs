@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_pem",
+                    "certificatePem",
                     &self.r#certificate_pem,
                 ),
                 to_pulumi_object_field(
-                    "pem_certificate",
+                    "pemCertificate",
                     &self.r#pem_certificate,
                 ),
                 to_pulumi_object_field(
-                    "pem_private_key",
+                    "pemPrivateKey",
                     &self.r#pem_private_key,
                 ),
                 to_pulumi_object_field(
-                    "private_key_pem",
+                    "privateKeyPem",
                     &self.r#private_key_pem,
                 ),
             ];
@@ -86,30 +86,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#certificate_pem: {
-                        let field_value = match fields_map.get("certificate_pem") {
+                        let field_value = match fields_map.get("certificatePem") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_pem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificatePem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pem_certificate: {
-                        let field_value = match fields_map.get("pem_certificate") {
+                        let field_value = match fields_map.get("pemCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pem_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pemCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pem_private_key: {
-                        let field_value = match fields_map.get("pem_private_key") {
+                        let field_value = match fields_map.get("pemPrivateKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pem_private_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pemPrivateKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_key_pem: {
-                        let field_value = match fields_map.get("private_key_pem") {
+                        let field_value = match fields_map.get("privateKeyPem") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_key_pem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateKeyPem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

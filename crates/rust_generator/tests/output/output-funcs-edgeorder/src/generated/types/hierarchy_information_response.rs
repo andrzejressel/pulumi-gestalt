@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hie
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "configuration_name",
+                    "configurationName",
                     &self.r#configuration_name,
                 ),
                 to_pulumi_object_field(
-                    "product_family_name",
+                    "productFamilyName",
                     &self.r#product_family_name,
                 ),
                 to_pulumi_object_field(
-                    "product_line_name",
+                    "productLineName",
                     &self.r#product_line_name,
                 ),
                 to_pulumi_object_field(
-                    "product_name",
+                    "productName",
                     &self.r#product_name,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#configuration_name: {
-                        let field_value = match fields_map.get("configuration_name") {
+                        let field_value = match fields_map.get("configurationName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configuration_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configurationName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#product_family_name: {
-                        let field_value = match fields_map.get("product_family_name") {
+                        let field_value = match fields_map.get("productFamilyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'product_family_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'productFamilyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#product_line_name: {
-                        let field_value = match fields_map.get("product_line_name") {
+                        let field_value = match fields_map.get("productLineName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'product_line_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'productLineName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#product_name: {
-                        let field_value = match fields_map.get("product_name") {
+                        let field_value = match fields_map.get("productName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'product_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'productName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

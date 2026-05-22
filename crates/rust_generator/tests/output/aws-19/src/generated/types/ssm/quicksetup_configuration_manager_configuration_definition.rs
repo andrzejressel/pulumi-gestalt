@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Qui
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "local_deployment_administration_role_arn",
+                    "localDeploymentAdministrationRoleArn",
                     &self.r#local_deployment_administration_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "local_deployment_execution_role_name",
+                    "localDeploymentExecutionRoleName",
                     &self.r#local_deployment_execution_role_name,
                 ),
                 to_pulumi_object_field(
@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Qui
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "type_version",
+                    "typeVersion",
                     &self.r#type_version,
                 ),
             ];
@@ -95,16 +95,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_deployment_administration_role_arn: {
-                        let field_value = match fields_map.get("local_deployment_administration_role_arn") {
+                        let field_value = match fields_map.get("localDeploymentAdministrationRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_deployment_administration_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localDeploymentAdministrationRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_deployment_execution_role_name: {
-                        let field_value = match fields_map.get("local_deployment_execution_role_name") {
+                        let field_value = match fields_map.get("localDeploymentExecutionRoleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_deployment_execution_role_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localDeploymentExecutionRoleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -116,16 +116,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_version: {
-                        let field_value = match fields_map.get("type_version") {
+                        let field_value = match fields_map.get("typeVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'typeVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

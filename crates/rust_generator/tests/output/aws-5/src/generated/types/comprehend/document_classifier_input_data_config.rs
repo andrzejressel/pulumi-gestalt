@@ -44,23 +44,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "augmented_manifests",
+                    "augmentedManifests",
                     &self.r#augmented_manifests,
                 ),
                 to_pulumi_object_field(
-                    "data_format",
+                    "dataFormat",
                     &self.r#data_format,
                 ),
                 to_pulumi_object_field(
-                    "label_delimiter",
+                    "labelDelimiter",
                     &self.r#label_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "s_3_uri",
+                    "s3Uri",
                     &self.r#s_3_uri,
                 ),
                 to_pulumi_object_field(
-                    "test_s_3_uri",
+                    "testS3Uri",
                     &self.r#test_s_3_uri,
                 ),
             ];
@@ -87,37 +87,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#augmented_manifests: {
-                        let field_value = match fields_map.get("augmented_manifests") {
+                        let field_value = match fields_map.get("augmentedManifests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'augmented_manifests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'augmentedManifests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_format: {
-                        let field_value = match fields_map.get("data_format") {
+                        let field_value = match fields_map.get("dataFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#label_delimiter: {
-                        let field_value = match fields_map.get("label_delimiter") {
+                        let field_value = match fields_map.get("labelDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'label_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'labelDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_uri: {
-                        let field_value = match fields_map.get("s_3_uri") {
+                        let field_value = match fields_map.get("s3Uri") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#test_s_3_uri: {
-                        let field_value = match fields_map.get("test_s_3_uri") {
+                        let field_value = match fields_map.get("testS3Uri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'test_s_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'testS3Uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

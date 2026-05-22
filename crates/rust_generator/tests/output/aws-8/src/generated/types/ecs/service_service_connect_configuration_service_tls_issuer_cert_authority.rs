@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_pca_authority_arn",
+                    "awsPcaAuthorityArn",
                     &self.r#aws_pca_authority_arn,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#aws_pca_authority_arn: {
-                        let field_value = match fields_map.get("aws_pca_authority_arn") {
+                        let field_value = match fields_map.get("awsPcaAuthorityArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_pca_authority_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsPcaAuthorityArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

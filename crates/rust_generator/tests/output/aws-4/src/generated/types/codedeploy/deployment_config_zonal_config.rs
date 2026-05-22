@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "first_zone_monitor_duration_in_seconds",
+                    "firstZoneMonitorDurationInSeconds",
                     &self.r#first_zone_monitor_duration_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "minimum_healthy_hosts_per_zone",
+                    "minimumHealthyHostsPerZone",
                     &self.r#minimum_healthy_hosts_per_zone,
                 ),
                 to_pulumi_object_field(
-                    "monitor_duration_in_seconds",
+                    "monitorDurationInSeconds",
                     &self.r#monitor_duration_in_seconds,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#first_zone_monitor_duration_in_seconds: {
-                        let field_value = match fields_map.get("first_zone_monitor_duration_in_seconds") {
+                        let field_value = match fields_map.get("firstZoneMonitorDurationInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'first_zone_monitor_duration_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firstZoneMonitorDurationInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_healthy_hosts_per_zone: {
-                        let field_value = match fields_map.get("minimum_healthy_hosts_per_zone") {
+                        let field_value = match fields_map.get("minimumHealthyHostsPerZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_healthy_hosts_per_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumHealthyHostsPerZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitor_duration_in_seconds: {
-                        let field_value = match fields_map.get("monitor_duration_in_seconds") {
+                        let field_value = match fields_map.get("monitorDurationInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monitor_duration_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monitorDurationInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

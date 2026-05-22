@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#overrides,
                 ),
                 to_pulumi_object_field(
-                    "replica_selections",
+                    "replicaSelections",
                     &self.r#replica_selections,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replica_selections: {
-                        let field_value = match fields_map.get("replica_selections") {
+                        let field_value = match fields_map.get("replicaSelections") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replica_selections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicaSelections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

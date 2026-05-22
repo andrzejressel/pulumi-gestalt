@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pipeline_execution_start_condition",
+                    "pipelineExecutionStartCondition",
                     &self.r#pipeline_execution_start_condition,
                 ),
                 to_pulumi_object_field(
-                    "schedule_expression",
+                    "scheduleExpression",
                     &self.r#schedule_expression,
                 ),
                 to_pulumi_object_field(
@@ -68,16 +68,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#pipeline_execution_start_condition: {
-                        let field_value = match fields_map.get("pipeline_execution_start_condition") {
+                        let field_value = match fields_map.get("pipelineExecutionStartCondition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pipeline_execution_start_condition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pipelineExecutionStartCondition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schedule_expression: {
-                        let field_value = match fields_map.get("schedule_expression") {
+                        let field_value = match fields_map.get("scheduleExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schedule_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduleExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

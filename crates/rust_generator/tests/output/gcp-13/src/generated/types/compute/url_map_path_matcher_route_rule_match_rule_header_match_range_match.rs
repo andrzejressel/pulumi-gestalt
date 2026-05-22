@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "range_end",
+                    "rangeEnd",
                     &self.r#range_end,
                 ),
                 to_pulumi_object_field(
-                    "range_start",
+                    "rangeStart",
                     &self.r#range_start,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#range_end: {
-                        let field_value = match fields_map.get("range_end") {
+                        let field_value = match fields_map.get("rangeEnd") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_end' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeEnd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_start: {
-                        let field_value = match fields_map.get("range_start") {
+                        let field_value = match fields_map.get("rangeStart") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_start' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeStart' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

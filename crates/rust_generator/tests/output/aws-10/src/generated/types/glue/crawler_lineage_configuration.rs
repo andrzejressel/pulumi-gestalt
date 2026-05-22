@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "crawler_lineage_settings",
+                    "crawlerLineageSettings",
                     &self.r#crawler_lineage_settings,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#crawler_lineage_settings: {
-                        let field_value = match fields_map.get("crawler_lineage_settings") {
+                        let field_value = match fields_map.get("crawlerLineageSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crawler_lineage_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crawlerLineageSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

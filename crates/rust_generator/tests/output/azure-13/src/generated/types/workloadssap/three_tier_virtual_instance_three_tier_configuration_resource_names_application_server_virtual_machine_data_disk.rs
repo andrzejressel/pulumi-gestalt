@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
                     &self.r#names,
                 ),
                 to_pulumi_object_field(
-                    "volume_name",
+                    "volumeName",
                     &self.r#volume_name,
                 ),
             ];
@@ -69,9 +69,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_name: {
-                        let field_value = match fields_map.get("volume_name") {
+                        let field_value = match fields_map.get("volumeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

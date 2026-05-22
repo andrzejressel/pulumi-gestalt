@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_indexes",
+                    "groupIndexes",
                     &self.r#group_indexes,
                 ),
                 to_pulumi_object_field(
@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#group_indexes: {
-                        let field_value = match fields_map.get("group_indexes") {
+                        let field_value = match fields_map.get("groupIndexes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_indexes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupIndexes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

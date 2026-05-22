@@ -54,35 +54,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_resource_group_name",
+                    "appResourceGroupName",
                     &self.r#app_resource_group_name,
                 ),
                 to_pulumi_object_field(
-                    "application_server_configuration",
+                    "applicationServerConfiguration",
                     &self.r#application_server_configuration,
                 ),
                 to_pulumi_object_field(
-                    "central_server_configuration",
+                    "centralServerConfiguration",
                     &self.r#central_server_configuration,
                 ),
                 to_pulumi_object_field(
-                    "database_server_configuration",
+                    "databaseServerConfiguration",
                     &self.r#database_server_configuration,
                 ),
                 to_pulumi_object_field(
-                    "high_availability_type",
+                    "highAvailabilityType",
                     &self.r#high_availability_type,
                 ),
                 to_pulumi_object_field(
-                    "resource_names",
+                    "resourceNames",
                     &self.r#resource_names,
                 ),
                 to_pulumi_object_field(
-                    "secondary_ip_enabled",
+                    "secondaryIpEnabled",
                     &self.r#secondary_ip_enabled,
                 ),
                 to_pulumi_object_field(
-                    "transport_create_and_mount",
+                    "transportCreateAndMount",
                     &self.r#transport_create_and_mount,
                 ),
             ];
@@ -109,58 +109,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#app_resource_group_name: {
-                        let field_value = match fields_map.get("app_resource_group_name") {
+                        let field_value = match fields_map.get("appResourceGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_resource_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appResourceGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#application_server_configuration: {
-                        let field_value = match fields_map.get("application_server_configuration") {
+                        let field_value = match fields_map.get("applicationServerConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_server_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationServerConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#central_server_configuration: {
-                        let field_value = match fields_map.get("central_server_configuration") {
+                        let field_value = match fields_map.get("centralServerConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'central_server_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'centralServerConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_server_configuration: {
-                        let field_value = match fields_map.get("database_server_configuration") {
+                        let field_value = match fields_map.get("databaseServerConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_server_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseServerConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#high_availability_type: {
-                        let field_value = match fields_map.get("high_availability_type") {
+                        let field_value = match fields_map.get("highAvailabilityType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'high_availability_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'highAvailabilityType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_names: {
-                        let field_value = match fields_map.get("resource_names") {
+                        let field_value = match fields_map.get("resourceNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_ip_enabled: {
-                        let field_value = match fields_map.get("secondary_ip_enabled") {
+                        let field_value = match fields_map.get("secondaryIpEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_ip_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryIpEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transport_create_and_mount: {
-                        let field_value = match fields_map.get("transport_create_and_mount") {
+                        let field_value = match fields_map.get("transportCreateAndMount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transport_create_and_mount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transportCreateAndMount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

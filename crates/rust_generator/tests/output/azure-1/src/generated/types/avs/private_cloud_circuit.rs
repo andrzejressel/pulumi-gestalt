@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "express_route_id",
+                    "expressRouteId",
                     &self.r#express_route_id,
                 ),
                 to_pulumi_object_field(
-                    "express_route_private_peering_id",
+                    "expressRoutePrivatePeeringId",
                     &self.r#express_route_private_peering_id,
                 ),
                 to_pulumi_object_field(
-                    "primary_subnet_cidr",
+                    "primarySubnetCidr",
                     &self.r#primary_subnet_cidr,
                 ),
                 to_pulumi_object_field(
-                    "secondary_subnet_cidr",
+                    "secondarySubnetCidr",
                     &self.r#secondary_subnet_cidr,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#express_route_id: {
-                        let field_value = match fields_map.get("express_route_id") {
+                        let field_value = match fields_map.get("expressRouteId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'express_route_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expressRouteId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#express_route_private_peering_id: {
-                        let field_value = match fields_map.get("express_route_private_peering_id") {
+                        let field_value = match fields_map.get("expressRoutePrivatePeeringId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'express_route_private_peering_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expressRoutePrivatePeeringId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_subnet_cidr: {
-                        let field_value = match fields_map.get("primary_subnet_cidr") {
+                        let field_value = match fields_map.get("primarySubnetCidr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_subnet_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primarySubnetCidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_subnet_cidr: {
-                        let field_value = match fields_map.get("secondary_subnet_cidr") {
+                        let field_value = match fields_map.get("secondarySubnetCidr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_subnet_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondarySubnetCidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

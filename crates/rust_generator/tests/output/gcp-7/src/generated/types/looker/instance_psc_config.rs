@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_vpcs",
+                    "allowedVpcs",
                     &self.r#allowed_vpcs,
                 ),
                 to_pulumi_object_field(
-                    "looker_service_attachment_uri",
+                    "lookerServiceAttachmentUri",
                     &self.r#looker_service_attachment_uri,
                 ),
                 to_pulumi_object_field(
-                    "service_attachments",
+                    "serviceAttachments",
                     &self.r#service_attachments,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#allowed_vpcs: {
-                        let field_value = match fields_map.get("allowed_vpcs") {
+                        let field_value = match fields_map.get("allowedVpcs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_vpcs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedVpcs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#looker_service_attachment_uri: {
-                        let field_value = match fields_map.get("looker_service_attachment_uri") {
+                        let field_value = match fields_map.get("lookerServiceAttachmentUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'looker_service_attachment_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lookerServiceAttachmentUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_attachments: {
-                        let field_value = match fields_map.get("service_attachments") {
+                        let field_value = match fields_map.get("serviceAttachments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_attachments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAttachments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

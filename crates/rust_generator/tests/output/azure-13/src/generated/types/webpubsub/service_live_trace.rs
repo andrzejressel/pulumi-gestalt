@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connectivity_logs_enabled",
+                    "connectivityLogsEnabled",
                     &self.r#connectivity_logs_enabled,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "http_request_logs_enabled",
+                    "httpRequestLogsEnabled",
                     &self.r#http_request_logs_enabled,
                 ),
                 to_pulumi_object_field(
-                    "messaging_logs_enabled",
+                    "messagingLogsEnabled",
                     &self.r#messaging_logs_enabled,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#connectivity_logs_enabled: {
-                        let field_value = match fields_map.get("connectivity_logs_enabled") {
+                        let field_value = match fields_map.get("connectivityLogsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connectivity_logs_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectivityLogsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_request_logs_enabled: {
-                        let field_value = match fields_map.get("http_request_logs_enabled") {
+                        let field_value = match fields_map.get("httpRequestLogsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_request_logs_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpRequestLogsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#messaging_logs_enabled: {
-                        let field_value = match fields_map.get("messaging_logs_enabled") {
+                        let field_value = match fields_map.get("messagingLogsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'messaging_logs_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messagingLogsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

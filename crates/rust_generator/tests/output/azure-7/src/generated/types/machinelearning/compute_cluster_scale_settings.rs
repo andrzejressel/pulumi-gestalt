@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_node_count",
+                    "maxNodeCount",
                     &self.r#max_node_count,
                 ),
                 to_pulumi_object_field(
-                    "min_node_count",
+                    "minNodeCount",
                     &self.r#min_node_count,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_nodes_after_idle_duration",
+                    "scaleDownNodesAfterIdleDuration",
                     &self.r#scale_down_nodes_after_idle_duration,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#max_node_count: {
-                        let field_value = match fields_map.get("max_node_count") {
+                        let field_value = match fields_map.get("maxNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_node_count: {
-                        let field_value = match fields_map.get("min_node_count") {
+                        let field_value = match fields_map.get("minNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_nodes_after_idle_duration: {
-                        let field_value = match fields_map.get("scale_down_nodes_after_idle_duration") {
+                        let field_value = match fields_map.get("scaleDownNodesAfterIdleDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_nodes_after_idle_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownNodesAfterIdleDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "nlb_resource",
+                    "nlbResource",
                     &self.r#nlb_resource,
                 ),
                 to_pulumi_object_field(
-                    "r_53_resource",
+                    "r53Resource",
                     &self.r#r_53_resource,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#nlb_resource: {
-                        let field_value = match fields_map.get("nlb_resource") {
+                        let field_value = match fields_map.get("nlbResource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nlb_resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nlbResource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#r_53_resource: {
-                        let field_value = match fields_map.get("r_53_resource") {
+                        let field_value = match fields_map.get("r53Resource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'r_53_resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'r53Resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

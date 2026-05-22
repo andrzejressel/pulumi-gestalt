@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "conditional_cases",
+                    "conditionalCases",
                     &self.r#conditional_cases,
                 ),
                 to_pulumi_object_field(
@@ -54,11 +54,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
                     &self.r#messages,
                 ),
                 to_pulumi_object_field(
-                    "return_partial_responses",
+                    "returnPartialResponses",
                     &self.r#return_partial_responses,
                 ),
                 to_pulumi_object_field(
-                    "set_parameter_actions",
+                    "setParameterActions",
                     &self.r#set_parameter_actions,
                 ),
                 to_pulumi_object_field(
@@ -93,9 +93,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#conditional_cases: {
-                        let field_value = match fields_map.get("conditional_cases") {
+                        let field_value = match fields_map.get("conditionalCases") {
                             Some(value) => value,
-                            None => bail!("Missing field 'conditional_cases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionalCases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -107,16 +107,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#return_partial_responses: {
-                        let field_value = match fields_map.get("return_partial_responses") {
+                        let field_value = match fields_map.get("returnPartialResponses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'return_partial_responses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'returnPartialResponses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#set_parameter_actions: {
-                        let field_value = match fields_map.get("set_parameter_actions") {
+                        let field_value = match fields_map.get("setParameterActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'set_parameter_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'setParameterActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "worker_configuration",
+                    "workerConfiguration",
                     &self.r#worker_configuration,
                 ),
                 to_pulumi_object_field(
-                    "worker_count",
+                    "workerCount",
                     &self.r#worker_count,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#worker_configuration: {
-                        let field_value = match fields_map.get("worker_configuration") {
+                        let field_value = match fields_map.get("workerConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'worker_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workerConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#worker_count: {
-                        let field_value = match fields_map.get("worker_count") {
+                        let field_value = match fields_map.get("workerCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'worker_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workerCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

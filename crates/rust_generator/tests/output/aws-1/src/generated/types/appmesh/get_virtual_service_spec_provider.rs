@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "virtual_nodes",
+                    "virtualNodes",
                     &self.r#virtual_nodes,
                 ),
                 to_pulumi_object_field(
-                    "virtual_routers",
+                    "virtualRouters",
                     &self.r#virtual_routers,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#virtual_nodes: {
-                        let field_value = match fields_map.get("virtual_nodes") {
+                        let field_value = match fields_map.get("virtualNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_routers: {
-                        let field_value = match fields_map.get("virtual_routers") {
+                        let field_value = match fields_map.get("virtualRouters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_routers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualRouters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

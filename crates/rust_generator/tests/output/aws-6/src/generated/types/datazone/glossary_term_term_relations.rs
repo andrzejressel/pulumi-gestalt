@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Glo
                     &self.r#classifies,
                 ),
                 to_pulumi_object_field(
-                    "is_as",
+                    "isAs",
                     &self.r#is_as,
                 ),
             ];
@@ -64,9 +64,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_as: {
-                        let field_value = match fields_map.get("is_as") {
+                        let field_value = match fields_map.get("isAs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_as' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isAs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

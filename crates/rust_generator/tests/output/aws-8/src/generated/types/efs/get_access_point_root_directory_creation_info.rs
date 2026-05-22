@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "owner_gid",
+                    "ownerGid",
                     &self.r#owner_gid,
                 ),
                 to_pulumi_object_field(
-                    "owner_uid",
+                    "ownerUid",
                     &self.r#owner_uid,
                 ),
                 to_pulumi_object_field(
@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#owner_gid: {
-                        let field_value = match fields_map.get("owner_gid") {
+                        let field_value = match fields_map.get("ownerGid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'owner_gid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ownerGid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#owner_uid: {
-                        let field_value = match fields_map.get("owner_uid") {
+                        let field_value = match fields_map.get("ownerUid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'owner_uid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ownerUid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

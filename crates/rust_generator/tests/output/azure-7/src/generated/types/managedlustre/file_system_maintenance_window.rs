@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_week",
+                    "dayOfWeek",
                     &self.r#day_of_week,
                 ),
                 to_pulumi_object_field(
-                    "time_of_day_in_utc",
+                    "timeOfDayInUtc",
                     &self.r#time_of_day_in_utc,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#day_of_week: {
-                        let field_value = match fields_map.get("day_of_week") {
+                        let field_value = match fields_map.get("dayOfWeek") {
                             Some(value) => value,
-                            None => bail!("Missing field 'day_of_week' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dayOfWeek' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_of_day_in_utc: {
-                        let field_value = match fields_map.get("time_of_day_in_utc") {
+                        let field_value = match fields_map.get("timeOfDayInUtc") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_of_day_in_utc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeOfDayInUtc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

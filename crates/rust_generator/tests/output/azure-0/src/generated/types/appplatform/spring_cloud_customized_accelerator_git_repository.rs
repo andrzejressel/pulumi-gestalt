@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_auth",
+                    "basicAuth",
                     &self.r#basic_auth,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#branch,
                 ),
                 to_pulumi_object_field(
-                    "ca_certificate_id",
+                    "caCertificateId",
                     &self.r#ca_certificate_id,
                 ),
                 to_pulumi_object_field(
@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#commit,
                 ),
                 to_pulumi_object_field(
-                    "git_tag",
+                    "gitTag",
                     &self.r#git_tag,
                 ),
                 to_pulumi_object_field(
-                    "interval_in_seconds",
+                    "intervalInSeconds",
                     &self.r#interval_in_seconds,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "ssh_auth",
+                    "sshAuth",
                     &self.r#ssh_auth,
                 ),
                 to_pulumi_object_field(
@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#basic_auth: {
-                        let field_value = match fields_map.get("basic_auth") {
+                        let field_value = match fields_map.get("basicAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'basic_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'basicAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -128,9 +128,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ca_certificate_id: {
-                        let field_value = match fields_map.get("ca_certificate_id") {
+                        let field_value = match fields_map.get("caCertificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ca_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caCertificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,16 +142,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#git_tag: {
-                        let field_value = match fields_map.get("git_tag") {
+                        let field_value = match fields_map.get("gitTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'git_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gitTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#interval_in_seconds: {
-                        let field_value = match fields_map.get("interval_in_seconds") {
+                        let field_value = match fields_map.get("intervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -163,9 +163,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssh_auth: {
-                        let field_value = match fields_map.get("ssh_auth") {
+                        let field_value = match fields_map.get("sshAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssh_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sshAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

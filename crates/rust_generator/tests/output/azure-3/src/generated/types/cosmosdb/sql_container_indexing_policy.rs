@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sql
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "composite_indices",
+                    "compositeIndices",
                     &self.r#composite_indices,
                 ),
                 to_pulumi_object_field(
-                    "excluded_paths",
+                    "excludedPaths",
                     &self.r#excluded_paths,
                 ),
                 to_pulumi_object_field(
-                    "included_paths",
+                    "includedPaths",
                     &self.r#included_paths,
                 ),
                 to_pulumi_object_field(
-                    "indexing_mode",
+                    "indexingMode",
                     &self.r#indexing_mode,
                 ),
                 to_pulumi_object_field(
-                    "spatial_indices",
+                    "spatialIndices",
                     &self.r#spatial_indices,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#composite_indices: {
-                        let field_value = match fields_map.get("composite_indices") {
+                        let field_value = match fields_map.get("compositeIndices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'composite_indices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compositeIndices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_paths: {
-                        let field_value = match fields_map.get("excluded_paths") {
+                        let field_value = match fields_map.get("excludedPaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedPaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_paths: {
-                        let field_value = match fields_map.get("included_paths") {
+                        let field_value = match fields_map.get("includedPaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedPaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#indexing_mode: {
-                        let field_value = match fields_map.get("indexing_mode") {
+                        let field_value = match fields_map.get("indexingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'indexing_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'indexingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spatial_indices: {
-                        let field_value = match fields_map.get("spatial_indices") {
+                        let field_value = match fields_map.get("spatialIndices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spatial_indices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spatialIndices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

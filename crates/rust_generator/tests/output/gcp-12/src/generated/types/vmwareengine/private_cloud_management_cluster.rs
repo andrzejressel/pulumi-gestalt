@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_settings",
+                    "autoscalingSettings",
                     &self.r#autoscaling_settings,
                 ),
                 to_pulumi_object_field(
-                    "cluster_id",
+                    "clusterId",
                     &self.r#cluster_id,
                 ),
                 to_pulumi_object_field(
-                    "node_type_configs",
+                    "nodeTypeConfigs",
                     &self.r#node_type_configs,
                 ),
                 to_pulumi_object_field(
-                    "stretched_cluster_config",
+                    "stretchedClusterConfig",
                     &self.r#stretched_cluster_config,
                 ),
             ];
@@ -84,30 +84,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#autoscaling_settings: {
-                        let field_value = match fields_map.get("autoscaling_settings") {
+                        let field_value = match fields_map.get("autoscalingSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_id: {
-                        let field_value = match fields_map.get("cluster_id") {
+                        let field_value = match fields_map.get("clusterId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_type_configs: {
-                        let field_value = match fields_map.get("node_type_configs") {
+                        let field_value = match fields_map.get("nodeTypeConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_type_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeTypeConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stretched_cluster_config: {
-                        let field_value = match fields_map.get("stretched_cluster_config") {
+                        let field_value = match fields_map.get("stretchedClusterConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stretched_cluster_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stretchedClusterConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

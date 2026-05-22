@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_control",
+                    "customControl",
                     &self.r#custom_control,
                 ),
                 to_pulumi_object_field(
@@ -61,9 +61,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#custom_control: {
-                        let field_value = match fields_map.get("custom_control") {
+                        let field_value = match fields_map.get("customControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

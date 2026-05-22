@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
                     &self.r#decrypt,
                 ),
                 to_pulumi_object_field(
-                    "derive_key",
+                    "deriveKey",
                     &self.r#derive_key,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
                     &self.r#generate,
                 ),
                 to_pulumi_object_field(
-                    "no_restrictions",
+                    "noRestrictions",
                     &self.r#no_restrictions,
                 ),
                 to_pulumi_object_field(
@@ -121,9 +121,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#derive_key: {
-                        let field_value = match fields_map.get("derive_key") {
+                        let field_value = match fields_map.get("deriveKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'derive_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deriveKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,9 +142,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_restrictions: {
-                        let field_value = match fields_map.get("no_restrictions") {
+                        let field_value = match fields_map.get("noRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

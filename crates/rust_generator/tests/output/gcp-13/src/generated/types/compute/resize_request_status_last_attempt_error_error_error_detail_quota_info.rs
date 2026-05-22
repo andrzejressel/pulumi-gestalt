@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "future_limit",
+                    "futureLimit",
                     &self.r#future_limit,
                 ),
                 to_pulumi_object_field(
@@ -61,15 +61,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#limit,
                 ),
                 to_pulumi_object_field(
-                    "limit_name",
+                    "limitName",
                     &self.r#limit_name,
                 ),
                 to_pulumi_object_field(
-                    "metric_name",
+                    "metricName",
                     &self.r#metric_name,
                 ),
                 to_pulumi_object_field(
-                    "rollout_status",
+                    "rolloutStatus",
                     &self.r#rollout_status,
                 ),
             ];
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#future_limit: {
-                        let field_value = match fields_map.get("future_limit") {
+                        let field_value = match fields_map.get("futureLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'future_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'futureLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -117,23 +117,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#limit_name: {
-                        let field_value = match fields_map.get("limit_name") {
+                        let field_value = match fields_map.get("limitName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'limit_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'limitName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_name: {
-                        let field_value = match fields_map.get("metric_name") {
+                        let field_value = match fields_map.get("metricName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rollout_status: {
-                        let field_value = match fields_map.get("rollout_status") {
+                        let field_value = match fields_map.get("rolloutStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rollout_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rolloutStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

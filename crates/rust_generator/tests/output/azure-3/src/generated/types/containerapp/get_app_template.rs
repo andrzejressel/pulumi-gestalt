@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_queue_scale_rules",
+                    "azureQueueScaleRules",
                     &self.r#azure_queue_scale_rules,
                 ),
                 to_pulumi_object_field(
@@ -63,31 +63,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "custom_scale_rules",
+                    "customScaleRules",
                     &self.r#custom_scale_rules,
                 ),
                 to_pulumi_object_field(
-                    "http_scale_rules",
+                    "httpScaleRules",
                     &self.r#http_scale_rules,
                 ),
                 to_pulumi_object_field(
-                    "init_containers",
+                    "initContainers",
                     &self.r#init_containers,
                 ),
                 to_pulumi_object_field(
-                    "max_replicas",
+                    "maxReplicas",
                     &self.r#max_replicas,
                 ),
                 to_pulumi_object_field(
-                    "min_replicas",
+                    "minReplicas",
                     &self.r#min_replicas,
                 ),
                 to_pulumi_object_field(
-                    "revision_suffix",
+                    "revisionSuffix",
                     &self.r#revision_suffix,
                 ),
                 to_pulumi_object_field(
-                    "tcp_scale_rules",
+                    "tcpScaleRules",
                     &self.r#tcp_scale_rules,
                 ),
                 to_pulumi_object_field(
@@ -118,9 +118,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#azure_queue_scale_rules: {
-                        let field_value = match fields_map.get("azure_queue_scale_rules") {
+                        let field_value = match fields_map.get("azureQueueScaleRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_queue_scale_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureQueueScaleRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -132,51 +132,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_scale_rules: {
-                        let field_value = match fields_map.get("custom_scale_rules") {
+                        let field_value = match fields_map.get("customScaleRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_scale_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customScaleRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_scale_rules: {
-                        let field_value = match fields_map.get("http_scale_rules") {
+                        let field_value = match fields_map.get("httpScaleRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_scale_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpScaleRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#init_containers: {
-                        let field_value = match fields_map.get("init_containers") {
+                        let field_value = match fields_map.get("initContainers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'init_containers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initContainers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_replicas: {
-                        let field_value = match fields_map.get("max_replicas") {
+                        let field_value = match fields_map.get("maxReplicas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_replicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxReplicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_replicas: {
-                        let field_value = match fields_map.get("min_replicas") {
+                        let field_value = match fields_map.get("minReplicas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_replicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minReplicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#revision_suffix: {
-                        let field_value = match fields_map.get("revision_suffix") {
+                        let field_value = match fields_map.get("revisionSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revision_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revisionSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tcp_scale_rules: {
-                        let field_value = match fields_map.get("tcp_scale_rules") {
+                        let field_value = match fields_map.get("tcpScaleRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tcp_scale_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tcpScaleRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "rule_name",
+                    "ruleName",
                     &self.r#rule_name,
                 ),
                 to_pulumi_object_field(
-                    "sentiment_type",
+                    "sentimentType",
                     &self.r#sentiment_type,
                 ),
                 to_pulumi_object_field(
-                    "time_period",
+                    "timePeriod",
                     &self.r#time_period,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#rule_name: {
-                        let field_value = match fields_map.get("rule_name") {
+                        let field_value = match fields_map.get("ruleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sentiment_type: {
-                        let field_value = match fields_map.get("sentiment_type") {
+                        let field_value = match fields_map.get("sentimentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sentiment_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sentimentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_period: {
-                        let field_value = match fields_map.get("time_period") {
+                        let field_value = match fields_map.get("timePeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timePeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

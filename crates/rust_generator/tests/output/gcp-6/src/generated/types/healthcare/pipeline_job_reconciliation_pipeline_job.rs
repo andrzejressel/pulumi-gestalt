@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fhir_store_destination",
+                    "fhirStoreDestination",
                     &self.r#fhir_store_destination,
                 ),
                 to_pulumi_object_field(
-                    "matching_uri_prefix",
+                    "matchingUriPrefix",
                     &self.r#matching_uri_prefix,
                 ),
                 to_pulumi_object_field(
-                    "merge_config",
+                    "mergeConfig",
                     &self.r#merge_config,
                 ),
             ];
@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#fhir_store_destination: {
-                        let field_value = match fields_map.get("fhir_store_destination") {
+                        let field_value = match fields_map.get("fhirStoreDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fhir_store_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fhirStoreDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matching_uri_prefix: {
-                        let field_value = match fields_map.get("matching_uri_prefix") {
+                        let field_value = match fields_map.get("matchingUriPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'matching_uri_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchingUriPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#merge_config: {
-                        let field_value = match fields_map.get("merge_config") {
+                        let field_value = match fields_map.get("mergeConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'merge_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mergeConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

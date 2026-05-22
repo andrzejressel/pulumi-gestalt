@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_url",
+                    "keyUrl",
                     &self.r#key_url,
                 ),
                 to_pulumi_object_field(
-                    "source_vault_id",
+                    "sourceVaultId",
                     &self.r#source_vault_id,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#key_url: {
-                        let field_value = match fields_map.get("key_url") {
+                        let field_value = match fields_map.get("keyUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_vault_id: {
-                        let field_value = match fields_map.get("source_vault_id") {
+                        let field_value = match fields_map.get("sourceVaultId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_vault_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceVaultId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

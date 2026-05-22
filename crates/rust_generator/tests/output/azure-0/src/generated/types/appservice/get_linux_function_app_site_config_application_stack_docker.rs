@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_name",
+                    "imageName",
                     &self.r#image_name,
                 ),
                 to_pulumi_object_field(
-                    "image_tag",
+                    "imageTag",
                     &self.r#image_tag,
                 ),
                 to_pulumi_object_field(
-                    "registry_password",
+                    "registryPassword",
                     &self.r#registry_password,
                 ),
                 to_pulumi_object_field(
-                    "registry_url",
+                    "registryUrl",
                     &self.r#registry_url,
                 ),
                 to_pulumi_object_field(
-                    "registry_username",
+                    "registryUsername",
                     &self.r#registry_username,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#image_name: {
-                        let field_value = match fields_map.get("image_name") {
+                        let field_value = match fields_map.get("imageName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_tag: {
-                        let field_value = match fields_map.get("image_tag") {
+                        let field_value = match fields_map.get("imageTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registry_password: {
-                        let field_value = match fields_map.get("registry_password") {
+                        let field_value = match fields_map.get("registryPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registry_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registryPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registry_url: {
-                        let field_value = match fields_map.get("registry_url") {
+                        let field_value = match fields_map.get("registryUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registry_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registryUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registry_username: {
-                        let field_value = match fields_map.get("registry_username") {
+                        let field_value = match fields_map.get("registryUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registry_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registryUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -76,39 +76,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aad_audience",
+                    "aadAudience",
                     &self.r#aad_audience,
                 ),
                 to_pulumi_object_field(
-                    "aad_issuer",
+                    "aadIssuer",
                     &self.r#aad_issuer,
                 ),
                 to_pulumi_object_field(
-                    "aad_tenant",
+                    "aadTenant",
                     &self.r#aad_tenant,
                 ),
                 to_pulumi_object_field(
-                    "address_spaces",
+                    "addressSpaces",
                     &self.r#address_spaces,
                 ),
                 to_pulumi_object_field(
-                    "radius_server_address",
+                    "radiusServerAddress",
                     &self.r#radius_server_address,
                 ),
                 to_pulumi_object_field(
-                    "radius_server_secret",
+                    "radiusServerSecret",
                     &self.r#radius_server_secret,
                 ),
                 to_pulumi_object_field(
-                    "revoked_certificates",
+                    "revokedCertificates",
                     &self.r#revoked_certificates,
                 ),
                 to_pulumi_object_field(
-                    "root_certificates",
+                    "rootCertificates",
                     &self.r#root_certificates,
                 ),
                 to_pulumi_object_field(
-                    "vpn_client_protocols",
+                    "vpnClientProtocols",
                     &self.r#vpn_client_protocols,
                 ),
             ];
@@ -135,65 +135,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#aad_audience: {
-                        let field_value = match fields_map.get("aad_audience") {
+                        let field_value = match fields_map.get("aadAudience") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aad_audience' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aadAudience' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aad_issuer: {
-                        let field_value = match fields_map.get("aad_issuer") {
+                        let field_value = match fields_map.get("aadIssuer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aad_issuer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aadIssuer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aad_tenant: {
-                        let field_value = match fields_map.get("aad_tenant") {
+                        let field_value = match fields_map.get("aadTenant") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aad_tenant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aadTenant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#address_spaces: {
-                        let field_value = match fields_map.get("address_spaces") {
+                        let field_value = match fields_map.get("addressSpaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_spaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addressSpaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#radius_server_address: {
-                        let field_value = match fields_map.get("radius_server_address") {
+                        let field_value = match fields_map.get("radiusServerAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'radius_server_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'radiusServerAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#radius_server_secret: {
-                        let field_value = match fields_map.get("radius_server_secret") {
+                        let field_value = match fields_map.get("radiusServerSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'radius_server_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'radiusServerSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#revoked_certificates: {
-                        let field_value = match fields_map.get("revoked_certificates") {
+                        let field_value = match fields_map.get("revokedCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revoked_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revokedCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_certificates: {
-                        let field_value = match fields_map.get("root_certificates") {
+                        let field_value = match fields_map.get("rootCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpn_client_protocols: {
-                        let field_value = match fields_map.get("vpn_client_protocols") {
+                        let field_value = match fields_map.get("vpnClientProtocols") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpn_client_protocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpnClientProtocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

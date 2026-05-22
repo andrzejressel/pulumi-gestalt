@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#value,
                 ),
                 to_pulumi_object_field(
-                    "value_sources",
+                    "valueSources",
                     &self.r#value_sources,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_sources: {
-                        let field_value = match fields_map.get("value_sources") {
+                        let field_value = match fields_map.get("valueSources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueSources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

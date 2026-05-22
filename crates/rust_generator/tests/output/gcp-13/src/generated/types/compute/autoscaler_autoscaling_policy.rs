@@ -83,19 +83,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cooldown_period",
+                    "cooldownPeriod",
                     &self.r#cooldown_period,
                 ),
                 to_pulumi_object_field(
-                    "cpu_utilization",
+                    "cpuUtilization",
                     &self.r#cpu_utilization,
                 ),
                 to_pulumi_object_field(
-                    "load_balancing_utilization",
+                    "loadBalancingUtilization",
                     &self.r#load_balancing_utilization,
                 ),
                 to_pulumi_object_field(
-                    "max_replicas",
+                    "maxReplicas",
                     &self.r#max_replicas,
                 ),
                 to_pulumi_object_field(
@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#metrics,
                 ),
                 to_pulumi_object_field(
-                    "min_replicas",
+                    "minReplicas",
                     &self.r#min_replicas,
                 ),
                 to_pulumi_object_field(
@@ -111,15 +111,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_control",
+                    "scaleDownControl",
                     &self.r#scale_down_control,
                 ),
                 to_pulumi_object_field(
-                    "scale_in_control",
+                    "scaleInControl",
                     &self.r#scale_in_control,
                 ),
                 to_pulumi_object_field(
-                    "scaling_schedules",
+                    "scalingSchedules",
                     &self.r#scaling_schedules,
                 ),
             ];
@@ -146,30 +146,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#cooldown_period: {
-                        let field_value = match fields_map.get("cooldown_period") {
+                        let field_value = match fields_map.get("cooldownPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cooldown_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cooldownPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_utilization: {
-                        let field_value = match fields_map.get("cpu_utilization") {
+                        let field_value = match fields_map.get("cpuUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancing_utilization: {
-                        let field_value = match fields_map.get("load_balancing_utilization") {
+                        let field_value = match fields_map.get("loadBalancingUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancing_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancingUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_replicas: {
-                        let field_value = match fields_map.get("max_replicas") {
+                        let field_value = match fields_map.get("maxReplicas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_replicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxReplicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -181,9 +181,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_replicas: {
-                        let field_value = match fields_map.get("min_replicas") {
+                        let field_value = match fields_map.get("minReplicas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_replicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minReplicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -195,23 +195,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_control: {
-                        let field_value = match fields_map.get("scale_down_control") {
+                        let field_value = match fields_map.get("scaleDownControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_in_control: {
-                        let field_value = match fields_map.get("scale_in_control") {
+                        let field_value = match fields_map.get("scaleInControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_in_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleInControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scaling_schedules: {
-                        let field_value = match fields_map.get("scaling_schedules") {
+                        let field_value = match fields_map.get("scalingSchedules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scaling_schedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scalingSchedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -54,11 +54,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#fields,
                 ),
                 to_pulumi_object_field(
-                    "info_type_transformations",
+                    "infoTypeTransformations",
                     &self.r#info_type_transformations,
                 ),
                 to_pulumi_object_field(
-                    "primitive_transformation",
+                    "primitiveTransformation",
                     &self.r#primitive_transformation,
                 ),
             ];
@@ -99,16 +99,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#info_type_transformations: {
-                        let field_value = match fields_map.get("info_type_transformations") {
+                        let field_value = match fields_map.get("infoTypeTransformations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'info_type_transformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'infoTypeTransformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primitive_transformation: {
-                        let field_value = match fields_map.get("primitive_transformation") {
+                        let field_value = match fields_map.get("primitiveTransformation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primitive_transformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primitiveTransformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

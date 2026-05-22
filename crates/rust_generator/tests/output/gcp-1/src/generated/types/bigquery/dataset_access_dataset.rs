@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#dataset,
                 ),
                 to_pulumi_object_field(
-                    "target_types",
+                    "targetTypes",
                     &self.r#target_types,
                 ),
             ];
@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_types: {
-                        let field_value = match fields_map.get("target_types") {
+                        let field_value = match fields_map.get("targetTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "internal_ip_only",
+                    "internalIpOnly",
                     &self.r#internal_ip_only,
                 ),
                 to_pulumi_object_field(
@@ -79,27 +79,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "node_group_affinity",
+                    "nodeGroupAffinity",
                     &self.r#node_group_affinity,
                 ),
                 to_pulumi_object_field(
-                    "private_ipv_6_google_access",
+                    "privateIpv6GoogleAccess",
                     &self.r#private_ipv_6_google_access,
                 ),
                 to_pulumi_object_field(
-                    "reservation_affinity",
+                    "reservationAffinity",
                     &self.r#reservation_affinity,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "service_account_scopes",
+                    "serviceAccountScopes",
                     &self.r#service_account_scopes,
                 ),
                 to_pulumi_object_field(
-                    "shielded_instance_config",
+                    "shieldedInstanceConfig",
                     &self.r#shielded_instance_config,
                 ),
                 to_pulumi_object_field(
@@ -138,9 +138,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#internal_ip_only: {
-                        let field_value = match fields_map.get("internal_ip_only") {
+                        let field_value = match fields_map.get("internalIpOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'internal_ip_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'internalIpOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -159,44 +159,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_group_affinity: {
-                        let field_value = match fields_map.get("node_group_affinity") {
+                        let field_value = match fields_map.get("nodeGroupAffinity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_group_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeGroupAffinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ipv_6_google_access: {
-                        let field_value = match fields_map.get("private_ipv_6_google_access") {
+                        let field_value = match fields_map.get("privateIpv6GoogleAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ipv_6_google_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIpv6GoogleAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reservation_affinity: {
-                        let field_value = match fields_map.get("reservation_affinity") {
+                        let field_value = match fields_map.get("reservationAffinity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reservation_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reservationAffinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account: {
-                        let field_value = match fields_map.get("service_account") {
+                        let field_value = match fields_map.get("serviceAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_scopes: {
-                        let field_value = match fields_map.get("service_account_scopes") {
+                        let field_value = match fields_map.get("serviceAccountScopes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_scopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountScopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shielded_instance_config: {
-                        let field_value = match fields_map.get("shielded_instance_config") {
+                        let field_value = match fields_map.get("shieldedInstanceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shielded_instance_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shieldedInstanceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

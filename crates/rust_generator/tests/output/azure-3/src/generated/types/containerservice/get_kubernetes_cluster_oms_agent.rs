@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_analytics_workspace_id",
+                    "logAnalyticsWorkspaceId",
                     &self.r#log_analytics_workspace_id,
                 ),
                 to_pulumi_object_field(
-                    "msi_auth_for_monitoring_enabled",
+                    "msiAuthForMonitoringEnabled",
                     &self.r#msi_auth_for_monitoring_enabled,
                 ),
                 to_pulumi_object_field(
-                    "oms_agent_identities",
+                    "omsAgentIdentities",
                     &self.r#oms_agent_identities,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#log_analytics_workspace_id: {
-                        let field_value = match fields_map.get("log_analytics_workspace_id") {
+                        let field_value = match fields_map.get("logAnalyticsWorkspaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_analytics_workspace_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logAnalyticsWorkspaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#msi_auth_for_monitoring_enabled: {
-                        let field_value = match fields_map.get("msi_auth_for_monitoring_enabled") {
+                        let field_value = match fields_map.get("msiAuthForMonitoringEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'msi_auth_for_monitoring_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'msiAuthForMonitoringEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oms_agent_identities: {
-                        let field_value = match fields_map.get("oms_agent_identities") {
+                        let field_value = match fields_map.get("omsAgentIdentities") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oms_agent_identities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'omsAgentIdentities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

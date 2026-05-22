@@ -34,19 +34,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "component_id",
+                    "componentId",
                     &self.r#component_id,
                 ),
                 to_pulumi_object_field(
-                    "dns_target_resource",
+                    "dnsTargetResource",
                     &self.r#dns_target_resource,
                 ),
                 to_pulumi_object_field(
-                    "readiness_scopes",
+                    "readinessScopes",
                     &self.r#readiness_scopes,
                 ),
                 to_pulumi_object_field(
-                    "resource_arn",
+                    "resourceArn",
                     &self.r#resource_arn,
                 ),
             ];
@@ -73,30 +73,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#component_id: {
-                        let field_value = match fields_map.get("component_id") {
+                        let field_value = match fields_map.get("componentId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'component_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'componentId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_target_resource: {
-                        let field_value = match fields_map.get("dns_target_resource") {
+                        let field_value = match fields_map.get("dnsTargetResource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_target_resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsTargetResource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#readiness_scopes: {
-                        let field_value = match fields_map.get("readiness_scopes") {
+                        let field_value = match fields_map.get("readinessScopes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'readiness_scopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readinessScopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_arn: {
-                        let field_value = match fields_map.get("resource_arn") {
+                        let field_value = match fields_map.get("resourceArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

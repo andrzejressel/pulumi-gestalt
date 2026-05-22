@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "idle_timeout_seconds",
+                    "idleTimeoutSeconds",
                     &self.r#idle_timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "per_request_timeout_seconds",
+                    "perRequestTimeoutSeconds",
                     &self.r#per_request_timeout_seconds,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#idle_timeout_seconds: {
-                        let field_value = match fields_map.get("idle_timeout_seconds") {
+                        let field_value = match fields_map.get("idleTimeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleTimeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#per_request_timeout_seconds: {
-                        let field_value = match fields_map.get("per_request_timeout_seconds") {
+                        let field_value = match fields_map.get("perRequestTimeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'per_request_timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'perRequestTimeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

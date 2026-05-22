@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_ids",
+                    "clientIds",
                     &self.r#client_ids,
                 ),
                 to_pulumi_object_field(
-                    "principal_id_claim",
+                    "principalIdClaim",
                     &self.r#principal_id_claim,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#client_ids: {
-                        let field_value = match fields_map.get("client_ids") {
+                        let field_value = match fields_map.get("clientIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#principal_id_claim: {
-                        let field_value = match fields_map.get("principal_id_claim") {
+                        let field_value = match fields_map.get("principalIdClaim") {
                             Some(value) => value,
-                            None => bail!("Missing field 'principal_id_claim' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'principalIdClaim' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

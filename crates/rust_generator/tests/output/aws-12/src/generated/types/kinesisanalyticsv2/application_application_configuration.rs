@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_code_configuration",
+                    "applicationCodeConfiguration",
                     &self.r#application_code_configuration,
                 ),
                 to_pulumi_object_field(
-                    "application_snapshot_configuration",
+                    "applicationSnapshotConfiguration",
                     &self.r#application_snapshot_configuration,
                 ),
                 to_pulumi_object_field(
-                    "environment_properties",
+                    "environmentProperties",
                     &self.r#environment_properties,
                 ),
                 to_pulumi_object_field(
-                    "flink_application_configuration",
+                    "flinkApplicationConfiguration",
                     &self.r#flink_application_configuration,
                 ),
                 to_pulumi_object_field(
-                    "run_configuration",
+                    "runConfiguration",
                     &self.r#run_configuration,
                 ),
                 to_pulumi_object_field(
-                    "sql_application_configuration",
+                    "sqlApplicationConfiguration",
                     &self.r#sql_application_configuration,
                 ),
                 to_pulumi_object_field(
-                    "vpc_configuration",
+                    "vpcConfiguration",
                     &self.r#vpc_configuration,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#application_code_configuration: {
-                        let field_value = match fields_map.get("application_code_configuration") {
+                        let field_value = match fields_map.get("applicationCodeConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_code_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationCodeConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#application_snapshot_configuration: {
-                        let field_value = match fields_map.get("application_snapshot_configuration") {
+                        let field_value = match fields_map.get("applicationSnapshotConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_snapshot_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationSnapshotConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_properties: {
-                        let field_value = match fields_map.get("environment_properties") {
+                        let field_value = match fields_map.get("environmentProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'environment_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'environmentProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#flink_application_configuration: {
-                        let field_value = match fields_map.get("flink_application_configuration") {
+                        let field_value = match fields_map.get("flinkApplicationConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'flink_application_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'flinkApplicationConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_configuration: {
-                        let field_value = match fields_map.get("run_configuration") {
+                        let field_value = match fields_map.get("runConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'run_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_application_configuration: {
-                        let field_value = match fields_map.get("sql_application_configuration") {
+                        let field_value = match fields_map.get("sqlApplicationConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_application_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlApplicationConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_configuration: {
-                        let field_value = match fields_map.get("vpc_configuration") {
+                        let field_value = match fields_map.get("vpcConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

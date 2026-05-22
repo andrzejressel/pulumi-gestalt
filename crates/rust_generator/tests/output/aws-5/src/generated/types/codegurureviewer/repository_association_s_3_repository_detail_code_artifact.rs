@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "build_artifacts_object_key",
+                    "buildArtifactsObjectKey",
                     &self.r#build_artifacts_object_key,
                 ),
                 to_pulumi_object_field(
-                    "source_code_artifacts_object_key",
+                    "sourceCodeArtifactsObjectKey",
                     &self.r#source_code_artifacts_object_key,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#build_artifacts_object_key: {
-                        let field_value = match fields_map.get("build_artifacts_object_key") {
+                        let field_value = match fields_map.get("buildArtifactsObjectKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'build_artifacts_object_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'buildArtifactsObjectKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_code_artifacts_object_key: {
-                        let field_value = match fields_map.get("source_code_artifacts_object_key") {
+                        let field_value = match fields_map.get("sourceCodeArtifactsObjectKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_code_artifacts_object_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceCodeArtifactsObjectKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Usa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "burst_limit",
+                    "burstLimit",
                     &self.r#burst_limit,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Usa
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit",
+                    "rateLimit",
                     &self.r#rate_limit,
                 ),
             ];
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#burst_limit: {
-                        let field_value = match fields_map.get("burst_limit") {
+                        let field_value = match fields_map.get("burstLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'burst_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'burstLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_limit: {
-                        let field_value = match fields_map.get("rate_limit") {
+                        let field_value = match fields_map.get("rateLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

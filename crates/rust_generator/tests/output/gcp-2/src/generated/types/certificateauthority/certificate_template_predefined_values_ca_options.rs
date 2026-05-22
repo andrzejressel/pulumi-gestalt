@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_ca",
+                    "isCa",
                     &self.r#is_ca,
                 ),
                 to_pulumi_object_field(
-                    "max_issuer_path_length",
+                    "maxIssuerPathLength",
                     &self.r#max_issuer_path_length,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#is_ca: {
-                        let field_value = match fields_map.get("is_ca") {
+                        let field_value = match fields_map.get("isCa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_ca' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isCa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_issuer_path_length: {
-                        let field_value = match fields_map.get("max_issuer_path_length") {
+                        let field_value = match fields_map.get("maxIssuerPathLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_issuer_path_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxIssuerPathLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

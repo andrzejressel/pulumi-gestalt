@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_source_from_s_3",
+                    "deleteSourceFromS3",
                     &self.r#delete_source_from_s_3,
                 ),
                 to_pulumi_object_field(
-                    "max_age_in_days",
+                    "maxAgeInDays",
                     &self.r#max_age_in_days,
                 ),
                 to_pulumi_object_field(
-                    "max_count",
+                    "maxCount",
                     &self.r#max_count,
                 ),
                 to_pulumi_object_field(
-                    "service_role",
+                    "serviceRole",
                     &self.r#service_role,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#delete_source_from_s_3: {
-                        let field_value = match fields_map.get("delete_source_from_s_3") {
+                        let field_value = match fields_map.get("deleteSourceFromS3") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delete_source_from_s_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deleteSourceFromS3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_age_in_days: {
-                        let field_value = match fields_map.get("max_age_in_days") {
+                        let field_value = match fields_map.get("maxAgeInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_age_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAgeInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_count: {
-                        let field_value = match fields_map.get("max_count") {
+                        let field_value = match fields_map.get("maxCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_role: {
-                        let field_value = match fields_map.get("service_role") {
+                        let field_value = match fields_map.get("serviceRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

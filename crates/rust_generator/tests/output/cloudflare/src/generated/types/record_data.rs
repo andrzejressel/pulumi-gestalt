@@ -156,7 +156,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#digest,
                 ),
                 to_pulumi_object_field(
-                    "digest_type",
+                    "digestType",
                     &self.r#digest_type,
                 ),
                 to_pulumi_object_field(
@@ -168,43 +168,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#flags,
                 ),
                 to_pulumi_object_field(
-                    "key_tag",
+                    "keyTag",
                     &self.r#key_tag,
                 ),
                 to_pulumi_object_field(
-                    "lat_degrees",
+                    "latDegrees",
                     &self.r#lat_degrees,
                 ),
                 to_pulumi_object_field(
-                    "lat_direction",
+                    "latDirection",
                     &self.r#lat_direction,
                 ),
                 to_pulumi_object_field(
-                    "lat_minutes",
+                    "latMinutes",
                     &self.r#lat_minutes,
                 ),
                 to_pulumi_object_field(
-                    "lat_seconds",
+                    "latSeconds",
                     &self.r#lat_seconds,
                 ),
                 to_pulumi_object_field(
-                    "long_degrees",
+                    "longDegrees",
                     &self.r#long_degrees,
                 ),
                 to_pulumi_object_field(
-                    "long_direction",
+                    "longDirection",
                     &self.r#long_direction,
                 ),
                 to_pulumi_object_field(
-                    "long_minutes",
+                    "longMinutes",
                     &self.r#long_minutes,
                 ),
                 to_pulumi_object_field(
-                    "long_seconds",
+                    "longSeconds",
                     &self.r#long_seconds,
                 ),
                 to_pulumi_object_field(
-                    "matching_type",
+                    "matchingType",
                     &self.r#matching_type,
                 ),
                 to_pulumi_object_field(
@@ -220,11 +220,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "precision_horz",
+                    "precisionHorz",
                     &self.r#precision_horz,
                 ),
                 to_pulumi_object_field(
-                    "precision_vert",
+                    "precisionVert",
                     &self.r#precision_vert,
                 ),
                 to_pulumi_object_field(
@@ -244,7 +244,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "public_key",
+                    "publicKey",
                     &self.r#public_key,
                 ),
                 to_pulumi_object_field(
@@ -276,7 +276,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#target,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
@@ -350,9 +350,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#digest_type: {
-                        let field_value = match fields_map.get("digest_type") {
+                        let field_value = match fields_map.get("digestType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'digest_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'digestType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -371,72 +371,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_tag: {
-                        let field_value = match fields_map.get("key_tag") {
+                        let field_value = match fields_map.get("keyTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lat_degrees: {
-                        let field_value = match fields_map.get("lat_degrees") {
+                        let field_value = match fields_map.get("latDegrees") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lat_degrees' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latDegrees' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lat_direction: {
-                        let field_value = match fields_map.get("lat_direction") {
+                        let field_value = match fields_map.get("latDirection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lat_direction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latDirection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lat_minutes: {
-                        let field_value = match fields_map.get("lat_minutes") {
+                        let field_value = match fields_map.get("latMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lat_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lat_seconds: {
-                        let field_value = match fields_map.get("lat_seconds") {
+                        let field_value = match fields_map.get("latSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lat_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#long_degrees: {
-                        let field_value = match fields_map.get("long_degrees") {
+                        let field_value = match fields_map.get("longDegrees") {
                             Some(value) => value,
-                            None => bail!("Missing field 'long_degrees' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'longDegrees' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#long_direction: {
-                        let field_value = match fields_map.get("long_direction") {
+                        let field_value = match fields_map.get("longDirection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'long_direction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'longDirection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#long_minutes: {
-                        let field_value = match fields_map.get("long_minutes") {
+                        let field_value = match fields_map.get("longMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'long_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'longMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#long_seconds: {
-                        let field_value = match fields_map.get("long_seconds") {
+                        let field_value = match fields_map.get("longSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'long_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'longSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matching_type: {
-                        let field_value = match fields_map.get("matching_type") {
+                        let field_value = match fields_map.get("matchingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'matching_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -462,16 +462,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#precision_horz: {
-                        let field_value = match fields_map.get("precision_horz") {
+                        let field_value = match fields_map.get("precisionHorz") {
                             Some(value) => value,
-                            None => bail!("Missing field 'precision_horz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'precisionHorz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#precision_vert: {
-                        let field_value = match fields_map.get("precision_vert") {
+                        let field_value = match fields_map.get("precisionVert") {
                             Some(value) => value,
-                            None => bail!("Missing field 'precision_vert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'precisionVert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -504,9 +504,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_key: {
-                        let field_value = match fields_map.get("public_key") {
+                        let field_value = match fields_map.get("publicKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -560,9 +560,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

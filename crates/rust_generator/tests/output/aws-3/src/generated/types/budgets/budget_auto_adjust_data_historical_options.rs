@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "budget_adjustment_period",
+                    "budgetAdjustmentPeriod",
                     &self.r#budget_adjustment_period,
                 ),
                 to_pulumi_object_field(
-                    "lookback_available_periods",
+                    "lookbackAvailablePeriods",
                     &self.r#lookback_available_periods,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#budget_adjustment_period: {
-                        let field_value = match fields_map.get("budget_adjustment_period") {
+                        let field_value = match fields_map.get("budgetAdjustmentPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'budget_adjustment_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'budgetAdjustmentPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lookback_available_periods: {
-                        let field_value = match fields_map.get("lookback_available_periods") {
+                        let field_value = match fields_map.get("lookbackAvailablePeriods") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lookback_available_periods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lookbackAvailablePeriods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

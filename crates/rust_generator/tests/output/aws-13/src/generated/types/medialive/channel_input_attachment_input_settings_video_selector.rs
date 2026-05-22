@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "color_space",
+                    "colorSpace",
                     &self.r#color_space,
                 ),
                 to_pulumi_object_field(
-                    "color_space_usage",
+                    "colorSpaceUsage",
                     &self.r#color_space_usage,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#color_space: {
-                        let field_value = match fields_map.get("color_space") {
+                        let field_value = match fields_map.get("colorSpace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'color_space' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'colorSpace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#color_space_usage: {
-                        let field_value = match fields_map.get("color_space_usage") {
+                        let field_value = match fields_map.get("colorSpaceUsage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'color_space_usage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'colorSpaceUsage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

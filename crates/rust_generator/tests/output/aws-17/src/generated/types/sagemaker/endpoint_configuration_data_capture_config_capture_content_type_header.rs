@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "csv_content_types",
+                    "csvContentTypes",
                     &self.r#csv_content_types,
                 ),
                 to_pulumi_object_field(
-                    "json_content_types",
+                    "jsonContentTypes",
                     &self.r#json_content_types,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#csv_content_types: {
-                        let field_value = match fields_map.get("csv_content_types") {
+                        let field_value = match fields_map.get("csvContentTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'csv_content_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'csvContentTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#json_content_types: {
-                        let field_value = match fields_map.get("json_content_types") {
+                        let field_value = match fields_map.get("jsonContentTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'json_content_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsonContentTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

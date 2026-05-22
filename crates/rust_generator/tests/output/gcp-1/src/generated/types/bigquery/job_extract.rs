@@ -61,31 +61,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "destination_format",
+                    "destinationFormat",
                     &self.r#destination_format,
                 ),
                 to_pulumi_object_field(
-                    "destination_uris",
+                    "destinationUris",
                     &self.r#destination_uris,
                 ),
                 to_pulumi_object_field(
-                    "field_delimiter",
+                    "fieldDelimiter",
                     &self.r#field_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "print_header",
+                    "printHeader",
                     &self.r#print_header,
                 ),
                 to_pulumi_object_field(
-                    "source_model",
+                    "sourceModel",
                     &self.r#source_model,
                 ),
                 to_pulumi_object_field(
-                    "source_table",
+                    "sourceTable",
                     &self.r#source_table,
                 ),
                 to_pulumi_object_field(
-                    "use_avro_logical_types",
+                    "useAvroLogicalTypes",
                     &self.r#use_avro_logical_types,
                 ),
             ];
@@ -119,51 +119,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_format: {
-                        let field_value = match fields_map.get("destination_format") {
+                        let field_value = match fields_map.get("destinationFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_uris: {
-                        let field_value = match fields_map.get("destination_uris") {
+                        let field_value = match fields_map.get("destinationUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_delimiter: {
-                        let field_value = match fields_map.get("field_delimiter") {
+                        let field_value = match fields_map.get("fieldDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#print_header: {
-                        let field_value = match fields_map.get("print_header") {
+                        let field_value = match fields_map.get("printHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'print_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'printHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_model: {
-                        let field_value = match fields_map.get("source_model") {
+                        let field_value = match fields_map.get("sourceModel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_model' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceModel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_table: {
-                        let field_value = match fields_map.get("source_table") {
+                        let field_value = match fields_map.get("sourceTable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_table' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceTable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_avro_logical_types: {
-                        let field_value = match fields_map.get("use_avro_logical_types") {
+                        let field_value = match fields_map.get("useAvroLogicalTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_avro_logical_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useAvroLogicalTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

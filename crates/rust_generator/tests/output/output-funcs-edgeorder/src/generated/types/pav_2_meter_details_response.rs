@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pav
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "billing_type",
+                    "billingType",
                     &self.r#billing_type,
                 ),
                 to_pulumi_object_field(
-                    "charging_type",
+                    "chargingType",
                     &self.r#charging_type,
                 ),
                 to_pulumi_object_field(
-                    "meter_guid",
+                    "meterGuid",
                     &self.r#meter_guid,
                 ),
                 to_pulumi_object_field(
@@ -75,23 +75,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#billing_type: {
-                        let field_value = match fields_map.get("billing_type") {
+                        let field_value = match fields_map.get("billingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'billing_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'billingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#charging_type: {
-                        let field_value = match fields_map.get("charging_type") {
+                        let field_value = match fields_map.get("chargingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'charging_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'chargingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#meter_guid: {
-                        let field_value = match fields_map.get("meter_guid") {
+                        let field_value = match fields_map.get("meterGuid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'meter_guid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'meterGuid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attachment_id",
+                    "attachmentId",
                     &self.r#attachment_id,
                 ),
                 to_pulumi_object_field(
-                    "device_index",
+                    "deviceIndex",
                     &self.r#device_index,
                 ),
                 to_pulumi_object_field(
@@ -65,16 +65,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#attachment_id: {
-                        let field_value = match fields_map.get("attachment_id") {
+                        let field_value = match fields_map.get("attachmentId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attachment_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attachmentId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_index: {
-                        let field_value = match fields_map.get("device_index") {
+                        let field_value = match fields_map.get("deviceIndex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_index' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceIndex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

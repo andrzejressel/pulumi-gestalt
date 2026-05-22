@@ -43,23 +43,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mysql_source_config",
+                    "mysqlSourceConfig",
                     &self.r#mysql_source_config,
                 ),
                 to_pulumi_object_field(
-                    "oracle_source_config",
+                    "oracleSourceConfig",
                     &self.r#oracle_source_config,
                 ),
                 to_pulumi_object_field(
-                    "postgresql_source_config",
+                    "postgresqlSourceConfig",
                     &self.r#postgresql_source_config,
                 ),
                 to_pulumi_object_field(
-                    "source_connection_profile",
+                    "sourceConnectionProfile",
                     &self.r#source_connection_profile,
                 ),
                 to_pulumi_object_field(
-                    "sql_server_source_config",
+                    "sqlServerSourceConfig",
                     &self.r#sql_server_source_config,
                 ),
             ];
@@ -86,37 +86,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#mysql_source_config: {
-                        let field_value = match fields_map.get("mysql_source_config") {
+                        let field_value = match fields_map.get("mysqlSourceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mysql_source_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mysqlSourceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oracle_source_config: {
-                        let field_value = match fields_map.get("oracle_source_config") {
+                        let field_value = match fields_map.get("oracleSourceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oracle_source_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oracleSourceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#postgresql_source_config: {
-                        let field_value = match fields_map.get("postgresql_source_config") {
+                        let field_value = match fields_map.get("postgresqlSourceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'postgresql_source_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postgresqlSourceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_connection_profile: {
-                        let field_value = match fields_map.get("source_connection_profile") {
+                        let field_value = match fields_map.get("sourceConnectionProfile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_connection_profile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceConnectionProfile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_server_source_config: {
-                        let field_value = match fields_map.get("sql_server_source_config") {
+                        let field_value = match fields_map.get("sqlServerSourceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_server_source_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlServerSourceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

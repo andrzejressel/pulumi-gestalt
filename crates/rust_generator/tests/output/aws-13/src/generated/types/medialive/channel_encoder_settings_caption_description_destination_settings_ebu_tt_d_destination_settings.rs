@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copyright_holder",
+                    "copyrightHolder",
                     &self.r#copyright_holder,
                 ),
                 to_pulumi_object_field(
-                    "fill_line_gap",
+                    "fillLineGap",
                     &self.r#fill_line_gap,
                 ),
                 to_pulumi_object_field(
-                    "font_family",
+                    "fontFamily",
                     &self.r#font_family,
                 ),
                 to_pulumi_object_field(
-                    "style_control",
+                    "styleControl",
                     &self.r#style_control,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#copyright_holder: {
-                        let field_value = match fields_map.get("copyright_holder") {
+                        let field_value = match fields_map.get("copyrightHolder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copyright_holder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copyrightHolder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fill_line_gap: {
-                        let field_value = match fields_map.get("fill_line_gap") {
+                        let field_value = match fields_map.get("fillLineGap") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fill_line_gap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fillLineGap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font_family: {
-                        let field_value = match fields_map.get("font_family") {
+                        let field_value = match fields_map.get("fontFamily") {
                             Some(value) => value,
-                            None => bail!("Missing field 'font_family' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fontFamily' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#style_control: {
-                        let field_value = match fields_map.get("style_control") {
+                        let field_value = match fields_map.get("styleControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'style_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'styleControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

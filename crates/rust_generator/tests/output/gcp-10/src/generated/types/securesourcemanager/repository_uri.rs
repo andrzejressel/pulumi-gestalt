@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#api,
                 ),
                 to_pulumi_object_field(
-                    "git_https",
+                    "gitHttps",
                     &self.r#git_https,
                 ),
                 to_pulumi_object_field(
@@ -76,9 +76,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#git_https: {
-                        let field_value = match fields_map.get("git_https") {
+                        let field_value = match fields_map.get("gitHttps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'git_https' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gitHttps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#accounts,
                 ),
                 to_pulumi_object_field(
-                    "failure_tolerance_count",
+                    "failureToleranceCount",
                     &self.r#failure_tolerance_count,
                 ),
                 to_pulumi_object_field(
-                    "failure_tolerance_percentage",
+                    "failureTolerancePercentage",
                     &self.r#failure_tolerance_percentage,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrency_count",
+                    "maxConcurrencyCount",
                     &self.r#max_concurrency_count,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrency_percentage",
+                    "maxConcurrencyPercentage",
                     &self.r#max_concurrency_percentage,
                 ),
                 to_pulumi_object_field(
@@ -97,30 +97,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_tolerance_count: {
-                        let field_value = match fields_map.get("failure_tolerance_count") {
+                        let field_value = match fields_map.get("failureToleranceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_tolerance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureToleranceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_tolerance_percentage: {
-                        let field_value = match fields_map.get("failure_tolerance_percentage") {
+                        let field_value = match fields_map.get("failureTolerancePercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_tolerance_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureTolerancePercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrency_count: {
-                        let field_value = match fields_map.get("max_concurrency_count") {
+                        let field_value = match fields_map.get("maxConcurrencyCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrency_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrencyCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrency_percentage: {
-                        let field_value = match fields_map.get("max_concurrency_percentage") {
+                        let field_value = match fields_map.get("maxConcurrencyPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrency_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrencyPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

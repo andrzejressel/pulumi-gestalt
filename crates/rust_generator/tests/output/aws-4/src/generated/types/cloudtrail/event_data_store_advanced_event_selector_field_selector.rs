@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ends_withs",
+                    "endsWiths",
                     &self.r#ends_withs,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
                     &self.r#field,
                 ),
                 to_pulumi_object_field(
-                    "not_ends_withs",
+                    "notEndsWiths",
                     &self.r#not_ends_withs,
                 ),
                 to_pulumi_object_field(
-                    "not_equals",
+                    "notEquals",
                     &self.r#not_equals,
                 ),
                 to_pulumi_object_field(
-                    "not_starts_withs",
+                    "notStartsWiths",
                     &self.r#not_starts_withs,
                 ),
                 to_pulumi_object_field(
-                    "starts_withs",
+                    "startsWiths",
                     &self.r#starts_withs,
                 ),
             ];
@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#ends_withs: {
-                        let field_value = match fields_map.get("ends_withs") {
+                        let field_value = match fields_map.get("endsWiths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ends_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endsWiths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,30 +119,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_ends_withs: {
-                        let field_value = match fields_map.get("not_ends_withs") {
+                        let field_value = match fields_map.get("notEndsWiths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_ends_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notEndsWiths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_equals: {
-                        let field_value = match fields_map.get("not_equals") {
+                        let field_value = match fields_map.get("notEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_starts_withs: {
-                        let field_value = match fields_map.get("not_starts_withs") {
+                        let field_value = match fields_map.get("notStartsWiths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_starts_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notStartsWiths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#starts_withs: {
-                        let field_value = match fields_map.get("starts_withs") {
+                        let field_value = match fields_map.get("startsWiths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'starts_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startsWiths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

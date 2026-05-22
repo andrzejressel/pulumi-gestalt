@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dag_processor",
+                    "dagProcessor",
                     &self.r#dag_processor,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
                     &self.r#triggerer,
                 ),
                 to_pulumi_object_field(
-                    "web_server",
+                    "webServer",
                     &self.r#web_server,
                 ),
                 to_pulumi_object_field(
@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#dag_processor: {
-                        let field_value = match fields_map.get("dag_processor") {
+                        let field_value = match fields_map.get("dagProcessor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dag_processor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dagProcessor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#web_server: {
-                        let field_value = match fields_map.get("web_server") {
+                        let field_value = match fields_map.get("webServer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'web_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webServer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

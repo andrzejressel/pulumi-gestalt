@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_audio_input",
+                    "allowAudioInput",
                     &self.r#allow_audio_input,
                 ),
                 to_pulumi_object_field(
-                    "allow_dtmf_input",
+                    "allowDtmfInput",
                     &self.r#allow_dtmf_input,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#allow_audio_input: {
-                        let field_value = match fields_map.get("allow_audio_input") {
+                        let field_value = match fields_map.get("allowAudioInput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_audio_input' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowAudioInput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_dtmf_input: {
-                        let field_value = match fields_map.get("allow_dtmf_input") {
+                        let field_value = match fields_map.get("allowDtmfInput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_dtmf_input' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowDtmfInput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

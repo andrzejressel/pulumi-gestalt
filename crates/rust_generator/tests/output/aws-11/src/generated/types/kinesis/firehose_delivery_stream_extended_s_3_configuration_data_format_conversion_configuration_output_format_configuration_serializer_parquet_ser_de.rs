@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "block_size_bytes",
+                    "blockSizeBytes",
                     &self.r#block_size_bytes,
                 ),
                 to_pulumi_object_field(
@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "enable_dictionary_compression",
+                    "enableDictionaryCompression",
                     &self.r#enable_dictionary_compression,
                 ),
                 to_pulumi_object_field(
-                    "max_padding_bytes",
+                    "maxPaddingBytes",
                     &self.r#max_padding_bytes,
                 ),
                 to_pulumi_object_field(
-                    "page_size_bytes",
+                    "pageSizeBytes",
                     &self.r#page_size_bytes,
                 ),
                 to_pulumi_object_field(
-                    "writer_version",
+                    "writerVersion",
                     &self.r#writer_version,
                 ),
             ];
@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#block_size_bytes: {
-                        let field_value = match fields_map.get("block_size_bytes") {
+                        let field_value = match fields_map.get("blockSizeBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockSizeBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,30 +104,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_dictionary_compression: {
-                        let field_value = match fields_map.get("enable_dictionary_compression") {
+                        let field_value = match fields_map.get("enableDictionaryCompression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_dictionary_compression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableDictionaryCompression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_padding_bytes: {
-                        let field_value = match fields_map.get("max_padding_bytes") {
+                        let field_value = match fields_map.get("maxPaddingBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_padding_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxPaddingBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#page_size_bytes: {
-                        let field_value = match fields_map.get("page_size_bytes") {
+                        let field_value = match fields_map.get("pageSizeBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'page_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pageSizeBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#writer_version: {
-                        let field_value = match fields_map.get("writer_version") {
+                        let field_value = match fields_map.get("writerVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'writer_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'writerVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

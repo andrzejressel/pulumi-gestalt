@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "next_hop",
+                    "nextHop",
                     &self.r#next_hop,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_hop: {
-                        let field_value = match fields_map.get("next_hop") {
+                        let field_value = match fields_map.get("nextHop") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_hop' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextHop' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

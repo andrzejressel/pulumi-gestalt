@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "request_headers_to_adds",
+                    "requestHeadersToAdds",
                     &self.r#request_headers_to_adds,
                 ),
             ];
@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#request_headers_to_adds: {
-                        let field_value = match fields_map.get("request_headers_to_adds") {
+                        let field_value = match fields_map.get("requestHeadersToAdds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_headers_to_adds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestHeadersToAdds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

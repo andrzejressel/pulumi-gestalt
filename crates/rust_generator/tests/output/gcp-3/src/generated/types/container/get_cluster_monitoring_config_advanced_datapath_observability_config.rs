@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_metrics",
+                    "enableMetrics",
                     &self.r#enable_metrics,
                 ),
                 to_pulumi_object_field(
-                    "enable_relay",
+                    "enableRelay",
                     &self.r#enable_relay,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#enable_metrics: {
-                        let field_value = match fields_map.get("enable_metrics") {
+                        let field_value = match fields_map.get("enableMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_relay: {
-                        let field_value = match fields_map.get("enable_relay") {
+                        let field_value = match fields_map.get("enableRelay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_relay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableRelay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,35 +50,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "direct_deploy_settings",
+                    "directDeploySettings",
                     &self.r#direct_deploy_settings,
                 ),
                 to_pulumi_object_field(
-                    "emr_serverless_settings",
+                    "emrServerlessSettings",
                     &self.r#emr_serverless_settings,
                 ),
                 to_pulumi_object_field(
-                    "generative_ai_settings",
+                    "generativeAiSettings",
                     &self.r#generative_ai_settings,
                 ),
                 to_pulumi_object_field(
-                    "identity_provider_oauth_settings",
+                    "identityProviderOauthSettings",
                     &self.r#identity_provider_oauth_settings,
                 ),
                 to_pulumi_object_field(
-                    "kendra_settings",
+                    "kendraSettings",
                     &self.r#kendra_settings,
                 ),
                 to_pulumi_object_field(
-                    "model_register_settings",
+                    "modelRegisterSettings",
                     &self.r#model_register_settings,
                 ),
                 to_pulumi_object_field(
-                    "time_series_forecasting_settings",
+                    "timeSeriesForecastingSettings",
                     &self.r#time_series_forecasting_settings,
                 ),
                 to_pulumi_object_field(
-                    "workspace_settings",
+                    "workspaceSettings",
                     &self.r#workspace_settings,
                 ),
             ];
@@ -105,58 +105,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#direct_deploy_settings: {
-                        let field_value = match fields_map.get("direct_deploy_settings") {
+                        let field_value = match fields_map.get("directDeploySettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'direct_deploy_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'directDeploySettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#emr_serverless_settings: {
-                        let field_value = match fields_map.get("emr_serverless_settings") {
+                        let field_value = match fields_map.get("emrServerlessSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'emr_serverless_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emrServerlessSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#generative_ai_settings: {
-                        let field_value = match fields_map.get("generative_ai_settings") {
+                        let field_value = match fields_map.get("generativeAiSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'generative_ai_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'generativeAiSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_provider_oauth_settings: {
-                        let field_value = match fields_map.get("identity_provider_oauth_settings") {
+                        let field_value = match fields_map.get("identityProviderOauthSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_provider_oauth_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityProviderOauthSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kendra_settings: {
-                        let field_value = match fields_map.get("kendra_settings") {
+                        let field_value = match fields_map.get("kendraSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kendra_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kendraSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_register_settings: {
-                        let field_value = match fields_map.get("model_register_settings") {
+                        let field_value = match fields_map.get("modelRegisterSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_register_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelRegisterSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_series_forecasting_settings: {
-                        let field_value = match fields_map.get("time_series_forecasting_settings") {
+                        let field_value = match fields_map.get("timeSeriesForecastingSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_series_forecasting_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeSeriesForecastingSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workspace_settings: {
-                        let field_value = match fields_map.get("workspace_settings") {
+                        let field_value = match fields_map.get("workspaceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workspace_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workspaceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

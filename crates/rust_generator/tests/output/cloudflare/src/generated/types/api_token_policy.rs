@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
                     &self.r#effect,
                 ),
                 to_pulumi_object_field(
-                    "permission_groups",
+                    "permissionGroups",
                     &self.r#permission_groups,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permission_groups: {
-                        let field_value = match fields_map.get("permission_groups") {
+                        let field_value = match fields_map.get("permissionGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permission_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permissionGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

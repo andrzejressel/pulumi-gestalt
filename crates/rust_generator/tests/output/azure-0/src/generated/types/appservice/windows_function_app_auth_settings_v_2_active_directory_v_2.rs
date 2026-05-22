@@ -73,51 +73,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_applications",
+                    "allowedApplications",
                     &self.r#allowed_applications,
                 ),
                 to_pulumi_object_field(
-                    "allowed_audiences",
+                    "allowedAudiences",
                     &self.r#allowed_audiences,
                 ),
                 to_pulumi_object_field(
-                    "allowed_groups",
+                    "allowedGroups",
                     &self.r#allowed_groups,
                 ),
                 to_pulumi_object_field(
-                    "allowed_identities",
+                    "allowedIdentities",
                     &self.r#allowed_identities,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret_certificate_thumbprint",
+                    "clientSecretCertificateThumbprint",
                     &self.r#client_secret_certificate_thumbprint,
                 ),
                 to_pulumi_object_field(
-                    "client_secret_setting_name",
+                    "clientSecretSettingName",
                     &self.r#client_secret_setting_name,
                 ),
                 to_pulumi_object_field(
-                    "jwt_allowed_client_applications",
+                    "jwtAllowedClientApplications",
                     &self.r#jwt_allowed_client_applications,
                 ),
                 to_pulumi_object_field(
-                    "jwt_allowed_groups",
+                    "jwtAllowedGroups",
                     &self.r#jwt_allowed_groups,
                 ),
                 to_pulumi_object_field(
-                    "login_parameters",
+                    "loginParameters",
                     &self.r#login_parameters,
                 ),
                 to_pulumi_object_field(
-                    "tenant_auth_endpoint",
+                    "tenantAuthEndpoint",
                     &self.r#tenant_auth_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "www_authentication_disabled",
+                    "wwwAuthenticationDisabled",
                     &self.r#www_authentication_disabled,
                 ),
             ];
@@ -144,86 +144,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#allowed_applications: {
-                        let field_value = match fields_map.get("allowed_applications") {
+                        let field_value = match fields_map.get("allowedApplications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_applications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedApplications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_audiences: {
-                        let field_value = match fields_map.get("allowed_audiences") {
+                        let field_value = match fields_map.get("allowedAudiences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_audiences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedAudiences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_groups: {
-                        let field_value = match fields_map.get("allowed_groups") {
+                        let field_value = match fields_map.get("allowedGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_identities: {
-                        let field_value = match fields_map.get("allowed_identities") {
+                        let field_value = match fields_map.get("allowedIdentities") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_identities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedIdentities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_id: {
-                        let field_value = match fields_map.get("client_id") {
+                        let field_value = match fields_map.get("clientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_secret_certificate_thumbprint: {
-                        let field_value = match fields_map.get("client_secret_certificate_thumbprint") {
+                        let field_value = match fields_map.get("clientSecretCertificateThumbprint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_secret_certificate_thumbprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientSecretCertificateThumbprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_secret_setting_name: {
-                        let field_value = match fields_map.get("client_secret_setting_name") {
+                        let field_value = match fields_map.get("clientSecretSettingName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_secret_setting_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientSecretSettingName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jwt_allowed_client_applications: {
-                        let field_value = match fields_map.get("jwt_allowed_client_applications") {
+                        let field_value = match fields_map.get("jwtAllowedClientApplications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jwt_allowed_client_applications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jwtAllowedClientApplications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jwt_allowed_groups: {
-                        let field_value = match fields_map.get("jwt_allowed_groups") {
+                        let field_value = match fields_map.get("jwtAllowedGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jwt_allowed_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jwtAllowedGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#login_parameters: {
-                        let field_value = match fields_map.get("login_parameters") {
+                        let field_value = match fields_map.get("loginParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'login_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loginParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tenant_auth_endpoint: {
-                        let field_value = match fields_map.get("tenant_auth_endpoint") {
+                        let field_value = match fields_map.get("tenantAuthEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tenant_auth_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tenantAuthEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#www_authentication_disabled: {
-                        let field_value = match fields_map.get("www_authentication_disabled") {
+                        let field_value = match fields_map.get("wwwAuthenticationDisabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'www_authentication_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'wwwAuthenticationDisabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

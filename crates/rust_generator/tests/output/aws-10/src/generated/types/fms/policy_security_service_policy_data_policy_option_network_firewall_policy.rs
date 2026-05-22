@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "firewall_deployment_model",
+                    "firewallDeploymentModel",
                     &self.r#firewall_deployment_model,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#firewall_deployment_model: {
-                        let field_value = match fields_map.get("firewall_deployment_model") {
+                        let field_value = match fields_map.get("firewallDeploymentModel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'firewall_deployment_model' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firewallDeploymentModel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_use_as_direct_query_source",
+                    "disableUseAsDirectQuerySource",
                     &self.r#disable_use_as_direct_query_source,
                 ),
                 to_pulumi_object_field(
-                    "disable_use_as_imported_source",
+                    "disableUseAsImportedSource",
                     &self.r#disable_use_as_imported_source,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#disable_use_as_direct_query_source: {
-                        let field_value = match fields_map.get("disable_use_as_direct_query_source") {
+                        let field_value = match fields_map.get("disableUseAsDirectQuerySource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_use_as_direct_query_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableUseAsDirectQuerySource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_use_as_imported_source: {
-                        let field_value = match fields_map.get("disable_use_as_imported_source") {
+                        let field_value = match fields_map.get("disableUseAsImportedSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_use_as_imported_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableUseAsImportedSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

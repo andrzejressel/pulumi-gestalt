@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_media_source_address_prefixes",
+                    "allowedMediaSourceAddressPrefixes",
                     &self.r#allowed_media_source_address_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "allowed_signaling_source_address_prefixes",
+                    "allowedSignalingSourceAddressPrefixes",
                     &self.r#allowed_signaling_source_address_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "esrp_addresses",
+                    "esrpAddresses",
                     &self.r#esrp_addresses,
                 ),
                 to_pulumi_object_field(
@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "operator_addresses",
+                    "operatorAddresses",
                     &self.r#operator_addresses,
                 ),
             ];
@@ -84,23 +84,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#allowed_media_source_address_prefixes: {
-                        let field_value = match fields_map.get("allowed_media_source_address_prefixes") {
+                        let field_value = match fields_map.get("allowedMediaSourceAddressPrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_media_source_address_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedMediaSourceAddressPrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_signaling_source_address_prefixes: {
-                        let field_value = match fields_map.get("allowed_signaling_source_address_prefixes") {
+                        let field_value = match fields_map.get("allowedSignalingSourceAddressPrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_signaling_source_address_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedSignalingSourceAddressPrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#esrp_addresses: {
-                        let field_value = match fields_map.get("esrp_addresses") {
+                        let field_value = match fields_map.get("esrpAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'esrp_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'esrpAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,9 +112,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operator_addresses: {
-                        let field_value = match fields_map.get("operator_addresses") {
+                        let field_value = match fields_map.get("operatorAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operator_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operatorAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

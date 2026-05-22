@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_protocol",
+                    "authenticationProtocol",
                     &self.r#authentication_protocol,
                 ),
                 to_pulumi_object_field(
-                    "display_label",
+                    "displayLabel",
                     &self.r#display_label,
                 ),
                 to_pulumi_object_field(
-                    "radius_port",
+                    "radiusPort",
                     &self.r#radius_port,
                 ),
                 to_pulumi_object_field(
-                    "radius_retries",
+                    "radiusRetries",
                     &self.r#radius_retries,
                 ),
                 to_pulumi_object_field(
-                    "radius_servers",
+                    "radiusServers",
                     &self.r#radius_servers,
                 ),
                 to_pulumi_object_field(
-                    "radius_timeout",
+                    "radiusTimeout",
                     &self.r#radius_timeout,
                 ),
                 to_pulumi_object_field(
-                    "use_same_username",
+                    "useSameUsername",
                     &self.r#use_same_username,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#authentication_protocol: {
-                        let field_value = match fields_map.get("authentication_protocol") {
+                        let field_value = match fields_map.get("authenticationProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_label: {
-                        let field_value = match fields_map.get("display_label") {
+                        let field_value = match fields_map.get("displayLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#radius_port: {
-                        let field_value = match fields_map.get("radius_port") {
+                        let field_value = match fields_map.get("radiusPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'radius_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'radiusPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#radius_retries: {
-                        let field_value = match fields_map.get("radius_retries") {
+                        let field_value = match fields_map.get("radiusRetries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'radius_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'radiusRetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#radius_servers: {
-                        let field_value = match fields_map.get("radius_servers") {
+                        let field_value = match fields_map.get("radiusServers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'radius_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'radiusServers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#radius_timeout: {
-                        let field_value = match fields_map.get("radius_timeout") {
+                        let field_value = match fields_map.get("radiusTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'radius_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'radiusTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_same_username: {
-                        let field_value = match fields_map.get("use_same_username") {
+                        let field_value = match fields_map.get("useSameUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_same_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useSameUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#authority,
                 ),
                 to_pulumi_object_field(
-                    "smart_proxy_enabled",
+                    "smartProxyEnabled",
                     &self.r#smart_proxy_enabled,
                 ),
             ];
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#smart_proxy_enabled: {
-                        let field_value = match fields_map.get("smart_proxy_enabled") {
+                        let field_value = match fields_map.get("smartProxyEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'smart_proxy_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'smartProxyEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

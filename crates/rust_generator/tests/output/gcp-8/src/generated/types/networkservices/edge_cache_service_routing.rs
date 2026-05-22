@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_rules",
+                    "hostRules",
                     &self.r#host_rules,
                 ),
                 to_pulumi_object_field(
-                    "path_matchers",
+                    "pathMatchers",
                     &self.r#path_matchers,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#host_rules: {
-                        let field_value = match fields_map.get("host_rules") {
+                        let field_value = match fields_map.get("hostRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_matchers: {
-                        let field_value = match fields_map.get("path_matchers") {
+                        let field_value = match fields_map.get("pathMatchers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_matchers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathMatchers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

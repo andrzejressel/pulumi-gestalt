@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#daily,
                 ),
                 to_pulumi_object_field(
-                    "maximum_duration",
+                    "maximumDuration",
                     &self.r#maximum_duration,
                 ),
                 to_pulumi_object_field(
-                    "messages_per_second",
+                    "messagesPerSecond",
                     &self.r#messages_per_second,
                 ),
                 to_pulumi_object_field(
@@ -81,16 +81,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_duration: {
-                        let field_value = match fields_map.get("maximum_duration") {
+                        let field_value = match fields_map.get("maximumDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#messages_per_second: {
-                        let field_value = match fields_map.get("messages_per_second") {
+                        let field_value = match fields_map.get("messagesPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'messages_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messagesPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

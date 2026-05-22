@@ -44,19 +44,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_nat_active_ips",
+                    "sourceNatActiveIps",
                     &self.r#source_nat_active_ips,
                 ),
                 to_pulumi_object_field(
-                    "source_nat_active_ranges",
+                    "sourceNatActiveRanges",
                     &self.r#source_nat_active_ranges,
                 ),
                 to_pulumi_object_field(
-                    "source_nat_drain_ips",
+                    "sourceNatDrainIps",
                     &self.r#source_nat_drain_ips,
                 ),
                 to_pulumi_object_field(
-                    "source_nat_drain_ranges",
+                    "sourceNatDrainRanges",
                     &self.r#source_nat_drain_ranges,
                 ),
             ];
@@ -83,30 +83,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#source_nat_active_ips: {
-                        let field_value = match fields_map.get("source_nat_active_ips") {
+                        let field_value = match fields_map.get("sourceNatActiveIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_nat_active_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceNatActiveIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_nat_active_ranges: {
-                        let field_value = match fields_map.get("source_nat_active_ranges") {
+                        let field_value = match fields_map.get("sourceNatActiveRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_nat_active_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceNatActiveRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_nat_drain_ips: {
-                        let field_value = match fields_map.get("source_nat_drain_ips") {
+                        let field_value = match fields_map.get("sourceNatDrainIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_nat_drain_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceNatDrainIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_nat_drain_ranges: {
-                        let field_value = match fields_map.get("source_nat_drain_ranges") {
+                        let field_value = match fields_map.get("sourceNatDrainRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_nat_drain_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceNatDrainRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

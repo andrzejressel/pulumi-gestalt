@@ -42,19 +42,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_role_arn",
+                    "awsRoleArn",
                     &self.r#aws_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "consumer_arn",
+                    "consumerArn",
                     &self.r#consumer_arn,
                 ),
                 to_pulumi_object_field(
-                    "gcp_service_account",
+                    "gcpServiceAccount",
                     &self.r#gcp_service_account,
                 ),
                 to_pulumi_object_field(
-                    "stream_arn",
+                    "streamArn",
                     &self.r#stream_arn,
                 ),
             ];
@@ -81,30 +81,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#aws_role_arn: {
-                        let field_value = match fields_map.get("aws_role_arn") {
+                        let field_value = match fields_map.get("awsRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consumer_arn: {
-                        let field_value = match fields_map.get("consumer_arn") {
+                        let field_value = match fields_map.get("consumerArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcp_service_account: {
-                        let field_value = match fields_map.get("gcp_service_account") {
+                        let field_value = match fields_map.get("gcpServiceAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcp_service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcpServiceAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_arn: {
-                        let field_value = match fields_map.get("stream_arn") {
+                        let field_value = match fields_map.get("streamArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stream_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'streamArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

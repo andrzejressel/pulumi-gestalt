@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#label,
                 ),
                 to_pulumi_object_field(
-                    "metric_stat",
+                    "metricStat",
                     &self.r#metric_stat,
                 ),
                 to_pulumi_object_field(
-                    "return_data",
+                    "returnData",
                     &self.r#return_data,
                 ),
             ];
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_stat: {
-                        let field_value = match fields_map.get("metric_stat") {
+                        let field_value = match fields_map.get("metricStat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_stat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricStat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#return_data: {
-                        let field_value = match fields_map.get("return_data") {
+                        let field_value = match fields_map.get("returnData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'return_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'returnData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_id",
+                    "certificateId",
                     &self.r#certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "pending_managed_certificate_id",
+                    "pendingManagedCertificateId",
                     &self.r#pending_managed_certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "ssl_management_type",
+                    "sslManagementType",
                     &self.r#ssl_management_type,
                 ),
             ];
@@ -78,23 +78,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#certificate_id: {
-                        let field_value = match fields_map.get("certificate_id") {
+                        let field_value = match fields_map.get("certificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pending_managed_certificate_id: {
-                        let field_value = match fields_map.get("pending_managed_certificate_id") {
+                        let field_value = match fields_map.get("pendingManagedCertificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pending_managed_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pendingManagedCertificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_management_type: {
-                        let field_value = match fields_map.get("ssl_management_type") {
+                        let field_value = match fields_map.get("sslManagementType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_management_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslManagementType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

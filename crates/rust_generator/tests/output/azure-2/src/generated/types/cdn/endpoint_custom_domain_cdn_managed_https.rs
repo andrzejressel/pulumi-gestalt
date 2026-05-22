@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_type",
+                    "certificateType",
                     &self.r#certificate_type,
                 ),
                 to_pulumi_object_field(
-                    "protocol_type",
+                    "protocolType",
                     &self.r#protocol_type,
                 ),
                 to_pulumi_object_field(
-                    "tls_version",
+                    "tlsVersion",
                     &self.r#tls_version,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#certificate_type: {
-                        let field_value = match fields_map.get("certificate_type") {
+                        let field_value = match fields_map.get("certificateType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protocol_type: {
-                        let field_value = match fields_map.get("protocol_type") {
+                        let field_value = match fields_map.get("protocolType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protocol_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protocolType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_version: {
-                        let field_value = match fields_map.get("tls_version") {
+                        let field_value = match fields_map.get("tlsVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

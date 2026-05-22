@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_information",
+                    "availabilityInformation",
                     &self.r#availability_information,
                 ),
                 to_pulumi_object_field(
-                    "cost_information",
+                    "costInformation",
                     &self.r#cost_information,
                 ),
                 to_pulumi_object_field(
@@ -71,19 +71,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "filterable_properties",
+                    "filterableProperties",
                     &self.r#filterable_properties,
                 ),
                 to_pulumi_object_field(
-                    "hierarchy_information",
+                    "hierarchyInformation",
                     &self.r#hierarchy_information,
                 ),
                 to_pulumi_object_field(
-                    "image_information",
+                    "imageInformation",
                     &self.r#image_information,
                 ),
                 to_pulumi_object_field(
@@ -114,16 +114,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#availability_information: {
-                        let field_value = match fields_map.get("availability_information") {
+                        let field_value = match fields_map.get("availabilityInformation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'availability_information' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availabilityInformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cost_information: {
-                        let field_value = match fields_map.get("cost_information") {
+                        let field_value = match fields_map.get("costInformation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cost_information' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'costInformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,30 +142,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filterable_properties: {
-                        let field_value = match fields_map.get("filterable_properties") {
+                        let field_value = match fields_map.get("filterableProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filterable_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterableProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hierarchy_information: {
-                        let field_value = match fields_map.get("hierarchy_information") {
+                        let field_value = match fields_map.get("hierarchyInformation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hierarchy_information' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hierarchyInformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_information: {
-                        let field_value = match fields_map.get("image_information") {
+                        let field_value = match fields_map.get("imageInformation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_information' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageInformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

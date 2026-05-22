@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "private_link_vpce_id",
+                    "privateLinkVpceId",
                     &self.r#private_link_vpce_id,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#private_link_vpce_id: {
-                        let field_value = match fields_map.get("private_link_vpce_id") {
+                        let field_value = match fields_map.get("privateLinkVpceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_link_vpce_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateLinkVpceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

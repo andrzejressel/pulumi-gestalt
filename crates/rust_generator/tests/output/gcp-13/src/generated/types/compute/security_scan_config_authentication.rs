@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_account",
+                    "customAccount",
                     &self.r#custom_account,
                 ),
                 to_pulumi_object_field(
-                    "google_account",
+                    "googleAccount",
                     &self.r#google_account,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#custom_account: {
-                        let field_value = match fields_map.get("custom_account") {
+                        let field_value = match fields_map.get("customAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#google_account: {
-                        let field_value = match fields_map.get("google_account") {
+                        let field_value = match fields_map.get("googleAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'google_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'googleAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

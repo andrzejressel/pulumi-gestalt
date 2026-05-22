@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fail_open",
+                    "failOpen",
                     &self.r#fail_open,
                 ),
                 to_pulumi_object_field(
-                    "pre_shared_keys",
+                    "preSharedKeys",
                     &self.r#pre_shared_keys,
                 ),
             ];
@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#fail_open: {
-                        let field_value = match fields_map.get("fail_open") {
+                        let field_value = match fields_map.get("failOpen") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fail_open' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failOpen' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_shared_keys: {
-                        let field_value = match fields_map.get("pre_shared_keys") {
+                        let field_value = match fields_map.get("preSharedKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_shared_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preSharedKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

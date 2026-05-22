@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxP
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "target_flow",
+                    "targetFlow",
                     &self.r#target_flow,
                 ),
                 to_pulumi_object_field(
-                    "target_page",
+                    "targetPage",
                     &self.r#target_page,
                 ),
                 to_pulumi_object_field(
-                    "trigger_fulfillment",
+                    "triggerFulfillment",
                     &self.r#trigger_fulfillment,
                 ),
             ];
@@ -100,23 +100,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_flow: {
-                        let field_value = match fields_map.get("target_flow") {
+                        let field_value = match fields_map.get("targetFlow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_flow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetFlow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_page: {
-                        let field_value = match fields_map.get("target_page") {
+                        let field_value = match fields_map.get("targetPage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_page' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetPage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trigger_fulfillment: {
-                        let field_value = match fields_map.get("trigger_fulfillment") {
+                        let field_value = match fields_map.get("triggerFulfillment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trigger_fulfillment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'triggerFulfillment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

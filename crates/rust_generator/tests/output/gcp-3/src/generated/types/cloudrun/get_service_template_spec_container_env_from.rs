@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "config_map_reves",
+                    "configMapReves",
                     &self.r#config_map_reves,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#prefix,
                 ),
                 to_pulumi_object_field(
-                    "secret_reves",
+                    "secretReves",
                     &self.r#secret_reves,
                 ),
             ];
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#config_map_reves: {
-                        let field_value = match fields_map.get("config_map_reves") {
+                        let field_value = match fields_map.get("configMapReves") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_map_reves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configMapReves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_reves: {
-                        let field_value = match fields_map.get("secret_reves") {
+                        let field_value = match fields_map.get("secretReves") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_reves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretReves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cap
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_warmup_period",
+                    "instanceWarmupPeriod",
                     &self.r#instance_warmup_period,
                 ),
                 to_pulumi_object_field(
-                    "maximum_scaling_step_size",
+                    "maximumScalingStepSize",
                     &self.r#maximum_scaling_step_size,
                 ),
                 to_pulumi_object_field(
-                    "minimum_scaling_step_size",
+                    "minimumScalingStepSize",
                     &self.r#minimum_scaling_step_size,
                 ),
                 to_pulumi_object_field(
@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cap
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "target_capacity",
+                    "targetCapacity",
                     &self.r#target_capacity,
                 ),
             ];
@@ -84,23 +84,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#instance_warmup_period: {
-                        let field_value = match fields_map.get("instance_warmup_period") {
+                        let field_value = match fields_map.get("instanceWarmupPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_warmup_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceWarmupPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_scaling_step_size: {
-                        let field_value = match fields_map.get("maximum_scaling_step_size") {
+                        let field_value = match fields_map.get("maximumScalingStepSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_scaling_step_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumScalingStepSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_scaling_step_size: {
-                        let field_value = match fields_map.get("minimum_scaling_step_size") {
+                        let field_value = match fields_map.get("minimumScalingStepSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_scaling_step_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumScalingStepSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,9 +112,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_capacity: {
-                        let field_value = match fields_map.get("target_capacity") {
+                        let field_value = match fields_map.get("targetCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

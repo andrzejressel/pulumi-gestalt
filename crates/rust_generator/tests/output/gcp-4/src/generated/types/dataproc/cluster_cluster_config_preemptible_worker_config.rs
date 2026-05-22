@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_config",
+                    "diskConfig",
                     &self.r#disk_config,
                 ),
                 to_pulumi_object_field(
-                    "instance_flexibility_policy",
+                    "instanceFlexibilityPolicy",
                     &self.r#instance_flexibility_policy,
                 ),
                 to_pulumi_object_field(
-                    "instance_names",
+                    "instanceNames",
                     &self.r#instance_names,
                 ),
                 to_pulumi_object_field(
-                    "num_instances",
+                    "numInstances",
                     &self.r#num_instances,
                 ),
                 to_pulumi_object_field(
@@ -88,30 +88,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#disk_config: {
-                        let field_value = match fields_map.get("disk_config") {
+                        let field_value = match fields_map.get("diskConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_flexibility_policy: {
-                        let field_value = match fields_map.get("instance_flexibility_policy") {
+                        let field_value = match fields_map.get("instanceFlexibilityPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_flexibility_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceFlexibilityPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_names: {
-                        let field_value = match fields_map.get("instance_names") {
+                        let field_value = match fields_map.get("instanceNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_instances: {
-                        let field_value = match fields_map.get("num_instances") {
+                        let field_value = match fields_map.get("numInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'num_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

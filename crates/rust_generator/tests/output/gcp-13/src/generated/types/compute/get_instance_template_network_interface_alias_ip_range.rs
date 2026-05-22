@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_cidr_range",
+                    "ipCidrRange",
                     &self.r#ip_cidr_range,
                 ),
                 to_pulumi_object_field(
-                    "subnetwork_range_name",
+                    "subnetworkRangeName",
                     &self.r#subnetwork_range_name,
                 ),
             ];
@@ -64,16 +64,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#ip_cidr_range: {
-                        let field_value = match fields_map.get("ip_cidr_range") {
+                        let field_value = match fields_map.get("ipCidrRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_cidr_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipCidrRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnetwork_range_name: {
-                        let field_value = match fields_map.get("subnetwork_range_name") {
+                        let field_value = match fields_map.get("subnetworkRangeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subnetwork_range_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subnetworkRangeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

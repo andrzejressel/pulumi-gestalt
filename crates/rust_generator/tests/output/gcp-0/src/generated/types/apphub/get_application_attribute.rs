@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "business_owners",
+                    "businessOwners",
                     &self.r#business_owners,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#criticalities,
                 ),
                 to_pulumi_object_field(
-                    "developer_owners",
+                    "developerOwners",
                     &self.r#developer_owners,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#environments,
                 ),
                 to_pulumi_object_field(
-                    "operator_owners",
+                    "operatorOwners",
                     &self.r#operator_owners,
                 ),
             ];
@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#business_owners: {
-                        let field_value = match fields_map.get("business_owners") {
+                        let field_value = match fields_map.get("businessOwners") {
                             Some(value) => value,
-                            None => bail!("Missing field 'business_owners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'businessOwners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,9 +96,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#developer_owners: {
-                        let field_value = match fields_map.get("developer_owners") {
+                        let field_value = match fields_map.get("developerOwners") {
                             Some(value) => value,
-                            None => bail!("Missing field 'developer_owners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'developerOwners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operator_owners: {
-                        let field_value = match fields_map.get("operator_owners") {
+                        let field_value = match fields_map.get("operatorOwners") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operator_owners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operatorOwners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

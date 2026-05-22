@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
                     &self.r#alarm,
                 ),
                 to_pulumi_object_field(
-                    "extension_period",
+                    "extensionPeriod",
                     &self.r#extension_period,
                 ),
                 to_pulumi_object_field(
-                    "wait_period",
+                    "waitPeriod",
                     &self.r#wait_period,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extension_period: {
-                        let field_value = match fields_map.get("extension_period") {
+                        let field_value = match fields_map.get("extensionPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extension_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extensionPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wait_period: {
-                        let field_value = match fields_map.get("wait_period") {
+                        let field_value = match fields_map.get("waitPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wait_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'waitPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

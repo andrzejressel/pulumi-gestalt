@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "livy_endpoint_enabled",
+                    "livyEndpointEnabled",
                     &self.r#livy_endpoint_enabled,
                 ),
                 to_pulumi_object_field(
-                    "studio_enabled",
+                    "studioEnabled",
                     &self.r#studio_enabled,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#livy_endpoint_enabled: {
-                        let field_value = match fields_map.get("livy_endpoint_enabled") {
+                        let field_value = match fields_map.get("livyEndpointEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'livy_endpoint_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'livyEndpointEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#studio_enabled: {
-                        let field_value = match fields_map.get("studio_enabled") {
+                        let field_value = match fields_map.get("studioEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'studio_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'studioEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

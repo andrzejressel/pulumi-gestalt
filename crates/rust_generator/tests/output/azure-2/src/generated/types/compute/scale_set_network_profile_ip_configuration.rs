@@ -55,19 +55,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_gateway_backend_address_pool_ids",
+                    "applicationGatewayBackendAddressPoolIds",
                     &self.r#application_gateway_backend_address_pool_ids,
                 ),
                 to_pulumi_object_field(
-                    "application_security_group_ids",
+                    "applicationSecurityGroupIds",
                     &self.r#application_security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_backend_address_pool_ids",
+                    "loadBalancerBackendAddressPoolIds",
                     &self.r#load_balancer_backend_address_pool_ids,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_inbound_nat_rules_ids",
+                    "loadBalancerInboundNatRulesIds",
                     &self.r#load_balancer_inbound_nat_rules_ids,
                 ),
                 to_pulumi_object_field(
@@ -79,11 +79,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#primary,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_address_configuration",
+                    "publicIpAddressConfiguration",
                     &self.r#public_ip_address_configuration,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];
@@ -110,30 +110,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#application_gateway_backend_address_pool_ids: {
-                        let field_value = match fields_map.get("application_gateway_backend_address_pool_ids") {
+                        let field_value = match fields_map.get("applicationGatewayBackendAddressPoolIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_gateway_backend_address_pool_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationGatewayBackendAddressPoolIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#application_security_group_ids: {
-                        let field_value = match fields_map.get("application_security_group_ids") {
+                        let field_value = match fields_map.get("applicationSecurityGroupIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_security_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationSecurityGroupIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancer_backend_address_pool_ids: {
-                        let field_value = match fields_map.get("load_balancer_backend_address_pool_ids") {
+                        let field_value = match fields_map.get("loadBalancerBackendAddressPoolIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancer_backend_address_pool_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancerBackendAddressPoolIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancer_inbound_nat_rules_ids: {
-                        let field_value = match fields_map.get("load_balancer_inbound_nat_rules_ids") {
+                        let field_value = match fields_map.get("loadBalancerInboundNatRulesIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancer_inbound_nat_rules_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancerInboundNatRulesIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -152,16 +152,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_ip_address_configuration: {
-                        let field_value = match fields_map.get("public_ip_address_configuration") {
+                        let field_value = match fields_map.get("publicIpAddressConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_ip_address_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicIpAddressConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_id: {
-                        let field_value = match fields_map.get("subnet_id") {
+                        let field_value = match fields_map.get("subnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

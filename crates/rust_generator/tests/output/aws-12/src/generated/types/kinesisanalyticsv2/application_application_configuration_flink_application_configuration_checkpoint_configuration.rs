@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "checkpoint_interval",
+                    "checkpointInterval",
                     &self.r#checkpoint_interval,
                 ),
                 to_pulumi_object_field(
-                    "checkpointing_enabled",
+                    "checkpointingEnabled",
                     &self.r#checkpointing_enabled,
                 ),
                 to_pulumi_object_field(
-                    "configuration_type",
+                    "configurationType",
                     &self.r#configuration_type,
                 ),
                 to_pulumi_object_field(
-                    "min_pause_between_checkpoints",
+                    "minPauseBetweenCheckpoints",
                     &self.r#min_pause_between_checkpoints,
                 ),
             ];
@@ -77,30 +77,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#checkpoint_interval: {
-                        let field_value = match fields_map.get("checkpoint_interval") {
+                        let field_value = match fields_map.get("checkpointInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'checkpoint_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkpointInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#checkpointing_enabled: {
-                        let field_value = match fields_map.get("checkpointing_enabled") {
+                        let field_value = match fields_map.get("checkpointingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'checkpointing_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkpointingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#configuration_type: {
-                        let field_value = match fields_map.get("configuration_type") {
+                        let field_value = match fields_map.get("configurationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configuration_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configurationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_pause_between_checkpoints: {
-                        let field_value = match fields_map.get("min_pause_between_checkpoints") {
+                        let field_value = match fields_map.get("minPauseBetweenCheckpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_pause_between_checkpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minPauseBetweenCheckpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

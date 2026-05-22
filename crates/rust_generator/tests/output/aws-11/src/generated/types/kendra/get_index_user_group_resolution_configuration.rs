@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "user_group_resolution_mode",
+                    "userGroupResolutionMode",
                     &self.r#user_group_resolution_mode,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#user_group_resolution_mode: {
-                        let field_value = match fields_map.get("user_group_resolution_mode") {
+                        let field_value = match fields_map.get("userGroupResolutionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_group_resolution_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userGroupResolutionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

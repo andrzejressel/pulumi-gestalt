@@ -29,15 +29,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "oauth_2_grant_type",
+                    "oauth2GrantType",
                     &self.r#oauth_2_grant_type,
                 ),
                 to_pulumi_object_field(
-                    "token_url",
+                    "tokenUrl",
                     &self.r#token_url,
                 ),
                 to_pulumi_object_field(
-                    "token_url_custom_properties",
+                    "tokenUrlCustomProperties",
                     &self.r#token_url_custom_properties,
                 ),
             ];
@@ -64,23 +64,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#oauth_2_grant_type: {
-                        let field_value = match fields_map.get("oauth_2_grant_type") {
+                        let field_value = match fields_map.get("oauth2GrantType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2_grant_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2GrantType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_url: {
-                        let field_value = match fields_map.get("token_url") {
+                        let field_value = match fields_map.get("tokenUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_url_custom_properties: {
-                        let field_value = match fields_map.get("token_url_custom_properties") {
+                        let field_value = match fields_map.get("tokenUrlCustomProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_url_custom_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenUrlCustomProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_client_id",
+                    "accessClientId",
                     &self.r#access_client_id,
                 ),
                 to_pulumi_object_field(
-                    "access_client_secret",
+                    "accessClientSecret",
                     &self.r#access_client_secret,
                 ),
                 to_pulumi_object_field(
-                    "api_url",
+                    "apiUrl",
                     &self.r#api_url,
                 ),
                 to_pulumi_object_field(
-                    "auth_url",
+                    "authUrl",
                     &self.r#auth_url,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_key",
+                    "clientKey",
                     &self.r#client_key,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
-                    "customer_id",
+                    "customerId",
                     &self.r#customer_id,
                 ),
             ];
@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#access_client_id: {
-                        let field_value = match fields_map.get("access_client_id") {
+                        let field_value = match fields_map.get("accessClientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessClientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#access_client_secret: {
-                        let field_value = match fields_map.get("access_client_secret") {
+                        let field_value = match fields_map.get("accessClientSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_client_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessClientSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#api_url: {
-                        let field_value = match fields_map.get("api_url") {
+                        let field_value = match fields_map.get("apiUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_url: {
-                        let field_value = match fields_map.get("auth_url") {
+                        let field_value = match fields_map.get("authUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_id: {
-                        let field_value = match fields_map.get("client_id") {
+                        let field_value = match fields_map.get("clientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_key: {
-                        let field_value = match fields_map.get("client_key") {
+                        let field_value = match fields_map.get("clientKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_secret: {
-                        let field_value = match fields_map.get("client_secret") {
+                        let field_value = match fields_map.get("clientSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#customer_id: {
-                        let field_value = match fields_map.get("customer_id") {
+                        let field_value = match fields_map.get("customerId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customer_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customerId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

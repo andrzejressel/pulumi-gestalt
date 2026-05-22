@@ -84,59 +84,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#age,
                 ),
                 to_pulumi_object_field(
-                    "created_before",
+                    "createdBefore",
                     &self.r#created_before,
                 ),
                 to_pulumi_object_field(
-                    "custom_time_before",
+                    "customTimeBefore",
                     &self.r#custom_time_before,
                 ),
                 to_pulumi_object_field(
-                    "days_since_custom_time",
+                    "daysSinceCustomTime",
                     &self.r#days_since_custom_time,
                 ),
                 to_pulumi_object_field(
-                    "days_since_noncurrent_time",
+                    "daysSinceNoncurrentTime",
                     &self.r#days_since_noncurrent_time,
                 ),
                 to_pulumi_object_field(
-                    "matches_prefixes",
+                    "matchesPrefixes",
                     &self.r#matches_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "matches_storage_classes",
+                    "matchesStorageClasses",
                     &self.r#matches_storage_classes,
                 ),
                 to_pulumi_object_field(
-                    "matches_suffixes",
+                    "matchesSuffixes",
                     &self.r#matches_suffixes,
                 ),
                 to_pulumi_object_field(
-                    "noncurrent_time_before",
+                    "noncurrentTimeBefore",
                     &self.r#noncurrent_time_before,
                 ),
                 to_pulumi_object_field(
-                    "num_newer_versions",
+                    "numNewerVersions",
                     &self.r#num_newer_versions,
                 ),
                 to_pulumi_object_field(
-                    "send_age_if_zero",
+                    "sendAgeIfZero",
                     &self.r#send_age_if_zero,
                 ),
                 to_pulumi_object_field(
-                    "send_days_since_custom_time_if_zero",
+                    "sendDaysSinceCustomTimeIfZero",
                     &self.r#send_days_since_custom_time_if_zero,
                 ),
                 to_pulumi_object_field(
-                    "send_days_since_noncurrent_time_if_zero",
+                    "sendDaysSinceNoncurrentTimeIfZero",
                     &self.r#send_days_since_noncurrent_time_if_zero,
                 ),
                 to_pulumi_object_field(
-                    "send_num_newer_versions_if_zero",
+                    "sendNumNewerVersionsIfZero",
                     &self.r#send_num_newer_versions_if_zero,
                 ),
                 to_pulumi_object_field(
-                    "with_state",
+                    "withState",
                     &self.r#with_state,
                 ),
             ];
@@ -170,100 +170,100 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#created_before: {
-                        let field_value = match fields_map.get("created_before") {
+                        let field_value = match fields_map.get("createdBefore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'created_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createdBefore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_time_before: {
-                        let field_value = match fields_map.get("custom_time_before") {
+                        let field_value = match fields_map.get("customTimeBefore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_time_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customTimeBefore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#days_since_custom_time: {
-                        let field_value = match fields_map.get("days_since_custom_time") {
+                        let field_value = match fields_map.get("daysSinceCustomTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_since_custom_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysSinceCustomTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#days_since_noncurrent_time: {
-                        let field_value = match fields_map.get("days_since_noncurrent_time") {
+                        let field_value = match fields_map.get("daysSinceNoncurrentTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_since_noncurrent_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysSinceNoncurrentTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matches_prefixes: {
-                        let field_value = match fields_map.get("matches_prefixes") {
+                        let field_value = match fields_map.get("matchesPrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'matches_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchesPrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matches_storage_classes: {
-                        let field_value = match fields_map.get("matches_storage_classes") {
+                        let field_value = match fields_map.get("matchesStorageClasses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'matches_storage_classes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchesStorageClasses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matches_suffixes: {
-                        let field_value = match fields_map.get("matches_suffixes") {
+                        let field_value = match fields_map.get("matchesSuffixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'matches_suffixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchesSuffixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#noncurrent_time_before: {
-                        let field_value = match fields_map.get("noncurrent_time_before") {
+                        let field_value = match fields_map.get("noncurrentTimeBefore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'noncurrent_time_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noncurrentTimeBefore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_newer_versions: {
-                        let field_value = match fields_map.get("num_newer_versions") {
+                        let field_value = match fields_map.get("numNewerVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'num_newer_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numNewerVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_age_if_zero: {
-                        let field_value = match fields_map.get("send_age_if_zero") {
+                        let field_value = match fields_map.get("sendAgeIfZero") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_age_if_zero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendAgeIfZero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_days_since_custom_time_if_zero: {
-                        let field_value = match fields_map.get("send_days_since_custom_time_if_zero") {
+                        let field_value = match fields_map.get("sendDaysSinceCustomTimeIfZero") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_days_since_custom_time_if_zero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendDaysSinceCustomTimeIfZero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_days_since_noncurrent_time_if_zero: {
-                        let field_value = match fields_map.get("send_days_since_noncurrent_time_if_zero") {
+                        let field_value = match fields_map.get("sendDaysSinceNoncurrentTimeIfZero") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_days_since_noncurrent_time_if_zero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendDaysSinceNoncurrentTimeIfZero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_num_newer_versions_if_zero: {
-                        let field_value = match fields_map.get("send_num_newer_versions_if_zero") {
+                        let field_value = match fields_map.get("sendNumNewerVersionsIfZero") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_num_newer_versions_if_zero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendNumNewerVersionsIfZero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#with_state: {
-                        let field_value = match fields_map.get("with_state") {
+                        let field_value = match fields_map.get("withState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'with_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'withState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

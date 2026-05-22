@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "primary_clusters",
+                    "primaryClusters",
                     &self.r#primary_clusters,
                 ),
                 to_pulumi_object_field(
-                    "secondary_clusters",
+                    "secondaryClusters",
                     &self.r#secondary_clusters,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#primary_clusters: {
-                        let field_value = match fields_map.get("primary_clusters") {
+                        let field_value = match fields_map.get("primaryClusters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_clusters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryClusters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_clusters: {
-                        let field_value = match fields_map.get("secondary_clusters") {
+                        let field_value = match fields_map.get("secondaryClusters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_clusters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryClusters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

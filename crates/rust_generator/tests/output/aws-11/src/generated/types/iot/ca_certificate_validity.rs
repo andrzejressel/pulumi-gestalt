@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaC
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "not_after",
+                    "notAfter",
                     &self.r#not_after,
                 ),
                 to_pulumi_object_field(
-                    "not_before",
+                    "notBefore",
                     &self.r#not_before,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#not_after: {
-                        let field_value = match fields_map.get("not_after") {
+                        let field_value = match fields_map.get("notAfter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_after' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notAfter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_before: {
-                        let field_value = match fields_map.get("not_before") {
+                        let field_value = match fields_map.get("notBefore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notBefore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

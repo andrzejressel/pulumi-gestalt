@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "breakpoint_percentile_threshold",
+                    "breakpointPercentileThreshold",
                     &self.r#breakpoint_percentile_threshold,
                 ),
                 to_pulumi_object_field(
-                    "buffer_size",
+                    "bufferSize",
                     &self.r#buffer_size,
                 ),
                 to_pulumi_object_field(
-                    "max_token",
+                    "maxToken",
                     &self.r#max_token,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#breakpoint_percentile_threshold: {
-                        let field_value = match fields_map.get("breakpoint_percentile_threshold") {
+                        let field_value = match fields_map.get("breakpointPercentileThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'breakpoint_percentile_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'breakpointPercentileThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#buffer_size: {
-                        let field_value = match fields_map.get("buffer_size") {
+                        let field_value = match fields_map.get("bufferSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'buffer_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bufferSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_token: {
-                        let field_value = match fields_map.get("max_token") {
+                        let field_value = match fields_map.get("maxToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

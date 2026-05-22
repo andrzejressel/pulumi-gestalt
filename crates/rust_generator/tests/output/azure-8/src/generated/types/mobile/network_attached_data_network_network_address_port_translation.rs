@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "icmp_pinhole_timeout_in_seconds",
+                    "icmpPinholeTimeoutInSeconds",
                     &self.r#icmp_pinhole_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "pinhole_maximum_number",
+                    "pinholeMaximumNumber",
                     &self.r#pinhole_maximum_number,
                 ),
                 to_pulumi_object_field(
-                    "port_range",
+                    "portRange",
                     &self.r#port_range,
                 ),
                 to_pulumi_object_field(
-                    "tcp_pinhole_timeout_in_seconds",
+                    "tcpPinholeTimeoutInSeconds",
                     &self.r#tcp_pinhole_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "tcp_port_reuse_minimum_hold_time_in_seconds",
+                    "tcpPortReuseMinimumHoldTimeInSeconds",
                     &self.r#tcp_port_reuse_minimum_hold_time_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "udp_pinhole_timeout_in_seconds",
+                    "udpPinholeTimeoutInSeconds",
                     &self.r#udp_pinhole_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "udp_port_reuse_minimum_hold_time_in_seconds",
+                    "udpPortReuseMinimumHoldTimeInSeconds",
                     &self.r#udp_port_reuse_minimum_hold_time_in_seconds,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#icmp_pinhole_timeout_in_seconds: {
-                        let field_value = match fields_map.get("icmp_pinhole_timeout_in_seconds") {
+                        let field_value = match fields_map.get("icmpPinholeTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'icmp_pinhole_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'icmpPinholeTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pinhole_maximum_number: {
-                        let field_value = match fields_map.get("pinhole_maximum_number") {
+                        let field_value = match fields_map.get("pinholeMaximumNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pinhole_maximum_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pinholeMaximumNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_range: {
-                        let field_value = match fields_map.get("port_range") {
+                        let field_value = match fields_map.get("portRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tcp_pinhole_timeout_in_seconds: {
-                        let field_value = match fields_map.get("tcp_pinhole_timeout_in_seconds") {
+                        let field_value = match fields_map.get("tcpPinholeTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tcp_pinhole_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tcpPinholeTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tcp_port_reuse_minimum_hold_time_in_seconds: {
-                        let field_value = match fields_map.get("tcp_port_reuse_minimum_hold_time_in_seconds") {
+                        let field_value = match fields_map.get("tcpPortReuseMinimumHoldTimeInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tcp_port_reuse_minimum_hold_time_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tcpPortReuseMinimumHoldTimeInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#udp_pinhole_timeout_in_seconds: {
-                        let field_value = match fields_map.get("udp_pinhole_timeout_in_seconds") {
+                        let field_value = match fields_map.get("udpPinholeTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'udp_pinhole_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'udpPinholeTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#udp_port_reuse_minimum_hold_time_in_seconds: {
-                        let field_value = match fields_map.get("udp_port_reuse_minimum_hold_time_in_seconds") {
+                        let field_value = match fields_map.get("udpPortReuseMinimumHoldTimeInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'udp_port_reuse_minimum_hold_time_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'udpPortReuseMinimumHoldTimeInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

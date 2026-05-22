@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#authentications,
                 ),
                 to_pulumi_object_field(
-                    "concurrent_requests",
+                    "concurrentRequests",
                     &self.r#concurrent_requests,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#concurrent_requests: {
-                        let field_value = match fields_map.get("concurrent_requests") {
+                        let field_value = match fields_map.get("concurrentRequests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'concurrent_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'concurrentRequests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

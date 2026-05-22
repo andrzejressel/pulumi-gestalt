@@ -26,7 +26,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_set_references",
+                    "ipSetReferences",
                     &self.r#ip_set_references,
                 ),
                 to_pulumi_object_field(
@@ -57,9 +57,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#ip_set_references: {
-                        let field_value = match fields_map.get("ip_set_references") {
+                        let field_value = match fields_map.get("ipSetReferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_set_references' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipSetReferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

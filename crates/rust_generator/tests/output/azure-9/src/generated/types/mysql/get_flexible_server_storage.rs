@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_grow_enabled",
+                    "autoGrowEnabled",
                     &self.r#auto_grow_enabled,
                 ),
                 to_pulumi_object_field(
-                    "io_scaling_enabled",
+                    "ioScalingEnabled",
                     &self.r#io_scaling_enabled,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#iops,
                 ),
                 to_pulumi_object_field(
-                    "size_gb",
+                    "sizeGb",
                     &self.r#size_gb,
                 ),
             ];
@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#auto_grow_enabled: {
-                        let field_value = match fields_map.get("auto_grow_enabled") {
+                        let field_value = match fields_map.get("autoGrowEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_grow_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoGrowEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#io_scaling_enabled: {
-                        let field_value = match fields_map.get("io_scaling_enabled") {
+                        let field_value = match fields_map.get("ioScalingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'io_scaling_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ioScalingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#size_gb: {
-                        let field_value = match fields_map.get("size_gb") {
+                        let field_value = match fields_map.get("sizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

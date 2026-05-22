@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "minimum_risk_score",
+                    "minimumRiskScore",
                     &self.r#minimum_risk_score,
                 ),
                 to_pulumi_object_field(
-                    "minimum_sensitivity_score",
+                    "minimumSensitivityScore",
                     &self.r#minimum_sensitivity_score,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#minimum_risk_score: {
-                        let field_value = match fields_map.get("minimum_risk_score") {
+                        let field_value = match fields_map.get("minimumRiskScore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_risk_score' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumRiskScore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_sensitivity_score: {
-                        let field_value = match fields_map.get("minimum_sensitivity_score") {
+                        let field_value = match fields_map.get("minimumSensitivityScore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_sensitivity_score' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumSensitivityScore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

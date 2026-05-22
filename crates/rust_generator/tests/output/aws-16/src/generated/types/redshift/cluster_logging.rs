@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#enable,
                 ),
                 to_pulumi_object_field(
-                    "log_destination_type",
+                    "logDestinationType",
                     &self.r#log_destination_type,
                 ),
                 to_pulumi_object_field(
-                    "log_exports",
+                    "logExports",
                     &self.r#log_exports,
                 ),
                 to_pulumi_object_field(
-                    "s_3_key_prefix",
+                    "s3KeyPrefix",
                     &self.r#s_3_key_prefix,
                 ),
             ];
@@ -83,9 +83,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#bucket_name: {
-                        let field_value = match fields_map.get("bucket_name") {
+                        let field_value = match fields_map.get("bucketName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -97,23 +97,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_destination_type: {
-                        let field_value = match fields_map.get("log_destination_type") {
+                        let field_value = match fields_map.get("logDestinationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_destination_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logDestinationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_exports: {
-                        let field_value = match fields_map.get("log_exports") {
+                        let field_value = match fields_map.get("logExports") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_exports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logExports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_key_prefix: {
-                        let field_value = match fields_map.get("s_3_key_prefix") {
+                        let field_value = match fields_map.get("s3KeyPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_key_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3KeyPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

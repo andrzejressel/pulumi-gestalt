@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "end_timeout_ms",
+                    "endTimeoutMs",
                     &self.r#end_timeout_ms,
                 ),
                 to_pulumi_object_field(
-                    "max_length_ms",
+                    "maxLengthMs",
                     &self.r#max_length_ms,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#end_timeout_ms: {
-                        let field_value = match fields_map.get("end_timeout_ms") {
+                        let field_value = match fields_map.get("endTimeoutMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_timeout_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endTimeoutMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_length_ms: {
-                        let field_value = match fields_map.get("max_length_ms") {
+                        let field_value = match fields_map.get("maxLengthMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_length_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxLengthMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sea
                     &self.r#complete,
                 ),
                 to_pulumi_object_field(
-                    "total_resources",
+                    "totalResources",
                     &self.r#total_resources,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total_resources: {
-                        let field_value = match fields_map.get("total_resources") {
+                        let field_value = match fields_map.get("totalResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

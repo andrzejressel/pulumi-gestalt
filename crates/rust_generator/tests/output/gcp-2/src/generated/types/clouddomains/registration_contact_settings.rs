@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_contact",
+                    "adminContact",
                     &self.r#admin_contact,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#privacy,
                 ),
                 to_pulumi_object_field(
-                    "registrant_contact",
+                    "registrantContact",
                     &self.r#registrant_contact,
                 ),
                 to_pulumi_object_field(
-                    "technical_contact",
+                    "technicalContact",
                     &self.r#technical_contact,
                 ),
             ];
@@ -84,9 +84,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#admin_contact: {
-                        let field_value = match fields_map.get("admin_contact") {
+                        let field_value = match fields_map.get("adminContact") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_contact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminContact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registrant_contact: {
-                        let field_value = match fields_map.get("registrant_contact") {
+                        let field_value = match fields_map.get("registrantContact") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registrant_contact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registrantContact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#technical_contact: {
-                        let field_value = match fields_map.get("technical_contact") {
+                        let field_value = match fields_map.get("technicalContact") {
                             Some(value) => value,
-                            None => bail!("Missing field 'technical_contact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'technicalContact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

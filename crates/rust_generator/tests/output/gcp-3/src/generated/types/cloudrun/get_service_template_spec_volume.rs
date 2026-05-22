@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#csis,
                 ),
                 to_pulumi_object_field(
-                    "empty_dirs",
+                    "emptyDirs",
                     &self.r#empty_dirs,
                 ),
                 to_pulumi_object_field(
@@ -92,9 +92,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#empty_dirs: {
-                        let field_value = match fields_map.get("empty_dirs") {
+                        let field_value = match fields_map.get("emptyDirs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'empty_dirs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emptyDirs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

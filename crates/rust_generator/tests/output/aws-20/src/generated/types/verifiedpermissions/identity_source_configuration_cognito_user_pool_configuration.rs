@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_ids",
+                    "clientIds",
                     &self.r#client_ids,
                 ),
                 to_pulumi_object_field(
-                    "group_configuration",
+                    "groupConfiguration",
                     &self.r#group_configuration,
                 ),
                 to_pulumi_object_field(
-                    "user_pool_arn",
+                    "userPoolArn",
                     &self.r#user_pool_arn,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#client_ids: {
-                        let field_value = match fields_map.get("client_ids") {
+                        let field_value = match fields_map.get("clientIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_configuration: {
-                        let field_value = match fields_map.get("group_configuration") {
+                        let field_value = match fields_map.get("groupConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_pool_arn: {
-                        let field_value = match fields_map.get("user_pool_arn") {
+                        let field_value = match fields_map.get("userPoolArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_pool_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userPoolArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

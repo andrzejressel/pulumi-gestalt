@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_product",
+                    "cloudProduct",
                     &self.r#cloud_product,
                 ),
                 to_pulumi_object_field(
-                    "enrollment_level",
+                    "enrollmentLevel",
                     &self.r#enrollment_level,
                 ),
             ];
@@ -72,16 +72,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#cloud_product: {
-                        let field_value = match fields_map.get("cloud_product") {
+                        let field_value = match fields_map.get("cloudProduct") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_product' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudProduct' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enrollment_level: {
-                        let field_value = match fields_map.get("enrollment_level") {
+                        let field_value = match fields_map.get("enrollmentLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enrollment_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enrollmentLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

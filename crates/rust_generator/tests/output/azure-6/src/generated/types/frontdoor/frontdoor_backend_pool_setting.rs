@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_pools_send_receive_timeout_seconds",
+                    "backendPoolsSendReceiveTimeoutSeconds",
                     &self.r#backend_pools_send_receive_timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "enforce_backend_pools_certificate_name_check",
+                    "enforceBackendPoolsCertificateNameCheck",
                     &self.r#enforce_backend_pools_certificate_name_check,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#backend_pools_send_receive_timeout_seconds: {
-                        let field_value = match fields_map.get("backend_pools_send_receive_timeout_seconds") {
+                        let field_value = match fields_map.get("backendPoolsSendReceiveTimeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_pools_send_receive_timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPoolsSendReceiveTimeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enforce_backend_pools_certificate_name_check: {
-                        let field_value = match fields_map.get("enforce_backend_pools_certificate_name_check") {
+                        let field_value = match fields_map.get("enforceBackendPoolsCertificateNameCheck") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforce_backend_pools_certificate_name_check' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforceBackendPoolsCertificateNameCheck' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

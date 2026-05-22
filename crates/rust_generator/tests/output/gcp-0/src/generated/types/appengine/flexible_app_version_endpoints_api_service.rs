@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "config_id",
+                    "configId",
                     &self.r#config_id,
                 ),
                 to_pulumi_object_field(
-                    "disable_trace_sampling",
+                    "disableTraceSampling",
                     &self.r#disable_trace_sampling,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "rollout_strategy",
+                    "rolloutStrategy",
                     &self.r#rollout_strategy,
                 ),
             ];
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#config_id: {
-                        let field_value = match fields_map.get("config_id") {
+                        let field_value = match fields_map.get("configId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_trace_sampling: {
-                        let field_value = match fields_map.get("disable_trace_sampling") {
+                        let field_value = match fields_map.get("disableTraceSampling") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_trace_sampling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableTraceSampling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rollout_strategy: {
-                        let field_value = match fields_map.get("rollout_strategy") {
+                        let field_value = match fields_map.get("rolloutStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rollout_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rolloutStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

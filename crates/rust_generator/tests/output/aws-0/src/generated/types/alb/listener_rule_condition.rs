@@ -45,27 +45,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_header",
+                    "hostHeader",
                     &self.r#host_header,
                 ),
                 to_pulumi_object_field(
-                    "http_header",
+                    "httpHeader",
                     &self.r#http_header,
                 ),
                 to_pulumi_object_field(
-                    "http_request_method",
+                    "httpRequestMethod",
                     &self.r#http_request_method,
                 ),
                 to_pulumi_object_field(
-                    "path_pattern",
+                    "pathPattern",
                     &self.r#path_pattern,
                 ),
                 to_pulumi_object_field(
-                    "query_strings",
+                    "queryStrings",
                     &self.r#query_strings,
                 ),
                 to_pulumi_object_field(
-                    "source_ip",
+                    "sourceIp",
                     &self.r#source_ip,
                 ),
             ];
@@ -92,44 +92,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#host_header: {
-                        let field_value = match fields_map.get("host_header") {
+                        let field_value = match fields_map.get("hostHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_header: {
-                        let field_value = match fields_map.get("http_header") {
+                        let field_value = match fields_map.get("httpHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_request_method: {
-                        let field_value = match fields_map.get("http_request_method") {
+                        let field_value = match fields_map.get("httpRequestMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_request_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpRequestMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_pattern: {
-                        let field_value = match fields_map.get("path_pattern") {
+                        let field_value = match fields_map.get("pathPattern") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathPattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_strings: {
-                        let field_value = match fields_map.get("query_strings") {
+                        let field_value = match fields_map.get("queryStrings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_strings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStrings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_ip: {
-                        let field_value = match fields_map.get("source_ip") {
+                        let field_value = match fields_map.get("sourceIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

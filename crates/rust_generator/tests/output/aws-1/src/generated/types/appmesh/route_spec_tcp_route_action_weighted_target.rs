@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "virtual_node",
+                    "virtualNode",
                     &self.r#virtual_node,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_node: {
-                        let field_value = match fields_map.get("virtual_node") {
+                        let field_value = match fields_map.get("virtualNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -46,15 +46,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "auth_disabled",
+                    "authDisabled",
                     &self.r#auth_disabled,
                 ),
                 to_pulumi_object_field(
-                    "config_file",
+                    "configFile",
                     &self.r#config_file,
                 ),
                 to_pulumi_object_field(
-                    "config_file_content",
+                    "configFileContent",
                     &self.r#config_file_content,
                 ),
                 to_pulumi_object_field(
@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_disabled: {
-                        let field_value = match fields_map.get("auth_disabled") {
+                        let field_value = match fields_map.get("authDisabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authDisabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#config_file: {
-                        let field_value = match fields_map.get("config_file") {
+                        let field_value = match fields_map.get("configFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#config_file_content: {
-                        let field_value = match fields_map.get("config_file_content") {
+                        let field_value = match fields_map.get("configFileContent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_file_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configFileContent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

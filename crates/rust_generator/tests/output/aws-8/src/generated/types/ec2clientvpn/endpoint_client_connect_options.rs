@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "lambda_function_arn",
+                    "lambdaFunctionArn",
                     &self.r#lambda_function_arn,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_function_arn: {
-                        let field_value = match fields_map.get("lambda_function_arn") {
+                        let field_value = match fields_map.get("lambdaFunctionArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_function_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaFunctionArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

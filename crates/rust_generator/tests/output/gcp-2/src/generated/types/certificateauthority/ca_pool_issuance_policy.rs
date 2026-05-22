@@ -49,23 +49,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_issuance_modes",
+                    "allowedIssuanceModes",
                     &self.r#allowed_issuance_modes,
                 ),
                 to_pulumi_object_field(
-                    "allowed_key_types",
+                    "allowedKeyTypes",
                     &self.r#allowed_key_types,
                 ),
                 to_pulumi_object_field(
-                    "baseline_values",
+                    "baselineValues",
                     &self.r#baseline_values,
                 ),
                 to_pulumi_object_field(
-                    "identity_constraints",
+                    "identityConstraints",
                     &self.r#identity_constraints,
                 ),
                 to_pulumi_object_field(
-                    "maximum_lifetime",
+                    "maximumLifetime",
                     &self.r#maximum_lifetime,
                 ),
             ];
@@ -92,37 +92,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#allowed_issuance_modes: {
-                        let field_value = match fields_map.get("allowed_issuance_modes") {
+                        let field_value = match fields_map.get("allowedIssuanceModes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_issuance_modes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedIssuanceModes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_key_types: {
-                        let field_value = match fields_map.get("allowed_key_types") {
+                        let field_value = match fields_map.get("allowedKeyTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_key_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedKeyTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#baseline_values: {
-                        let field_value = match fields_map.get("baseline_values") {
+                        let field_value = match fields_map.get("baselineValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'baseline_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baselineValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_constraints: {
-                        let field_value = match fields_map.get("identity_constraints") {
+                        let field_value = match fields_map.get("identityConstraints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityConstraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_lifetime: {
-                        let field_value = match fields_map.get("maximum_lifetime") {
+                        let field_value = match fields_map.get("maximumLifetime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_lifetime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumLifetime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

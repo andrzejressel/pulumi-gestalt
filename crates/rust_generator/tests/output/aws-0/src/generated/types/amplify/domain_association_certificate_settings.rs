@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_verification_dns_record",
+                    "certificateVerificationDnsRecord",
                     &self.r#certificate_verification_dns_record,
                 ),
                 to_pulumi_object_field(
-                    "custom_certificate_arn",
+                    "customCertificateArn",
                     &self.r#custom_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#certificate_verification_dns_record: {
-                        let field_value = match fields_map.get("certificate_verification_dns_record") {
+                        let field_value = match fields_map.get("certificateVerificationDnsRecord") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_verification_dns_record' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateVerificationDnsRecord' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_certificate_arn: {
-                        let field_value = match fields_map.get("custom_certificate_arn") {
+                        let field_value = match fields_map.get("customCertificateArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customCertificateArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

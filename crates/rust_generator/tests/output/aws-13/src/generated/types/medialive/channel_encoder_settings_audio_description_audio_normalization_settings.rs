@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "algorithm_control",
+                    "algorithmControl",
                     &self.r#algorithm_control,
                 ),
                 to_pulumi_object_field(
-                    "target_lkfs",
+                    "targetLkfs",
                     &self.r#target_lkfs,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#algorithm_control: {
-                        let field_value = match fields_map.get("algorithm_control") {
+                        let field_value = match fields_map.get("algorithmControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'algorithm_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'algorithmControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_lkfs: {
-                        let field_value = match fields_map.get("target_lkfs") {
+                        let field_value = match fields_map.get("targetLkfs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_lkfs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetLkfs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

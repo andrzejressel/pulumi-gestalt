@@ -72,11 +72,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#annotations,
                 ),
                 to_pulumi_object_field(
-                    "effective_annotations",
+                    "effectiveAnnotations",
                     &self.r#effective_annotations,
                 ),
                 to_pulumi_object_field(
-                    "effective_labels",
+                    "effectiveLabels",
                     &self.r#effective_labels,
                 ),
                 to_pulumi_object_field(
@@ -92,15 +92,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#namespace,
                 ),
                 to_pulumi_object_field(
-                    "pulumi_labels",
+                    "pulumiLabels",
                     &self.r#pulumi_labels,
                 ),
                 to_pulumi_object_field(
-                    "resource_version",
+                    "resourceVersion",
                     &self.r#resource_version,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
                 to_pulumi_object_field(
@@ -138,16 +138,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#effective_annotations: {
-                        let field_value = match fields_map.get("effective_annotations") {
+                        let field_value = match fields_map.get("effectiveAnnotations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_annotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveAnnotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#effective_labels: {
-                        let field_value = match fields_map.get("effective_labels") {
+                        let field_value = match fields_map.get("effectiveLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -173,23 +173,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pulumi_labels: {
-                        let field_value = match fields_map.get("pulumi_labels") {
+                        let field_value = match fields_map.get("pulumiLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pulumi_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pulumiLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_version: {
-                        let field_value = match fields_map.get("resource_version") {
+                        let field_value = match fields_map.get("resourceVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#self_link: {
-                        let field_value = match fields_map.get("self_link") {
+                        let field_value = match fields_map.get("selfLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'self_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selfLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

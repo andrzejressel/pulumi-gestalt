@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#all,
                 ),
                 to_pulumi_object_field(
-                    "group_labels",
+                    "groupLabels",
                     &self.r#group_labels,
                 ),
                 to_pulumi_object_field(
-                    "instance_name_prefixes",
+                    "instanceNamePrefixes",
                     &self.r#instance_name_prefixes,
                 ),
                 to_pulumi_object_field(
@@ -93,16 +93,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_labels: {
-                        let field_value = match fields_map.get("group_labels") {
+                        let field_value = match fields_map.get("groupLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_name_prefixes: {
-                        let field_value = match fields_map.get("instance_name_prefixes") {
+                        let field_value = match fields_map.get("instanceNamePrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_name_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceNamePrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

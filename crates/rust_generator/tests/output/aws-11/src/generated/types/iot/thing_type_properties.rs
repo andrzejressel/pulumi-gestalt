@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thi
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "searchable_attributes",
+                    "searchableAttributes",
                     &self.r#searchable_attributes,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#searchable_attributes: {
-                        let field_value = match fields_map.get("searchable_attributes") {
+                        let field_value = match fields_map.get("searchableAttributes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'searchable_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'searchableAttributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

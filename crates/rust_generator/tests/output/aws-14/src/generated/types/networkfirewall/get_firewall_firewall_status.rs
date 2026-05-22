@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capacity_usage_summaries",
+                    "capacityUsageSummaries",
                     &self.r#capacity_usage_summaries,
                 ),
                 to_pulumi_object_field(
-                    "configuration_sync_state_summary",
+                    "configurationSyncStateSummary",
                     &self.r#configuration_sync_state_summary,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "sync_states",
+                    "syncStates",
                     &self.r#sync_states,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#capacity_usage_summaries: {
-                        let field_value = match fields_map.get("capacity_usage_summaries") {
+                        let field_value = match fields_map.get("capacityUsageSummaries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_usage_summaries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityUsageSummaries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#configuration_sync_state_summary: {
-                        let field_value = match fields_map.get("configuration_sync_state_summary") {
+                        let field_value = match fields_map.get("configurationSyncStateSummary") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configuration_sync_state_summary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configurationSyncStateSummary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -94,9 +94,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sync_states: {
-                        let field_value = match fields_map.get("sync_states") {
+                        let field_value = match fields_map.get("syncStates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sync_states' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syncStates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

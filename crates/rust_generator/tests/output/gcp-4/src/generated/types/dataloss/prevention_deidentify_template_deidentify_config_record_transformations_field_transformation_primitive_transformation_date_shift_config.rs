@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#context,
                 ),
                 to_pulumi_object_field(
-                    "crypto_key",
+                    "cryptoKey",
                     &self.r#crypto_key,
                 ),
                 to_pulumi_object_field(
-                    "lower_bound_days",
+                    "lowerBoundDays",
                     &self.r#lower_bound_days,
                 ),
                 to_pulumi_object_field(
-                    "upper_bound_days",
+                    "upperBoundDays",
                     &self.r#upper_bound_days,
                 ),
             ];
@@ -85,23 +85,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crypto_key: {
-                        let field_value = match fields_map.get("crypto_key") {
+                        let field_value = match fields_map.get("cryptoKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crypto_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cryptoKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lower_bound_days: {
-                        let field_value = match fields_map.get("lower_bound_days") {
+                        let field_value = match fields_map.get("lowerBoundDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lower_bound_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lowerBoundDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upper_bound_days: {
-                        let field_value = match fields_map.get("upper_bound_days") {
+                        let field_value = match fields_map.get("upperBoundDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upper_bound_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'upperBoundDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

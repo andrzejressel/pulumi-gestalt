@@ -74,11 +74,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alert_rule",
+                    "alertRule",
                     &self.r#alert_rule,
                 ),
                 to_pulumi_object_field(
-                    "disable_metric_validation",
+                    "disableMetricValidation",
                     &self.r#disable_metric_validation,
                 ),
                 to_pulumi_object_field(
@@ -86,7 +86,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_interval",
+                    "evaluationInterval",
                     &self.r#evaluation_interval,
                 ),
                 to_pulumi_object_field(
@@ -98,7 +98,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#query,
                 ),
                 to_pulumi_object_field(
-                    "rule_group",
+                    "ruleGroup",
                     &self.r#rule_group,
                 ),
             ];
@@ -125,16 +125,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#alert_rule: {
-                        let field_value = match fields_map.get("alert_rule") {
+                        let field_value = match fields_map.get("alertRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alert_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alertRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_metric_validation: {
-                        let field_value = match fields_map.get("disable_metric_validation") {
+                        let field_value = match fields_map.get("disableMetricValidation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_metric_validation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableMetricValidation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -146,9 +146,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluation_interval: {
-                        let field_value = match fields_map.get("evaluation_interval") {
+                        let field_value = match fields_map.get("evaluationInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluation_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluationInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -167,9 +167,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_group: {
-                        let field_value = match fields_map.get("rule_group") {
+                        let field_value = match fields_map.get("ruleGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

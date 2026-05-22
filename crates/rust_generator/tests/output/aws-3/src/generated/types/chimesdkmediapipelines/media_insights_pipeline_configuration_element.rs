@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "amazon_transcribe_call_analytics_processor_configuration",
+                    "amazonTranscribeCallAnalyticsProcessorConfiguration",
                     &self.r#amazon_transcribe_call_analytics_processor_configuration,
                 ),
                 to_pulumi_object_field(
-                    "amazon_transcribe_processor_configuration",
+                    "amazonTranscribeProcessorConfiguration",
                     &self.r#amazon_transcribe_processor_configuration,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_data_stream_sink_configuration",
+                    "kinesisDataStreamSinkConfiguration",
                     &self.r#kinesis_data_stream_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "lambda_function_sink_configuration",
+                    "lambdaFunctionSinkConfiguration",
                     &self.r#lambda_function_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "s_3_recording_sink_configuration",
+                    "s3RecordingSinkConfiguration",
                     &self.r#s_3_recording_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "sns_topic_sink_configuration",
+                    "snsTopicSinkConfiguration",
                     &self.r#sns_topic_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "sqs_queue_sink_configuration",
+                    "sqsQueueSinkConfiguration",
                     &self.r#sqs_queue_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "voice_analytics_processor_configuration",
+                    "voiceAnalyticsProcessorConfiguration",
                     &self.r#voice_analytics_processor_configuration,
                 ),
             ];
@@ -114,65 +114,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#amazon_transcribe_call_analytics_processor_configuration: {
-                        let field_value = match fields_map.get("amazon_transcribe_call_analytics_processor_configuration") {
+                        let field_value = match fields_map.get("amazonTranscribeCallAnalyticsProcessorConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'amazon_transcribe_call_analytics_processor_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'amazonTranscribeCallAnalyticsProcessorConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#amazon_transcribe_processor_configuration: {
-                        let field_value = match fields_map.get("amazon_transcribe_processor_configuration") {
+                        let field_value = match fields_map.get("amazonTranscribeProcessorConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'amazon_transcribe_processor_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'amazonTranscribeProcessorConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_data_stream_sink_configuration: {
-                        let field_value = match fields_map.get("kinesis_data_stream_sink_configuration") {
+                        let field_value = match fields_map.get("kinesisDataStreamSinkConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_data_stream_sink_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisDataStreamSinkConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_function_sink_configuration: {
-                        let field_value = match fields_map.get("lambda_function_sink_configuration") {
+                        let field_value = match fields_map.get("lambdaFunctionSinkConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_function_sink_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaFunctionSinkConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_recording_sink_configuration: {
-                        let field_value = match fields_map.get("s_3_recording_sink_configuration") {
+                        let field_value = match fields_map.get("s3RecordingSinkConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_recording_sink_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3RecordingSinkConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sns_topic_sink_configuration: {
-                        let field_value = match fields_map.get("sns_topic_sink_configuration") {
+                        let field_value = match fields_map.get("snsTopicSinkConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sns_topic_sink_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snsTopicSinkConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sqs_queue_sink_configuration: {
-                        let field_value = match fields_map.get("sqs_queue_sink_configuration") {
+                        let field_value = match fields_map.get("sqsQueueSinkConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sqs_queue_sink_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqsQueueSinkConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#voice_analytics_processor_configuration: {
-                        let field_value = match fields_map.get("voice_analytics_processor_configuration") {
+                        let field_value = match fields_map.get("voiceAnalyticsProcessorConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'voice_analytics_processor_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'voiceAnalyticsProcessorConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

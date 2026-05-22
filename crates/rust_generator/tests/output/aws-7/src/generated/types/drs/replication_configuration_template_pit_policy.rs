@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "retention_duration",
+                    "retentionDuration",
                     &self.r#retention_duration,
                 ),
                 to_pulumi_object_field(
-                    "rule_id",
+                    "ruleId",
                     &self.r#rule_id,
                 ),
                 to_pulumi_object_field(
@@ -96,16 +96,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_duration: {
-                        let field_value = match fields_map.get("retention_duration") {
+                        let field_value = match fields_map.get("retentionDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_id: {
-                        let field_value = match fields_map.get("rule_id") {
+                        let field_value = match fields_map.get("ruleId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ddos_protection",
+                    "ddosProtection",
                     &self.r#ddos_protection,
                 ),
             ];
@@ -54,9 +54,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#ddos_protection: {
-                        let field_value = match fields_map.get("ddos_protection") {
+                        let field_value = match fields_map.get("ddosProtection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ddos_protection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ddosProtection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

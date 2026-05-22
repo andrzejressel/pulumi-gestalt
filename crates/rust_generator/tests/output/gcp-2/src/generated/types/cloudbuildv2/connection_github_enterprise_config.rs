@@ -52,35 +52,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_id",
+                    "appId",
                     &self.r#app_id,
                 ),
                 to_pulumi_object_field(
-                    "app_installation_id",
+                    "appInstallationId",
                     &self.r#app_installation_id,
                 ),
                 to_pulumi_object_field(
-                    "app_slug",
+                    "appSlug",
                     &self.r#app_slug,
                 ),
                 to_pulumi_object_field(
-                    "host_uri",
+                    "hostUri",
                     &self.r#host_uri,
                 ),
                 to_pulumi_object_field(
-                    "private_key_secret_version",
+                    "privateKeySecretVersion",
                     &self.r#private_key_secret_version,
                 ),
                 to_pulumi_object_field(
-                    "service_directory_config",
+                    "serviceDirectoryConfig",
                     &self.r#service_directory_config,
                 ),
                 to_pulumi_object_field(
-                    "ssl_ca",
+                    "sslCa",
                     &self.r#ssl_ca,
                 ),
                 to_pulumi_object_field(
-                    "webhook_secret_secret_version",
+                    "webhookSecretSecretVersion",
                     &self.r#webhook_secret_secret_version,
                 ),
             ];
@@ -107,58 +107,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#app_id: {
-                        let field_value = match fields_map.get("app_id") {
+                        let field_value = match fields_map.get("appId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_installation_id: {
-                        let field_value = match fields_map.get("app_installation_id") {
+                        let field_value = match fields_map.get("appInstallationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_installation_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appInstallationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_slug: {
-                        let field_value = match fields_map.get("app_slug") {
+                        let field_value = match fields_map.get("appSlug") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_slug' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appSlug' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_uri: {
-                        let field_value = match fields_map.get("host_uri") {
+                        let field_value = match fields_map.get("hostUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_key_secret_version: {
-                        let field_value = match fields_map.get("private_key_secret_version") {
+                        let field_value = match fields_map.get("privateKeySecretVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_key_secret_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateKeySecretVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_directory_config: {
-                        let field_value = match fields_map.get("service_directory_config") {
+                        let field_value = match fields_map.get("serviceDirectoryConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_directory_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceDirectoryConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_ca: {
-                        let field_value = match fields_map.get("ssl_ca") {
+                        let field_value = match fields_map.get("sslCa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_ca' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslCa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#webhook_secret_secret_version: {
-                        let field_value = match fields_map.get("webhook_secret_secret_version") {
+                        let field_value = match fields_map.get("webhookSecretSecretVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'webhook_secret_secret_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webhookSecretSecretVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

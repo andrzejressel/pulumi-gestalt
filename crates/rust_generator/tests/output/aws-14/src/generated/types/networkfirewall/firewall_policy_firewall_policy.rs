@@ -57,39 +57,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "policy_variables",
+                    "policyVariables",
                     &self.r#policy_variables,
                 ),
                 to_pulumi_object_field(
-                    "stateful_default_actions",
+                    "statefulDefaultActions",
                     &self.r#stateful_default_actions,
                 ),
                 to_pulumi_object_field(
-                    "stateful_engine_options",
+                    "statefulEngineOptions",
                     &self.r#stateful_engine_options,
                 ),
                 to_pulumi_object_field(
-                    "stateful_rule_group_references",
+                    "statefulRuleGroupReferences",
                     &self.r#stateful_rule_group_references,
                 ),
                 to_pulumi_object_field(
-                    "stateless_custom_actions",
+                    "statelessCustomActions",
                     &self.r#stateless_custom_actions,
                 ),
                 to_pulumi_object_field(
-                    "stateless_default_actions",
+                    "statelessDefaultActions",
                     &self.r#stateless_default_actions,
                 ),
                 to_pulumi_object_field(
-                    "stateless_fragment_default_actions",
+                    "statelessFragmentDefaultActions",
                     &self.r#stateless_fragment_default_actions,
                 ),
                 to_pulumi_object_field(
-                    "stateless_rule_group_references",
+                    "statelessRuleGroupReferences",
                     &self.r#stateless_rule_group_references,
                 ),
                 to_pulumi_object_field(
-                    "tls_inspection_configuration_arn",
+                    "tlsInspectionConfigurationArn",
                     &self.r#tls_inspection_configuration_arn,
                 ),
             ];
@@ -116,65 +116,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#policy_variables: {
-                        let field_value = match fields_map.get("policy_variables") {
+                        let field_value = match fields_map.get("policyVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stateful_default_actions: {
-                        let field_value = match fields_map.get("stateful_default_actions") {
+                        let field_value = match fields_map.get("statefulDefaultActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stateful_default_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statefulDefaultActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stateful_engine_options: {
-                        let field_value = match fields_map.get("stateful_engine_options") {
+                        let field_value = match fields_map.get("statefulEngineOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stateful_engine_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statefulEngineOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stateful_rule_group_references: {
-                        let field_value = match fields_map.get("stateful_rule_group_references") {
+                        let field_value = match fields_map.get("statefulRuleGroupReferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stateful_rule_group_references' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statefulRuleGroupReferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stateless_custom_actions: {
-                        let field_value = match fields_map.get("stateless_custom_actions") {
+                        let field_value = match fields_map.get("statelessCustomActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stateless_custom_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statelessCustomActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stateless_default_actions: {
-                        let field_value = match fields_map.get("stateless_default_actions") {
+                        let field_value = match fields_map.get("statelessDefaultActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stateless_default_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statelessDefaultActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stateless_fragment_default_actions: {
-                        let field_value = match fields_map.get("stateless_fragment_default_actions") {
+                        let field_value = match fields_map.get("statelessFragmentDefaultActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stateless_fragment_default_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statelessFragmentDefaultActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stateless_rule_group_references: {
-                        let field_value = match fields_map.get("stateless_rule_group_references") {
+                        let field_value = match fields_map.get("statelessRuleGroupReferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stateless_rule_group_references' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statelessRuleGroupReferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_inspection_configuration_arn: {
-                        let field_value = match fields_map.get("tls_inspection_configuration_arn") {
+                        let field_value = match fields_map.get("tlsInspectionConfigurationArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_inspection_configuration_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsInspectionConfigurationArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

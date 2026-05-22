@@ -44,23 +44,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Den
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "denial_condition",
+                    "denialCondition",
                     &self.r#denial_condition,
                 ),
                 to_pulumi_object_field(
-                    "denied_permissions",
+                    "deniedPermissions",
                     &self.r#denied_permissions,
                 ),
                 to_pulumi_object_field(
-                    "denied_principals",
+                    "deniedPrincipals",
                     &self.r#denied_principals,
                 ),
                 to_pulumi_object_field(
-                    "exception_permissions",
+                    "exceptionPermissions",
                     &self.r#exception_permissions,
                 ),
                 to_pulumi_object_field(
-                    "exception_principals",
+                    "exceptionPrincipals",
                     &self.r#exception_principals,
                 ),
             ];
@@ -87,37 +87,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#denial_condition: {
-                        let field_value = match fields_map.get("denial_condition") {
+                        let field_value = match fields_map.get("denialCondition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'denial_condition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'denialCondition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#denied_permissions: {
-                        let field_value = match fields_map.get("denied_permissions") {
+                        let field_value = match fields_map.get("deniedPermissions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'denied_permissions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deniedPermissions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#denied_principals: {
-                        let field_value = match fields_map.get("denied_principals") {
+                        let field_value = match fields_map.get("deniedPrincipals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'denied_principals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deniedPrincipals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exception_permissions: {
-                        let field_value = match fields_map.get("exception_permissions") {
+                        let field_value = match fields_map.get("exceptionPermissions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exception_permissions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exceptionPermissions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exception_principals: {
-                        let field_value = match fields_map.get("exception_principals") {
+                        let field_value = match fields_map.get("exceptionPrincipals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exception_principals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exceptionPrincipals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

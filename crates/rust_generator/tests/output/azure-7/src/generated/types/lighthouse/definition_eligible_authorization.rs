@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "just_in_time_access_policy",
+                    "justInTimeAccessPolicy",
                     &self.r#just_in_time_access_policy,
                 ),
                 to_pulumi_object_field(
-                    "principal_display_name",
+                    "principalDisplayName",
                     &self.r#principal_display_name,
                 ),
                 to_pulumi_object_field(
-                    "principal_id",
+                    "principalId",
                     &self.r#principal_id,
                 ),
                 to_pulumi_object_field(
-                    "role_definition_id",
+                    "roleDefinitionId",
                     &self.r#role_definition_id,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#just_in_time_access_policy: {
-                        let field_value = match fields_map.get("just_in_time_access_policy") {
+                        let field_value = match fields_map.get("justInTimeAccessPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'just_in_time_access_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'justInTimeAccessPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#principal_display_name: {
-                        let field_value = match fields_map.get("principal_display_name") {
+                        let field_value = match fields_map.get("principalDisplayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'principal_display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'principalDisplayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#principal_id: {
-                        let field_value = match fields_map.get("principal_id") {
+                        let field_value = match fields_map.get("principalId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'principal_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'principalId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_definition_id: {
-                        let field_value = match fields_map.get("role_definition_id") {
+                        let field_value = match fields_map.get("roleDefinitionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_definition_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleDefinitionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

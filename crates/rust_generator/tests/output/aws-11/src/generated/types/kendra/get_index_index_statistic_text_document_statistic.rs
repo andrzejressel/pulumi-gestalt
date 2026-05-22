@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "indexed_text_bytes",
+                    "indexedTextBytes",
                     &self.r#indexed_text_bytes,
                 ),
                 to_pulumi_object_field(
-                    "indexed_text_documents_count",
+                    "indexedTextDocumentsCount",
                     &self.r#indexed_text_documents_count,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#indexed_text_bytes: {
-                        let field_value = match fields_map.get("indexed_text_bytes") {
+                        let field_value = match fields_map.get("indexedTextBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'indexed_text_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'indexedTextBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#indexed_text_documents_count: {
-                        let field_value = match fields_map.get("indexed_text_documents_count") {
+                        let field_value = match fields_map.get("indexedTextDocumentsCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'indexed_text_documents_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'indexedTextDocumentsCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

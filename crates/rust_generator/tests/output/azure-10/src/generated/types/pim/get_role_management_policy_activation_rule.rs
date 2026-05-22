@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "approval_stages",
+                    "approvalStages",
                     &self.r#approval_stages,
                 ),
                 to_pulumi_object_field(
-                    "maximum_duration",
+                    "maximumDuration",
                     &self.r#maximum_duration,
                 ),
                 to_pulumi_object_field(
-                    "require_approval",
+                    "requireApproval",
                     &self.r#require_approval,
                 ),
                 to_pulumi_object_field(
-                    "require_justification",
+                    "requireJustification",
                     &self.r#require_justification,
                 ),
                 to_pulumi_object_field(
-                    "require_multifactor_authentication",
+                    "requireMultifactorAuthentication",
                     &self.r#require_multifactor_authentication,
                 ),
                 to_pulumi_object_field(
-                    "require_ticket_info",
+                    "requireTicketInfo",
                     &self.r#require_ticket_info,
                 ),
                 to_pulumi_object_field(
-                    "required_conditional_access_authentication_context",
+                    "requiredConditionalAccessAuthenticationContext",
                     &self.r#required_conditional_access_authentication_context,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#approval_stages: {
-                        let field_value = match fields_map.get("approval_stages") {
+                        let field_value = match fields_map.get("approvalStages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'approval_stages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'approvalStages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_duration: {
-                        let field_value = match fields_map.get("maximum_duration") {
+                        let field_value = match fields_map.get("maximumDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_approval: {
-                        let field_value = match fields_map.get("require_approval") {
+                        let field_value = match fields_map.get("requireApproval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_approval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireApproval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_justification: {
-                        let field_value = match fields_map.get("require_justification") {
+                        let field_value = match fields_map.get("requireJustification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_justification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireJustification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_multifactor_authentication: {
-                        let field_value = match fields_map.get("require_multifactor_authentication") {
+                        let field_value = match fields_map.get("requireMultifactorAuthentication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_multifactor_authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireMultifactorAuthentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_ticket_info: {
-                        let field_value = match fields_map.get("require_ticket_info") {
+                        let field_value = match fields_map.get("requireTicketInfo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_ticket_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireTicketInfo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#required_conditional_access_authentication_context: {
-                        let field_value = match fields_map.get("required_conditional_access_authentication_context") {
+                        let field_value = match fields_map.get("requiredConditionalAccessAuthenticationContext") {
                             Some(value) => value,
-                            None => bail!("Missing field 'required_conditional_access_authentication_context' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requiredConditionalAccessAuthenticationContext' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

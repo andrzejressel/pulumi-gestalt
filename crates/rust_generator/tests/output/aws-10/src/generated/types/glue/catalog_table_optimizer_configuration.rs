@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "orphan_file_deletion_configuration",
+                    "orphanFileDeletionConfiguration",
                     &self.r#orphan_file_deletion_configuration,
                 ),
                 to_pulumi_object_field(
-                    "retention_configuration",
+                    "retentionConfiguration",
                     &self.r#retention_configuration,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#orphan_file_deletion_configuration: {
-                        let field_value = match fields_map.get("orphan_file_deletion_configuration") {
+                        let field_value = match fields_map.get("orphanFileDeletionConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'orphan_file_deletion_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'orphanFileDeletionConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_configuration: {
-                        let field_value = match fields_map.get("retention_configuration") {
+                        let field_value = match fields_map.get("retentionConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

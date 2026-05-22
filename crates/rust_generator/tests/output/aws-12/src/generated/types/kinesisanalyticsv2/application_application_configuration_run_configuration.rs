@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_restore_configuration",
+                    "applicationRestoreConfiguration",
                     &self.r#application_restore_configuration,
                 ),
                 to_pulumi_object_field(
-                    "flink_run_configuration",
+                    "flinkRunConfiguration",
                     &self.r#flink_run_configuration,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#application_restore_configuration: {
-                        let field_value = match fields_map.get("application_restore_configuration") {
+                        let field_value = match fields_map.get("applicationRestoreConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_restore_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationRestoreConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#flink_run_configuration: {
-                        let field_value = match fields_map.get("flink_run_configuration") {
+                        let field_value = match fields_map.get("flinkRunConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'flink_run_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'flinkRunConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

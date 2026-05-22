@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_vip",
+                    "ipv4Vip",
                     &self.r#ipv_4_vip,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_4_vip: {
-                        let field_value = match fields_map.get("ipv_4_vip") {
+                        let field_value = match fields_map.get("ipv4Vip") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_4_vip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv4Vip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

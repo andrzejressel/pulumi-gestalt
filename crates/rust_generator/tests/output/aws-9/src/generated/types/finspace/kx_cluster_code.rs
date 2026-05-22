@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxC
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "s_3_bucket",
+                    "s3Bucket",
                     &self.r#s_3_bucket,
                 ),
                 to_pulumi_object_field(
-                    "s_3_key",
+                    "s3Key",
                     &self.r#s_3_key,
                 ),
                 to_pulumi_object_field(
-                    "s_3_object_version",
+                    "s3ObjectVersion",
                     &self.r#s_3_object_version,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#s_3_bucket: {
-                        let field_value = match fields_map.get("s_3_bucket") {
+                        let field_value = match fields_map.get("s3Bucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_key: {
-                        let field_value = match fields_map.get("s_3_key") {
+                        let field_value = match fields_map.get("s3Key") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_object_version: {
-                        let field_value = match fields_map.get("s_3_object_version") {
+                        let field_value = match fields_map.get("s3ObjectVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_object_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3ObjectVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

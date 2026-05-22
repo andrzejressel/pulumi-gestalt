@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "network_id",
+                    "networkId",
                     &self.r#network_id,
                 ),
                 to_pulumi_object_field(
-                    "network_name",
+                    "networkName",
                     &self.r#network_name,
                 ),
                 to_pulumi_object_field(
-                    "rep_interval",
+                    "repInterval",
                     &self.r#rep_interval,
                 ),
             ];
@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#network_id: {
-                        let field_value = match fields_map.get("network_id") {
+                        let field_value = match fields_map.get("networkId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_name: {
-                        let field_value = match fields_map.get("network_name") {
+                        let field_value = match fields_map.get("networkName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rep_interval: {
-                        let field_value = match fields_map.get("rep_interval") {
+                        let field_value = match fields_map.get("repInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rep_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

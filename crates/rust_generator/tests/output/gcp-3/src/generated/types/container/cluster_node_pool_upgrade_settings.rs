@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blue_green_settings",
+                    "blueGreenSettings",
                     &self.r#blue_green_settings,
                 ),
                 to_pulumi_object_field(
-                    "max_surge",
+                    "maxSurge",
                     &self.r#max_surge,
                 ),
                 to_pulumi_object_field(
-                    "max_unavailable",
+                    "maxUnavailable",
                     &self.r#max_unavailable,
                 ),
                 to_pulumi_object_field(
@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#blue_green_settings: {
-                        let field_value = match fields_map.get("blue_green_settings") {
+                        let field_value = match fields_map.get("blueGreenSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'blue_green_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blueGreenSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_surge: {
-                        let field_value = match fields_map.get("max_surge") {
+                        let field_value = match fields_map.get("maxSurge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_surge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxSurge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unavailable: {
-                        let field_value = match fields_map.get("max_unavailable") {
+                        let field_value = match fields_map.get("maxUnavailable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unavailable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnavailable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

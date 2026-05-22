@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "nielsen_cbet_settings",
+                    "nielsenCbetSettings",
                     &self.r#nielsen_cbet_settings,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_distribution_type",
+                    "nielsenDistributionType",
                     &self.r#nielsen_distribution_type,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_naes_ii_nw_settings",
+                    "nielsenNaesIiNwSettings",
                     &self.r#nielsen_naes_ii_nw_settings,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#nielsen_cbet_settings: {
-                        let field_value = match fields_map.get("nielsen_cbet_settings") {
+                        let field_value = match fields_map.get("nielsenCbetSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nielsen_cbet_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nielsenCbetSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nielsen_distribution_type: {
-                        let field_value = match fields_map.get("nielsen_distribution_type") {
+                        let field_value = match fields_map.get("nielsenDistributionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nielsen_distribution_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nielsenDistributionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nielsen_naes_ii_nw_settings: {
-                        let field_value = match fields_map.get("nielsen_naes_ii_nw_settings") {
+                        let field_value = match fields_map.get("nielsenNaesIiNwSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nielsen_naes_ii_nw_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nielsenNaesIiNwSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
