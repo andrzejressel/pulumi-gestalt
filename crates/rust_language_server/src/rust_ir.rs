@@ -1,7 +1,7 @@
 /// Rust IR: target-language syntax tree.
 ///
 /// This layer represents Rust source code constructs with no knowledge of
-/// Pulumi semantics. It is produced by lowering the Domain IR and consumed
+/// Pulumi semantics. It is produced by lowering the typesafe domain IR and consumed
 /// by the renderer that emits source text.
 
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]

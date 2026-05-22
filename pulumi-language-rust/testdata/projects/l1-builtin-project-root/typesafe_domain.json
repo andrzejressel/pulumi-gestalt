@@ -1,0 +1,18 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "rootDirectoryOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "RootDirectory",
+              "args": []
+            }
+          }
+        }
+      }
+    }
+  ]
+}

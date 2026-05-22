@@ -1,0 +1,64 @@
+{
+  "statements": [
+    {
+      "Resource": {
+        "name": "myStash",
+        "logical_name": "myStash",
+        "token": "Stash",
+        "inputs": [
+          {
+            "name": "input",
+            "expression": {
+              "expr_type": "String",
+              "value": {
+                "String": "test"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Export": {
+        "name": "stashInput",
+        "value": {
+          "expr_type": {
+            "Output": "Dynamic"
+          },
+          "value": {
+            "FieldAccess": [
+              {
+                "expr_type": "Dynamic",
+                "value": {
+                  "Variable": "myStash"
+                }
+              },
+              "input"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "stashOutput",
+        "value": {
+          "expr_type": {
+            "Output": "Dynamic"
+          },
+          "value": {
+            "FieldAccess": [
+              {
+                "expr_type": "Dynamic",
+                "value": {
+                  "Variable": "myStash"
+                }
+              },
+              "output"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

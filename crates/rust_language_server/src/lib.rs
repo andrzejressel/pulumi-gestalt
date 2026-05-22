@@ -16,15 +16,17 @@ use std::path::{Path, PathBuf};
 use std::{env, fs};
 
 mod cargo_templater;
-mod domain_ir;
-mod domain_to_rust;
+mod dynamic_domain_ir;
+mod dynamic_to_typesafe_domain;
 mod generator;
 mod golang;
 mod package_model;
 mod pcl_model;
-mod pcl_to_domain;
+mod pcl_to_dynamic_domain;
 mod rust_ir;
 mod rust_to_string;
+mod typesafe_domain_ir;
+mod typesafe_domain_to_rust;
 
 fn generate_project(req: GenerateProjectRequest) -> Result<()> {
     let program = pulumi_gestalt_proto::language_server::pulumipcl::PclProtobufProgram::decode(
@@ -84,11 +86,17 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
             path: "protobuf.json".to_string(),
             content: protobuf_json,
         });
-        let domain_json = serde_json::to_vec_pretty(&result.domain)
-            .context("Failed to serialize domain IR to JSON")?;
+        let domain_json = serde_json::to_vec_pretty(&result.dynamic_domain)
+            .context("Failed to serialize dynamic domain IR to JSON")?;
         files.push(FileWithContent {
             path: "domain.json".to_string(),
             content: domain_json,
+        });
+        let typesafe_domain_json = serde_json::to_vec_pretty(&result.typesafe_domain)
+            .context("Failed to serialize typesafe domain IR to JSON")?;
+        files.push(FileWithContent {
+            path: "typesafe_domain.json".to_string(),
+            content: typesafe_domain_json,
         });
         let rust_ir_json = serde_json::to_vec_pretty(&result.rust_ir)
             .context("Failed to serialize Rust IR to JSON")?;
@@ -255,7 +263,7 @@ impl G2RCall for G2RCallImpl {
                     };
                 }
             }
-            match serde_json::to_vec_pretty(&result.domain) {
+            match serde_json::to_vec_pretty(&result.dynamic_domain) {
                 Ok(json) => files.push(FileWithContent {
                     path: "domain.json".to_string(),
                     content: json,
@@ -263,7 +271,19 @@ impl G2RCall for G2RCallImpl {
                 Err(error) => {
                     return GenerateProgramResult {
                         files_content: vec![],
-                        error: format!("failed to serialize domain IR to JSON: {error:?}"),
+                        error: format!("failed to serialize dynamic domain IR to JSON: {error:?}"),
+                    };
+                }
+            }
+            match serde_json::to_vec_pretty(&result.typesafe_domain) {
+                Ok(json) => files.push(FileWithContent {
+                    path: "typesafe_domain.json".to_string(),
+                    content: json,
+                }),
+                Err(error) => {
+                    return GenerateProgramResult {
+                        files_content: vec![],
+                        error: format!("failed to serialize typesafe domain IR to JSON: {error:?}"),
                     };
                 }
             }

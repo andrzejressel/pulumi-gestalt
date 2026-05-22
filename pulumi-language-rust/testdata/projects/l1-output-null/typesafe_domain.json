@@ -1,0 +1,24 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "array",
+        "value": {
+          "expr_type": {
+            "Tuple": [
+              "None"
+            ]
+          },
+          "value": {
+            "List": [
+              {
+                "expr_type": "None",
+                "value": "Null"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

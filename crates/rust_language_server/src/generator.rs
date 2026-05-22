@@ -1,28 +1,33 @@
 /// Generates Rust source code from a PCL program.
 ///
-/// Pipeline: PCL IR → Domain IR → Rust IR → String
-use crate::domain_ir::Program;
+/// Pipeline: PCL IR → Dynamic Domain IR → Typesafe Domain IR → Rust IR → String
+use crate::dynamic_domain_ir::Program as DynamicProgram;
 use crate::pcl_model::PclProtobufProgram;
 use crate::rust_ir::RustFile;
+use crate::typesafe_domain_ir::Program as TypesafeProgram;
 use rootcause::Result;
 use rootcause::prelude::ResultExt;
 
 pub struct GenerateResult {
     pub main_rs: String,
-    pub domain: Program,
+    pub dynamic_domain: DynamicProgram,
+    pub typesafe_domain: TypesafeProgram,
     pub rust_ir: RustFile,
 }
 
 pub fn generate_main(model_program: &PclProtobufProgram) -> Result<GenerateResult> {
-    let domain =
-        crate::pcl_to_domain::lower(model_program).context("Failed to lower PCL to domain IR")?;
-    let rust_ir =
-        crate::domain_to_rust::lower(&domain).context("Failed to lower domain IR to Rust IR")?;
+    let dynamic_domain = crate::pcl_to_dynamic_domain::lower(model_program)
+        .context("Failed to lower PCL to dynamic domain IR")?;
+    let typesafe_domain = crate::dynamic_to_typesafe_domain::lower(&dynamic_domain)
+        .context("Failed to lower dynamic domain IR to typesafe domain IR")?;
+    let rust_ir = crate::typesafe_domain_to_rust::lower(&typesafe_domain)
+        .context("Failed to lower typesafe domain IR to Rust IR")?;
     let main_rs =
         crate::rust_to_string::render(&rust_ir).context("Failed to render Rust IR to string")?;
     Ok(GenerateResult {
         main_rs,
-        domain,
+        dynamic_domain,
+        typesafe_domain,
         rust_ir,
     })
 }

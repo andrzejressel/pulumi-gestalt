@@ -1,0 +1,123 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "names",
+        "logicalName": "names",
+        "configType": {
+          "listType": {
+            "optionalType": {
+              "stringType": {}
+            }
+          }
+        },
+        "defaultValue": {
+          "tupleConsExpression": {
+            "items": [
+              {
+                "literalValueExpression": {
+                  "unknownValue": true
+                },
+                "type": {
+                  "noneType": {}
+                }
+              },
+              {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "hello"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "literalValueExpression": {
+                  "unknownValue": true
+                },
+                "type": {
+                  "noneType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "tupleType": {
+              "element_types": [
+                {
+                  "noneType": {}
+                },
+                {
+                  "stringType": {}
+                },
+                {
+                  "noneType": {}
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "namesLength",
+        "logicalName": "namesLength",
+        "value": {
+          "functionCallExpression": {
+            "name": "length",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "names",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "names"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "listType": {
+                      "unionType": {
+                        "element_types": [
+                          {
+                            "noneType": {}
+                          },
+                          {
+                            "stringType": {}
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "intType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ]
+}

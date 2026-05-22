@@ -566,7 +566,7 @@ func transformOutput(output *pcl.OutputVariable) (*astproto.OutputVariable, erro
 }
 
 func transformConfigType(variableType model.Type) (*astproto.ConfigType, error) {
-	variableType = pcl.UnwrapOption(model.ResolveOutputs(variableType))
+	variableType = model.ResolveOutputs(variableType)
 
 	switch variableType {
 	case model.StringType:
@@ -602,6 +602,24 @@ func transformConfigType(variableType model.Type) (*astproto.ConfigType, error) 
 			}
 			return &astproto.ConfigType{
 				Value: &astproto.ConfigType_MapType{MapType: elementType},
+			}, nil
+		case *model.UnionType:
+			if len(variableType.ElementTypes) != 2 {
+				return nil, fmt.Errorf("unsupported config variable union type with %d elements: only two element unions are supported", len(variableType.ElementTypes))
+			}
+			if !(variableType.ElementTypes[0] == model.NoneType || variableType.ElementTypes[1] == model.NoneType) {
+				return nil, fmt.Errorf("unsupported config variable union type: only optional types (T | None) are supported")
+			}
+			typeIndex := 0
+			if variableType.ElementTypes[0] == model.NoneType {
+				typeIndex = 1
+			}
+			elementType, err := transformConfigType(variableType.ElementTypes[typeIndex])
+			if err != nil {
+				return nil, err
+			}
+			return &astproto.ConfigType{
+				Value: &astproto.ConfigType_OptionalType{OptionalType: elementType},
 			}, nil
 		default:
 			return nil, fmt.Errorf("unknown config variable type: %v", variableType)

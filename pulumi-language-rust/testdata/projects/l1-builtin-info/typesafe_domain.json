@@ -1,0 +1,46 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "stackOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Stack",
+              "args": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "projectOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Project",
+              "args": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "organizationOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Organization",
+              "args": []
+            }
+          }
+        }
+      }
+    }
+  ]
+}

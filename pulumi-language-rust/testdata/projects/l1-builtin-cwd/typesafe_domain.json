@@ -1,0 +1,18 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "cwdOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Cwd",
+              "args": []
+            }
+          }
+        }
+      }
+    }
+  ]
+}

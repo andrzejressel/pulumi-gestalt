@@ -1,14 +1,14 @@
-use crate::domain_ir::ResourceToken::Stash;
-/// Lowers the Domain IR into the Rust IR.
+use crate::rust_ir::{RustExpr, RustFile, RustStatement};
+use crate::typesafe_domain_ir::ResourceToken::Stash;
+/// Lowers the typesafe domain IR into the Rust IR.
 ///
 /// This transform maps Pulumi-semantic concepts (config bindings, output
 /// mapping, stdlib calls, etc.) into concrete Rust syntax constructs
 /// (let bindings, method calls, function calls, etc.).
-use crate::domain_ir::{
+use crate::typesafe_domain_ir::{
     BinOp, ConfigBinding, ConfigType, Expr, ExprType, ExprValue, JsonValue, Program, ResourceInput,
     ResourceToken, Statement, StdlibFn, UnaryOp,
 };
-use crate::rust_ir::{RustExpr, RustFile, RustStatement};
 use quote::quote;
 use rootcause::Result;
 use rootcause::prelude::ResultExt;
@@ -311,6 +311,7 @@ fn rust_config_type(ct: &ConfigType) -> String {
                 rust_config_type(inner)
             )
         }
+        ConfigType::Optional(inner) => format!("Option<{}>", rust_config_type(inner)),
     }
 }
 
@@ -325,7 +326,28 @@ fn lower_expr(expr: &Expr) -> RustExpr {
         }
         ExprValue::Number(n) => RustExpr::NumberLiteral(*n),
         ExprValue::Bool(b) => RustExpr::BoolLiteral(*b),
-        ExprValue::Null => RustExpr::Null,
+        ExprValue::Null => {
+            if matches!(expr.expr_type, ExprType::Optional(_)) {
+                RustExpr::Identifier("None".to_string())
+            } else {
+                RustExpr::Null
+            }
+        }
+        ExprValue::Some(inner) => {
+            let lowered_inner = match inner.expr_type {
+                ExprType::String => RustExpr::MethodCall {
+                    receiver: Box::new(lower_expr(inner)),
+                    method: "to_string".to_string(),
+                    type_params: vec![],
+                    args: vec![],
+                },
+                _ => lower_expr(inner),
+            };
+            RustExpr::FunctionCall {
+                path: "Some".to_string(),
+                args: vec![lowered_inner],
+            }
+        }
         ExprValue::Variable(name) => RustExpr::Identifier(name.clone()),
         ExprValue::FieldAccess(base, field) => {
             RustExpr::FieldAccess(Box::new(lower_expr(base)), field.clone())

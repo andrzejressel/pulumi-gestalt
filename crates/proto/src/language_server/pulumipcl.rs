@@ -102,7 +102,7 @@ pub struct ConfigVariable {
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigType {
-    #[prost(oneof = "config_type::Value", tags = "1, 2, 3, 4, 5, 6")]
+    #[prost(oneof = "config_type::Value", tags = "1, 2, 3, 4, 5, 6, 7")]
     pub value: ::core::option::Option<config_type::Value>,
 }
 /// Nested message and enum types in `ConfigType`.
@@ -121,6 +121,8 @@ pub mod config_type {
         ListType(::prost::alloc::boxed::Box<super::ConfigType>),
         #[prost(message, tag = "6")]
         MapType(::prost::alloc::boxed::Box<super::ConfigType>),
+        #[prost(message, tag = "7")]
+        OptionalType(::prost::alloc::boxed::Box<super::ConfigType>),
     }
 }
 #[derive(Clone, PartialEq, ::prost::Message)]

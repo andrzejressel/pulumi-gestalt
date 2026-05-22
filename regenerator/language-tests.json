@@ -15,6 +15,7 @@
     "l1-builtin-stash",
     "l1-builtin-string",
     "l1-config-secret",
+    "l1-config-types-optional",
     "l1-config-types-primitive",
     "l1-elide-index",
     "l1-empty",

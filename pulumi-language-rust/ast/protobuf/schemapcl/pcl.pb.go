@@ -758,6 +758,7 @@ type ConfigType struct {
 	//	*ConfigType_BoolType
 	//	*ConfigType_ListType
 	//	*ConfigType_MapType
+	//	*ConfigType_OptionalType
 	Value         isConfigType_Value `protobuf_oneof:"value"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -854,6 +855,15 @@ func (x *ConfigType) GetMapType() *ConfigType {
 	return nil
 }
 
+func (x *ConfigType) GetOptionalType() *ConfigType {
+	if x != nil {
+		if x, ok := x.Value.(*ConfigType_OptionalType); ok {
+			return x.OptionalType
+		}
+	}
+	return nil
+}
+
 type isConfigType_Value interface {
 	isConfigType_Value()
 }
@@ -882,6 +892,10 @@ type ConfigType_MapType struct {
 	MapType *ConfigType `protobuf:"bytes,6,opt,name=mapType,proto3,oneof"`
 }
 
+type ConfigType_OptionalType struct {
+	OptionalType *ConfigType `protobuf:"bytes,7,opt,name=optionalType,proto3,oneof"`
+}
+
 func (*ConfigType_StringType) isConfigType_Value() {}
 
 func (*ConfigType_NumberType) isConfigType_Value() {}
@@ -893,6 +907,8 @@ func (*ConfigType_BoolType) isConfigType_Value() {}
 func (*ConfigType_ListType) isConfigType_Value() {}
 
 func (*ConfigType_MapType) isConfigType_Value() {}
+
+func (*ConfigType_OptionalType) isConfigType_Value() {}
 
 type TupleExpressionType struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -2932,7 +2948,7 @@ const file_pcl_proto_rawDesc = "" +
 	"configType\x18\x03 \x01(\v2\x15.pulumipcl.ConfigTypeR\n" +
 	"configType\x129\n" +
 	"\fdefaultValue\x18\x04 \x01(\v2\x15.pulumipcl.ExpressionR\fdefaultValue\x12\x16\n" +
-	"\x06secret\x18\x05 \x01(\bR\x06secret\"\xc3\x02\n" +
+	"\x06secret\x18\x05 \x01(\bR\x06secret\"\x80\x03\n" +
 	"\n" +
 	"ConfigType\x122\n" +
 	"\n" +
@@ -2944,7 +2960,8 @@ const file_pcl_proto_rawDesc = "" +
 	"\aintType\x18\x03 \x01(\v2\x10.pulumipcl.EmptyH\x00R\aintType\x12.\n" +
 	"\bboolType\x18\x04 \x01(\v2\x10.pulumipcl.EmptyH\x00R\bboolType\x123\n" +
 	"\blistType\x18\x05 \x01(\v2\x15.pulumipcl.ConfigTypeH\x00R\blistType\x121\n" +
-	"\amapType\x18\x06 \x01(\v2\x15.pulumipcl.ConfigTypeH\x00R\amapTypeB\a\n" +
+	"\amapType\x18\x06 \x01(\v2\x15.pulumipcl.ConfigTypeH\x00R\amapType\x12;\n" +
+	"\foptionalType\x18\a \x01(\v2\x15.pulumipcl.ConfigTypeH\x00R\foptionalTypeB\a\n" +
 	"\x05value\"U\n" +
 	"\x13TupleExpressionType\x12>\n" +
 	"\relement_types\x18\x01 \x03(\v2\x19.pulumipcl.ExpressionTypeR\felementTypes\"\xc1\x01\n" +
@@ -3193,75 +3210,76 @@ var file_pcl_proto_depIdxs = []int32{
 	25, // 24: pulumipcl.ConfigType.boolType:type_name -> pulumipcl.Empty
 	10, // 25: pulumipcl.ConfigType.listType:type_name -> pulumipcl.ConfigType
 	10, // 26: pulumipcl.ConfigType.mapType:type_name -> pulumipcl.ConfigType
-	14, // 27: pulumipcl.TupleExpressionType.element_types:type_name -> pulumipcl.ExpressionType
-	38, // 28: pulumipcl.ObjectExpressionType.properties:type_name -> pulumipcl.ObjectExpressionType.PropertiesEntry
-	14, // 29: pulumipcl.UnionExpressionType.element_types:type_name -> pulumipcl.ExpressionType
-	25, // 30: pulumipcl.ExpressionType.stringType:type_name -> pulumipcl.Empty
-	25, // 31: pulumipcl.ExpressionType.numberType:type_name -> pulumipcl.Empty
-	25, // 32: pulumipcl.ExpressionType.intType:type_name -> pulumipcl.Empty
-	25, // 33: pulumipcl.ExpressionType.boolType:type_name -> pulumipcl.Empty
-	14, // 34: pulumipcl.ExpressionType.listType:type_name -> pulumipcl.ExpressionType
-	14, // 35: pulumipcl.ExpressionType.mapType:type_name -> pulumipcl.ExpressionType
-	14, // 36: pulumipcl.ExpressionType.outputType:type_name -> pulumipcl.ExpressionType
-	11, // 37: pulumipcl.ExpressionType.tupleType:type_name -> pulumipcl.TupleExpressionType
-	25, // 38: pulumipcl.ExpressionType.dynamicType:type_name -> pulumipcl.Empty
-	12, // 39: pulumipcl.ExpressionType.objectType:type_name -> pulumipcl.ObjectExpressionType
-	25, // 40: pulumipcl.ExpressionType.noneType:type_name -> pulumipcl.Empty
-	13, // 41: pulumipcl.ExpressionType.unionType:type_name -> pulumipcl.UnionExpressionType
-	16, // 42: pulumipcl.OutputVariable.value:type_name -> pulumipcl.Expression
-	14, // 43: pulumipcl.OutputVariable.expression_type:type_name -> pulumipcl.ExpressionType
-	17, // 44: pulumipcl.Expression.literalValueExpression:type_name -> pulumipcl.LiteralValueExpression
-	18, // 45: pulumipcl.Expression.templateExpression:type_name -> pulumipcl.TemplateExpression
-	19, // 46: pulumipcl.Expression.indexExpression:type_name -> pulumipcl.IndexExpression
-	20, // 47: pulumipcl.Expression.objectConsExpression:type_name -> pulumipcl.ObjectConsExpression
-	21, // 48: pulumipcl.Expression.tupleConsExpression:type_name -> pulumipcl.TupleConsExpression
-	22, // 49: pulumipcl.Expression.functionCallExpression:type_name -> pulumipcl.FunctionCallExpression
-	26, // 50: pulumipcl.Expression.relativeTraversalExpression:type_name -> pulumipcl.RelativeTraversalExpression
-	27, // 51: pulumipcl.Expression.scopeTraversalExpression:type_name -> pulumipcl.ScopeTraversalExpression
-	28, // 52: pulumipcl.Expression.anonymousFunctionExpression:type_name -> pulumipcl.AnonymousFunctionExpression
-	29, // 53: pulumipcl.Expression.conditionalExpression:type_name -> pulumipcl.ConditionalExpression
-	30, // 54: pulumipcl.Expression.binaryOpExpression:type_name -> pulumipcl.BinaryOpExpression
-	31, // 55: pulumipcl.Expression.unaryOpExpression:type_name -> pulumipcl.UnaryOpExpression
-	14, // 56: pulumipcl.Expression.type:type_name -> pulumipcl.ExpressionType
-	16, // 57: pulumipcl.TemplateExpression.parts:type_name -> pulumipcl.Expression
-	16, // 58: pulumipcl.IndexExpression.collection:type_name -> pulumipcl.Expression
-	16, // 59: pulumipcl.IndexExpression.key:type_name -> pulumipcl.Expression
-	39, // 60: pulumipcl.ObjectConsExpression.properties:type_name -> pulumipcl.ObjectConsExpression.PropertiesEntry
-	16, // 61: pulumipcl.TupleConsExpression.items:type_name -> pulumipcl.Expression
-	23, // 62: pulumipcl.FunctionCallExpression.args:type_name -> pulumipcl.FunctionCallArgument
-	16, // 63: pulumipcl.FunctionCallArgument.value:type_name -> pulumipcl.Expression
-	24, // 64: pulumipcl.FunctionCallArgument.type:type_name -> pulumipcl.Type
-	25, // 65: pulumipcl.Type.boolType:type_name -> pulumipcl.Empty
-	25, // 66: pulumipcl.Type.intType:type_name -> pulumipcl.Empty
-	25, // 67: pulumipcl.Type.numberType:type_name -> pulumipcl.Empty
-	25, // 68: pulumipcl.Type.stringType:type_name -> pulumipcl.Empty
-	25, // 69: pulumipcl.Type.composite:type_name -> pulumipcl.Empty
-	24, // 70: pulumipcl.Type.outputType:type_name -> pulumipcl.Type
-	16, // 71: pulumipcl.RelativeTraversalExpression.source:type_name -> pulumipcl.Expression
-	32, // 72: pulumipcl.RelativeTraversalExpression.traversal:type_name -> pulumipcl.Traversal
-	32, // 73: pulumipcl.ScopeTraversalExpression.traversal:type_name -> pulumipcl.Traversal
-	16, // 74: pulumipcl.AnonymousFunctionExpression.body:type_name -> pulumipcl.Expression
-	16, // 75: pulumipcl.ConditionalExpression.condition:type_name -> pulumipcl.Expression
-	16, // 76: pulumipcl.ConditionalExpression.trueExpr:type_name -> pulumipcl.Expression
-	16, // 77: pulumipcl.ConditionalExpression.falseExpr:type_name -> pulumipcl.Expression
-	0,  // 78: pulumipcl.BinaryOpExpression.operation:type_name -> pulumipcl.Operation
-	16, // 79: pulumipcl.BinaryOpExpression.left:type_name -> pulumipcl.Expression
-	16, // 80: pulumipcl.BinaryOpExpression.right:type_name -> pulumipcl.Expression
-	0,  // 81: pulumipcl.UnaryOpExpression.operation:type_name -> pulumipcl.Operation
-	16, // 82: pulumipcl.UnaryOpExpression.operand:type_name -> pulumipcl.Expression
-	33, // 83: pulumipcl.Traversal.each:type_name -> pulumipcl.Traverser
-	34, // 84: pulumipcl.Traverser.traverseAttr:type_name -> pulumipcl.TraverseAttr
-	35, // 85: pulumipcl.Traverser.traverseIndex:type_name -> pulumipcl.TraverseIndex
-	36, // 86: pulumipcl.Traverser.traverseRoot:type_name -> pulumipcl.TraverseRoot
-	37, // 87: pulumipcl.Traverser.traverseSplat:type_name -> pulumipcl.TraverseSplat
-	32, // 88: pulumipcl.TraverseSplat.each:type_name -> pulumipcl.Traversal
-	14, // 89: pulumipcl.ObjectExpressionType.PropertiesEntry.value:type_name -> pulumipcl.ExpressionType
-	16, // 90: pulumipcl.ObjectConsExpression.PropertiesEntry.value:type_name -> pulumipcl.Expression
-	91, // [91:91] is the sub-list for method output_type
-	91, // [91:91] is the sub-list for method input_type
-	91, // [91:91] is the sub-list for extension type_name
-	91, // [91:91] is the sub-list for extension extendee
-	0,  // [0:91] is the sub-list for field type_name
+	10, // 27: pulumipcl.ConfigType.optionalType:type_name -> pulumipcl.ConfigType
+	14, // 28: pulumipcl.TupleExpressionType.element_types:type_name -> pulumipcl.ExpressionType
+	38, // 29: pulumipcl.ObjectExpressionType.properties:type_name -> pulumipcl.ObjectExpressionType.PropertiesEntry
+	14, // 30: pulumipcl.UnionExpressionType.element_types:type_name -> pulumipcl.ExpressionType
+	25, // 31: pulumipcl.ExpressionType.stringType:type_name -> pulumipcl.Empty
+	25, // 32: pulumipcl.ExpressionType.numberType:type_name -> pulumipcl.Empty
+	25, // 33: pulumipcl.ExpressionType.intType:type_name -> pulumipcl.Empty
+	25, // 34: pulumipcl.ExpressionType.boolType:type_name -> pulumipcl.Empty
+	14, // 35: pulumipcl.ExpressionType.listType:type_name -> pulumipcl.ExpressionType
+	14, // 36: pulumipcl.ExpressionType.mapType:type_name -> pulumipcl.ExpressionType
+	14, // 37: pulumipcl.ExpressionType.outputType:type_name -> pulumipcl.ExpressionType
+	11, // 38: pulumipcl.ExpressionType.tupleType:type_name -> pulumipcl.TupleExpressionType
+	25, // 39: pulumipcl.ExpressionType.dynamicType:type_name -> pulumipcl.Empty
+	12, // 40: pulumipcl.ExpressionType.objectType:type_name -> pulumipcl.ObjectExpressionType
+	25, // 41: pulumipcl.ExpressionType.noneType:type_name -> pulumipcl.Empty
+	13, // 42: pulumipcl.ExpressionType.unionType:type_name -> pulumipcl.UnionExpressionType
+	16, // 43: pulumipcl.OutputVariable.value:type_name -> pulumipcl.Expression
+	14, // 44: pulumipcl.OutputVariable.expression_type:type_name -> pulumipcl.ExpressionType
+	17, // 45: pulumipcl.Expression.literalValueExpression:type_name -> pulumipcl.LiteralValueExpression
+	18, // 46: pulumipcl.Expression.templateExpression:type_name -> pulumipcl.TemplateExpression
+	19, // 47: pulumipcl.Expression.indexExpression:type_name -> pulumipcl.IndexExpression
+	20, // 48: pulumipcl.Expression.objectConsExpression:type_name -> pulumipcl.ObjectConsExpression
+	21, // 49: pulumipcl.Expression.tupleConsExpression:type_name -> pulumipcl.TupleConsExpression
+	22, // 50: pulumipcl.Expression.functionCallExpression:type_name -> pulumipcl.FunctionCallExpression
+	26, // 51: pulumipcl.Expression.relativeTraversalExpression:type_name -> pulumipcl.RelativeTraversalExpression
+	27, // 52: pulumipcl.Expression.scopeTraversalExpression:type_name -> pulumipcl.ScopeTraversalExpression
+	28, // 53: pulumipcl.Expression.anonymousFunctionExpression:type_name -> pulumipcl.AnonymousFunctionExpression
+	29, // 54: pulumipcl.Expression.conditionalExpression:type_name -> pulumipcl.ConditionalExpression
+	30, // 55: pulumipcl.Expression.binaryOpExpression:type_name -> pulumipcl.BinaryOpExpression
+	31, // 56: pulumipcl.Expression.unaryOpExpression:type_name -> pulumipcl.UnaryOpExpression
+	14, // 57: pulumipcl.Expression.type:type_name -> pulumipcl.ExpressionType
+	16, // 58: pulumipcl.TemplateExpression.parts:type_name -> pulumipcl.Expression
+	16, // 59: pulumipcl.IndexExpression.collection:type_name -> pulumipcl.Expression
+	16, // 60: pulumipcl.IndexExpression.key:type_name -> pulumipcl.Expression
+	39, // 61: pulumipcl.ObjectConsExpression.properties:type_name -> pulumipcl.ObjectConsExpression.PropertiesEntry
+	16, // 62: pulumipcl.TupleConsExpression.items:type_name -> pulumipcl.Expression
+	23, // 63: pulumipcl.FunctionCallExpression.args:type_name -> pulumipcl.FunctionCallArgument
+	16, // 64: pulumipcl.FunctionCallArgument.value:type_name -> pulumipcl.Expression
+	24, // 65: pulumipcl.FunctionCallArgument.type:type_name -> pulumipcl.Type
+	25, // 66: pulumipcl.Type.boolType:type_name -> pulumipcl.Empty
+	25, // 67: pulumipcl.Type.intType:type_name -> pulumipcl.Empty
+	25, // 68: pulumipcl.Type.numberType:type_name -> pulumipcl.Empty
+	25, // 69: pulumipcl.Type.stringType:type_name -> pulumipcl.Empty
+	25, // 70: pulumipcl.Type.composite:type_name -> pulumipcl.Empty
+	24, // 71: pulumipcl.Type.outputType:type_name -> pulumipcl.Type
+	16, // 72: pulumipcl.RelativeTraversalExpression.source:type_name -> pulumipcl.Expression
+	32, // 73: pulumipcl.RelativeTraversalExpression.traversal:type_name -> pulumipcl.Traversal
+	32, // 74: pulumipcl.ScopeTraversalExpression.traversal:type_name -> pulumipcl.Traversal
+	16, // 75: pulumipcl.AnonymousFunctionExpression.body:type_name -> pulumipcl.Expression
+	16, // 76: pulumipcl.ConditionalExpression.condition:type_name -> pulumipcl.Expression
+	16, // 77: pulumipcl.ConditionalExpression.trueExpr:type_name -> pulumipcl.Expression
+	16, // 78: pulumipcl.ConditionalExpression.falseExpr:type_name -> pulumipcl.Expression
+	0,  // 79: pulumipcl.BinaryOpExpression.operation:type_name -> pulumipcl.Operation
+	16, // 80: pulumipcl.BinaryOpExpression.left:type_name -> pulumipcl.Expression
+	16, // 81: pulumipcl.BinaryOpExpression.right:type_name -> pulumipcl.Expression
+	0,  // 82: pulumipcl.UnaryOpExpression.operation:type_name -> pulumipcl.Operation
+	16, // 83: pulumipcl.UnaryOpExpression.operand:type_name -> pulumipcl.Expression
+	33, // 84: pulumipcl.Traversal.each:type_name -> pulumipcl.Traverser
+	34, // 85: pulumipcl.Traverser.traverseAttr:type_name -> pulumipcl.TraverseAttr
+	35, // 86: pulumipcl.Traverser.traverseIndex:type_name -> pulumipcl.TraverseIndex
+	36, // 87: pulumipcl.Traverser.traverseRoot:type_name -> pulumipcl.TraverseRoot
+	37, // 88: pulumipcl.Traverser.traverseSplat:type_name -> pulumipcl.TraverseSplat
+	32, // 89: pulumipcl.TraverseSplat.each:type_name -> pulumipcl.Traversal
+	14, // 90: pulumipcl.ObjectExpressionType.PropertiesEntry.value:type_name -> pulumipcl.ExpressionType
+	16, // 91: pulumipcl.ObjectConsExpression.PropertiesEntry.value:type_name -> pulumipcl.Expression
+	92, // [92:92] is the sub-list for method output_type
+	92, // [92:92] is the sub-list for method input_type
+	92, // [92:92] is the sub-list for extension type_name
+	92, // [92:92] is the sub-list for extension extendee
+	0,  // [0:92] is the sub-list for field type_name
 }
 
 func init() { file_pcl_proto_init() }
@@ -3285,6 +3303,7 @@ func file_pcl_proto_init() {
 		(*ConfigType_BoolType)(nil),
 		(*ConfigType_ListType)(nil),
 		(*ConfigType_MapType)(nil),
+		(*ConfigType_OptionalType)(nil),
 	}
 	file_pcl_proto_msgTypes[13].OneofWrappers = []any{
 		(*ExpressionType_StringType)(nil),

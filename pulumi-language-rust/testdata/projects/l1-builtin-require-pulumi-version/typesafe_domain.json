@@ -1,0 +1,20 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "version",
+        "config_type": "String",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "RequirePulumiVersion": {
+        "expr_type": "String",
+        "value": {
+          "Variable": "version"
+        }
+      }
+    }
+  ]
+}

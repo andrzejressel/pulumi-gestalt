@@ -1,0 +1,70 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "zero",
+        "value": {
+          "expr_type": "Int",
+          "value": {
+            "Number": 0.0
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "one",
+        "value": {
+          "expr_type": "Int",
+          "value": {
+            "Number": 1.0
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "e",
+        "value": {
+          "expr_type": "Number",
+          "value": {
+            "Number": 2.718
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "minInt32",
+        "value": {
+          "expr_type": "Int",
+          "value": {
+            "Number": -2147483648.0
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "max",
+        "value": {
+          "expr_type": "Number",
+          "value": {
+            "Number": 1.7976931348623157e+308
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "min",
+        "value": {
+          "expr_type": "Number",
+          "value": {
+            "Number": 5e-324
+          }
+        }
+      }
+    }
+  ]
+}
