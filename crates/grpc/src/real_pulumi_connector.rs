@@ -15,7 +15,6 @@ use pulumi_gestalt_proto::pulumi::pulumirpc::{
     InvokeResponse, RegisterResourceOutputsRequest, ResourceInvokeRequest,
 };
 use pulumi_gestalt_proto::pulumi::pulumirpc::{RegisterResourceRequest, RegisterResourceResponse};
-use serde_json::{Number, Value, json};
 use std::collections::{BTreeMap, HashMap};
 use tonic::transport::Channel;
 
@@ -259,21 +258,7 @@ impl PulumiConnector for RealPulumiConnector {
 fn create_map_of_node_values(s: Struct) -> HashMap<FieldName, PulumiValue> {
     s.fields
         .into_iter()
-        .map(|(k, v)| {
-            let json_value = protobuf_to_json(&v);
-
-            let pulumi_value = match &json_value {
-                Value::Object(obj) if obj.contains_key(crate::constants::SPECIAL_SIG_KEY) => {
-                    let secret_value = obj
-                        .get(crate::constants::SECRET_VALUE_NAME)
-                        .cloned()
-                        .unwrap_or(Value::Null);
-                    PulumiValue::from_json(secret_value, true)
-                }
-                _ => PulumiValue::from_json(json_value, false),
-            };
-            (FieldName::from(k), pulumi_value)
-        })
+        .map(|(k, v)| (FieldName::from(k), protobuf_to_pulumi_value(&v)))
         .collect()
 }
 
@@ -286,14 +271,27 @@ fn create_protobuf_struct(fields: HashMap<FieldName, PulumiValue>) -> Struct {
                     kind: Some(Kind::StringValue(UNKNOWN_VALUE.into())),
                 },
                 _ if value.secret => {
-                    let inner = value.to_json();
-                    let value = json!({
-                        crate::constants::SPECIAL_SIG_KEY: crate::constants::SPECIAL_SECRET_SIG,
-                        crate::constants::SECRET_VALUE_NAME: inner
-                    });
-                    json_to_protobuf(value)
+                    let secret_struct = Struct {
+                        fields: BTreeMap::from([
+                            (
+                                crate::constants::SPECIAL_SIG_KEY.to_string(),
+                                prost_types::Value {
+                                    kind: Some(Kind::StringValue(
+                                        crate::constants::SPECIAL_SECRET_SIG.to_string(),
+                                    )),
+                                },
+                            ),
+                            (
+                                crate::constants::SECRET_VALUE_NAME.to_string(),
+                                pulumi_value_to_protobuf(value),
+                            ),
+                        ]),
+                    };
+                    prost_types::Value {
+                        kind: Some(Kind::StructValue(secret_struct)),
+                    }
                 }
-                _ => json_to_protobuf(value.to_json()),
+                _ => pulumi_value_to_protobuf(value),
             };
             (name.get_inner(), v)
         })
@@ -304,33 +302,36 @@ fn create_protobuf_struct(fields: HashMap<FieldName, PulumiValue>) -> Struct {
     }
 }
 
-fn json_to_protobuf(json: Value) -> prost_types::Value {
-    match json {
-        Value::Null => prost_types::Value {
+fn pulumi_value_to_protobuf(value: PulumiValue) -> prost_types::Value {
+    match value.content {
+        PulumiValueContent::None | PulumiValueContent::Nothing => prost_types::Value {
             kind: Some(Kind::NullValue(0)),
         },
-        Value::Bool(b) => prost_types::Value {
+        PulumiValueContent::Boolean(b) => prost_types::Value {
             kind: Some(Kind::BoolValue(b)),
         },
-        Value::Number(n) => prost_types::Value {
-            kind: Some(Kind::NumberValue(n.as_f64().unwrap())),
+        PulumiValueContent::Integer(n) => prost_types::Value {
+            kind: Some(Kind::NumberValue(f64::from(n))),
         },
-        Value::String(s) => prost_types::Value {
+        PulumiValueContent::Number(n) => prost_types::Value {
+            kind: Some(Kind::NumberValue(n)),
+        },
+        PulumiValueContent::String(s) => prost_types::Value {
             kind: Some(Kind::StringValue(s)),
         },
-        Value::Array(arr) => {
+        PulumiValueContent::Array(arr) => {
             let list_value = ListValue {
-                values: arr.into_iter().map(json_to_protobuf).collect(),
+                values: arr.into_iter().map(pulumi_value_to_protobuf).collect(),
             };
             prost_types::Value {
                 kind: Some(Kind::ListValue(list_value)),
             }
         }
-        Value::Object(obj) => {
+        PulumiValueContent::Object(obj) => {
             let struct_value = Struct {
                 fields: obj
                     .into_iter()
-                    .map(|(k, v)| (k, json_to_protobuf(v)))
+                    .map(|(k, v)| (k, pulumi_value_to_protobuf(v)))
                     .collect(),
             };
             prost_types::Value {
@@ -340,29 +341,73 @@ fn json_to_protobuf(json: Value) -> prost_types::Value {
     }
 }
 
-fn protobuf_to_json(protobuf: &prost_types::Value) -> Value {
+fn protobuf_to_pulumi_value(protobuf: &prost_types::Value) -> PulumiValue {
+    let default_value = || PulumiValue {
+        content: PulumiValueContent::None,
+        secret: false,
+        dependencies: Default::default(),
+    };
+
     match &protobuf.kind {
         None => {
             error!("Unknown kind in protobuf value");
             panic!("Unknown kind in protobuf value");
         }
-        Some(Kind::NullValue(_)) => Value::Null,
+        Some(Kind::NullValue(_)) => default_value(),
         Some(Kind::NumberValue(n)) => {
             if n.fract() == 0.0 {
-                Value::Number(Number::from(*n as i64))
+                PulumiValue {
+                    content: PulumiValueContent::Integer(*n as i32),
+                    secret: false,
+                    dependencies: Default::default(),
+                }
             } else {
-                Value::Number(Number::from_f64(*n).unwrap())
+                PulumiValue {
+                    content: PulumiValueContent::Number(*n),
+                    secret: false,
+                    dependencies: Default::default(),
+                }
             }
         }
-        Some(Kind::StringValue(s)) => Value::String(s.clone()),
-        Some(Kind::BoolValue(b)) => Value::Bool(*b),
-        Some(Kind::StructValue(s)) => Value::Object(
-            s.fields
-                .iter()
-                .map(|(k, v)| (k.clone(), protobuf_to_json(v)))
-                .collect(),
-        ),
-        Some(Kind::ListValue(l)) => Value::Array(l.values.iter().map(protobuf_to_json).collect()),
+        Some(Kind::StringValue(s)) => PulumiValue {
+            content: PulumiValueContent::String(s.clone()),
+            secret: false,
+            dependencies: Default::default(),
+        },
+        Some(Kind::BoolValue(b)) => PulumiValue {
+            content: PulumiValueContent::Boolean(*b),
+            secret: false,
+            dependencies: Default::default(),
+        },
+        Some(Kind::StructValue(s)) if s.fields.contains_key(crate::constants::SPECIAL_SIG_KEY) => {
+            let Some(value) = s.fields.get(crate::constants::SECRET_VALUE_NAME) else {
+                return PulumiValue {
+                    secret: true,
+                    ..default_value()
+                };
+            };
+
+            let mut inner = protobuf_to_pulumi_value(value);
+            inner.secret = true;
+            inner
+        }
+        Some(Kind::StructValue(s)) => PulumiValue {
+            content: PulumiValueContent::Object(
+                s.fields
+                    .iter()
+                    .map(|(k, v)| (k.clone(), protobuf_to_pulumi_value(v)))
+                    .collect(),
+            ),
+            secret: false,
+            dependencies: Default::default(),
+        },
+        Some(Kind::ListValue(l)) => PulumiValue {
+            content: PulumiValueContent::Array(
+                l.values.iter().map(protobuf_to_pulumi_value).collect(),
+            ),
+            secret: false,
+            dependencies: Default::default(),
+        },
     }
 }
 
@@ -604,11 +649,19 @@ mod tests {
             HashMap::from([
                 (
                     "normal".into(),
-                    PulumiValue::from_json("normal".into(), false)
+                    PulumiValue {
+                        content: PulumiValueContent::String("normal".to_string()),
+                        secret: false,
+                        dependencies: Default::default(),
+                    }
                 ),
                 (
                     "secret".into(),
-                    PulumiValue::from_json("secret".into(), true)
+                    PulumiValue {
+                        content: PulumiValueContent::String("secret".to_string()),
+                        secret: true,
+                        dependencies: Default::default(),
+                    }
                 )
             ])
         );

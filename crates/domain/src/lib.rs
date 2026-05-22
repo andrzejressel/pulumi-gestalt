@@ -59,7 +59,11 @@ mod tests {
         let mut object = HashMap::new();
         object.insert(
             FieldName::from("existing_field"),
-            PulumiValue::from_json("existing_value".into(), false),
+            PulumiValue {
+                content: PulumiValueContent::String("existing_value".to_string()),
+                secret: false,
+                dependencies: Default::default(),
+            },
         );
 
         let resource_fields = ResourceFields {
@@ -72,7 +76,11 @@ mod tests {
 
         assert_eq!(
             result,
-            PulumiValue::from_json("existing_value".into(), false)
+            PulumiValue {
+                content: PulumiValueContent::String("existing_value".to_string()),
+                secret: false,
+                dependencies: Default::default(),
+            }
         );
     }
 

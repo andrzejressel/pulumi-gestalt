@@ -1,11 +1,12 @@
 use crate::PulumiAny;
 use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
-use pulumi_gestalt_model::{Output, PulumiValue, PulumiValueContent, ToPulumiValue};
+use pulumi_gestalt_model::{
+    FromPulumiValue, Output, PulumiValue, PulumiValueContent, ToPulumiValue,
+};
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::{ConfigValue, FieldName};
 use serde::{Deserialize, Serialize, de::DeserializeOwned};
-use serde_json::Value;
 use std::collections::HashMap;
 use std::sync::Arc;
 use tokio::runtime::Runtime;
@@ -32,7 +33,7 @@ impl CompositeOutput {
 
     pub fn get_field<T>(&self, key: &str) -> Output<T>
     where
-        T: DeserializeOwned + Send + Sync + 'static,
+        T: FromPulumiValue + Send + Sync + 'static,
     {
         let res = self
             .runtime
@@ -188,7 +189,7 @@ impl Context {
 
     fn integration_to_model_output<T>(output: integration::Output) -> Output<T>
     where
-        T: DeserializeOwned + Send + Sync + 'static,
+        T: FromPulumiValue + Send + Sync + 'static,
     {
         Output::from_resolved_future(async move {
             let resolved = output.resolve().await;
@@ -207,9 +208,13 @@ impl Context {
                     dependencies: Default::default(),
                 }
             } else {
-                let json_value = Self::pulumi_value_to_json_value(pulumi_value.clone());
                 pulumi_gestalt_model::ResolvedOutput {
-                    value: Some(serde_json::from_value(json_value).unwrap()),
+                    value: Some(T::from_pulumi_value(&pulumi_value).unwrap_or_else(|err| {
+                        panic!(
+                            "Failed to convert PulumiValue into {}: {err}",
+                            std::any::type_name::<T>()
+                        )
+                    })),
                     secret: pulumi_value.secret,
                     dependencies: pulumi_value.dependencies,
                 }
@@ -244,28 +249,6 @@ impl Context {
                 }
             }
         })
-    }
-
-    fn pulumi_value_to_json_value(value: PulumiValue) -> Value {
-        match value.content {
-            PulumiValueContent::String(value) => Value::String(value),
-            PulumiValueContent::Integer(value) => Value::from(value),
-            PulumiValueContent::Number(value) => Value::from(value),
-            PulumiValueContent::Boolean(value) => Value::from(value),
-            PulumiValueContent::Array(values) => Value::Array(
-                values
-                    .into_iter()
-                    .map(Self::pulumi_value_to_json_value)
-                    .collect(),
-            ),
-            PulumiValueContent::Object(values) => Value::Object(
-                values
-                    .into_iter()
-                    .map(|(key, value)| (key, Self::pulumi_value_to_json_value(value)))
-                    .collect(),
-            ),
-            PulumiValueContent::None | PulumiValueContent::Nothing => Value::Null,
-        }
     }
 
     fn config_full_key(name: Option<&str>, key: &str) -> String {
