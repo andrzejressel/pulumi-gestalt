@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "state_machine_version_arn",
+                    "stateMachineVersionArn",
                     &self.r#state_machine_version_arn,
                 ),
                 to_pulumi_object_field(
@@ -56,9 +56,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#state_machine_version_arn: {
-                        let field_value = match fields_map.get("state_machine_version_arn") {
+                        let field_value = match fields_map.get("stateMachineVersionArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'state_machine_version_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stateMachineVersionArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

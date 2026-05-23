@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "generated_rules_type",
+                    "generatedRulesType",
                     &self.r#generated_rules_type,
                 ),
                 to_pulumi_object_field(
-                    "target_types",
+                    "targetTypes",
                     &self.r#target_types,
                 ),
                 to_pulumi_object_field(
@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#generated_rules_type: {
-                        let field_value = match fields_map.get("generated_rules_type") {
+                        let field_value = match fields_map.get("generatedRulesType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'generated_rules_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'generatedRulesType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_types: {
-                        let field_value = match fields_map.get("target_types") {
+                        let field_value = match fields_map.get("targetTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

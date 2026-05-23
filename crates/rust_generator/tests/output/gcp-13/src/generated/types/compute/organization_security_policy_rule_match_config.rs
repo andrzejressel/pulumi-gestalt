@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Org
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dest_ip_ranges",
+                    "destIpRanges",
                     &self.r#dest_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "layer_4_configs",
+                    "layer4Configs",
                     &self.r#layer_4_configs,
                 ),
                 to_pulumi_object_field(
-                    "src_ip_ranges",
+                    "srcIpRanges",
                     &self.r#src_ip_ranges,
                 ),
             ];
@@ -72,23 +72,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#dest_ip_ranges: {
-                        let field_value = match fields_map.get("dest_ip_ranges") {
+                        let field_value = match fields_map.get("destIpRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dest_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destIpRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#layer_4_configs: {
-                        let field_value = match fields_map.get("layer_4_configs") {
+                        let field_value = match fields_map.get("layer4Configs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'layer_4_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'layer4Configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#src_ip_ranges: {
-                        let field_value = match fields_map.get("src_ip_ranges") {
+                        let field_value = match fields_map.get("srcIpRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'src_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'srcIpRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

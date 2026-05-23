@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#accounts,
                 ),
                 to_pulumi_object_field(
-                    "framework_arns",
+                    "frameworkArns",
                     &self.r#framework_arns,
                 ),
                 to_pulumi_object_field(
-                    "number_of_frameworks",
+                    "numberOfFrameworks",
                     &self.r#number_of_frameworks,
                 ),
                 to_pulumi_object_field(
-                    "organization_units",
+                    "organizationUnits",
                     &self.r#organization_units,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#regions,
                 ),
                 to_pulumi_object_field(
-                    "report_template",
+                    "reportTemplate",
                     &self.r#report_template,
                 ),
             ];
@@ -97,23 +97,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#framework_arns: {
-                        let field_value = match fields_map.get("framework_arns") {
+                        let field_value = match fields_map.get("frameworkArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'framework_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frameworkArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_of_frameworks: {
-                        let field_value = match fields_map.get("number_of_frameworks") {
+                        let field_value = match fields_map.get("numberOfFrameworks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_of_frameworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberOfFrameworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#organization_units: {
-                        let field_value = match fields_map.get("organization_units") {
+                        let field_value = match fields_map.get("organizationUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'organization_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'organizationUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,9 +125,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#report_template: {
-                        let field_value = match fields_map.get("report_template") {
+                        let field_value = match fields_map.get("reportTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'report_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reportTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

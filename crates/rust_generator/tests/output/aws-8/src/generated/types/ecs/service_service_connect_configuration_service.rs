@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_alias",
+                    "clientAlias",
                     &self.r#client_alias,
                 ),
                 to_pulumi_object_field(
-                    "discovery_name",
+                    "discoveryName",
                     &self.r#discovery_name,
                 ),
                 to_pulumi_object_field(
-                    "ingress_port_override",
+                    "ingressPortOverride",
                     &self.r#ingress_port_override,
                 ),
                 to_pulumi_object_field(
-                    "port_name",
+                    "portName",
                     &self.r#port_name,
                 ),
                 to_pulumi_object_field(
@@ -90,30 +90,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#client_alias: {
-                        let field_value = match fields_map.get("client_alias") {
+                        let field_value = match fields_map.get("clientAlias") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_alias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientAlias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#discovery_name: {
-                        let field_value = match fields_map.get("discovery_name") {
+                        let field_value = match fields_map.get("discoveryName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'discovery_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'discoveryName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ingress_port_override: {
-                        let field_value = match fields_map.get("ingress_port_override") {
+                        let field_value = match fields_map.get("ingressPortOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingress_port_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingressPortOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_name: {
-                        let field_value = match fields_map.get("port_name") {
+                        let field_value = match fields_map.get("portName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

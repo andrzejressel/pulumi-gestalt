@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "coverage_level",
+                    "coverageLevel",
                     &self.r#coverage_level,
                 ),
                 to_pulumi_object_field(
-                    "excluded_ip_addresses",
+                    "excludedIpAddresses",
                     &self.r#excluded_ip_addresses,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "included_ip_addresses",
+                    "includedIpAddresses",
                     &self.r#included_ip_addresses,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "target_resource_id",
+                    "targetResourceId",
                     &self.r#target_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "target_resource_type",
+                    "targetResourceType",
                     &self.r#target_resource_type,
                 ),
             ];
@@ -113,16 +113,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#coverage_level: {
-                        let field_value = match fields_map.get("coverage_level") {
+                        let field_value = match fields_map.get("coverageLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'coverage_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coverageLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_ip_addresses: {
-                        let field_value = match fields_map.get("excluded_ip_addresses") {
+                        let field_value = match fields_map.get("excludedIpAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_ip_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedIpAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,9 +134,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_ip_addresses: {
-                        let field_value = match fields_map.get("included_ip_addresses") {
+                        let field_value = match fields_map.get("includedIpAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_ip_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedIpAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -148,16 +148,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_resource_id: {
-                        let field_value = match fields_map.get("target_resource_id") {
+                        let field_value = match fields_map.get("targetResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_resource_type: {
-                        let field_value = match fields_map.get("target_resource_type") {
+                        let field_value = match fields_map.get("targetResourceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_resource_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetResourceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

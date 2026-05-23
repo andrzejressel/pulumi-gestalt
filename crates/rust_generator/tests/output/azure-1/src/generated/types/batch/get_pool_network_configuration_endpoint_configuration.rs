@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_port",
+                    "backendPort",
                     &self.r#backend_port,
                 ),
                 to_pulumi_object_field(
-                    "frontend_port_range",
+                    "frontendPortRange",
                     &self.r#frontend_port_range,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "network_security_group_rules",
+                    "networkSecurityGroupRules",
                     &self.r#network_security_group_rules,
                 ),
                 to_pulumi_object_field(
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#backend_port: {
-                        let field_value = match fields_map.get("backend_port") {
+                        let field_value = match fields_map.get("backendPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frontend_port_range: {
-                        let field_value = match fields_map.get("frontend_port_range") {
+                        let field_value = match fields_map.get("frontendPortRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frontend_port_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frontendPortRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_security_group_rules: {
-                        let field_value = match fields_map.get("network_security_group_rules") {
+                        let field_value = match fields_map.get("networkSecurityGroupRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_security_group_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkSecurityGroupRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

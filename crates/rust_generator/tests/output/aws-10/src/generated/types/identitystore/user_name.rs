@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "family_name",
+                    "familyName",
                     &self.r#family_name,
                 ),
                 to_pulumi_object_field(
@@ -53,19 +53,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
                     &self.r#formatted,
                 ),
                 to_pulumi_object_field(
-                    "given_name",
+                    "givenName",
                     &self.r#given_name,
                 ),
                 to_pulumi_object_field(
-                    "honorific_prefix",
+                    "honorificPrefix",
                     &self.r#honorific_prefix,
                 ),
                 to_pulumi_object_field(
-                    "honorific_suffix",
+                    "honorificSuffix",
                     &self.r#honorific_suffix,
                 ),
                 to_pulumi_object_field(
-                    "middle_name",
+                    "middleName",
                     &self.r#middle_name,
                 ),
             ];
@@ -92,9 +92,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#family_name: {
-                        let field_value = match fields_map.get("family_name") {
+                        let field_value = match fields_map.get("familyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'family_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'familyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -106,30 +106,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#given_name: {
-                        let field_value = match fields_map.get("given_name") {
+                        let field_value = match fields_map.get("givenName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'given_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'givenName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#honorific_prefix: {
-                        let field_value = match fields_map.get("honorific_prefix") {
+                        let field_value = match fields_map.get("honorificPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'honorific_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'honorificPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#honorific_suffix: {
-                        let field_value = match fields_map.get("honorific_suffix") {
+                        let field_value = match fields_map.get("honorificSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'honorific_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'honorificSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#middle_name: {
-                        let field_value = match fields_map.get("middle_name") {
+                        let field_value = match fields_map.get("middleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'middle_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'middleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

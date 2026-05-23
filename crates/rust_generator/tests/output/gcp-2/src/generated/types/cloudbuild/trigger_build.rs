@@ -89,7 +89,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#artifacts,
                 ),
                 to_pulumi_object_field(
-                    "available_secrets",
+                    "availableSecrets",
                     &self.r#available_secrets,
                 ),
                 to_pulumi_object_field(
@@ -97,7 +97,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#images,
                 ),
                 to_pulumi_object_field(
-                    "logs_bucket",
+                    "logsBucket",
                     &self.r#logs_bucket,
                 ),
                 to_pulumi_object_field(
@@ -105,7 +105,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#options,
                 ),
                 to_pulumi_object_field(
-                    "queue_ttl",
+                    "queueTtl",
                     &self.r#queue_ttl,
                 ),
                 to_pulumi_object_field(
@@ -163,9 +163,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_secrets: {
-                        let field_value = match fields_map.get("available_secrets") {
+                        let field_value = match fields_map.get("availableSecrets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_secrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableSecrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -177,9 +177,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logs_bucket: {
-                        let field_value = match fields_map.get("logs_bucket") {
+                        let field_value = match fields_map.get("logsBucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logs_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logsBucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -191,9 +191,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#queue_ttl: {
-                        let field_value = match fields_map.get("queue_ttl") {
+                        let field_value = match fields_map.get("queueTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'queue_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queueTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

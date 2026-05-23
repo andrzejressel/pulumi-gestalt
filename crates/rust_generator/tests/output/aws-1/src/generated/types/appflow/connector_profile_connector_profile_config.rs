@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connector_profile_credentials",
+                    "connectorProfileCredentials",
                     &self.r#connector_profile_credentials,
                 ),
                 to_pulumi_object_field(
-                    "connector_profile_properties",
+                    "connectorProfileProperties",
                     &self.r#connector_profile_properties,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#connector_profile_credentials: {
-                        let field_value = match fields_map.get("connector_profile_credentials") {
+                        let field_value = match fields_map.get("connectorProfileCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connector_profile_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorProfileCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connector_profile_properties: {
-                        let field_value = match fields_map.get("connector_profile_properties") {
+                        let field_value = match fields_map.get("connectorProfileProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connector_profile_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorProfileProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -97,43 +97,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cross_realm_trust_admin_server",
+                    "crossRealmTrustAdminServer",
                     &self.r#cross_realm_trust_admin_server,
                 ),
                 to_pulumi_object_field(
-                    "cross_realm_trust_kdc",
+                    "crossRealmTrustKdc",
                     &self.r#cross_realm_trust_kdc,
                 ),
                 to_pulumi_object_field(
-                    "cross_realm_trust_realm",
+                    "crossRealmTrustRealm",
                     &self.r#cross_realm_trust_realm,
                 ),
                 to_pulumi_object_field(
-                    "cross_realm_trust_shared_password_uri",
+                    "crossRealmTrustSharedPasswordUri",
                     &self.r#cross_realm_trust_shared_password_uri,
                 ),
                 to_pulumi_object_field(
-                    "enable_kerberos",
+                    "enableKerberos",
                     &self.r#enable_kerberos,
                 ),
                 to_pulumi_object_field(
-                    "kdc_db_key_uri",
+                    "kdcDbKeyUri",
                     &self.r#kdc_db_key_uri,
                 ),
                 to_pulumi_object_field(
-                    "key_password_uri",
+                    "keyPasswordUri",
                     &self.r#key_password_uri,
                 ),
                 to_pulumi_object_field(
-                    "keystore_password_uri",
+                    "keystorePasswordUri",
                     &self.r#keystore_password_uri,
                 ),
                 to_pulumi_object_field(
-                    "keystore_uri",
+                    "keystoreUri",
                     &self.r#keystore_uri,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_uri",
+                    "kmsKeyUri",
                     &self.r#kms_key_uri,
                 ),
                 to_pulumi_object_field(
@@ -141,19 +141,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#realm,
                 ),
                 to_pulumi_object_field(
-                    "root_principal_password_uri",
+                    "rootPrincipalPasswordUri",
                     &self.r#root_principal_password_uri,
                 ),
                 to_pulumi_object_field(
-                    "tgt_lifetime_hours",
+                    "tgtLifetimeHours",
                     &self.r#tgt_lifetime_hours,
                 ),
                 to_pulumi_object_field(
-                    "truststore_password_uri",
+                    "truststorePasswordUri",
                     &self.r#truststore_password_uri,
                 ),
                 to_pulumi_object_field(
-                    "truststore_uri",
+                    "truststoreUri",
                     &self.r#truststore_uri,
                 ),
             ];
@@ -180,72 +180,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cross_realm_trust_admin_server: {
-                        let field_value = match fields_map.get("cross_realm_trust_admin_server") {
+                        let field_value = match fields_map.get("crossRealmTrustAdminServer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_realm_trust_admin_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossRealmTrustAdminServer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cross_realm_trust_kdc: {
-                        let field_value = match fields_map.get("cross_realm_trust_kdc") {
+                        let field_value = match fields_map.get("crossRealmTrustKdc") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_realm_trust_kdc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossRealmTrustKdc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cross_realm_trust_realm: {
-                        let field_value = match fields_map.get("cross_realm_trust_realm") {
+                        let field_value = match fields_map.get("crossRealmTrustRealm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_realm_trust_realm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossRealmTrustRealm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cross_realm_trust_shared_password_uri: {
-                        let field_value = match fields_map.get("cross_realm_trust_shared_password_uri") {
+                        let field_value = match fields_map.get("crossRealmTrustSharedPasswordUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_realm_trust_shared_password_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossRealmTrustSharedPasswordUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_kerberos: {
-                        let field_value = match fields_map.get("enable_kerberos") {
+                        let field_value = match fields_map.get("enableKerberos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_kerberos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableKerberos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kdc_db_key_uri: {
-                        let field_value = match fields_map.get("kdc_db_key_uri") {
+                        let field_value = match fields_map.get("kdcDbKeyUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kdc_db_key_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kdcDbKeyUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_password_uri: {
-                        let field_value = match fields_map.get("key_password_uri") {
+                        let field_value = match fields_map.get("keyPasswordUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_password_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyPasswordUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#keystore_password_uri: {
-                        let field_value = match fields_map.get("keystore_password_uri") {
+                        let field_value = match fields_map.get("keystorePasswordUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'keystore_password_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keystorePasswordUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#keystore_uri: {
-                        let field_value = match fields_map.get("keystore_uri") {
+                        let field_value = match fields_map.get("keystoreUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'keystore_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keystoreUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_uri: {
-                        let field_value = match fields_map.get("kms_key_uri") {
+                        let field_value = match fields_map.get("kmsKeyUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -257,30 +257,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_principal_password_uri: {
-                        let field_value = match fields_map.get("root_principal_password_uri") {
+                        let field_value = match fields_map.get("rootPrincipalPasswordUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_principal_password_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootPrincipalPasswordUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tgt_lifetime_hours: {
-                        let field_value = match fields_map.get("tgt_lifetime_hours") {
+                        let field_value = match fields_map.get("tgtLifetimeHours") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tgt_lifetime_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tgtLifetimeHours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#truststore_password_uri: {
-                        let field_value = match fields_map.get("truststore_password_uri") {
+                        let field_value = match fields_map.get("truststorePasswordUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'truststore_password_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'truststorePasswordUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#truststore_uri: {
-                        let field_value = match fields_map.get("truststore_uri") {
+                        let field_value = match fields_map.get("truststoreUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'truststore_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'truststoreUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

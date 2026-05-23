@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kubelet_config",
+                    "kubeletConfig",
                     &self.r#kubelet_config,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "node_configs",
+                    "nodeConfigs",
                     &self.r#node_configs,
                 ),
                 to_pulumi_object_field(
-                    "operating_system",
+                    "operatingSystem",
                     &self.r#operating_system,
                 ),
                 to_pulumi_object_field(
@@ -94,9 +94,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#kubelet_config: {
-                        let field_value = match fields_map.get("kubelet_config") {
+                        let field_value = match fields_map.get("kubeletConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kubelet_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kubeletConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -108,16 +108,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_configs: {
-                        let field_value = match fields_map.get("node_configs") {
+                        let field_value = match fields_map.get("nodeConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operating_system: {
-                        let field_value = match fields_map.get("operating_system") {
+                        let field_value = match fields_map.get("operatingSystem") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operating_system' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operatingSystem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

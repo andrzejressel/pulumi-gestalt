@@ -107,15 +107,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#environments,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_storages",
+                    "ephemeralStorages",
                     &self.r#ephemeral_storages,
                 ),
                 to_pulumi_object_field(
-                    "execution_role_arn",
+                    "executionRoleArn",
                     &self.r#execution_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "fargate_platform_configurations",
+                    "fargatePlatformConfigurations",
                     &self.r#fargate_platform_configurations,
                 ),
                 to_pulumi_object_field(
@@ -123,27 +123,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "job_role_arn",
+                    "jobRoleArn",
                     &self.r#job_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "linux_parameters",
+                    "linuxParameters",
                     &self.r#linux_parameters,
                 ),
                 to_pulumi_object_field(
-                    "log_configurations",
+                    "logConfigurations",
                     &self.r#log_configurations,
                 ),
                 to_pulumi_object_field(
-                    "mount_points",
+                    "mountPoints",
                     &self.r#mount_points,
                 ),
                 to_pulumi_object_field(
-                    "network_configurations",
+                    "networkConfigurations",
                     &self.r#network_configurations,
                 ),
                 to_pulumi_object_field(
@@ -151,15 +151,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#privileged,
                 ),
                 to_pulumi_object_field(
-                    "readonly_root_filesystem",
+                    "readonlyRootFilesystem",
                     &self.r#readonly_root_filesystem,
                 ),
                 to_pulumi_object_field(
-                    "resource_requirements",
+                    "resourceRequirements",
                     &self.r#resource_requirements,
                 ),
                 to_pulumi_object_field(
-                    "runtime_platforms",
+                    "runtimePlatforms",
                     &self.r#runtime_platforms,
                 ),
                 to_pulumi_object_field(
@@ -216,23 +216,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ephemeral_storages: {
-                        let field_value = match fields_map.get("ephemeral_storages") {
+                        let field_value = match fields_map.get("ephemeralStorages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ephemeral_storages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ephemeralStorages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_role_arn: {
-                        let field_value = match fields_map.get("execution_role_arn") {
+                        let field_value = match fields_map.get("executionRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fargate_platform_configurations: {
-                        let field_value = match fields_map.get("fargate_platform_configurations") {
+                        let field_value = match fields_map.get("fargatePlatformConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fargate_platform_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fargatePlatformConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -244,44 +244,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_type: {
-                        let field_value = match fields_map.get("instance_type") {
+                        let field_value = match fields_map.get("instanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_role_arn: {
-                        let field_value = match fields_map.get("job_role_arn") {
+                        let field_value = match fields_map.get("jobRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#linux_parameters: {
-                        let field_value = match fields_map.get("linux_parameters") {
+                        let field_value = match fields_map.get("linuxParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linux_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linuxParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_configurations: {
-                        let field_value = match fields_map.get("log_configurations") {
+                        let field_value = match fields_map.get("logConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mount_points: {
-                        let field_value = match fields_map.get("mount_points") {
+                        let field_value = match fields_map.get("mountPoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mount_points' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mountPoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_configurations: {
-                        let field_value = match fields_map.get("network_configurations") {
+                        let field_value = match fields_map.get("networkConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -293,23 +293,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#readonly_root_filesystem: {
-                        let field_value = match fields_map.get("readonly_root_filesystem") {
+                        let field_value = match fields_map.get("readonlyRootFilesystem") {
                             Some(value) => value,
-                            None => bail!("Missing field 'readonly_root_filesystem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readonlyRootFilesystem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_requirements: {
-                        let field_value = match fields_map.get("resource_requirements") {
+                        let field_value = match fields_map.get("resourceRequirements") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_requirements' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceRequirements' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_platforms: {
-                        let field_value = match fields_map.get("runtime_platforms") {
+                        let field_value = match fields_map.get("runtimePlatforms") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_platforms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimePlatforms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

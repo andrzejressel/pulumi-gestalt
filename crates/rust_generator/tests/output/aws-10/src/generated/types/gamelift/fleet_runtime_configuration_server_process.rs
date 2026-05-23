@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "concurrent_executions",
+                    "concurrentExecutions",
                     &self.r#concurrent_executions,
                 ),
                 to_pulumi_object_field(
-                    "launch_path",
+                    "launchPath",
                     &self.r#launch_path,
                 ),
                 to_pulumi_object_field(
@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#concurrent_executions: {
-                        let field_value = match fields_map.get("concurrent_executions") {
+                        let field_value = match fields_map.get("concurrentExecutions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'concurrent_executions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'concurrentExecutions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_path: {
-                        let field_value = match fields_map.get("launch_path") {
+                        let field_value = match fields_map.get("launchPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

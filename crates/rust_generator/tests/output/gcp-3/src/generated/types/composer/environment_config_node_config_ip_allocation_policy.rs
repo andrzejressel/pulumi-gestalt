@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_ipv_4_cidr_block",
+                    "clusterIpv4CidrBlock",
                     &self.r#cluster_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "cluster_secondary_range_name",
+                    "clusterSecondaryRangeName",
                     &self.r#cluster_secondary_range_name,
                 ),
                 to_pulumi_object_field(
-                    "services_ipv_4_cidr_block",
+                    "servicesIpv4CidrBlock",
                     &self.r#services_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "services_secondary_range_name",
+                    "servicesSecondaryRangeName",
                     &self.r#services_secondary_range_name,
                 ),
                 to_pulumi_object_field(
-                    "use_ip_aliases",
+                    "useIpAliases",
                     &self.r#use_ip_aliases,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#cluster_ipv_4_cidr_block: {
-                        let field_value = match fields_map.get("cluster_ipv_4_cidr_block") {
+                        let field_value = match fields_map.get("clusterIpv4CidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterIpv4CidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_secondary_range_name: {
-                        let field_value = match fields_map.get("cluster_secondary_range_name") {
+                        let field_value = match fields_map.get("clusterSecondaryRangeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_secondary_range_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterSecondaryRangeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#services_ipv_4_cidr_block: {
-                        let field_value = match fields_map.get("services_ipv_4_cidr_block") {
+                        let field_value = match fields_map.get("servicesIpv4CidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'services_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'servicesIpv4CidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#services_secondary_range_name: {
-                        let field_value = match fields_map.get("services_secondary_range_name") {
+                        let field_value = match fields_map.get("servicesSecondaryRangeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'services_secondary_range_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'servicesSecondaryRangeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_ip_aliases: {
-                        let field_value = match fields_map.get("use_ip_aliases") {
+                        let field_value = match fields_map.get("useIpAliases") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_ip_aliases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useIpAliases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

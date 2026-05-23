@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attachment_network_acl_configurations",
+                    "attachmentNetworkAclConfigurations",
                     &self.r#attachment_network_acl_configurations,
                 ),
                 to_pulumi_object_field(
-                    "routable_cidr_space",
+                    "routableCidrSpace",
                     &self.r#routable_cidr_space,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_id",
+                    "transitGatewayId",
                     &self.r#transit_gateway_id,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#attachment_network_acl_configurations: {
-                        let field_value = match fields_map.get("attachment_network_acl_configurations") {
+                        let field_value = match fields_map.get("attachmentNetworkAclConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attachment_network_acl_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attachmentNetworkAclConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#routable_cidr_space: {
-                        let field_value = match fields_map.get("routable_cidr_space") {
+                        let field_value = match fields_map.get("routableCidrSpace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'routable_cidr_space' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routableCidrSpace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transit_gateway_id: {
-                        let field_value = match fields_map.get("transit_gateway_id") {
+                        let field_value = match fields_map.get("transitGatewayId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transit_gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitGatewayId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

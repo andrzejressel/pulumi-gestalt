@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#frequency,
                 ),
                 to_pulumi_object_field(
-                    "hour_duration",
+                    "hourDuration",
                     &self.r#hour_duration,
                 ),
                 to_pulumi_object_field(
-                    "hour_interval",
+                    "hourInterval",
                     &self.r#hour_interval,
                 ),
                 to_pulumi_object_field(
@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hour_duration: {
-                        let field_value = match fields_map.get("hour_duration") {
+                        let field_value = match fields_map.get("hourDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hour_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hourDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hour_interval: {
-                        let field_value = match fields_map.get("hour_interval") {
+                        let field_value = match fields_map.get("hourInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hour_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hourInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

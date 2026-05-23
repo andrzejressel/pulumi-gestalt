@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "machine_types",
+                    "machineTypes",
                     &self.r#machine_types,
                 ),
                 to_pulumi_object_field(
@@ -60,9 +60,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#machine_types: {
-                        let field_value = match fields_map.get("machine_types") {
+                        let field_value = match fields_map.get("machineTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'machine_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'machineTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

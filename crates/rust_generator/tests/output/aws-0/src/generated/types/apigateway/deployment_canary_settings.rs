@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "percent_traffic",
+                    "percentTraffic",
                     &self.r#percent_traffic,
                 ),
                 to_pulumi_object_field(
-                    "stage_variable_overrides",
+                    "stageVariableOverrides",
                     &self.r#stage_variable_overrides,
                 ),
                 to_pulumi_object_field(
-                    "use_stage_cache",
+                    "useStageCache",
                     &self.r#use_stage_cache,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#percent_traffic: {
-                        let field_value = match fields_map.get("percent_traffic") {
+                        let field_value = match fields_map.get("percentTraffic") {
                             Some(value) => value,
-                            None => bail!("Missing field 'percent_traffic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'percentTraffic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stage_variable_overrides: {
-                        let field_value = match fields_map.get("stage_variable_overrides") {
+                        let field_value = match fields_map.get("stageVariableOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stage_variable_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stageVariableOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_stage_cache: {
-                        let field_value = match fields_map.get("use_stage_cache") {
+                        let field_value = match fields_map.get("useStageCache") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_stage_cache' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useStageCache' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

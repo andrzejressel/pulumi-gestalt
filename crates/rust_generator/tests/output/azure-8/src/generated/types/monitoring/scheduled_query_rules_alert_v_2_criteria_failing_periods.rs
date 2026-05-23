@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "minimum_failing_periods_to_trigger_alert",
+                    "minimumFailingPeriodsToTriggerAlert",
                     &self.r#minimum_failing_periods_to_trigger_alert,
                 ),
                 to_pulumi_object_field(
-                    "number_of_evaluation_periods",
+                    "numberOfEvaluationPeriods",
                     &self.r#number_of_evaluation_periods,
                 ),
             ];
@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#minimum_failing_periods_to_trigger_alert: {
-                        let field_value = match fields_map.get("minimum_failing_periods_to_trigger_alert") {
+                        let field_value = match fields_map.get("minimumFailingPeriodsToTriggerAlert") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_failing_periods_to_trigger_alert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumFailingPeriodsToTriggerAlert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_of_evaluation_periods: {
-                        let field_value = match fields_map.get("number_of_evaluation_periods") {
+                        let field_value = match fields_map.get("numberOfEvaluationPeriods") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_of_evaluation_periods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberOfEvaluationPeriods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

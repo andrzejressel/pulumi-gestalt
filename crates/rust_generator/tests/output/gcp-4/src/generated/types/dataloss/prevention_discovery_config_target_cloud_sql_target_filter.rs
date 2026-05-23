@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#collection,
                 ),
                 to_pulumi_object_field(
-                    "database_resource_reference",
+                    "databaseResourceReference",
                     &self.r#database_resource_reference,
                 ),
                 to_pulumi_object_field(
@@ -75,9 +75,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_resource_reference: {
-                        let field_value = match fields_map.get("database_resource_reference") {
+                        let field_value = match fields_map.get("databaseResourceReference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_resource_reference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseResourceReference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

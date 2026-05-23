@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_version",
+                    "clusterVersion",
                     &self.r#cluster_version,
                 ),
                 to_pulumi_object_field(
-                    "instance_pool_id",
+                    "instancePoolId",
                     &self.r#instance_pool_id,
                 ),
                 to_pulumi_object_field(
-                    "max_number_of_workers",
+                    "maxNumberOfWorkers",
                     &self.r#max_number_of_workers,
                 ),
                 to_pulumi_object_field(
-                    "min_number_of_workers",
+                    "minNumberOfWorkers",
                     &self.r#min_number_of_workers,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#cluster_version: {
-                        let field_value = match fields_map.get("cluster_version") {
+                        let field_value = match fields_map.get("clusterVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_pool_id: {
-                        let field_value = match fields_map.get("instance_pool_id") {
+                        let field_value = match fields_map.get("instancePoolId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_pool_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instancePoolId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_number_of_workers: {
-                        let field_value = match fields_map.get("max_number_of_workers") {
+                        let field_value = match fields_map.get("maxNumberOfWorkers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_number_of_workers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxNumberOfWorkers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_number_of_workers: {
-                        let field_value = match fields_map.get("min_number_of_workers") {
+                        let field_value = match fields_map.get("minNumberOfWorkers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_number_of_workers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minNumberOfWorkers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

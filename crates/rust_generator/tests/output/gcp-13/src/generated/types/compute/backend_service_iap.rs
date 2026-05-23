@@ -42,15 +42,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_client_id",
+                    "oauth2ClientId",
                     &self.r#oauth_2_client_id,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_client_secret",
+                    "oauth2ClientSecret",
                     &self.r#oauth_2_client_secret,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_client_secret_sha_256",
+                    "oauth2ClientSecretSha256",
                     &self.r#oauth_2_client_secret_sha_256,
                 ),
             ];
@@ -84,23 +84,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_2_client_id: {
-                        let field_value = match fields_map.get("oauth_2_client_id") {
+                        let field_value = match fields_map.get("oauth2ClientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2_client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2ClientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_2_client_secret: {
-                        let field_value = match fields_map.get("oauth_2_client_secret") {
+                        let field_value = match fields_map.get("oauth2ClientSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2_client_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2ClientSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_2_client_secret_sha_256: {
-                        let field_value = match fields_map.get("oauth_2_client_secret_sha_256") {
+                        let field_value = match fields_map.get("oauth2ClientSecretSha256") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2_client_secret_sha_256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2ClientSecretSha256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

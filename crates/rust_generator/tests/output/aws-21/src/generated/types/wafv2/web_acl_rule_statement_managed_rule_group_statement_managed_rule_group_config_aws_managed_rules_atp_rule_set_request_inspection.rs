@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "password_field",
+                    "passwordField",
                     &self.r#password_field,
                 ),
                 to_pulumi_object_field(
-                    "payload_type",
+                    "payloadType",
                     &self.r#payload_type,
                 ),
                 to_pulumi_object_field(
-                    "username_field",
+                    "usernameField",
                     &self.r#username_field,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#password_field: {
-                        let field_value = match fields_map.get("password_field") {
+                        let field_value = match fields_map.get("passwordField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#payload_type: {
-                        let field_value = match fields_map.get("payload_type") {
+                        let field_value = match fields_map.get("payloadType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'payload_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'payloadType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#username_field: {
-                        let field_value = match fields_map.get("username_field") {
+                        let field_value = match fields_map.get("usernameField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'username_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'usernameField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consistency_level",
+                    "consistencyLevel",
                     &self.r#consistency_level,
                 ),
                 to_pulumi_object_field(
-                    "max_interval_in_seconds",
+                    "maxIntervalInSeconds",
                     &self.r#max_interval_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "max_staleness_prefix",
+                    "maxStalenessPrefix",
                     &self.r#max_staleness_prefix,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#consistency_level: {
-                        let field_value = match fields_map.get("consistency_level") {
+                        let field_value = match fields_map.get("consistencyLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consistency_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consistencyLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_interval_in_seconds: {
-                        let field_value = match fields_map.get("max_interval_in_seconds") {
+                        let field_value = match fields_map.get("maxIntervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxIntervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_staleness_prefix: {
-                        let field_value = match fields_map.get("max_staleness_prefix") {
+                        let field_value = match fields_map.get("maxStalenessPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_staleness_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxStalenessPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

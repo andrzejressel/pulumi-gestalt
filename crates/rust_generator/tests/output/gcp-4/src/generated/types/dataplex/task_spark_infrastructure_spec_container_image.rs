@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "java_jars",
+                    "javaJars",
                     &self.r#java_jars,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "python_packages",
+                    "pythonPackages",
                     &self.r#python_packages,
                 ),
             ];
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#java_jars: {
-                        let field_value = match fields_map.get("java_jars") {
+                        let field_value = match fields_map.get("javaJars") {
                             Some(value) => value,
-                            None => bail!("Missing field 'java_jars' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'javaJars' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#python_packages: {
-                        let field_value = match fields_map.get("python_packages") {
+                        let field_value = match fields_map.get("pythonPackages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'python_packages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pythonPackages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

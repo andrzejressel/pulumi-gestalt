@@ -45,31 +45,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_group_replications",
+                    "consumerGroupReplications",
                     &self.r#consumer_group_replications,
                 ),
                 to_pulumi_object_field(
-                    "source_kafka_cluster_alias",
+                    "sourceKafkaClusterAlias",
                     &self.r#source_kafka_cluster_alias,
                 ),
                 to_pulumi_object_field(
-                    "source_kafka_cluster_arn",
+                    "sourceKafkaClusterArn",
                     &self.r#source_kafka_cluster_arn,
                 ),
                 to_pulumi_object_field(
-                    "target_compression_type",
+                    "targetCompressionType",
                     &self.r#target_compression_type,
                 ),
                 to_pulumi_object_field(
-                    "target_kafka_cluster_alias",
+                    "targetKafkaClusterAlias",
                     &self.r#target_kafka_cluster_alias,
                 ),
                 to_pulumi_object_field(
-                    "target_kafka_cluster_arn",
+                    "targetKafkaClusterArn",
                     &self.r#target_kafka_cluster_arn,
                 ),
                 to_pulumi_object_field(
-                    "topic_replications",
+                    "topicReplications",
                     &self.r#topic_replications,
                 ),
             ];
@@ -96,51 +96,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#consumer_group_replications: {
-                        let field_value = match fields_map.get("consumer_group_replications") {
+                        let field_value = match fields_map.get("consumerGroupReplications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_group_replications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerGroupReplications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_kafka_cluster_alias: {
-                        let field_value = match fields_map.get("source_kafka_cluster_alias") {
+                        let field_value = match fields_map.get("sourceKafkaClusterAlias") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_kafka_cluster_alias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceKafkaClusterAlias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_kafka_cluster_arn: {
-                        let field_value = match fields_map.get("source_kafka_cluster_arn") {
+                        let field_value = match fields_map.get("sourceKafkaClusterArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_kafka_cluster_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceKafkaClusterArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_compression_type: {
-                        let field_value = match fields_map.get("target_compression_type") {
+                        let field_value = match fields_map.get("targetCompressionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_compression_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetCompressionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_kafka_cluster_alias: {
-                        let field_value = match fields_map.get("target_kafka_cluster_alias") {
+                        let field_value = match fields_map.get("targetKafkaClusterAlias") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_kafka_cluster_alias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetKafkaClusterAlias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_kafka_cluster_arn: {
-                        let field_value = match fields_map.get("target_kafka_cluster_arn") {
+                        let field_value = match fields_map.get("targetKafkaClusterArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_kafka_cluster_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetKafkaClusterArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#topic_replications: {
-                        let field_value = match fields_map.get("topic_replications") {
+                        let field_value = match fields_map.get("topicReplications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'topic_replications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'topicReplications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#atime,
                 ),
                 to_pulumi_object_field(
-                    "bytes_per_second",
+                    "bytesPerSecond",
                     &self.r#bytes_per_second,
                 ),
                 to_pulumi_object_field(
@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#gid,
                 ),
                 to_pulumi_object_field(
-                    "log_level",
+                    "logLevel",
                     &self.r#log_level,
                 ),
                 to_pulumi_object_field(
@@ -99,35 +99,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#mtime,
                 ),
                 to_pulumi_object_field(
-                    "object_tags",
+                    "objectTags",
                     &self.r#object_tags,
                 ),
                 to_pulumi_object_field(
-                    "overwrite_mode",
+                    "overwriteMode",
                     &self.r#overwrite_mode,
                 ),
                 to_pulumi_object_field(
-                    "posix_permissions",
+                    "posixPermissions",
                     &self.r#posix_permissions,
                 ),
                 to_pulumi_object_field(
-                    "preserve_deleted_files",
+                    "preserveDeletedFiles",
                     &self.r#preserve_deleted_files,
                 ),
                 to_pulumi_object_field(
-                    "preserve_devices",
+                    "preserveDevices",
                     &self.r#preserve_devices,
                 ),
                 to_pulumi_object_field(
-                    "security_descriptor_copy_flags",
+                    "securityDescriptorCopyFlags",
                     &self.r#security_descriptor_copy_flags,
                 ),
                 to_pulumi_object_field(
-                    "task_queueing",
+                    "taskQueueing",
                     &self.r#task_queueing,
                 ),
                 to_pulumi_object_field(
-                    "transfer_mode",
+                    "transferMode",
                     &self.r#transfer_mode,
                 ),
                 to_pulumi_object_field(
@@ -135,7 +135,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#uid,
                 ),
                 to_pulumi_object_field(
-                    "verify_mode",
+                    "verifyMode",
                     &self.r#verify_mode,
                 ),
             ];
@@ -169,9 +169,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bytes_per_second: {
-                        let field_value = match fields_map.get("bytes_per_second") {
+                        let field_value = match fields_map.get("bytesPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bytes_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bytesPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -183,9 +183,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_level: {
-                        let field_value = match fields_map.get("log_level") {
+                        let field_value = match fields_map.get("logLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -197,58 +197,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#object_tags: {
-                        let field_value = match fields_map.get("object_tags") {
+                        let field_value = match fields_map.get("objectTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'object_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'objectTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#overwrite_mode: {
-                        let field_value = match fields_map.get("overwrite_mode") {
+                        let field_value = match fields_map.get("overwriteMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'overwrite_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'overwriteMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#posix_permissions: {
-                        let field_value = match fields_map.get("posix_permissions") {
+                        let field_value = match fields_map.get("posixPermissions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'posix_permissions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'posixPermissions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_deleted_files: {
-                        let field_value = match fields_map.get("preserve_deleted_files") {
+                        let field_value = match fields_map.get("preserveDeletedFiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_deleted_files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preserveDeletedFiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_devices: {
-                        let field_value = match fields_map.get("preserve_devices") {
+                        let field_value = match fields_map.get("preserveDevices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_devices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preserveDevices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_descriptor_copy_flags: {
-                        let field_value = match fields_map.get("security_descriptor_copy_flags") {
+                        let field_value = match fields_map.get("securityDescriptorCopyFlags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_descriptor_copy_flags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityDescriptorCopyFlags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_queueing: {
-                        let field_value = match fields_map.get("task_queueing") {
+                        let field_value = match fields_map.get("taskQueueing") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_queueing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskQueueing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transfer_mode: {
-                        let field_value = match fields_map.get("transfer_mode") {
+                        let field_value = match fields_map.get("transferMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transfer_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transferMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -260,9 +260,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verify_mode: {
-                        let field_value = match fields_map.get("verify_mode") {
+                        let field_value = match fields_map.get("verifyMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verify_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifyMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

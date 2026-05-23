@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#count,
                 ),
                 to_pulumi_object_field(
-                    "format_type",
+                    "formatType",
                     &self.r#format_type,
                 ),
                 to_pulumi_object_field(
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#format_type: {
-                        let field_value = match fields_map.get("format_type") {
+                        let field_value = match fields_map.get("formatType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'format_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'formatType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enable,
                 ),
                 to_pulumi_object_field(
-                    "rule_visibility",
+                    "ruleVisibility",
                     &self.r#rule_visibility,
                 ),
                 to_pulumi_object_field(
-                    "threshold_configs",
+                    "thresholdConfigs",
                     &self.r#threshold_configs,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_visibility: {
-                        let field_value = match fields_map.get("rule_visibility") {
+                        let field_value = match fields_map.get("ruleVisibility") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_visibility' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleVisibility' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threshold_configs: {
-                        let field_value = match fields_map.get("threshold_configs") {
+                        let field_value = match fields_map.get("thresholdConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'threshold_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thresholdConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

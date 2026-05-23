@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "ssl_policy",
+                    "sslPolicy",
                     &self.r#ssl_policy,
                 ),
                 to_pulumi_object_field(
-                    "trusted_client_certificate_names",
+                    "trustedClientCertificateNames",
                     &self.r#trusted_client_certificate_names,
                 ),
                 to_pulumi_object_field(
-                    "verify_client_cert_issuer_dn",
+                    "verifyClientCertIssuerDn",
                     &self.r#verify_client_cert_issuer_dn,
                 ),
                 to_pulumi_object_field(
-                    "verify_client_certificate_revocation",
+                    "verifyClientCertificateRevocation",
                     &self.r#verify_client_certificate_revocation,
                 ),
             ];
@@ -104,30 +104,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_policy: {
-                        let field_value = match fields_map.get("ssl_policy") {
+                        let field_value = match fields_map.get("sslPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_client_certificate_names: {
-                        let field_value = match fields_map.get("trusted_client_certificate_names") {
+                        let field_value = match fields_map.get("trustedClientCertificateNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trusted_client_certificate_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustedClientCertificateNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verify_client_cert_issuer_dn: {
-                        let field_value = match fields_map.get("verify_client_cert_issuer_dn") {
+                        let field_value = match fields_map.get("verifyClientCertIssuerDn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verify_client_cert_issuer_dn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifyClientCertIssuerDn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verify_client_certificate_revocation: {
-                        let field_value = match fields_map.get("verify_client_certificate_revocation") {
+                        let field_value = match fields_map.get("verifyClientCertificateRevocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verify_client_certificate_revocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifyClientCertificateRevocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

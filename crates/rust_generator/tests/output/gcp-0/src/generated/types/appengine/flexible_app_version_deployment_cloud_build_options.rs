@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_yaml_path",
+                    "appYamlPath",
                     &self.r#app_yaml_path,
                 ),
                 to_pulumi_object_field(
-                    "cloud_build_timeout",
+                    "cloudBuildTimeout",
                     &self.r#cloud_build_timeout,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#app_yaml_path: {
-                        let field_value = match fields_map.get("app_yaml_path") {
+                        let field_value = match fields_map.get("appYamlPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_yaml_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appYamlPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_build_timeout: {
-                        let field_value = match fields_map.get("cloud_build_timeout") {
+                        let field_value = match fields_map.get("cloudBuildTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_build_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudBuildTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

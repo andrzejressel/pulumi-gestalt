@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_mode",
+                    "batchMode",
                     &self.r#batch_mode,
                 ),
                 to_pulumi_object_field(
-                    "input_name",
+                    "inputName",
                     &self.r#input_name,
                 ),
                 to_pulumi_object_field(
-                    "message_id",
+                    "messageId",
                     &self.r#message_id,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#batch_mode: {
-                        let field_value = match fields_map.get("batch_mode") {
+                        let field_value = match fields_map.get("batchMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_name: {
-                        let field_value = match fields_map.get("input_name") {
+                        let field_value = match fields_map.get("inputName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#message_id: {
-                        let field_value = match fields_map.get("message_id") {
+                        let field_value = match fields_map.get("messageId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'message_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messageId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

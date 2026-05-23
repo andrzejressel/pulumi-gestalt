@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_policies",
+                    "autoscalingPolicies",
                     &self.r#autoscaling_policies,
                 ),
                 to_pulumi_object_field(
-                    "cool_down_period",
+                    "coolDownPeriod",
                     &self.r#cool_down_period,
                 ),
                 to_pulumi_object_field(
-                    "max_cluster_node_count",
+                    "maxClusterNodeCount",
                     &self.r#max_cluster_node_count,
                 ),
                 to_pulumi_object_field(
-                    "min_cluster_node_count",
+                    "minClusterNodeCount",
                     &self.r#min_cluster_node_count,
                 ),
             ];
@@ -90,30 +90,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#autoscaling_policies: {
-                        let field_value = match fields_map.get("autoscaling_policies") {
+                        let field_value = match fields_map.get("autoscalingPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cool_down_period: {
-                        let field_value = match fields_map.get("cool_down_period") {
+                        let field_value = match fields_map.get("coolDownPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cool_down_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coolDownPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_cluster_node_count: {
-                        let field_value = match fields_map.get("max_cluster_node_count") {
+                        let field_value = match fields_map.get("maxClusterNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_cluster_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxClusterNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_cluster_node_count: {
-                        let field_value = match fields_map.get("min_cluster_node_count") {
+                        let field_value = match fields_map.get("minClusterNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_cluster_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minClusterNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

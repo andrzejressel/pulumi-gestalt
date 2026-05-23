@@ -26,7 +26,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_kind_dependencies",
+                    "groupKindDependencies",
                     &self.r#group_kind_dependencies,
                 ),
             ];
@@ -53,9 +53,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#group_kind_dependencies: {
-                        let field_value = match fields_map.get("group_kind_dependencies") {
+                        let field_value = match fields_map.get("groupKindDependencies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_kind_dependencies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupKindDependencies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

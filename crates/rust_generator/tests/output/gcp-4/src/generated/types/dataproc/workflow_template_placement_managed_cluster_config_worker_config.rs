@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#accelerators,
                 ),
                 to_pulumi_object_field(
-                    "disk_config",
+                    "diskConfig",
                     &self.r#disk_config,
                 ),
                 to_pulumi_object_field(
@@ -71,27 +71,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "instance_names",
+                    "instanceNames",
                     &self.r#instance_names,
                 ),
                 to_pulumi_object_field(
-                    "is_preemptible",
+                    "isPreemptible",
                     &self.r#is_preemptible,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "managed_group_configs",
+                    "managedGroupConfigs",
                     &self.r#managed_group_configs,
                 ),
                 to_pulumi_object_field(
-                    "min_cpu_platform",
+                    "minCpuPlatform",
                     &self.r#min_cpu_platform,
                 ),
                 to_pulumi_object_field(
-                    "num_instances",
+                    "numInstances",
                     &self.r#num_instances,
                 ),
                 to_pulumi_object_field(
@@ -129,9 +129,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_config: {
-                        let field_value = match fields_map.get("disk_config") {
+                        let field_value = match fields_map.get("diskConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -143,44 +143,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_names: {
-                        let field_value = match fields_map.get("instance_names") {
+                        let field_value = match fields_map.get("instanceNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_preemptible: {
-                        let field_value = match fields_map.get("is_preemptible") {
+                        let field_value = match fields_map.get("isPreemptible") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_preemptible' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isPreemptible' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#machine_type: {
-                        let field_value = match fields_map.get("machine_type") {
+                        let field_value = match fields_map.get("machineType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'machine_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'machineType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_group_configs: {
-                        let field_value = match fields_map.get("managed_group_configs") {
+                        let field_value = match fields_map.get("managedGroupConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_group_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedGroupConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_cpu_platform: {
-                        let field_value = match fields_map.get("min_cpu_platform") {
+                        let field_value = match fields_map.get("minCpuPlatform") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_cpu_platform' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minCpuPlatform' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_instances: {
-                        let field_value = match fields_map.get("num_instances") {
+                        let field_value = match fields_map.get("numInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'num_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_resource_name_dns_a_record",
+                    "enableResourceNameDnsARecord",
                     &self.r#enable_resource_name_dns_a_record,
                 ),
                 to_pulumi_object_field(
-                    "enable_resource_name_dns_aaaa_record",
+                    "enableResourceNameDnsAaaaRecord",
                     &self.r#enable_resource_name_dns_aaaa_record,
                 ),
                 to_pulumi_object_field(
-                    "hostname_type",
+                    "hostnameType",
                     &self.r#hostname_type,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#enable_resource_name_dns_a_record: {
-                        let field_value = match fields_map.get("enable_resource_name_dns_a_record") {
+                        let field_value = match fields_map.get("enableResourceNameDnsARecord") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_resource_name_dns_a_record' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableResourceNameDnsARecord' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_resource_name_dns_aaaa_record: {
-                        let field_value = match fields_map.get("enable_resource_name_dns_aaaa_record") {
+                        let field_value = match fields_map.get("enableResourceNameDnsAaaaRecord") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_resource_name_dns_aaaa_record' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableResourceNameDnsAaaaRecord' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hostname_type: {
-                        let field_value = match fields_map.get("hostname_type") {
+                        let field_value = match fields_map.get("hostnameType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hostname_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostnameType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

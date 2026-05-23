@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_log_level",
+                    "applicationLogLevel",
                     &self.r#application_log_level,
                 ),
                 to_pulumi_object_field(
-                    "log_format",
+                    "logFormat",
                     &self.r#log_format,
                 ),
                 to_pulumi_object_field(
-                    "log_group",
+                    "logGroup",
                     &self.r#log_group,
                 ),
                 to_pulumi_object_field(
-                    "system_log_level",
+                    "systemLogLevel",
                     &self.r#system_log_level,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#application_log_level: {
-                        let field_value = match fields_map.get("application_log_level") {
+                        let field_value = match fields_map.get("applicationLogLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationLogLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_format: {
-                        let field_value = match fields_map.get("log_format") {
+                        let field_value = match fields_map.get("logFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_group: {
-                        let field_value = match fields_map.get("log_group") {
+                        let field_value = match fields_map.get("logGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#system_log_level: {
-                        let field_value = match fields_map.get("system_log_level") {
+                        let field_value = match fields_map.get("systemLogLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'system_log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'systemLogLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

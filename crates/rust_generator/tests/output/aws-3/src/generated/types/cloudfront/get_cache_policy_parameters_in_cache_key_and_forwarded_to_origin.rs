@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cookies_configs",
+                    "cookiesConfigs",
                     &self.r#cookies_configs,
                 ),
                 to_pulumi_object_field(
-                    "enable_accept_encoding_brotli",
+                    "enableAcceptEncodingBrotli",
                     &self.r#enable_accept_encoding_brotli,
                 ),
                 to_pulumi_object_field(
-                    "enable_accept_encoding_gzip",
+                    "enableAcceptEncodingGzip",
                     &self.r#enable_accept_encoding_gzip,
                 ),
                 to_pulumi_object_field(
-                    "headers_configs",
+                    "headersConfigs",
                     &self.r#headers_configs,
                 ),
                 to_pulumi_object_field(
-                    "query_strings_configs",
+                    "queryStringsConfigs",
                     &self.r#query_strings_configs,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#cookies_configs: {
-                        let field_value = match fields_map.get("cookies_configs") {
+                        let field_value = match fields_map.get("cookiesConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cookies_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cookiesConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_accept_encoding_brotli: {
-                        let field_value = match fields_map.get("enable_accept_encoding_brotli") {
+                        let field_value = match fields_map.get("enableAcceptEncodingBrotli") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_accept_encoding_brotli' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAcceptEncodingBrotli' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_accept_encoding_gzip: {
-                        let field_value = match fields_map.get("enable_accept_encoding_gzip") {
+                        let field_value = match fields_map.get("enableAcceptEncodingGzip") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_accept_encoding_gzip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAcceptEncodingGzip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#headers_configs: {
-                        let field_value = match fields_map.get("headers_configs") {
+                        let field_value = match fields_map.get("headersConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'headers_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headersConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_strings_configs: {
-                        let field_value = match fields_map.get("query_strings_configs") {
+                        let field_value = match fields_map.get("queryStringsConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_strings_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringsConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

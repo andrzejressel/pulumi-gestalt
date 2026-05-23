@@ -86,15 +86,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#autoscalings,
                 ),
                 to_pulumi_object_field(
-                    "initial_node_count",
+                    "initialNodeCount",
                     &self.r#initial_node_count,
                 ),
                 to_pulumi_object_field(
-                    "instance_group_urls",
+                    "instanceGroupUrls",
                     &self.r#instance_group_urls,
                 ),
                 to_pulumi_object_field(
-                    "managed_instance_group_urls",
+                    "managedInstanceGroupUrls",
                     &self.r#managed_instance_group_urls,
                 ),
                 to_pulumi_object_field(
@@ -102,7 +102,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#managements,
                 ),
                 to_pulumi_object_field(
-                    "max_pods_per_node",
+                    "maxPodsPerNode",
                     &self.r#max_pods_per_node,
                 ),
                 to_pulumi_object_field(
@@ -110,35 +110,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "name_prefix",
+                    "namePrefix",
                     &self.r#name_prefix,
                 ),
                 to_pulumi_object_field(
-                    "network_configs",
+                    "networkConfigs",
                     &self.r#network_configs,
                 ),
                 to_pulumi_object_field(
-                    "node_configs",
+                    "nodeConfigs",
                     &self.r#node_configs,
                 ),
                 to_pulumi_object_field(
-                    "node_count",
+                    "nodeCount",
                     &self.r#node_count,
                 ),
                 to_pulumi_object_field(
-                    "node_locations",
+                    "nodeLocations",
                     &self.r#node_locations,
                 ),
                 to_pulumi_object_field(
-                    "placement_policies",
+                    "placementPolicies",
                     &self.r#placement_policies,
                 ),
                 to_pulumi_object_field(
-                    "queued_provisionings",
+                    "queuedProvisionings",
                     &self.r#queued_provisionings,
                 ),
                 to_pulumi_object_field(
-                    "upgrade_settings",
+                    "upgradeSettings",
                     &self.r#upgrade_settings,
                 ),
                 to_pulumi_object_field(
@@ -176,23 +176,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initial_node_count: {
-                        let field_value = match fields_map.get("initial_node_count") {
+                        let field_value = match fields_map.get("initialNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_group_urls: {
-                        let field_value = match fields_map.get("instance_group_urls") {
+                        let field_value = match fields_map.get("instanceGroupUrls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_group_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceGroupUrls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_instance_group_urls: {
-                        let field_value = match fields_map.get("managed_instance_group_urls") {
+                        let field_value = match fields_map.get("managedInstanceGroupUrls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_instance_group_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedInstanceGroupUrls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -204,9 +204,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_pods_per_node: {
-                        let field_value = match fields_map.get("max_pods_per_node") {
+                        let field_value = match fields_map.get("maxPodsPerNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_pods_per_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxPodsPerNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -218,58 +218,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name_prefix: {
-                        let field_value = match fields_map.get("name_prefix") {
+                        let field_value = match fields_map.get("namePrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'name_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namePrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_configs: {
-                        let field_value = match fields_map.get("network_configs") {
+                        let field_value = match fields_map.get("networkConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_configs: {
-                        let field_value = match fields_map.get("node_configs") {
+                        let field_value = match fields_map.get("nodeConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_count: {
-                        let field_value = match fields_map.get("node_count") {
+                        let field_value = match fields_map.get("nodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_locations: {
-                        let field_value = match fields_map.get("node_locations") {
+                        let field_value = match fields_map.get("nodeLocations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeLocations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#placement_policies: {
-                        let field_value = match fields_map.get("placement_policies") {
+                        let field_value = match fields_map.get("placementPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'placement_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'placementPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#queued_provisionings: {
-                        let field_value = match fields_map.get("queued_provisionings") {
+                        let field_value = match fields_map.get("queuedProvisionings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'queued_provisionings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queuedProvisionings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upgrade_settings: {
-                        let field_value = match fields_map.get("upgrade_settings") {
+                        let field_value = match fields_map.get("upgradeSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upgrade_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'upgradeSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

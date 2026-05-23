@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#manufacturer,
                 ),
                 to_pulumi_object_field(
-                    "memory_size",
+                    "memorySize",
                     &self.r#memory_size,
                 ),
                 to_pulumi_object_field(
@@ -85,9 +85,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_size: {
-                        let field_value = match fields_map.get("memory_size") {
+                        let field_value = match fields_map.get("memorySize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memorySize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

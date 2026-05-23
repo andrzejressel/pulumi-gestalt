@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
                     &self.r#locations,
                 ),
                 to_pulumi_object_field(
-                    "os_types",
+                    "osTypes",
                     &self.r#os_types,
                 ),
                 to_pulumi_object_field(
-                    "resource_groups",
+                    "resourceGroups",
                     &self.r#resource_groups,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
                 to_pulumi_object_field(
-                    "tag_filter",
+                    "tagFilter",
                     &self.r#tag_filter,
                 ),
                 to_pulumi_object_field(
@@ -97,30 +97,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_types: {
-                        let field_value = match fields_map.get("os_types") {
+                        let field_value = match fields_map.get("osTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_groups: {
-                        let field_value = match fields_map.get("resource_groups") {
+                        let field_value = match fields_map.get("resourceGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_types: {
-                        let field_value = match fields_map.get("resource_types") {
+                        let field_value = match fields_map.get("resourceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_filter: {
-                        let field_value = match fields_map.get("tag_filter") {
+                        let field_value = match fields_map.get("tagFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

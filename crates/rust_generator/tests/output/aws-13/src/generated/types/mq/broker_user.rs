@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "console_access",
+                    "consoleAccess",
                     &self.r#console_access,
                 ),
                 to_pulumi_object_field(
@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bro
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "replication_user",
+                    "replicationUser",
                     &self.r#replication_user,
                 ),
                 to_pulumi_object_field(
@@ -84,9 +84,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#console_access: {
-                        let field_value = match fields_map.get("console_access") {
+                        let field_value = match fields_map.get("consoleAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'console_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consoleAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -105,9 +105,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replication_user: {
-                        let field_value = match fields_map.get("replication_user") {
+                        let field_value = match fields_map.get("replicationUser") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replication_user' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicationUser' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -42,19 +42,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_schema",
+                    "destinationSchema",
                     &self.r#destination_schema,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_firehose_output",
+                    "kinesisFirehoseOutput",
                     &self.r#kinesis_firehose_output,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_streams_output",
+                    "kinesisStreamsOutput",
                     &self.r#kinesis_streams_output,
                 ),
                 to_pulumi_object_field(
-                    "lambda_output",
+                    "lambdaOutput",
                     &self.r#lambda_output,
                 ),
                 to_pulumi_object_field(
@@ -62,7 +62,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "output_id",
+                    "outputId",
                     &self.r#output_id,
                 ),
             ];
@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#destination_schema: {
-                        let field_value = match fields_map.get("destination_schema") {
+                        let field_value = match fields_map.get("destinationSchema") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationSchema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_firehose_output: {
-                        let field_value = match fields_map.get("kinesis_firehose_output") {
+                        let field_value = match fields_map.get("kinesisFirehoseOutput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_firehose_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisFirehoseOutput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_streams_output: {
-                        let field_value = match fields_map.get("kinesis_streams_output") {
+                        let field_value = match fields_map.get("kinesisStreamsOutput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_streams_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisStreamsOutput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_output: {
-                        let field_value = match fields_map.get("lambda_output") {
+                        let field_value = match fields_map.get("lambdaOutput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaOutput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -124,9 +124,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_id: {
-                        let field_value = match fields_map.get("output_id") {
+                        let field_value = match fields_map.get("outputId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

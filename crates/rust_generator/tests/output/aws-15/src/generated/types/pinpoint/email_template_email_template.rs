@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ema
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_substitutions",
+                    "defaultSubstitutions",
                     &self.r#default_substitutions,
                 ),
                 to_pulumi_object_field(
@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ema
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "html_part",
+                    "htmlPart",
                     &self.r#html_part,
                 ),
                 to_pulumi_object_field(
-                    "recommender_id",
+                    "recommenderId",
                     &self.r#recommender_id,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ema
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "text_part",
+                    "textPart",
                     &self.r#text_part,
                 ),
             ];
@@ -96,9 +96,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#default_substitutions: {
-                        let field_value = match fields_map.get("default_substitutions") {
+                        let field_value = match fields_map.get("defaultSubstitutions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_substitutions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultSubstitutions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -117,16 +117,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#html_part: {
-                        let field_value = match fields_map.get("html_part") {
+                        let field_value = match fields_map.get("htmlPart") {
                             Some(value) => value,
-                            None => bail!("Missing field 'html_part' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'htmlPart' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recommender_id: {
-                        let field_value = match fields_map.get("recommender_id") {
+                        let field_value = match fields_map.get("recommenderId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recommender_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recommenderId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -138,9 +138,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_part: {
-                        let field_value = match fields_map.get("text_part") {
+                        let field_value = match fields_map.get("textPart") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_part' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textPart' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

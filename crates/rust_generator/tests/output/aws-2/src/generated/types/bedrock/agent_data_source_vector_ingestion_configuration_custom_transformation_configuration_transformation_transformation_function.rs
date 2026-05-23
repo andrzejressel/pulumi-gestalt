@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "transformation_lambda_configuration",
+                    "transformationLambdaConfiguration",
                     &self.r#transformation_lambda_configuration,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#transformation_lambda_configuration: {
-                        let field_value = match fields_map.get("transformation_lambda_configuration") {
+                        let field_value = match fields_map.get("transformationLambdaConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transformation_lambda_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transformationLambdaConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

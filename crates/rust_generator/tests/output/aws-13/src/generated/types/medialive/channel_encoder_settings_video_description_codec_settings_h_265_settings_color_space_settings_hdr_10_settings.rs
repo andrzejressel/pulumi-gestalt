@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_cll",
+                    "maxCll",
                     &self.r#max_cll,
                 ),
                 to_pulumi_object_field(
-                    "max_fall",
+                    "maxFall",
                     &self.r#max_fall,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#max_cll: {
-                        let field_value = match fields_map.get("max_cll") {
+                        let field_value = match fields_map.get("maxCll") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_cll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_fall: {
-                        let field_value = match fields_map.get("max_fall") {
+                        let field_value = match fields_map.get("maxFall") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_fall' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxFall' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

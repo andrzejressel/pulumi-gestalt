@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "background_color",
+                    "backgroundColor",
                     &self.r#background_color,
                 ),
                 to_pulumi_object_field(
@@ -59,23 +59,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "footer_text",
+                    "footerText",
                     &self.r#footer_text,
                 ),
                 to_pulumi_object_field(
-                    "header_text",
+                    "headerText",
                     &self.r#header_text,
                 ),
                 to_pulumi_object_field(
-                    "logo_path",
+                    "logoPath",
                     &self.r#logo_path,
                 ),
                 to_pulumi_object_field(
-                    "mailto_address",
+                    "mailtoAddress",
                     &self.r#mailto_address,
                 ),
                 to_pulumi_object_field(
-                    "mailto_subject",
+                    "mailtoSubject",
                     &self.r#mailto_subject,
                 ),
                 to_pulumi_object_field(
@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#background_color: {
-                        let field_value = match fields_map.get("background_color") {
+                        let field_value = match fields_map.get("backgroundColor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'background_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backgroundColor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,37 +120,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#footer_text: {
-                        let field_value = match fields_map.get("footer_text") {
+                        let field_value = match fields_map.get("footerText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'footer_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'footerText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#header_text: {
-                        let field_value = match fields_map.get("header_text") {
+                        let field_value = match fields_map.get("headerText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logo_path: {
-                        let field_value = match fields_map.get("logo_path") {
+                        let field_value = match fields_map.get("logoPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logo_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logoPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mailto_address: {
-                        let field_value = match fields_map.get("mailto_address") {
+                        let field_value = match fields_map.get("mailtoAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mailto_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mailtoAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mailto_subject: {
-                        let field_value = match fields_map.get("mailto_subject") {
+                        let field_value = match fields_map.get("mailtoSubject") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mailto_subject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mailtoSubject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

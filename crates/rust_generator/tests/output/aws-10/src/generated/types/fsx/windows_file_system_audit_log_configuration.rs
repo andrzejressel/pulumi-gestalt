@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audit_log_destination",
+                    "auditLogDestination",
                     &self.r#audit_log_destination,
                 ),
                 to_pulumi_object_field(
-                    "file_access_audit_log_level",
+                    "fileAccessAuditLogLevel",
                     &self.r#file_access_audit_log_level,
                 ),
                 to_pulumi_object_field(
-                    "file_share_access_audit_log_level",
+                    "fileShareAccessAuditLogLevel",
                     &self.r#file_share_access_audit_log_level,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#audit_log_destination: {
-                        let field_value = match fields_map.get("audit_log_destination") {
+                        let field_value = match fields_map.get("auditLogDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audit_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'auditLogDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_access_audit_log_level: {
-                        let field_value = match fields_map.get("file_access_audit_log_level") {
+                        let field_value = match fields_map.get("fileAccessAuditLogLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_access_audit_log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileAccessAuditLogLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_share_access_audit_log_level: {
-                        let field_value = match fields_map.get("file_share_access_audit_log_level") {
+                        let field_value = match fields_map.get("fileShareAccessAuditLogLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_share_access_audit_log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileShareAccessAuditLogLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

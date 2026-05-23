@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deployments_enabled",
+                    "deploymentsEnabled",
                     &self.r#deployments_enabled,
                 ),
                 to_pulumi_object_field(
@@ -63,31 +63,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
                     &self.r#owner,
                 ),
                 to_pulumi_object_field(
-                    "pr_comments_enabled",
+                    "prCommentsEnabled",
                     &self.r#pr_comments_enabled,
                 ),
                 to_pulumi_object_field(
-                    "preview_branch_excludes",
+                    "previewBranchExcludes",
                     &self.r#preview_branch_excludes,
                 ),
                 to_pulumi_object_field(
-                    "preview_branch_includes",
+                    "previewBranchIncludes",
                     &self.r#preview_branch_includes,
                 ),
                 to_pulumi_object_field(
-                    "preview_deployment_setting",
+                    "previewDeploymentSetting",
                     &self.r#preview_deployment_setting,
                 ),
                 to_pulumi_object_field(
-                    "production_branch",
+                    "productionBranch",
                     &self.r#production_branch,
                 ),
                 to_pulumi_object_field(
-                    "production_deployment_enabled",
+                    "productionDeploymentEnabled",
                     &self.r#production_deployment_enabled,
                 ),
                 to_pulumi_object_field(
-                    "repo_name",
+                    "repoName",
                     &self.r#repo_name,
                 ),
             ];
@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#deployments_enabled: {
-                        let field_value = match fields_map.get("deployments_enabled") {
+                        let field_value = match fields_map.get("deploymentsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployments_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -128,51 +128,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pr_comments_enabled: {
-                        let field_value = match fields_map.get("pr_comments_enabled") {
+                        let field_value = match fields_map.get("prCommentsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pr_comments_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prCommentsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preview_branch_excludes: {
-                        let field_value = match fields_map.get("preview_branch_excludes") {
+                        let field_value = match fields_map.get("previewBranchExcludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preview_branch_excludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'previewBranchExcludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preview_branch_includes: {
-                        let field_value = match fields_map.get("preview_branch_includes") {
+                        let field_value = match fields_map.get("previewBranchIncludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preview_branch_includes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'previewBranchIncludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preview_deployment_setting: {
-                        let field_value = match fields_map.get("preview_deployment_setting") {
+                        let field_value = match fields_map.get("previewDeploymentSetting") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preview_deployment_setting' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'previewDeploymentSetting' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#production_branch: {
-                        let field_value = match fields_map.get("production_branch") {
+                        let field_value = match fields_map.get("productionBranch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'production_branch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'productionBranch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#production_deployment_enabled: {
-                        let field_value = match fields_map.get("production_deployment_enabled") {
+                        let field_value = match fields_map.get("productionDeploymentEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'production_deployment_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'productionDeploymentEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repo_name: {
-                        let field_value = match fields_map.get("repo_name") {
+                        let field_value = match fields_map.get("repoName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repo_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repoName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

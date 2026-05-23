@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#condition,
                 ),
                 to_pulumi_object_field(
-                    "document_content_deletion",
+                    "documentContentDeletion",
                     &self.r#document_content_deletion,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#document_content_deletion: {
-                        let field_value = match fields_map.get("document_content_deletion") {
+                        let field_value = match fields_map.get("documentContentDeletion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'document_content_deletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'documentContentDeletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

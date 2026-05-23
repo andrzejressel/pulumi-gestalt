@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ont
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_retention",
+                    "defaultRetention",
                     &self.r#default_retention,
                 ),
                 to_pulumi_object_field(
-                    "maximum_retention",
+                    "maximumRetention",
                     &self.r#maximum_retention,
                 ),
                 to_pulumi_object_field(
-                    "minimum_retention",
+                    "minimumRetention",
                     &self.r#minimum_retention,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#default_retention: {
-                        let field_value = match fields_map.get("default_retention") {
+                        let field_value = match fields_map.get("defaultRetention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultRetention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_retention: {
-                        let field_value = match fields_map.get("maximum_retention") {
+                        let field_value = match fields_map.get("maximumRetention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumRetention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_retention: {
-                        let field_value = match fields_map.get("minimum_retention") {
+                        let field_value = match fields_map.get("minimumRetention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumRetention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

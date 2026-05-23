@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
                     &self.r#scopes,
                 ),
                 to_pulumi_object_field(
-                    "tag_filter",
+                    "tagFilter",
                     &self.r#tag_filter,
                 ),
                 to_pulumi_object_field(
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_filter: {
-                        let field_value = match fields_map.get("tag_filter") {
+                        let field_value = match fields_map.get("tagFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

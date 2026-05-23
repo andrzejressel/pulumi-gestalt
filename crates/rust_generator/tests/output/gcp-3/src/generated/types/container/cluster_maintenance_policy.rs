@@ -61,15 +61,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "daily_maintenance_window",
+                    "dailyMaintenanceWindow",
                     &self.r#daily_maintenance_window,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_exclusions",
+                    "maintenanceExclusions",
                     &self.r#maintenance_exclusions,
                 ),
                 to_pulumi_object_field(
-                    "recurring_window",
+                    "recurringWindow",
                     &self.r#recurring_window,
                 ),
             ];
@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#daily_maintenance_window: {
-                        let field_value = match fields_map.get("daily_maintenance_window") {
+                        let field_value = match fields_map.get("dailyMaintenanceWindow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'daily_maintenance_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dailyMaintenanceWindow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_exclusions: {
-                        let field_value = match fields_map.get("maintenance_exclusions") {
+                        let field_value = match fields_map.get("maintenanceExclusions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_exclusions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceExclusions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recurring_window: {
-                        let field_value = match fields_map.get("recurring_window") {
+                        let field_value = match fields_map.get("recurringWindow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recurring_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recurringWindow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

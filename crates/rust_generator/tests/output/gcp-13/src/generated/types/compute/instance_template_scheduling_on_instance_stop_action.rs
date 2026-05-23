@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "discard_local_ssd",
+                    "discardLocalSsd",
                     &self.r#discard_local_ssd,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#discard_local_ssd: {
-                        let field_value = match fields_map.get("discard_local_ssd") {
+                        let field_value = match fields_map.get("discardLocalSsd") {
                             Some(value) => value,
-                            None => bail!("Missing field 'discard_local_ssd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'discardLocalSsd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

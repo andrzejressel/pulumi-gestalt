@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#domains,
                 ),
                 to_pulumi_object_field(
-                    "patterns_to_match",
+                    "patternsToMatch",
                     &self.r#patterns_to_match,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#patterns_to_match: {
-                        let field_value = match fields_map.get("patterns_to_match") {
+                        let field_value = match fields_map.get("patternsToMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'patterns_to_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'patternsToMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "continue_on_failure",
+                    "continueOnFailure",
                     &self.r#continue_on_failure,
                 ),
                 to_pulumi_object_field(
-                    "jar_file_uris",
+                    "jarFileUris",
                     &self.r#jar_file_uris,
                 ),
                 to_pulumi_object_field(
@@ -57,15 +57,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "query_file_uri",
+                    "queryFileUri",
                     &self.r#query_file_uri,
                 ),
                 to_pulumi_object_field(
-                    "query_lists",
+                    "queryLists",
                     &self.r#query_lists,
                 ),
                 to_pulumi_object_field(
-                    "script_variables",
+                    "scriptVariables",
                     &self.r#script_variables,
                 ),
             ];
@@ -92,16 +92,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#continue_on_failure: {
-                        let field_value = match fields_map.get("continue_on_failure") {
+                        let field_value = match fields_map.get("continueOnFailure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'continue_on_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'continueOnFailure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jar_file_uris: {
-                        let field_value = match fields_map.get("jar_file_uris") {
+                        let field_value = match fields_map.get("jarFileUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jar_file_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jarFileUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -113,23 +113,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_file_uri: {
-                        let field_value = match fields_map.get("query_file_uri") {
+                        let field_value = match fields_map.get("queryFileUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_file_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryFileUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_lists: {
-                        let field_value = match fields_map.get("query_lists") {
+                        let field_value = match fields_map.get("queryLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#script_variables: {
-                        let field_value = match fields_map.get("script_variables") {
+                        let field_value = match fields_map.get("scriptVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'script_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scriptVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

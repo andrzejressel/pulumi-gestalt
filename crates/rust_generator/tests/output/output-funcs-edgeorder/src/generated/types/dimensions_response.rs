@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dim
                     &self.r#length,
                 ),
                 to_pulumi_object_field(
-                    "length_height_unit",
+                    "lengthHeightUnit",
                     &self.r#length_height_unit,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dim
                     &self.r#weight,
                 ),
                 to_pulumi_object_field(
-                    "weight_unit",
+                    "weightUnit",
                     &self.r#weight_unit,
                 ),
                 to_pulumi_object_field(
@@ -119,9 +119,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#length_height_unit: {
-                        let field_value = match fields_map.get("length_height_unit") {
+                        let field_value = match fields_map.get("lengthHeightUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'length_height_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lengthHeightUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,9 +133,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weight_unit: {
-                        let field_value = match fields_map.get("weight_unit") {
+                        let field_value = match fields_map.get("weightUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weight_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weightUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

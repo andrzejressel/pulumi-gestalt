@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#flowlet,
                 ),
                 to_pulumi_object_field(
-                    "linked_service",
+                    "linkedService",
                     &self.r#linked_service,
                 ),
                 to_pulumi_object_field(
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#linked_service: {
-                        let field_value = match fields_map.get("linked_service") {
+                        let field_value = match fields_map.get("linkedService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linked_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linkedService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

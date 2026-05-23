@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bot
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "iam_role_arn",
+                    "iamRoleArn",
                     &self.r#iam_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "log_settings",
+                    "logSettings",
                     &self.r#log_settings,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#iam_role_arn: {
-                        let field_value = match fields_map.get("iam_role_arn") {
+                        let field_value = match fields_map.get("iamRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iam_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iamRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_settings: {
-                        let field_value = match fields_map.get("log_settings") {
+                        let field_value = match fields_map.get("logSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

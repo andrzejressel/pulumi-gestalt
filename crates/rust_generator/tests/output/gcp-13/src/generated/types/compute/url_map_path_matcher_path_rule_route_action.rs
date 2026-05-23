@@ -75,19 +75,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cors_policy",
+                    "corsPolicy",
                     &self.r#cors_policy,
                 ),
                 to_pulumi_object_field(
-                    "fault_injection_policy",
+                    "faultInjectionPolicy",
                     &self.r#fault_injection_policy,
                 ),
                 to_pulumi_object_field(
-                    "request_mirror_policy",
+                    "requestMirrorPolicy",
                     &self.r#request_mirror_policy,
                 ),
                 to_pulumi_object_field(
-                    "retry_policy",
+                    "retryPolicy",
                     &self.r#retry_policy,
                 ),
                 to_pulumi_object_field(
@@ -95,11 +95,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
                     &self.r#timeout,
                 ),
                 to_pulumi_object_field(
-                    "url_rewrite",
+                    "urlRewrite",
                     &self.r#url_rewrite,
                 ),
                 to_pulumi_object_field(
-                    "weighted_backend_services",
+                    "weightedBackendServices",
                     &self.r#weighted_backend_services,
                 ),
             ];
@@ -126,30 +126,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#cors_policy: {
-                        let field_value = match fields_map.get("cors_policy") {
+                        let field_value = match fields_map.get("corsPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cors_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'corsPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fault_injection_policy: {
-                        let field_value = match fields_map.get("fault_injection_policy") {
+                        let field_value = match fields_map.get("faultInjectionPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fault_injection_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'faultInjectionPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_mirror_policy: {
-                        let field_value = match fields_map.get("request_mirror_policy") {
+                        let field_value = match fields_map.get("requestMirrorPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_mirror_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestMirrorPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_policy: {
-                        let field_value = match fields_map.get("retry_policy") {
+                        let field_value = match fields_map.get("retryPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retry_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retryPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -161,16 +161,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_rewrite: {
-                        let field_value = match fields_map.get("url_rewrite") {
+                        let field_value = match fields_map.get("urlRewrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_rewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlRewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weighted_backend_services: {
-                        let field_value = match fields_map.get("weighted_backend_services") {
+                        let field_value = match fields_map.get("weightedBackendServices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weighted_backend_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weightedBackendServices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

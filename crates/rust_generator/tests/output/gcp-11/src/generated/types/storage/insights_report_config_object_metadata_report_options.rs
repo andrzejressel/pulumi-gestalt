@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metadata_fields",
+                    "metadataFields",
                     &self.r#metadata_fields,
                 ),
                 to_pulumi_object_field(
-                    "storage_destination_options",
+                    "storageDestinationOptions",
                     &self.r#storage_destination_options,
                 ),
                 to_pulumi_object_field(
-                    "storage_filters",
+                    "storageFilters",
                     &self.r#storage_filters,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#metadata_fields: {
-                        let field_value = match fields_map.get("metadata_fields") {
+                        let field_value = match fields_map.get("metadataFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metadata_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metadataFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_destination_options: {
-                        let field_value = match fields_map.get("storage_destination_options") {
+                        let field_value = match fields_map.get("storageDestinationOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_destination_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageDestinationOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_filters: {
-                        let field_value = match fields_map.get("storage_filters") {
+                        let field_value = match fields_map.get("storageFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

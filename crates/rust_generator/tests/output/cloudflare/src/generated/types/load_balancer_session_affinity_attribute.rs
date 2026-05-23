@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "drain_duration",
+                    "drainDuration",
                     &self.r#drain_duration,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "require_all_headers",
+                    "requireAllHeaders",
                     &self.r#require_all_headers,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#secure,
                 ),
                 to_pulumi_object_field(
-                    "zero_downtime_failover",
+                    "zeroDowntimeFailover",
                     &self.r#zero_downtime_failover,
                 ),
             ];
@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#drain_duration: {
-                        let field_value = match fields_map.get("drain_duration") {
+                        let field_value = match fields_map.get("drainDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'drain_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'drainDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,9 +104,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_all_headers: {
-                        let field_value = match fields_map.get("require_all_headers") {
+                        let field_value = match fields_map.get("requireAllHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_all_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireAllHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,9 +125,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#zero_downtime_failover: {
-                        let field_value = match fields_map.get("zero_downtime_failover") {
+                        let field_value = match fields_map.get("zeroDowntimeFailover") {
                             Some(value) => value,
-                            None => bail!("Missing field 'zero_downtime_failover' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'zeroDowntimeFailover' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

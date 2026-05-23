@@ -59,43 +59,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_allowed_session_types",
+                    "additionalAllowedSessionTypes",
                     &self.r#additional_allowed_session_types,
                 ),
                 to_pulumi_object_field(
-                    "allocation_and_retention_priority_level",
+                    "allocationAndRetentionPriorityLevel",
                     &self.r#allocation_and_retention_priority_level,
                 ),
                 to_pulumi_object_field(
-                    "allowed_services_ids",
+                    "allowedServicesIds",
                     &self.r#allowed_services_ids,
                 ),
                 to_pulumi_object_field(
-                    "data_network_id",
+                    "dataNetworkId",
                     &self.r#data_network_id,
                 ),
                 to_pulumi_object_field(
-                    "default_session_type",
+                    "defaultSessionType",
                     &self.r#default_session_type,
                 ),
                 to_pulumi_object_field(
-                    "max_buffered_packets",
+                    "maxBufferedPackets",
                     &self.r#max_buffered_packets,
                 ),
                 to_pulumi_object_field(
-                    "preemption_capability",
+                    "preemptionCapability",
                     &self.r#preemption_capability,
                 ),
                 to_pulumi_object_field(
-                    "preemption_vulnerability",
+                    "preemptionVulnerability",
                     &self.r#preemption_vulnerability,
                 ),
                 to_pulumi_object_field(
-                    "qos_indicator",
+                    "qosIndicator",
                     &self.r#qos_indicator,
                 ),
                 to_pulumi_object_field(
-                    "session_aggregate_maximum_bit_rate",
+                    "sessionAggregateMaximumBitRate",
                     &self.r#session_aggregate_maximum_bit_rate,
                 ),
             ];
@@ -122,72 +122,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#additional_allowed_session_types: {
-                        let field_value = match fields_map.get("additional_allowed_session_types") {
+                        let field_value = match fields_map.get("additionalAllowedSessionTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_allowed_session_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalAllowedSessionTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allocation_and_retention_priority_level: {
-                        let field_value = match fields_map.get("allocation_and_retention_priority_level") {
+                        let field_value = match fields_map.get("allocationAndRetentionPriorityLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allocation_and_retention_priority_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allocationAndRetentionPriorityLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_services_ids: {
-                        let field_value = match fields_map.get("allowed_services_ids") {
+                        let field_value = match fields_map.get("allowedServicesIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_services_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedServicesIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_network_id: {
-                        let field_value = match fields_map.get("data_network_id") {
+                        let field_value = match fields_map.get("dataNetworkId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_network_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataNetworkId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_session_type: {
-                        let field_value = match fields_map.get("default_session_type") {
+                        let field_value = match fields_map.get("defaultSessionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_session_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultSessionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_buffered_packets: {
-                        let field_value = match fields_map.get("max_buffered_packets") {
+                        let field_value = match fields_map.get("maxBufferedPackets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_buffered_packets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxBufferedPackets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preemption_capability: {
-                        let field_value = match fields_map.get("preemption_capability") {
+                        let field_value = match fields_map.get("preemptionCapability") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preemption_capability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preemptionCapability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preemption_vulnerability: {
-                        let field_value = match fields_map.get("preemption_vulnerability") {
+                        let field_value = match fields_map.get("preemptionVulnerability") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preemption_vulnerability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preemptionVulnerability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#qos_indicator: {
-                        let field_value = match fields_map.get("qos_indicator") {
+                        let field_value = match fields_map.get("qosIndicator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'qos_indicator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'qosIndicator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_aggregate_maximum_bit_rate: {
-                        let field_value = match fields_map.get("session_aggregate_maximum_bit_rate") {
+                        let field_value = match fields_map.get("sessionAggregateMaximumBitRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_aggregate_maximum_bit_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionAggregateMaximumBitRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

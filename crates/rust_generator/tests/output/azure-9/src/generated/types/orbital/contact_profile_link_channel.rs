@@ -43,23 +43,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bandwidth_mhz",
+                    "bandwidthMhz",
                     &self.r#bandwidth_mhz,
                 ),
                 to_pulumi_object_field(
-                    "center_frequency_mhz",
+                    "centerFrequencyMhz",
                     &self.r#center_frequency_mhz,
                 ),
                 to_pulumi_object_field(
-                    "demodulation_configuration",
+                    "demodulationConfiguration",
                     &self.r#demodulation_configuration,
                 ),
                 to_pulumi_object_field(
-                    "end_points",
+                    "endPoints",
                     &self.r#end_points,
                 ),
                 to_pulumi_object_field(
-                    "modulation_configuration",
+                    "modulationConfiguration",
                     &self.r#modulation_configuration,
                 ),
                 to_pulumi_object_field(
@@ -90,37 +90,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#bandwidth_mhz: {
-                        let field_value = match fields_map.get("bandwidth_mhz") {
+                        let field_value = match fields_map.get("bandwidthMhz") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bandwidth_mhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bandwidthMhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#center_frequency_mhz: {
-                        let field_value = match fields_map.get("center_frequency_mhz") {
+                        let field_value = match fields_map.get("centerFrequencyMhz") {
                             Some(value) => value,
-                            None => bail!("Missing field 'center_frequency_mhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'centerFrequencyMhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#demodulation_configuration: {
-                        let field_value = match fields_map.get("demodulation_configuration") {
+                        let field_value = match fields_map.get("demodulationConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'demodulation_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'demodulationConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#end_points: {
-                        let field_value = match fields_map.get("end_points") {
+                        let field_value = match fields_map.get("endPoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_points' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endPoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#modulation_configuration: {
-                        let field_value = match fields_map.get("modulation_configuration") {
+                        let field_value = match fields_map.get("modulationConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'modulation_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modulationConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

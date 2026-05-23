@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#commands,
                 ),
                 to_pulumi_object_field(
-                    "entry_points",
+                    "entryPoints",
                     &self.r#entry_points,
                 ),
                 to_pulumi_object_field(
-                    "working_directory",
+                    "workingDirectory",
                     &self.r#working_directory,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entry_points: {
-                        let field_value = match fields_map.get("entry_points") {
+                        let field_value = match fields_map.get("entryPoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entry_points' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entryPoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#working_directory: {
-                        let field_value = match fields_map.get("working_directory") {
+                        let field_value = match fields_map.get("workingDirectory") {
                             Some(value) => value,
-                            None => bail!("Missing field 'working_directory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workingDirectory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

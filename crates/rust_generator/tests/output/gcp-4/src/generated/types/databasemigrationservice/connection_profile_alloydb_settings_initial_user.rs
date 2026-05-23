@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "password_set",
+                    "passwordSet",
                     &self.r#password_set,
                 ),
                 to_pulumi_object_field(
@@ -75,9 +75,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_set: {
-                        let field_value = match fields_map.get("password_set") {
+                        let field_value = match fields_map.get("passwordSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

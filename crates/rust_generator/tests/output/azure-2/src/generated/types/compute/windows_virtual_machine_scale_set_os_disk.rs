@@ -69,31 +69,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#caching,
                 ),
                 to_pulumi_object_field(
-                    "diff_disk_settings",
+                    "diffDiskSettings",
                     &self.r#diff_disk_settings,
                 ),
                 to_pulumi_object_field(
-                    "disk_encryption_set_id",
+                    "diskEncryptionSetId",
                     &self.r#disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "secure_vm_disk_encryption_set_id",
+                    "secureVmDiskEncryptionSetId",
                     &self.r#secure_vm_disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "security_encryption_type",
+                    "securityEncryptionType",
                     &self.r#security_encryption_type,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_type",
+                    "storageAccountType",
                     &self.r#storage_account_type,
                 ),
                 to_pulumi_object_field(
-                    "write_accelerator_enabled",
+                    "writeAcceleratorEnabled",
                     &self.r#write_accelerator_enabled,
                 ),
             ];
@@ -127,51 +127,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#diff_disk_settings: {
-                        let field_value = match fields_map.get("diff_disk_settings") {
+                        let field_value = match fields_map.get("diffDiskSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'diff_disk_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diffDiskSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_encryption_set_id: {
-                        let field_value = match fields_map.get("disk_encryption_set_id") {
+                        let field_value = match fields_map.get("diskEncryptionSetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_encryption_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskEncryptionSetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_size_gb: {
-                        let field_value = match fields_map.get("disk_size_gb") {
+                        let field_value = match fields_map.get("diskSizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskSizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secure_vm_disk_encryption_set_id: {
-                        let field_value = match fields_map.get("secure_vm_disk_encryption_set_id") {
+                        let field_value = match fields_map.get("secureVmDiskEncryptionSetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secure_vm_disk_encryption_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secureVmDiskEncryptionSetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_encryption_type: {
-                        let field_value = match fields_map.get("security_encryption_type") {
+                        let field_value = match fields_map.get("securityEncryptionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_encryption_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityEncryptionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_type: {
-                        let field_value = match fields_map.get("storage_account_type") {
+                        let field_value = match fields_map.get("storageAccountType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#write_accelerator_enabled: {
-                        let field_value = match fields_map.get("write_accelerator_enabled") {
+                        let field_value = match fields_map.get("writeAcceleratorEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'write_accelerator_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'writeAcceleratorEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

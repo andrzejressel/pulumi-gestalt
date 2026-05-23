@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "explain_http_uri",
+                    "explainHttpUri",
                     &self.r#explain_http_uri,
                 ),
                 to_pulumi_object_field(
-                    "health_http_uri",
+                    "healthHttpUri",
                     &self.r#health_http_uri,
                 ),
                 to_pulumi_object_field(
-                    "predict_http_uri",
+                    "predictHttpUri",
                     &self.r#predict_http_uri,
                 ),
                 to_pulumi_object_field(
-                    "service_attachment",
+                    "serviceAttachment",
                     &self.r#service_attachment,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#explain_http_uri: {
-                        let field_value = match fields_map.get("explain_http_uri") {
+                        let field_value = match fields_map.get("explainHttpUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'explain_http_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'explainHttpUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_http_uri: {
-                        let field_value = match fields_map.get("health_http_uri") {
+                        let field_value = match fields_map.get("healthHttpUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_http_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthHttpUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predict_http_uri: {
-                        let field_value = match fields_map.get("predict_http_uri") {
+                        let field_value = match fields_map.get("predictHttpUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predict_http_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predictHttpUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_attachment: {
-                        let field_value = match fields_map.get("service_attachment") {
+                        let field_value = match fields_map.get("serviceAttachment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_attachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAttachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "number_of_disks",
+                    "numberOfDisks",
                     &self.r#number_of_disks,
                 ),
                 to_pulumi_object_field(
-                    "size_in_gb",
+                    "sizeInGb",
                     &self.r#size_in_gb,
                 ),
                 to_pulumi_object_field(
-                    "sku_name",
+                    "skuName",
                     &self.r#sku_name,
                 ),
                 to_pulumi_object_field(
-                    "volume_name",
+                    "volumeName",
                     &self.r#volume_name,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#number_of_disks: {
-                        let field_value = match fields_map.get("number_of_disks") {
+                        let field_value = match fields_map.get("numberOfDisks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_of_disks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberOfDisks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#size_in_gb: {
-                        let field_value = match fields_map.get("size_in_gb") {
+                        let field_value = match fields_map.get("sizeInGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'size_in_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizeInGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sku_name: {
-                        let field_value = match fields_map.get("sku_name") {
+                        let field_value = match fields_map.get("skuName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sku_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skuName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_name: {
-                        let field_value = match fields_map.get("volume_name") {
+                        let field_value = match fields_map.get("volumeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

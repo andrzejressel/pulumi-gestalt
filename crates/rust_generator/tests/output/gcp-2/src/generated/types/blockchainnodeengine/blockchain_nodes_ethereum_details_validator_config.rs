@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mev_relay_urls",
+                    "mevRelayUrls",
                     &self.r#mev_relay_urls,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#mev_relay_urls: {
-                        let field_value = match fields_map.get("mev_relay_urls") {
+                        let field_value = match fields_map.get("mevRelayUrls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mev_relay_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mevRelayUrls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

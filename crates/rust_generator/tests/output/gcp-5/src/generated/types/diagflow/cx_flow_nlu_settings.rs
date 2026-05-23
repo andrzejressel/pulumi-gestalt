@@ -38,15 +38,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "classification_threshold",
+                    "classificationThreshold",
                     &self.r#classification_threshold,
                 ),
                 to_pulumi_object_field(
-                    "model_training_mode",
+                    "modelTrainingMode",
                     &self.r#model_training_mode,
                 ),
                 to_pulumi_object_field(
-                    "model_type",
+                    "modelType",
                     &self.r#model_type,
                 ),
             ];
@@ -73,23 +73,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#classification_threshold: {
-                        let field_value = match fields_map.get("classification_threshold") {
+                        let field_value = match fields_map.get("classificationThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'classification_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'classificationThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_training_mode: {
-                        let field_value = match fields_map.get("model_training_mode") {
+                        let field_value = match fields_map.get("modelTrainingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_training_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelTrainingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_type: {
-                        let field_value = match fields_map.get("model_type") {
+                        let field_value = match fields_map.get("modelType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

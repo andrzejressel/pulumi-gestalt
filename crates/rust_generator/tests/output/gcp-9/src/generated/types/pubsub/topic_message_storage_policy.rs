@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_persistence_regions",
+                    "allowedPersistenceRegions",
                     &self.r#allowed_persistence_regions,
                 ),
             ];
@@ -55,9 +55,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#allowed_persistence_regions: {
-                        let field_value = match fields_map.get("allowed_persistence_regions") {
+                        let field_value = match fields_map.get("allowedPersistenceRegions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_persistence_regions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedPersistenceRegions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

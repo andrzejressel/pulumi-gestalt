@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
                     &self.r#groups,
                 ),
                 to_pulumi_object_field(
-                    "policy_arn",
+                    "policyArn",
                     &self.r#policy_arn,
                 ),
                 to_pulumi_object_field(
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_arn: {
-                        let field_value = match fields_map.get("policy_arn") {
+                        let field_value = match fields_map.get("policyArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

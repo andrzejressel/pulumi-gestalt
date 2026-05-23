@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_capacity",
+                    "maxCapacity",
                     &self.r#max_capacity,
                 ),
                 to_pulumi_object_field(
-                    "min_capacity",
+                    "minCapacity",
                     &self.r#min_capacity,
                 ),
                 to_pulumi_object_field(
@@ -65,16 +65,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#max_capacity: {
-                        let field_value = match fields_map.get("max_capacity") {
+                        let field_value = match fields_map.get("maxCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_capacity: {
-                        let field_value = match fields_map.get("min_capacity") {
+                        let field_value = match fields_map.get("minCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

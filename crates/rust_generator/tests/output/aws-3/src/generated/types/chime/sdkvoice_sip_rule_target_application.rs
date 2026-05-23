@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sdk
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_region",
+                    "awsRegion",
                     &self.r#aws_region,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sdk
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "sip_media_application_id",
+                    "sipMediaApplicationId",
                     &self.r#sip_media_application_id,
                 ),
             ];
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#aws_region: {
-                        let field_value = match fields_map.get("aws_region") {
+                        let field_value = match fields_map.get("awsRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sip_media_application_id: {
-                        let field_value = match fields_map.get("sip_media_application_id") {
+                        let field_value = match fields_map.get("sipMediaApplicationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sip_media_application_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sipMediaApplicationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

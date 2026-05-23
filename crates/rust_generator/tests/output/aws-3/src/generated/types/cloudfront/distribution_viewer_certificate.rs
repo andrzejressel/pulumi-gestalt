@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acm_certificate_arn",
+                    "acmCertificateArn",
                     &self.r#acm_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "cloudfront_default_certificate",
+                    "cloudfrontDefaultCertificate",
                     &self.r#cloudfront_default_certificate,
                 ),
                 to_pulumi_object_field(
-                    "iam_certificate_id",
+                    "iamCertificateId",
                     &self.r#iam_certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "minimum_protocol_version",
+                    "minimumProtocolVersion",
                     &self.r#minimum_protocol_version,
                 ),
                 to_pulumi_object_field(
-                    "ssl_support_method",
+                    "sslSupportMethod",
                     &self.r#ssl_support_method,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#acm_certificate_arn: {
-                        let field_value = match fields_map.get("acm_certificate_arn") {
+                        let field_value = match fields_map.get("acmCertificateArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'acm_certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acmCertificateArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloudfront_default_certificate: {
-                        let field_value = match fields_map.get("cloudfront_default_certificate") {
+                        let field_value = match fields_map.get("cloudfrontDefaultCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudfront_default_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudfrontDefaultCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iam_certificate_id: {
-                        let field_value = match fields_map.get("iam_certificate_id") {
+                        let field_value = match fields_map.get("iamCertificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iam_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iamCertificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_protocol_version: {
-                        let field_value = match fields_map.get("minimum_protocol_version") {
+                        let field_value = match fields_map.get("minimumProtocolVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_protocol_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumProtocolVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_support_method: {
-                        let field_value = match fields_map.get("ssl_support_method") {
+                        let field_value = match fields_map.get("sslSupportMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_support_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslSupportMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

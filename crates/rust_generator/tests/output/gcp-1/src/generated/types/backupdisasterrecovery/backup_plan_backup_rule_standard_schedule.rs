@@ -58,19 +58,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_window",
+                    "backupWindow",
                     &self.r#backup_window,
                 ),
                 to_pulumi_object_field(
-                    "days_of_months",
+                    "daysOfMonths",
                     &self.r#days_of_months,
                 ),
                 to_pulumi_object_field(
-                    "days_of_weeks",
+                    "daysOfWeeks",
                     &self.r#days_of_weeks,
                 ),
                 to_pulumi_object_field(
-                    "hourly_frequency",
+                    "hourlyFrequency",
                     &self.r#hourly_frequency,
                 ),
                 to_pulumi_object_field(
@@ -78,15 +78,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
                     &self.r#months,
                 ),
                 to_pulumi_object_field(
-                    "recurrence_type",
+                    "recurrenceType",
                     &self.r#recurrence_type,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
                 to_pulumi_object_field(
-                    "week_day_of_month",
+                    "weekDayOfMonth",
                     &self.r#week_day_of_month,
                 ),
             ];
@@ -113,30 +113,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#backup_window: {
-                        let field_value = match fields_map.get("backup_window") {
+                        let field_value = match fields_map.get("backupWindow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupWindow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#days_of_months: {
-                        let field_value = match fields_map.get("days_of_months") {
+                        let field_value = match fields_map.get("daysOfMonths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_months' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfMonths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#days_of_weeks: {
-                        let field_value = match fields_map.get("days_of_weeks") {
+                        let field_value = match fields_map.get("daysOfWeeks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_weeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfWeeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hourly_frequency: {
-                        let field_value = match fields_map.get("hourly_frequency") {
+                        let field_value = match fields_map.get("hourlyFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hourly_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hourlyFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -148,23 +148,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recurrence_type: {
-                        let field_value = match fields_map.get("recurrence_type") {
+                        let field_value = match fields_map.get("recurrenceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recurrence_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recurrenceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_zone: {
-                        let field_value = match fields_map.get("time_zone") {
+                        let field_value = match fields_map.get("timeZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#week_day_of_month: {
-                        let field_value = match fields_map.get("week_day_of_month") {
+                        let field_value = match fields_map.get("weekDayOfMonth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'week_day_of_month' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weekDayOfMonth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

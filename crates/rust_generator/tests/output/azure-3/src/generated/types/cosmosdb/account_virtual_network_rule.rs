@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "ignore_missing_vnet_service_endpoint",
+                    "ignoreMissingVnetServiceEndpoint",
                     &self.r#ignore_missing_vnet_service_endpoint,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_missing_vnet_service_endpoint: {
-                        let field_value = match fields_map.get("ignore_missing_vnet_service_endpoint") {
+                        let field_value = match fields_map.get("ignoreMissingVnetServiceEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_missing_vnet_service_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreMissingVnetServiceEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

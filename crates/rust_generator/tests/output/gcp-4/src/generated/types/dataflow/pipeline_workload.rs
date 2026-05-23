@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dataflow_flex_template_request",
+                    "dataflowFlexTemplateRequest",
                     &self.r#dataflow_flex_template_request,
                 ),
                 to_pulumi_object_field(
-                    "dataflow_launch_template_request",
+                    "dataflowLaunchTemplateRequest",
                     &self.r#dataflow_launch_template_request,
                 ),
             ];
@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#dataflow_flex_template_request: {
-                        let field_value = match fields_map.get("dataflow_flex_template_request") {
+                        let field_value = match fields_map.get("dataflowFlexTemplateRequest") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dataflow_flex_template_request' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataflowFlexTemplateRequest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dataflow_launch_template_request: {
-                        let field_value = match fields_map.get("dataflow_launch_template_request") {
+                        let field_value = match fields_map.get("dataflowLaunchTemplateRequest") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dataflow_launch_template_request' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataflowLaunchTemplateRequest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

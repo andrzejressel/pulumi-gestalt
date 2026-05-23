@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "match_criterions",
+                    "matchCriterions",
                     &self.r#match_criterions,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "next_step_if_matched",
+                    "nextStepIfMatched",
                     &self.r#next_step_if_matched,
                 ),
             ];
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_criterions: {
-                        let field_value = match fields_map.get("match_criterions") {
+                        let field_value = match fields_map.get("matchCriterions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_criterions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchCriterions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_step_if_matched: {
-                        let field_value = match fields_map.get("next_step_if_matched") {
+                        let field_value = match fields_map.get("nextStepIfMatched") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_step_if_matched' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextStepIfMatched' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

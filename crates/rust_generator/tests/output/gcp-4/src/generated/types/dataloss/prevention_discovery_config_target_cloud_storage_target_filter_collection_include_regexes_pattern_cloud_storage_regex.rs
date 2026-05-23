@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_name_regex",
+                    "bucketNameRegex",
                     &self.r#bucket_name_regex,
                 ),
                 to_pulumi_object_field(
-                    "project_id_regex",
+                    "projectIdRegex",
                     &self.r#project_id_regex,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#bucket_name_regex: {
-                        let field_value = match fields_map.get("bucket_name_regex") {
+                        let field_value = match fields_map.get("bucketNameRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_name_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketNameRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#project_id_regex: {
-                        let field_value = match fields_map.get("project_id_regex") {
+                        let field_value = match fields_map.get("projectIdRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_id_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectIdRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

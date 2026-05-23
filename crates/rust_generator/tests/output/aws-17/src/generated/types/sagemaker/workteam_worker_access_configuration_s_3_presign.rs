@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "iam_policy_constraints",
+                    "iamPolicyConstraints",
                     &self.r#iam_policy_constraints,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#iam_policy_constraints: {
-                        let field_value = match fields_map.get("iam_policy_constraints") {
+                        let field_value = match fields_map.get("iamPolicyConstraints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iam_policy_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iamPolicyConstraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -87,19 +87,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_custom_error_response_policy",
+                    "defaultCustomErrorResponsePolicy",
                     &self.r#default_custom_error_response_policy,
                 ),
                 to_pulumi_object_field(
-                    "default_route_action",
+                    "defaultRouteAction",
                     &self.r#default_route_action,
                 ),
                 to_pulumi_object_field(
-                    "default_service",
+                    "defaultService",
                     &self.r#default_service,
                 ),
                 to_pulumi_object_field(
-                    "default_url_redirect",
+                    "defaultUrlRedirect",
                     &self.r#default_url_redirect,
                 ),
                 to_pulumi_object_field(
@@ -107,7 +107,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "header_action",
+                    "headerAction",
                     &self.r#header_action,
                 ),
                 to_pulumi_object_field(
@@ -115,11 +115,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "path_rules",
+                    "pathRules",
                     &self.r#path_rules,
                 ),
                 to_pulumi_object_field(
-                    "route_rules",
+                    "routeRules",
                     &self.r#route_rules,
                 ),
             ];
@@ -146,30 +146,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#default_custom_error_response_policy: {
-                        let field_value = match fields_map.get("default_custom_error_response_policy") {
+                        let field_value = match fields_map.get("defaultCustomErrorResponsePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_custom_error_response_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultCustomErrorResponsePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_route_action: {
-                        let field_value = match fields_map.get("default_route_action") {
+                        let field_value = match fields_map.get("defaultRouteAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_route_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultRouteAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_service: {
-                        let field_value = match fields_map.get("default_service") {
+                        let field_value = match fields_map.get("defaultService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_url_redirect: {
-                        let field_value = match fields_map.get("default_url_redirect") {
+                        let field_value = match fields_map.get("defaultUrlRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_url_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultUrlRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -181,9 +181,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#header_action: {
-                        let field_value = match fields_map.get("header_action") {
+                        let field_value = match fields_map.get("headerAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -195,16 +195,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_rules: {
-                        let field_value = match fields_map.get("path_rules") {
+                        let field_value = match fields_map.get("pathRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_rules: {
-                        let field_value = match fields_map.get("route_rules") {
+                        let field_value = match fields_map.get("routeRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

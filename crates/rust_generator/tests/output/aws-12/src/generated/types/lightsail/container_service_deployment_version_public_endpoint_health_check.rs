@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "healthy_threshold",
+                    "healthyThreshold",
                     &self.r#healthy_threshold,
                 ),
                 to_pulumi_object_field(
-                    "interval_seconds",
+                    "intervalSeconds",
                     &self.r#interval_seconds,
                 ),
                 to_pulumi_object_field(
@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "success_codes",
+                    "successCodes",
                     &self.r#success_codes,
                 ),
                 to_pulumi_object_field(
-                    "timeout_seconds",
+                    "timeoutSeconds",
                     &self.r#timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_threshold",
+                    "unhealthyThreshold",
                     &self.r#unhealthy_threshold,
                 ),
             ];
@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#healthy_threshold: {
-                        let field_value = match fields_map.get("healthy_threshold") {
+                        let field_value = match fields_map.get("healthyThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'healthy_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthyThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#interval_seconds: {
-                        let field_value = match fields_map.get("interval_seconds") {
+                        let field_value = match fields_map.get("intervalSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'interval_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intervalSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_codes: {
-                        let field_value = match fields_map.get("success_codes") {
+                        let field_value = match fields_map.get("successCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_seconds: {
-                        let field_value = match fields_map.get("timeout_seconds") {
+                        let field_value = match fields_map.get("timeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unhealthy_threshold: {
-                        let field_value = match fields_map.get("unhealthy_threshold") {
+                        let field_value = match fields_map.get("unhealthyThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unhealthy_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unhealthyThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

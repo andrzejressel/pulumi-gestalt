@@ -51,27 +51,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#execs,
                 ),
                 to_pulumi_object_field(
-                    "failure_threshold",
+                    "failureThreshold",
                     &self.r#failure_threshold,
                 ),
                 to_pulumi_object_field(
-                    "http_gets",
+                    "httpGets",
                     &self.r#http_gets,
                 ),
                 to_pulumi_object_field(
-                    "initial_delay_seconds",
+                    "initialDelaySeconds",
                     &self.r#initial_delay_seconds,
                 ),
                 to_pulumi_object_field(
-                    "period_seconds",
+                    "periodSeconds",
                     &self.r#period_seconds,
                 ),
                 to_pulumi_object_field(
-                    "success_threshold",
+                    "successThreshold",
                     &self.r#success_threshold,
                 ),
                 to_pulumi_object_field(
-                    "timeout_seconds",
+                    "timeoutSeconds",
                     &self.r#timeout_seconds,
                 ),
             ];
@@ -105,44 +105,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_threshold: {
-                        let field_value = match fields_map.get("failure_threshold") {
+                        let field_value = match fields_map.get("failureThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_gets: {
-                        let field_value = match fields_map.get("http_gets") {
+                        let field_value = match fields_map.get("httpGets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_gets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpGets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initial_delay_seconds: {
-                        let field_value = match fields_map.get("initial_delay_seconds") {
+                        let field_value = match fields_map.get("initialDelaySeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_delay_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialDelaySeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#period_seconds: {
-                        let field_value = match fields_map.get("period_seconds") {
+                        let field_value = match fields_map.get("periodSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'period_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'periodSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_threshold: {
-                        let field_value = match fields_map.get("success_threshold") {
+                        let field_value = match fields_map.get("successThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_seconds: {
-                        let field_value = match fields_map.get("timeout_seconds") {
+                        let field_value = match fields_map.get("timeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

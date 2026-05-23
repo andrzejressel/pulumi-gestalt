@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attribute_data_type",
+                    "attributeDataType",
                     &self.r#attribute_data_type,
                 ),
                 to_pulumi_object_field(
-                    "developer_only_attribute",
+                    "developerOnlyAttribute",
                     &self.r#developer_only_attribute,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "number_attribute_constraints",
+                    "numberAttributeConstraints",
                     &self.r#number_attribute_constraints,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#required,
                 ),
                 to_pulumi_object_field(
-                    "string_attribute_constraints",
+                    "stringAttributeConstraints",
                     &self.r#string_attribute_constraints,
                 ),
             ];
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#attribute_data_type: {
-                        let field_value = match fields_map.get("attribute_data_type") {
+                        let field_value = match fields_map.get("attributeDataType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attribute_data_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributeDataType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#developer_only_attribute: {
-                        let field_value = match fields_map.get("developer_only_attribute") {
+                        let field_value = match fields_map.get("developerOnlyAttribute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'developer_only_attribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'developerOnlyAttribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,9 +126,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_attribute_constraints: {
-                        let field_value = match fields_map.get("number_attribute_constraints") {
+                        let field_value = match fields_map.get("numberAttributeConstraints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_attribute_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberAttributeConstraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_attribute_constraints: {
-                        let field_value = match fields_map.get("string_attribute_constraints") {
+                        let field_value = match fields_map.get("stringAttributeConstraints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_attribute_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringAttributeConstraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

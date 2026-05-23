@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "latest_revision",
+                    "latestRevision",
                     &self.r#latest_revision,
                 ),
                 to_pulumi_object_field(
@@ -52,7 +52,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#percent,
                 ),
                 to_pulumi_object_field(
-                    "revision_name",
+                    "revisionName",
                     &self.r#revision_name,
                 ),
                 to_pulumi_object_field(
@@ -87,9 +87,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#latest_revision: {
-                        let field_value = match fields_map.get("latest_revision") {
+                        let field_value = match fields_map.get("latestRevision") {
                             Some(value) => value,
-                            None => bail!("Missing field 'latest_revision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latestRevision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -101,9 +101,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#revision_name: {
-                        let field_value = match fields_map.get("revision_name") {
+                        let field_value = match fields_map.get("revisionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revision_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revisionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

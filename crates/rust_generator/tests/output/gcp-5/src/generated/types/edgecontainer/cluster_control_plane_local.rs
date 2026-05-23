@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "machine_filter",
+                    "machineFilter",
                     &self.r#machine_filter,
                 ),
                 to_pulumi_object_field(
-                    "node_count",
+                    "nodeCount",
                     &self.r#node_count,
                 ),
                 to_pulumi_object_field(
-                    "node_location",
+                    "nodeLocation",
                     &self.r#node_location,
                 ),
                 to_pulumi_object_field(
-                    "shared_deployment_policy",
+                    "sharedDeploymentPolicy",
                     &self.r#shared_deployment_policy,
                 ),
             ];
@@ -79,30 +79,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#machine_filter: {
-                        let field_value = match fields_map.get("machine_filter") {
+                        let field_value = match fields_map.get("machineFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'machine_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'machineFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_count: {
-                        let field_value = match fields_map.get("node_count") {
+                        let field_value = match fields_map.get("nodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_location: {
-                        let field_value = match fields_map.get("node_location") {
+                        let field_value = match fields_map.get("nodeLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_deployment_policy: {
-                        let field_value = match fields_map.get("shared_deployment_policy") {
+                        let field_value = match fields_map.get("sharedDeploymentPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_deployment_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedDeploymentPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

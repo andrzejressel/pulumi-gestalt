@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "opensearch_serverless_configuration",
+                    "opensearchServerlessConfiguration",
                     &self.r#opensearch_serverless_configuration,
                 ),
                 to_pulumi_object_field(
-                    "pinecone_configuration",
+                    "pineconeConfiguration",
                     &self.r#pinecone_configuration,
                 ),
                 to_pulumi_object_field(
-                    "rds_configuration",
+                    "rdsConfiguration",
                     &self.r#rds_configuration,
                 ),
                 to_pulumi_object_field(
-                    "redis_enterprise_cloud_configuration",
+                    "redisEnterpriseCloudConfiguration",
                     &self.r#redis_enterprise_cloud_configuration,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#opensearch_serverless_configuration: {
-                        let field_value = match fields_map.get("opensearch_serverless_configuration") {
+                        let field_value = match fields_map.get("opensearchServerlessConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'opensearch_serverless_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'opensearchServerlessConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pinecone_configuration: {
-                        let field_value = match fields_map.get("pinecone_configuration") {
+                        let field_value = match fields_map.get("pineconeConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pinecone_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pineconeConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rds_configuration: {
-                        let field_value = match fields_map.get("rds_configuration") {
+                        let field_value = match fields_map.get("rdsConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rds_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rdsConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redis_enterprise_cloud_configuration: {
-                        let field_value = match fields_map.get("redis_enterprise_cloud_configuration") {
+                        let field_value = match fields_map.get("redisEnterpriseCloudConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redis_enterprise_cloud_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redisEnterpriseCloudConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

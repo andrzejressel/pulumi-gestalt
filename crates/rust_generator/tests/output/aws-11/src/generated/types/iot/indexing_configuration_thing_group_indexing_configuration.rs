@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_fields",
+                    "customFields",
                     &self.r#custom_fields,
                 ),
                 to_pulumi_object_field(
-                    "managed_fields",
+                    "managedFields",
                     &self.r#managed_fields,
                 ),
                 to_pulumi_object_field(
-                    "thing_group_indexing_mode",
+                    "thingGroupIndexingMode",
                     &self.r#thing_group_indexing_mode,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#custom_fields: {
-                        let field_value = match fields_map.get("custom_fields") {
+                        let field_value = match fields_map.get("customFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_fields: {
-                        let field_value = match fields_map.get("managed_fields") {
+                        let field_value = match fields_map.get("managedFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#thing_group_indexing_mode: {
-                        let field_value = match fields_map.get("thing_group_indexing_mode") {
+                        let field_value = match fields_map.get("thingGroupIndexingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'thing_group_indexing_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thingGroupIndexingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

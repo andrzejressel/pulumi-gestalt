@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "black_frame_msec",
+                    "blackFrameMsec",
                     &self.r#black_frame_msec,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_image_color",
+                    "inputLossImageColor",
                     &self.r#input_loss_image_color,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_image_slate",
+                    "inputLossImageSlate",
                     &self.r#input_loss_image_slate,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_image_type",
+                    "inputLossImageType",
                     &self.r#input_loss_image_type,
                 ),
                 to_pulumi_object_field(
-                    "repeat_frame_msec",
+                    "repeatFrameMsec",
                     &self.r#repeat_frame_msec,
                 ),
             ];
@@ -77,37 +77,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#black_frame_msec: {
-                        let field_value = match fields_map.get("black_frame_msec") {
+                        let field_value = match fields_map.get("blackFrameMsec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'black_frame_msec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blackFrameMsec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_loss_image_color: {
-                        let field_value = match fields_map.get("input_loss_image_color") {
+                        let field_value = match fields_map.get("inputLossImageColor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_loss_image_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLossImageColor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_loss_image_slate: {
-                        let field_value = match fields_map.get("input_loss_image_slate") {
+                        let field_value = match fields_map.get("inputLossImageSlate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_loss_image_slate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLossImageSlate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_loss_image_type: {
-                        let field_value = match fields_map.get("input_loss_image_type") {
+                        let field_value = match fields_map.get("inputLossImageType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_loss_image_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLossImageType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repeat_frame_msec: {
-                        let field_value = match fields_map.get("repeat_frame_msec") {
+                        let field_value = match fields_map.get("repeatFrameMsec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repeat_frame_msec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repeatFrameMsec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

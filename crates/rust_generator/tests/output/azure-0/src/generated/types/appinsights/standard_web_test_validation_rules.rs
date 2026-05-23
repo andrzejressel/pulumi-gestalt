@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "expected_status_code",
+                    "expectedStatusCode",
                     &self.r#expected_status_code,
                 ),
                 to_pulumi_object_field(
-                    "ssl_cert_remaining_lifetime",
+                    "sslCertRemainingLifetime",
                     &self.r#ssl_cert_remaining_lifetime,
                 ),
                 to_pulumi_object_field(
-                    "ssl_check_enabled",
+                    "sslCheckEnabled",
                     &self.r#ssl_check_enabled,
                 ),
             ];
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expected_status_code: {
-                        let field_value = match fields_map.get("expected_status_code") {
+                        let field_value = match fields_map.get("expectedStatusCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expected_status_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expectedStatusCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_cert_remaining_lifetime: {
-                        let field_value = match fields_map.get("ssl_cert_remaining_lifetime") {
+                        let field_value = match fields_map.get("sslCertRemainingLifetime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_cert_remaining_lifetime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslCertRemainingLifetime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_check_enabled: {
-                        let field_value = match fields_map.get("ssl_check_enabled") {
+                        let field_value = match fields_map.get("sslCheckEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_check_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslCheckEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

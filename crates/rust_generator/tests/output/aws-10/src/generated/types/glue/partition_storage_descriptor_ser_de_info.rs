@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Par
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "serialization_library",
+                    "serializationLibrary",
                     &self.r#serialization_library,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#serialization_library: {
-                        let field_value = match fields_map.get("serialization_library") {
+                        let field_value = match fields_map.get("serializationLibrary") {
                             Some(value) => value,
-                            None => bail!("Missing field 'serialization_library' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serializationLibrary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

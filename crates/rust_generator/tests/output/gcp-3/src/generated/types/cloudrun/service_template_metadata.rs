@@ -106,11 +106,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#namespace,
                 ),
                 to_pulumi_object_field(
-                    "resource_version",
+                    "resourceVersion",
                     &self.r#resource_version,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
                 to_pulumi_object_field(
@@ -176,16 +176,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_version: {
-                        let field_value = match fields_map.get("resource_version") {
+                        let field_value = match fields_map.get("resourceVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#self_link: {
-                        let field_value = match fields_map.get("self_link") {
+                        let field_value = match fields_map.get("selfLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'self_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selfLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

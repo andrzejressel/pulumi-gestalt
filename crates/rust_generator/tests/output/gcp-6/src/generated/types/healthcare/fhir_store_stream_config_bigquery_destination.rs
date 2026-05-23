@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fhi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dataset_uri",
+                    "datasetUri",
                     &self.r#dataset_uri,
                 ),
                 to_pulumi_object_field(
-                    "schema_config",
+                    "schemaConfig",
                     &self.r#schema_config,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#dataset_uri: {
-                        let field_value = match fields_map.get("dataset_uri") {
+                        let field_value = match fields_map.get("datasetUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dataset_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'datasetUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_config: {
-                        let field_value = match fields_map.get("schema_config") {
+                        let field_value = match fields_map.get("schemaConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "code_configuration",
+                    "codeConfiguration",
                     &self.r#code_configuration,
                 ),
                 to_pulumi_object_field(
-                    "container_configuration",
+                    "containerConfiguration",
                     &self.r#container_configuration,
                 ),
                 to_pulumi_object_field(
-                    "generate_workflow_file",
+                    "generateWorkflowFile",
                     &self.r#generate_workflow_file,
                 ),
                 to_pulumi_object_field(
-                    "linux_action",
+                    "linuxAction",
                     &self.r#linux_action,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#code_configuration: {
-                        let field_value = match fields_map.get("code_configuration") {
+                        let field_value = match fields_map.get("codeConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_configuration: {
-                        let field_value = match fields_map.get("container_configuration") {
+                        let field_value = match fields_map.get("containerConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#generate_workflow_file: {
-                        let field_value = match fields_map.get("generate_workflow_file") {
+                        let field_value = match fields_map.get("generateWorkflowFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'generate_workflow_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'generateWorkflowFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#linux_action: {
-                        let field_value = match fields_map.get("linux_action") {
+                        let field_value = match fields_map.get("linuxAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linux_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linuxAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

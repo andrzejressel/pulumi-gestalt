@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "match_grpc_address",
+                    "matchGrpcAddress",
                     &self.r#match_grpc_address,
                 ),
                 to_pulumi_object_field(
-                    "psc_automated_endpoints",
+                    "pscAutomatedEndpoints",
                     &self.r#psc_automated_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "service_attachment",
+                    "serviceAttachment",
                     &self.r#service_attachment,
                 ),
             ];
@@ -70,23 +70,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#match_grpc_address: {
-                        let field_value = match fields_map.get("match_grpc_address") {
+                        let field_value = match fields_map.get("matchGrpcAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_grpc_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchGrpcAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#psc_automated_endpoints: {
-                        let field_value = match fields_map.get("psc_automated_endpoints") {
+                        let field_value = match fields_map.get("pscAutomatedEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'psc_automated_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pscAutomatedEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_attachment: {
-                        let field_value = match fields_map.get("service_attachment") {
+                        let field_value = match fields_map.get("serviceAttachment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_attachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAttachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

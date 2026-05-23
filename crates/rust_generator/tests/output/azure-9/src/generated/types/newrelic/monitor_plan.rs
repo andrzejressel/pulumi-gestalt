@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "billing_cycle",
+                    "billingCycle",
                     &self.r#billing_cycle,
                 ),
                 to_pulumi_object_field(
-                    "effective_date",
+                    "effectiveDate",
                     &self.r#effective_date,
                 ),
                 to_pulumi_object_field(
-                    "plan_id",
+                    "planId",
                     &self.r#plan_id,
                 ),
                 to_pulumi_object_field(
-                    "usage_type",
+                    "usageType",
                     &self.r#usage_type,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#billing_cycle: {
-                        let field_value = match fields_map.get("billing_cycle") {
+                        let field_value = match fields_map.get("billingCycle") {
                             Some(value) => value,
-                            None => bail!("Missing field 'billing_cycle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'billingCycle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#effective_date: {
-                        let field_value = match fields_map.get("effective_date") {
+                        let field_value = match fields_map.get("effectiveDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#plan_id: {
-                        let field_value = match fields_map.get("plan_id") {
+                        let field_value = match fields_map.get("planId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'plan_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'planId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#usage_type: {
-                        let field_value = match fields_map.get("usage_type") {
+                        let field_value = match fields_map.get("usageType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'usage_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'usageType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

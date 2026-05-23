@@ -47,23 +47,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "array_properties",
+                    "arrayProperties",
                     &self.r#array_properties,
                 ),
                 to_pulumi_object_field(
-                    "container_overrides",
+                    "containerOverrides",
                     &self.r#container_overrides,
                 ),
                 to_pulumi_object_field(
-                    "depends_ons",
+                    "dependsOns",
                     &self.r#depends_ons,
                 ),
                 to_pulumi_object_field(
-                    "job_definition",
+                    "jobDefinition",
                     &self.r#job_definition,
                 ),
                 to_pulumi_object_field(
-                    "job_name",
+                    "jobName",
                     &self.r#job_name,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "retry_strategy",
+                    "retryStrategy",
                     &self.r#retry_strategy,
                 ),
             ];
@@ -98,37 +98,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#array_properties: {
-                        let field_value = match fields_map.get("array_properties") {
+                        let field_value = match fields_map.get("arrayProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'array_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'arrayProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_overrides: {
-                        let field_value = match fields_map.get("container_overrides") {
+                        let field_value = match fields_map.get("containerOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#depends_ons: {
-                        let field_value = match fields_map.get("depends_ons") {
+                        let field_value = match fields_map.get("dependsOns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'depends_ons' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dependsOns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_definition: {
-                        let field_value = match fields_map.get("job_definition") {
+                        let field_value = match fields_map.get("jobDefinition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobDefinition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_name: {
-                        let field_value = match fields_map.get("job_name") {
+                        let field_value = match fields_map.get("jobName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_strategy: {
-                        let field_value = match fields_map.get("retry_strategy") {
+                        let field_value = match fields_map.get("retryStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retry_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retryStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

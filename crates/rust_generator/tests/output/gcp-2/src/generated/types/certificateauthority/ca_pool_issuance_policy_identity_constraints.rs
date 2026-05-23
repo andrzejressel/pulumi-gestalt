@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_subject_alt_names_passthrough",
+                    "allowSubjectAltNamesPassthrough",
                     &self.r#allow_subject_alt_names_passthrough,
                 ),
                 to_pulumi_object_field(
-                    "allow_subject_passthrough",
+                    "allowSubjectPassthrough",
                     &self.r#allow_subject_passthrough,
                 ),
                 to_pulumi_object_field(
-                    "cel_expression",
+                    "celExpression",
                     &self.r#cel_expression,
                 ),
             ];
@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#allow_subject_alt_names_passthrough: {
-                        let field_value = match fields_map.get("allow_subject_alt_names_passthrough") {
+                        let field_value = match fields_map.get("allowSubjectAltNamesPassthrough") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_subject_alt_names_passthrough' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowSubjectAltNamesPassthrough' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_subject_passthrough: {
-                        let field_value = match fields_map.get("allow_subject_passthrough") {
+                        let field_value = match fields_map.get("allowSubjectPassthrough") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_subject_passthrough' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowSubjectPassthrough' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cel_expression: {
-                        let field_value = match fields_map.get("cel_expression") {
+                        let field_value = match fields_map.get("celExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cel_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'celExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

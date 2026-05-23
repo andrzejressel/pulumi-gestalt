@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_specification",
+                    "audioSpecification",
                     &self.r#audio_specification,
                 ),
                 to_pulumi_object_field(
-                    "dtmf_specification",
+                    "dtmfSpecification",
                     &self.r#dtmf_specification,
                 ),
                 to_pulumi_object_field(
-                    "start_timeout_ms",
+                    "startTimeoutMs",
                     &self.r#start_timeout_ms,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#audio_specification: {
-                        let field_value = match fields_map.get("audio_specification") {
+                        let field_value = match fields_map.get("audioSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dtmf_specification: {
-                        let field_value = match fields_map.get("dtmf_specification") {
+                        let field_value = match fields_map.get("dtmfSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dtmf_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dtmfSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_timeout_ms: {
-                        let field_value = match fields_map.get("start_timeout_ms") {
+                        let field_value = match fields_map.get("startTimeoutMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_timeout_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTimeoutMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

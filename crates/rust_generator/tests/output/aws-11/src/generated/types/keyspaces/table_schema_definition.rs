@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "clustering_keys",
+                    "clusteringKeys",
                     &self.r#clustering_keys,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#columns,
                 ),
                 to_pulumi_object_field(
-                    "partition_keys",
+                    "partitionKeys",
                     &self.r#partition_keys,
                 ),
                 to_pulumi_object_field(
-                    "static_columns",
+                    "staticColumns",
                     &self.r#static_columns,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#clustering_keys: {
-                        let field_value = match fields_map.get("clustering_keys") {
+                        let field_value = match fields_map.get("clusteringKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'clustering_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusteringKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#partition_keys: {
-                        let field_value = match fields_map.get("partition_keys") {
+                        let field_value = match fields_map.get("partitionKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partition_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partitionKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_columns: {
-                        let field_value = match fields_map.get("static_columns") {
+                        let field_value = match fields_map.get("staticColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

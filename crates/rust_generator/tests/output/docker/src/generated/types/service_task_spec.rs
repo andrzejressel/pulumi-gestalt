@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_spec",
+                    "containerSpec",
                     &self.r#container_spec,
                 ),
                 to_pulumi_object_field(
-                    "force_update",
+                    "forceUpdate",
                     &self.r#force_update,
                 ),
                 to_pulumi_object_field(
-                    "log_driver",
+                    "logDriver",
                     &self.r#log_driver,
                 ),
                 to_pulumi_object_field(
-                    "networks_advanceds",
+                    "networksAdvanceds",
                     &self.r#networks_advanceds,
                 ),
                 to_pulumi_object_field(
@@ -75,7 +75,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#resources,
                 ),
                 to_pulumi_object_field(
-                    "restart_policy",
+                    "restartPolicy",
                     &self.r#restart_policy,
                 ),
                 to_pulumi_object_field(
@@ -106,30 +106,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#container_spec: {
-                        let field_value = match fields_map.get("container_spec") {
+                        let field_value = match fields_map.get("containerSpec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerSpec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#force_update: {
-                        let field_value = match fields_map.get("force_update") {
+                        let field_value = match fields_map.get("forceUpdate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'force_update' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forceUpdate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_driver: {
-                        let field_value = match fields_map.get("log_driver") {
+                        let field_value = match fields_map.get("logDriver") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_driver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logDriver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#networks_advanceds: {
-                        let field_value = match fields_map.get("networks_advanceds") {
+                        let field_value = match fields_map.get("networksAdvanceds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'networks_advanceds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networksAdvanceds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -148,9 +148,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restart_policy: {
-                        let field_value = match fields_map.get("restart_policy") {
+                        let field_value = match fields_map.get("restartPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restart_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restartPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

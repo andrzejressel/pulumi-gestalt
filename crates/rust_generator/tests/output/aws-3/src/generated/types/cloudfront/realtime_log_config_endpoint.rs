@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kinesis_stream_config",
+                    "kinesisStreamConfig",
                     &self.r#kinesis_stream_config,
                 ),
                 to_pulumi_object_field(
-                    "stream_type",
+                    "streamType",
                     &self.r#stream_type,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#kinesis_stream_config: {
-                        let field_value = match fields_map.get("kinesis_stream_config") {
+                        let field_value = match fields_map.get("kinesisStreamConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_stream_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisStreamConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_type: {
-                        let field_value = match fields_map.get("stream_type") {
+                        let field_value = match fields_map.get("streamType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stream_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'streamType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

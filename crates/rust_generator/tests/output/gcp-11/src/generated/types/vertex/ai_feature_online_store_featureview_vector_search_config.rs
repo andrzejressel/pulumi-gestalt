@@ -50,31 +50,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "brute_force_config",
+                    "bruteForceConfig",
                     &self.r#brute_force_config,
                 ),
                 to_pulumi_object_field(
-                    "crowding_column",
+                    "crowdingColumn",
                     &self.r#crowding_column,
                 ),
                 to_pulumi_object_field(
-                    "distance_measure_type",
+                    "distanceMeasureType",
                     &self.r#distance_measure_type,
                 ),
                 to_pulumi_object_field(
-                    "embedding_column",
+                    "embeddingColumn",
                     &self.r#embedding_column,
                 ),
                 to_pulumi_object_field(
-                    "embedding_dimension",
+                    "embeddingDimension",
                     &self.r#embedding_dimension,
                 ),
                 to_pulumi_object_field(
-                    "filter_columns",
+                    "filterColumns",
                     &self.r#filter_columns,
                 ),
                 to_pulumi_object_field(
-                    "tree_ah_config",
+                    "treeAhConfig",
                     &self.r#tree_ah_config,
                 ),
             ];
@@ -101,51 +101,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#brute_force_config: {
-                        let field_value = match fields_map.get("brute_force_config") {
+                        let field_value = match fields_map.get("bruteForceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'brute_force_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bruteForceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crowding_column: {
-                        let field_value = match fields_map.get("crowding_column") {
+                        let field_value = match fields_map.get("crowdingColumn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crowding_column' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crowdingColumn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#distance_measure_type: {
-                        let field_value = match fields_map.get("distance_measure_type") {
+                        let field_value = match fields_map.get("distanceMeasureType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'distance_measure_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'distanceMeasureType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#embedding_column: {
-                        let field_value = match fields_map.get("embedding_column") {
+                        let field_value = match fields_map.get("embeddingColumn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'embedding_column' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'embeddingColumn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#embedding_dimension: {
-                        let field_value = match fields_map.get("embedding_dimension") {
+                        let field_value = match fields_map.get("embeddingDimension") {
                             Some(value) => value,
-                            None => bail!("Missing field 'embedding_dimension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'embeddingDimension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_columns: {
-                        let field_value = match fields_map.get("filter_columns") {
+                        let field_value = match fields_map.get("filterColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filter_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tree_ah_config: {
-                        let field_value = match fields_map.get("tree_ah_config") {
+                        let field_value = match fields_map.get("treeAhConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tree_ah_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'treeAhConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

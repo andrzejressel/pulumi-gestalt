@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "ray_cluster_logging_config",
+                    "rayClusterLoggingConfig",
                     &self.r#ray_cluster_logging_config,
                 ),
                 to_pulumi_object_field(
-                    "ray_cluster_monitoring_config",
+                    "rayClusterMonitoringConfig",
                     &self.r#ray_cluster_monitoring_config,
                 ),
             ];
@@ -72,16 +72,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ray_cluster_logging_config: {
-                        let field_value = match fields_map.get("ray_cluster_logging_config") {
+                        let field_value = match fields_map.get("rayClusterLoggingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ray_cluster_logging_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rayClusterLoggingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ray_cluster_monitoring_config: {
-                        let field_value = match fields_map.get("ray_cluster_monitoring_config") {
+                        let field_value = match fields_map.get("rayClusterMonitoringConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ray_cluster_monitoring_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rayClusterMonitoringConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

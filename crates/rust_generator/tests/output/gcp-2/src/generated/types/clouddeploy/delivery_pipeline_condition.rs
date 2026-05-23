@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pipeline_ready_conditions",
+                    "pipelineReadyConditions",
                     &self.r#pipeline_ready_conditions,
                 ),
                 to_pulumi_object_field(
-                    "targets_present_conditions",
+                    "targetsPresentConditions",
                     &self.r#targets_present_conditions,
                 ),
                 to_pulumi_object_field(
-                    "targets_type_conditions",
+                    "targetsTypeConditions",
                     &self.r#targets_type_conditions,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#pipeline_ready_conditions: {
-                        let field_value = match fields_map.get("pipeline_ready_conditions") {
+                        let field_value = match fields_map.get("pipelineReadyConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pipeline_ready_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pipelineReadyConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#targets_present_conditions: {
-                        let field_value = match fields_map.get("targets_present_conditions") {
+                        let field_value = match fields_map.get("targetsPresentConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'targets_present_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetsPresentConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#targets_type_conditions: {
-                        let field_value = match fields_map.get("targets_type_conditions") {
+                        let field_value = match fields_map.get("targetsTypeConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'targets_type_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetsTypeConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

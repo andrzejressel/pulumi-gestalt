@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "algorithm_config",
+                    "algorithmConfig",
                     &self.r#algorithm_config,
                 ),
                 to_pulumi_object_field(
-                    "approximate_neighbors_count",
+                    "approximateNeighborsCount",
                     &self.r#approximate_neighbors_count,
                 ),
                 to_pulumi_object_field(
@@ -69,15 +69,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "distance_measure_type",
+                    "distanceMeasureType",
                     &self.r#distance_measure_type,
                 ),
                 to_pulumi_object_field(
-                    "feature_norm_type",
+                    "featureNormType",
                     &self.r#feature_norm_type,
                 ),
                 to_pulumi_object_field(
-                    "shard_size",
+                    "shardSize",
                     &self.r#shard_size,
                 ),
             ];
@@ -104,16 +104,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#algorithm_config: {
-                        let field_value = match fields_map.get("algorithm_config") {
+                        let field_value = match fields_map.get("algorithmConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'algorithm_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'algorithmConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#approximate_neighbors_count: {
-                        let field_value = match fields_map.get("approximate_neighbors_count") {
+                        let field_value = match fields_map.get("approximateNeighborsCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'approximate_neighbors_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'approximateNeighborsCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,23 +125,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#distance_measure_type: {
-                        let field_value = match fields_map.get("distance_measure_type") {
+                        let field_value = match fields_map.get("distanceMeasureType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'distance_measure_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'distanceMeasureType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#feature_norm_type: {
-                        let field_value = match fields_map.get("feature_norm_type") {
+                        let field_value = match fields_map.get("featureNormType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'feature_norm_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'featureNormType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shard_size: {
-                        let field_value = match fields_map.get("shard_size") {
+                        let field_value = match fields_map.get("shardSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shard_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shardSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

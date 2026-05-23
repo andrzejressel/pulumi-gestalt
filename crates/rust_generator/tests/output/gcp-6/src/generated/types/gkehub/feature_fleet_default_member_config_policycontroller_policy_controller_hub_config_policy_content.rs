@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#bundles,
                 ),
                 to_pulumi_object_field(
-                    "template_library",
+                    "templateLibrary",
                     &self.r#template_library,
                 ),
             ];
@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#template_library: {
-                        let field_value = match fields_map.get("template_library") {
+                        let field_value = match fields_map.get("templateLibrary") {
                             Some(value) => value,
-                            None => bail!("Missing field 'template_library' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'templateLibrary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

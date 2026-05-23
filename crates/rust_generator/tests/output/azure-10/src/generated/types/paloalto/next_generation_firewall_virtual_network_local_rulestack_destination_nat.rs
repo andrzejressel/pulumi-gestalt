@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_config",
+                    "backendConfig",
                     &self.r#backend_config,
                 ),
                 to_pulumi_object_field(
-                    "frontend_config",
+                    "frontendConfig",
                     &self.r#frontend_config,
                 ),
                 to_pulumi_object_field(
@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#backend_config: {
-                        let field_value = match fields_map.get("backend_config") {
+                        let field_value = match fields_map.get("backendConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frontend_config: {
-                        let field_value = match fields_map.get("frontend_config") {
+                        let field_value = match fields_map.get("frontendConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frontend_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frontendConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

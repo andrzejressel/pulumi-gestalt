@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "action_parameters",
+                    "actionParameters",
                     &self.r#action_parameters,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "exposed_credential_check",
+                    "exposedCredentialCheck",
                     &self.r#exposed_credential_check,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "last_updated",
+                    "lastUpdated",
                     &self.r#last_updated,
                 ),
                 to_pulumi_object_field(
@@ -107,7 +107,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#ratelimit,
                 ),
                 to_pulumi_object_field(
-                    "ref_",
+                    "ref",
                     &self.r#ref_,
                 ),
                 to_pulumi_object_field(
@@ -145,9 +145,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#action_parameters: {
-                        let field_value = match fields_map.get("action_parameters") {
+                        let field_value = match fields_map.get("actionParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -166,9 +166,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exposed_credential_check: {
-                        let field_value = match fields_map.get("exposed_credential_check") {
+                        let field_value = match fields_map.get("exposedCredentialCheck") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exposed_credential_check' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exposedCredentialCheck' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -187,9 +187,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_updated: {
-                        let field_value = match fields_map.get("last_updated") {
+                        let field_value = match fields_map.get("lastUpdated") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_updated' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastUpdated' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -208,9 +208,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ref_: {
-                        let field_value = match fields_map.get("ref_") {
+                        let field_value = match fields_map.get("ref") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ref_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ref' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

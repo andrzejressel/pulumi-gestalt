@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_port",
+                    "instancePort",
                     &self.r#instance_port,
                 ),
                 to_pulumi_object_field(
-                    "instance_protocol",
+                    "instanceProtocol",
                     &self.r#instance_protocol,
                 ),
                 to_pulumi_object_field(
-                    "lb_port",
+                    "lbPort",
                     &self.r#lb_port,
                 ),
                 to_pulumi_object_field(
-                    "lb_protocol",
+                    "lbProtocol",
                     &self.r#lb_protocol,
                 ),
                 to_pulumi_object_field(
-                    "ssl_certificate_id",
+                    "sslCertificateId",
                     &self.r#ssl_certificate_id,
                 ),
             ];
@@ -77,37 +77,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#instance_port: {
-                        let field_value = match fields_map.get("instance_port") {
+                        let field_value = match fields_map.get("instancePort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instancePort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_protocol: {
-                        let field_value = match fields_map.get("instance_protocol") {
+                        let field_value = match fields_map.get("instanceProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lb_port: {
-                        let field_value = match fields_map.get("lb_port") {
+                        let field_value = match fields_map.get("lbPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lb_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lbPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lb_protocol: {
-                        let field_value = match fields_map.get("lb_protocol") {
+                        let field_value = match fields_map.get("lbProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lb_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lbProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_certificate_id: {
-                        let field_value = match fields_map.get("ssl_certificate_id") {
+                        let field_value = match fields_map.get("sslCertificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslCertificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

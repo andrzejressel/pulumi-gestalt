@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bandwidth_mhz",
+                    "bandwidthMhz",
                     &self.r#bandwidth_mhz,
                 ),
                 to_pulumi_object_field(
-                    "center_frequency_mhz",
+                    "centerFrequencyMhz",
                     &self.r#center_frequency_mhz,
                 ),
                 to_pulumi_object_field(
@@ -84,16 +84,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#bandwidth_mhz: {
-                        let field_value = match fields_map.get("bandwidth_mhz") {
+                        let field_value = match fields_map.get("bandwidthMhz") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bandwidth_mhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bandwidthMhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#center_frequency_mhz: {
-                        let field_value = match fields_map.get("center_frequency_mhz") {
+                        let field_value = match fields_map.get("centerFrequencyMhz") {
                             Some(value) => value,
-                            None => bail!("Missing field 'center_frequency_mhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'centerFrequencyMhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

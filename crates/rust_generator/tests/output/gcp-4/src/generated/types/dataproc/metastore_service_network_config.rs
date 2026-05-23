@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
                     &self.r#consumers,
                 ),
                 to_pulumi_object_field(
-                    "custom_routes_enabled",
+                    "customRoutesEnabled",
                     &self.r#custom_routes_enabled,
                 ),
             ];
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_routes_enabled: {
-                        let field_value = match fields_map.get("custom_routes_enabled") {
+                        let field_value = match fields_map.get("customRoutesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_routes_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customRoutesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

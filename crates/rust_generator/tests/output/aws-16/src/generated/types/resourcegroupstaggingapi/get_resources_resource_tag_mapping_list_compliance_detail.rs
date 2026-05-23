@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compliance_status",
+                    "complianceStatus",
                     &self.r#compliance_status,
                 ),
                 to_pulumi_object_field(
-                    "keys_with_noncompliant_values",
+                    "keysWithNoncompliantValues",
                     &self.r#keys_with_noncompliant_values,
                 ),
                 to_pulumi_object_field(
-                    "non_compliant_keys",
+                    "nonCompliantKeys",
                     &self.r#non_compliant_keys,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#compliance_status: {
-                        let field_value = match fields_map.get("compliance_status") {
+                        let field_value = match fields_map.get("complianceStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compliance_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'complianceStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#keys_with_noncompliant_values: {
-                        let field_value = match fields_map.get("keys_with_noncompliant_values") {
+                        let field_value = match fields_map.get("keysWithNoncompliantValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'keys_with_noncompliant_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keysWithNoncompliantValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#non_compliant_keys: {
-                        let field_value = match fields_map.get("non_compliant_keys") {
+                        let field_value = match fields_map.get("nonCompliantKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'non_compliant_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nonCompliantKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

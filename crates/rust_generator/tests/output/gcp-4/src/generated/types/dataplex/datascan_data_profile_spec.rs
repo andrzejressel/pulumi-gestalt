@@ -46,23 +46,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_fields",
+                    "excludeFields",
                     &self.r#exclude_fields,
                 ),
                 to_pulumi_object_field(
-                    "include_fields",
+                    "includeFields",
                     &self.r#include_fields,
                 ),
                 to_pulumi_object_field(
-                    "post_scan_actions",
+                    "postScanActions",
                     &self.r#post_scan_actions,
                 ),
                 to_pulumi_object_field(
-                    "row_filter",
+                    "rowFilter",
                     &self.r#row_filter,
                 ),
                 to_pulumi_object_field(
-                    "sampling_percent",
+                    "samplingPercent",
                     &self.r#sampling_percent,
                 ),
             ];
@@ -89,37 +89,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#exclude_fields: {
-                        let field_value = match fields_map.get("exclude_fields") {
+                        let field_value = match fields_map.get("excludeFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_fields: {
-                        let field_value = match fields_map.get("include_fields") {
+                        let field_value = match fields_map.get("includeFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_scan_actions: {
-                        let field_value = match fields_map.get("post_scan_actions") {
+                        let field_value = match fields_map.get("postScanActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_scan_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postScanActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#row_filter: {
-                        let field_value = match fields_map.get("row_filter") {
+                        let field_value = match fields_map.get("rowFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'row_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rowFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sampling_percent: {
-                        let field_value = match fields_map.get("sampling_percent") {
+                        let field_value = match fields_map.get("samplingPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sampling_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'samplingPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

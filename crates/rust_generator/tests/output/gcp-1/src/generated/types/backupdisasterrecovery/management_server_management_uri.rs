@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#api,
                 ),
                 to_pulumi_object_field(
-                    "web_ui",
+                    "webUi",
                     &self.r#web_ui,
                 ),
             ];
@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#web_ui: {
-                        let field_value = match fields_map.get("web_ui") {
+                        let field_value = match fields_map.get("webUi") {
                             Some(value) => value,
-                            None => bail!("Missing field 'web_ui' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webUi' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

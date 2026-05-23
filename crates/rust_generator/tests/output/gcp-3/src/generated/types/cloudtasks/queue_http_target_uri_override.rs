@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
                     &self.r#host,
                 ),
                 to_pulumi_object_field(
-                    "path_override",
+                    "pathOverride",
                     &self.r#path_override,
                 ),
                 to_pulumi_object_field(
@@ -72,7 +72,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "query_override",
+                    "queryOverride",
                     &self.r#query_override,
                 ),
                 to_pulumi_object_field(
@@ -80,7 +80,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
                     &self.r#scheme,
                 ),
                 to_pulumi_object_field(
-                    "uri_override_enforce_mode",
+                    "uriOverrideEnforceMode",
                     &self.r#uri_override_enforce_mode,
                 ),
             ];
@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_override: {
-                        let field_value = match fields_map.get("path_override") {
+                        let field_value = match fields_map.get("pathOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -128,9 +128,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_override: {
-                        let field_value = match fields_map.get("query_override") {
+                        let field_value = match fields_map.get("queryOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,9 +142,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#uri_override_enforce_mode: {
-                        let field_value = match fields_map.get("uri_override_enforce_mode") {
+                        let field_value = match fields_map.get("uriOverrideEnforceMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'uri_override_enforce_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'uriOverrideEnforceMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

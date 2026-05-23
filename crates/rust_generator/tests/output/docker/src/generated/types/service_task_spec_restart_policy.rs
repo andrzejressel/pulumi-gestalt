@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#delay,
                 ),
                 to_pulumi_object_field(
-                    "max_attempts",
+                    "maxAttempts",
                     &self.r#max_attempts,
                 ),
                 to_pulumi_object_field(
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_attempts: {
-                        let field_value = match fields_map.get("max_attempts") {
+                        let field_value = match fields_map.get("maxAttempts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_attempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAttempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gke_upgrade_overrides",
+                    "gkeUpgradeOverrides",
                     &self.r#gke_upgrade_overrides,
                 ),
                 to_pulumi_object_field(
-                    "post_conditions",
+                    "postConditions",
                     &self.r#post_conditions,
                 ),
                 to_pulumi_object_field(
-                    "upstream_fleets",
+                    "upstreamFleets",
                     &self.r#upstream_fleets,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#gke_upgrade_overrides: {
-                        let field_value = match fields_map.get("gke_upgrade_overrides") {
+                        let field_value = match fields_map.get("gkeUpgradeOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gke_upgrade_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gkeUpgradeOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_conditions: {
-                        let field_value = match fields_map.get("post_conditions") {
+                        let field_value = match fields_map.get("postConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upstream_fleets: {
-                        let field_value = match fields_map.get("upstream_fleets") {
+                        let field_value = match fields_map.get("upstreamFleets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upstream_fleets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'upstreamFleets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

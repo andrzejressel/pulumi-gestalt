@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ipv_4",
+                    "ipv4",
                     &self.r#ipv_4,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6",
+                    "ipv6",
                     &self.r#ipv_6,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#ipv_4: {
-                        let field_value = match fields_map.get("ipv_4") {
+                        let field_value = match fields_map.get("ipv4") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_6: {
-                        let field_value = match fields_map.get("ipv_6") {
+                        let field_value = match fields_map.get("ipv6") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_6' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv6' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_datapath_observability_configs",
+                    "advancedDatapathObservabilityConfigs",
                     &self.r#advanced_datapath_observability_configs,
                 ),
                 to_pulumi_object_field(
-                    "enable_components",
+                    "enableComponents",
                     &self.r#enable_components,
                 ),
                 to_pulumi_object_field(
-                    "managed_prometheuses",
+                    "managedPrometheuses",
                     &self.r#managed_prometheuses,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#advanced_datapath_observability_configs: {
-                        let field_value = match fields_map.get("advanced_datapath_observability_configs") {
+                        let field_value = match fields_map.get("advancedDatapathObservabilityConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_datapath_observability_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedDatapathObservabilityConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_components: {
-                        let field_value = match fields_map.get("enable_components") {
+                        let field_value = match fields_map.get("enableComponents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_components' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableComponents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_prometheuses: {
-                        let field_value = match fields_map.get("managed_prometheuses") {
+                        let field_value = match fields_map.get("managedPrometheuses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_prometheuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedPrometheuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

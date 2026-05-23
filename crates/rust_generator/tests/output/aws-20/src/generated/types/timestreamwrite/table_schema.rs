@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "composite_partition_key",
+                    "compositePartitionKey",
                     &self.r#composite_partition_key,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#composite_partition_key: {
-                        let field_value = match fields_map.get("composite_partition_key") {
+                        let field_value = match fields_map.get("compositePartitionKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'composite_partition_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compositePartitionKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

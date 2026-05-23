@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
                 to_pulumi_object_field(
-                    "ip_protocol",
+                    "ipProtocol",
                     &self.r#ip_protocol,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_type",
+                    "loadBalancerType",
                     &self.r#load_balancer_type,
                 ),
                 to_pulumi_object_field(
-                    "network_url",
+                    "networkUrl",
                     &self.r#network_url,
                 ),
                 to_pulumi_object_field(
@@ -98,30 +98,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#ip_address: {
-                        let field_value = match fields_map.get("ip_address") {
+                        let field_value = match fields_map.get("ipAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_protocol: {
-                        let field_value = match fields_map.get("ip_protocol") {
+                        let field_value = match fields_map.get("ipProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancer_type: {
-                        let field_value = match fields_map.get("load_balancer_type") {
+                        let field_value = match fields_map.get("loadBalancerType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancer_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancerType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_url: {
-                        let field_value = match fields_map.get("network_url") {
+                        let field_value = match fields_map.get("networkUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

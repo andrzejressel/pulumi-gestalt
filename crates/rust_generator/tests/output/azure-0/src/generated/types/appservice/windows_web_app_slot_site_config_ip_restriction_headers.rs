@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "x_azure_fdids",
+                    "xAzureFdids",
                     &self.r#x_azure_fdids,
                 ),
                 to_pulumi_object_field(
-                    "x_fd_health_probe",
+                    "xFdHealthProbe",
                     &self.r#x_fd_health_probe,
                 ),
                 to_pulumi_object_field(
-                    "x_forwarded_fors",
+                    "xForwardedFors",
                     &self.r#x_forwarded_fors,
                 ),
                 to_pulumi_object_field(
-                    "x_forwarded_hosts",
+                    "xForwardedHosts",
                     &self.r#x_forwarded_hosts,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#x_azure_fdids: {
-                        let field_value = match fields_map.get("x_azure_fdids") {
+                        let field_value = match fields_map.get("xAzureFdids") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_azure_fdids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'xAzureFdids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_fd_health_probe: {
-                        let field_value = match fields_map.get("x_fd_health_probe") {
+                        let field_value = match fields_map.get("xFdHealthProbe") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_fd_health_probe' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'xFdHealthProbe' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_forwarded_fors: {
-                        let field_value = match fields_map.get("x_forwarded_fors") {
+                        let field_value = match fields_map.get("xForwardedFors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_forwarded_fors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'xForwardedFors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_forwarded_hosts: {
-                        let field_value = match fields_map.get("x_forwarded_hosts") {
+                        let field_value = match fields_map.get("xForwardedHosts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_forwarded_hosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'xForwardedHosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

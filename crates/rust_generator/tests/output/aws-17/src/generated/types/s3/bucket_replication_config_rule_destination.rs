@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_control_translation",
+                    "accessControlTranslation",
                     &self.r#access_control_translation,
                 ),
                 to_pulumi_object_field(
@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "encryption_configuration",
+                    "encryptionConfiguration",
                     &self.r#encryption_configuration,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#metrics,
                 ),
                 to_pulumi_object_field(
-                    "replication_time",
+                    "replicationTime",
                     &self.r#replication_time,
                 ),
                 to_pulumi_object_field(
-                    "storage_class",
+                    "storageClass",
                     &self.r#storage_class,
                 ),
             ];
@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#access_control_translation: {
-                        let field_value = match fields_map.get("access_control_translation") {
+                        let field_value = match fields_map.get("accessControlTranslation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_control_translation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessControlTranslation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,9 +119,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_configuration: {
-                        let field_value = match fields_map.get("encryption_configuration") {
+                        let field_value = match fields_map.get("encryptionConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,16 +133,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replication_time: {
-                        let field_value = match fields_map.get("replication_time") {
+                        let field_value = match fields_map.get("replicationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replication_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_class: {
-                        let field_value = match fields_map.get("storage_class") {
+                        let field_value = match fields_map.get("storageClass") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_class' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageClass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

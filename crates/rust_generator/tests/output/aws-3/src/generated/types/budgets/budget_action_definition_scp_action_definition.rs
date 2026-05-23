@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "policy_id",
+                    "policyId",
                     &self.r#policy_id,
                 ),
                 to_pulumi_object_field(
-                    "target_ids",
+                    "targetIds",
                     &self.r#target_ids,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#policy_id: {
-                        let field_value = match fields_map.get("policy_id") {
+                        let field_value = match fields_map.get("policyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_ids: {
-                        let field_value = match fields_map.get("target_ids") {
+                        let field_value = match fields_map.get("targetIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

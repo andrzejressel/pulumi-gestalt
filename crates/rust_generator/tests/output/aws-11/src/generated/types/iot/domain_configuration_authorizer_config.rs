@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_authorizer_override",
+                    "allowAuthorizerOverride",
                     &self.r#allow_authorizer_override,
                 ),
                 to_pulumi_object_field(
-                    "default_authorizer_name",
+                    "defaultAuthorizerName",
                     &self.r#default_authorizer_name,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#allow_authorizer_override: {
-                        let field_value = match fields_map.get("allow_authorizer_override") {
+                        let field_value = match fields_map.get("allowAuthorizerOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_authorizer_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowAuthorizerOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_authorizer_name: {
-                        let field_value = match fields_map.get("default_authorizer_name") {
+                        let field_value = match fields_map.get("defaultAuthorizerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_authorizer_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultAuthorizerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

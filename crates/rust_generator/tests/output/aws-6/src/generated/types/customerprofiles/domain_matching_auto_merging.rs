@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "conflict_resolution",
+                    "conflictResolution",
                     &self.r#conflict_resolution,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "min_allowed_confidence_score_for_merging",
+                    "minAllowedConfidenceScoreForMerging",
                     &self.r#min_allowed_confidence_score_for_merging,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#conflict_resolution: {
-                        let field_value = match fields_map.get("conflict_resolution") {
+                        let field_value = match fields_map.get("conflictResolution") {
                             Some(value) => value,
-                            None => bail!("Missing field 'conflict_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conflictResolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_allowed_confidence_score_for_merging: {
-                        let field_value = match fields_map.get("min_allowed_confidence_score_for_merging") {
+                        let field_value = match fields_map.get("minAllowedConfidenceScoreForMerging") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_allowed_confidence_score_for_merging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minAllowedConfidenceScoreForMerging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

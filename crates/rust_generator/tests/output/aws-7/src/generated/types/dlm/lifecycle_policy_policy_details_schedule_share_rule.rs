@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "target_accounts",
+                    "targetAccounts",
                     &self.r#target_accounts,
                 ),
                 to_pulumi_object_field(
-                    "unshare_interval",
+                    "unshareInterval",
                     &self.r#unshare_interval,
                 ),
                 to_pulumi_object_field(
-                    "unshare_interval_unit",
+                    "unshareIntervalUnit",
                     &self.r#unshare_interval_unit,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#target_accounts: {
-                        let field_value = match fields_map.get("target_accounts") {
+                        let field_value = match fields_map.get("targetAccounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_accounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetAccounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unshare_interval: {
-                        let field_value = match fields_map.get("unshare_interval") {
+                        let field_value = match fields_map.get("unshareInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unshare_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unshareInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unshare_interval_unit: {
-                        let field_value = match fields_map.get("unshare_interval_unit") {
+                        let field_value = match fields_map.get("unshareIntervalUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unshare_interval_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unshareIntervalUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

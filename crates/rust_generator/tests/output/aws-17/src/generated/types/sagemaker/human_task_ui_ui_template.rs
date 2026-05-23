@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hum
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "content_sha_256",
+                    "contentSha256",
                     &self.r#content_sha_256,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_sha_256: {
-                        let field_value = match fields_map.get("content_sha_256") {
+                        let field_value = match fields_map.get("contentSha256") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_sha_256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentSha256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

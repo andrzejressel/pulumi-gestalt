@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "idle_timeout",
+                    "idleTimeout",
                     &self.r#idle_timeout,
                 ),
                 to_pulumi_object_field(
-                    "max_instances",
+                    "maxInstances",
                     &self.r#max_instances,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#idle_timeout: {
-                        let field_value = match fields_map.get("idle_timeout") {
+                        let field_value = match fields_map.get("idleTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_instances: {
-                        let field_value = match fields_map.get("max_instances") {
+                        let field_value = match fields_map.get("maxInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

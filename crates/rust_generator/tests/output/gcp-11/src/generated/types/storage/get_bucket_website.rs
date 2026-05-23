@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "main_page_suffix",
+                    "mainPageSuffix",
                     &self.r#main_page_suffix,
                 ),
                 to_pulumi_object_field(
-                    "not_found_page",
+                    "notFoundPage",
                     &self.r#not_found_page,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#main_page_suffix: {
-                        let field_value = match fields_map.get("main_page_suffix") {
+                        let field_value = match fields_map.get("mainPageSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'main_page_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mainPageSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_found_page: {
-                        let field_value = match fields_map.get("not_found_page") {
+                        let field_value = match fields_map.get("notFoundPage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_found_page' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notFoundPage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

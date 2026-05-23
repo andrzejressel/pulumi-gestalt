@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "chain_name",
+                    "chainName",
                     &self.r#chain_name,
                 ),
                 to_pulumi_object_field(
-                    "guest_flush",
+                    "guestFlush",
                     &self.r#guest_flush,
                 ),
                 to_pulumi_object_field(
@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "storage_locations",
+                    "storageLocations",
                     &self.r#storage_locations,
                 ),
             ];
@@ -77,16 +77,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#chain_name: {
-                        let field_value = match fields_map.get("chain_name") {
+                        let field_value = match fields_map.get("chainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'chain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'chainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guest_flush: {
-                        let field_value = match fields_map.get("guest_flush") {
+                        let field_value = match fields_map.get("guestFlush") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guest_flush' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guestFlush' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_locations: {
-                        let field_value = match fields_map.get("storage_locations") {
+                        let field_value = match fields_map.get("storageLocations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageLocations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

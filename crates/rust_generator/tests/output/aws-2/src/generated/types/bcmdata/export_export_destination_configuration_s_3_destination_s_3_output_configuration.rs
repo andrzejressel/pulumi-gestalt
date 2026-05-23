@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#format,
                 ),
                 to_pulumi_object_field(
-                    "output_type",
+                    "outputType",
                     &self.r#output_type,
                 ),
                 to_pulumi_object_field(
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_type: {
-                        let field_value = match fields_map.get("output_type") {
+                        let field_value = match fields_map.get("outputType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

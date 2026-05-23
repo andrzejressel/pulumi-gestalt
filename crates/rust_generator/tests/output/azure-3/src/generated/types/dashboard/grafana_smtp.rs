@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "from_address",
+                    "fromAddress",
                     &self.r#from_address,
                 ),
                 to_pulumi_object_field(
-                    "from_name",
+                    "fromName",
                     &self.r#from_name,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "start_tls_policy",
+                    "startTlsPolicy",
                     &self.r#start_tls_policy,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
                     &self.r#user,
                 ),
                 to_pulumi_object_field(
-                    "verification_skip_enabled",
+                    "verificationSkipEnabled",
                     &self.r#verification_skip_enabled,
                 ),
             ];
@@ -113,16 +113,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#from_address: {
-                        let field_value = match fields_map.get("from_address") {
+                        let field_value = match fields_map.get("fromAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'from_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fromAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#from_name: {
-                        let field_value = match fields_map.get("from_name") {
+                        let field_value = match fields_map.get("fromName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'from_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fromName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -141,9 +141,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_tls_policy: {
-                        let field_value = match fields_map.get("start_tls_policy") {
+                        let field_value = match fields_map.get("startTlsPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_tls_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTlsPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -155,9 +155,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verification_skip_enabled: {
-                        let field_value = match fields_map.get("verification_skip_enabled") {
+                        let field_value = match fields_map.get("verificationSkipEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verification_skip_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verificationSkipEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

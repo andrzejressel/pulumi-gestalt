@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "directory_listing_optimization",
+                    "directoryListingOptimization",
                     &self.r#directory_listing_optimization,
                 ),
             ];
@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#directory_listing_optimization: {
-                        let field_value = match fields_map.get("directory_listing_optimization") {
+                        let field_value = match fields_map.get("directoryListingOptimization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'directory_listing_optimization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'directoryListingOptimization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

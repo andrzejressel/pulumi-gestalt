@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
                     &self.r#locked,
                 ),
                 to_pulumi_object_field(
-                    "password_expiration_time",
+                    "passwordExpirationTime",
                     &self.r#password_expiration_time,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_expiration_time: {
-                        let field_value = match fields_map.get("password_expiration_time") {
+                        let field_value = match fields_map.get("passwordExpirationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_expiration_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordExpirationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

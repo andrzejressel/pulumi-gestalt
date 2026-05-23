@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gpu_driver_version",
+                    "gpuDriverVersion",
                     &self.r#gpu_driver_version,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#gpu_driver_version: {
-                        let field_value = match fields_map.get("gpu_driver_version") {
+                        let field_value = match fields_map.get("gpuDriverVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gpu_driver_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gpuDriverVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

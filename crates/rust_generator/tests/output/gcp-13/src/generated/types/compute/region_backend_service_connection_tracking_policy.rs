@@ -58,19 +58,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_persistence_on_unhealthy_backends",
+                    "connectionPersistenceOnUnhealthyBackends",
                     &self.r#connection_persistence_on_unhealthy_backends,
                 ),
                 to_pulumi_object_field(
-                    "enable_strong_affinity",
+                    "enableStrongAffinity",
                     &self.r#enable_strong_affinity,
                 ),
                 to_pulumi_object_field(
-                    "idle_timeout_sec",
+                    "idleTimeoutSec",
                     &self.r#idle_timeout_sec,
                 ),
                 to_pulumi_object_field(
-                    "tracking_mode",
+                    "trackingMode",
                     &self.r#tracking_mode,
                 ),
             ];
@@ -97,30 +97,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#connection_persistence_on_unhealthy_backends: {
-                        let field_value = match fields_map.get("connection_persistence_on_unhealthy_backends") {
+                        let field_value = match fields_map.get("connectionPersistenceOnUnhealthyBackends") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_persistence_on_unhealthy_backends' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionPersistenceOnUnhealthyBackends' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_strong_affinity: {
-                        let field_value = match fields_map.get("enable_strong_affinity") {
+                        let field_value = match fields_map.get("enableStrongAffinity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_strong_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableStrongAffinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idle_timeout_sec: {
-                        let field_value = match fields_map.get("idle_timeout_sec") {
+                        let field_value = match fields_map.get("idleTimeoutSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_timeout_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleTimeoutSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tracking_mode: {
-                        let field_value = match fields_map.get("tracking_mode") {
+                        let field_value = match fields_map.get("trackingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tracking_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trackingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_filters",
+                    "allowFilters",
                     &self.r#allow_filters,
                 ),
                 to_pulumi_object_field(
-                    "deny_filters",
+                    "denyFilters",
                     &self.r#deny_filters,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "edge_locations",
+                    "edgeLocations",
                     &self.r#edge_locations,
                 ),
                 to_pulumi_object_field(
-                    "isolate_attachments",
+                    "isolateAttachments",
                     &self.r#isolate_attachments,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "require_attachment_acceptance",
+                    "requireAttachmentAcceptance",
                     &self.r#require_attachment_acceptance,
                 ),
             ];
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#allow_filters: {
-                        let field_value = match fields_map.get("allow_filters") {
+                        let field_value = match fields_map.get("allowFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deny_filters: {
-                        let field_value = match fields_map.get("deny_filters") {
+                        let field_value = match fields_map.get("denyFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deny_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'denyFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,16 +119,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#edge_locations: {
-                        let field_value = match fields_map.get("edge_locations") {
+                        let field_value = match fields_map.get("edgeLocations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'edge_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'edgeLocations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#isolate_attachments: {
-                        let field_value = match fields_map.get("isolate_attachments") {
+                        let field_value = match fields_map.get("isolateAttachments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'isolate_attachments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isolateAttachments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_attachment_acceptance: {
-                        let field_value = match fields_map.get("require_attachment_acceptance") {
+                        let field_value = match fields_map.get("requireAttachmentAcceptance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_attachment_acceptance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireAttachmentAcceptance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

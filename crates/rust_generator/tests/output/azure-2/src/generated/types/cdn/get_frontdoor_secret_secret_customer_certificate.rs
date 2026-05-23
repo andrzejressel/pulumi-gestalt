@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "expiration_date",
+                    "expirationDate",
                     &self.r#expiration_date,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_certificate_id",
+                    "keyVaultCertificateId",
                     &self.r#key_vault_certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "subject_alternative_names",
+                    "subjectAlternativeNames",
                     &self.r#subject_alternative_names,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#expiration_date: {
-                        let field_value = match fields_map.get("expiration_date") {
+                        let field_value = match fields_map.get("expirationDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiration_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expirationDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_vault_certificate_id: {
-                        let field_value = match fields_map.get("key_vault_certificate_id") {
+                        let field_value = match fields_map.get("keyVaultCertificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_vault_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyVaultCertificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject_alternative_names: {
-                        let field_value = match fields_map.get("subject_alternative_names") {
+                        let field_value = match fields_map.get("subjectAlternativeNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subject_alternative_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subjectAlternativeNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

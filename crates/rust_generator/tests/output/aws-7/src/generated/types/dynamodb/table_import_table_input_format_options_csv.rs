@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#delimiter,
                 ),
                 to_pulumi_object_field(
-                    "header_lists",
+                    "headerLists",
                     &self.r#header_lists,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#header_lists: {
-                        let field_value = match fields_map.get("header_lists") {
+                        let field_value = match fields_map.get("headerLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

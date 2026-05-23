@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_geo_fencing",
+                    "enableGeoFencing",
                     &self.r#enable_geo_fencing,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#geos,
                 ),
                 to_pulumi_object_field(
-                    "primary_backup",
+                    "primaryBackup",
                     &self.r#primary_backup,
                 ),
                 to_pulumi_object_field(
@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#enable_geo_fencing: {
-                        let field_value = match fields_map.get("enable_geo_fencing") {
+                        let field_value = match fields_map.get("enableGeoFencing") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_geo_fencing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableGeoFencing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -91,9 +91,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_backup: {
-                        let field_value = match fields_map.get("primary_backup") {
+                        let field_value = match fields_map.get("primaryBackup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_backup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryBackup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

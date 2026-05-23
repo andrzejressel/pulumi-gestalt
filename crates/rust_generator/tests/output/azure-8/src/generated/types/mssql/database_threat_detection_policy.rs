@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disabled_alerts",
+                    "disabledAlerts",
                     &self.r#disabled_alerts,
                 ),
                 to_pulumi_object_field(
-                    "email_account_admins",
+                    "emailAccountAdmins",
                     &self.r#email_account_admins,
                 ),
                 to_pulumi_object_field(
-                    "email_addresses",
+                    "emailAddresses",
                     &self.r#email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "retention_days",
+                    "retentionDays",
                     &self.r#retention_days,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_access_key",
+                    "storageAccountAccessKey",
                     &self.r#storage_account_access_key,
                 ),
                 to_pulumi_object_field(
-                    "storage_endpoint",
+                    "storageEndpoint",
                     &self.r#storage_endpoint,
                 ),
             ];
@@ -98,30 +98,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#disabled_alerts: {
-                        let field_value = match fields_map.get("disabled_alerts") {
+                        let field_value = match fields_map.get("disabledAlerts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disabled_alerts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disabledAlerts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_account_admins: {
-                        let field_value = match fields_map.get("email_account_admins") {
+                        let field_value = match fields_map.get("emailAccountAdmins") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_account_admins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailAccountAdmins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_addresses: {
-                        let field_value = match fields_map.get("email_addresses") {
+                        let field_value = match fields_map.get("emailAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_days: {
-                        let field_value = match fields_map.get("retention_days") {
+                        let field_value = match fields_map.get("retentionDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,16 +133,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_access_key: {
-                        let field_value = match fields_map.get("storage_account_access_key") {
+                        let field_value = match fields_map.get("storageAccountAccessKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_access_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountAccessKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_endpoint: {
-                        let field_value = match fields_map.get("storage_endpoint") {
+                        let field_value = match fields_map.get("storageEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

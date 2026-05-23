@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "environment_folder_name",
+                    "environmentFolderName",
                     &self.r#environment_folder_name,
                 ),
                 to_pulumi_object_field(
-                    "environment_name",
+                    "environmentName",
                     &self.r#environment_name,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "reference_type",
+                    "referenceType",
                     &self.r#reference_type,
                 ),
             ];
@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#environment_folder_name: {
-                        let field_value = match fields_map.get("environment_folder_name") {
+                        let field_value = match fields_map.get("environmentFolderName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'environment_folder_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'environmentFolderName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_name: {
-                        let field_value = match fields_map.get("environment_name") {
+                        let field_value = match fields_map.get("environmentName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'environment_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'environmentName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reference_type: {
-                        let field_value = match fields_map.get("reference_type") {
+                        let field_value = match fields_map.get("referenceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reference_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'referenceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

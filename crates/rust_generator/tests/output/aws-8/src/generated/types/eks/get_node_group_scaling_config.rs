@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "desired_size",
+                    "desiredSize",
                     &self.r#desired_size,
                 ),
                 to_pulumi_object_field(
-                    "max_size",
+                    "maxSize",
                     &self.r#max_size,
                 ),
                 to_pulumi_object_field(
-                    "min_size",
+                    "minSize",
                     &self.r#min_size,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#desired_size: {
-                        let field_value = match fields_map.get("desired_size") {
+                        let field_value = match fields_map.get("desiredSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_size: {
-                        let field_value = match fields_map.get("max_size") {
+                        let field_value = match fields_map.get("maxSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_size: {
-                        let field_value = match fields_map.get("min_size") {
+                        let field_value = match fields_map.get("minSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

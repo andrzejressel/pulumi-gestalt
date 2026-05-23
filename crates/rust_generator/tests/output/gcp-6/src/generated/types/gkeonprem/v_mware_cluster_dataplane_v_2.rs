@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_networking",
+                    "advancedNetworking",
                     &self.r#advanced_networking,
                 ),
                 to_pulumi_object_field(
-                    "dataplane_v_2_enabled",
+                    "dataplaneV2Enabled",
                     &self.r#dataplane_v_2_enabled,
                 ),
                 to_pulumi_object_field(
-                    "windows_dataplane_v_2_enabled",
+                    "windowsDataplaneV2Enabled",
                     &self.r#windows_dataplane_v_2_enabled,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#advanced_networking: {
-                        let field_value = match fields_map.get("advanced_networking") {
+                        let field_value = match fields_map.get("advancedNetworking") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_networking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedNetworking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dataplane_v_2_enabled: {
-                        let field_value = match fields_map.get("dataplane_v_2_enabled") {
+                        let field_value = match fields_map.get("dataplaneV2Enabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dataplane_v_2_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataplaneV2Enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#windows_dataplane_v_2_enabled: {
-                        let field_value = match fields_map.get("windows_dataplane_v_2_enabled") {
+                        let field_value = match fields_map.get("windowsDataplaneV2Enabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'windows_dataplane_v_2_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowsDataplaneV2Enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

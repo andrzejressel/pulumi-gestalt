@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#amplitude,
                 ),
                 to_pulumi_object_field(
-                    "custom_connector",
+                    "customConnector",
                     &self.r#custom_connector,
                 ),
                 to_pulumi_object_field(
@@ -107,7 +107,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#dynatrace,
                 ),
                 to_pulumi_object_field(
-                    "google_analytics",
+                    "googleAnalytics",
                     &self.r#google_analytics,
                 ),
                 to_pulumi_object_field(
@@ -115,7 +115,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#honeycode,
                 ),
                 to_pulumi_object_field(
-                    "infor_nexus",
+                    "inforNexus",
                     &self.r#infor_nexus,
                 ),
                 to_pulumi_object_field(
@@ -131,11 +131,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#salesforce,
                 ),
                 to_pulumi_object_field(
-                    "sapo_data",
+                    "sapoData",
                     &self.r#sapo_data,
                 ),
                 to_pulumi_object_field(
-                    "service_now",
+                    "serviceNow",
                     &self.r#service_now,
                 ),
                 to_pulumi_object_field(
@@ -193,9 +193,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_connector: {
-                        let field_value = match fields_map.get("custom_connector") {
+                        let field_value = match fields_map.get("customConnector") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_connector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customConnector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -214,9 +214,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#google_analytics: {
-                        let field_value = match fields_map.get("google_analytics") {
+                        let field_value = match fields_map.get("googleAnalytics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'google_analytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'googleAnalytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -228,9 +228,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#infor_nexus: {
-                        let field_value = match fields_map.get("infor_nexus") {
+                        let field_value = match fields_map.get("inforNexus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'infor_nexus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inforNexus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -256,16 +256,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sapo_data: {
-                        let field_value = match fields_map.get("sapo_data") {
+                        let field_value = match fields_map.get("sapoData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sapo_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sapoData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_now: {
-                        let field_value = match fields_map.get("service_now") {
+                        let field_value = match fields_map.get("serviceNow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_now' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceNow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

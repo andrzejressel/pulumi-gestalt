@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#jwt,
                 ),
                 to_pulumi_object_field(
-                    "jwt_header",
+                    "jwtHeader",
                     &self.r#jwt_header,
                 ),
                 to_pulumi_object_field(
-                    "jwt_payload",
+                    "jwtPayload",
                     &self.r#jwt_payload,
                 ),
                 to_pulumi_object_field(
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jwt_header: {
-                        let field_value = match fields_map.get("jwt_header") {
+                        let field_value = match fields_map.get("jwtHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jwt_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jwtHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jwt_payload: {
-                        let field_value = match fields_map.get("jwt_payload") {
+                        let field_value = match fields_map.get("jwtPayload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jwt_payload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jwtPayload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

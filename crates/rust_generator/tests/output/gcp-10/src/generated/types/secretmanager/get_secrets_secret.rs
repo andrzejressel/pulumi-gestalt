@@ -91,19 +91,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#annotations,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
-                    "effective_annotations",
+                    "effectiveAnnotations",
                     &self.r#effective_annotations,
                 ),
                 to_pulumi_object_field(
-                    "effective_labels",
+                    "effectiveLabels",
                     &self.r#effective_labels,
                 ),
                 to_pulumi_object_field(
-                    "expire_time",
+                    "expireTime",
                     &self.r#expire_time,
                 ),
                 to_pulumi_object_field(
@@ -119,7 +119,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#project,
                 ),
                 to_pulumi_object_field(
-                    "pulumi_labels",
+                    "pulumiLabels",
                     &self.r#pulumi_labels,
                 ),
                 to_pulumi_object_field(
@@ -131,7 +131,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#rotations,
                 ),
                 to_pulumi_object_field(
-                    "secret_id",
+                    "secretId",
                     &self.r#secret_id,
                 ),
                 to_pulumi_object_field(
@@ -143,11 +143,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#ttl,
                 ),
                 to_pulumi_object_field(
-                    "version_aliases",
+                    "versionAliases",
                     &self.r#version_aliases,
                 ),
                 to_pulumi_object_field(
-                    "version_destroy_ttl",
+                    "versionDestroyTtl",
                     &self.r#version_destroy_ttl,
                 ),
             ];
@@ -181,30 +181,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_time: {
-                        let field_value = match fields_map.get("create_time") {
+                        let field_value = match fields_map.get("createTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#effective_annotations: {
-                        let field_value = match fields_map.get("effective_annotations") {
+                        let field_value = match fields_map.get("effectiveAnnotations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_annotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveAnnotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#effective_labels: {
-                        let field_value = match fields_map.get("effective_labels") {
+                        let field_value = match fields_map.get("effectiveLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expire_time: {
-                        let field_value = match fields_map.get("expire_time") {
+                        let field_value = match fields_map.get("expireTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expire_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expireTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -230,9 +230,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pulumi_labels: {
-                        let field_value = match fields_map.get("pulumi_labels") {
+                        let field_value = match fields_map.get("pulumiLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pulumi_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pulumiLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -251,9 +251,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_id: {
-                        let field_value = match fields_map.get("secret_id") {
+                        let field_value = match fields_map.get("secretId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -272,16 +272,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_aliases: {
-                        let field_value = match fields_map.get("version_aliases") {
+                        let field_value = match fields_map.get("versionAliases") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_aliases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionAliases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_destroy_ttl: {
-                        let field_value = match fields_map.get("version_destroy_ttl") {
+                        let field_value = match fields_map.get("versionDestroyTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_destroy_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionDestroyTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

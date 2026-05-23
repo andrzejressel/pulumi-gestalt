@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_id",
+                    "accountId",
                     &self.r#account_id,
                 ),
                 to_pulumi_object_field(
@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "launch_template",
+                    "launchTemplate",
                     &self.r#launch_template,
                 ),
                 to_pulumi_object_field(
-                    "max_parallel_launches",
+                    "maxParallelLaunches",
                     &self.r#max_parallel_launches,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_configuration",
+                    "snapshotConfiguration",
                     &self.r#snapshot_configuration,
                 ),
             ];
@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#account_id: {
-                        let field_value = match fields_map.get("account_id") {
+                        let field_value = match fields_map.get("accountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_template: {
-                        let field_value = match fields_map.get("launch_template") {
+                        let field_value = match fields_map.get("launchTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_parallel_launches: {
-                        let field_value = match fields_map.get("max_parallel_launches") {
+                        let field_value = match fields_map.get("maxParallelLaunches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_parallel_launches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxParallelLaunches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_configuration: {
-                        let field_value = match fields_map.get("snapshot_configuration") {
+                        let field_value = match fields_map.get("snapshotConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

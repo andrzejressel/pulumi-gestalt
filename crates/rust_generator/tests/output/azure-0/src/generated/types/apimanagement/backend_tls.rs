@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "validate_certificate_chain",
+                    "validateCertificateChain",
                     &self.r#validate_certificate_chain,
                 ),
                 to_pulumi_object_field(
-                    "validate_certificate_name",
+                    "validateCertificateName",
                     &self.r#validate_certificate_name,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#validate_certificate_chain: {
-                        let field_value = match fields_map.get("validate_certificate_chain") {
+                        let field_value = match fields_map.get("validateCertificateChain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'validate_certificate_chain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validateCertificateChain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#validate_certificate_name: {
-                        let field_value = match fields_map.get("validate_certificate_name") {
+                        let field_value = match fields_map.get("validateCertificateName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'validate_certificate_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validateCertificateName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

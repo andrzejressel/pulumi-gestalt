@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cry
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cavium_certs",
+                    "caviumCerts",
                     &self.r#cavium_certs,
                 ),
                 to_pulumi_object_field(
-                    "google_card_certs",
+                    "googleCardCerts",
                     &self.r#google_card_certs,
                 ),
                 to_pulumi_object_field(
-                    "google_partition_certs",
+                    "googlePartitionCerts",
                     &self.r#google_partition_certs,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cavium_certs: {
-                        let field_value = match fields_map.get("cavium_certs") {
+                        let field_value = match fields_map.get("caviumCerts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cavium_certs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caviumCerts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#google_card_certs: {
-                        let field_value = match fields_map.get("google_card_certs") {
+                        let field_value = match fields_map.get("googleCardCerts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'google_card_certs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'googleCardCerts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#google_partition_certs: {
-                        let field_value = match fields_map.get("google_partition_certs") {
+                        let field_value = match fields_map.get("googlePartitionCerts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'google_partition_certs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'googlePartitionCerts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

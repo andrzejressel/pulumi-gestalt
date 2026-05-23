@@ -55,27 +55,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ca_certificate",
+                    "caCertificate",
                     &self.r#ca_certificate,
                 ),
                 to_pulumi_object_field(
-                    "ca_certificate_set",
+                    "caCertificateSet",
                     &self.r#ca_certificate_set,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate",
+                    "clientCertificate",
                     &self.r#client_certificate,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_set",
+                    "clientCertificateSet",
                     &self.r#client_certificate_set,
                 ),
                 to_pulumi_object_field(
-                    "client_key",
+                    "clientKey",
                     &self.r#client_key,
                 ),
                 to_pulumi_object_field(
-                    "client_key_set",
+                    "clientKeySet",
                     &self.r#client_key_set,
                 ),
             ];
@@ -102,44 +102,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#ca_certificate: {
-                        let field_value = match fields_map.get("ca_certificate") {
+                        let field_value = match fields_map.get("caCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ca_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ca_certificate_set: {
-                        let field_value = match fields_map.get("ca_certificate_set") {
+                        let field_value = match fields_map.get("caCertificateSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ca_certificate_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caCertificateSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_certificate: {
-                        let field_value = match fields_map.get("client_certificate") {
+                        let field_value = match fields_map.get("clientCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_certificate_set: {
-                        let field_value = match fields_map.get("client_certificate_set") {
+                        let field_value = match fields_map.get("clientCertificateSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_certificate_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientCertificateSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_key: {
-                        let field_value = match fields_map.get("client_key") {
+                        let field_value = match fields_map.get("clientKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_key_set: {
-                        let field_value = match fields_map.get("client_key_set") {
+                        let field_value = match fields_map.get("clientKeySet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_key_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientKeySet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "branch_pattern",
+                    "branchPattern",
                     &self.r#branch_pattern,
                 ),
                 to_pulumi_object_field(
@@ -62,9 +62,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#branch_pattern: {
-                        let field_value = match fields_map.get("branch_pattern") {
+                        let field_value = match fields_map.get("branchPattern") {
                             Some(value) => value,
-                            None => bail!("Missing field 'branch_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'branchPattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

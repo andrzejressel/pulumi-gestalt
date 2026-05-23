@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hub
                     &self.r#auth,
                 ),
                 to_pulumi_object_field(
-                    "system_events",
+                    "systemEvents",
                     &self.r#system_events,
                 ),
                 to_pulumi_object_field(
-                    "url_template",
+                    "urlTemplate",
                     &self.r#url_template,
                 ),
                 to_pulumi_object_field(
-                    "user_event_pattern",
+                    "userEventPattern",
                     &self.r#user_event_pattern,
                 ),
             ];
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#system_events: {
-                        let field_value = match fields_map.get("system_events") {
+                        let field_value = match fields_map.get("systemEvents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'system_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'systemEvents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_template: {
-                        let field_value = match fields_map.get("url_template") {
+                        let field_value = match fields_map.get("urlTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_event_pattern: {
-                        let field_value = match fields_map.get("user_event_pattern") {
+                        let field_value = match fields_map.get("userEventPattern") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_event_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userEventPattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

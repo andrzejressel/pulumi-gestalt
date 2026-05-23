@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Obj
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "function_arn",
+                    "functionArn",
                     &self.r#function_arn,
                 ),
                 to_pulumi_object_field(
-                    "function_payload",
+                    "functionPayload",
                     &self.r#function_payload,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#function_arn: {
-                        let field_value = match fields_map.get("function_arn") {
+                        let field_value = match fields_map.get("functionArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'function_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'functionArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#function_payload: {
-                        let field_value = match fields_map.get("function_payload") {
+                        let field_value = match fields_map.get("functionPayload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'function_payload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'functionPayload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

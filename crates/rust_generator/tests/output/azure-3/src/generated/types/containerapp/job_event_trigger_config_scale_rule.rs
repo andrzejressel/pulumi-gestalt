@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#authentications,
                 ),
                 to_pulumi_object_field(
-                    "custom_rule_type",
+                    "customRuleType",
                     &self.r#custom_rule_type,
                 ),
                 to_pulumi_object_field(
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_rule_type: {
-                        let field_value = match fields_map.get("custom_rule_type") {
+                        let field_value = match fields_map.get("customRuleType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_rule_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customRuleType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

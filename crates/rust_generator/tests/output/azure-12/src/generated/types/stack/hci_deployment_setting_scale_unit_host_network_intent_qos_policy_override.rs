@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bandwidth_percentage_smb",
+                    "bandwidthPercentageSmb",
                     &self.r#bandwidth_percentage_smb,
                 ),
                 to_pulumi_object_field(
-                    "priority_value_8021_action_cluster",
+                    "priorityValue8021ActionCluster",
                     &self.r#priority_value_8021_action_cluster,
                 ),
                 to_pulumi_object_field(
-                    "priority_value_8021_action_smb",
+                    "priorityValue8021ActionSmb",
                     &self.r#priority_value_8021_action_smb,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#bandwidth_percentage_smb: {
-                        let field_value = match fields_map.get("bandwidth_percentage_smb") {
+                        let field_value = match fields_map.get("bandwidthPercentageSmb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bandwidth_percentage_smb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bandwidthPercentageSmb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#priority_value_8021_action_cluster: {
-                        let field_value = match fields_map.get("priority_value_8021_action_cluster") {
+                        let field_value = match fields_map.get("priorityValue8021ActionCluster") {
                             Some(value) => value,
-                            None => bail!("Missing field 'priority_value_8021_action_cluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'priorityValue8021ActionCluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#priority_value_8021_action_smb: {
-                        let field_value = match fields_map.get("priority_value_8021_action_smb") {
+                        let field_value = match fields_map.get("priorityValue8021ActionSmb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'priority_value_8021_action_smb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'priorityValue8021ActionSmb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

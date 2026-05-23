@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "classification_tags",
+                    "classificationTags",
                     &self.r#classification_tags,
                 ),
                 to_pulumi_object_field(
@@ -75,7 +75,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#predicates,
                 ),
                 to_pulumi_object_field(
-                    "sso_validation_enabled",
+                    "ssoValidationEnabled",
                     &self.r#sso_validation_enabled,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#title,
                 ),
                 to_pulumi_object_field(
-                    "token_relay",
+                    "tokenRelay",
                     &self.r#token_relay,
                 ),
                 to_pulumi_object_field(
@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#classification_tags: {
-                        let field_value = match fields_map.get("classification_tags") {
+                        let field_value = match fields_map.get("classificationTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'classification_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'classificationTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -149,9 +149,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sso_validation_enabled: {
-                        let field_value = match fields_map.get("sso_validation_enabled") {
+                        let field_value = match fields_map.get("ssoValidationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sso_validation_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ssoValidationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -163,9 +163,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_relay: {
-                        let field_value = match fields_map.get("token_relay") {
+                        let field_value = match fields_map.get("tokenRelay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_relay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenRelay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

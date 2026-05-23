@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "destination_cidr_blocks",
+                    "destinationCidrBlocks",
                     &self.r#destination_cidr_blocks,
                 ),
                 to_pulumi_object_field(
@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#segment,
                 ),
                 to_pulumi_object_field(
-                    "share_with_excepts",
+                    "shareWithExcepts",
                     &self.r#share_with_excepts,
                 ),
                 to_pulumi_object_field(
-                    "share_withs",
+                    "shareWiths",
                     &self.r#share_withs,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#via,
                 ),
                 to_pulumi_object_field(
-                    "when_sent_to",
+                    "whenSentTo",
                     &self.r#when_sent_to,
                 ),
             ];
@@ -136,9 +136,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_cidr_blocks: {
-                        let field_value = match fields_map.get("destination_cidr_blocks") {
+                        let field_value = match fields_map.get("destinationCidrBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_cidr_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationCidrBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -164,16 +164,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_with_excepts: {
-                        let field_value = match fields_map.get("share_with_excepts") {
+                        let field_value = match fields_map.get("shareWithExcepts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'share_with_excepts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shareWithExcepts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_withs: {
-                        let field_value = match fields_map.get("share_withs") {
+                        let field_value = match fields_map.get("shareWiths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'share_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shareWiths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -185,9 +185,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#when_sent_to: {
-                        let field_value = match fields_map.get("when_sent_to") {
+                        let field_value = match fields_map.get("whenSentTo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'when_sent_to' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'whenSentTo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

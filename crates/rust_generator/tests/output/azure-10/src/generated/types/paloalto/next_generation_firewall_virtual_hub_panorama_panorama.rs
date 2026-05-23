@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "device_group_name",
+                    "deviceGroupName",
                     &self.r#device_group_name,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
@@ -52,19 +52,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "panorama_server_1",
+                    "panoramaServer1",
                     &self.r#panorama_server_1,
                 ),
                 to_pulumi_object_field(
-                    "panorama_server_2",
+                    "panoramaServer2",
                     &self.r#panorama_server_2,
                 ),
                 to_pulumi_object_field(
-                    "template_name",
+                    "templateName",
                     &self.r#template_name,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine_ssh_key",
+                    "virtualMachineSshKey",
                     &self.r#virtual_machine_ssh_key,
                 ),
             ];
@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#device_group_name: {
-                        let field_value = match fields_map.get("device_group_name") {
+                        let field_value = match fields_map.get("deviceGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_name: {
-                        let field_value = match fields_map.get("host_name") {
+                        let field_value = match fields_map.get("hostName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,30 +112,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#panorama_server_1: {
-                        let field_value = match fields_map.get("panorama_server_1") {
+                        let field_value = match fields_map.get("panoramaServer1") {
                             Some(value) => value,
-                            None => bail!("Missing field 'panorama_server_1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'panoramaServer1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#panorama_server_2: {
-                        let field_value = match fields_map.get("panorama_server_2") {
+                        let field_value = match fields_map.get("panoramaServer2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'panorama_server_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'panoramaServer2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#template_name: {
-                        let field_value = match fields_map.get("template_name") {
+                        let field_value = match fields_map.get("templateName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'template_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'templateName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_machine_ssh_key: {
-                        let field_value = match fields_map.get("virtual_machine_ssh_key") {
+                        let field_value = match fields_map.get("virtualMachineSshKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_machine_ssh_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualMachineSshKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

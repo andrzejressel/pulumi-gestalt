@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "share_name",
+                    "shareName",
                     &self.r#share_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_pool",
+                    "storagePool",
                     &self.r#storage_pool,
                 ),
                 to_pulumi_object_field(
-                    "volume_id",
+                    "volumeId",
                     &self.r#volume_id,
                 ),
             ];
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_name: {
-                        let field_value = match fields_map.get("share_name") {
+                        let field_value = match fields_map.get("shareName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'share_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shareName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_pool: {
-                        let field_value = match fields_map.get("storage_pool") {
+                        let field_value = match fields_map.get("storagePool") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storagePool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_id: {
-                        let field_value = match fields_map.get("volume_id") {
+                        let field_value = match fields_map.get("volumeId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "file_upload_enforcement",
+                    "fileUploadEnforcement",
                     &self.r#file_upload_enforcement,
                 ),
                 to_pulumi_object_field(
-                    "file_upload_limit_in_mb",
+                    "fileUploadLimitInMb",
                     &self.r#file_upload_limit_in_mb,
                 ),
                 to_pulumi_object_field(
-                    "js_challenge_cookie_expiration_in_minutes",
+                    "jsChallengeCookieExpirationInMinutes",
                     &self.r#js_challenge_cookie_expiration_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "log_scrubbing",
+                    "logScrubbing",
                     &self.r#log_scrubbing,
                 ),
                 to_pulumi_object_field(
-                    "max_request_body_size_in_kb",
+                    "maxRequestBodySizeInKb",
                     &self.r#max_request_body_size_in_kb,
                 ),
                 to_pulumi_object_field(
@@ -87,15 +87,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "request_body_check",
+                    "requestBodyCheck",
                     &self.r#request_body_check,
                 ),
                 to_pulumi_object_field(
-                    "request_body_enforcement",
+                    "requestBodyEnforcement",
                     &self.r#request_body_enforcement,
                 ),
                 to_pulumi_object_field(
-                    "request_body_inspect_limit_in_kb",
+                    "requestBodyInspectLimitInKb",
                     &self.r#request_body_inspect_limit_in_kb,
                 ),
             ];
@@ -129,37 +129,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_upload_enforcement: {
-                        let field_value = match fields_map.get("file_upload_enforcement") {
+                        let field_value = match fields_map.get("fileUploadEnforcement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_upload_enforcement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileUploadEnforcement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_upload_limit_in_mb: {
-                        let field_value = match fields_map.get("file_upload_limit_in_mb") {
+                        let field_value = match fields_map.get("fileUploadLimitInMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_upload_limit_in_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileUploadLimitInMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#js_challenge_cookie_expiration_in_minutes: {
-                        let field_value = match fields_map.get("js_challenge_cookie_expiration_in_minutes") {
+                        let field_value = match fields_map.get("jsChallengeCookieExpirationInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'js_challenge_cookie_expiration_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsChallengeCookieExpirationInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_scrubbing: {
-                        let field_value = match fields_map.get("log_scrubbing") {
+                        let field_value = match fields_map.get("logScrubbing") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_scrubbing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logScrubbing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_request_body_size_in_kb: {
-                        let field_value = match fields_map.get("max_request_body_size_in_kb") {
+                        let field_value = match fields_map.get("maxRequestBodySizeInKb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_request_body_size_in_kb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRequestBodySizeInKb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -171,23 +171,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_body_check: {
-                        let field_value = match fields_map.get("request_body_check") {
+                        let field_value = match fields_map.get("requestBodyCheck") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_body_check' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestBodyCheck' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_body_enforcement: {
-                        let field_value = match fields_map.get("request_body_enforcement") {
+                        let field_value = match fields_map.get("requestBodyEnforcement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_body_enforcement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestBodyEnforcement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_body_inspect_limit_in_kb: {
-                        let field_value = match fields_map.get("request_body_inspect_limit_in_kb") {
+                        let field_value = match fields_map.get("requestBodyInspectLimitInKb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_body_inspect_limit_in_kb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestBodyInspectLimitInKb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

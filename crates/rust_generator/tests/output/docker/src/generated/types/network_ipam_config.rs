@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aux_address",
+                    "auxAddress",
                     &self.r#aux_address,
                 ),
                 to_pulumi_object_field(
@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#gateway,
                 ),
                 to_pulumi_object_field(
-                    "ip_range",
+                    "ipRange",
                     &self.r#ip_range,
                 ),
                 to_pulumi_object_field(
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#aux_address: {
-                        let field_value = match fields_map.get("aux_address") {
+                        let field_value = match fields_map.get("auxAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aux_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'auxAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_range: {
-                        let field_value = match fields_map.get("ip_range") {
+                        let field_value = match fields_map.get("ipRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

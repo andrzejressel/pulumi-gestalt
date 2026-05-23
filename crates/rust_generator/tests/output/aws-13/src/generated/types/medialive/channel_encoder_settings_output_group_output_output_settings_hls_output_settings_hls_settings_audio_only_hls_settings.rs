@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_group_id",
+                    "audioGroupId",
                     &self.r#audio_group_id,
                 ),
                 to_pulumi_object_field(
-                    "audio_only_image",
+                    "audioOnlyImage",
                     &self.r#audio_only_image,
                 ),
                 to_pulumi_object_field(
-                    "audio_track_type",
+                    "audioTrackType",
                     &self.r#audio_track_type,
                 ),
                 to_pulumi_object_field(
-                    "segment_type",
+                    "segmentType",
                     &self.r#segment_type,
                 ),
             ];
@@ -70,30 +70,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_group_id: {
-                        let field_value = match fields_map.get("audio_group_id") {
+                        let field_value = match fields_map.get("audioGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_only_image: {
-                        let field_value = match fields_map.get("audio_only_image") {
+                        let field_value = match fields_map.get("audioOnlyImage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_only_image' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioOnlyImage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_track_type: {
-                        let field_value = match fields_map.get("audio_track_type") {
+                        let field_value = match fields_map.get("audioTrackType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_track_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioTrackType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#segment_type: {
-                        let field_value = match fields_map.get("segment_type") {
+                        let field_value = match fields_map.get("segmentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'segment_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'segmentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

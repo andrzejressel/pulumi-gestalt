@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "indexed_question_answers_count",
+                    "indexedQuestionAnswersCount",
                     &self.r#indexed_question_answers_count,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#indexed_question_answers_count: {
-                        let field_value = match fields_map.get("indexed_question_answers_count") {
+                        let field_value = match fields_map.get("indexedQuestionAnswersCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'indexed_question_answers_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'indexedQuestionAnswersCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

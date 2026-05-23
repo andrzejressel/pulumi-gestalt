@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
                     &self.r#email,
                 ),
                 to_pulumi_object_field(
-                    "first_name",
+                    "firstName",
                     &self.r#first_name,
                 ),
                 to_pulumi_object_field(
-                    "last_name",
+                    "lastName",
                     &self.r#last_name,
                 ),
                 to_pulumi_object_field(
-                    "phone_number",
+                    "phoneNumber",
                     &self.r#phone_number,
                 ),
             ];
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#first_name: {
-                        let field_value = match fields_map.get("first_name") {
+                        let field_value = match fields_map.get("firstName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'first_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firstName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_name: {
-                        let field_value = match fields_map.get("last_name") {
+                        let field_value = match fields_map.get("lastName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#phone_number: {
-                        let field_value = match fields_map.get("phone_number") {
+                        let field_value = match fields_map.get("phoneNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'phone_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'phoneNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

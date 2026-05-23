@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "oracle_columns",
+                    "oracleColumns",
                     &self.r#oracle_columns,
                 ),
                 to_pulumi_object_field(
@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#oracle_columns: {
-                        let field_value = match fields_map.get("oracle_columns") {
+                        let field_value = match fields_map.get("oracleColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oracle_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oracleColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

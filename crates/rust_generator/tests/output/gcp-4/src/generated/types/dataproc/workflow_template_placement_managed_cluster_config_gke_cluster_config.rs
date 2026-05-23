@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "namespaced_gke_deployment_target",
+                    "namespacedGkeDeploymentTarget",
                     &self.r#namespaced_gke_deployment_target,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#namespaced_gke_deployment_target: {
-                        let field_value = match fields_map.get("namespaced_gke_deployment_target") {
+                        let field_value = match fields_map.get("namespacedGkeDeploymentTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'namespaced_gke_deployment_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namespacedGkeDeploymentTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

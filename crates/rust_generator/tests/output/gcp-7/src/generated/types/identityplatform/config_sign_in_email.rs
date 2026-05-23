@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "password_required",
+                    "passwordRequired",
                     &self.r#password_required,
                 ),
             ];
@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_required: {
-                        let field_value = match fields_map.get("password_required") {
+                        let field_value = match fields_map.get("passwordRequired") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordRequired' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

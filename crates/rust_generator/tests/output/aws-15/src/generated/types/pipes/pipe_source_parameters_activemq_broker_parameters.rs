@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_size",
+                    "batchSize",
                     &self.r#batch_size,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#credentials,
                 ),
                 to_pulumi_object_field(
-                    "maximum_batching_window_in_seconds",
+                    "maximumBatchingWindowInSeconds",
                     &self.r#maximum_batching_window_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "queue_name",
+                    "queueName",
                     &self.r#queue_name,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#batch_size: {
-                        let field_value = match fields_map.get("batch_size") {
+                        let field_value = match fields_map.get("batchSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_batching_window_in_seconds: {
-                        let field_value = match fields_map.get("maximum_batching_window_in_seconds") {
+                        let field_value = match fields_map.get("maximumBatchingWindowInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_batching_window_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumBatchingWindowInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#queue_name: {
-                        let field_value = match fields_map.get("queue_name") {
+                        let field_value = match fields_map.get("queueName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'queue_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queueName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

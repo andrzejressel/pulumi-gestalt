@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "registry_id",
+                    "registryId",
                     &self.r#registry_id,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registry_id: {
-                        let field_value = match fields_map.get("registry_id") {
+                        let field_value = match fields_map.get("registryId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registry_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registryId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

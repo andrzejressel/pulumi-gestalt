@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_batch_instance_percent",
+                    "maxBatchInstancePercent",
                     &self.r#max_batch_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unhealthy_instance_percent",
+                    "maxUnhealthyInstancePercent",
                     &self.r#max_unhealthy_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unhealthy_upgraded_instance_percent",
+                    "maxUnhealthyUpgradedInstancePercent",
                     &self.r#max_unhealthy_upgraded_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "pause_time_between_batches",
+                    "pauseTimeBetweenBatches",
                     &self.r#pause_time_between_batches,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#max_batch_instance_percent: {
-                        let field_value = match fields_map.get("max_batch_instance_percent") {
+                        let field_value = match fields_map.get("maxBatchInstancePercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_batch_instance_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxBatchInstancePercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unhealthy_instance_percent: {
-                        let field_value = match fields_map.get("max_unhealthy_instance_percent") {
+                        let field_value = match fields_map.get("maxUnhealthyInstancePercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unhealthy_instance_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnhealthyInstancePercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unhealthy_upgraded_instance_percent: {
-                        let field_value = match fields_map.get("max_unhealthy_upgraded_instance_percent") {
+                        let field_value = match fields_map.get("maxUnhealthyUpgradedInstancePercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unhealthy_upgraded_instance_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnhealthyUpgradedInstancePercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pause_time_between_batches: {
-                        let field_value = match fields_map.get("pause_time_between_batches") {
+                        let field_value = match fields_map.get("pauseTimeBetweenBatches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pause_time_between_batches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pauseTimeBetweenBatches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

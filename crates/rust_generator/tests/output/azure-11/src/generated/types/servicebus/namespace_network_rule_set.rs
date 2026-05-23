@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nam
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_action",
+                    "defaultAction",
                     &self.r#default_action,
                 ),
                 to_pulumi_object_field(
-                    "ip_rules",
+                    "ipRules",
                     &self.r#ip_rules,
                 ),
                 to_pulumi_object_field(
-                    "network_rules",
+                    "networkRules",
                     &self.r#network_rules,
                 ),
                 to_pulumi_object_field(
-                    "public_network_access_enabled",
+                    "publicNetworkAccessEnabled",
                     &self.r#public_network_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "trusted_services_allowed",
+                    "trustedServicesAllowed",
                     &self.r#trusted_services_allowed,
                 ),
             ];
@@ -84,37 +84,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#default_action: {
-                        let field_value = match fields_map.get("default_action") {
+                        let field_value = match fields_map.get("defaultAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_rules: {
-                        let field_value = match fields_map.get("ip_rules") {
+                        let field_value = match fields_map.get("ipRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_rules: {
-                        let field_value = match fields_map.get("network_rules") {
+                        let field_value = match fields_map.get("networkRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_network_access_enabled: {
-                        let field_value = match fields_map.get("public_network_access_enabled") {
+                        let field_value = match fields_map.get("publicNetworkAccessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_network_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicNetworkAccessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_services_allowed: {
-                        let field_value = match fields_map.get("trusted_services_allowed") {
+                        let field_value = match fields_map.get("trustedServicesAllowed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trusted_services_allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustedServicesAllowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "issue_detection_configuration",
+                    "issueDetectionConfiguration",
                     &self.r#issue_detection_configuration,
                 ),
                 to_pulumi_object_field(
-                    "keyword_match_configuration",
+                    "keywordMatchConfiguration",
                     &self.r#keyword_match_configuration,
                 ),
                 to_pulumi_object_field(
-                    "sentiment_configuration",
+                    "sentimentConfiguration",
                     &self.r#sentiment_configuration,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#issue_detection_configuration: {
-                        let field_value = match fields_map.get("issue_detection_configuration") {
+                        let field_value = match fields_map.get("issueDetectionConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'issue_detection_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'issueDetectionConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#keyword_match_configuration: {
-                        let field_value = match fields_map.get("keyword_match_configuration") {
+                        let field_value = match fields_map.get("keywordMatchConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'keyword_match_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keywordMatchConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sentiment_configuration: {
-                        let field_value = match fields_map.get("sentiment_configuration") {
+                        let field_value = match fields_map.get("sentimentConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sentiment_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sentimentConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nfs
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "directory_mode",
+                    "directoryMode",
                     &self.r#directory_mode,
                 ),
                 to_pulumi_object_field(
-                    "file_mode",
+                    "fileMode",
                     &self.r#file_mode,
                 ),
                 to_pulumi_object_field(
-                    "group_id",
+                    "groupId",
                     &self.r#group_id,
                 ),
                 to_pulumi_object_field(
-                    "owner_id",
+                    "ownerId",
                     &self.r#owner_id,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#directory_mode: {
-                        let field_value = match fields_map.get("directory_mode") {
+                        let field_value = match fields_map.get("directoryMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'directory_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'directoryMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_mode: {
-                        let field_value = match fields_map.get("file_mode") {
+                        let field_value = match fields_map.get("fileMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_id: {
-                        let field_value = match fields_map.get("group_id") {
+                        let field_value = match fields_map.get("groupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#owner_id: {
-                        let field_value = match fields_map.get("owner_id") {
+                        let field_value = match fields_map.get("ownerId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'owner_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ownerId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

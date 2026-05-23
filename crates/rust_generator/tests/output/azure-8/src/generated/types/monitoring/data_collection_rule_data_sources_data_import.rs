@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_hub_data_sources",
+                    "eventHubDataSources",
                     &self.r#event_hub_data_sources,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#event_hub_data_sources: {
-                        let field_value = match fields_map.get("event_hub_data_sources") {
+                        let field_value = match fields_map.get("eventHubDataSources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_hub_data_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventHubDataSources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

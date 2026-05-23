@@ -44,15 +44,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#active,
                 ),
                 to_pulumi_object_field(
-                    "continue_responses",
+                    "continueResponses",
                     &self.r#continue_responses,
                 ),
                 to_pulumi_object_field(
-                    "still_waiting_responses",
+                    "stillWaitingResponses",
                     &self.r#still_waiting_responses,
                 ),
                 to_pulumi_object_field(
-                    "waiting_responses",
+                    "waitingResponses",
                     &self.r#waiting_responses,
                 ),
             ];
@@ -86,23 +86,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#continue_responses: {
-                        let field_value = match fields_map.get("continue_responses") {
+                        let field_value = match fields_map.get("continueResponses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'continue_responses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'continueResponses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#still_waiting_responses: {
-                        let field_value = match fields_map.get("still_waiting_responses") {
+                        let field_value = match fields_map.get("stillWaitingResponses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'still_waiting_responses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stillWaitingResponses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#waiting_responses: {
-                        let field_value = match fields_map.get("waiting_responses") {
+                        let field_value = match fields_map.get("waitingResponses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'waiting_responses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'waitingResponses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

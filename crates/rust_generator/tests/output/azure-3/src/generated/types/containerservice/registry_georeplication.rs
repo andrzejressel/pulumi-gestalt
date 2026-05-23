@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "regional_endpoint_enabled",
+                    "regionalEndpointEnabled",
                     &self.r#regional_endpoint_enabled,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "zone_redundancy_enabled",
+                    "zoneRedundancyEnabled",
                     &self.r#zone_redundancy_enabled,
                 ),
             ];
@@ -83,9 +83,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regional_endpoint_enabled: {
-                        let field_value = match fields_map.get("regional_endpoint_enabled") {
+                        let field_value = match fields_map.get("regionalEndpointEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regional_endpoint_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionalEndpointEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#zone_redundancy_enabled: {
-                        let field_value = match fields_map.get("zone_redundancy_enabled") {
+                        let field_value = match fields_map.get("zoneRedundancyEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'zone_redundancy_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'zoneRedundancyEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "empty_dir",
+                    "emptyDir",
                     &self.r#empty_dir,
                 ),
                 to_pulumi_object_field(
-                    "host_path",
+                    "hostPath",
                     &self.r#host_path,
                 ),
                 to_pulumi_object_field(
@@ -71,16 +71,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#empty_dir: {
-                        let field_value = match fields_map.get("empty_dir") {
+                        let field_value = match fields_map.get("emptyDir") {
                             Some(value) => value,
-                            None => bail!("Missing field 'empty_dir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emptyDir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_path: {
-                        let field_value = match fields_map.get("host_path") {
+                        let field_value = match fields_map.get("hostPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

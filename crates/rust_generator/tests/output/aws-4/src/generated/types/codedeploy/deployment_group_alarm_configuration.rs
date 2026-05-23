@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "ignore_poll_alarm_failure",
+                    "ignorePollAlarmFailure",
                     &self.r#ignore_poll_alarm_failure,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_poll_alarm_failure: {
-                        let field_value = match fields_map.get("ignore_poll_alarm_failure") {
+                        let field_value = match fields_map.get("ignorePollAlarmFailure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_poll_alarm_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignorePollAlarmFailure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

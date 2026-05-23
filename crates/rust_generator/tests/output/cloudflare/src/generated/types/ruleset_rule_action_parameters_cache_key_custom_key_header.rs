@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "check_presences",
+                    "checkPresences",
                     &self.r#check_presences,
                 ),
                 to_pulumi_object_field(
@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#contains,
                 ),
                 to_pulumi_object_field(
-                    "exclude_origin",
+                    "excludeOrigin",
                     &self.r#exclude_origin,
                 ),
                 to_pulumi_object_field(
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#check_presences: {
-                        let field_value = match fields_map.get("check_presences") {
+                        let field_value = match fields_map.get("checkPresences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'check_presences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkPresences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_origin: {
-                        let field_value = match fields_map.get("exclude_origin") {
+                        let field_value = match fields_map.get("excludeOrigin") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_origin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeOrigin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

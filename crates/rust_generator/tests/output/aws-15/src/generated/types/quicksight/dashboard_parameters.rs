@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Das
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "date_time_parameters",
+                    "dateTimeParameters",
                     &self.r#date_time_parameters,
                 ),
                 to_pulumi_object_field(
-                    "decimal_parameters",
+                    "decimalParameters",
                     &self.r#decimal_parameters,
                 ),
                 to_pulumi_object_field(
-                    "integer_parameters",
+                    "integerParameters",
                     &self.r#integer_parameters,
                 ),
                 to_pulumi_object_field(
-                    "string_parameters",
+                    "stringParameters",
                     &self.r#string_parameters,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#date_time_parameters: {
-                        let field_value = match fields_map.get("date_time_parameters") {
+                        let field_value = match fields_map.get("dateTimeParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'date_time_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dateTimeParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#decimal_parameters: {
-                        let field_value = match fields_map.get("decimal_parameters") {
+                        let field_value = match fields_map.get("decimalParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'decimal_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'decimalParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#integer_parameters: {
-                        let field_value = match fields_map.get("integer_parameters") {
+                        let field_value = match fields_map.get("integerParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'integer_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'integerParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_parameters: {
-                        let field_value = match fields_map.get("string_parameters") {
+                        let field_value = match fields_map.get("stringParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

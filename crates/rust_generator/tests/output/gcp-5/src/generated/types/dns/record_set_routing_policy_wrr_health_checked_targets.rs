@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "internal_load_balancers",
+                    "internalLoadBalancers",
                     &self.r#internal_load_balancers,
                 ),
             ];
@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#internal_load_balancers: {
-                        let field_value = match fields_map.get("internal_load_balancers") {
+                        let field_value = match fields_map.get("internalLoadBalancers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'internal_load_balancers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'internalLoadBalancers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

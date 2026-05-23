@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "body_bytes",
+                    "bodyBytes",
                     &self.r#body_bytes,
                 ),
                 to_pulumi_object_field(
-                    "data_masking",
+                    "dataMasking",
                     &self.r#data_masking,
                 ),
                 to_pulumi_object_field(
-                    "headers_to_logs",
+                    "headersToLogs",
                     &self.r#headers_to_logs,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#body_bytes: {
-                        let field_value = match fields_map.get("body_bytes") {
+                        let field_value = match fields_map.get("bodyBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'body_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bodyBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_masking: {
-                        let field_value = match fields_map.get("data_masking") {
+                        let field_value = match fields_map.get("dataMasking") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_masking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataMasking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#headers_to_logs: {
-                        let field_value = match fields_map.get("headers_to_logs") {
+                        let field_value = match fields_map.get("headersToLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'headers_to_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headersToLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

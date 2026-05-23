@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_file_path",
+                    "defaultFilePath",
                     &self.r#default_file_path,
                 ),
                 to_pulumi_object_field(
@@ -56,9 +56,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#default_file_path: {
-                        let field_value = match fields_map.get("default_file_path") {
+                        let field_value = match fields_map.get("defaultFilePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_file_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultFilePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -55,23 +55,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
                     &self.r#field,
                 ),
                 to_pulumi_object_field(
-                    "greater_than",
+                    "greaterThan",
                     &self.r#greater_than,
                 ),
                 to_pulumi_object_field(
-                    "greater_than_or_equal",
+                    "greaterThanOrEqual",
                     &self.r#greater_than_or_equal,
                 ),
                 to_pulumi_object_field(
-                    "less_than",
+                    "lessThan",
                     &self.r#less_than,
                 ),
                 to_pulumi_object_field(
-                    "less_than_or_equal",
+                    "lessThanOrEqual",
                     &self.r#less_than_or_equal,
                 ),
                 to_pulumi_object_field(
-                    "not_equals",
+                    "notEquals",
                     &self.r#not_equals,
                 ),
             ];
@@ -112,37 +112,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#greater_than: {
-                        let field_value = match fields_map.get("greater_than") {
+                        let field_value = match fields_map.get("greaterThan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'greater_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'greaterThan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#greater_than_or_equal: {
-                        let field_value = match fields_map.get("greater_than_or_equal") {
+                        let field_value = match fields_map.get("greaterThanOrEqual") {
                             Some(value) => value,
-                            None => bail!("Missing field 'greater_than_or_equal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'greaterThanOrEqual' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#less_than: {
-                        let field_value = match fields_map.get("less_than") {
+                        let field_value = match fields_map.get("lessThan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'less_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lessThan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#less_than_or_equal: {
-                        let field_value = match fields_map.get("less_than_or_equal") {
+                        let field_value = match fields_map.get("lessThanOrEqual") {
                             Some(value) => value,
-                            None => bail!("Missing field 'less_than_or_equal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lessThanOrEqual' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_equals: {
-                        let field_value = match fields_map.get("not_equals") {
+                        let field_value = match fields_map.get("notEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

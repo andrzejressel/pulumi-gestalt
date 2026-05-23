@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_fragment",
+                    "destinationFragment",
                     &self.r#destination_fragment,
                 ),
                 to_pulumi_object_field(
-                    "destination_hostname",
+                    "destinationHostname",
                     &self.r#destination_hostname,
                 ),
                 to_pulumi_object_field(
-                    "destination_path",
+                    "destinationPath",
                     &self.r#destination_path,
                 ),
                 to_pulumi_object_field(
-                    "query_string",
+                    "queryString",
                     &self.r#query_string,
                 ),
                 to_pulumi_object_field(
-                    "redirect_protocol",
+                    "redirectProtocol",
                     &self.r#redirect_protocol,
                 ),
                 to_pulumi_object_field(
-                    "redirect_type",
+                    "redirectType",
                     &self.r#redirect_type,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#destination_fragment: {
-                        let field_value = match fields_map.get("destination_fragment") {
+                        let field_value = match fields_map.get("destinationFragment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_fragment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationFragment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_hostname: {
-                        let field_value = match fields_map.get("destination_hostname") {
+                        let field_value = match fields_map.get("destinationHostname") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_hostname' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationHostname' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_path: {
-                        let field_value = match fields_map.get("destination_path") {
+                        let field_value = match fields_map.get("destinationPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string: {
-                        let field_value = match fields_map.get("query_string") {
+                        let field_value = match fields_map.get("queryString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_protocol: {
-                        let field_value = match fields_map.get("redirect_protocol") {
+                        let field_value = match fields_map.get("redirectProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_type: {
-                        let field_value = match fields_map.get("redirect_type") {
+                        let field_value = match fields_map.get("redirectType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

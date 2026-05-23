@@ -1235,7 +1235,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#apigateway,
                 ),
                 to_pulumi_object_field(
-                    "apigatewayv_2",
+                    "apigatewayv2",
                     &self.r#apigatewayv_2,
                 ),
                 to_pulumi_object_field(
@@ -1363,7 +1363,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#cleanrooms,
                 ),
                 to_pulumi_object_field(
-                    "cloud_9",
+                    "cloud9",
                     &self.r#cloud_9,
                 ),
                 to_pulumi_object_field(
@@ -1391,7 +1391,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#cloudhsm,
                 ),
                 to_pulumi_object_field(
-                    "cloudhsmv_2",
+                    "cloudhsmv2",
                     &self.r#cloudhsmv_2,
                 ),
                 to_pulumi_object_field(
@@ -1619,7 +1619,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#dynamodb,
                 ),
                 to_pulumi_object_field(
-                    "ec_2",
+                    "ec2",
                     &self.r#ec_2,
                 ),
                 to_pulumi_object_field(
@@ -1655,7 +1655,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#elasticloadbalancing,
                 ),
                 to_pulumi_object_field(
-                    "elasticloadbalancingv_2",
+                    "elasticloadbalancingv2",
                     &self.r#elasticloadbalancingv_2,
                 ),
                 to_pulumi_object_field(
@@ -1675,7 +1675,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#elb,
                 ),
                 to_pulumi_object_field(
-                    "elbv_2",
+                    "elbv2",
                     &self.r#elbv_2,
                 ),
                 to_pulumi_object_field(
@@ -1783,11 +1783,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#inspector,
                 ),
                 to_pulumi_object_field(
-                    "inspector_2",
+                    "inspector2",
                     &self.r#inspector_2,
                 ),
                 to_pulumi_object_field(
-                    "inspectorv_2",
+                    "inspectorv2",
                     &self.r#inspectorv_2,
                 ),
                 to_pulumi_object_field(
@@ -1839,7 +1839,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#kinesisanalytics,
                 ),
                 to_pulumi_object_field(
-                    "kinesisanalyticsv_2",
+                    "kinesisanalyticsv2",
                     &self.r#kinesisanalyticsv_2,
                 ),
                 to_pulumi_object_field(
@@ -1879,11 +1879,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#lexmodels,
                 ),
                 to_pulumi_object_field(
-                    "lexmodelsv_2",
+                    "lexmodelsv2",
                     &self.r#lexmodelsv_2,
                 ),
                 to_pulumi_object_field(
-                    "lexv_2_models",
+                    "lexv2models",
                     &self.r#lexv_2_models,
                 ),
                 to_pulumi_object_field(
@@ -1911,11 +1911,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#lookoutmetrics,
                 ),
                 to_pulumi_object_field(
-                    "m_2",
+                    "m2",
                     &self.r#m_2,
                 ),
                 to_pulumi_object_field(
-                    "macie_2",
+                    "macie2",
                     &self.r#macie_2,
                 ),
                 to_pulumi_object_field(
@@ -1939,7 +1939,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#mediapackage,
                 ),
                 to_pulumi_object_field(
-                    "mediapackagev_2",
+                    "mediapackagev2",
                     &self.r#mediapackagev_2,
                 ),
                 to_pulumi_object_field(
@@ -2039,7 +2039,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#pinpoint,
                 ),
                 to_pulumi_object_field(
-                    "pinpointsmsvoicev_2",
+                    "pinpointsmsvoicev2",
                     &self.r#pinpointsmsvoicev_2,
                 ),
                 to_pulumi_object_field(
@@ -2115,7 +2115,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#resiliencehub,
                 ),
                 to_pulumi_object_field(
-                    "resourceexplorer_2",
+                    "resourceexplorer2",
                     &self.r#resourceexplorer_2,
                 ),
                 to_pulumi_object_field(
@@ -2135,27 +2135,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#rolesanywhere,
                 ),
                 to_pulumi_object_field(
-                    "route_53",
+                    "route53",
                     &self.r#route_53,
                 ),
                 to_pulumi_object_field(
-                    "route_53_domains",
+                    "route53domains",
                     &self.r#route_53_domains,
                 ),
                 to_pulumi_object_field(
-                    "route_53_profiles",
+                    "route53profiles",
                     &self.r#route_53_profiles,
                 ),
                 to_pulumi_object_field(
-                    "route_53_recoverycontrolconfig",
+                    "route53recoverycontrolconfig",
                     &self.r#route_53_recoverycontrolconfig,
                 ),
                 to_pulumi_object_field(
-                    "route_53_recoveryreadiness",
+                    "route53recoveryreadiness",
                     &self.r#route_53_recoveryreadiness,
                 ),
                 to_pulumi_object_field(
-                    "route_53_resolver",
+                    "route53resolver",
                     &self.r#route_53_resolver,
                 ),
                 to_pulumi_object_field(
@@ -2163,23 +2163,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#rum,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
                 to_pulumi_object_field(
-                    "s_3_api",
+                    "s3api",
                     &self.r#s_3_api,
                 ),
                 to_pulumi_object_field(
-                    "s_3_control",
+                    "s3control",
                     &self.r#s_3_control,
                 ),
                 to_pulumi_object_field(
-                    "s_3_outposts",
+                    "s3outposts",
                     &self.r#s_3_outposts,
                 ),
                 to_pulumi_object_field(
-                    "s_3_tables",
+                    "s3tables",
                     &self.r#s_3_tables,
                 ),
                 to_pulumi_object_field(
@@ -2243,7 +2243,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#ses,
                 ),
                 to_pulumi_object_field(
-                    "sesv_2",
+                    "sesv2",
                     &self.r#sesv_2,
                 ),
                 to_pulumi_object_field(
@@ -2363,7 +2363,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#wafregional,
                 ),
                 to_pulumi_object_field(
-                    "wafv_2",
+                    "wafv2",
                     &self.r#wafv_2,
                 ),
                 to_pulumi_object_field(
@@ -2466,9 +2466,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#apigatewayv_2: {
-                        let field_value = match fields_map.get("apigatewayv_2") {
+                        let field_value = match fields_map.get("apigatewayv2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apigatewayv_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apigatewayv2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -2690,9 +2690,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_9: {
-                        let field_value = match fields_map.get("cloud_9") {
+                        let field_value = match fields_map.get("cloud9") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_9' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloud9' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -2739,9 +2739,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloudhsmv_2: {
-                        let field_value = match fields_map.get("cloudhsmv_2") {
+                        let field_value = match fields_map.get("cloudhsmv2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudhsmv_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudhsmv2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -3138,9 +3138,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ec_2: {
-                        let field_value = match fields_map.get("ec_2") {
+                        let field_value = match fields_map.get("ec2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ec_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ec2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -3201,9 +3201,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#elasticloadbalancingv_2: {
-                        let field_value = match fields_map.get("elasticloadbalancingv_2") {
+                        let field_value = match fields_map.get("elasticloadbalancingv2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'elasticloadbalancingv_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'elasticloadbalancingv2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -3236,9 +3236,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#elbv_2: {
-                        let field_value = match fields_map.get("elbv_2") {
+                        let field_value = match fields_map.get("elbv2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'elbv_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'elbv2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -3425,16 +3425,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inspector_2: {
-                        let field_value = match fields_map.get("inspector_2") {
+                        let field_value = match fields_map.get("inspector2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inspector_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inspector2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inspectorv_2: {
-                        let field_value = match fields_map.get("inspectorv_2") {
+                        let field_value = match fields_map.get("inspectorv2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inspectorv_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inspectorv2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -3523,9 +3523,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesisanalyticsv_2: {
-                        let field_value = match fields_map.get("kinesisanalyticsv_2") {
+                        let field_value = match fields_map.get("kinesisanalyticsv2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesisanalyticsv_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisanalyticsv2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -3593,16 +3593,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lexmodelsv_2: {
-                        let field_value = match fields_map.get("lexmodelsv_2") {
+                        let field_value = match fields_map.get("lexmodelsv2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lexmodelsv_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lexmodelsv2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lexv_2_models: {
-                        let field_value = match fields_map.get("lexv_2_models") {
+                        let field_value = match fields_map.get("lexv2models") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lexv_2_models' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lexv2models' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -3649,16 +3649,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#m_2: {
-                        let field_value = match fields_map.get("m_2") {
+                        let field_value = match fields_map.get("m2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'm_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'm2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#macie_2: {
-                        let field_value = match fields_map.get("macie_2") {
+                        let field_value = match fields_map.get("macie2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'macie_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'macie2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -3698,9 +3698,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mediapackagev_2: {
-                        let field_value = match fields_map.get("mediapackagev_2") {
+                        let field_value = match fields_map.get("mediapackagev2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mediapackagev_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mediapackagev2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -3873,9 +3873,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pinpointsmsvoicev_2: {
-                        let field_value = match fields_map.get("pinpointsmsvoicev_2") {
+                        let field_value = match fields_map.get("pinpointsmsvoicev2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pinpointsmsvoicev_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pinpointsmsvoicev2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -4006,9 +4006,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resourceexplorer_2: {
-                        let field_value = match fields_map.get("resourceexplorer_2") {
+                        let field_value = match fields_map.get("resourceexplorer2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resourceexplorer_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceexplorer2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -4041,44 +4041,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_53: {
-                        let field_value = match fields_map.get("route_53") {
+                        let field_value = match fields_map.get("route53") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_53' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'route53' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_53_domains: {
-                        let field_value = match fields_map.get("route_53_domains") {
+                        let field_value = match fields_map.get("route53domains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_53_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'route53domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_53_profiles: {
-                        let field_value = match fields_map.get("route_53_profiles") {
+                        let field_value = match fields_map.get("route53profiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_53_profiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'route53profiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_53_recoverycontrolconfig: {
-                        let field_value = match fields_map.get("route_53_recoverycontrolconfig") {
+                        let field_value = match fields_map.get("route53recoverycontrolconfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_53_recoverycontrolconfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'route53recoverycontrolconfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_53_recoveryreadiness: {
-                        let field_value = match fields_map.get("route_53_recoveryreadiness") {
+                        let field_value = match fields_map.get("route53recoveryreadiness") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_53_recoveryreadiness' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'route53recoveryreadiness' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_53_resolver: {
-                        let field_value = match fields_map.get("route_53_resolver") {
+                        let field_value = match fields_map.get("route53resolver") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_53_resolver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'route53resolver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -4090,37 +4090,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3: {
-                        let field_value = match fields_map.get("s_3") {
+                        let field_value = match fields_map.get("s3") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_api: {
-                        let field_value = match fields_map.get("s_3_api") {
+                        let field_value = match fields_map.get("s3api") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_api' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3api' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_control: {
-                        let field_value = match fields_map.get("s_3_control") {
+                        let field_value = match fields_map.get("s3control") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_outposts: {
-                        let field_value = match fields_map.get("s_3_outposts") {
+                        let field_value = match fields_map.get("s3outposts") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_outposts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3outposts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_tables: {
-                        let field_value = match fields_map.get("s_3_tables") {
+                        let field_value = match fields_map.get("s3tables") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_tables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3tables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -4230,9 +4230,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sesv_2: {
-                        let field_value = match fields_map.get("sesv_2") {
+                        let field_value = match fields_map.get("sesv2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sesv_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sesv2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -4440,9 +4440,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wafv_2: {
-                        let field_value = match fields_map.get("wafv_2") {
+                        let field_value = match fields_map.get("wafv2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wafv_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'wafv2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

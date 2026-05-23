@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_services",
+                    "allowedServices",
                     &self.r#allowed_services,
                 ),
                 to_pulumi_object_field(
-                    "enable_restriction",
+                    "enableRestriction",
                     &self.r#enable_restriction,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#allowed_services: {
-                        let field_value = match fields_map.get("allowed_services") {
+                        let field_value = match fields_map.get("allowedServices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedServices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_restriction: {
-                        let field_value = match fields_map.get("enable_restriction") {
+                        let field_value = match fields_map.get("enableRestriction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_restriction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableRestriction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "linux_exec_step_config",
+                    "linuxExecStepConfig",
                     &self.r#linux_exec_step_config,
                 ),
                 to_pulumi_object_field(
-                    "windows_exec_step_config",
+                    "windowsExecStepConfig",
                     &self.r#windows_exec_step_config,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#linux_exec_step_config: {
-                        let field_value = match fields_map.get("linux_exec_step_config") {
+                        let field_value = match fields_map.get("linuxExecStepConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linux_exec_step_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linuxExecStepConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#windows_exec_step_config: {
-                        let field_value = match fields_map.get("windows_exec_step_config") {
+                        let field_value = match fields_map.get("windowsExecStepConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'windows_exec_step_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowsExecStepConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

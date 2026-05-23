@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_magnetic_store_writes",
+                    "enableMagneticStoreWrites",
                     &self.r#enable_magnetic_store_writes,
                 ),
                 to_pulumi_object_field(
-                    "magnetic_store_rejected_data_locations",
+                    "magneticStoreRejectedDataLocations",
                     &self.r#magnetic_store_rejected_data_locations,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#enable_magnetic_store_writes: {
-                        let field_value = match fields_map.get("enable_magnetic_store_writes") {
+                        let field_value = match fields_map.get("enableMagneticStoreWrites") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_magnetic_store_writes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableMagneticStoreWrites' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#magnetic_store_rejected_data_locations: {
-                        let field_value = match fields_map.get("magnetic_store_rejected_data_locations") {
+                        let field_value = match fields_map.get("magneticStoreRejectedDataLocations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'magnetic_store_rejected_data_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'magneticStoreRejectedDataLocations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

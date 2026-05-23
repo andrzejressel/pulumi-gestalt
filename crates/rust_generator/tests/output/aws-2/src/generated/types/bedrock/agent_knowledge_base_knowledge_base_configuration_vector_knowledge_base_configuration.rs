@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "embedding_model_arn",
+                    "embeddingModelArn",
                     &self.r#embedding_model_arn,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#embedding_model_arn: {
-                        let field_value = match fields_map.get("embedding_model_arn") {
+                        let field_value = match fields_map.get("embeddingModelArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'embedding_model_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'embeddingModelArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

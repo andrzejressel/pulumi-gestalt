@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attributes_require_verification_before_updates",
+                    "attributesRequireVerificationBeforeUpdates",
                     &self.r#attributes_require_verification_before_updates,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#attributes_require_verification_before_updates: {
-                        let field_value = match fields_map.get("attributes_require_verification_before_updates") {
+                        let field_value = match fields_map.get("attributesRequireVerificationBeforeUpdates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attributes_require_verification_before_updates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributesRequireVerificationBeforeUpdates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

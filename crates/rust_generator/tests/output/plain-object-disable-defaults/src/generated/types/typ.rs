@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Typ
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mod_1",
+                    "mod1",
                     &self.r#mod_1,
                 ),
                 to_pulumi_object_field(
-                    "mod_2",
+                    "mod2",
                     &self.r#mod_2,
                 ),
                 to_pulumi_object_field(
@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#mod_1: {
-                        let field_value = match fields_map.get("mod_1") {
+                        let field_value = match fields_map.get("mod1") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mod_1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mod1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mod_2: {
-                        let field_value = match fields_map.get("mod_2") {
+                        let field_value = match fields_map.get("mod2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mod_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mod2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

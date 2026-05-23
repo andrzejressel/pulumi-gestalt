@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_references",
+                    "columnReferences",
                     &self.r#column_references,
                 ),
                 to_pulumi_object_field(
@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "referenced_table",
+                    "referencedTable",
                     &self.r#referenced_table,
                 ),
             ];
@@ -69,9 +69,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#column_references: {
-                        let field_value = match fields_map.get("column_references") {
+                        let field_value = match fields_map.get("columnReferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'column_references' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'columnReferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -83,9 +83,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#referenced_table: {
-                        let field_value = match fields_map.get("referenced_table") {
+                        let field_value = match fields_map.get("referencedTable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'referenced_table' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'referencedTable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

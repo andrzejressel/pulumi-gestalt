@@ -29,15 +29,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_encryption",
+                    "cloudwatchEncryption",
                     &self.r#cloudwatch_encryption,
                 ),
                 to_pulumi_object_field(
-                    "job_bookmarks_encryption",
+                    "jobBookmarksEncryption",
                     &self.r#job_bookmarks_encryption,
                 ),
                 to_pulumi_object_field(
-                    "s_3_encryption",
+                    "s3Encryption",
                     &self.r#s_3_encryption,
                 ),
             ];
@@ -64,23 +64,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#cloudwatch_encryption: {
-                        let field_value = match fields_map.get("cloudwatch_encryption") {
+                        let field_value = match fields_map.get("cloudwatchEncryption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudwatch_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudwatchEncryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_bookmarks_encryption: {
-                        let field_value = match fields_map.get("job_bookmarks_encryption") {
+                        let field_value = match fields_map.get("jobBookmarksEncryption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_bookmarks_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobBookmarksEncryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_encryption: {
-                        let field_value = match fields_map.get("s_3_encryption") {
+                        let field_value = match fields_map.get("s3Encryption") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

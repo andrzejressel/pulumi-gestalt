@@ -67,27 +67,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#impact,
                 ),
                 to_pulumi_object_field(
-                    "recommendation_name",
+                    "recommendationName",
                     &self.r#recommendation_name,
                 ),
                 to_pulumi_object_field(
-                    "recommendation_type_id",
+                    "recommendationTypeId",
                     &self.r#recommendation_type_id,
                 ),
                 to_pulumi_object_field(
-                    "resource_name",
+                    "resourceName",
                     &self.r#resource_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
                 to_pulumi_object_field(
-                    "suppression_names",
+                    "suppressionNames",
                     &self.r#suppression_names,
                 ),
                 to_pulumi_object_field(
-                    "updated_time",
+                    "updatedTime",
                     &self.r#updated_time,
                 ),
             ];
@@ -135,44 +135,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recommendation_name: {
-                        let field_value = match fields_map.get("recommendation_name") {
+                        let field_value = match fields_map.get("recommendationName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recommendation_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recommendationName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recommendation_type_id: {
-                        let field_value = match fields_map.get("recommendation_type_id") {
+                        let field_value = match fields_map.get("recommendationTypeId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recommendation_type_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recommendationTypeId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_name: {
-                        let field_value = match fields_map.get("resource_name") {
+                        let field_value = match fields_map.get("resourceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_type: {
-                        let field_value = match fields_map.get("resource_type") {
+                        let field_value = match fields_map.get("resourceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#suppression_names: {
-                        let field_value = match fields_map.get("suppression_names") {
+                        let field_value = match fields_map.get("suppressionNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'suppression_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'suppressionNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#updated_time: {
-                        let field_value = match fields_map.get("updated_time") {
+                        let field_value = match fields_map.get("updatedTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'updated_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updatedTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

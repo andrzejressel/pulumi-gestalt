@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capacity_gb",
+                    "capacityGb",
                     &self.r#capacity_gb,
                 ),
                 to_pulumi_object_field(
@@ -48,11 +48,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "nfs_export_options",
+                    "nfsExportOptions",
                     &self.r#nfs_export_options,
                 ),
                 to_pulumi_object_field(
-                    "source_backup",
+                    "sourceBackup",
                     &self.r#source_backup,
                 ),
             ];
@@ -79,9 +79,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#capacity_gb: {
-                        let field_value = match fields_map.get("capacity_gb") {
+                        let field_value = match fields_map.get("capacityGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -93,16 +93,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfs_export_options: {
-                        let field_value = match fields_map.get("nfs_export_options") {
+                        let field_value = match fields_map.get("nfsExportOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nfs_export_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nfsExportOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_backup: {
-                        let field_value = match fields_map.get("source_backup") {
+                        let field_value = match fields_map.get("sourceBackup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_backup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceBackup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

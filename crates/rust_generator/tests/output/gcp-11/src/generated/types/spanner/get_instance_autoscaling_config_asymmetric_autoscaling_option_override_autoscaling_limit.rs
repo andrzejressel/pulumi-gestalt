@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_nodes",
+                    "maxNodes",
                     &self.r#max_nodes,
                 ),
                 to_pulumi_object_field(
-                    "min_nodes",
+                    "minNodes",
                     &self.r#min_nodes,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#max_nodes: {
-                        let field_value = match fields_map.get("max_nodes") {
+                        let field_value = match fields_map.get("maxNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_nodes: {
-                        let field_value = match fields_map.get("min_nodes") {
+                        let field_value = match fields_map.get("minNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

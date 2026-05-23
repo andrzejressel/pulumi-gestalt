@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "require_attachment_acceptance",
+                    "requireAttachmentAcceptance",
                     &self.r#require_attachment_acceptance,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_attachment_acceptance: {
-                        let field_value = match fields_map.get("require_attachment_acceptance") {
+                        let field_value = match fields_map.get("requireAttachmentAcceptance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_attachment_acceptance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireAttachmentAcceptance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

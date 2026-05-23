@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
                     &self.r#dataset,
                 ),
                 to_pulumi_object_field(
-                    "shard_count",
+                    "shardCount",
                     &self.r#shard_count,
                 ),
                 to_pulumi_object_field(
-                    "table_prefix",
+                    "tablePrefix",
                     &self.r#table_prefix,
                 ),
             ];
@@ -78,16 +78,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shard_count: {
-                        let field_value = match fields_map.get("shard_count") {
+                        let field_value = match fields_map.get("shardCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shard_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shardCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_prefix: {
-                        let field_value = match fields_map.get("table_prefix") {
+                        let field_value = match fields_map.get("tablePrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tablePrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "confidence_threshold",
+                    "confidenceThreshold",
                     &self.r#confidence_threshold,
                 ),
                 to_pulumi_object_field(
-                    "expiration_sec",
+                    "expirationSec",
                     &self.r#expiration_sec,
                 ),
                 to_pulumi_object_field(
-                    "impacted_baseline_threshold",
+                    "impactedBaselineThreshold",
                     &self.r#impacted_baseline_threshold,
                 ),
                 to_pulumi_object_field(
-                    "load_threshold",
+                    "loadThreshold",
                     &self.r#load_threshold,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#confidence_threshold: {
-                        let field_value = match fields_map.get("confidence_threshold") {
+                        let field_value = match fields_map.get("confidenceThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'confidence_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'confidenceThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expiration_sec: {
-                        let field_value = match fields_map.get("expiration_sec") {
+                        let field_value = match fields_map.get("expirationSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiration_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expirationSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#impacted_baseline_threshold: {
-                        let field_value = match fields_map.get("impacted_baseline_threshold") {
+                        let field_value = match fields_map.get("impactedBaselineThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'impacted_baseline_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'impactedBaselineThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_threshold: {
-                        let field_value = match fields_map.get("load_threshold") {
+                        let field_value = match fields_map.get("loadThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

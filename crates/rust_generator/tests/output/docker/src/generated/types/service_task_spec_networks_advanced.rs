@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#aliases,
                 ),
                 to_pulumi_object_field(
-                    "driver_opts",
+                    "driverOpts",
                     &self.r#driver_opts,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#driver_opts: {
-                        let field_value = match fields_map.get("driver_opts") {
+                        let field_value = match fields_map.get("driverOpts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'driver_opts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'driverOpts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

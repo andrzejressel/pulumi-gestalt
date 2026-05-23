@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_policy_id",
+                    "sourcePolicyId",
                     &self.r#source_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "source_policy_type",
+                    "sourcePolicyType",
                     &self.r#source_policy_type,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#source_policy_id: {
-                        let field_value = match fields_map.get("source_policy_id") {
+                        let field_value = match fields_map.get("sourcePolicyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourcePolicyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_policy_type: {
-                        let field_value = match fields_map.get("source_policy_type") {
+                        let field_value = match fields_map.get("sourcePolicyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_policy_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourcePolicyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

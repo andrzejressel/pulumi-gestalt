@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_ejection_duration",
+                    "baseEjectionDuration",
                     &self.r#base_ejection_duration,
                 ),
                 to_pulumi_object_field(
@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "max_ejection_percent",
+                    "maxEjectionPercent",
                     &self.r#max_ejection_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_server_errors",
+                    "maxServerErrors",
                     &self.r#max_server_errors,
                 ),
             ];
@@ -75,9 +75,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#base_ejection_duration: {
-                        let field_value = match fields_map.get("base_ejection_duration") {
+                        let field_value = match fields_map.get("baseEjectionDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'base_ejection_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baseEjectionDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -89,16 +89,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_ejection_percent: {
-                        let field_value = match fields_map.get("max_ejection_percent") {
+                        let field_value = match fields_map.get("maxEjectionPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_ejection_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxEjectionPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_server_errors: {
-                        let field_value = match fields_map.get("max_server_errors") {
+                        let field_value = match fields_map.get("maxServerErrors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_server_errors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxServerErrors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

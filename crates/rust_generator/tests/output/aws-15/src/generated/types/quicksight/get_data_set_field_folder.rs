@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "field_folders_id",
+                    "fieldFoldersId",
                     &self.r#field_folders_id,
                 ),
             ];
@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_folders_id: {
-                        let field_value = match fields_map.get("field_folders_id") {
+                        let field_value = match fields_map.get("fieldFoldersId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_folders_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldFoldersId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

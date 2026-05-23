@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customer_managed_encryptions",
+                    "customerManagedEncryptions",
                     &self.r#customer_managed_encryptions,
                 ),
                 to_pulumi_object_field(
@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#customer_managed_encryptions: {
-                        let field_value = match fields_map.get("customer_managed_encryptions") {
+                        let field_value = match fields_map.get("customerManagedEncryptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customer_managed_encryptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customerManagedEncryptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

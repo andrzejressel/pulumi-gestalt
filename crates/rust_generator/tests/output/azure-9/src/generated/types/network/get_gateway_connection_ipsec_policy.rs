@@ -61,35 +61,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dh_group",
+                    "dhGroup",
                     &self.r#dh_group,
                 ),
                 to_pulumi_object_field(
-                    "ike_encryption",
+                    "ikeEncryption",
                     &self.r#ike_encryption,
                 ),
                 to_pulumi_object_field(
-                    "ike_integrity",
+                    "ikeIntegrity",
                     &self.r#ike_integrity,
                 ),
                 to_pulumi_object_field(
-                    "ipsec_encryption",
+                    "ipsecEncryption",
                     &self.r#ipsec_encryption,
                 ),
                 to_pulumi_object_field(
-                    "ipsec_integrity",
+                    "ipsecIntegrity",
                     &self.r#ipsec_integrity,
                 ),
                 to_pulumi_object_field(
-                    "pfs_group",
+                    "pfsGroup",
                     &self.r#pfs_group,
                 ),
                 to_pulumi_object_field(
-                    "sa_datasize",
+                    "saDatasize",
                     &self.r#sa_datasize,
                 ),
                 to_pulumi_object_field(
-                    "sa_lifetime",
+                    "saLifetime",
                     &self.r#sa_lifetime,
                 ),
             ];
@@ -116,58 +116,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#dh_group: {
-                        let field_value = match fields_map.get("dh_group") {
+                        let field_value = match fields_map.get("dhGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dh_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dhGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ike_encryption: {
-                        let field_value = match fields_map.get("ike_encryption") {
+                        let field_value = match fields_map.get("ikeEncryption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ike_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ikeEncryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ike_integrity: {
-                        let field_value = match fields_map.get("ike_integrity") {
+                        let field_value = match fields_map.get("ikeIntegrity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ike_integrity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ikeIntegrity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipsec_encryption: {
-                        let field_value = match fields_map.get("ipsec_encryption") {
+                        let field_value = match fields_map.get("ipsecEncryption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipsec_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipsecEncryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipsec_integrity: {
-                        let field_value = match fields_map.get("ipsec_integrity") {
+                        let field_value = match fields_map.get("ipsecIntegrity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipsec_integrity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipsecIntegrity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pfs_group: {
-                        let field_value = match fields_map.get("pfs_group") {
+                        let field_value = match fields_map.get("pfsGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pfs_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pfsGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sa_datasize: {
-                        let field_value = match fields_map.get("sa_datasize") {
+                        let field_value = match fields_map.get("saDatasize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sa_datasize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'saDatasize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sa_lifetime: {
-                        let field_value = match fields_map.get("sa_lifetime") {
+                        let field_value = match fields_map.get("saLifetime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sa_lifetime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'saLifetime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

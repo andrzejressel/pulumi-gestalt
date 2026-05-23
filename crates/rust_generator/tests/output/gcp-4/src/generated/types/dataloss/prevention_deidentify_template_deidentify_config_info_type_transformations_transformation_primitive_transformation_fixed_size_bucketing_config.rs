@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_size",
+                    "bucketSize",
                     &self.r#bucket_size,
                 ),
                 to_pulumi_object_field(
-                    "lower_bound",
+                    "lowerBound",
                     &self.r#lower_bound,
                 ),
                 to_pulumi_object_field(
-                    "upper_bound",
+                    "upperBound",
                     &self.r#upper_bound,
                 ),
             ];
@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#bucket_size: {
-                        let field_value = match fields_map.get("bucket_size") {
+                        let field_value = match fields_map.get("bucketSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lower_bound: {
-                        let field_value = match fields_map.get("lower_bound") {
+                        let field_value = match fields_map.get("lowerBound") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lower_bound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lowerBound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upper_bound: {
-                        let field_value = match fields_map.get("upper_bound") {
+                        let field_value = match fields_map.get("upperBound") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upper_bound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'upperBound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

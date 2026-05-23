@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tea
                     &self.r#message,
                 ),
                 to_pulumi_object_field(
-                    "support_url",
+                    "supportUrl",
                     &self.r#support_url,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#support_url: {
-                        let field_value = match fields_map.get("support_url") {
+                        let field_value = match fields_map.get("supportUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'support_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'supportUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "match_options",
+                    "matchOptions",
                     &self.r#match_options,
                 ),
                 to_pulumi_object_field(
@@ -70,9 +70,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_options: {
-                        let field_value = match fields_map.get("match_options") {
+                        let field_value = match fields_map.get("matchOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

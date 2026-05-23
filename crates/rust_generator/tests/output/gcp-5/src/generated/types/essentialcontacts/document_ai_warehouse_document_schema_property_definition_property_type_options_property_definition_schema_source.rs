@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "processor_type",
+                    "processorType",
                     &self.r#processor_type,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#processor_type: {
-                        let field_value = match fields_map.get("processor_type") {
+                        let field_value = match fields_map.get("processorType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'processor_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'processorType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

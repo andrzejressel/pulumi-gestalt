@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compilation_result",
+                    "compilationResult",
                     &self.r#compilation_result,
                 ),
                 to_pulumi_object_field(
-                    "error_statuses",
+                    "errorStatuses",
                     &self.r#error_statuses,
                 ),
                 to_pulumi_object_field(
-                    "release_time",
+                    "releaseTime",
                     &self.r#release_time,
                 ),
             ];
@@ -70,23 +70,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#compilation_result: {
-                        let field_value = match fields_map.get("compilation_result") {
+                        let field_value = match fields_map.get("compilationResult") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compilation_result' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compilationResult' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#error_statuses: {
-                        let field_value = match fields_map.get("error_statuses") {
+                        let field_value = match fields_map.get("errorStatuses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_statuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorStatuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#release_time: {
-                        let field_value = match fields_map.get("release_time") {
+                        let field_value = match fields_map.get("releaseTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'release_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'releaseTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vmw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_primary",
+                    "isPrimary",
                     &self.r#is_primary,
                 ),
                 to_pulumi_object_field(
-                    "source_mac_address",
+                    "sourceMacAddress",
                     &self.r#source_mac_address,
                 ),
                 to_pulumi_object_field(
-                    "target_static_ip",
+                    "targetStaticIp",
                     &self.r#target_static_ip,
                 ),
                 to_pulumi_object_field(
-                    "target_subnet_name",
+                    "targetSubnetName",
                     &self.r#target_subnet_name,
                 ),
                 to_pulumi_object_field(
-                    "test_subnet_name",
+                    "testSubnetName",
                     &self.r#test_subnet_name,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#is_primary: {
-                        let field_value = match fields_map.get("is_primary") {
+                        let field_value = match fields_map.get("isPrimary") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_primary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isPrimary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_mac_address: {
-                        let field_value = match fields_map.get("source_mac_address") {
+                        let field_value = match fields_map.get("sourceMacAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_mac_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceMacAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_static_ip: {
-                        let field_value = match fields_map.get("target_static_ip") {
+                        let field_value = match fields_map.get("targetStaticIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_static_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetStaticIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_subnet_name: {
-                        let field_value = match fields_map.get("target_subnet_name") {
+                        let field_value = match fields_map.get("targetSubnetName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_subnet_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetSubnetName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#test_subnet_name: {
-                        let field_value = match fields_map.get("test_subnet_name") {
+                        let field_value = match fields_map.get("testSubnetName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'test_subnet_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'testSubnetName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

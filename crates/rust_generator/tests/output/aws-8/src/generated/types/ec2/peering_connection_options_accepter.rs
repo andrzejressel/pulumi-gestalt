@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pee
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_remote_vpc_dns_resolution",
+                    "allowRemoteVpcDnsResolution",
                     &self.r#allow_remote_vpc_dns_resolution,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#allow_remote_vpc_dns_resolution: {
-                        let field_value = match fields_map.get("allow_remote_vpc_dns_resolution") {
+                        let field_value = match fields_map.get("allowRemoteVpcDnsResolution") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_remote_vpc_dns_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowRemoteVpcDnsResolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

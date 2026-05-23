@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "vpc_ip_subnetworks",
+                    "vpcIpSubnetworks",
                     &self.r#vpc_ip_subnetworks,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_ip_subnetworks: {
-                        let field_value = match fields_map.get("vpc_ip_subnetworks") {
+                        let field_value = match fields_map.get("vpcIpSubnetworks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_ip_subnetworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcIpSubnetworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

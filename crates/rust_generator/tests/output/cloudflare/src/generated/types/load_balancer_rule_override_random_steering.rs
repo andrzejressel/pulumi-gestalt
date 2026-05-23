@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_weight",
+                    "defaultWeight",
                     &self.r#default_weight,
                 ),
                 to_pulumi_object_field(
-                    "pool_weights",
+                    "poolWeights",
                     &self.r#pool_weights,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#default_weight: {
-                        let field_value = match fields_map.get("default_weight") {
+                        let field_value = match fields_map.get("defaultWeight") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_weight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultWeight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pool_weights: {
-                        let field_value = match fields_map.get("pool_weights") {
+                        let field_value = match fields_map.get("poolWeights") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pool_weights' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'poolWeights' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

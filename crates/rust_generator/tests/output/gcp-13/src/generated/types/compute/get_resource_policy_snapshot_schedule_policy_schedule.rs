@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "daily_schedules",
+                    "dailySchedules",
                     &self.r#daily_schedules,
                 ),
                 to_pulumi_object_field(
-                    "hourly_schedules",
+                    "hourlySchedules",
                     &self.r#hourly_schedules,
                 ),
                 to_pulumi_object_field(
-                    "weekly_schedules",
+                    "weeklySchedules",
                     &self.r#weekly_schedules,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#daily_schedules: {
-                        let field_value = match fields_map.get("daily_schedules") {
+                        let field_value = match fields_map.get("dailySchedules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'daily_schedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dailySchedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hourly_schedules: {
-                        let field_value = match fields_map.get("hourly_schedules") {
+                        let field_value = match fields_map.get("hourlySchedules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hourly_schedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hourlySchedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weekly_schedules: {
-                        let field_value = match fields_map.get("weekly_schedules") {
+                        let field_value = match fields_map.get("weeklySchedules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weekly_schedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weeklySchedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

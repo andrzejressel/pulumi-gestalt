@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#dataset,
                 ),
                 to_pulumi_object_field(
-                    "selected_resources",
+                    "selectedResources",
                     &self.r#selected_resources,
                 ),
             ];
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selected_resources: {
-                        let field_value = match fields_map.get("selected_resources") {
+                        let field_value = match fields_map.get("selectedResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selected_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectedResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

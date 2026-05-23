@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_modulus_size",
+                    "maxModulusSize",
                     &self.r#max_modulus_size,
                 ),
                 to_pulumi_object_field(
-                    "min_modulus_size",
+                    "minModulusSize",
                     &self.r#min_modulus_size,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#max_modulus_size: {
-                        let field_value = match fields_map.get("max_modulus_size") {
+                        let field_value = match fields_map.get("maxModulusSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_modulus_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxModulusSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_modulus_size: {
-                        let field_value = match fields_map.get("min_modulus_size") {
+                        let field_value = match fields_map.get("minModulusSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_modulus_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minModulusSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

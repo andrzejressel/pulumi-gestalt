@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "checkpoint_configuration",
+                    "checkpointConfiguration",
                     &self.r#checkpoint_configuration,
                 ),
                 to_pulumi_object_field(
-                    "monitoring_configuration",
+                    "monitoringConfiguration",
                     &self.r#monitoring_configuration,
                 ),
                 to_pulumi_object_field(
-                    "parallelism_configuration",
+                    "parallelismConfiguration",
                     &self.r#parallelism_configuration,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#checkpoint_configuration: {
-                        let field_value = match fields_map.get("checkpoint_configuration") {
+                        let field_value = match fields_map.get("checkpointConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'checkpoint_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkpointConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitoring_configuration: {
-                        let field_value = match fields_map.get("monitoring_configuration") {
+                        let field_value = match fields_map.get("monitoringConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monitoring_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monitoringConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parallelism_configuration: {
-                        let field_value = match fields_map.get("parallelism_configuration") {
+                        let field_value = match fields_map.get("parallelismConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parallelism_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parallelismConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

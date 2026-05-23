@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Had
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "https_endpoints",
+                    "httpsEndpoints",
                     &self.r#https_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "install_script_actions",
+                    "installScriptActions",
                     &self.r#install_script_actions,
                 ),
                 to_pulumi_object_field(
-                    "target_instance_count",
+                    "targetInstanceCount",
                     &self.r#target_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "uninstall_script_actions",
+                    "uninstallScriptActions",
                     &self.r#uninstall_script_actions,
                 ),
                 to_pulumi_object_field(
-                    "vm_size",
+                    "vmSize",
                     &self.r#vm_size,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#https_endpoints: {
-                        let field_value = match fields_map.get("https_endpoints") {
+                        let field_value = match fields_map.get("httpsEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'https_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpsEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#install_script_actions: {
-                        let field_value = match fields_map.get("install_script_actions") {
+                        let field_value = match fields_map.get("installScriptActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'install_script_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'installScriptActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_instance_count: {
-                        let field_value = match fields_map.get("target_instance_count") {
+                        let field_value = match fields_map.get("targetInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#uninstall_script_actions: {
-                        let field_value = match fields_map.get("uninstall_script_actions") {
+                        let field_value = match fields_map.get("uninstallScriptActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'uninstall_script_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'uninstallScriptActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_size: {
-                        let field_value = match fields_map.get("vm_size") {
+                        let field_value = match fields_map.get("vmSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

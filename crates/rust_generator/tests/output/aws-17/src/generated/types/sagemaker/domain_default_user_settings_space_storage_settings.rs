@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_ebs_storage_settings",
+                    "defaultEbsStorageSettings",
                     &self.r#default_ebs_storage_settings,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#default_ebs_storage_settings: {
-                        let field_value = match fields_map.get("default_ebs_storage_settings") {
+                        let field_value = match fields_map.get("defaultEbsStorageSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_ebs_storage_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultEbsStorageSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

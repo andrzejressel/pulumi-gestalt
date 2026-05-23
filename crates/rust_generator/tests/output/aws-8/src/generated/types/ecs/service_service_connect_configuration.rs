@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "log_configuration",
+                    "logConfiguration",
                     &self.r#log_configuration,
                 ),
                 to_pulumi_object_field(
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_configuration: {
-                        let field_value = match fields_map.get("log_configuration") {
+                        let field_value = match fields_map.get("logConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

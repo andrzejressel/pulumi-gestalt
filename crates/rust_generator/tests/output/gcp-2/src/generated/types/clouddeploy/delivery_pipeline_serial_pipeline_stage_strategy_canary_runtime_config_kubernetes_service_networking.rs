@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
                     &self.r#deployment,
                 ),
                 to_pulumi_object_field(
-                    "disable_pod_overprovisioning",
+                    "disablePodOverprovisioning",
                     &self.r#disable_pod_overprovisioning,
                 ),
                 to_pulumi_object_field(
-                    "pod_selector_label",
+                    "podSelectorLabel",
                     &self.r#pod_selector_label,
                 ),
                 to_pulumi_object_field(
@@ -81,16 +81,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_pod_overprovisioning: {
-                        let field_value = match fields_map.get("disable_pod_overprovisioning") {
+                        let field_value = match fields_map.get("disablePodOverprovisioning") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_pod_overprovisioning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disablePodOverprovisioning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_selector_label: {
-                        let field_value = match fields_map.get("pod_selector_label") {
+                        let field_value = match fields_map.get("podSelectorLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_selector_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podSelectorLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

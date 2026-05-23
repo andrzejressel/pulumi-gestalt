@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "interval_in_minutes",
+                    "intervalInMinutes",
                     &self.r#interval_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "workspace_id",
+                    "workspaceId",
                     &self.r#workspace_id,
                 ),
                 to_pulumi_object_field(
-                    "workspace_region",
+                    "workspaceRegion",
                     &self.r#workspace_region,
                 ),
                 to_pulumi_object_field(
-                    "workspace_resource_id",
+                    "workspaceResourceId",
                     &self.r#workspace_resource_id,
                 ),
             ];
@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#interval_in_minutes: {
-                        let field_value = match fields_map.get("interval_in_minutes") {
+                        let field_value = match fields_map.get("intervalInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'interval_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intervalInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workspace_id: {
-                        let field_value = match fields_map.get("workspace_id") {
+                        let field_value = match fields_map.get("workspaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workspace_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workspaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workspace_region: {
-                        let field_value = match fields_map.get("workspace_region") {
+                        let field_value = match fields_map.get("workspaceRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workspace_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workspaceRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workspace_resource_id: {
-                        let field_value = match fields_map.get("workspace_resource_id") {
+                        let field_value = match fields_map.get("workspaceResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workspace_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workspaceResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

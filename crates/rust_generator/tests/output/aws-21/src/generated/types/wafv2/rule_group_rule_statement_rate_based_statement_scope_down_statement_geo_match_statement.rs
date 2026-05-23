@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "country_codes",
+                    "countryCodes",
                     &self.r#country_codes,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_ip_config",
+                    "forwardedIpConfig",
                     &self.r#forwarded_ip_config,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#country_codes: {
-                        let field_value = match fields_map.get("country_codes") {
+                        let field_value = match fields_map.get("countryCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'country_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'countryCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_ip_config: {
-                        let field_value = match fields_map.get("forwarded_ip_config") {
+                        let field_value = match fields_map.get("forwardedIpConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarded_ip_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardedIpConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

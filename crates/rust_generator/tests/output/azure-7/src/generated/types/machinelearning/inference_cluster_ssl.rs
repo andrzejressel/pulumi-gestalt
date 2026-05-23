@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Inf
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "leaf_domain_label",
+                    "leafDomainLabel",
                     &self.r#leaf_domain_label,
                 ),
                 to_pulumi_object_field(
-                    "overwrite_existing_domain",
+                    "overwriteExistingDomain",
                     &self.r#overwrite_existing_domain,
                 ),
             ];
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#leaf_domain_label: {
-                        let field_value = match fields_map.get("leaf_domain_label") {
+                        let field_value = match fields_map.get("leafDomainLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'leaf_domain_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'leafDomainLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#overwrite_existing_domain: {
-                        let field_value = match fields_map.get("overwrite_existing_domain") {
+                        let field_value = match fields_map.get("overwriteExistingDomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'overwrite_existing_domain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'overwriteExistingDomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -56,39 +56,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_surge_fixed",
+                    "maxSurgeFixed",
                     &self.r#max_surge_fixed,
                 ),
                 to_pulumi_object_field(
-                    "max_surge_percent",
+                    "maxSurgePercent",
                     &self.r#max_surge_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unavailable_fixed",
+                    "maxUnavailableFixed",
                     &self.r#max_unavailable_fixed,
                 ),
                 to_pulumi_object_field(
-                    "max_unavailable_percent",
+                    "maxUnavailablePercent",
                     &self.r#max_unavailable_percent,
                 ),
                 to_pulumi_object_field(
-                    "min_ready_sec",
+                    "minReadySec",
                     &self.r#min_ready_sec,
                 ),
                 to_pulumi_object_field(
-                    "minimal_action",
+                    "minimalAction",
                     &self.r#minimal_action,
                 ),
                 to_pulumi_object_field(
-                    "most_disruptive_allowed_action",
+                    "mostDisruptiveAllowedAction",
                     &self.r#most_disruptive_allowed_action,
                 ),
                 to_pulumi_object_field(
-                    "replacement_method",
+                    "replacementMethod",
                     &self.r#replacement_method,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -115,65 +115,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#max_surge_fixed: {
-                        let field_value = match fields_map.get("max_surge_fixed") {
+                        let field_value = match fields_map.get("maxSurgeFixed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_surge_fixed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxSurgeFixed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_surge_percent: {
-                        let field_value = match fields_map.get("max_surge_percent") {
+                        let field_value = match fields_map.get("maxSurgePercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_surge_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxSurgePercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unavailable_fixed: {
-                        let field_value = match fields_map.get("max_unavailable_fixed") {
+                        let field_value = match fields_map.get("maxUnavailableFixed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unavailable_fixed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnavailableFixed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unavailable_percent: {
-                        let field_value = match fields_map.get("max_unavailable_percent") {
+                        let field_value = match fields_map.get("maxUnavailablePercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unavailable_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnavailablePercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_ready_sec: {
-                        let field_value = match fields_map.get("min_ready_sec") {
+                        let field_value = match fields_map.get("minReadySec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_ready_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minReadySec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimal_action: {
-                        let field_value = match fields_map.get("minimal_action") {
+                        let field_value = match fields_map.get("minimalAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimal_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimalAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#most_disruptive_allowed_action: {
-                        let field_value = match fields_map.get("most_disruptive_allowed_action") {
+                        let field_value = match fields_map.get("mostDisruptiveAllowedAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'most_disruptive_allowed_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mostDisruptiveAllowedAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replacement_method: {
-                        let field_value = match fields_map.get("replacement_method") {
+                        let field_value = match fields_map.get("replacementMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replacement_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replacementMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

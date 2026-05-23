@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_policy_id",
+                    "backupPolicyId",
                     &self.r#backup_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "backup_vault_id",
+                    "backupVaultId",
                     &self.r#backup_vault_id,
                 ),
                 to_pulumi_object_field(
-                    "policy_enabled",
+                    "policyEnabled",
                     &self.r#policy_enabled,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#backup_policy_id: {
-                        let field_value = match fields_map.get("backup_policy_id") {
+                        let field_value = match fields_map.get("backupPolicyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupPolicyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backup_vault_id: {
-                        let field_value = match fields_map.get("backup_vault_id") {
+                        let field_value = match fields_map.get("backupVaultId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_vault_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupVaultId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_enabled: {
-                        let field_value = match fields_map.get("policy_enabled") {
+                        let field_value = match fields_map.get("policyEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

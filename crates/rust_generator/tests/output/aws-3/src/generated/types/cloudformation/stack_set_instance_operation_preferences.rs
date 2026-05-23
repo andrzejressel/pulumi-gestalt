@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "concurrency_mode",
+                    "concurrencyMode",
                     &self.r#concurrency_mode,
                 ),
                 to_pulumi_object_field(
-                    "failure_tolerance_count",
+                    "failureToleranceCount",
                     &self.r#failure_tolerance_count,
                 ),
                 to_pulumi_object_field(
-                    "failure_tolerance_percentage",
+                    "failureTolerancePercentage",
                     &self.r#failure_tolerance_percentage,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_count",
+                    "maxConcurrentCount",
                     &self.r#max_concurrent_count,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_percentage",
+                    "maxConcurrentPercentage",
                     &self.r#max_concurrent_percentage,
                 ),
                 to_pulumi_object_field(
-                    "region_concurrency_type",
+                    "regionConcurrencyType",
                     &self.r#region_concurrency_type,
                 ),
                 to_pulumi_object_field(
-                    "region_orders",
+                    "regionOrders",
                     &self.r#region_orders,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#concurrency_mode: {
-                        let field_value = match fields_map.get("concurrency_mode") {
+                        let field_value = match fields_map.get("concurrencyMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'concurrency_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'concurrencyMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_tolerance_count: {
-                        let field_value = match fields_map.get("failure_tolerance_count") {
+                        let field_value = match fields_map.get("failureToleranceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_tolerance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureToleranceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_tolerance_percentage: {
-                        let field_value = match fields_map.get("failure_tolerance_percentage") {
+                        let field_value = match fields_map.get("failureTolerancePercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_tolerance_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureTolerancePercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrent_count: {
-                        let field_value = match fields_map.get("max_concurrent_count") {
+                        let field_value = match fields_map.get("maxConcurrentCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrent_percentage: {
-                        let field_value = match fields_map.get("max_concurrent_percentage") {
+                        let field_value = match fields_map.get("maxConcurrentPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#region_concurrency_type: {
-                        let field_value = match fields_map.get("region_concurrency_type") {
+                        let field_value = match fields_map.get("regionConcurrencyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'region_concurrency_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionConcurrencyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#region_orders: {
-                        let field_value = match fields_map.get("region_orders") {
+                        let field_value = match fields_map.get("regionOrders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'region_orders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionOrders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

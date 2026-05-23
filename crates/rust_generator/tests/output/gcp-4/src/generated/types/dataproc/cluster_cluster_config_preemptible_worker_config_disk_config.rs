@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "boot_disk_size_gb",
+                    "bootDiskSizeGb",
                     &self.r#boot_disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "boot_disk_type",
+                    "bootDiskType",
                     &self.r#boot_disk_type,
                 ),
                 to_pulumi_object_field(
-                    "local_ssd_interface",
+                    "localSsdInterface",
                     &self.r#local_ssd_interface,
                 ),
                 to_pulumi_object_field(
-                    "num_local_ssds",
+                    "numLocalSsds",
                     &self.r#num_local_ssds,
                 ),
             ];
@@ -79,30 +79,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#boot_disk_size_gb: {
-                        let field_value = match fields_map.get("boot_disk_size_gb") {
+                        let field_value = match fields_map.get("bootDiskSizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'boot_disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bootDiskSizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#boot_disk_type: {
-                        let field_value = match fields_map.get("boot_disk_type") {
+                        let field_value = match fields_map.get("bootDiskType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'boot_disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bootDiskType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_ssd_interface: {
-                        let field_value = match fields_map.get("local_ssd_interface") {
+                        let field_value = match fields_map.get("localSsdInterface") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_ssd_interface' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localSsdInterface' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_local_ssds: {
-                        let field_value = match fields_map.get("num_local_ssds") {
+                        let field_value = match fields_map.get("numLocalSsds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'num_local_ssds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numLocalSsds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

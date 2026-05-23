@@ -58,15 +58,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#conditions,
                 ),
                 to_pulumi_object_field(
-                    "latest_created_revision_name",
+                    "latestCreatedRevisionName",
                     &self.r#latest_created_revision_name,
                 ),
                 to_pulumi_object_field(
-                    "latest_ready_revision_name",
+                    "latestReadyRevisionName",
                     &self.r#latest_ready_revision_name,
                 ),
                 to_pulumi_object_field(
-                    "observed_generation",
+                    "observedGeneration",
                     &self.r#observed_generation,
                 ),
                 to_pulumi_object_field(
@@ -108,23 +108,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#latest_created_revision_name: {
-                        let field_value = match fields_map.get("latest_created_revision_name") {
+                        let field_value = match fields_map.get("latestCreatedRevisionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'latest_created_revision_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latestCreatedRevisionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#latest_ready_revision_name: {
-                        let field_value = match fields_map.get("latest_ready_revision_name") {
+                        let field_value = match fields_map.get("latestReadyRevisionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'latest_ready_revision_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latestReadyRevisionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#observed_generation: {
-                        let field_value = match fields_map.get("observed_generation") {
+                        let field_value = match fields_map.get("observedGeneration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'observed_generation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'observedGeneration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

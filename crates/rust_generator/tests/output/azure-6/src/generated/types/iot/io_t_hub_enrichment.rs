@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_names",
+                    "endpointNames",
                     &self.r#endpoint_names,
                 ),
                 to_pulumi_object_field(
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#endpoint_names: {
-                        let field_value = match fields_map.get("endpoint_names") {
+                        let field_value = match fields_map.get("endpointNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

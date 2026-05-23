@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Htt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_redirect",
+                    "hostRedirect",
                     &self.r#host_redirect,
                 ),
                 to_pulumi_object_field(
-                    "https_redirect",
+                    "httpsRedirect",
                     &self.r#https_redirect,
                 ),
                 to_pulumi_object_field(
-                    "path_redirect",
+                    "pathRedirect",
                     &self.r#path_redirect,
                 ),
                 to_pulumi_object_field(
-                    "port_redirect",
+                    "portRedirect",
                     &self.r#port_redirect,
                 ),
                 to_pulumi_object_field(
-                    "prefix_rewrite",
+                    "prefixRewrite",
                     &self.r#prefix_rewrite,
                 ),
                 to_pulumi_object_field(
-                    "response_code",
+                    "responseCode",
                     &self.r#response_code,
                 ),
                 to_pulumi_object_field(
-                    "strip_query",
+                    "stripQuery",
                     &self.r#strip_query,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#host_redirect: {
-                        let field_value = match fields_map.get("host_redirect") {
+                        let field_value = match fields_map.get("hostRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#https_redirect: {
-                        let field_value = match fields_map.get("https_redirect") {
+                        let field_value = match fields_map.get("httpsRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'https_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpsRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_redirect: {
-                        let field_value = match fields_map.get("path_redirect") {
+                        let field_value = match fields_map.get("pathRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_redirect: {
-                        let field_value = match fields_map.get("port_redirect") {
+                        let field_value = match fields_map.get("portRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_rewrite: {
-                        let field_value = match fields_map.get("prefix_rewrite") {
+                        let field_value = match fields_map.get("prefixRewrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_rewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixRewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_code: {
-                        let field_value = match fields_map.get("response_code") {
+                        let field_value = match fields_map.get("responseCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#strip_query: {
-                        let field_value = match fields_map.get("strip_query") {
+                        let field_value = match fields_map.get("stripQuery") {
                             Some(value) => value,
-                            None => bail!("Missing field 'strip_query' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stripQuery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

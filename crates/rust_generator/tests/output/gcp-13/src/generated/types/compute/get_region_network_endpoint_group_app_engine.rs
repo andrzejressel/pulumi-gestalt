@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "url_mask",
+                    "urlMask",
                     &self.r#url_mask,
                 ),
                 to_pulumi_object_field(
@@ -84,9 +84,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_mask: {
-                        let field_value = match fields_map.get("url_mask") {
+                        let field_value = match fields_map.get("urlMask") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_mask' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlMask' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

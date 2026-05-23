@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "cloud_kms_key_version",
+                    "cloudKmsKeyVersion",
                     &self.r#cloud_kms_key_version,
                 ),
             ];
@@ -70,9 +70,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_kms_key_version: {
-                        let field_value = match fields_map.get("cloud_kms_key_version") {
+                        let field_value = match fields_map.get("cloudKmsKeyVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_kms_key_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudKmsKeyVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

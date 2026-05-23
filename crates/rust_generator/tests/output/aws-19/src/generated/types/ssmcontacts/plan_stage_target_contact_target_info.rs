@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "contact_id",
+                    "contactId",
                     &self.r#contact_id,
                 ),
                 to_pulumi_object_field(
-                    "is_essential",
+                    "isEssential",
                     &self.r#is_essential,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#contact_id: {
-                        let field_value = match fields_map.get("contact_id") {
+                        let field_value = match fields_map.get("contactId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contact_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contactId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_essential: {
-                        let field_value = match fields_map.get("is_essential") {
+                        let field_value = match fields_map.get("isEssential") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_essential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isEssential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

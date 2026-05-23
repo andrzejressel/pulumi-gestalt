@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_locations",
+                    "additionalLocations",
                     &self.r#additional_locations,
                 ),
                 to_pulumi_object_field(
-                    "bucket_columns",
+                    "bucketColumns",
                     &self.r#bucket_columns,
                 ),
                 to_pulumi_object_field(
@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#compressed,
                 ),
                 to_pulumi_object_field(
-                    "input_format",
+                    "inputFormat",
                     &self.r#input_format,
                 ),
                 to_pulumi_object_field(
@@ -99,11 +99,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "number_of_buckets",
+                    "numberOfBuckets",
                     &self.r#number_of_buckets,
                 ),
                 to_pulumi_object_field(
-                    "output_format",
+                    "outputFormat",
                     &self.r#output_format,
                 ),
                 to_pulumi_object_field(
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "schema_references",
+                    "schemaReferences",
                     &self.r#schema_references,
                 ),
                 to_pulumi_object_field(
-                    "ser_de_infos",
+                    "serDeInfos",
                     &self.r#ser_de_infos,
                 ),
                 to_pulumi_object_field(
-                    "skewed_infos",
+                    "skewedInfos",
                     &self.r#skewed_infos,
                 ),
                 to_pulumi_object_field(
-                    "sort_columns",
+                    "sortColumns",
                     &self.r#sort_columns,
                 ),
                 to_pulumi_object_field(
-                    "stored_as_sub_directories",
+                    "storedAsSubDirectories",
                     &self.r#stored_as_sub_directories,
                 ),
             ];
@@ -154,16 +154,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#additional_locations: {
-                        let field_value = match fields_map.get("additional_locations") {
+                        let field_value = match fields_map.get("additionalLocations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalLocations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_columns: {
-                        let field_value = match fields_map.get("bucket_columns") {
+                        let field_value = match fields_map.get("bucketColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -182,9 +182,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_format: {
-                        let field_value = match fields_map.get("input_format") {
+                        let field_value = match fields_map.get("inputFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -196,16 +196,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_of_buckets: {
-                        let field_value = match fields_map.get("number_of_buckets") {
+                        let field_value = match fields_map.get("numberOfBuckets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_of_buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberOfBuckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_format: {
-                        let field_value = match fields_map.get("output_format") {
+                        let field_value = match fields_map.get("outputFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -217,37 +217,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_references: {
-                        let field_value = match fields_map.get("schema_references") {
+                        let field_value = match fields_map.get("schemaReferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_references' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaReferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ser_de_infos: {
-                        let field_value = match fields_map.get("ser_de_infos") {
+                        let field_value = match fields_map.get("serDeInfos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ser_de_infos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serDeInfos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skewed_infos: {
-                        let field_value = match fields_map.get("skewed_infos") {
+                        let field_value = match fields_map.get("skewedInfos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skewed_infos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skewedInfos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sort_columns: {
-                        let field_value = match fields_map.get("sort_columns") {
+                        let field_value = match fields_map.get("sortColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sort_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sortColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stored_as_sub_directories: {
-                        let field_value = match fields_map.get("stored_as_sub_directories") {
+                        let field_value = match fields_map.get("storedAsSubDirectories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stored_as_sub_directories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storedAsSubDirectories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

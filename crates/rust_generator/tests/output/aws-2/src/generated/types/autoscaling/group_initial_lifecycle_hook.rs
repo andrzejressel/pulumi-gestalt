@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_result",
+                    "defaultResult",
                     &self.r#default_result,
                 ),
                 to_pulumi_object_field(
-                    "heartbeat_timeout",
+                    "heartbeatTimeout",
                     &self.r#heartbeat_timeout,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_transition",
+                    "lifecycleTransition",
                     &self.r#lifecycle_transition,
                 ),
                 to_pulumi_object_field(
@@ -57,15 +57,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "notification_metadata",
+                    "notificationMetadata",
                     &self.r#notification_metadata,
                 ),
                 to_pulumi_object_field(
-                    "notification_target_arn",
+                    "notificationTargetArn",
                     &self.r#notification_target_arn,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];
@@ -92,23 +92,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#default_result: {
-                        let field_value = match fields_map.get("default_result") {
+                        let field_value = match fields_map.get("defaultResult") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_result' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultResult' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#heartbeat_timeout: {
-                        let field_value = match fields_map.get("heartbeat_timeout") {
+                        let field_value = match fields_map.get("heartbeatTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'heartbeat_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'heartbeatTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_transition: {
-                        let field_value = match fields_map.get("lifecycle_transition") {
+                        let field_value = match fields_map.get("lifecycleTransition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lifecycle_transition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifecycleTransition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,23 +120,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_metadata: {
-                        let field_value = match fields_map.get("notification_metadata") {
+                        let field_value = match fields_map.get("notificationMetadata") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_metadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationMetadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_target_arn: {
-                        let field_value = match fields_map.get("notification_target_arn") {
+                        let field_value = match fields_map.get("notificationTargetArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_target_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationTargetArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

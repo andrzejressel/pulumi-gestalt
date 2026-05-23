@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#caching,
                 ),
                 to_pulumi_object_field(
-                    "create_option",
+                    "createOption",
                     &self.r#create_option,
                 ),
                 to_pulumi_object_field(
@@ -61,7 +61,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "managed_disk_type",
+                    "managedDiskType",
                     &self.r#managed_disk_type,
                 ),
                 to_pulumi_object_field(
@@ -69,11 +69,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "os_type",
+                    "osType",
                     &self.r#os_type,
                 ),
                 to_pulumi_object_field(
-                    "vhd_containers",
+                    "vhdContainers",
                     &self.r#vhd_containers,
                 ),
             ];
@@ -107,9 +107,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_option: {
-                        let field_value = match fields_map.get("create_option") {
+                        let field_value = match fields_map.get("createOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -121,9 +121,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_disk_type: {
-                        let field_value = match fields_map.get("managed_disk_type") {
+                        let field_value = match fields_map.get("managedDiskType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedDiskType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -135,16 +135,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_type: {
-                        let field_value = match fields_map.get("os_type") {
+                        let field_value = match fields_map.get("osType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vhd_containers: {
-                        let field_value = match fields_map.get("vhd_containers") {
+                        let field_value = match fields_map.get("vhdContainers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vhd_containers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vhdContainers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

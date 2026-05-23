@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "contains_header",
+                    "containsHeader",
                     &self.r#contains_header,
                 ),
                 to_pulumi_object_field(
@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#format,
                 ),
                 to_pulumi_object_field(
-                    "start_from_row",
+                    "startFromRow",
                     &self.r#start_from_row,
                 ),
                 to_pulumi_object_field(
-                    "text_qualifier",
+                    "textQualifier",
                     &self.r#text_qualifier,
                 ),
             ];
@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#contains_header: {
-                        let field_value = match fields_map.get("contains_header") {
+                        let field_value = match fields_map.get("containsHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contains_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containsHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_from_row: {
-                        let field_value = match fields_map.get("start_from_row") {
+                        let field_value = match fields_map.get("startFromRow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_from_row' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startFromRow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_qualifier: {
-                        let field_value = match fields_map.get("text_qualifier") {
+                        let field_value = match fields_map.get("textQualifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_qualifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textQualifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

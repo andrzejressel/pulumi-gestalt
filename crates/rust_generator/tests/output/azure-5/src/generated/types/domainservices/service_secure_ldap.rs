@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_expiry",
+                    "certificateExpiry",
                     &self.r#certificate_expiry,
                 ),
                 to_pulumi_object_field(
-                    "certificate_thumbprint",
+                    "certificateThumbprint",
                     &self.r#certificate_thumbprint,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "external_access_enabled",
+                    "externalAccessEnabled",
                     &self.r#external_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "pfx_certificate",
+                    "pfxCertificate",
                     &self.r#pfx_certificate,
                 ),
                 to_pulumi_object_field(
-                    "pfx_certificate_password",
+                    "pfxCertificatePassword",
                     &self.r#pfx_certificate_password,
                 ),
                 to_pulumi_object_field(
-                    "public_certificate",
+                    "publicCertificate",
                     &self.r#public_certificate,
                 ),
             ];
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#certificate_expiry: {
-                        let field_value = match fields_map.get("certificate_expiry") {
+                        let field_value = match fields_map.get("certificateExpiry") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_expiry' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateExpiry' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certificate_thumbprint: {
-                        let field_value = match fields_map.get("certificate_thumbprint") {
+                        let field_value = match fields_map.get("certificateThumbprint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_thumbprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateThumbprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,30 +119,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_access_enabled: {
-                        let field_value = match fields_map.get("external_access_enabled") {
+                        let field_value = match fields_map.get("externalAccessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalAccessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pfx_certificate: {
-                        let field_value = match fields_map.get("pfx_certificate") {
+                        let field_value = match fields_map.get("pfxCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pfx_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pfxCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pfx_certificate_password: {
-                        let field_value = match fields_map.get("pfx_certificate_password") {
+                        let field_value = match fields_map.get("pfxCertificatePassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pfx_certificate_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pfxCertificatePassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_certificate: {
-                        let field_value = match fields_map.get("public_certificate") {
+                        let field_value = match fields_map.get("publicCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

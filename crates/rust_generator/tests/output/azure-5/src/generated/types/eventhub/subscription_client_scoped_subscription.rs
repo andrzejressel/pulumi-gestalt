@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "is_client_scoped_subscription_durable",
+                    "isClientScopedSubscriptionDurable",
                     &self.r#is_client_scoped_subscription_durable,
                 ),
                 to_pulumi_object_field(
-                    "is_client_scoped_subscription_shareable",
+                    "isClientScopedSubscriptionShareable",
                     &self.r#is_client_scoped_subscription_shareable,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#client_id: {
-                        let field_value = match fields_map.get("client_id") {
+                        let field_value = match fields_map.get("clientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_client_scoped_subscription_durable: {
-                        let field_value = match fields_map.get("is_client_scoped_subscription_durable") {
+                        let field_value = match fields_map.get("isClientScopedSubscriptionDurable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_client_scoped_subscription_durable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isClientScopedSubscriptionDurable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_client_scoped_subscription_shareable: {
-                        let field_value = match fields_map.get("is_client_scoped_subscription_shareable") {
+                        let field_value = match fields_map.get("isClientScopedSubscriptionShareable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_client_scoped_subscription_shareable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isClientScopedSubscriptionShareable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

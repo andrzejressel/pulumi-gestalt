@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#condition,
                 ),
                 to_pulumi_object_field(
-                    "condition_version",
+                    "conditionVersion",
                     &self.r#condition_version,
                 ),
                 to_pulumi_object_field(
-                    "data_actions",
+                    "dataActions",
                     &self.r#data_actions,
                 ),
                 to_pulumi_object_field(
-                    "not_actions",
+                    "notActions",
                     &self.r#not_actions,
                 ),
                 to_pulumi_object_field(
-                    "not_data_actions",
+                    "notDataActions",
                     &self.r#not_data_actions,
                 ),
             ];
@@ -104,30 +104,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#condition_version: {
-                        let field_value = match fields_map.get("condition_version") {
+                        let field_value = match fields_map.get("conditionVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_actions: {
-                        let field_value = match fields_map.get("data_actions") {
+                        let field_value = match fields_map.get("dataActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_actions: {
-                        let field_value = match fields_map.get("not_actions") {
+                        let field_value = match fields_map.get("notActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_data_actions: {
-                        let field_value = match fields_map.get("not_data_actions") {
+                        let field_value = match fields_map.get("notDataActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_data_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notDataActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

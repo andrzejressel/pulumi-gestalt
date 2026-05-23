@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#hostname,
                 ),
                 to_pulumi_object_field(
-                    "ip_preference",
+                    "ipPreference",
                     &self.r#ip_preference,
                 ),
                 to_pulumi_object_field(
-                    "response_type",
+                    "responseType",
                     &self.r#response_type,
                 ),
             ];
@@ -70,16 +70,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_preference: {
-                        let field_value = match fields_map.get("ip_preference") {
+                        let field_value = match fields_map.get("ipPreference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_preference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipPreference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_type: {
-                        let field_value = match fields_map.get("response_type") {
+                        let field_value = match fields_map.get("responseType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kinesis_firehose_configs",
+                    "kinesisFirehoseConfigs",
                     &self.r#kinesis_firehose_configs,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_stream_configs",
+                    "kinesisStreamConfigs",
                     &self.r#kinesis_stream_configs,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_video_stream_configs",
+                    "kinesisVideoStreamConfigs",
                     &self.r#kinesis_video_stream_configs,
                 ),
                 to_pulumi_object_field(
-                    "s_3_configs",
+                    "s3Configs",
                     &self.r#s_3_configs,
                 ),
                 to_pulumi_object_field(
-                    "storage_type",
+                    "storageType",
                     &self.r#storage_type,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#kinesis_firehose_configs: {
-                        let field_value = match fields_map.get("kinesis_firehose_configs") {
+                        let field_value = match fields_map.get("kinesisFirehoseConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_firehose_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisFirehoseConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_stream_configs: {
-                        let field_value = match fields_map.get("kinesis_stream_configs") {
+                        let field_value = match fields_map.get("kinesisStreamConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_stream_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisStreamConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_video_stream_configs: {
-                        let field_value = match fields_map.get("kinesis_video_stream_configs") {
+                        let field_value = match fields_map.get("kinesisVideoStreamConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_video_stream_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisVideoStreamConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_configs: {
-                        let field_value = match fields_map.get("s_3_configs") {
+                        let field_value = match fields_map.get("s3Configs") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_type: {
-                        let field_value = match fields_map.get("storage_type") {
+                        let field_value = match fields_map.get("storageType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

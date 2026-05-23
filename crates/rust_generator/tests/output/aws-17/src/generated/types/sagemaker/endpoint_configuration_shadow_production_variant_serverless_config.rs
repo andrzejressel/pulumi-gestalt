@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_concurrency",
+                    "maxConcurrency",
                     &self.r#max_concurrency,
                 ),
                 to_pulumi_object_field(
-                    "memory_size_in_mb",
+                    "memorySizeInMb",
                     &self.r#memory_size_in_mb,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_concurrency",
+                    "provisionedConcurrency",
                     &self.r#provisioned_concurrency,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#max_concurrency: {
-                        let field_value = match fields_map.get("max_concurrency") {
+                        let field_value = match fields_map.get("maxConcurrency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_size_in_mb: {
-                        let field_value = match fields_map.get("memory_size_in_mb") {
+                        let field_value = match fields_map.get("memorySizeInMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_size_in_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memorySizeInMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioned_concurrency: {
-                        let field_value = match fields_map.get("provisioned_concurrency") {
+                        let field_value = match fields_map.get("provisionedConcurrency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioned_concurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionedConcurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

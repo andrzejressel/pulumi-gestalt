@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_key_id",
+                    "accessKeyId",
                     &self.r#access_key_id,
                 ),
                 to_pulumi_object_field(
-                    "origin_region",
+                    "originRegion",
                     &self.r#origin_region,
                 ),
                 to_pulumi_object_field(
-                    "secret_access_key_version",
+                    "secretAccessKeyVersion",
                     &self.r#secret_access_key_version,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#access_key_id: {
-                        let field_value = match fields_map.get("access_key_id") {
+                        let field_value = match fields_map.get("accessKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_region: {
-                        let field_value = match fields_map.get("origin_region") {
+                        let field_value = match fields_map.get("originRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'origin_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'originRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_access_key_version: {
-                        let field_value = match fields_map.get("secret_access_key_version") {
+                        let field_value = match fields_map.get("secretAccessKeyVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_access_key_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretAccessKeyVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

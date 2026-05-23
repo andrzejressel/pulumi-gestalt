@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additive_vpc_scope_dns_domain",
+                    "additiveVpcScopeDnsDomain",
                     &self.r#additive_vpc_scope_dns_domain,
                 ),
                 to_pulumi_object_field(
-                    "cluster_dns",
+                    "clusterDns",
                     &self.r#cluster_dns,
                 ),
                 to_pulumi_object_field(
-                    "cluster_dns_domain",
+                    "clusterDnsDomain",
                     &self.r#cluster_dns_domain,
                 ),
                 to_pulumi_object_field(
-                    "cluster_dns_scope",
+                    "clusterDnsScope",
                     &self.r#cluster_dns_scope,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#additive_vpc_scope_dns_domain: {
-                        let field_value = match fields_map.get("additive_vpc_scope_dns_domain") {
+                        let field_value = match fields_map.get("additiveVpcScopeDnsDomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additive_vpc_scope_dns_domain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additiveVpcScopeDnsDomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_dns: {
-                        let field_value = match fields_map.get("cluster_dns") {
+                        let field_value = match fields_map.get("clusterDns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_dns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterDns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_dns_domain: {
-                        let field_value = match fields_map.get("cluster_dns_domain") {
+                        let field_value = match fields_map.get("clusterDnsDomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_dns_domain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterDnsDomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_dns_scope: {
-                        let field_value = match fields_map.get("cluster_dns_scope") {
+                        let field_value = match fields_map.get("clusterDnsScope") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_dns_scope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterDnsScope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

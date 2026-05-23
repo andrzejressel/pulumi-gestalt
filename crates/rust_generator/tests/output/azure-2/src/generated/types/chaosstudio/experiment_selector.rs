@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "chaos_studio_target_ids",
+                    "chaosStudioTargetIds",
                     &self.r#chaos_studio_target_ids,
                 ),
                 to_pulumi_object_field(
@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#chaos_studio_target_ids: {
-                        let field_value = match fields_map.get("chaos_studio_target_ids") {
+                        let field_value = match fields_map.get("chaosStudioTargetIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'chaos_studio_target_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'chaosStudioTargetIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "minimum_healthy_targets_count",
+                    "minimumHealthyTargetsCount",
                     &self.r#minimum_healthy_targets_count,
                 ),
                 to_pulumi_object_field(
-                    "minimum_healthy_targets_percentage",
+                    "minimumHealthyTargetsPercentage",
                     &self.r#minimum_healthy_targets_percentage,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#minimum_healthy_targets_count: {
-                        let field_value = match fields_map.get("minimum_healthy_targets_count") {
+                        let field_value = match fields_map.get("minimumHealthyTargetsCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_healthy_targets_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumHealthyTargetsCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_healthy_targets_percentage: {
-                        let field_value = match fields_map.get("minimum_healthy_targets_percentage") {
+                        let field_value = match fields_map.get("minimumHealthyTargetsPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_healthy_targets_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumHealthyTargetsPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

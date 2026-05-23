@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_latency_in_milliseconds",
+                    "additionalLatencyInMilliseconds",
                     &self.r#additional_latency_in_milliseconds,
                 ),
                 to_pulumi_object_field(
-                    "sample_size",
+                    "sampleSize",
                     &self.r#sample_size,
                 ),
                 to_pulumi_object_field(
-                    "successful_samples_required",
+                    "successfulSamplesRequired",
                     &self.r#successful_samples_required,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#additional_latency_in_milliseconds: {
-                        let field_value = match fields_map.get("additional_latency_in_milliseconds") {
+                        let field_value = match fields_map.get("additionalLatencyInMilliseconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_latency_in_milliseconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalLatencyInMilliseconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_size: {
-                        let field_value = match fields_map.get("sample_size") {
+                        let field_value = match fields_map.get("sampleSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#successful_samples_required: {
-                        let field_value = match fields_map.get("successful_samples_required") {
+                        let field_value = match fields_map.get("successfulSamplesRequired") {
                             Some(value) => value,
-                            None => bail!("Missing field 'successful_samples_required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successfulSamplesRequired' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

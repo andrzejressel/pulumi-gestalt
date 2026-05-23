@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_kinds",
+                    "groupKinds",
                     &self.r#group_kinds,
                 ),
                 to_pulumi_object_field(
-                    "json_path",
+                    "jsonPath",
                     &self.r#json_path,
                 ),
                 to_pulumi_object_field(
@@ -80,16 +80,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#group_kinds: {
-                        let field_value = match fields_map.get("group_kinds") {
+                        let field_value = match fields_map.get("groupKinds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_kinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupKinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#json_path: {
-                        let field_value = match fields_map.get("json_path") {
+                        let field_value = match fields_map.get("jsonPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'json_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsonPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

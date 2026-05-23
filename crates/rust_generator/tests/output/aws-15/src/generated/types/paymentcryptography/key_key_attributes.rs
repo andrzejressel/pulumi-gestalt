@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_algorithm",
+                    "keyAlgorithm",
                     &self.r#key_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "key_class",
+                    "keyClass",
                     &self.r#key_class,
                 ),
                 to_pulumi_object_field(
-                    "key_modes_of_use",
+                    "keyModesOfUse",
                     &self.r#key_modes_of_use,
                 ),
                 to_pulumi_object_field(
-                    "key_usage",
+                    "keyUsage",
                     &self.r#key_usage,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#key_algorithm: {
-                        let field_value = match fields_map.get("key_algorithm") {
+                        let field_value = match fields_map.get("keyAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_class: {
-                        let field_value = match fields_map.get("key_class") {
+                        let field_value = match fields_map.get("keyClass") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_class' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyClass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_modes_of_use: {
-                        let field_value = match fields_map.get("key_modes_of_use") {
+                        let field_value = match fields_map.get("keyModesOfUse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_modes_of_use' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyModesOfUse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_usage: {
-                        let field_value = match fields_map.get("key_usage") {
+                        let field_value = match fields_map.get("keyUsage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_usage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyUsage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

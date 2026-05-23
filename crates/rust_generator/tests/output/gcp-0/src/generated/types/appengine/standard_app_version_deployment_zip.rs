@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "files_count",
+                    "filesCount",
                     &self.r#files_count,
                 ),
                 to_pulumi_object_field(
-                    "source_url",
+                    "sourceUrl",
                     &self.r#source_url,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#files_count: {
-                        let field_value = match fields_map.get("files_count") {
+                        let field_value = match fields_map.get("filesCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'files_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filesCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_url: {
-                        let field_value = match fields_map.get("source_url") {
+                        let field_value = match fields_map.get("sourceUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

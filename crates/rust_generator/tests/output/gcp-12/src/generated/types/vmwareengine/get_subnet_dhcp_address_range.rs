@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "first_address",
+                    "firstAddress",
                     &self.r#first_address,
                 ),
                 to_pulumi_object_field(
-                    "last_address",
+                    "lastAddress",
                     &self.r#last_address,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#first_address: {
-                        let field_value = match fields_map.get("first_address") {
+                        let field_value = match fields_map.get("firstAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'first_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firstAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_address: {
-                        let field_value = match fields_map.get("last_address") {
+                        let field_value = match fields_map.get("lastAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

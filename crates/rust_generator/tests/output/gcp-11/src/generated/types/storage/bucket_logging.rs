@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_bucket",
+                    "logBucket",
                     &self.r#log_bucket,
                 ),
                 to_pulumi_object_field(
-                    "log_object_prefix",
+                    "logObjectPrefix",
                     &self.r#log_object_prefix,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#log_bucket: {
-                        let field_value = match fields_map.get("log_bucket") {
+                        let field_value = match fields_map.get("logBucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logBucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_object_prefix: {
-                        let field_value = match fields_map.get("log_object_prefix") {
+                        let field_value = match fields_map.get("logObjectPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_object_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logObjectPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

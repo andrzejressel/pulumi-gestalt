@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "untrusted_artifact_on_deployment",
+                    "untrustedArtifactOnDeployment",
                     &self.r#untrusted_artifact_on_deployment,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#untrusted_artifact_on_deployment: {
-                        let field_value = match fields_map.get("untrusted_artifact_on_deployment") {
+                        let field_value = match fields_map.get("untrustedArtifactOnDeployment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'untrusted_artifact_on_deployment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'untrustedArtifactOnDeployment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

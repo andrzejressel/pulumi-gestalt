@@ -91,27 +91,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_ejection_time",
+                    "baseEjectionTime",
                     &self.r#base_ejection_time,
                 ),
                 to_pulumi_object_field(
-                    "consecutive_errors",
+                    "consecutiveErrors",
                     &self.r#consecutive_errors,
                 ),
                 to_pulumi_object_field(
-                    "consecutive_gateway_failure",
+                    "consecutiveGatewayFailure",
                     &self.r#consecutive_gateway_failure,
                 ),
                 to_pulumi_object_field(
-                    "enforcing_consecutive_errors",
+                    "enforcingConsecutiveErrors",
                     &self.r#enforcing_consecutive_errors,
                 ),
                 to_pulumi_object_field(
-                    "enforcing_consecutive_gateway_failure",
+                    "enforcingConsecutiveGatewayFailure",
                     &self.r#enforcing_consecutive_gateway_failure,
                 ),
                 to_pulumi_object_field(
-                    "enforcing_success_rate",
+                    "enforcingSuccessRate",
                     &self.r#enforcing_success_rate,
                 ),
                 to_pulumi_object_field(
@@ -119,19 +119,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "max_ejection_percent",
+                    "maxEjectionPercent",
                     &self.r#max_ejection_percent,
                 ),
                 to_pulumi_object_field(
-                    "success_rate_minimum_hosts",
+                    "successRateMinimumHosts",
                     &self.r#success_rate_minimum_hosts,
                 ),
                 to_pulumi_object_field(
-                    "success_rate_request_volume",
+                    "successRateRequestVolume",
                     &self.r#success_rate_request_volume,
                 ),
                 to_pulumi_object_field(
-                    "success_rate_stdev_factor",
+                    "successRateStdevFactor",
                     &self.r#success_rate_stdev_factor,
                 ),
             ];
@@ -158,44 +158,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#base_ejection_time: {
-                        let field_value = match fields_map.get("base_ejection_time") {
+                        let field_value = match fields_map.get("baseEjectionTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'base_ejection_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baseEjectionTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consecutive_errors: {
-                        let field_value = match fields_map.get("consecutive_errors") {
+                        let field_value = match fields_map.get("consecutiveErrors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consecutive_errors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consecutiveErrors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consecutive_gateway_failure: {
-                        let field_value = match fields_map.get("consecutive_gateway_failure") {
+                        let field_value = match fields_map.get("consecutiveGatewayFailure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consecutive_gateway_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consecutiveGatewayFailure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enforcing_consecutive_errors: {
-                        let field_value = match fields_map.get("enforcing_consecutive_errors") {
+                        let field_value = match fields_map.get("enforcingConsecutiveErrors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforcing_consecutive_errors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforcingConsecutiveErrors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enforcing_consecutive_gateway_failure: {
-                        let field_value = match fields_map.get("enforcing_consecutive_gateway_failure") {
+                        let field_value = match fields_map.get("enforcingConsecutiveGatewayFailure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforcing_consecutive_gateway_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforcingConsecutiveGatewayFailure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enforcing_success_rate: {
-                        let field_value = match fields_map.get("enforcing_success_rate") {
+                        let field_value = match fields_map.get("enforcingSuccessRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforcing_success_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforcingSuccessRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -207,30 +207,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_ejection_percent: {
-                        let field_value = match fields_map.get("max_ejection_percent") {
+                        let field_value = match fields_map.get("maxEjectionPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_ejection_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxEjectionPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_rate_minimum_hosts: {
-                        let field_value = match fields_map.get("success_rate_minimum_hosts") {
+                        let field_value = match fields_map.get("successRateMinimumHosts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_rate_minimum_hosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successRateMinimumHosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_rate_request_volume: {
-                        let field_value = match fields_map.get("success_rate_request_volume") {
+                        let field_value = match fields_map.get("successRateRequestVolume") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_rate_request_volume' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successRateRequestVolume' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_rate_stdev_factor: {
-                        let field_value = match fields_map.get("success_rate_stdev_factor") {
+                        let field_value = match fields_map.get("successRateStdevFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_rate_stdev_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successRateStdevFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

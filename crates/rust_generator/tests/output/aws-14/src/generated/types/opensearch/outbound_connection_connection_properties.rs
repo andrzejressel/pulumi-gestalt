@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Out
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cross_cluster_search",
+                    "crossClusterSearch",
                     &self.r#cross_cluster_search,
                 ),
                 to_pulumi_object_field(
@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#cross_cluster_search: {
-                        let field_value = match fields_map.get("cross_cluster_search") {
+                        let field_value = match fields_map.get("crossClusterSearch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_cluster_search' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossClusterSearch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

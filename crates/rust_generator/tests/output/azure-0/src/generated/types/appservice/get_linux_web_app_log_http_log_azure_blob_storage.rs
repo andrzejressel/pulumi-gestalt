@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "retention_in_days",
+                    "retentionInDays",
                     &self.r#retention_in_days,
                 ),
                 to_pulumi_object_field(
-                    "sas_url",
+                    "sasUrl",
                     &self.r#sas_url,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#retention_in_days: {
-                        let field_value = match fields_map.get("retention_in_days") {
+                        let field_value = match fields_map.get("retentionInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sas_url: {
-                        let field_value = match fields_map.get("sas_url") {
+                        let field_value = match fields_map.get("sasUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sas_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sasUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

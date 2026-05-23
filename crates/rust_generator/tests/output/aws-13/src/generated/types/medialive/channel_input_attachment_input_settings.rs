@@ -62,47 +62,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_selectors",
+                    "audioSelectors",
                     &self.r#audio_selectors,
                 ),
                 to_pulumi_object_field(
-                    "caption_selectors",
+                    "captionSelectors",
                     &self.r#caption_selectors,
                 ),
                 to_pulumi_object_field(
-                    "deblock_filter",
+                    "deblockFilter",
                     &self.r#deblock_filter,
                 ),
                 to_pulumi_object_field(
-                    "denoise_filter",
+                    "denoiseFilter",
                     &self.r#denoise_filter,
                 ),
                 to_pulumi_object_field(
-                    "filter_strength",
+                    "filterStrength",
                     &self.r#filter_strength,
                 ),
                 to_pulumi_object_field(
-                    "input_filter",
+                    "inputFilter",
                     &self.r#input_filter,
                 ),
                 to_pulumi_object_field(
-                    "network_input_settings",
+                    "networkInputSettings",
                     &self.r#network_input_settings,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_pid",
+                    "scte35Pid",
                     &self.r#scte_35_pid,
                 ),
                 to_pulumi_object_field(
-                    "smpte_2038_data_preference",
+                    "smpte2038DataPreference",
                     &self.r#smpte_2038_data_preference,
                 ),
                 to_pulumi_object_field(
-                    "source_end_behavior",
+                    "sourceEndBehavior",
                     &self.r#source_end_behavior,
                 ),
                 to_pulumi_object_field(
-                    "video_selector",
+                    "videoSelector",
                     &self.r#video_selector,
                 ),
             ];
@@ -129,79 +129,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_selectors: {
-                        let field_value = match fields_map.get("audio_selectors") {
+                        let field_value = match fields_map.get("audioSelectors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_selectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioSelectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#caption_selectors: {
-                        let field_value = match fields_map.get("caption_selectors") {
+                        let field_value = match fields_map.get("captionSelectors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'caption_selectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'captionSelectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deblock_filter: {
-                        let field_value = match fields_map.get("deblock_filter") {
+                        let field_value = match fields_map.get("deblockFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deblock_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deblockFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#denoise_filter: {
-                        let field_value = match fields_map.get("denoise_filter") {
+                        let field_value = match fields_map.get("denoiseFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'denoise_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'denoiseFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_strength: {
-                        let field_value = match fields_map.get("filter_strength") {
+                        let field_value = match fields_map.get("filterStrength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filter_strength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterStrength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_filter: {
-                        let field_value = match fields_map.get("input_filter") {
+                        let field_value = match fields_map.get("inputFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_input_settings: {
-                        let field_value = match fields_map.get("network_input_settings") {
+                        let field_value = match fields_map.get("networkInputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_input_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkInputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_35_pid: {
-                        let field_value = match fields_map.get("scte_35_pid") {
+                        let field_value = match fields_map.get("scte35Pid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scte_35_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scte35Pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#smpte_2038_data_preference: {
-                        let field_value = match fields_map.get("smpte_2038_data_preference") {
+                        let field_value = match fields_map.get("smpte2038DataPreference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'smpte_2038_data_preference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'smpte2038DataPreference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_end_behavior: {
-                        let field_value = match fields_map.get("source_end_behavior") {
+                        let field_value = match fields_map.get("sourceEndBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_end_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceEndBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#video_selector: {
-                        let field_value = match fields_map.get("video_selector") {
+                        let field_value = match fields_map.get("videoSelector") {
                             Some(value) => value,
-                            None => bail!("Missing field 'video_selector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'videoSelector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

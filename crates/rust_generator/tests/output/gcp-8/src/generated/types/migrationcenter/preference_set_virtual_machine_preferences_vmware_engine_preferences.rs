@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "commitment_plan",
+                    "commitmentPlan",
                     &self.r#commitment_plan,
                 ),
                 to_pulumi_object_field(
-                    "cpu_overcommit_ratio",
+                    "cpuOvercommitRatio",
                     &self.r#cpu_overcommit_ratio,
                 ),
                 to_pulumi_object_field(
-                    "memory_overcommit_ratio",
+                    "memoryOvercommitRatio",
                     &self.r#memory_overcommit_ratio,
                 ),
                 to_pulumi_object_field(
-                    "storage_deduplication_compression_ratio",
+                    "storageDeduplicationCompressionRatio",
                     &self.r#storage_deduplication_compression_ratio,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#commitment_plan: {
-                        let field_value = match fields_map.get("commitment_plan") {
+                        let field_value = match fields_map.get("commitmentPlan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'commitment_plan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commitmentPlan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_overcommit_ratio: {
-                        let field_value = match fields_map.get("cpu_overcommit_ratio") {
+                        let field_value = match fields_map.get("cpuOvercommitRatio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_overcommit_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuOvercommitRatio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_overcommit_ratio: {
-                        let field_value = match fields_map.get("memory_overcommit_ratio") {
+                        let field_value = match fields_map.get("memoryOvercommitRatio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_overcommit_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryOvercommitRatio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_deduplication_compression_ratio: {
-                        let field_value = match fields_map.get("storage_deduplication_compression_ratio") {
+                        let field_value = match fields_map.get("storageDeduplicationCompressionRatio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_deduplication_compression_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageDeduplicationCompressionRatio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

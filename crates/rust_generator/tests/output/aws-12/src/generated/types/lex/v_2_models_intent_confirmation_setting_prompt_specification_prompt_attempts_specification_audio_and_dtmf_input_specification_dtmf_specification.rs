@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deletion_character",
+                    "deletionCharacter",
                     &self.r#deletion_character,
                 ),
                 to_pulumi_object_field(
-                    "end_character",
+                    "endCharacter",
                     &self.r#end_character,
                 ),
                 to_pulumi_object_field(
-                    "end_timeout_ms",
+                    "endTimeoutMs",
                     &self.r#end_timeout_ms,
                 ),
                 to_pulumi_object_field(
-                    "max_length",
+                    "maxLength",
                     &self.r#max_length,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#deletion_character: {
-                        let field_value = match fields_map.get("deletion_character") {
+                        let field_value = match fields_map.get("deletionCharacter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deletion_character' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deletionCharacter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#end_character: {
-                        let field_value = match fields_map.get("end_character") {
+                        let field_value = match fields_map.get("endCharacter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_character' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endCharacter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#end_timeout_ms: {
-                        let field_value = match fields_map.get("end_timeout_ms") {
+                        let field_value = match fields_map.get("endTimeoutMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_timeout_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endTimeoutMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_length: {
-                        let field_value = match fields_map.get("max_length") {
+                        let field_value = match fields_map.get("maxLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

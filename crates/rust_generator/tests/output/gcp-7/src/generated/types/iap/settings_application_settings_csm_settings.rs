@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "rctoken_aud",
+                    "rctokenAud",
                     &self.r#rctoken_aud,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#rctoken_aud: {
-                        let field_value = match fields_map.get("rctoken_aud") {
+                        let field_value = match fields_map.get("rctokenAud") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rctoken_aud' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rctokenAud' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

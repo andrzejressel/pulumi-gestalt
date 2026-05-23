@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_type",
+                    "endpointType",
                     &self.r#endpoint_type,
                 ),
                 to_pulumi_object_field(
-                    "remote_volume_location",
+                    "remoteVolumeLocation",
                     &self.r#remote_volume_location,
                 ),
                 to_pulumi_object_field(
-                    "remote_volume_resource_id",
+                    "remoteVolumeResourceId",
                     &self.r#remote_volume_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "replication_frequency",
+                    "replicationFrequency",
                     &self.r#replication_frequency,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#endpoint_type: {
-                        let field_value = match fields_map.get("endpoint_type") {
+                        let field_value = match fields_map.get("endpointType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_volume_location: {
-                        let field_value = match fields_map.get("remote_volume_location") {
+                        let field_value = match fields_map.get("remoteVolumeLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_volume_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remoteVolumeLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_volume_resource_id: {
-                        let field_value = match fields_map.get("remote_volume_resource_id") {
+                        let field_value = match fields_map.get("remoteVolumeResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_volume_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remoteVolumeResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replication_frequency: {
-                        let field_value = match fields_map.get("replication_frequency") {
+                        let field_value = match fields_map.get("replicationFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replication_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicationFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

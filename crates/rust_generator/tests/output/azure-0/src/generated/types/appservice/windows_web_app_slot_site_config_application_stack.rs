@@ -89,55 +89,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "current_stack",
+                    "currentStack",
                     &self.r#current_stack,
                 ),
                 to_pulumi_object_field(
-                    "docker_image_name",
+                    "dockerImageName",
                     &self.r#docker_image_name,
                 ),
                 to_pulumi_object_field(
-                    "docker_registry_password",
+                    "dockerRegistryPassword",
                     &self.r#docker_registry_password,
                 ),
                 to_pulumi_object_field(
-                    "docker_registry_url",
+                    "dockerRegistryUrl",
                     &self.r#docker_registry_url,
                 ),
                 to_pulumi_object_field(
-                    "docker_registry_username",
+                    "dockerRegistryUsername",
                     &self.r#docker_registry_username,
                 ),
                 to_pulumi_object_field(
-                    "dotnet_core_version",
+                    "dotnetCoreVersion",
                     &self.r#dotnet_core_version,
                 ),
                 to_pulumi_object_field(
-                    "dotnet_version",
+                    "dotnetVersion",
                     &self.r#dotnet_version,
                 ),
                 to_pulumi_object_field(
-                    "java_container",
+                    "javaContainer",
                     &self.r#java_container,
                 ),
                 to_pulumi_object_field(
-                    "java_container_version",
+                    "javaContainerVersion",
                     &self.r#java_container_version,
                 ),
                 to_pulumi_object_field(
-                    "java_embedded_server_enabled",
+                    "javaEmbeddedServerEnabled",
                     &self.r#java_embedded_server_enabled,
                 ),
                 to_pulumi_object_field(
-                    "java_version",
+                    "javaVersion",
                     &self.r#java_version,
                 ),
                 to_pulumi_object_field(
-                    "node_version",
+                    "nodeVersion",
                     &self.r#node_version,
                 ),
                 to_pulumi_object_field(
-                    "php_version",
+                    "phpVersion",
                     &self.r#php_version,
                 ),
                 to_pulumi_object_field(
@@ -145,7 +145,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#python,
                 ),
                 to_pulumi_object_field(
-                    "tomcat_version",
+                    "tomcatVersion",
                     &self.r#tomcat_version,
                 ),
             ];
@@ -172,93 +172,93 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#current_stack: {
-                        let field_value = match fields_map.get("current_stack") {
+                        let field_value = match fields_map.get("currentStack") {
                             Some(value) => value,
-                            None => bail!("Missing field 'current_stack' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'currentStack' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#docker_image_name: {
-                        let field_value = match fields_map.get("docker_image_name") {
+                        let field_value = match fields_map.get("dockerImageName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docker_image_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dockerImageName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#docker_registry_password: {
-                        let field_value = match fields_map.get("docker_registry_password") {
+                        let field_value = match fields_map.get("dockerRegistryPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docker_registry_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dockerRegistryPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#docker_registry_url: {
-                        let field_value = match fields_map.get("docker_registry_url") {
+                        let field_value = match fields_map.get("dockerRegistryUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docker_registry_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dockerRegistryUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#docker_registry_username: {
-                        let field_value = match fields_map.get("docker_registry_username") {
+                        let field_value = match fields_map.get("dockerRegistryUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docker_registry_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dockerRegistryUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dotnet_core_version: {
-                        let field_value = match fields_map.get("dotnet_core_version") {
+                        let field_value = match fields_map.get("dotnetCoreVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dotnet_core_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dotnetCoreVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dotnet_version: {
-                        let field_value = match fields_map.get("dotnet_version") {
+                        let field_value = match fields_map.get("dotnetVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dotnet_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dotnetVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#java_container: {
-                        let field_value = match fields_map.get("java_container") {
+                        let field_value = match fields_map.get("javaContainer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'java_container' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'javaContainer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#java_container_version: {
-                        let field_value = match fields_map.get("java_container_version") {
+                        let field_value = match fields_map.get("javaContainerVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'java_container_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'javaContainerVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#java_embedded_server_enabled: {
-                        let field_value = match fields_map.get("java_embedded_server_enabled") {
+                        let field_value = match fields_map.get("javaEmbeddedServerEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'java_embedded_server_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'javaEmbeddedServerEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#java_version: {
-                        let field_value = match fields_map.get("java_version") {
+                        let field_value = match fields_map.get("javaVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'java_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'javaVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_version: {
-                        let field_value = match fields_map.get("node_version") {
+                        let field_value = match fields_map.get("nodeVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#php_version: {
-                        let field_value = match fields_map.get("php_version") {
+                        let field_value = match fields_map.get("phpVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'php_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'phpVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -270,9 +270,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tomcat_version: {
-                        let field_value = match fields_map.get("tomcat_version") {
+                        let field_value = match fields_map.get("tomcatVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tomcat_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tomcatVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

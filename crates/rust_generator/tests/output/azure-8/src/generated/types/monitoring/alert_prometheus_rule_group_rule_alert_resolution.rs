@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_resolved",
+                    "autoResolved",
                     &self.r#auto_resolved,
                 ),
                 to_pulumi_object_field(
-                    "time_to_resolve",
+                    "timeToResolve",
                     &self.r#time_to_resolve,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#auto_resolved: {
-                        let field_value = match fields_map.get("auto_resolved") {
+                        let field_value = match fields_map.get("autoResolved") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_resolved' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoResolved' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_to_resolve: {
-                        let field_value = match fields_map.get("time_to_resolve") {
+                        let field_value = match fields_map.get("timeToResolve") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_to_resolve' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeToResolve' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "amazon_msk_cluster",
+                    "amazonMskCluster",
                     &self.r#amazon_msk_cluster,
                 ),
                 to_pulumi_object_field(
-                    "vpc_config",
+                    "vpcConfig",
                     &self.r#vpc_config,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#amazon_msk_cluster: {
-                        let field_value = match fields_map.get("amazon_msk_cluster") {
+                        let field_value = match fields_map.get("amazonMskCluster") {
                             Some(value) => value,
-                            None => bail!("Missing field 'amazon_msk_cluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'amazonMskCluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_config: {
-                        let field_value = match fields_map.get("vpc_config") {
+                        let field_value = match fields_map.get("vpcConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

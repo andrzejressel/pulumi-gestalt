@@ -57,27 +57,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_settings",
+                    "advancedSettings",
                     &self.r#advanced_settings,
                 ),
                 to_pulumi_object_field(
-                    "default_value",
+                    "defaultValue",
                     &self.r#default_value,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "entity_type",
+                    "entityType",
                     &self.r#entity_type,
                 ),
                 to_pulumi_object_field(
-                    "fill_behavior",
+                    "fillBehavior",
                     &self.r#fill_behavior,
                 ),
                 to_pulumi_object_field(
-                    "is_list",
+                    "isList",
                     &self.r#is_list,
                 ),
                 to_pulumi_object_field(
@@ -112,44 +112,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#advanced_settings: {
-                        let field_value = match fields_map.get("advanced_settings") {
+                        let field_value = match fields_map.get("advancedSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_value: {
-                        let field_value = match fields_map.get("default_value") {
+                        let field_value = match fields_map.get("defaultValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entity_type: {
-                        let field_value = match fields_map.get("entity_type") {
+                        let field_value = match fields_map.get("entityType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fill_behavior: {
-                        let field_value = match fields_map.get("fill_behavior") {
+                        let field_value = match fields_map.get("fillBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fill_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fillBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_list: {
-                        let field_value = match fields_map.get("is_list") {
+                        let field_value = match fields_map.get("isList") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isList' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

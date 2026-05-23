@@ -128,27 +128,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_config",
+                    "acceleratorConfig",
                     &self.r#accelerator_config,
                 ),
                 to_pulumi_object_field(
-                    "container_images",
+                    "containerImages",
                     &self.r#container_images,
                 ),
                 to_pulumi_object_field(
-                    "data_disk",
+                    "dataDisk",
                     &self.r#data_disk,
                 ),
                 to_pulumi_object_field(
-                    "encryption_config",
+                    "encryptionConfig",
                     &self.r#encryption_config,
                 ),
                 to_pulumi_object_field(
-                    "guest_attributes",
+                    "guestAttributes",
                     &self.r#guest_attributes,
                 ),
                 to_pulumi_object_field(
-                    "internal_ip_only",
+                    "internalIpOnly",
                     &self.r#internal_ip_only,
                 ),
                 to_pulumi_object_field(
@@ -156,7 +156,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
@@ -168,15 +168,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "nic_type",
+                    "nicType",
                     &self.r#nic_type,
                 ),
                 to_pulumi_object_field(
-                    "reserved_ip_range",
+                    "reservedIpRange",
                     &self.r#reserved_ip_range,
                 ),
                 to_pulumi_object_field(
-                    "shielded_instance_config",
+                    "shieldedInstanceConfig",
                     &self.r#shielded_instance_config,
                 ),
                 to_pulumi_object_field(
@@ -215,44 +215,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#accelerator_config: {
-                        let field_value = match fields_map.get("accelerator_config") {
+                        let field_value = match fields_map.get("acceleratorConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerator_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratorConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_images: {
-                        let field_value = match fields_map.get("container_images") {
+                        let field_value = match fields_map.get("containerImages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_images' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerImages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_disk: {
-                        let field_value = match fields_map.get("data_disk") {
+                        let field_value = match fields_map.get("dataDisk") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_disk' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataDisk' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_config: {
-                        let field_value = match fields_map.get("encryption_config") {
+                        let field_value = match fields_map.get("encryptionConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guest_attributes: {
-                        let field_value = match fields_map.get("guest_attributes") {
+                        let field_value = match fields_map.get("guestAttributes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guest_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guestAttributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#internal_ip_only: {
-                        let field_value = match fields_map.get("internal_ip_only") {
+                        let field_value = match fields_map.get("internalIpOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'internal_ip_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'internalIpOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -264,9 +264,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#machine_type: {
-                        let field_value = match fields_map.get("machine_type") {
+                        let field_value = match fields_map.get("machineType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'machine_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'machineType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -285,23 +285,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nic_type: {
-                        let field_value = match fields_map.get("nic_type") {
+                        let field_value = match fields_map.get("nicType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nic_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nicType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reserved_ip_range: {
-                        let field_value = match fields_map.get("reserved_ip_range") {
+                        let field_value = match fields_map.get("reservedIpRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reserved_ip_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reservedIpRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shielded_instance_config: {
-                        let field_value = match fields_map.get("shielded_instance_config") {
+                        let field_value = match fields_map.get("shieldedInstanceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shielded_instance_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shieldedInstanceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

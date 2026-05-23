@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "jumbo_packet",
+                    "jumboPacket",
                     &self.r#jumbo_packet,
                 ),
                 to_pulumi_object_field(
-                    "network_direct",
+                    "networkDirect",
                     &self.r#network_direct,
                 ),
                 to_pulumi_object_field(
-                    "network_direct_technology",
+                    "networkDirectTechnology",
                     &self.r#network_direct_technology,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#jumbo_packet: {
-                        let field_value = match fields_map.get("jumbo_packet") {
+                        let field_value = match fields_map.get("jumboPacket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jumbo_packet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jumboPacket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_direct: {
-                        let field_value = match fields_map.get("network_direct") {
+                        let field_value = match fields_map.get("networkDirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_direct' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkDirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_direct_technology: {
-                        let field_value = match fields_map.get("network_direct_technology") {
+                        let field_value = match fields_map.get("networkDirectTechnology") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_direct_technology' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkDirectTechnology' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

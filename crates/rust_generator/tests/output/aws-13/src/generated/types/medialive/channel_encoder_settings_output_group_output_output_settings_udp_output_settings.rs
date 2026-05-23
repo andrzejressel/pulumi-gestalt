@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "buffer_msec",
+                    "bufferMsec",
                     &self.r#buffer_msec,
                 ),
                 to_pulumi_object_field(
-                    "container_settings",
+                    "containerSettings",
                     &self.r#container_settings,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "fec_output_settings",
+                    "fecOutputSettings",
                     &self.r#fec_output_settings,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#buffer_msec: {
-                        let field_value = match fields_map.get("buffer_msec") {
+                        let field_value = match fields_map.get("bufferMsec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'buffer_msec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bufferMsec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_settings: {
-                        let field_value = match fields_map.get("container_settings") {
+                        let field_value = match fields_map.get("containerSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -94,9 +94,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fec_output_settings: {
-                        let field_value = match fields_map.get("fec_output_settings") {
+                        let field_value = match fields_map.get("fecOutputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fec_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fecOutputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

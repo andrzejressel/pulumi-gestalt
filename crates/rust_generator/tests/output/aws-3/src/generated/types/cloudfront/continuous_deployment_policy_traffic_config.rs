@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "single_header_config",
+                    "singleHeaderConfig",
                     &self.r#single_header_config,
                 ),
                 to_pulumi_object_field(
-                    "single_weight_config",
+                    "singleWeightConfig",
                     &self.r#single_weight_config,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#single_header_config: {
-                        let field_value = match fields_map.get("single_header_config") {
+                        let field_value = match fields_map.get("singleHeaderConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'single_header_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'singleHeaderConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#single_weight_config: {
-                        let field_value = match fields_map.get("single_weight_config") {
+                        let field_value = match fields_map.get("singleWeightConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'single_weight_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'singleWeightConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

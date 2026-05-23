@@ -49,15 +49,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "contact_emails",
+                    "contactEmails",
                     &self.r#contact_emails,
                 ),
                 to_pulumi_object_field(
-                    "contact_groups",
+                    "contactGroups",
                     &self.r#contact_groups,
                 ),
                 to_pulumi_object_field(
-                    "contact_roles",
+                    "contactRoles",
                     &self.r#contact_roles,
                 ),
                 to_pulumi_object_field(
@@ -73,7 +73,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
                     &self.r#threshold,
                 ),
                 to_pulumi_object_field(
-                    "threshold_type",
+                    "thresholdType",
                     &self.r#threshold_type,
                 ),
             ];
@@ -100,23 +100,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#contact_emails: {
-                        let field_value = match fields_map.get("contact_emails") {
+                        let field_value = match fields_map.get("contactEmails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contact_emails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contactEmails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#contact_groups: {
-                        let field_value = match fields_map.get("contact_groups") {
+                        let field_value = match fields_map.get("contactGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contact_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contactGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#contact_roles: {
-                        let field_value = match fields_map.get("contact_roles") {
+                        let field_value = match fields_map.get("contactRoles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contact_roles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contactRoles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,9 +142,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threshold_type: {
-                        let field_value = match fields_map.get("threshold_type") {
+                        let field_value = match fields_map.get("thresholdType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'threshold_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thresholdType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

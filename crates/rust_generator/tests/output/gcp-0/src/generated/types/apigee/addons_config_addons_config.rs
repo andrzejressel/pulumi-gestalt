@@ -44,23 +44,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Add
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_api_ops_config",
+                    "advancedApiOpsConfig",
                     &self.r#advanced_api_ops_config,
                 ),
                 to_pulumi_object_field(
-                    "api_security_config",
+                    "apiSecurityConfig",
                     &self.r#api_security_config,
                 ),
                 to_pulumi_object_field(
-                    "connectors_platform_config",
+                    "connectorsPlatformConfig",
                     &self.r#connectors_platform_config,
                 ),
                 to_pulumi_object_field(
-                    "integration_config",
+                    "integrationConfig",
                     &self.r#integration_config,
                 ),
                 to_pulumi_object_field(
-                    "monetization_config",
+                    "monetizationConfig",
                     &self.r#monetization_config,
                 ),
             ];
@@ -87,37 +87,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#advanced_api_ops_config: {
-                        let field_value = match fields_map.get("advanced_api_ops_config") {
+                        let field_value = match fields_map.get("advancedApiOpsConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_api_ops_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedApiOpsConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#api_security_config: {
-                        let field_value = match fields_map.get("api_security_config") {
+                        let field_value = match fields_map.get("apiSecurityConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_security_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiSecurityConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connectors_platform_config: {
-                        let field_value = match fields_map.get("connectors_platform_config") {
+                        let field_value = match fields_map.get("connectorsPlatformConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connectors_platform_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorsPlatformConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#integration_config: {
-                        let field_value = match fields_map.get("integration_config") {
+                        let field_value = match fields_map.get("integrationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'integration_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'integrationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monetization_config: {
-                        let field_value = match fields_map.get("monetization_config") {
+                        let field_value = match fields_map.get("monetizationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monetization_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monetizationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

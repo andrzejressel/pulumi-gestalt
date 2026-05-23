@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "update_trigger_endpoint",
+                    "updateTriggerEndpoint",
                     &self.r#update_trigger_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "update_trigger_payload_type",
+                    "updateTriggerPayloadType",
                     &self.r#update_trigger_payload_type,
                 ),
             ];
@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#update_trigger_endpoint: {
-                        let field_value = match fields_map.get("update_trigger_endpoint") {
+                        let field_value = match fields_map.get("updateTriggerEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'update_trigger_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updateTriggerEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#update_trigger_payload_type: {
-                        let field_value = match fields_map.get("update_trigger_payload_type") {
+                        let field_value = match fields_map.get("updateTriggerPayloadType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'update_trigger_payload_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updateTriggerPayloadType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

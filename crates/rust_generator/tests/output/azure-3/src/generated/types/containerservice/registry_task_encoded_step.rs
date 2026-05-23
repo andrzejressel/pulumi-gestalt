@@ -43,23 +43,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "context_access_token",
+                    "contextAccessToken",
                     &self.r#context_access_token,
                 ),
                 to_pulumi_object_field(
-                    "context_path",
+                    "contextPath",
                     &self.r#context_path,
                 ),
                 to_pulumi_object_field(
-                    "secret_values",
+                    "secretValues",
                     &self.r#secret_values,
                 ),
                 to_pulumi_object_field(
-                    "task_content",
+                    "taskContent",
                     &self.r#task_content,
                 ),
                 to_pulumi_object_field(
-                    "value_content",
+                    "valueContent",
                     &self.r#value_content,
                 ),
                 to_pulumi_object_field(
@@ -90,37 +90,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#context_access_token: {
-                        let field_value = match fields_map.get("context_access_token") {
+                        let field_value = match fields_map.get("contextAccessToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'context_access_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contextAccessToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#context_path: {
-                        let field_value = match fields_map.get("context_path") {
+                        let field_value = match fields_map.get("contextPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'context_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contextPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_values: {
-                        let field_value = match fields_map.get("secret_values") {
+                        let field_value = match fields_map.get("secretValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_content: {
-                        let field_value = match fields_map.get("task_content") {
+                        let field_value = match fields_map.get("taskContent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskContent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_content: {
-                        let field_value = match fields_map.get("value_content") {
+                        let field_value = match fields_map.get("valueContent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueContent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

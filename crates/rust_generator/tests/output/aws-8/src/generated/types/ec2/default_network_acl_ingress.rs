@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "cidr_block",
+                    "cidrBlock",
                     &self.r#cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "from_port",
+                    "fromPort",
                     &self.r#from_port,
                 ),
                 to_pulumi_object_field(
-                    "icmp_code",
+                    "icmpCode",
                     &self.r#icmp_code,
                 ),
                 to_pulumi_object_field(
-                    "icmp_type",
+                    "icmpType",
                     &self.r#icmp_type,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_cidr_block",
+                    "ipv6CidrBlock",
                     &self.r#ipv_6_cidr_block,
                 ),
                 to_pulumi_object_field(
@@ -87,11 +87,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "rule_no",
+                    "ruleNo",
                     &self.r#rule_no,
                 ),
                 to_pulumi_object_field(
-                    "to_port",
+                    "toPort",
                     &self.r#to_port,
                 ),
             ];
@@ -125,37 +125,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cidr_block: {
-                        let field_value = match fields_map.get("cidr_block") {
+                        let field_value = match fields_map.get("cidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#from_port: {
-                        let field_value = match fields_map.get("from_port") {
+                        let field_value = match fields_map.get("fromPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'from_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fromPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#icmp_code: {
-                        let field_value = match fields_map.get("icmp_code") {
+                        let field_value = match fields_map.get("icmpCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'icmp_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'icmpCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#icmp_type: {
-                        let field_value = match fields_map.get("icmp_type") {
+                        let field_value = match fields_map.get("icmpType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'icmp_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'icmpType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_6_cidr_block: {
-                        let field_value = match fields_map.get("ipv_6_cidr_block") {
+                        let field_value = match fields_map.get("ipv6CidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_6_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv6CidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -167,16 +167,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_no: {
-                        let field_value = match fields_map.get("rule_no") {
+                        let field_value = match fields_map.get("ruleNo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_no' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleNo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#to_port: {
-                        let field_value = match fields_map.get("to_port") {
+                        let field_value = match fields_map.get("toPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'to_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'toPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

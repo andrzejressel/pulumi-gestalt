@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_on_termination",
+                    "deleteOnTermination",
                     &self.r#delete_on_termination,
                 ),
                 to_pulumi_object_field(
-                    "device_index",
+                    "deviceIndex",
                     &self.r#device_index,
                 ),
                 to_pulumi_object_field(
-                    "network_card_index",
+                    "networkCardIndex",
                     &self.r#network_card_index,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_id",
+                    "networkInterfaceId",
                     &self.r#network_interface_id,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#delete_on_termination: {
-                        let field_value = match fields_map.get("delete_on_termination") {
+                        let field_value = match fields_map.get("deleteOnTermination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delete_on_termination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deleteOnTermination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_index: {
-                        let field_value = match fields_map.get("device_index") {
+                        let field_value = match fields_map.get("deviceIndex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_index' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceIndex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_card_index: {
-                        let field_value = match fields_map.get("network_card_index") {
+                        let field_value = match fields_map.get("networkCardIndex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_card_index' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkCardIndex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_interface_id: {
-                        let field_value = match fields_map.get("network_interface_id") {
+                        let field_value = match fields_map.get("networkInterfaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_interface_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkInterfaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

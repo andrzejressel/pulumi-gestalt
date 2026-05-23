@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "counter_specifiers",
+                    "counterSpecifiers",
                     &self.r#counter_specifiers,
                 ),
                 to_pulumi_object_field(
@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "sampling_frequency_in_seconds",
+                    "samplingFrequencyInSeconds",
                     &self.r#sampling_frequency_in_seconds,
                 ),
                 to_pulumi_object_field(
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#counter_specifiers: {
-                        let field_value = match fields_map.get("counter_specifiers") {
+                        let field_value = match fields_map.get("counterSpecifiers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'counter_specifiers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'counterSpecifiers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sampling_frequency_in_seconds: {
-                        let field_value = match fields_map.get("sampling_frequency_in_seconds") {
+                        let field_value = match fields_map.get("samplingFrequencyInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sampling_frequency_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'samplingFrequencyInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Occ
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "serialized_payload",
+                    "serializedPayload",
                     &self.r#serialized_payload,
                 ),
                 to_pulumi_object_field(
@@ -64,9 +64,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#serialized_payload: {
-                        let field_value = match fields_map.get("serialized_payload") {
+                        let field_value = match fields_map.get("serializedPayload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'serialized_payload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serializedPayload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

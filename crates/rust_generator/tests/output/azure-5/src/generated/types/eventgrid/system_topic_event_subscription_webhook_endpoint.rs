@@ -43,23 +43,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sys
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directory_app_id_or_uri",
+                    "activeDirectoryAppIdOrUri",
                     &self.r#active_directory_app_id_or_uri,
                 ),
                 to_pulumi_object_field(
-                    "active_directory_tenant_id",
+                    "activeDirectoryTenantId",
                     &self.r#active_directory_tenant_id,
                 ),
                 to_pulumi_object_field(
-                    "base_url",
+                    "baseUrl",
                     &self.r#base_url,
                 ),
                 to_pulumi_object_field(
-                    "max_events_per_batch",
+                    "maxEventsPerBatch",
                     &self.r#max_events_per_batch,
                 ),
                 to_pulumi_object_field(
-                    "preferred_batch_size_in_kilobytes",
+                    "preferredBatchSizeInKilobytes",
                     &self.r#preferred_batch_size_in_kilobytes,
                 ),
                 to_pulumi_object_field(
@@ -90,37 +90,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#active_directory_app_id_or_uri: {
-                        let field_value = match fields_map.get("active_directory_app_id_or_uri") {
+                        let field_value = match fields_map.get("activeDirectoryAppIdOrUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_directory_app_id_or_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeDirectoryAppIdOrUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#active_directory_tenant_id: {
-                        let field_value = match fields_map.get("active_directory_tenant_id") {
+                        let field_value = match fields_map.get("activeDirectoryTenantId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_directory_tenant_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeDirectoryTenantId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#base_url: {
-                        let field_value = match fields_map.get("base_url") {
+                        let field_value = match fields_map.get("baseUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'base_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baseUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_events_per_batch: {
-                        let field_value = match fields_map.get("max_events_per_batch") {
+                        let field_value = match fields_map.get("maxEventsPerBatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_events_per_batch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxEventsPerBatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preferred_batch_size_in_kilobytes: {
-                        let field_value = match fields_map.get("preferred_batch_size_in_kilobytes") {
+                        let field_value = match fields_map.get("preferredBatchSizeInKilobytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preferred_batch_size_in_kilobytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preferredBatchSizeInKilobytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

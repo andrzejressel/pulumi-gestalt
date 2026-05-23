@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_ports",
+                    "applicationPorts",
                     &self.r#application_ports,
                 ),
                 to_pulumi_object_field(
@@ -79,35 +79,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#capacities,
                 ),
                 to_pulumi_object_field(
-                    "client_endpoint_port",
+                    "clientEndpointPort",
                     &self.r#client_endpoint_port,
                 ),
                 to_pulumi_object_field(
-                    "durability_level",
+                    "durabilityLevel",
                     &self.r#durability_level,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_ports",
+                    "ephemeralPorts",
                     &self.r#ephemeral_ports,
                 ),
                 to_pulumi_object_field(
-                    "http_endpoint_port",
+                    "httpEndpointPort",
                     &self.r#http_endpoint_port,
                 ),
                 to_pulumi_object_field(
-                    "instance_count",
+                    "instanceCount",
                     &self.r#instance_count,
                 ),
                 to_pulumi_object_field(
-                    "is_primary",
+                    "isPrimary",
                     &self.r#is_primary,
                 ),
                 to_pulumi_object_field(
-                    "is_stateless",
+                    "isStateless",
                     &self.r#is_stateless,
                 ),
                 to_pulumi_object_field(
-                    "multiple_availability_zones",
+                    "multipleAvailabilityZones",
                     &self.r#multiple_availability_zones,
                 ),
                 to_pulumi_object_field(
@@ -115,11 +115,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "placement_properties",
+                    "placementProperties",
                     &self.r#placement_properties,
                 ),
                 to_pulumi_object_field(
-                    "reverse_proxy_endpoint_port",
+                    "reverseProxyEndpointPort",
                     &self.r#reverse_proxy_endpoint_port,
                 ),
             ];
@@ -146,9 +146,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#application_ports: {
-                        let field_value = match fields_map.get("application_ports") {
+                        let field_value = match fields_map.get("applicationPorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationPorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -160,58 +160,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_endpoint_port: {
-                        let field_value = match fields_map.get("client_endpoint_port") {
+                        let field_value = match fields_map.get("clientEndpointPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_endpoint_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientEndpointPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#durability_level: {
-                        let field_value = match fields_map.get("durability_level") {
+                        let field_value = match fields_map.get("durabilityLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'durability_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'durabilityLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ephemeral_ports: {
-                        let field_value = match fields_map.get("ephemeral_ports") {
+                        let field_value = match fields_map.get("ephemeralPorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ephemeral_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ephemeralPorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_endpoint_port: {
-                        let field_value = match fields_map.get("http_endpoint_port") {
+                        let field_value = match fields_map.get("httpEndpointPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_endpoint_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpEndpointPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_count: {
-                        let field_value = match fields_map.get("instance_count") {
+                        let field_value = match fields_map.get("instanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_primary: {
-                        let field_value = match fields_map.get("is_primary") {
+                        let field_value = match fields_map.get("isPrimary") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_primary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isPrimary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_stateless: {
-                        let field_value = match fields_map.get("is_stateless") {
+                        let field_value = match fields_map.get("isStateless") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_stateless' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isStateless' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multiple_availability_zones: {
-                        let field_value = match fields_map.get("multiple_availability_zones") {
+                        let field_value = match fields_map.get("multipleAvailabilityZones") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multiple_availability_zones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multipleAvailabilityZones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -223,16 +223,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#placement_properties: {
-                        let field_value = match fields_map.get("placement_properties") {
+                        let field_value = match fields_map.get("placementProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'placement_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'placementProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reverse_proxy_endpoint_port: {
-                        let field_value = match fields_map.get("reverse_proxy_endpoint_port") {
+                        let field_value = match fields_map.get("reverseProxyEndpointPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reverse_proxy_endpoint_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reverseProxyEndpointPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

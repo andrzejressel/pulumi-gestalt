@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_unattend_configs",
+                    "additionalUnattendConfigs",
                     &self.r#additional_unattend_configs,
                 ),
                 to_pulumi_object_field(
-                    "enable_automatic_upgrades",
+                    "enableAutomaticUpgrades",
                     &self.r#enable_automatic_upgrades,
                 ),
                 to_pulumi_object_field(
-                    "provision_vm_agent",
+                    "provisionVmAgent",
                     &self.r#provision_vm_agent,
                 ),
                 to_pulumi_object_field(
@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#additional_unattend_configs: {
-                        let field_value = match fields_map.get("additional_unattend_configs") {
+                        let field_value = match fields_map.get("additionalUnattendConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_unattend_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalUnattendConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_automatic_upgrades: {
-                        let field_value = match fields_map.get("enable_automatic_upgrades") {
+                        let field_value = match fields_map.get("enableAutomaticUpgrades") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_automatic_upgrades' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAutomaticUpgrades' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provision_vm_agent: {
-                        let field_value = match fields_map.get("provision_vm_agent") {
+                        let field_value = match fields_map.get("provisionVmAgent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provision_vm_agent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionVmAgent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

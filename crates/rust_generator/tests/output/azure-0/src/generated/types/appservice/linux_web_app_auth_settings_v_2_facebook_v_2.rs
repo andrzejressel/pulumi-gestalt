@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_id",
+                    "appId",
                     &self.r#app_id,
                 ),
                 to_pulumi_object_field(
-                    "app_secret_setting_name",
+                    "appSecretSettingName",
                     &self.r#app_secret_setting_name,
                 ),
                 to_pulumi_object_field(
-                    "graph_api_version",
+                    "graphApiVersion",
                     &self.r#graph_api_version,
                 ),
                 to_pulumi_object_field(
-                    "login_scopes",
+                    "loginScopes",
                     &self.r#login_scopes,
                 ),
             ];
@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#app_id: {
-                        let field_value = match fields_map.get("app_id") {
+                        let field_value = match fields_map.get("appId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_secret_setting_name: {
-                        let field_value = match fields_map.get("app_secret_setting_name") {
+                        let field_value = match fields_map.get("appSecretSettingName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_secret_setting_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appSecretSettingName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#graph_api_version: {
-                        let field_value = match fields_map.get("graph_api_version") {
+                        let field_value = match fields_map.get("graphApiVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'graph_api_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'graphApiVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#login_scopes: {
-                        let field_value = match fields_map.get("login_scopes") {
+                        let field_value = match fields_map.get("loginScopes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'login_scopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loginScopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

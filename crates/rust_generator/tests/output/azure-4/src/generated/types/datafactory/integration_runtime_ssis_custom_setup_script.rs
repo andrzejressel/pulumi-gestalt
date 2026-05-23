@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_container_uri",
+                    "blobContainerUri",
                     &self.r#blob_container_uri,
                 ),
                 to_pulumi_object_field(
-                    "sas_token",
+                    "sasToken",
                     &self.r#sas_token,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#blob_container_uri: {
-                        let field_value = match fields_map.get("blob_container_uri") {
+                        let field_value = match fields_map.get("blobContainerUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'blob_container_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blobContainerUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sas_token: {
-                        let field_value = match fields_map.get("sas_token") {
+                        let field_value = match fields_map.get("sasToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sas_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sasToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

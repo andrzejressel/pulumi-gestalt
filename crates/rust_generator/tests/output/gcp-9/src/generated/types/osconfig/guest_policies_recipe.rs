@@ -61,11 +61,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
                     &self.r#artifacts,
                 ),
                 to_pulumi_object_field(
-                    "desired_state",
+                    "desiredState",
                     &self.r#desired_state,
                 ),
                 to_pulumi_object_field(
-                    "install_steps",
+                    "installSteps",
                     &self.r#install_steps,
                 ),
                 to_pulumi_object_field(
@@ -73,7 +73,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "update_steps",
+                    "updateSteps",
                     &self.r#update_steps,
                 ),
                 to_pulumi_object_field(
@@ -111,16 +111,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#desired_state: {
-                        let field_value = match fields_map.get("desired_state") {
+                        let field_value = match fields_map.get("desiredState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#install_steps: {
-                        let field_value = match fields_map.get("install_steps") {
+                        let field_value = match fields_map.get("installSteps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'install_steps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'installSteps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -132,9 +132,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#update_steps: {
-                        let field_value = match fields_map.get("update_steps") {
+                        let field_value = match fields_map.get("updateSteps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'update_steps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updateSteps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

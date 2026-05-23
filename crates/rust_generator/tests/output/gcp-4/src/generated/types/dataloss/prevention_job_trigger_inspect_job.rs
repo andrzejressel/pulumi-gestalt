@@ -42,15 +42,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "inspect_config",
+                    "inspectConfig",
                     &self.r#inspect_config,
                 ),
                 to_pulumi_object_field(
-                    "inspect_template_name",
+                    "inspectTemplateName",
                     &self.r#inspect_template_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_config",
+                    "storageConfig",
                     &self.r#storage_config,
                 ),
             ];
@@ -84,23 +84,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inspect_config: {
-                        let field_value = match fields_map.get("inspect_config") {
+                        let field_value = match fields_map.get("inspectConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inspect_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inspectConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inspect_template_name: {
-                        let field_value = match fields_map.get("inspect_template_name") {
+                        let field_value = match fields_map.get("inspectTemplateName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inspect_template_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inspectTemplateName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_config: {
-                        let field_value = match fields_map.get("storage_config") {
+                        let field_value = match fields_map.get("storageConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

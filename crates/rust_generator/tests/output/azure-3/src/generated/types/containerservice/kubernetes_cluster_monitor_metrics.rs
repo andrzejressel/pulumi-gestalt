@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "annotations_allowed",
+                    "annotationsAllowed",
                     &self.r#annotations_allowed,
                 ),
                 to_pulumi_object_field(
-                    "labels_allowed",
+                    "labelsAllowed",
                     &self.r#labels_allowed,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#annotations_allowed: {
-                        let field_value = match fields_map.get("annotations_allowed") {
+                        let field_value = match fields_map.get("annotationsAllowed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'annotations_allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'annotationsAllowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#labels_allowed: {
-                        let field_value = match fields_map.get("labels_allowed") {
+                        let field_value = match fields_map.get("labelsAllowed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'labels_allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'labelsAllowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

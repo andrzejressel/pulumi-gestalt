@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "desired_instance_type",
+                    "desiredInstanceType",
                     &self.r#desired_instance_type,
                 ),
                 to_pulumi_object_field(
-                    "desired_partition_count",
+                    "desiredPartitionCount",
                     &self.r#desired_partition_count,
                 ),
                 to_pulumi_object_field(
-                    "desired_replication_count",
+                    "desiredReplicationCount",
                     &self.r#desired_replication_count,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#desired_instance_type: {
-                        let field_value = match fields_map.get("desired_instance_type") {
+                        let field_value = match fields_map.get("desiredInstanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredInstanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#desired_partition_count: {
-                        let field_value = match fields_map.get("desired_partition_count") {
+                        let field_value = match fields_map.get("desiredPartitionCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_partition_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredPartitionCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#desired_replication_count: {
-                        let field_value = match fields_map.get("desired_replication_count") {
+                        let field_value = match fields_map.get("desiredReplicationCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_replication_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredReplicationCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

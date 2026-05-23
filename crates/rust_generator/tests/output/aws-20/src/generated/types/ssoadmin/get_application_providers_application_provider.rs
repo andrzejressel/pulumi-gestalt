@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_provider_arn",
+                    "applicationProviderArn",
                     &self.r#application_provider_arn,
                 ),
                 to_pulumi_object_field(
-                    "display_datas",
+                    "displayDatas",
                     &self.r#display_datas,
                 ),
                 to_pulumi_object_field(
-                    "federation_protocol",
+                    "federationProtocol",
                     &self.r#federation_protocol,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#application_provider_arn: {
-                        let field_value = match fields_map.get("application_provider_arn") {
+                        let field_value = match fields_map.get("applicationProviderArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_provider_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationProviderArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_datas: {
-                        let field_value = match fields_map.get("display_datas") {
+                        let field_value = match fields_map.get("displayDatas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_datas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayDatas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#federation_protocol: {
-                        let field_value = match fields_map.get("federation_protocol") {
+                        let field_value = match fields_map.get("federationProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'federation_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'federationProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

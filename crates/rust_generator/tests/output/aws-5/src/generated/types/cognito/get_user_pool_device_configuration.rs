@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "challenge_required_on_new_device",
+                    "challengeRequiredOnNewDevice",
                     &self.r#challenge_required_on_new_device,
                 ),
                 to_pulumi_object_field(
-                    "device_only_remembered_on_user_prompt",
+                    "deviceOnlyRememberedOnUserPrompt",
                     &self.r#device_only_remembered_on_user_prompt,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#challenge_required_on_new_device: {
-                        let field_value = match fields_map.get("challenge_required_on_new_device") {
+                        let field_value = match fields_map.get("challengeRequiredOnNewDevice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'challenge_required_on_new_device' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'challengeRequiredOnNewDevice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_only_remembered_on_user_prompt: {
-                        let field_value = match fields_map.get("device_only_remembered_on_user_prompt") {
+                        let field_value = match fields_map.get("deviceOnlyRememberedOnUserPrompt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_only_remembered_on_user_prompt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceOnlyRememberedOnUserPrompt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

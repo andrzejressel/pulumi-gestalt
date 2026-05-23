@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#devices,
                 ),
                 to_pulumi_object_field(
-                    "init_process_enabled",
+                    "initProcessEnabled",
                     &self.r#init_process_enabled,
                 ),
                 to_pulumi_object_field(
-                    "max_swap",
+                    "maxSwap",
                     &self.r#max_swap,
                 ),
                 to_pulumi_object_field(
-                    "shared_memory_size",
+                    "sharedMemorySize",
                     &self.r#shared_memory_size,
                 ),
                 to_pulumi_object_field(
@@ -97,23 +97,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#init_process_enabled: {
-                        let field_value = match fields_map.get("init_process_enabled") {
+                        let field_value = match fields_map.get("initProcessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'init_process_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initProcessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_swap: {
-                        let field_value = match fields_map.get("max_swap") {
+                        let field_value = match fields_map.get("maxSwap") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_swap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxSwap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_memory_size: {
-                        let field_value = match fields_map.get("shared_memory_size") {
+                        let field_value = match fields_map.get("sharedMemorySize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_memory_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedMemorySize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

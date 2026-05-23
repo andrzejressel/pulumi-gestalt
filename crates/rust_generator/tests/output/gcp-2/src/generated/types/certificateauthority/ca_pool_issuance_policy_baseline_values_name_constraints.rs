@@ -83,35 +83,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaP
                     &self.r#critical,
                 ),
                 to_pulumi_object_field(
-                    "excluded_dns_names",
+                    "excludedDnsNames",
                     &self.r#excluded_dns_names,
                 ),
                 to_pulumi_object_field(
-                    "excluded_email_addresses",
+                    "excludedEmailAddresses",
                     &self.r#excluded_email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "excluded_ip_ranges",
+                    "excludedIpRanges",
                     &self.r#excluded_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "excluded_uris",
+                    "excludedUris",
                     &self.r#excluded_uris,
                 ),
                 to_pulumi_object_field(
-                    "permitted_dns_names",
+                    "permittedDnsNames",
                     &self.r#permitted_dns_names,
                 ),
                 to_pulumi_object_field(
-                    "permitted_email_addresses",
+                    "permittedEmailAddresses",
                     &self.r#permitted_email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "permitted_ip_ranges",
+                    "permittedIpRanges",
                     &self.r#permitted_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "permitted_uris",
+                    "permittedUris",
                     &self.r#permitted_uris,
                 ),
             ];
@@ -145,58 +145,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_dns_names: {
-                        let field_value = match fields_map.get("excluded_dns_names") {
+                        let field_value = match fields_map.get("excludedDnsNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_dns_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedDnsNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_email_addresses: {
-                        let field_value = match fields_map.get("excluded_email_addresses") {
+                        let field_value = match fields_map.get("excludedEmailAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedEmailAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_ip_ranges: {
-                        let field_value = match fields_map.get("excluded_ip_ranges") {
+                        let field_value = match fields_map.get("excludedIpRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedIpRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_uris: {
-                        let field_value = match fields_map.get("excluded_uris") {
+                        let field_value = match fields_map.get("excludedUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permitted_dns_names: {
-                        let field_value = match fields_map.get("permitted_dns_names") {
+                        let field_value = match fields_map.get("permittedDnsNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permitted_dns_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permittedDnsNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permitted_email_addresses: {
-                        let field_value = match fields_map.get("permitted_email_addresses") {
+                        let field_value = match fields_map.get("permittedEmailAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permitted_email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permittedEmailAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permitted_ip_ranges: {
-                        let field_value = match fields_map.get("permitted_ip_ranges") {
+                        let field_value = match fields_map.get("permittedIpRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permitted_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permittedIpRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permitted_uris: {
-                        let field_value = match fields_map.get("permitted_uris") {
+                        let field_value = match fields_map.get("permittedUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permitted_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permittedUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

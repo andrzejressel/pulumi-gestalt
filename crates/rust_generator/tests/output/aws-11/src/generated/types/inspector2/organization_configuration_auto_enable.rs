@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Org
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ec_2",
+                    "ec2",
                     &self.r#ec_2,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Org
                     &self.r#lambda,
                 ),
                 to_pulumi_object_field(
-                    "lambda_code",
+                    "lambdaCode",
                     &self.r#lambda_code,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#ec_2: {
-                        let field_value = match fields_map.get("ec_2") {
+                        let field_value = match fields_map.get("ec2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ec_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ec2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_code: {
-                        let field_value = match fields_map.get("lambda_code") {
+                        let field_value = match fields_map.get("lambdaCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

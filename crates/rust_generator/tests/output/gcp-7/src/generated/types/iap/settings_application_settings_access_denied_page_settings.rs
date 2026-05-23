@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_denied_page_uri",
+                    "accessDeniedPageUri",
                     &self.r#access_denied_page_uri,
                 ),
                 to_pulumi_object_field(
-                    "generate_troubleshooting_uri",
+                    "generateTroubleshootingUri",
                     &self.r#generate_troubleshooting_uri,
                 ),
                 to_pulumi_object_field(
-                    "remediation_token_generation_enabled",
+                    "remediationTokenGenerationEnabled",
                     &self.r#remediation_token_generation_enabled,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#access_denied_page_uri: {
-                        let field_value = match fields_map.get("access_denied_page_uri") {
+                        let field_value = match fields_map.get("accessDeniedPageUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_denied_page_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessDeniedPageUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#generate_troubleshooting_uri: {
-                        let field_value = match fields_map.get("generate_troubleshooting_uri") {
+                        let field_value = match fields_map.get("generateTroubleshootingUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'generate_troubleshooting_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'generateTroubleshootingUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remediation_token_generation_enabled: {
-                        let field_value = match fields_map.get("remediation_token_generation_enabled") {
+                        let field_value = match fields_map.get("remediationTokenGenerationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remediation_token_generation_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remediationTokenGenerationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

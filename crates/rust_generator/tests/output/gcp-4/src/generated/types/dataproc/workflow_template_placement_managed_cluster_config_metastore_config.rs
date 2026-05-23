@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dataproc_metastore_service",
+                    "dataprocMetastoreService",
                     &self.r#dataproc_metastore_service,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#dataproc_metastore_service: {
-                        let field_value = match fields_map.get("dataproc_metastore_service") {
+                        let field_value = match fields_map.get("dataprocMetastoreService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dataproc_metastore_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataprocMetastoreService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

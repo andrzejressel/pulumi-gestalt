@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#product,
                 ),
                 to_pulumi_object_field(
-                    "promotion_code",
+                    "promotionCode",
                     &self.r#promotion_code,
                 ),
                 to_pulumi_object_field(
@@ -87,9 +87,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#promotion_code: {
-                        let field_value = match fields_map.get("promotion_code") {
+                        let field_value = match fields_map.get("promotionCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'promotion_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'promotionCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_type",
+                    "metricType",
                     &self.r#metric_type,
                 ),
                 to_pulumi_object_field(
-                    "target_value",
+                    "targetValue",
                     &self.r#target_value,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#metric_type: {
-                        let field_value = match fields_map.get("metric_type") {
+                        let field_value = match fields_map.get("metricType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_value: {
-                        let field_value = match fields_map.get("target_value") {
+                        let field_value = match fields_map.get("targetValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "prefer_ecs",
+                    "preferEcs",
                     &self.r#prefer_ecs,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefer_ecs: {
-                        let field_value = match fields_map.get("prefer_ecs") {
+                        let field_value = match fields_map.get("preferEcs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefer_ecs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preferEcs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

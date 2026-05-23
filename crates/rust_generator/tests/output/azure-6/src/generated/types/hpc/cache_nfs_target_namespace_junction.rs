@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_policy_name",
+                    "accessPolicyName",
                     &self.r#access_policy_name,
                 ),
                 to_pulumi_object_field(
-                    "namespace_path",
+                    "namespacePath",
                     &self.r#namespace_path,
                 ),
                 to_pulumi_object_field(
-                    "nfs_export",
+                    "nfsExport",
                     &self.r#nfs_export,
                 ),
                 to_pulumi_object_field(
-                    "target_path",
+                    "targetPath",
                     &self.r#target_path,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#access_policy_name: {
-                        let field_value = match fields_map.get("access_policy_name") {
+                        let field_value = match fields_map.get("accessPolicyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_policy_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessPolicyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#namespace_path: {
-                        let field_value = match fields_map.get("namespace_path") {
+                        let field_value = match fields_map.get("namespacePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'namespace_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namespacePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfs_export: {
-                        let field_value = match fields_map.get("nfs_export") {
+                        let field_value = match fields_map.get("nfsExport") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nfs_export' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nfsExport' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_path: {
-                        let field_value = match fields_map.get("target_path") {
+                        let field_value = match fields_map.get("targetPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

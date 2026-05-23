@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_name",
+                    "columnName",
                     &self.r#column_name,
                 ),
                 to_pulumi_object_field(
-                    "new_column_name",
+                    "newColumnName",
                     &self.r#new_column_name,
                 ),
             ];
@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#column_name: {
-                        let field_value = match fields_map.get("column_name") {
+                        let field_value = match fields_map.get("columnName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'columnName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#new_column_name: {
-                        let field_value = match fields_map.get("new_column_name") {
+                        let field_value = match fields_map.get("newColumnName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'new_column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'newColumnName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

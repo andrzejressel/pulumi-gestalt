@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "amd_sev_snp",
+                    "amdSevSnp",
                     &self.r#amd_sev_snp,
                 ),
                 to_pulumi_object_field(
-                    "core_count",
+                    "coreCount",
                     &self.r#core_count,
                 ),
                 to_pulumi_object_field(
-                    "threads_per_core",
+                    "threadsPerCore",
                     &self.r#threads_per_core,
                 ),
             ];
@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#amd_sev_snp: {
-                        let field_value = match fields_map.get("amd_sev_snp") {
+                        let field_value = match fields_map.get("amdSevSnp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'amd_sev_snp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'amdSevSnp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#core_count: {
-                        let field_value = match fields_map.get("core_count") {
+                        let field_value = match fields_map.get("coreCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'core_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coreCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threads_per_core: {
-                        let field_value = match fields_map.get("threads_per_core") {
+                        let field_value = match fields_map.get("threadsPerCore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'threads_per_core' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'threadsPerCore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

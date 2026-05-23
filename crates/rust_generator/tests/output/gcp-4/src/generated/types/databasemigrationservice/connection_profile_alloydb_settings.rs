@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "initial_user",
+                    "initialUser",
                     &self.r#initial_user,
                 ),
                 to_pulumi_object_field(
@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "primary_instance_settings",
+                    "primaryInstanceSettings",
                     &self.r#primary_instance_settings,
                 ),
                 to_pulumi_object_field(
-                    "vpc_network",
+                    "vpcNetwork",
                     &self.r#vpc_network,
                 ),
             ];
@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#initial_user: {
-                        let field_value = match fields_map.get("initial_user") {
+                        let field_value = match fields_map.get("initialUser") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_user' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialUser' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_instance_settings: {
-                        let field_value = match fields_map.get("primary_instance_settings") {
+                        let field_value = match fields_map.get("primaryInstanceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_instance_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryInstanceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_network: {
-                        let field_value = match fields_map.get("vpc_network") {
+                        let field_value = match fields_map.get("vpcNetwork") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcNetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

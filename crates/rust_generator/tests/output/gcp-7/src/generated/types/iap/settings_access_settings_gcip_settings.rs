@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "login_page_uri",
+                    "loginPageUri",
                     &self.r#login_page_uri,
                 ),
                 to_pulumi_object_field(
-                    "tenant_ids",
+                    "tenantIds",
                     &self.r#tenant_ids,
                 ),
             ];
@@ -64,16 +64,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#login_page_uri: {
-                        let field_value = match fields_map.get("login_page_uri") {
+                        let field_value = match fields_map.get("loginPageUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'login_page_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loginPageUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tenant_ids: {
-                        let field_value = match fields_map.get("tenant_ids") {
+                        let field_value = match fields_map.get("tenantIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tenant_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tenantIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

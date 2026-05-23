@@ -69,19 +69,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "divide_by_instance_count",
+                    "divideByInstanceCount",
                     &self.r#divide_by_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "metric_name",
+                    "metricName",
                     &self.r#metric_name,
                 ),
                 to_pulumi_object_field(
-                    "metric_namespace",
+                    "metricNamespace",
                     &self.r#metric_namespace,
                 ),
                 to_pulumi_object_field(
-                    "metric_resource_id",
+                    "metricResourceId",
                     &self.r#metric_resource_id,
                 ),
                 to_pulumi_object_field(
@@ -97,15 +97,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#threshold,
                 ),
                 to_pulumi_object_field(
-                    "time_aggregation",
+                    "timeAggregation",
                     &self.r#time_aggregation,
                 ),
                 to_pulumi_object_field(
-                    "time_grain",
+                    "timeGrain",
                     &self.r#time_grain,
                 ),
                 to_pulumi_object_field(
-                    "time_window",
+                    "timeWindow",
                     &self.r#time_window,
                 ),
             ];
@@ -139,30 +139,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#divide_by_instance_count: {
-                        let field_value = match fields_map.get("divide_by_instance_count") {
+                        let field_value = match fields_map.get("divideByInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'divide_by_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'divideByInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_name: {
-                        let field_value = match fields_map.get("metric_name") {
+                        let field_value = match fields_map.get("metricName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_namespace: {
-                        let field_value = match fields_map.get("metric_namespace") {
+                        let field_value = match fields_map.get("metricNamespace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricNamespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_resource_id: {
-                        let field_value = match fields_map.get("metric_resource_id") {
+                        let field_value = match fields_map.get("metricResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -188,23 +188,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_aggregation: {
-                        let field_value = match fields_map.get("time_aggregation") {
+                        let field_value = match fields_map.get("timeAggregation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_aggregation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeAggregation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_grain: {
-                        let field_value = match fields_map.get("time_grain") {
+                        let field_value = match fields_map.get("timeGrain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_grain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeGrain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_window: {
-                        let field_value = match fields_map.get("time_window") {
+                        let field_value = match fields_map.get("timeWindow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeWindow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

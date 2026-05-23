@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_redaction_output",
+                    "contentRedactionOutput",
                     &self.r#content_redaction_output,
                 ),
                 to_pulumi_object_field(
-                    "data_access_role_arn",
+                    "dataAccessRoleArn",
                     &self.r#data_access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "output_encryption_kms_key_id",
+                    "outputEncryptionKmsKeyId",
                     &self.r#output_encryption_kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "output_location",
+                    "outputLocation",
                     &self.r#output_location,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#content_redaction_output: {
-                        let field_value = match fields_map.get("content_redaction_output") {
+                        let field_value = match fields_map.get("contentRedactionOutput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_redaction_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentRedactionOutput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_access_role_arn: {
-                        let field_value = match fields_map.get("data_access_role_arn") {
+                        let field_value = match fields_map.get("dataAccessRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_access_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataAccessRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_encryption_kms_key_id: {
-                        let field_value = match fields_map.get("output_encryption_kms_key_id") {
+                        let field_value = match fields_map.get("outputEncryptionKmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_encryption_kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputEncryptionKmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_location: {
-                        let field_value = match fields_map.get("output_location") {
+                        let field_value = match fields_map.get("outputLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
                     &self.r#deployment,
                 ),
                 to_pulumi_object_field(
-                    "http_route",
+                    "httpRoute",
                     &self.r#http_route,
                 ),
                 to_pulumi_object_field(
-                    "pod_selector_label",
+                    "podSelectorLabel",
                     &self.r#pod_selector_label,
                 ),
                 to_pulumi_object_field(
-                    "route_destinations",
+                    "routeDestinations",
                     &self.r#route_destinations,
                 ),
                 to_pulumi_object_field(
-                    "route_update_wait_time",
+                    "routeUpdateWaitTime",
                     &self.r#route_update_wait_time,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "stable_cutback_duration",
+                    "stableCutbackDuration",
                     &self.r#stable_cutback_duration,
                 ),
             ];
@@ -105,30 +105,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_route: {
-                        let field_value = match fields_map.get("http_route") {
+                        let field_value = match fields_map.get("httpRoute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_route' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpRoute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_selector_label: {
-                        let field_value = match fields_map.get("pod_selector_label") {
+                        let field_value = match fields_map.get("podSelectorLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_selector_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podSelectorLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_destinations: {
-                        let field_value = match fields_map.get("route_destinations") {
+                        let field_value = match fields_map.get("routeDestinations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_destinations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeDestinations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_update_wait_time: {
-                        let field_value = match fields_map.get("route_update_wait_time") {
+                        let field_value = match fields_map.get("routeUpdateWaitTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_update_wait_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeUpdateWaitTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stable_cutback_duration: {
-                        let field_value = match fields_map.get("stable_cutback_duration") {
+                        let field_value = match fields_map.get("stableCutbackDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stable_cutback_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stableCutbackDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

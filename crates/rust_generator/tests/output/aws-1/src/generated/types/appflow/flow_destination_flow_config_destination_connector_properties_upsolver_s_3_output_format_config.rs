@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aggregation_config",
+                    "aggregationConfig",
                     &self.r#aggregation_config,
                 ),
                 to_pulumi_object_field(
-                    "file_type",
+                    "fileType",
                     &self.r#file_type,
                 ),
                 to_pulumi_object_field(
-                    "prefix_config",
+                    "prefixConfig",
                     &self.r#prefix_config,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#aggregation_config: {
-                        let field_value = match fields_map.get("aggregation_config") {
+                        let field_value = match fields_map.get("aggregationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aggregation_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aggregationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_type: {
-                        let field_value = match fields_map.get("file_type") {
+                        let field_value = match fields_map.get("fileType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_config: {
-                        let field_value = match fields_map.get("prefix_config") {
+                        let field_value = match fields_map.get("prefixConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

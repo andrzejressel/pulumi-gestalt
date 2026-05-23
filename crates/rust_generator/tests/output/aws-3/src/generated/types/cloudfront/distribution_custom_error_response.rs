@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_caching_min_ttl",
+                    "errorCachingMinTtl",
                     &self.r#error_caching_min_ttl,
                 ),
                 to_pulumi_object_field(
-                    "error_code",
+                    "errorCode",
                     &self.r#error_code,
                 ),
                 to_pulumi_object_field(
-                    "response_code",
+                    "responseCode",
                     &self.r#response_code,
                 ),
                 to_pulumi_object_field(
-                    "response_page_path",
+                    "responsePagePath",
                     &self.r#response_page_path,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#error_caching_min_ttl: {
-                        let field_value = match fields_map.get("error_caching_min_ttl") {
+                        let field_value = match fields_map.get("errorCachingMinTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_caching_min_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorCachingMinTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#error_code: {
-                        let field_value = match fields_map.get("error_code") {
+                        let field_value = match fields_map.get("errorCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_code: {
-                        let field_value = match fields_map.get("response_code") {
+                        let field_value = match fields_map.get("responseCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_page_path: {
-                        let field_value = match fields_map.get("response_page_path") {
+                        let field_value = match fields_map.get("responsePagePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_page_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responsePagePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

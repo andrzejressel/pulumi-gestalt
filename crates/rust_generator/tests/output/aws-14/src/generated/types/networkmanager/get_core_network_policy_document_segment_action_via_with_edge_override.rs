@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "edge_sets",
+                    "edgeSets",
                     &self.r#edge_sets,
                 ),
                 to_pulumi_object_field(
-                    "use_edge",
+                    "useEdge",
                     &self.r#use_edge,
                 ),
                 to_pulumi_object_field(
-                    "use_edge_location",
+                    "useEdgeLocation",
                     &self.r#use_edge_location,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#edge_sets: {
-                        let field_value = match fields_map.get("edge_sets") {
+                        let field_value = match fields_map.get("edgeSets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'edge_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'edgeSets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_edge: {
-                        let field_value = match fields_map.get("use_edge") {
+                        let field_value = match fields_map.get("useEdge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_edge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useEdge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_edge_location: {
-                        let field_value = match fields_map.get("use_edge_location") {
+                        let field_value = match fields_map.get("useEdgeLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_edge_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useEdgeLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ended_time",
+                    "endedTime",
                     &self.r#ended_time,
                 ),
                 to_pulumi_object_field(
-                    "started_time",
+                    "startedTime",
                     &self.r#started_time,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#ended_time: {
-                        let field_value = match fields_map.get("ended_time") {
+                        let field_value = match fields_map.get("endedTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ended_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endedTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#started_time: {
-                        let field_value = match fields_map.get("started_time") {
+                        let field_value = match fields_map.get("startedTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'started_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startedTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

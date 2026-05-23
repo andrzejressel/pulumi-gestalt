@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_node_count",
+                    "batchNodeCount",
                     &self.r#batch_node_count,
                 ),
                 to_pulumi_object_field(
-                    "batch_percentage",
+                    "batchPercentage",
                     &self.r#batch_percentage,
                 ),
                 to_pulumi_object_field(
-                    "batch_soak_duration",
+                    "batchSoakDuration",
                     &self.r#batch_soak_duration,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#batch_node_count: {
-                        let field_value = match fields_map.get("batch_node_count") {
+                        let field_value = match fields_map.get("batchNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#batch_percentage: {
-                        let field_value = match fields_map.get("batch_percentage") {
+                        let field_value = match fields_map.get("batchPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#batch_soak_duration: {
-                        let field_value = match fields_map.get("batch_soak_duration") {
+                        let field_value = match fields_map.get("batchSoakDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_soak_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchSoakDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

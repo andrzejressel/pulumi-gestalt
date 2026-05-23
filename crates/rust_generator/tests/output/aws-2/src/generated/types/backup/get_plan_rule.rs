@@ -49,15 +49,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "completion_window",
+                    "completionWindow",
                     &self.r#completion_window,
                 ),
                 to_pulumi_object_field(
-                    "copy_actions",
+                    "copyActions",
                     &self.r#copy_actions,
                 ),
                 to_pulumi_object_field(
-                    "enable_continuous_backup",
+                    "enableContinuousBackup",
                     &self.r#enable_continuous_backup,
                 ),
                 to_pulumi_object_field(
@@ -65,11 +65,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#lifecycles,
                 ),
                 to_pulumi_object_field(
-                    "recovery_point_tags",
+                    "recoveryPointTags",
                     &self.r#recovery_point_tags,
                 ),
                 to_pulumi_object_field(
-                    "rule_name",
+                    "ruleName",
                     &self.r#rule_name,
                 ),
                 to_pulumi_object_field(
@@ -77,15 +77,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#schedule,
                 ),
                 to_pulumi_object_field(
-                    "schedule_expression_timezone",
+                    "scheduleExpressionTimezone",
                     &self.r#schedule_expression_timezone,
                 ),
                 to_pulumi_object_field(
-                    "start_window",
+                    "startWindow",
                     &self.r#start_window,
                 ),
                 to_pulumi_object_field(
-                    "target_vault_name",
+                    "targetVaultName",
                     &self.r#target_vault_name,
                 ),
             ];
@@ -112,23 +112,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#completion_window: {
-                        let field_value = match fields_map.get("completion_window") {
+                        let field_value = match fields_map.get("completionWindow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'completion_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'completionWindow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#copy_actions: {
-                        let field_value = match fields_map.get("copy_actions") {
+                        let field_value = match fields_map.get("copyActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copy_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copyActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_continuous_backup: {
-                        let field_value = match fields_map.get("enable_continuous_backup") {
+                        let field_value = match fields_map.get("enableContinuousBackup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_continuous_backup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableContinuousBackup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,16 +140,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recovery_point_tags: {
-                        let field_value = match fields_map.get("recovery_point_tags") {
+                        let field_value = match fields_map.get("recoveryPointTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recovery_point_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recoveryPointTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_name: {
-                        let field_value = match fields_map.get("rule_name") {
+                        let field_value = match fields_map.get("ruleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -161,23 +161,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schedule_expression_timezone: {
-                        let field_value = match fields_map.get("schedule_expression_timezone") {
+                        let field_value = match fields_map.get("scheduleExpressionTimezone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schedule_expression_timezone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduleExpressionTimezone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_window: {
-                        let field_value = match fields_map.get("start_window") {
+                        let field_value = match fields_map.get("startWindow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startWindow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_vault_name: {
-                        let field_value = match fields_map.get("target_vault_name") {
+                        let field_value = match fields_map.get("targetVaultName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_vault_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetVaultName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

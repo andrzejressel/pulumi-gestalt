@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dest_range",
+                    "destRange",
                     &self.r#dest_range,
                 ),
                 to_pulumi_object_field(
-                    "ip_protocol",
+                    "ipProtocol",
                     &self.r#ip_protocol,
                 ),
                 to_pulumi_object_field(
-                    "protocol_version",
+                    "protocolVersion",
                     &self.r#protocol_version,
                 ),
                 to_pulumi_object_field(
-                    "src_range",
+                    "srcRange",
                     &self.r#src_range,
                 ),
             ];
@@ -77,30 +77,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#dest_range: {
-                        let field_value = match fields_map.get("dest_range") {
+                        let field_value = match fields_map.get("destRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dest_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_protocol: {
-                        let field_value = match fields_map.get("ip_protocol") {
+                        let field_value = match fields_map.get("ipProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protocol_version: {
-                        let field_value = match fields_map.get("protocol_version") {
+                        let field_value = match fields_map.get("protocolVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protocol_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protocolVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#src_range: {
-                        let field_value = match fields_map.get("src_range") {
+                        let field_value = match fields_map.get("srcRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'src_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'srcRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "end_hour_of_day",
+                    "endHourOfDay",
                     &self.r#end_hour_of_day,
                 ),
                 to_pulumi_object_field(
-                    "start_hour_of_day",
+                    "startHourOfDay",
                     &self.r#start_hour_of_day,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#end_hour_of_day: {
-                        let field_value = match fields_map.get("end_hour_of_day") {
+                        let field_value = match fields_map.get("endHourOfDay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_hour_of_day' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endHourOfDay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_hour_of_day: {
-                        let field_value = match fields_map.get("start_hour_of_day") {
+                        let field_value = match fields_map.get("startHourOfDay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_hour_of_day' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startHourOfDay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

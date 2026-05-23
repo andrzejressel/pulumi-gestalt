@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Glo
                     &self.r#namespace,
                 ),
                 to_pulumi_object_field(
-                    "service_directory_region",
+                    "serviceDirectoryRegion",
                     &self.r#service_directory_region,
                 ),
             ];
@@ -68,9 +68,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_directory_region: {
-                        let field_value = match fields_map.get("service_directory_region") {
+                        let field_value = match fields_map.get("serviceDirectoryRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_directory_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceDirectoryRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

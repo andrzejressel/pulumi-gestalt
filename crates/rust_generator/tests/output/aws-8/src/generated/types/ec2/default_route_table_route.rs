@@ -71,51 +71,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cidr_block",
+                    "cidrBlock",
                     &self.r#cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "core_network_arn",
+                    "coreNetworkArn",
                     &self.r#core_network_arn,
                 ),
                 to_pulumi_object_field(
-                    "destination_prefix_list_id",
+                    "destinationPrefixListId",
                     &self.r#destination_prefix_list_id,
                 ),
                 to_pulumi_object_field(
-                    "egress_only_gateway_id",
+                    "egressOnlyGatewayId",
                     &self.r#egress_only_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "gateway_id",
+                    "gatewayId",
                     &self.r#gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "instance_id",
+                    "instanceId",
                     &self.r#instance_id,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_cidr_block",
+                    "ipv6CidrBlock",
                     &self.r#ipv_6_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "nat_gateway_id",
+                    "natGatewayId",
                     &self.r#nat_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_id",
+                    "networkInterfaceId",
                     &self.r#network_interface_id,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_id",
+                    "transitGatewayId",
                     &self.r#transit_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "vpc_endpoint_id",
+                    "vpcEndpointId",
                     &self.r#vpc_endpoint_id,
                 ),
                 to_pulumi_object_field(
-                    "vpc_peering_connection_id",
+                    "vpcPeeringConnectionId",
                     &self.r#vpc_peering_connection_id,
                 ),
             ];
@@ -142,86 +142,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#cidr_block: {
-                        let field_value = match fields_map.get("cidr_block") {
+                        let field_value = match fields_map.get("cidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#core_network_arn: {
-                        let field_value = match fields_map.get("core_network_arn") {
+                        let field_value = match fields_map.get("coreNetworkArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'core_network_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coreNetworkArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_prefix_list_id: {
-                        let field_value = match fields_map.get("destination_prefix_list_id") {
+                        let field_value = match fields_map.get("destinationPrefixListId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_prefix_list_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationPrefixListId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#egress_only_gateway_id: {
-                        let field_value = match fields_map.get("egress_only_gateway_id") {
+                        let field_value = match fields_map.get("egressOnlyGatewayId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'egress_only_gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'egressOnlyGatewayId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gateway_id: {
-                        let field_value = match fields_map.get("gateway_id") {
+                        let field_value = match fields_map.get("gatewayId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gatewayId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_id: {
-                        let field_value = match fields_map.get("instance_id") {
+                        let field_value = match fields_map.get("instanceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_6_cidr_block: {
-                        let field_value = match fields_map.get("ipv_6_cidr_block") {
+                        let field_value = match fields_map.get("ipv6CidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_6_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv6CidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nat_gateway_id: {
-                        let field_value = match fields_map.get("nat_gateway_id") {
+                        let field_value = match fields_map.get("natGatewayId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nat_gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'natGatewayId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_interface_id: {
-                        let field_value = match fields_map.get("network_interface_id") {
+                        let field_value = match fields_map.get("networkInterfaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_interface_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkInterfaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transit_gateway_id: {
-                        let field_value = match fields_map.get("transit_gateway_id") {
+                        let field_value = match fields_map.get("transitGatewayId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transit_gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitGatewayId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_endpoint_id: {
-                        let field_value = match fields_map.get("vpc_endpoint_id") {
+                        let field_value = match fields_map.get("vpcEndpointId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_endpoint_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcEndpointId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_peering_connection_id: {
-                        let field_value = match fields_map.get("vpc_peering_connection_id") {
+                        let field_value = match fields_map.get("vpcPeeringConnectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_peering_connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcPeeringConnectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

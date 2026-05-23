@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_logs_log_destination",
+                    "cloudwatchLogsLogDestination",
                     &self.r#cloudwatch_logs_log_destination,
                 ),
                 to_pulumi_object_field(
-                    "firehose_log_destination",
+                    "firehoseLogDestination",
                     &self.r#firehose_log_destination,
                 ),
                 to_pulumi_object_field(
-                    "include_execution_datas",
+                    "includeExecutionDatas",
                     &self.r#include_execution_datas,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#level,
                 ),
                 to_pulumi_object_field(
-                    "s_3_log_destination",
+                    "s3LogDestination",
                     &self.r#s_3_log_destination,
                 ),
             ];
@@ -82,23 +82,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#cloudwatch_logs_log_destination: {
-                        let field_value = match fields_map.get("cloudwatch_logs_log_destination") {
+                        let field_value = match fields_map.get("cloudwatchLogsLogDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudwatch_logs_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudwatchLogsLogDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#firehose_log_destination: {
-                        let field_value = match fields_map.get("firehose_log_destination") {
+                        let field_value = match fields_map.get("firehoseLogDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'firehose_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firehoseLogDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_execution_datas: {
-                        let field_value = match fields_map.get("include_execution_datas") {
+                        let field_value = match fields_map.get("includeExecutionDatas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_execution_datas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeExecutionDatas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_log_destination: {
-                        let field_value = match fields_map.get("s_3_log_destination") {
+                        let field_value = match fields_map.get("s3LogDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3LogDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

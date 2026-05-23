@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for MlT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accuracy_cost_trade_off",
+                    "accuracyCostTradeOff",
                     &self.r#accuracy_cost_trade_off,
                 ),
                 to_pulumi_object_field(
-                    "enforce_provided_labels",
+                    "enforceProvidedLabels",
                     &self.r#enforce_provided_labels,
                 ),
                 to_pulumi_object_field(
-                    "precision_recall_trade_off",
+                    "precisionRecallTradeOff",
                     &self.r#precision_recall_trade_off,
                 ),
                 to_pulumi_object_field(
-                    "primary_key_column_name",
+                    "primaryKeyColumnName",
                     &self.r#primary_key_column_name,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#accuracy_cost_trade_off: {
-                        let field_value = match fields_map.get("accuracy_cost_trade_off") {
+                        let field_value = match fields_map.get("accuracyCostTradeOff") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accuracy_cost_trade_off' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accuracyCostTradeOff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enforce_provided_labels: {
-                        let field_value = match fields_map.get("enforce_provided_labels") {
+                        let field_value = match fields_map.get("enforceProvidedLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforce_provided_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforceProvidedLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#precision_recall_trade_off: {
-                        let field_value = match fields_map.get("precision_recall_trade_off") {
+                        let field_value = match fields_map.get("precisionRecallTradeOff") {
                             Some(value) => value,
-                            None => bail!("Missing field 'precision_recall_trade_off' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'precisionRecallTradeOff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_key_column_name: {
-                        let field_value = match fields_map.get("primary_key_column_name") {
+                        let field_value = match fields_map.get("primaryKeyColumnName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_key_column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryKeyColumnName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

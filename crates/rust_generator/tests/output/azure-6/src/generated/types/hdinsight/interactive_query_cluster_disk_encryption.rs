@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "encryption_algorithm",
+                    "encryptionAlgorithm",
                     &self.r#encryption_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "encryption_at_host_enabled",
+                    "encryptionAtHostEnabled",
                     &self.r#encryption_at_host_enabled,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_key_id",
+                    "keyVaultKeyId",
                     &self.r#key_vault_key_id,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_managed_identity_id",
+                    "keyVaultManagedIdentityId",
                     &self.r#key_vault_managed_identity_id,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#encryption_algorithm: {
-                        let field_value = match fields_map.get("encryption_algorithm") {
+                        let field_value = match fields_map.get("encryptionAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_at_host_enabled: {
-                        let field_value = match fields_map.get("encryption_at_host_enabled") {
+                        let field_value = match fields_map.get("encryptionAtHostEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_at_host_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionAtHostEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_vault_key_id: {
-                        let field_value = match fields_map.get("key_vault_key_id") {
+                        let field_value = match fields_map.get("keyVaultKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_vault_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyVaultKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_vault_managed_identity_id: {
-                        let field_value = match fields_map.get("key_vault_managed_identity_id") {
+                        let field_value = match fields_map.get("keyVaultManagedIdentityId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_vault_managed_identity_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyVaultManagedIdentityId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

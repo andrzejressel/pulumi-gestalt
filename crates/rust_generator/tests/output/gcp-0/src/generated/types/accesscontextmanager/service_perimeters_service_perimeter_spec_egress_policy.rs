@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "egress_from",
+                    "egressFrom",
                     &self.r#egress_from,
                 ),
                 to_pulumi_object_field(
-                    "egress_to",
+                    "egressTo",
                     &self.r#egress_to,
                 ),
             ];
@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#egress_from: {
-                        let field_value = match fields_map.get("egress_from") {
+                        let field_value = match fields_map.get("egressFrom") {
                             Some(value) => value,
-                            None => bail!("Missing field 'egress_from' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'egressFrom' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#egress_to: {
-                        let field_value = match fields_map.get("egress_to") {
+                        let field_value = match fields_map.get("egressTo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'egress_to' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'egressTo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

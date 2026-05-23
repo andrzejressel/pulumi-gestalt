@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "layout_based_chunking_config",
+                    "layoutBasedChunkingConfig",
                     &self.r#layout_based_chunking_config,
                 ),
             ];
@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#layout_based_chunking_config: {
-                        let field_value = match fields_map.get("layout_based_chunking_config") {
+                        let field_value = match fields_map.get("layoutBasedChunkingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'layout_based_chunking_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'layoutBasedChunkingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

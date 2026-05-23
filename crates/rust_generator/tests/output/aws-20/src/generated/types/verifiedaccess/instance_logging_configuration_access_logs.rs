@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_logs",
+                    "cloudwatchLogs",
                     &self.r#cloudwatch_logs,
                 ),
                 to_pulumi_object_field(
-                    "include_trust_context",
+                    "includeTrustContext",
                     &self.r#include_trust_context,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_data_firehose",
+                    "kinesisDataFirehose",
                     &self.r#kinesis_data_firehose,
                 ),
                 to_pulumi_object_field(
-                    "log_version",
+                    "logVersion",
                     &self.r#log_version,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#cloudwatch_logs: {
-                        let field_value = match fields_map.get("cloudwatch_logs") {
+                        let field_value = match fields_map.get("cloudwatchLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudwatch_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudwatchLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_trust_context: {
-                        let field_value = match fields_map.get("include_trust_context") {
+                        let field_value = match fields_map.get("includeTrustContext") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_trust_context' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeTrustContext' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_data_firehose: {
-                        let field_value = match fields_map.get("kinesis_data_firehose") {
+                        let field_value = match fields_map.get("kinesisDataFirehose") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_data_firehose' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisDataFirehose' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_version: {
-                        let field_value = match fields_map.get("log_version") {
+                        let field_value = match fields_map.get("logVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3: {
-                        let field_value = match fields_map.get("s_3") {
+                        let field_value = match fields_map.get("s3") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

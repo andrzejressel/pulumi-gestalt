@@ -71,35 +71,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "always_use_latest_compatibility_date",
+                    "alwaysUseLatestCompatibilityDate",
                     &self.r#always_use_latest_compatibility_date,
                 ),
                 to_pulumi_object_field(
-                    "compatibility_date",
+                    "compatibilityDate",
                     &self.r#compatibility_date,
                 ),
                 to_pulumi_object_field(
-                    "compatibility_flags",
+                    "compatibilityFlags",
                     &self.r#compatibility_flags,
                 ),
                 to_pulumi_object_field(
-                    "d_1_databases",
+                    "d1Databases",
                     &self.r#d_1_databases,
                 ),
                 to_pulumi_object_field(
-                    "durable_object_namespaces",
+                    "durableObjectNamespaces",
                     &self.r#durable_object_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "fail_open",
+                    "failOpen",
                     &self.r#fail_open,
                 ),
                 to_pulumi_object_field(
-                    "kv_namespaces",
+                    "kvNamespaces",
                     &self.r#kv_namespaces,
                 ),
                 to_pulumi_object_field(
@@ -107,7 +107,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
                     &self.r#placement,
                 ),
                 to_pulumi_object_field(
-                    "r_2_buckets",
+                    "r2Buckets",
                     &self.r#r_2_buckets,
                 ),
                 to_pulumi_object_field(
@@ -115,11 +115,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
                     &self.r#secrets,
                 ),
                 to_pulumi_object_field(
-                    "service_bindings",
+                    "serviceBindings",
                     &self.r#service_bindings,
                 ),
                 to_pulumi_object_field(
-                    "usage_model",
+                    "usageModel",
                     &self.r#usage_model,
                 ),
             ];
@@ -146,58 +146,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#always_use_latest_compatibility_date: {
-                        let field_value = match fields_map.get("always_use_latest_compatibility_date") {
+                        let field_value = match fields_map.get("alwaysUseLatestCompatibilityDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'always_use_latest_compatibility_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alwaysUseLatestCompatibilityDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compatibility_date: {
-                        let field_value = match fields_map.get("compatibility_date") {
+                        let field_value = match fields_map.get("compatibilityDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compatibility_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compatibilityDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compatibility_flags: {
-                        let field_value = match fields_map.get("compatibility_flags") {
+                        let field_value = match fields_map.get("compatibilityFlags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compatibility_flags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compatibilityFlags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#d_1_databases: {
-                        let field_value = match fields_map.get("d_1_databases") {
+                        let field_value = match fields_map.get("d1Databases") {
                             Some(value) => value,
-                            None => bail!("Missing field 'd_1_databases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'd1Databases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#durable_object_namespaces: {
-                        let field_value = match fields_map.get("durable_object_namespaces") {
+                        let field_value = match fields_map.get("durableObjectNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'durable_object_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'durableObjectNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_variables: {
-                        let field_value = match fields_map.get("environment_variables") {
+                        let field_value = match fields_map.get("environmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'environmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fail_open: {
-                        let field_value = match fields_map.get("fail_open") {
+                        let field_value = match fields_map.get("failOpen") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fail_open' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failOpen' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kv_namespaces: {
-                        let field_value = match fields_map.get("kv_namespaces") {
+                        let field_value = match fields_map.get("kvNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kv_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kvNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -209,9 +209,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#r_2_buckets: {
-                        let field_value = match fields_map.get("r_2_buckets") {
+                        let field_value = match fields_map.get("r2Buckets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'r_2_buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'r2Buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -223,16 +223,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_bindings: {
-                        let field_value = match fields_map.get("service_bindings") {
+                        let field_value = match fields_map.get("serviceBindings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_bindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceBindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#usage_model: {
-                        let field_value = match fields_map.get("usage_model") {
+                        let field_value = match fields_map.get("usageModel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'usage_model' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'usageModel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

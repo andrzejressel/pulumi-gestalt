@@ -55,35 +55,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_cookies",
+                    "allowCookies",
                     &self.r#allow_cookies,
                 ),
                 to_pulumi_object_field(
-                    "enable_xray",
+                    "enableXray",
                     &self.r#enable_xray,
                 ),
                 to_pulumi_object_field(
-                    "excluded_pages",
+                    "excludedPages",
                     &self.r#excluded_pages,
                 ),
                 to_pulumi_object_field(
-                    "favorite_pages",
+                    "favoritePages",
                     &self.r#favorite_pages,
                 ),
                 to_pulumi_object_field(
-                    "guest_role_arn",
+                    "guestRoleArn",
                     &self.r#guest_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "identity_pool_id",
+                    "identityPoolId",
                     &self.r#identity_pool_id,
                 ),
                 to_pulumi_object_field(
-                    "included_pages",
+                    "includedPages",
                     &self.r#included_pages,
                 ),
                 to_pulumi_object_field(
-                    "session_sample_rate",
+                    "sessionSampleRate",
                     &self.r#session_sample_rate,
                 ),
                 to_pulumi_object_field(
@@ -114,58 +114,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#allow_cookies: {
-                        let field_value = match fields_map.get("allow_cookies") {
+                        let field_value = match fields_map.get("allowCookies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_cookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowCookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_xray: {
-                        let field_value = match fields_map.get("enable_xray") {
+                        let field_value = match fields_map.get("enableXray") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_xray' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableXray' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_pages: {
-                        let field_value = match fields_map.get("excluded_pages") {
+                        let field_value = match fields_map.get("excludedPages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_pages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedPages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#favorite_pages: {
-                        let field_value = match fields_map.get("favorite_pages") {
+                        let field_value = match fields_map.get("favoritePages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'favorite_pages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'favoritePages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guest_role_arn: {
-                        let field_value = match fields_map.get("guest_role_arn") {
+                        let field_value = match fields_map.get("guestRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guest_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guestRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_pool_id: {
-                        let field_value = match fields_map.get("identity_pool_id") {
+                        let field_value = match fields_map.get("identityPoolId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_pool_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityPoolId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_pages: {
-                        let field_value = match fields_map.get("included_pages") {
+                        let field_value = match fields_map.get("includedPages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_pages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedPages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_sample_rate: {
-                        let field_value = match fields_map.get("session_sample_rate") {
+                        let field_value = match fields_map.get("sessionSampleRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_sample_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionSampleRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

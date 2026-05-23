@@ -99,19 +99,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "balance_similar_node_groups",
+                    "balanceSimilarNodeGroups",
                     &self.r#balance_similar_node_groups,
                 ),
                 to_pulumi_object_field(
-                    "daemonset_eviction_for_empty_nodes_enabled",
+                    "daemonsetEvictionForEmptyNodesEnabled",
                     &self.r#daemonset_eviction_for_empty_nodes_enabled,
                 ),
                 to_pulumi_object_field(
-                    "daemonset_eviction_for_occupied_nodes_enabled",
+                    "daemonsetEvictionForOccupiedNodesEnabled",
                     &self.r#daemonset_eviction_for_occupied_nodes_enabled,
                 ),
                 to_pulumi_object_field(
-                    "empty_bulk_delete_max",
+                    "emptyBulkDeleteMax",
                     &self.r#empty_bulk_delete_max,
                 ),
                 to_pulumi_object_field(
@@ -119,63 +119,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
                     &self.r#expander,
                 ),
                 to_pulumi_object_field(
-                    "ignore_daemonsets_utilization_enabled",
+                    "ignoreDaemonsetsUtilizationEnabled",
                     &self.r#ignore_daemonsets_utilization_enabled,
                 ),
                 to_pulumi_object_field(
-                    "max_graceful_termination_sec",
+                    "maxGracefulTerminationSec",
                     &self.r#max_graceful_termination_sec,
                 ),
                 to_pulumi_object_field(
-                    "max_node_provisioning_time",
+                    "maxNodeProvisioningTime",
                     &self.r#max_node_provisioning_time,
                 ),
                 to_pulumi_object_field(
-                    "max_unready_nodes",
+                    "maxUnreadyNodes",
                     &self.r#max_unready_nodes,
                 ),
                 to_pulumi_object_field(
-                    "max_unready_percentage",
+                    "maxUnreadyPercentage",
                     &self.r#max_unready_percentage,
                 ),
                 to_pulumi_object_field(
-                    "new_pod_scale_up_delay",
+                    "newPodScaleUpDelay",
                     &self.r#new_pod_scale_up_delay,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_delay_after_add",
+                    "scaleDownDelayAfterAdd",
                     &self.r#scale_down_delay_after_add,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_delay_after_delete",
+                    "scaleDownDelayAfterDelete",
                     &self.r#scale_down_delay_after_delete,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_delay_after_failure",
+                    "scaleDownDelayAfterFailure",
                     &self.r#scale_down_delay_after_failure,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_unneeded",
+                    "scaleDownUnneeded",
                     &self.r#scale_down_unneeded,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_unready",
+                    "scaleDownUnready",
                     &self.r#scale_down_unready,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_utilization_threshold",
+                    "scaleDownUtilizationThreshold",
                     &self.r#scale_down_utilization_threshold,
                 ),
                 to_pulumi_object_field(
-                    "scan_interval",
+                    "scanInterval",
                     &self.r#scan_interval,
                 ),
                 to_pulumi_object_field(
-                    "skip_nodes_with_local_storage",
+                    "skipNodesWithLocalStorage",
                     &self.r#skip_nodes_with_local_storage,
                 ),
                 to_pulumi_object_field(
-                    "skip_nodes_with_system_pods",
+                    "skipNodesWithSystemPods",
                     &self.r#skip_nodes_with_system_pods,
                 ),
             ];
@@ -202,30 +202,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#balance_similar_node_groups: {
-                        let field_value = match fields_map.get("balance_similar_node_groups") {
+                        let field_value = match fields_map.get("balanceSimilarNodeGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'balance_similar_node_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'balanceSimilarNodeGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#daemonset_eviction_for_empty_nodes_enabled: {
-                        let field_value = match fields_map.get("daemonset_eviction_for_empty_nodes_enabled") {
+                        let field_value = match fields_map.get("daemonsetEvictionForEmptyNodesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'daemonset_eviction_for_empty_nodes_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daemonsetEvictionForEmptyNodesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#daemonset_eviction_for_occupied_nodes_enabled: {
-                        let field_value = match fields_map.get("daemonset_eviction_for_occupied_nodes_enabled") {
+                        let field_value = match fields_map.get("daemonsetEvictionForOccupiedNodesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'daemonset_eviction_for_occupied_nodes_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daemonsetEvictionForOccupiedNodesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#empty_bulk_delete_max: {
-                        let field_value = match fields_map.get("empty_bulk_delete_max") {
+                        let field_value = match fields_map.get("emptyBulkDeleteMax") {
                             Some(value) => value,
-                            None => bail!("Missing field 'empty_bulk_delete_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emptyBulkDeleteMax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -237,107 +237,107 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_daemonsets_utilization_enabled: {
-                        let field_value = match fields_map.get("ignore_daemonsets_utilization_enabled") {
+                        let field_value = match fields_map.get("ignoreDaemonsetsUtilizationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_daemonsets_utilization_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreDaemonsetsUtilizationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_graceful_termination_sec: {
-                        let field_value = match fields_map.get("max_graceful_termination_sec") {
+                        let field_value = match fields_map.get("maxGracefulTerminationSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_graceful_termination_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxGracefulTerminationSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_node_provisioning_time: {
-                        let field_value = match fields_map.get("max_node_provisioning_time") {
+                        let field_value = match fields_map.get("maxNodeProvisioningTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_node_provisioning_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxNodeProvisioningTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unready_nodes: {
-                        let field_value = match fields_map.get("max_unready_nodes") {
+                        let field_value = match fields_map.get("maxUnreadyNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unready_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnreadyNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unready_percentage: {
-                        let field_value = match fields_map.get("max_unready_percentage") {
+                        let field_value = match fields_map.get("maxUnreadyPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unready_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnreadyPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#new_pod_scale_up_delay: {
-                        let field_value = match fields_map.get("new_pod_scale_up_delay") {
+                        let field_value = match fields_map.get("newPodScaleUpDelay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'new_pod_scale_up_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'newPodScaleUpDelay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_delay_after_add: {
-                        let field_value = match fields_map.get("scale_down_delay_after_add") {
+                        let field_value = match fields_map.get("scaleDownDelayAfterAdd") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_delay_after_add' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownDelayAfterAdd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_delay_after_delete: {
-                        let field_value = match fields_map.get("scale_down_delay_after_delete") {
+                        let field_value = match fields_map.get("scaleDownDelayAfterDelete") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_delay_after_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownDelayAfterDelete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_delay_after_failure: {
-                        let field_value = match fields_map.get("scale_down_delay_after_failure") {
+                        let field_value = match fields_map.get("scaleDownDelayAfterFailure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_delay_after_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownDelayAfterFailure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_unneeded: {
-                        let field_value = match fields_map.get("scale_down_unneeded") {
+                        let field_value = match fields_map.get("scaleDownUnneeded") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_unneeded' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownUnneeded' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_unready: {
-                        let field_value = match fields_map.get("scale_down_unready") {
+                        let field_value = match fields_map.get("scaleDownUnready") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_unready' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownUnready' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_utilization_threshold: {
-                        let field_value = match fields_map.get("scale_down_utilization_threshold") {
+                        let field_value = match fields_map.get("scaleDownUtilizationThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_utilization_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownUtilizationThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scan_interval: {
-                        let field_value = match fields_map.get("scan_interval") {
+                        let field_value = match fields_map.get("scanInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scan_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scanInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skip_nodes_with_local_storage: {
-                        let field_value = match fields_map.get("skip_nodes_with_local_storage") {
+                        let field_value = match fields_map.get("skipNodesWithLocalStorage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skip_nodes_with_local_storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skipNodesWithLocalStorage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skip_nodes_with_system_pods: {
-                        let field_value = match fields_map.get("skip_nodes_with_system_pods") {
+                        let field_value = match fields_map.get("skipNodesWithSystemPods") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skip_nodes_with_system_pods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skipNodesWithSystemPods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

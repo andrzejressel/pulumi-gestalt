@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_auth",
+                    "basicAuth",
                     &self.r#basic_auth,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_tls_auth",
+                    "clientCertificateTlsAuth",
                     &self.r#client_certificate_tls_auth,
                 ),
                 to_pulumi_object_field(
-                    "sasl_scram_256_auth",
+                    "saslScram256Auth",
                     &self.r#sasl_scram_256_auth,
                 ),
                 to_pulumi_object_field(
-                    "sasl_scram_512_auth",
+                    "saslScram512Auth",
                     &self.r#sasl_scram_512_auth,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#basic_auth: {
-                        let field_value = match fields_map.get("basic_auth") {
+                        let field_value = match fields_map.get("basicAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'basic_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'basicAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_certificate_tls_auth: {
-                        let field_value = match fields_map.get("client_certificate_tls_auth") {
+                        let field_value = match fields_map.get("clientCertificateTlsAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_certificate_tls_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientCertificateTlsAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sasl_scram_256_auth: {
-                        let field_value = match fields_map.get("sasl_scram_256_auth") {
+                        let field_value = match fields_map.get("saslScram256Auth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sasl_scram_256_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'saslScram256Auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sasl_scram_512_auth: {
-                        let field_value = match fields_map.get("sasl_scram_512_auth") {
+                        let field_value = match fields_map.get("saslScram512Auth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sasl_scram_512_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'saslScram512Auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

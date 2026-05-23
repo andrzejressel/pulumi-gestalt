@@ -46,39 +46,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "include_control_details",
+                    "includeControlDetails",
                     &self.r#include_control_details,
                 ),
                 to_pulumi_object_field(
-                    "include_null_and_empty",
+                    "includeNullAndEmpty",
                     &self.r#include_null_and_empty,
                 ),
                 to_pulumi_object_field(
-                    "include_partition_value",
+                    "includePartitionValue",
                     &self.r#include_partition_value,
                 ),
                 to_pulumi_object_field(
-                    "include_table_alter_operations",
+                    "includeTableAlterOperations",
                     &self.r#include_table_alter_operations,
                 ),
                 to_pulumi_object_field(
-                    "include_transaction_details",
+                    "includeTransactionDetails",
                     &self.r#include_transaction_details,
                 ),
                 to_pulumi_object_field(
-                    "message_format",
+                    "messageFormat",
                     &self.r#message_format,
                 ),
                 to_pulumi_object_field(
-                    "partition_include_schema_table",
+                    "partitionIncludeSchemaTable",
                     &self.r#partition_include_schema_table,
                 ),
                 to_pulumi_object_field(
-                    "service_access_role_arn",
+                    "serviceAccessRoleArn",
                     &self.r#service_access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "stream_arn",
+                    "streamArn",
                     &self.r#stream_arn,
                 ),
             ];
@@ -105,65 +105,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#include_control_details: {
-                        let field_value = match fields_map.get("include_control_details") {
+                        let field_value = match fields_map.get("includeControlDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_control_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeControlDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_null_and_empty: {
-                        let field_value = match fields_map.get("include_null_and_empty") {
+                        let field_value = match fields_map.get("includeNullAndEmpty") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_null_and_empty' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeNullAndEmpty' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_partition_value: {
-                        let field_value = match fields_map.get("include_partition_value") {
+                        let field_value = match fields_map.get("includePartitionValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_partition_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includePartitionValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_table_alter_operations: {
-                        let field_value = match fields_map.get("include_table_alter_operations") {
+                        let field_value = match fields_map.get("includeTableAlterOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_table_alter_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeTableAlterOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_transaction_details: {
-                        let field_value = match fields_map.get("include_transaction_details") {
+                        let field_value = match fields_map.get("includeTransactionDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_transaction_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeTransactionDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#message_format: {
-                        let field_value = match fields_map.get("message_format") {
+                        let field_value = match fields_map.get("messageFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'message_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messageFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#partition_include_schema_table: {
-                        let field_value = match fields_map.get("partition_include_schema_table") {
+                        let field_value = match fields_map.get("partitionIncludeSchemaTable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partition_include_schema_table' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partitionIncludeSchemaTable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_access_role_arn: {
-                        let field_value = match fields_map.get("service_access_role_arn") {
+                        let field_value = match fields_map.get("serviceAccessRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_access_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccessRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_arn: {
-                        let field_value = match fields_map.get("stream_arn") {
+                        let field_value = match fields_map.get("streamArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stream_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'streamArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

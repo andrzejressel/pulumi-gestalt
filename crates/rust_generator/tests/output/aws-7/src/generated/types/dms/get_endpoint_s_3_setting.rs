@@ -136,159 +136,159 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "add_column_name",
+                    "addColumnName",
                     &self.r#add_column_name,
                 ),
                 to_pulumi_object_field(
-                    "bucket_folder",
+                    "bucketFolder",
                     &self.r#bucket_folder,
                 ),
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "canned_acl_for_objects",
+                    "cannedAclForObjects",
                     &self.r#canned_acl_for_objects,
                 ),
                 to_pulumi_object_field(
-                    "cdc_inserts_and_updates",
+                    "cdcInsertsAndUpdates",
                     &self.r#cdc_inserts_and_updates,
                 ),
                 to_pulumi_object_field(
-                    "cdc_inserts_only",
+                    "cdcInsertsOnly",
                     &self.r#cdc_inserts_only,
                 ),
                 to_pulumi_object_field(
-                    "cdc_max_batch_interval",
+                    "cdcMaxBatchInterval",
                     &self.r#cdc_max_batch_interval,
                 ),
                 to_pulumi_object_field(
-                    "cdc_min_file_size",
+                    "cdcMinFileSize",
                     &self.r#cdc_min_file_size,
                 ),
                 to_pulumi_object_field(
-                    "cdc_path",
+                    "cdcPath",
                     &self.r#cdc_path,
                 ),
                 to_pulumi_object_field(
-                    "compression_type",
+                    "compressionType",
                     &self.r#compression_type,
                 ),
                 to_pulumi_object_field(
-                    "csv_delimiter",
+                    "csvDelimiter",
                     &self.r#csv_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "csv_no_sup_value",
+                    "csvNoSupValue",
                     &self.r#csv_no_sup_value,
                 ),
                 to_pulumi_object_field(
-                    "csv_null_value",
+                    "csvNullValue",
                     &self.r#csv_null_value,
                 ),
                 to_pulumi_object_field(
-                    "csv_row_delimiter",
+                    "csvRowDelimiter",
                     &self.r#csv_row_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "data_format",
+                    "dataFormat",
                     &self.r#data_format,
                 ),
                 to_pulumi_object_field(
-                    "data_page_size",
+                    "dataPageSize",
                     &self.r#data_page_size,
                 ),
                 to_pulumi_object_field(
-                    "date_partition_delimiter",
+                    "datePartitionDelimiter",
                     &self.r#date_partition_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "date_partition_enabled",
+                    "datePartitionEnabled",
                     &self.r#date_partition_enabled,
                 ),
                 to_pulumi_object_field(
-                    "date_partition_sequence",
+                    "datePartitionSequence",
                     &self.r#date_partition_sequence,
                 ),
                 to_pulumi_object_field(
-                    "dict_page_size_limit",
+                    "dictPageSizeLimit",
                     &self.r#dict_page_size_limit,
                 ),
                 to_pulumi_object_field(
-                    "enable_statistics",
+                    "enableStatistics",
                     &self.r#enable_statistics,
                 ),
                 to_pulumi_object_field(
-                    "encoding_type",
+                    "encodingType",
                     &self.r#encoding_type,
                 ),
                 to_pulumi_object_field(
-                    "encryption_mode",
+                    "encryptionMode",
                     &self.r#encryption_mode,
                 ),
                 to_pulumi_object_field(
-                    "external_table_definition",
+                    "externalTableDefinition",
                     &self.r#external_table_definition,
                 ),
                 to_pulumi_object_field(
-                    "glue_catalog_generation",
+                    "glueCatalogGeneration",
                     &self.r#glue_catalog_generation,
                 ),
                 to_pulumi_object_field(
-                    "ignore_header_rows",
+                    "ignoreHeaderRows",
                     &self.r#ignore_header_rows,
                 ),
                 to_pulumi_object_field(
-                    "ignore_headers_row",
+                    "ignoreHeadersRow",
                     &self.r#ignore_headers_row,
                 ),
                 to_pulumi_object_field(
-                    "include_op_for_full_load",
+                    "includeOpForFullLoad",
                     &self.r#include_op_for_full_load,
                 ),
                 to_pulumi_object_field(
-                    "max_file_size",
+                    "maxFileSize",
                     &self.r#max_file_size,
                 ),
                 to_pulumi_object_field(
-                    "parquet_timestamp_in_millisecond",
+                    "parquetTimestampInMillisecond",
                     &self.r#parquet_timestamp_in_millisecond,
                 ),
                 to_pulumi_object_field(
-                    "parquet_version",
+                    "parquetVersion",
                     &self.r#parquet_version,
                 ),
                 to_pulumi_object_field(
-                    "preserve_transactions",
+                    "preserveTransactions",
                     &self.r#preserve_transactions,
                 ),
                 to_pulumi_object_field(
-                    "rfc_4180",
+                    "rfc4180",
                     &self.r#rfc_4180,
                 ),
                 to_pulumi_object_field(
-                    "row_group_length",
+                    "rowGroupLength",
                     &self.r#row_group_length,
                 ),
                 to_pulumi_object_field(
-                    "server_side_encryption_kms_key_id",
+                    "serverSideEncryptionKmsKeyId",
                     &self.r#server_side_encryption_kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "service_access_role_arn",
+                    "serviceAccessRoleArn",
                     &self.r#service_access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_column_name",
+                    "timestampColumnName",
                     &self.r#timestamp_column_name,
                 ),
                 to_pulumi_object_field(
-                    "use_csv_no_sup_value",
+                    "useCsvNoSupValue",
                     &self.r#use_csv_no_sup_value,
                 ),
                 to_pulumi_object_field(
-                    "use_task_start_time_for_full_load_timestamp",
+                    "useTaskStartTimeForFullLoadTimestamp",
                     &self.r#use_task_start_time_for_full_load_timestamp,
                 ),
             ];
@@ -315,275 +315,275 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#add_column_name: {
-                        let field_value = match fields_map.get("add_column_name") {
+                        let field_value = match fields_map.get("addColumnName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'add_column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addColumnName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_folder: {
-                        let field_value = match fields_map.get("bucket_folder") {
+                        let field_value = match fields_map.get("bucketFolder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_folder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketFolder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_name: {
-                        let field_value = match fields_map.get("bucket_name") {
+                        let field_value = match fields_map.get("bucketName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#canned_acl_for_objects: {
-                        let field_value = match fields_map.get("canned_acl_for_objects") {
+                        let field_value = match fields_map.get("cannedAclForObjects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'canned_acl_for_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cannedAclForObjects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cdc_inserts_and_updates: {
-                        let field_value = match fields_map.get("cdc_inserts_and_updates") {
+                        let field_value = match fields_map.get("cdcInsertsAndUpdates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdc_inserts_and_updates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdcInsertsAndUpdates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cdc_inserts_only: {
-                        let field_value = match fields_map.get("cdc_inserts_only") {
+                        let field_value = match fields_map.get("cdcInsertsOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdc_inserts_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdcInsertsOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cdc_max_batch_interval: {
-                        let field_value = match fields_map.get("cdc_max_batch_interval") {
+                        let field_value = match fields_map.get("cdcMaxBatchInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdc_max_batch_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdcMaxBatchInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cdc_min_file_size: {
-                        let field_value = match fields_map.get("cdc_min_file_size") {
+                        let field_value = match fields_map.get("cdcMinFileSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdc_min_file_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdcMinFileSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cdc_path: {
-                        let field_value = match fields_map.get("cdc_path") {
+                        let field_value = match fields_map.get("cdcPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdc_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdcPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compression_type: {
-                        let field_value = match fields_map.get("compression_type") {
+                        let field_value = match fields_map.get("compressionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compression_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compressionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#csv_delimiter: {
-                        let field_value = match fields_map.get("csv_delimiter") {
+                        let field_value = match fields_map.get("csvDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'csv_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'csvDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#csv_no_sup_value: {
-                        let field_value = match fields_map.get("csv_no_sup_value") {
+                        let field_value = match fields_map.get("csvNoSupValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'csv_no_sup_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'csvNoSupValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#csv_null_value: {
-                        let field_value = match fields_map.get("csv_null_value") {
+                        let field_value = match fields_map.get("csvNullValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'csv_null_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'csvNullValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#csv_row_delimiter: {
-                        let field_value = match fields_map.get("csv_row_delimiter") {
+                        let field_value = match fields_map.get("csvRowDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'csv_row_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'csvRowDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_format: {
-                        let field_value = match fields_map.get("data_format") {
+                        let field_value = match fields_map.get("dataFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_page_size: {
-                        let field_value = match fields_map.get("data_page_size") {
+                        let field_value = match fields_map.get("dataPageSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_page_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataPageSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#date_partition_delimiter: {
-                        let field_value = match fields_map.get("date_partition_delimiter") {
+                        let field_value = match fields_map.get("datePartitionDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'date_partition_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'datePartitionDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#date_partition_enabled: {
-                        let field_value = match fields_map.get("date_partition_enabled") {
+                        let field_value = match fields_map.get("datePartitionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'date_partition_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'datePartitionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#date_partition_sequence: {
-                        let field_value = match fields_map.get("date_partition_sequence") {
+                        let field_value = match fields_map.get("datePartitionSequence") {
                             Some(value) => value,
-                            None => bail!("Missing field 'date_partition_sequence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'datePartitionSequence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dict_page_size_limit: {
-                        let field_value = match fields_map.get("dict_page_size_limit") {
+                        let field_value = match fields_map.get("dictPageSizeLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dict_page_size_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dictPageSizeLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_statistics: {
-                        let field_value = match fields_map.get("enable_statistics") {
+                        let field_value = match fields_map.get("enableStatistics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_statistics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableStatistics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encoding_type: {
-                        let field_value = match fields_map.get("encoding_type") {
+                        let field_value = match fields_map.get("encodingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encoding_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encodingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_mode: {
-                        let field_value = match fields_map.get("encryption_mode") {
+                        let field_value = match fields_map.get("encryptionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_table_definition: {
-                        let field_value = match fields_map.get("external_table_definition") {
+                        let field_value = match fields_map.get("externalTableDefinition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_table_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalTableDefinition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#glue_catalog_generation: {
-                        let field_value = match fields_map.get("glue_catalog_generation") {
+                        let field_value = match fields_map.get("glueCatalogGeneration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'glue_catalog_generation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'glueCatalogGeneration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_header_rows: {
-                        let field_value = match fields_map.get("ignore_header_rows") {
+                        let field_value = match fields_map.get("ignoreHeaderRows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_header_rows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreHeaderRows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_headers_row: {
-                        let field_value = match fields_map.get("ignore_headers_row") {
+                        let field_value = match fields_map.get("ignoreHeadersRow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_headers_row' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreHeadersRow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_op_for_full_load: {
-                        let field_value = match fields_map.get("include_op_for_full_load") {
+                        let field_value = match fields_map.get("includeOpForFullLoad") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_op_for_full_load' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeOpForFullLoad' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_file_size: {
-                        let field_value = match fields_map.get("max_file_size") {
+                        let field_value = match fields_map.get("maxFileSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_file_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxFileSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parquet_timestamp_in_millisecond: {
-                        let field_value = match fields_map.get("parquet_timestamp_in_millisecond") {
+                        let field_value = match fields_map.get("parquetTimestampInMillisecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parquet_timestamp_in_millisecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parquetTimestampInMillisecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parquet_version: {
-                        let field_value = match fields_map.get("parquet_version") {
+                        let field_value = match fields_map.get("parquetVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parquet_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parquetVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_transactions: {
-                        let field_value = match fields_map.get("preserve_transactions") {
+                        let field_value = match fields_map.get("preserveTransactions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_transactions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preserveTransactions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rfc_4180: {
-                        let field_value = match fields_map.get("rfc_4180") {
+                        let field_value = match fields_map.get("rfc4180") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rfc_4180' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rfc4180' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#row_group_length: {
-                        let field_value = match fields_map.get("row_group_length") {
+                        let field_value = match fields_map.get("rowGroupLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'row_group_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rowGroupLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_side_encryption_kms_key_id: {
-                        let field_value = match fields_map.get("server_side_encryption_kms_key_id") {
+                        let field_value = match fields_map.get("serverSideEncryptionKmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_side_encryption_kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverSideEncryptionKmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_access_role_arn: {
-                        let field_value = match fields_map.get("service_access_role_arn") {
+                        let field_value = match fields_map.get("serviceAccessRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_access_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccessRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timestamp_column_name: {
-                        let field_value = match fields_map.get("timestamp_column_name") {
+                        let field_value = match fields_map.get("timestampColumnName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timestamp_column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timestampColumnName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_csv_no_sup_value: {
-                        let field_value = match fields_map.get("use_csv_no_sup_value") {
+                        let field_value = match fields_map.get("useCsvNoSupValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_csv_no_sup_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useCsvNoSupValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_task_start_time_for_full_load_timestamp: {
-                        let field_value = match fields_map.get("use_task_start_time_for_full_load_timestamp") {
+                        let field_value = match fields_map.get("useTaskStartTimeForFullLoadTimestamp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_task_start_time_for_full_load_timestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useTaskStartTimeForFullLoadTimestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

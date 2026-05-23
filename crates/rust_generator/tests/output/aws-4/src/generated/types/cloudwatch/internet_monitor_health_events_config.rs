@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_score_threshold",
+                    "availabilityScoreThreshold",
                     &self.r#availability_score_threshold,
                 ),
                 to_pulumi_object_field(
-                    "performance_score_threshold",
+                    "performanceScoreThreshold",
                     &self.r#performance_score_threshold,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#availability_score_threshold: {
-                        let field_value = match fields_map.get("availability_score_threshold") {
+                        let field_value = match fields_map.get("availabilityScoreThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'availability_score_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availabilityScoreThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#performance_score_threshold: {
-                        let field_value = match fields_map.get("performance_score_threshold") {
+                        let field_value = match fields_map.get("performanceScoreThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'performance_score_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'performanceScoreThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

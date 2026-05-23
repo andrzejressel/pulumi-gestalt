@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dag_processing_logs",
+                    "dagProcessingLogs",
                     &self.r#dag_processing_logs,
                 ),
                 to_pulumi_object_field(
-                    "scheduler_logs",
+                    "schedulerLogs",
                     &self.r#scheduler_logs,
                 ),
                 to_pulumi_object_field(
-                    "task_logs",
+                    "taskLogs",
                     &self.r#task_logs,
                 ),
                 to_pulumi_object_field(
-                    "webserver_logs",
+                    "webserverLogs",
                     &self.r#webserver_logs,
                 ),
                 to_pulumi_object_field(
-                    "worker_logs",
+                    "workerLogs",
                     &self.r#worker_logs,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#dag_processing_logs: {
-                        let field_value = match fields_map.get("dag_processing_logs") {
+                        let field_value = match fields_map.get("dagProcessingLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dag_processing_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dagProcessingLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scheduler_logs: {
-                        let field_value = match fields_map.get("scheduler_logs") {
+                        let field_value = match fields_map.get("schedulerLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scheduler_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schedulerLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_logs: {
-                        let field_value = match fields_map.get("task_logs") {
+                        let field_value = match fields_map.get("taskLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#webserver_logs: {
-                        let field_value = match fields_map.get("webserver_logs") {
+                        let field_value = match fields_map.get("webserverLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'webserver_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webserverLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#worker_logs: {
-                        let field_value = match fields_map.get("worker_logs") {
+                        let field_value = match fields_map.get("workerLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'worker_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workerLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -77,15 +77,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_month_days",
+                    "advancedMonthDays",
                     &self.r#advanced_month_days,
                 ),
                 to_pulumi_object_field(
-                    "advanced_week_days",
+                    "advancedWeekDays",
                     &self.r#advanced_week_days,
                 ),
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
@@ -93,11 +93,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "expiry_time",
+                    "expiryTime",
                     &self.r#expiry_time,
                 ),
                 to_pulumi_object_field(
-                    "expiry_time_offset_minutes",
+                    "expiryTimeOffsetMinutes",
                     &self.r#expiry_time_offset_minutes,
                 ),
                 to_pulumi_object_field(
@@ -109,35 +109,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "is_enabled",
+                    "isEnabled",
                     &self.r#is_enabled,
                 ),
                 to_pulumi_object_field(
-                    "last_modified_time",
+                    "lastModifiedTime",
                     &self.r#last_modified_time,
                 ),
                 to_pulumi_object_field(
-                    "monthly_occurrence",
+                    "monthlyOccurrence",
                     &self.r#monthly_occurrence,
                 ),
                 to_pulumi_object_field(
-                    "next_run",
+                    "nextRun",
                     &self.r#next_run,
                 ),
                 to_pulumi_object_field(
-                    "next_run_offset_minutes",
+                    "nextRunOffsetMinutes",
                     &self.r#next_run_offset_minutes,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "start_time_offset_minutes",
+                    "startTimeOffsetMinutes",
                     &self.r#start_time_offset_minutes,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];
@@ -164,23 +164,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#advanced_month_days: {
-                        let field_value = match fields_map.get("advanced_month_days") {
+                        let field_value = match fields_map.get("advancedMonthDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_month_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedMonthDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#advanced_week_days: {
-                        let field_value = match fields_map.get("advanced_week_days") {
+                        let field_value = match fields_map.get("advancedWeekDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_week_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedWeekDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#creation_time: {
-                        let field_value = match fields_map.get("creation_time") {
+                        let field_value = match fields_map.get("creationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'creation_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'creationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -192,16 +192,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expiry_time: {
-                        let field_value = match fields_map.get("expiry_time") {
+                        let field_value = match fields_map.get("expiryTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiry_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expiryTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expiry_time_offset_minutes: {
-                        let field_value = match fields_map.get("expiry_time_offset_minutes") {
+                        let field_value = match fields_map.get("expiryTimeOffsetMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiry_time_offset_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expiryTimeOffsetMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -220,58 +220,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_enabled: {
-                        let field_value = match fields_map.get("is_enabled") {
+                        let field_value = match fields_map.get("isEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_modified_time: {
-                        let field_value = match fields_map.get("last_modified_time") {
+                        let field_value = match fields_map.get("lastModifiedTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_modified_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastModifiedTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monthly_occurrence: {
-                        let field_value = match fields_map.get("monthly_occurrence") {
+                        let field_value = match fields_map.get("monthlyOccurrence") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monthly_occurrence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monthlyOccurrence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_run: {
-                        let field_value = match fields_map.get("next_run") {
+                        let field_value = match fields_map.get("nextRun") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_run' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextRun' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_run_offset_minutes: {
-                        let field_value = match fields_map.get("next_run_offset_minutes") {
+                        let field_value = match fields_map.get("nextRunOffsetMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_run_offset_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextRunOffsetMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time: {
-                        let field_value = match fields_map.get("start_time") {
+                        let field_value = match fields_map.get("startTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time_offset_minutes: {
-                        let field_value = match fields_map.get("start_time_offset_minutes") {
+                        let field_value = match fields_map.get("startTimeOffsetMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time_offset_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTimeOffsetMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_zone: {
-                        let field_value = match fields_map.get("time_zone") {
+                        let field_value = match fields_map.get("timeZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

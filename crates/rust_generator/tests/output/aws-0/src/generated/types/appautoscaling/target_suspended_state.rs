@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dynamic_scaling_in_suspended",
+                    "dynamicScalingInSuspended",
                     &self.r#dynamic_scaling_in_suspended,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_scaling_out_suspended",
+                    "dynamicScalingOutSuspended",
                     &self.r#dynamic_scaling_out_suspended,
                 ),
                 to_pulumi_object_field(
-                    "scheduled_scaling_suspended",
+                    "scheduledScalingSuspended",
                     &self.r#scheduled_scaling_suspended,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#dynamic_scaling_in_suspended: {
-                        let field_value = match fields_map.get("dynamic_scaling_in_suspended") {
+                        let field_value = match fields_map.get("dynamicScalingInSuspended") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_scaling_in_suspended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicScalingInSuspended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dynamic_scaling_out_suspended: {
-                        let field_value = match fields_map.get("dynamic_scaling_out_suspended") {
+                        let field_value = match fields_map.get("dynamicScalingOutSuspended") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_scaling_out_suspended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicScalingOutSuspended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scheduled_scaling_suspended: {
-                        let field_value = match fields_map.get("scheduled_scaling_suspended") {
+                        let field_value = match fields_map.get("scheduledScalingSuspended") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scheduled_scaling_suspended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduledScalingSuspended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

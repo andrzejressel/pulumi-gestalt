@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "non_key_attributes",
+                    "nonKeyAttributes",
                     &self.r#non_key_attributes,
                 ),
                 to_pulumi_object_field(
-                    "projection_type",
+                    "projectionType",
                     &self.r#projection_type,
                 ),
                 to_pulumi_object_field(
-                    "range_key",
+                    "rangeKey",
                     &self.r#range_key,
                 ),
             ];
@@ -78,23 +78,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#non_key_attributes: {
-                        let field_value = match fields_map.get("non_key_attributes") {
+                        let field_value = match fields_map.get("nonKeyAttributes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'non_key_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nonKeyAttributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#projection_type: {
-                        let field_value = match fields_map.get("projection_type") {
+                        let field_value = match fields_map.get("projectionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'projection_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_key: {
-                        let field_value = match fields_map.get("range_key") {
+                        let field_value = match fields_map.get("rangeKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

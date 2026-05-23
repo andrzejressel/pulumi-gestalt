@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_record_ip_type",
+                    "dnsRecordIpType",
                     &self.r#dns_record_ip_type,
                 ),
                 to_pulumi_object_field(
-                    "private_dns_only_for_inbound_resolver_endpoint",
+                    "privateDnsOnlyForInboundResolverEndpoint",
                     &self.r#private_dns_only_for_inbound_resolver_endpoint,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#dns_record_ip_type: {
-                        let field_value = match fields_map.get("dns_record_ip_type") {
+                        let field_value = match fields_map.get("dnsRecordIpType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_record_ip_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsRecordIpType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_dns_only_for_inbound_resolver_endpoint: {
-                        let field_value = match fields_map.get("private_dns_only_for_inbound_resolver_endpoint") {
+                        let field_value = match fields_map.get("privateDnsOnlyForInboundResolverEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_dns_only_for_inbound_resolver_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateDnsOnlyForInboundResolverEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

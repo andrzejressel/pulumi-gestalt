@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_kms_key_id",
+                    "awsKmsKeyId",
                     &self.r#aws_kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "return_connection_password_encrypted",
+                    "returnConnectionPasswordEncrypted",
                     &self.r#return_connection_password_encrypted,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#aws_kms_key_id: {
-                        let field_value = match fields_map.get("aws_kms_key_id") {
+                        let field_value = match fields_map.get("awsKmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsKmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#return_connection_password_encrypted: {
-                        let field_value = match fields_map.get("return_connection_password_encrypted") {
+                        let field_value = match fields_map.get("returnConnectionPasswordEncrypted") {
                             Some(value) => value,
-                            None => bail!("Missing field 'return_connection_password_encrypted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'returnConnectionPasswordEncrypted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

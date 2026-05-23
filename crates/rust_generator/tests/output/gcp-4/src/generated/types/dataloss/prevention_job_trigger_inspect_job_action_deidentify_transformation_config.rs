@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deidentify_template",
+                    "deidentifyTemplate",
                     &self.r#deidentify_template,
                 ),
                 to_pulumi_object_field(
-                    "image_redact_template",
+                    "imageRedactTemplate",
                     &self.r#image_redact_template,
                 ),
                 to_pulumi_object_field(
-                    "structured_deidentify_template",
+                    "structuredDeidentifyTemplate",
                     &self.r#structured_deidentify_template,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#deidentify_template: {
-                        let field_value = match fields_map.get("deidentify_template") {
+                        let field_value = match fields_map.get("deidentifyTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deidentify_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deidentifyTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_redact_template: {
-                        let field_value = match fields_map.get("image_redact_template") {
+                        let field_value = match fields_map.get("imageRedactTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_redact_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageRedactTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#structured_deidentify_template: {
-                        let field_value = match fields_map.get("structured_deidentify_template") {
+                        let field_value = match fields_map.get("structuredDeidentifyTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'structured_deidentify_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'structuredDeidentifyTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

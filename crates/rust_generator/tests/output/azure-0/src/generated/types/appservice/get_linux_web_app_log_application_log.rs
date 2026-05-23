@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_blob_storages",
+                    "azureBlobStorages",
                     &self.r#azure_blob_storages,
                 ),
                 to_pulumi_object_field(
-                    "file_system_level",
+                    "fileSystemLevel",
                     &self.r#file_system_level,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#azure_blob_storages: {
-                        let field_value = match fields_map.get("azure_blob_storages") {
+                        let field_value = match fields_map.get("azureBlobStorages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_blob_storages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureBlobStorages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_system_level: {
-                        let field_value = match fields_map.get("file_system_level") {
+                        let field_value = match fields_map.get("fileSystemLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_system_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystemLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

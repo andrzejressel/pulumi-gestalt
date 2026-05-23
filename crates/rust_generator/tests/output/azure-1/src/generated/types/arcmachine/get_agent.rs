@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "extensions_allow_lists",
+                    "extensionsAllowLists",
                     &self.r#extensions_allow_lists,
                 ),
                 to_pulumi_object_field(
-                    "extensions_block_lists",
+                    "extensionsBlockLists",
                     &self.r#extensions_block_lists,
                 ),
                 to_pulumi_object_field(
-                    "extensions_enabled",
+                    "extensionsEnabled",
                     &self.r#extensions_enabled,
                 ),
                 to_pulumi_object_field(
-                    "guest_configuration_enabled",
+                    "guestConfigurationEnabled",
                     &self.r#guest_configuration_enabled,
                 ),
                 to_pulumi_object_field(
-                    "incoming_connections_ports",
+                    "incomingConnectionsPorts",
                     &self.r#incoming_connections_ports,
                 ),
                 to_pulumi_object_field(
-                    "proxy_bypasses",
+                    "proxyBypasses",
                     &self.r#proxy_bypasses,
                 ),
                 to_pulumi_object_field(
-                    "proxy_url",
+                    "proxyUrl",
                     &self.r#proxy_url,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#extensions_allow_lists: {
-                        let field_value = match fields_map.get("extensions_allow_lists") {
+                        let field_value = match fields_map.get("extensionsAllowLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extensions_allow_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extensionsAllowLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extensions_block_lists: {
-                        let field_value = match fields_map.get("extensions_block_lists") {
+                        let field_value = match fields_map.get("extensionsBlockLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extensions_block_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extensionsBlockLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extensions_enabled: {
-                        let field_value = match fields_map.get("extensions_enabled") {
+                        let field_value = match fields_map.get("extensionsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extensions_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extensionsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guest_configuration_enabled: {
-                        let field_value = match fields_map.get("guest_configuration_enabled") {
+                        let field_value = match fields_map.get("guestConfigurationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guest_configuration_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guestConfigurationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#incoming_connections_ports: {
-                        let field_value = match fields_map.get("incoming_connections_ports") {
+                        let field_value = match fields_map.get("incomingConnectionsPorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'incoming_connections_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'incomingConnectionsPorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#proxy_bypasses: {
-                        let field_value = match fields_map.get("proxy_bypasses") {
+                        let field_value = match fields_map.get("proxyBypasses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'proxy_bypasses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'proxyBypasses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#proxy_url: {
-                        let field_value = match fields_map.get("proxy_url") {
+                        let field_value = match fields_map.get("proxyUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'proxy_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'proxyUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

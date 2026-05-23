@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "big_query_source",
+                    "bigQuerySource",
                     &self.r#big_query_source,
                 ),
                 to_pulumi_object_field(
-                    "entity_id_columns",
+                    "entityIdColumns",
                     &self.r#entity_id_columns,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#big_query_source: {
-                        let field_value = match fields_map.get("big_query_source") {
+                        let field_value = match fields_map.get("bigQuerySource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'big_query_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bigQuerySource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entity_id_columns: {
-                        let field_value = match fields_map.get("entity_id_columns") {
+                        let field_value = match fields_map.get("entityIdColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_id_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityIdColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

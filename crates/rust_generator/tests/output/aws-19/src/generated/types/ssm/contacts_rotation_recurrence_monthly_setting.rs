@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_month",
+                    "dayOfMonth",
                     &self.r#day_of_month,
                 ),
                 to_pulumi_object_field(
-                    "hand_off_time",
+                    "handOffTime",
                     &self.r#hand_off_time,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#day_of_month: {
-                        let field_value = match fields_map.get("day_of_month") {
+                        let field_value = match fields_map.get("dayOfMonth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'day_of_month' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dayOfMonth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hand_off_time: {
-                        let field_value = match fields_map.get("hand_off_time") {
+                        let field_value = match fields_map.get("handOffTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hand_off_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'handOffTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

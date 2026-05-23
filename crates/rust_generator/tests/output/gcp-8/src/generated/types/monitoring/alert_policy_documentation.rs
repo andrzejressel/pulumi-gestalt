@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#links,
                 ),
                 to_pulumi_object_field(
-                    "mime_type",
+                    "mimeType",
                     &self.r#mime_type,
                 ),
                 to_pulumi_object_field(
@@ -96,9 +96,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mime_type: {
-                        let field_value = match fields_map.get("mime_type") {
+                        let field_value = match fields_map.get("mimeType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mime_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mimeType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

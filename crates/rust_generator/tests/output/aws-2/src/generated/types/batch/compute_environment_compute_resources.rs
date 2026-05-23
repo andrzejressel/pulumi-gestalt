@@ -87,59 +87,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_strategy",
+                    "allocationStrategy",
                     &self.r#allocation_strategy,
                 ),
                 to_pulumi_object_field(
-                    "bid_percentage",
+                    "bidPercentage",
                     &self.r#bid_percentage,
                 ),
                 to_pulumi_object_field(
-                    "desired_vcpus",
+                    "desiredVcpus",
                     &self.r#desired_vcpus,
                 ),
                 to_pulumi_object_field(
-                    "ec_2_configurations",
+                    "ec2Configurations",
                     &self.r#ec_2_configurations,
                 ),
                 to_pulumi_object_field(
-                    "ec_2_key_pair",
+                    "ec2KeyPair",
                     &self.r#ec_2_key_pair,
                 ),
                 to_pulumi_object_field(
-                    "image_id",
+                    "imageId",
                     &self.r#image_id,
                 ),
                 to_pulumi_object_field(
-                    "instance_role",
+                    "instanceRole",
                     &self.r#instance_role,
                 ),
                 to_pulumi_object_field(
-                    "instance_types",
+                    "instanceTypes",
                     &self.r#instance_types,
                 ),
                 to_pulumi_object_field(
-                    "launch_template",
+                    "launchTemplate",
                     &self.r#launch_template,
                 ),
                 to_pulumi_object_field(
-                    "max_vcpus",
+                    "maxVcpus",
                     &self.r#max_vcpus,
                 ),
                 to_pulumi_object_field(
-                    "min_vcpus",
+                    "minVcpus",
                     &self.r#min_vcpus,
                 ),
                 to_pulumi_object_field(
-                    "placement_group",
+                    "placementGroup",
                     &self.r#placement_group,
                 ),
                 to_pulumi_object_field(
-                    "security_group_ids",
+                    "securityGroupIds",
                     &self.r#security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "spot_iam_fleet_role",
+                    "spotIamFleetRole",
                     &self.r#spot_iam_fleet_role,
                 ),
                 to_pulumi_object_field(
@@ -151,7 +151,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -178,100 +178,100 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#allocation_strategy: {
-                        let field_value = match fields_map.get("allocation_strategy") {
+                        let field_value = match fields_map.get("allocationStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allocation_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allocationStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bid_percentage: {
-                        let field_value = match fields_map.get("bid_percentage") {
+                        let field_value = match fields_map.get("bidPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bid_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bidPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#desired_vcpus: {
-                        let field_value = match fields_map.get("desired_vcpus") {
+                        let field_value = match fields_map.get("desiredVcpus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_vcpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredVcpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ec_2_configurations: {
-                        let field_value = match fields_map.get("ec_2_configurations") {
+                        let field_value = match fields_map.get("ec2Configurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ec_2_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ec2Configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ec_2_key_pair: {
-                        let field_value = match fields_map.get("ec_2_key_pair") {
+                        let field_value = match fields_map.get("ec2KeyPair") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ec_2_key_pair' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ec2KeyPair' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_id: {
-                        let field_value = match fields_map.get("image_id") {
+                        let field_value = match fields_map.get("imageId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_role: {
-                        let field_value = match fields_map.get("instance_role") {
+                        let field_value = match fields_map.get("instanceRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_types: {
-                        let field_value = match fields_map.get("instance_types") {
+                        let field_value = match fields_map.get("instanceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_template: {
-                        let field_value = match fields_map.get("launch_template") {
+                        let field_value = match fields_map.get("launchTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_vcpus: {
-                        let field_value = match fields_map.get("max_vcpus") {
+                        let field_value = match fields_map.get("maxVcpus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_vcpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxVcpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_vcpus: {
-                        let field_value = match fields_map.get("min_vcpus") {
+                        let field_value = match fields_map.get("minVcpus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_vcpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minVcpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#placement_group: {
-                        let field_value = match fields_map.get("placement_group") {
+                        let field_value = match fields_map.get("placementGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'placement_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'placementGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_group_ids: {
-                        let field_value = match fields_map.get("security_group_ids") {
+                        let field_value = match fields_map.get("securityGroupIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityGroupIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spot_iam_fleet_role: {
-                        let field_value = match fields_map.get("spot_iam_fleet_role") {
+                        let field_value = match fields_map.get("spotIamFleetRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spot_iam_fleet_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spotIamFleetRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -290,9 +290,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

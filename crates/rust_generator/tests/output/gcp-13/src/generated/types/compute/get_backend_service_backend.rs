@@ -121,11 +121,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "balancing_mode",
+                    "balancingMode",
                     &self.r#balancing_mode,
                 ),
                 to_pulumi_object_field(
-                    "capacity_scaler",
+                    "capacityScaler",
                     &self.r#capacity_scaler,
                 ),
                 to_pulumi_object_field(
@@ -137,31 +137,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#group,
                 ),
                 to_pulumi_object_field(
-                    "max_connections",
+                    "maxConnections",
                     &self.r#max_connections,
                 ),
                 to_pulumi_object_field(
-                    "max_connections_per_endpoint",
+                    "maxConnectionsPerEndpoint",
                     &self.r#max_connections_per_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "max_connections_per_instance",
+                    "maxConnectionsPerInstance",
                     &self.r#max_connections_per_instance,
                 ),
                 to_pulumi_object_field(
-                    "max_rate",
+                    "maxRate",
                     &self.r#max_rate,
                 ),
                 to_pulumi_object_field(
-                    "max_rate_per_endpoint",
+                    "maxRatePerEndpoint",
                     &self.r#max_rate_per_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "max_rate_per_instance",
+                    "maxRatePerInstance",
                     &self.r#max_rate_per_instance,
                 ),
                 to_pulumi_object_field(
-                    "max_utilization",
+                    "maxUtilization",
                     &self.r#max_utilization,
                 ),
             ];
@@ -188,16 +188,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#balancing_mode: {
-                        let field_value = match fields_map.get("balancing_mode") {
+                        let field_value = match fields_map.get("balancingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'balancing_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'balancingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#capacity_scaler: {
-                        let field_value = match fields_map.get("capacity_scaler") {
+                        let field_value = match fields_map.get("capacityScaler") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_scaler' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityScaler' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -216,51 +216,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_connections: {
-                        let field_value = match fields_map.get("max_connections") {
+                        let field_value = match fields_map.get("maxConnections") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_connections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConnections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_connections_per_endpoint: {
-                        let field_value = match fields_map.get("max_connections_per_endpoint") {
+                        let field_value = match fields_map.get("maxConnectionsPerEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_connections_per_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConnectionsPerEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_connections_per_instance: {
-                        let field_value = match fields_map.get("max_connections_per_instance") {
+                        let field_value = match fields_map.get("maxConnectionsPerInstance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_connections_per_instance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConnectionsPerInstance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_rate: {
-                        let field_value = match fields_map.get("max_rate") {
+                        let field_value = match fields_map.get("maxRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_rate_per_endpoint: {
-                        let field_value = match fields_map.get("max_rate_per_endpoint") {
+                        let field_value = match fields_map.get("maxRatePerEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_rate_per_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRatePerEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_rate_per_instance: {
-                        let field_value = match fields_map.get("max_rate_per_instance") {
+                        let field_value = match fields_map.get("maxRatePerInstance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_rate_per_instance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRatePerInstance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_utilization: {
-                        let field_value = match fields_map.get("max_utilization") {
+                        let field_value = match fields_map.get("maxUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

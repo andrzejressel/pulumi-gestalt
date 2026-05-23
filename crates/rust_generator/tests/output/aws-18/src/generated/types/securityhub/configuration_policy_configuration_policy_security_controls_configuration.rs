@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disabled_control_identifiers",
+                    "disabledControlIdentifiers",
                     &self.r#disabled_control_identifiers,
                 ),
                 to_pulumi_object_field(
-                    "enabled_control_identifiers",
+                    "enabledControlIdentifiers",
                     &self.r#enabled_control_identifiers,
                 ),
                 to_pulumi_object_field(
-                    "security_control_custom_parameters",
+                    "securityControlCustomParameters",
                     &self.r#security_control_custom_parameters,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#disabled_control_identifiers: {
-                        let field_value = match fields_map.get("disabled_control_identifiers") {
+                        let field_value = match fields_map.get("disabledControlIdentifiers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disabled_control_identifiers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disabledControlIdentifiers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enabled_control_identifiers: {
-                        let field_value = match fields_map.get("enabled_control_identifiers") {
+                        let field_value = match fields_map.get("enabledControlIdentifiers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enabled_control_identifiers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enabledControlIdentifiers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_control_custom_parameters: {
-                        let field_value = match fields_map.get("security_control_custom_parameters") {
+                        let field_value = match fields_map.get("securityControlCustomParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_control_custom_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityControlCustomParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

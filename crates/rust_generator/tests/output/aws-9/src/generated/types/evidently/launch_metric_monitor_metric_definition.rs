@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entity_id_key",
+                    "entityIdKey",
                     &self.r#entity_id_key,
                 ),
                 to_pulumi_object_field(
-                    "event_pattern",
+                    "eventPattern",
                     &self.r#event_pattern,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "unit_label",
+                    "unitLabel",
                     &self.r#unit_label,
                 ),
                 to_pulumi_object_field(
-                    "value_key",
+                    "valueKey",
                     &self.r#value_key,
                 ),
             ];
@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#entity_id_key: {
-                        let field_value = match fields_map.get("entity_id_key") {
+                        let field_value = match fields_map.get("entityIdKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_id_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityIdKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_pattern: {
-                        let field_value = match fields_map.get("event_pattern") {
+                        let field_value = match fields_map.get("eventPattern") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventPattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unit_label: {
-                        let field_value = match fields_map.get("unit_label") {
+                        let field_value = match fields_map.get("unitLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unit_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unitLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_key: {
-                        let field_value = match fields_map.get("value_key") {
+                        let field_value = match fields_map.get("valueKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

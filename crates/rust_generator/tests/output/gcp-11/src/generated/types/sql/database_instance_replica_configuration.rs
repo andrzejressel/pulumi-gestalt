@@ -81,35 +81,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ca_certificate",
+                    "caCertificate",
                     &self.r#ca_certificate,
                 ),
                 to_pulumi_object_field(
-                    "cascadable_replica",
+                    "cascadableReplica",
                     &self.r#cascadable_replica,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate",
+                    "clientCertificate",
                     &self.r#client_certificate,
                 ),
                 to_pulumi_object_field(
-                    "client_key",
+                    "clientKey",
                     &self.r#client_key,
                 ),
                 to_pulumi_object_field(
-                    "connect_retry_interval",
+                    "connectRetryInterval",
                     &self.r#connect_retry_interval,
                 ),
                 to_pulumi_object_field(
-                    "dump_file_path",
+                    "dumpFilePath",
                     &self.r#dump_file_path,
                 ),
                 to_pulumi_object_field(
-                    "failover_target",
+                    "failoverTarget",
                     &self.r#failover_target,
                 ),
                 to_pulumi_object_field(
-                    "master_heartbeat_period",
+                    "masterHeartbeatPeriod",
                     &self.r#master_heartbeat_period,
                 ),
                 to_pulumi_object_field(
@@ -117,7 +117,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "ssl_cipher",
+                    "sslCipher",
                     &self.r#ssl_cipher,
                 ),
                 to_pulumi_object_field(
@@ -125,7 +125,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#username,
                 ),
                 to_pulumi_object_field(
-                    "verify_server_certificate",
+                    "verifyServerCertificate",
                     &self.r#verify_server_certificate,
                 ),
             ];
@@ -152,58 +152,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#ca_certificate: {
-                        let field_value = match fields_map.get("ca_certificate") {
+                        let field_value = match fields_map.get("caCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ca_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cascadable_replica: {
-                        let field_value = match fields_map.get("cascadable_replica") {
+                        let field_value = match fields_map.get("cascadableReplica") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cascadable_replica' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cascadableReplica' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_certificate: {
-                        let field_value = match fields_map.get("client_certificate") {
+                        let field_value = match fields_map.get("clientCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_key: {
-                        let field_value = match fields_map.get("client_key") {
+                        let field_value = match fields_map.get("clientKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connect_retry_interval: {
-                        let field_value = match fields_map.get("connect_retry_interval") {
+                        let field_value = match fields_map.get("connectRetryInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connect_retry_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectRetryInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dump_file_path: {
-                        let field_value = match fields_map.get("dump_file_path") {
+                        let field_value = match fields_map.get("dumpFilePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dump_file_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dumpFilePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failover_target: {
-                        let field_value = match fields_map.get("failover_target") {
+                        let field_value = match fields_map.get("failoverTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failover_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failoverTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#master_heartbeat_period: {
-                        let field_value = match fields_map.get("master_heartbeat_period") {
+                        let field_value = match fields_map.get("masterHeartbeatPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'master_heartbeat_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'masterHeartbeatPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -215,9 +215,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_cipher: {
-                        let field_value = match fields_map.get("ssl_cipher") {
+                        let field_value = match fields_map.get("sslCipher") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_cipher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslCipher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -229,9 +229,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verify_server_certificate: {
-                        let field_value = match fields_map.get("verify_server_certificate") {
+                        let field_value = match fields_map.get("verifyServerCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verify_server_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifyServerCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cidr_ranges",
+                    "cidrRanges",
                     &self.r#cidr_ranges,
                 ),
                 to_pulumi_object_field(
@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pac
                     &self.r#direction,
                 ),
                 to_pulumi_object_field(
-                    "ip_protocols",
+                    "ipProtocols",
                     &self.r#ip_protocols,
                 ),
             ];
@@ -69,9 +69,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#cidr_ranges: {
-                        let field_value = match fields_map.get("cidr_ranges") {
+                        let field_value = match fields_map.get("cidrRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cidr_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cidrRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -83,9 +83,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_protocols: {
-                        let field_value = match fields_map.get("ip_protocols") {
+                        let field_value = match fields_map.get("ipProtocols") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_protocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipProtocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

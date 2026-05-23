@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "failover_priority",
+                    "failoverPriority",
                     &self.r#failover_priority,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "zone_redundant",
+                    "zoneRedundant",
                     &self.r#zone_redundant,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#failover_priority: {
-                        let field_value = match fields_map.get("failover_priority") {
+                        let field_value = match fields_map.get("failoverPriority") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failover_priority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failoverPriority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#zone_redundant: {
-                        let field_value = match fields_map.get("zone_redundant") {
+                        let field_value = match fields_map.get("zoneRedundant") {
                             Some(value) => value,
-                            None => bail!("Missing field 'zone_redundant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'zoneRedundant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

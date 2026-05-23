@@ -62,35 +62,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_backend_address_pool_id",
+                    "defaultBackendAddressPoolId",
                     &self.r#default_backend_address_pool_id,
                 ),
                 to_pulumi_object_field(
-                    "default_backend_address_pool_name",
+                    "defaultBackendAddressPoolName",
                     &self.r#default_backend_address_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "default_backend_http_settings_id",
+                    "defaultBackendHttpSettingsId",
                     &self.r#default_backend_http_settings_id,
                 ),
                 to_pulumi_object_field(
-                    "default_backend_http_settings_name",
+                    "defaultBackendHttpSettingsName",
                     &self.r#default_backend_http_settings_name,
                 ),
                 to_pulumi_object_field(
-                    "default_redirect_configuration_id",
+                    "defaultRedirectConfigurationId",
                     &self.r#default_redirect_configuration_id,
                 ),
                 to_pulumi_object_field(
-                    "default_redirect_configuration_name",
+                    "defaultRedirectConfigurationName",
                     &self.r#default_redirect_configuration_name,
                 ),
                 to_pulumi_object_field(
-                    "default_rewrite_rule_set_id",
+                    "defaultRewriteRuleSetId",
                     &self.r#default_rewrite_rule_set_id,
                 ),
                 to_pulumi_object_field(
-                    "default_rewrite_rule_set_name",
+                    "defaultRewriteRuleSetName",
                     &self.r#default_rewrite_rule_set_name,
                 ),
                 to_pulumi_object_field(
@@ -102,7 +102,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "path_rules",
+                    "pathRules",
                     &self.r#path_rules,
                 ),
             ];
@@ -129,58 +129,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#default_backend_address_pool_id: {
-                        let field_value = match fields_map.get("default_backend_address_pool_id") {
+                        let field_value = match fields_map.get("defaultBackendAddressPoolId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_backend_address_pool_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultBackendAddressPoolId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_backend_address_pool_name: {
-                        let field_value = match fields_map.get("default_backend_address_pool_name") {
+                        let field_value = match fields_map.get("defaultBackendAddressPoolName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_backend_address_pool_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultBackendAddressPoolName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_backend_http_settings_id: {
-                        let field_value = match fields_map.get("default_backend_http_settings_id") {
+                        let field_value = match fields_map.get("defaultBackendHttpSettingsId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_backend_http_settings_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultBackendHttpSettingsId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_backend_http_settings_name: {
-                        let field_value = match fields_map.get("default_backend_http_settings_name") {
+                        let field_value = match fields_map.get("defaultBackendHttpSettingsName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_backend_http_settings_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultBackendHttpSettingsName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_redirect_configuration_id: {
-                        let field_value = match fields_map.get("default_redirect_configuration_id") {
+                        let field_value = match fields_map.get("defaultRedirectConfigurationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_redirect_configuration_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultRedirectConfigurationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_redirect_configuration_name: {
-                        let field_value = match fields_map.get("default_redirect_configuration_name") {
+                        let field_value = match fields_map.get("defaultRedirectConfigurationName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_redirect_configuration_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultRedirectConfigurationName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_rewrite_rule_set_id: {
-                        let field_value = match fields_map.get("default_rewrite_rule_set_id") {
+                        let field_value = match fields_map.get("defaultRewriteRuleSetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_rewrite_rule_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultRewriteRuleSetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_rewrite_rule_set_name: {
-                        let field_value = match fields_map.get("default_rewrite_rule_set_name") {
+                        let field_value = match fields_map.get("defaultRewriteRuleSetName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_rewrite_rule_set_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultRewriteRuleSetName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -199,9 +199,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_rules: {
-                        let field_value = match fields_map.get("path_rules") {
+                        let field_value = match fields_map.get("pathRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

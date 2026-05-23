@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "classifications_includeds",
+                    "classificationsIncludeds",
                     &self.r#classifications_includeds,
                 ),
                 to_pulumi_object_field(
-                    "excluded_packages",
+                    "excludedPackages",
                     &self.r#excluded_packages,
                 ),
                 to_pulumi_object_field(
-                    "included_packages",
+                    "includedPackages",
                     &self.r#included_packages,
                 ),
                 to_pulumi_object_field(
@@ -76,23 +76,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#classifications_includeds: {
-                        let field_value = match fields_map.get("classifications_includeds") {
+                        let field_value = match fields_map.get("classificationsIncludeds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'classifications_includeds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'classificationsIncludeds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_packages: {
-                        let field_value = match fields_map.get("excluded_packages") {
+                        let field_value = match fields_map.get("excludedPackages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_packages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedPackages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_packages: {
-                        let field_value = match fields_map.get("included_packages") {
+                        let field_value = match fields_map.get("includedPackages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_packages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedPackages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

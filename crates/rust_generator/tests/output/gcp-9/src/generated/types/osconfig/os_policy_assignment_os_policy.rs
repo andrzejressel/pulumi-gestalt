@@ -56,7 +56,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_no_resource_group_match",
+                    "allowNoResourceGroupMatch",
                     &self.r#allow_no_resource_group_match,
                 ),
                 to_pulumi_object_field(
@@ -72,7 +72,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "resource_groups",
+                    "resourceGroups",
                     &self.r#resource_groups,
                 ),
             ];
@@ -99,9 +99,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#allow_no_resource_group_match: {
-                        let field_value = match fields_map.get("allow_no_resource_group_match") {
+                        let field_value = match fields_map.get("allowNoResourceGroupMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_no_resource_group_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowNoResourceGroupMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -127,9 +127,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_groups: {
-                        let field_value = match fields_map.get("resource_groups") {
+                        let field_value = match fields_map.get("resourceGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

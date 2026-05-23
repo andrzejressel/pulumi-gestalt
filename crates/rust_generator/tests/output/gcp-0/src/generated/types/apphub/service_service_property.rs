@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gcp_project",
+                    "gcpProject",
                     &self.r#gcp_project,
                 ),
                 to_pulumi_object_field(
@@ -68,9 +68,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#gcp_project: {
-                        let field_value = match fields_map.get("gcp_project") {
+                        let field_value = match fields_map.get("gcpProject") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcp_project' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcpProject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

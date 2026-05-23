@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_endpoint",
+                    "httpEndpoint",
                     &self.r#http_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "http_protocol_ipv_6",
+                    "httpProtocolIpv6",
                     &self.r#http_protocol_ipv_6,
                 ),
                 to_pulumi_object_field(
-                    "http_put_response_hop_limit",
+                    "httpPutResponseHopLimit",
                     &self.r#http_put_response_hop_limit,
                 ),
                 to_pulumi_object_field(
-                    "http_tokens",
+                    "httpTokens",
                     &self.r#http_tokens,
                 ),
                 to_pulumi_object_field(
-                    "instance_metadata_tags",
+                    "instanceMetadataTags",
                     &self.r#instance_metadata_tags,
                 ),
             ];
@@ -84,37 +84,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#http_endpoint: {
-                        let field_value = match fields_map.get("http_endpoint") {
+                        let field_value = match fields_map.get("httpEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_protocol_ipv_6: {
-                        let field_value = match fields_map.get("http_protocol_ipv_6") {
+                        let field_value = match fields_map.get("httpProtocolIpv6") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_protocol_ipv_6' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpProtocolIpv6' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_put_response_hop_limit: {
-                        let field_value = match fields_map.get("http_put_response_hop_limit") {
+                        let field_value = match fields_map.get("httpPutResponseHopLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_put_response_hop_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpPutResponseHopLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_tokens: {
-                        let field_value = match fields_map.get("http_tokens") {
+                        let field_value = match fields_map.get("httpTokens") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_tokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpTokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_metadata_tags: {
-                        let field_value = match fields_map.get("instance_metadata_tags") {
+                        let field_value = match fields_map.get("instanceMetadataTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_metadata_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceMetadataTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

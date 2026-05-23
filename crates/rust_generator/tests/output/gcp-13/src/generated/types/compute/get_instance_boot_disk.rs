@@ -59,23 +59,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_delete",
+                    "autoDelete",
                     &self.r#auto_delete,
                 ),
                 to_pulumi_object_field(
-                    "device_name",
+                    "deviceName",
                     &self.r#device_name,
                 ),
                 to_pulumi_object_field(
-                    "disk_encryption_key_raw",
+                    "diskEncryptionKeyRaw",
                     &self.r#disk_encryption_key_raw,
                 ),
                 to_pulumi_object_field(
-                    "disk_encryption_key_sha_256",
+                    "diskEncryptionKeySha256",
                     &self.r#disk_encryption_key_sha_256,
                 ),
                 to_pulumi_object_field(
-                    "initialize_params",
+                    "initializeParams",
                     &self.r#initialize_params,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#interface,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_self_link",
+                    "kmsKeySelfLink",
                     &self.r#kms_key_self_link,
                 ),
                 to_pulumi_object_field(
@@ -118,37 +118,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#auto_delete: {
-                        let field_value = match fields_map.get("auto_delete") {
+                        let field_value = match fields_map.get("autoDelete") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoDelete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_name: {
-                        let field_value = match fields_map.get("device_name") {
+                        let field_value = match fields_map.get("deviceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_encryption_key_raw: {
-                        let field_value = match fields_map.get("disk_encryption_key_raw") {
+                        let field_value = match fields_map.get("diskEncryptionKeyRaw") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_encryption_key_raw' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskEncryptionKeyRaw' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_encryption_key_sha_256: {
-                        let field_value = match fields_map.get("disk_encryption_key_sha_256") {
+                        let field_value = match fields_map.get("diskEncryptionKeySha256") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_encryption_key_sha_256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskEncryptionKeySha256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initialize_params: {
-                        let field_value = match fields_map.get("initialize_params") {
+                        let field_value = match fields_map.get("initializeParams") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initialize_params' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initializeParams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -160,9 +160,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_self_link: {
-                        let field_value = match fields_map.get("kms_key_self_link") {
+                        let field_value = match fields_map.get("kmsKeySelfLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_self_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeySelfLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

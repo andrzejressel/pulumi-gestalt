@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sea
                     &self.r#data,
                 ),
                 to_pulumi_object_field(
-                    "last_reported_at",
+                    "lastReportedAt",
                     &self.r#last_reported_at,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_reported_at: {
-                        let field_value = match fields_map.get("last_reported_at") {
+                        let field_value = match fields_map.get("lastReportedAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_reported_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastReportedAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

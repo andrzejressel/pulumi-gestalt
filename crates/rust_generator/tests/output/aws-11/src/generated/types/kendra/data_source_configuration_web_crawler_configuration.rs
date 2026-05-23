@@ -55,35 +55,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_configuration",
+                    "authenticationConfiguration",
                     &self.r#authentication_configuration,
                 ),
                 to_pulumi_object_field(
-                    "crawl_depth",
+                    "crawlDepth",
                     &self.r#crawl_depth,
                 ),
                 to_pulumi_object_field(
-                    "max_content_size_per_page_in_mega_bytes",
+                    "maxContentSizePerPageInMegaBytes",
                     &self.r#max_content_size_per_page_in_mega_bytes,
                 ),
                 to_pulumi_object_field(
-                    "max_links_per_page",
+                    "maxLinksPerPage",
                     &self.r#max_links_per_page,
                 ),
                 to_pulumi_object_field(
-                    "max_urls_per_minute_crawl_rate",
+                    "maxUrlsPerMinuteCrawlRate",
                     &self.r#max_urls_per_minute_crawl_rate,
                 ),
                 to_pulumi_object_field(
-                    "proxy_configuration",
+                    "proxyConfiguration",
                     &self.r#proxy_configuration,
                 ),
                 to_pulumi_object_field(
-                    "url_exclusion_patterns",
+                    "urlExclusionPatterns",
                     &self.r#url_exclusion_patterns,
                 ),
                 to_pulumi_object_field(
-                    "url_inclusion_patterns",
+                    "urlInclusionPatterns",
                     &self.r#url_inclusion_patterns,
                 ),
                 to_pulumi_object_field(
@@ -114,58 +114,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#authentication_configuration: {
-                        let field_value = match fields_map.get("authentication_configuration") {
+                        let field_value = match fields_map.get("authenticationConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crawl_depth: {
-                        let field_value = match fields_map.get("crawl_depth") {
+                        let field_value = match fields_map.get("crawlDepth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crawl_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crawlDepth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_content_size_per_page_in_mega_bytes: {
-                        let field_value = match fields_map.get("max_content_size_per_page_in_mega_bytes") {
+                        let field_value = match fields_map.get("maxContentSizePerPageInMegaBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_content_size_per_page_in_mega_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxContentSizePerPageInMegaBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_links_per_page: {
-                        let field_value = match fields_map.get("max_links_per_page") {
+                        let field_value = match fields_map.get("maxLinksPerPage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_links_per_page' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxLinksPerPage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_urls_per_minute_crawl_rate: {
-                        let field_value = match fields_map.get("max_urls_per_minute_crawl_rate") {
+                        let field_value = match fields_map.get("maxUrlsPerMinuteCrawlRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_urls_per_minute_crawl_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUrlsPerMinuteCrawlRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#proxy_configuration: {
-                        let field_value = match fields_map.get("proxy_configuration") {
+                        let field_value = match fields_map.get("proxyConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'proxy_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'proxyConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_exclusion_patterns: {
-                        let field_value = match fields_map.get("url_exclusion_patterns") {
+                        let field_value = match fields_map.get("urlExclusionPatterns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_exclusion_patterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlExclusionPatterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_inclusion_patterns: {
-                        let field_value = match fields_map.get("url_inclusion_patterns") {
+                        let field_value = match fields_map.get("urlInclusionPatterns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_inclusion_patterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlInclusionPatterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

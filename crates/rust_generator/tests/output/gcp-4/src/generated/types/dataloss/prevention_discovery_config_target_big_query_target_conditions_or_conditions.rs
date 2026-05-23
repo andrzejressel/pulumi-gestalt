@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "min_age",
+                    "minAge",
                     &self.r#min_age,
                 ),
                 to_pulumi_object_field(
-                    "min_row_count",
+                    "minRowCount",
                     &self.r#min_row_count,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#min_age: {
-                        let field_value = match fields_map.get("min_age") {
+                        let field_value = match fields_map.get("minAge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_age' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minAge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_row_count: {
-                        let field_value = match fields_map.get("min_row_count") {
+                        let field_value = match fields_map.get("minRowCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_row_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minRowCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

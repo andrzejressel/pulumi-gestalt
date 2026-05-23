@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#options,
                 ),
                 to_pulumi_object_field(
-                    "search_domains",
+                    "searchDomains",
                     &self.r#search_domains,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#search_domains: {
-                        let field_value = match fields_map.get("search_domains") {
+                        let field_value = match fields_map.get("searchDomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'search_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'searchDomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

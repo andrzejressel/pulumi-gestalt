@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "brute_force_config",
+                    "bruteForceConfig",
                     &self.r#brute_force_config,
                 ),
                 to_pulumi_object_field(
-                    "tree_ah_config",
+                    "treeAhConfig",
                     &self.r#tree_ah_config,
                 ),
             ];
@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#brute_force_config: {
-                        let field_value = match fields_map.get("brute_force_config") {
+                        let field_value = match fields_map.get("bruteForceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'brute_force_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bruteForceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tree_ah_config: {
-                        let field_value = match fields_map.get("tree_ah_config") {
+                        let field_value = match fields_map.get("treeAhConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tree_ah_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'treeAhConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

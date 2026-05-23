@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#expr,
                 ),
                 to_pulumi_object_field(
-                    "versioned_expr",
+                    "versionedExpr",
                     &self.r#versioned_expr,
                 ),
             ];
@@ -85,9 +85,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#versioned_expr: {
-                        let field_value = match fields_map.get("versioned_expr") {
+                        let field_value = match fields_map.get("versionedExpr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'versioned_expr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionedExpr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

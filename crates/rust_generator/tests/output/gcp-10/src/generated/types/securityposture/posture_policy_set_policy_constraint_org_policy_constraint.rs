@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "canned_constraint_id",
+                    "cannedConstraintId",
                     &self.r#canned_constraint_id,
                 ),
                 to_pulumi_object_field(
-                    "policy_rules",
+                    "policyRules",
                     &self.r#policy_rules,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#canned_constraint_id: {
-                        let field_value = match fields_map.get("canned_constraint_id") {
+                        let field_value = match fields_map.get("cannedConstraintId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'canned_constraint_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cannedConstraintId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_rules: {
-                        let field_value = match fields_map.get("policy_rules") {
+                        let field_value = match fields_map.get("policyRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

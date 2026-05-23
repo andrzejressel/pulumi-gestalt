@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "local_mount_path",
+                    "localMountPath",
                     &self.r#local_mount_path,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_mount_path: {
-                        let field_value = match fields_map.get("local_mount_path") {
+                        let field_value = match fields_map.get("localMountPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_mount_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localMountPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

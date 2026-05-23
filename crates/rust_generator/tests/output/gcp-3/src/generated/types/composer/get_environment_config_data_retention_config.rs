@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "task_logs_retention_configs",
+                    "taskLogsRetentionConfigs",
                     &self.r#task_logs_retention_configs,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#task_logs_retention_configs: {
-                        let field_value = match fields_map.get("task_logs_retention_configs") {
+                        let field_value = match fields_map.get("taskLogsRetentionConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_logs_retention_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskLogsRetentionConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

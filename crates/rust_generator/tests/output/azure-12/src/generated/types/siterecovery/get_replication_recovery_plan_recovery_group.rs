@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "post_actions",
+                    "postActions",
                     &self.r#post_actions,
                 ),
                 to_pulumi_object_field(
-                    "pre_actions",
+                    "preActions",
                     &self.r#pre_actions,
                 ),
                 to_pulumi_object_field(
-                    "replicated_protected_items",
+                    "replicatedProtectedItems",
                     &self.r#replicated_protected_items,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#post_actions: {
-                        let field_value = match fields_map.get("post_actions") {
+                        let field_value = match fields_map.get("postActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_actions: {
-                        let field_value = match fields_map.get("pre_actions") {
+                        let field_value = match fields_map.get("preActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replicated_protected_items: {
-                        let field_value = match fields_map.get("replicated_protected_items") {
+                        let field_value = match fields_map.get("replicatedProtectedItems") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replicated_protected_items' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicatedProtectedItems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "days_after_initiation",
+                    "daysAfterInitiation",
                     &self.r#days_after_initiation,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#days_after_initiation: {
-                        let field_value = match fields_map.get("days_after_initiation") {
+                        let field_value = match fields_map.get("daysAfterInitiation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_after_initiation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysAfterInitiation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

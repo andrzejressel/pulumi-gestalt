@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "build_status_config",
+                    "buildStatusConfig",
                     &self.r#build_status_config,
                 ),
                 to_pulumi_object_field(
@@ -59,15 +59,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#buildspec,
                 ),
                 to_pulumi_object_field(
-                    "git_clone_depth",
+                    "gitCloneDepth",
                     &self.r#git_clone_depth,
                 ),
                 to_pulumi_object_field(
-                    "git_submodules_config",
+                    "gitSubmodulesConfig",
                     &self.r#git_submodules_config,
                 ),
                 to_pulumi_object_field(
-                    "insecure_ssl",
+                    "insecureSsl",
                     &self.r#insecure_ssl,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "report_build_status",
+                    "reportBuildStatus",
                     &self.r#report_build_status,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#build_status_config: {
-                        let field_value = match fields_map.get("build_status_config") {
+                        let field_value = match fields_map.get("buildStatusConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'build_status_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'buildStatusConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,23 +120,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#git_clone_depth: {
-                        let field_value = match fields_map.get("git_clone_depth") {
+                        let field_value = match fields_map.get("gitCloneDepth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'git_clone_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gitCloneDepth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#git_submodules_config: {
-                        let field_value = match fields_map.get("git_submodules_config") {
+                        let field_value = match fields_map.get("gitSubmodulesConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'git_submodules_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gitSubmodulesConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#insecure_ssl: {
-                        let field_value = match fields_map.get("insecure_ssl") {
+                        let field_value = match fields_map.get("insecureSsl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insecure_ssl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insecureSsl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -148,16 +148,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#report_build_status: {
-                        let field_value = match fields_map.get("report_build_status") {
+                        let field_value = match fields_map.get("reportBuildStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'report_build_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reportBuildStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

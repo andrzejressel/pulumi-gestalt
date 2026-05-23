@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hive_json_ser_de",
+                    "hiveJsonSerDe",
                     &self.r#hive_json_ser_de,
                 ),
                 to_pulumi_object_field(
-                    "open_x_json_ser_de",
+                    "openXJsonSerDe",
                     &self.r#open_x_json_ser_de,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#hive_json_ser_de: {
-                        let field_value = match fields_map.get("hive_json_ser_de") {
+                        let field_value = match fields_map.get("hiveJsonSerDe") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hive_json_ser_de' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hiveJsonSerDe' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#open_x_json_ser_de: {
-                        let field_value = match fields_map.get("open_x_json_ser_de") {
+                        let field_value = match fields_map.get("openXJsonSerDe") {
                             Some(value) => value,
-                            None => bail!("Missing field 'open_x_json_ser_de' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'openXJsonSerDe' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

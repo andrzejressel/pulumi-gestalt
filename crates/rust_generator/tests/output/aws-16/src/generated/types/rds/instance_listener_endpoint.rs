@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "hosted_zone_id",
+                    "hostedZoneId",
                     &self.r#hosted_zone_id,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hosted_zone_id: {
-                        let field_value = match fields_map.get("hosted_zone_id") {
+                        let field_value = match fields_map.get("hostedZoneId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hosted_zone_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostedZoneId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

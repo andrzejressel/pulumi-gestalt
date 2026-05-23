@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "healthy_threshold",
+                    "healthyThreshold",
                     &self.r#healthy_threshold,
                 ),
                 to_pulumi_object_field(
-                    "interval_millis",
+                    "intervalMillis",
                     &self.r#interval_millis,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "timeout_millis",
+                    "timeoutMillis",
                     &self.r#timeout_millis,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_threshold",
+                    "unhealthyThreshold",
                     &self.r#unhealthy_threshold,
                 ),
             ];
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#healthy_threshold: {
-                        let field_value = match fields_map.get("healthy_threshold") {
+                        let field_value = match fields_map.get("healthyThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'healthy_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthyThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#interval_millis: {
-                        let field_value = match fields_map.get("interval_millis") {
+                        let field_value = match fields_map.get("intervalMillis") {
                             Some(value) => value,
-                            None => bail!("Missing field 'interval_millis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intervalMillis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,16 +133,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_millis: {
-                        let field_value = match fields_map.get("timeout_millis") {
+                        let field_value = match fields_map.get("timeoutMillis") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_millis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutMillis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unhealthy_threshold: {
-                        let field_value = match fields_map.get("unhealthy_threshold") {
+                        let field_value = match fields_map.get("unhealthyThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unhealthy_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unhealthyThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

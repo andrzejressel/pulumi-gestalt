@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#git,
                 ),
                 to_pulumi_object_field(
-                    "google_cloud_build_repo",
+                    "googleCloudBuildRepo",
                     &self.r#google_cloud_build_repo,
                 ),
                 to_pulumi_object_field(
-                    "google_cloud_storage",
+                    "googleCloudStorage",
                     &self.r#google_cloud_storage,
                 ),
             ];
@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#google_cloud_build_repo: {
-                        let field_value = match fields_map.get("google_cloud_build_repo") {
+                        let field_value = match fields_map.get("googleCloudBuildRepo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'google_cloud_build_repo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'googleCloudBuildRepo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#google_cloud_storage: {
-                        let field_value = match fields_map.get("google_cloud_storage") {
+                        let field_value = match fields_map.get("googleCloudStorage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'google_cloud_storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'googleCloudStorage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

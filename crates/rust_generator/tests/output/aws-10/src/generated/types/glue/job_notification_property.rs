@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "notify_delay_after",
+                    "notifyDelayAfter",
                     &self.r#notify_delay_after,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#notify_delay_after: {
-                        let field_value = match fields_map.get("notify_delay_after") {
+                        let field_value = match fields_map.get("notifyDelayAfter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notify_delay_after' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notifyDelayAfter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

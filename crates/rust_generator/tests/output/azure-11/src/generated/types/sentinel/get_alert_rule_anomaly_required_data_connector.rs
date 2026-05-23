@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connector_id",
+                    "connectorId",
                     &self.r#connector_id,
                 ),
                 to_pulumi_object_field(
-                    "data_types",
+                    "dataTypes",
                     &self.r#data_types,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#connector_id: {
-                        let field_value = match fields_map.get("connector_id") {
+                        let field_value = match fields_map.get("connectorId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connector_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_types: {
-                        let field_value = match fields_map.get("data_types") {
+                        let field_value = match fields_map.get("dataTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

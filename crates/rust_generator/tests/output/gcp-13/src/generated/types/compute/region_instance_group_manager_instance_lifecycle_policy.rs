@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_action_on_failure",
+                    "defaultActionOnFailure",
                     &self.r#default_action_on_failure,
                 ),
                 to_pulumi_object_field(
-                    "force_update_on_repair",
+                    "forceUpdateOnRepair",
                     &self.r#force_update_on_repair,
                 ),
             ];
@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#default_action_on_failure: {
-                        let field_value = match fields_map.get("default_action_on_failure") {
+                        let field_value = match fields_map.get("defaultActionOnFailure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_action_on_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultActionOnFailure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#force_update_on_repair: {
-                        let field_value = match fields_map.get("force_update_on_repair") {
+                        let field_value = match fields_map.get("forceUpdateOnRepair") {
                             Some(value) => value,
-                            None => bail!("Missing field 'force_update_on_repair' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forceUpdateOnRepair' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "interval_in_seconds",
+                    "intervalInSeconds",
                     &self.r#interval_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "size_limit_in_bytes",
+                    "sizeLimitInBytes",
                     &self.r#size_limit_in_bytes,
                 ),
                 to_pulumi_object_field(
-                    "skip_empty_archives",
+                    "skipEmptyArchives",
                     &self.r#skip_empty_archives,
                 ),
             ];
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#interval_in_seconds: {
-                        let field_value = match fields_map.get("interval_in_seconds") {
+                        let field_value = match fields_map.get("intervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#size_limit_in_bytes: {
-                        let field_value = match fields_map.get("size_limit_in_bytes") {
+                        let field_value = match fields_map.get("sizeLimitInBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'size_limit_in_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizeLimitInBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skip_empty_archives: {
-                        let field_value = match fields_map.get("skip_empty_archives") {
+                        let field_value = match fields_map.get("skipEmptyArchives") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skip_empty_archives' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skipEmptyArchives' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

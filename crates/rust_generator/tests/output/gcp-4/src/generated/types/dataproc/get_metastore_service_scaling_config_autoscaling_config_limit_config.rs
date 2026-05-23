@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_scaling_factor",
+                    "maxScalingFactor",
                     &self.r#max_scaling_factor,
                 ),
                 to_pulumi_object_field(
-                    "min_scaling_factor",
+                    "minScalingFactor",
                     &self.r#min_scaling_factor,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#max_scaling_factor: {
-                        let field_value = match fields_map.get("max_scaling_factor") {
+                        let field_value = match fields_map.get("maxScalingFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_scaling_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxScalingFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_scaling_factor: {
-                        let field_value = match fields_map.get("min_scaling_factor") {
+                        let field_value = match fields_map.get("minScalingFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_scaling_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minScalingFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

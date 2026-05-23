@@ -56,7 +56,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "ca_cert_data",
+                    "caCertData",
                     &self.r#ca_cert_data,
                 ),
                 to_pulumi_object_field(
@@ -76,11 +76,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#folder,
                 ),
                 to_pulumi_object_field(
-                    "resource_pool",
+                    "resourcePool",
                     &self.r#resource_pool,
                 ),
                 to_pulumi_object_field(
-                    "storage_policy_name",
+                    "storagePolicyName",
                     &self.r#storage_policy_name,
                 ),
             ];
@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ca_cert_data: {
-                        let field_value = match fields_map.get("ca_cert_data") {
+                        let field_value = match fields_map.get("caCertData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ca_cert_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caCertData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -149,16 +149,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_pool: {
-                        let field_value = match fields_map.get("resource_pool") {
+                        let field_value = match fields_map.get("resourcePool") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourcePool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_policy_name: {
-                        let field_value = match fields_map.get("storage_policy_name") {
+                        let field_value = match fields_map.get("storagePolicyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_policy_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storagePolicyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -131,23 +131,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "activation_policy",
+                    "activationPolicy",
                     &self.r#activation_policy,
                 ),
                 to_pulumi_object_field(
-                    "active_directory_configs",
+                    "activeDirectoryConfigs",
                     &self.r#active_directory_configs,
                 ),
                 to_pulumi_object_field(
-                    "advanced_machine_features",
+                    "advancedMachineFeatures",
                     &self.r#advanced_machine_features,
                 ),
                 to_pulumi_object_field(
-                    "availability_type",
+                    "availabilityType",
                     &self.r#availability_type,
                 ),
                 to_pulumi_object_field(
-                    "backup_configurations",
+                    "backupConfigurations",
                     &self.r#backup_configurations,
                 ),
                 to_pulumi_object_field(
@@ -155,39 +155,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#collation,
                 ),
                 to_pulumi_object_field(
-                    "connector_enforcement",
+                    "connectorEnforcement",
                     &self.r#connector_enforcement,
                 ),
                 to_pulumi_object_field(
-                    "data_cache_configs",
+                    "dataCacheConfigs",
                     &self.r#data_cache_configs,
                 ),
                 to_pulumi_object_field(
-                    "database_flags",
+                    "databaseFlags",
                     &self.r#database_flags,
                 ),
                 to_pulumi_object_field(
-                    "deletion_protection_enabled",
+                    "deletionProtectionEnabled",
                     &self.r#deletion_protection_enabled,
                 ),
                 to_pulumi_object_field(
-                    "deny_maintenance_periods",
+                    "denyMaintenancePeriods",
                     &self.r#deny_maintenance_periods,
                 ),
                 to_pulumi_object_field(
-                    "disk_autoresize",
+                    "diskAutoresize",
                     &self.r#disk_autoresize,
                 ),
                 to_pulumi_object_field(
-                    "disk_autoresize_limit",
+                    "diskAutoresizeLimit",
                     &self.r#disk_autoresize_limit,
                 ),
                 to_pulumi_object_field(
-                    "disk_size",
+                    "diskSize",
                     &self.r#disk_size,
                 ),
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
@@ -195,39 +195,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#edition,
                 ),
                 to_pulumi_object_field(
-                    "enable_dataplex_integration",
+                    "enableDataplexIntegration",
                     &self.r#enable_dataplex_integration,
                 ),
                 to_pulumi_object_field(
-                    "enable_google_ml_integration",
+                    "enableGoogleMlIntegration",
                     &self.r#enable_google_ml_integration,
                 ),
                 to_pulumi_object_field(
-                    "insights_configs",
+                    "insightsConfigs",
                     &self.r#insights_configs,
                 ),
                 to_pulumi_object_field(
-                    "ip_configurations",
+                    "ipConfigurations",
                     &self.r#ip_configurations,
                 ),
                 to_pulumi_object_field(
-                    "location_preferences",
+                    "locationPreferences",
                     &self.r#location_preferences,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_windows",
+                    "maintenanceWindows",
                     &self.r#maintenance_windows,
                 ),
                 to_pulumi_object_field(
-                    "password_validation_policies",
+                    "passwordValidationPolicies",
                     &self.r#password_validation_policies,
                 ),
                 to_pulumi_object_field(
-                    "pricing_plan",
+                    "pricingPlan",
                     &self.r#pricing_plan,
                 ),
                 to_pulumi_object_field(
-                    "sql_server_audit_configs",
+                    "sqlServerAuditConfigs",
                     &self.r#sql_server_audit_configs,
                 ),
                 to_pulumi_object_field(
@@ -235,11 +235,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#tier,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
                 to_pulumi_object_field(
-                    "user_labels",
+                    "userLabels",
                     &self.r#user_labels,
                 ),
                 to_pulumi_object_field(
@@ -270,37 +270,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#activation_policy: {
-                        let field_value = match fields_map.get("activation_policy") {
+                        let field_value = match fields_map.get("activationPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'activation_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activationPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#active_directory_configs: {
-                        let field_value = match fields_map.get("active_directory_configs") {
+                        let field_value = match fields_map.get("activeDirectoryConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_directory_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeDirectoryConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#advanced_machine_features: {
-                        let field_value = match fields_map.get("advanced_machine_features") {
+                        let field_value = match fields_map.get("advancedMachineFeatures") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_machine_features' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedMachineFeatures' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#availability_type: {
-                        let field_value = match fields_map.get("availability_type") {
+                        let field_value = match fields_map.get("availabilityType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'availability_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availabilityType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backup_configurations: {
-                        let field_value = match fields_map.get("backup_configurations") {
+                        let field_value = match fields_map.get("backupConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -312,65 +312,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connector_enforcement: {
-                        let field_value = match fields_map.get("connector_enforcement") {
+                        let field_value = match fields_map.get("connectorEnforcement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connector_enforcement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorEnforcement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_cache_configs: {
-                        let field_value = match fields_map.get("data_cache_configs") {
+                        let field_value = match fields_map.get("dataCacheConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_cache_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataCacheConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_flags: {
-                        let field_value = match fields_map.get("database_flags") {
+                        let field_value = match fields_map.get("databaseFlags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_flags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseFlags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deletion_protection_enabled: {
-                        let field_value = match fields_map.get("deletion_protection_enabled") {
+                        let field_value = match fields_map.get("deletionProtectionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deletion_protection_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deletionProtectionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deny_maintenance_periods: {
-                        let field_value = match fields_map.get("deny_maintenance_periods") {
+                        let field_value = match fields_map.get("denyMaintenancePeriods") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deny_maintenance_periods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'denyMaintenancePeriods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_autoresize: {
-                        let field_value = match fields_map.get("disk_autoresize") {
+                        let field_value = match fields_map.get("diskAutoresize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_autoresize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskAutoresize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_autoresize_limit: {
-                        let field_value = match fields_map.get("disk_autoresize_limit") {
+                        let field_value = match fields_map.get("diskAutoresizeLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_autoresize_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskAutoresizeLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_size: {
-                        let field_value = match fields_map.get("disk_size") {
+                        let field_value = match fields_map.get("diskSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_type: {
-                        let field_value = match fields_map.get("disk_type") {
+                        let field_value = match fields_map.get("diskType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -382,65 +382,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_dataplex_integration: {
-                        let field_value = match fields_map.get("enable_dataplex_integration") {
+                        let field_value = match fields_map.get("enableDataplexIntegration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_dataplex_integration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableDataplexIntegration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_google_ml_integration: {
-                        let field_value = match fields_map.get("enable_google_ml_integration") {
+                        let field_value = match fields_map.get("enableGoogleMlIntegration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_google_ml_integration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableGoogleMlIntegration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#insights_configs: {
-                        let field_value = match fields_map.get("insights_configs") {
+                        let field_value = match fields_map.get("insightsConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insights_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insightsConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_configurations: {
-                        let field_value = match fields_map.get("ip_configurations") {
+                        let field_value = match fields_map.get("ipConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#location_preferences: {
-                        let field_value = match fields_map.get("location_preferences") {
+                        let field_value = match fields_map.get("locationPreferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'location_preferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'locationPreferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_windows: {
-                        let field_value = match fields_map.get("maintenance_windows") {
+                        let field_value = match fields_map.get("maintenanceWindows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_windows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceWindows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_validation_policies: {
-                        let field_value = match fields_map.get("password_validation_policies") {
+                        let field_value = match fields_map.get("passwordValidationPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_validation_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordValidationPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pricing_plan: {
-                        let field_value = match fields_map.get("pricing_plan") {
+                        let field_value = match fields_map.get("pricingPlan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pricing_plan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pricingPlan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_server_audit_configs: {
-                        let field_value = match fields_map.get("sql_server_audit_configs") {
+                        let field_value = match fields_map.get("sqlServerAuditConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_server_audit_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlServerAuditConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -452,16 +452,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_zone: {
-                        let field_value = match fields_map.get("time_zone") {
+                        let field_value = match fields_map.get("timeZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_labels: {
-                        let field_value = match fields_map.get("user_labels") {
+                        let field_value = match fields_map.get("userLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "feature_groups",
+                    "featureGroups",
                     &self.r#feature_groups,
                 ),
                 to_pulumi_object_field(
-                    "project_number",
+                    "projectNumber",
                     &self.r#project_number,
                 ),
             ];
@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#feature_groups: {
-                        let field_value = match fields_map.get("feature_groups") {
+                        let field_value = match fields_map.get("featureGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'feature_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'featureGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#project_number: {
-                        let field_value = match fields_map.get("project_number") {
+                        let field_value = match fields_map.get("projectNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

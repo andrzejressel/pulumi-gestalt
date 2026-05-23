@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_signature_algorithms",
+                    "allowedSignatureAlgorithms",
                     &self.r#allowed_signature_algorithms,
                 ),
                 to_pulumi_object_field(
-                    "token_query_parameter",
+                    "tokenQueryParameter",
                     &self.r#token_query_parameter,
                 ),
             ];
@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#allowed_signature_algorithms: {
-                        let field_value = match fields_map.get("allowed_signature_algorithms") {
+                        let field_value = match fields_map.get("allowedSignatureAlgorithms") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_signature_algorithms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedSignatureAlgorithms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_query_parameter: {
-                        let field_value = match fields_map.get("token_query_parameter") {
+                        let field_value = match fields_map.get("tokenQueryParameter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_query_parameter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenQueryParameter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

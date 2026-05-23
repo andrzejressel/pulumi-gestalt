@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_key_id",
+                    "accessKeyId",
                     &self.r#access_key_id,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#datakey,
                 ),
                 to_pulumi_object_field(
-                    "secret_access_key",
+                    "secretAccessKey",
                     &self.r#secret_access_key,
                 ),
                 to_pulumi_object_field(
-                    "user_id",
+                    "userId",
                     &self.r#user_id,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#access_key_id: {
-                        let field_value = match fields_map.get("access_key_id") {
+                        let field_value = match fields_map.get("accessKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_access_key: {
-                        let field_value = match fields_map.get("secret_access_key") {
+                        let field_value = match fields_map.get("secretAccessKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_access_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretAccessKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_id: {
-                        let field_value = match fields_map.get("user_id") {
+                        let field_value = match fields_map.get("userId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

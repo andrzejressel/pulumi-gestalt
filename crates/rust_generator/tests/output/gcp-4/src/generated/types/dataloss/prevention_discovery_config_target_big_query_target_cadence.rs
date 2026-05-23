@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "inspect_template_modified_cadence",
+                    "inspectTemplateModifiedCadence",
                     &self.r#inspect_template_modified_cadence,
                 ),
                 to_pulumi_object_field(
-                    "schema_modified_cadence",
+                    "schemaModifiedCadence",
                     &self.r#schema_modified_cadence,
                 ),
                 to_pulumi_object_field(
-                    "table_modified_cadence",
+                    "tableModifiedCadence",
                     &self.r#table_modified_cadence,
                 ),
             ];
@@ -69,23 +69,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#inspect_template_modified_cadence: {
-                        let field_value = match fields_map.get("inspect_template_modified_cadence") {
+                        let field_value = match fields_map.get("inspectTemplateModifiedCadence") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inspect_template_modified_cadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inspectTemplateModifiedCadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_modified_cadence: {
-                        let field_value = match fields_map.get("schema_modified_cadence") {
+                        let field_value = match fields_map.get("schemaModifiedCadence") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_modified_cadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaModifiedCadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_modified_cadence: {
-                        let field_value = match fields_map.get("table_modified_cadence") {
+                        let field_value = match fields_map.get("tableModifiedCadence") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_modified_cadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tableModifiedCadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

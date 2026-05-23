@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "microsoft_peering",
+                    "microsoftPeering",
                     &self.r#microsoft_peering,
                 ),
                 to_pulumi_object_field(
-                    "primary_peer_address_prefix",
+                    "primaryPeerAddressPrefix",
                     &self.r#primary_peer_address_prefix,
                 ),
                 to_pulumi_object_field(
-                    "route_filter_id",
+                    "routeFilterId",
                     &self.r#route_filter_id,
                 ),
                 to_pulumi_object_field(
-                    "secondary_peer_address_prefix",
+                    "secondaryPeerAddressPrefix",
                     &self.r#secondary_peer_address_prefix,
                 ),
             ];
@@ -91,30 +91,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#microsoft_peering: {
-                        let field_value = match fields_map.get("microsoft_peering") {
+                        let field_value = match fields_map.get("microsoftPeering") {
                             Some(value) => value,
-                            None => bail!("Missing field 'microsoft_peering' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'microsoftPeering' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_peer_address_prefix: {
-                        let field_value = match fields_map.get("primary_peer_address_prefix") {
+                        let field_value = match fields_map.get("primaryPeerAddressPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_peer_address_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryPeerAddressPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_filter_id: {
-                        let field_value = match fields_map.get("route_filter_id") {
+                        let field_value = match fields_map.get("routeFilterId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_filter_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeFilterId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_peer_address_prefix: {
-                        let field_value = match fields_map.get("secondary_peer_address_prefix") {
+                        let field_value = match fields_map.get("secondaryPeerAddressPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_peer_address_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryPeerAddressPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

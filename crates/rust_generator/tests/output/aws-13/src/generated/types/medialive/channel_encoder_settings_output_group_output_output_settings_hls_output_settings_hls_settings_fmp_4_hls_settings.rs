@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_rendition_sets",
+                    "audioRenditionSets",
                     &self.r#audio_rendition_sets,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_id_3_behavior",
+                    "nielsenId3Behavior",
                     &self.r#nielsen_id_3_behavior,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_behavior",
+                    "timedMetadataBehavior",
                     &self.r#timed_metadata_behavior,
                 ),
             ];
@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_rendition_sets: {
-                        let field_value = match fields_map.get("audio_rendition_sets") {
+                        let field_value = match fields_map.get("audioRenditionSets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_rendition_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioRenditionSets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nielsen_id_3_behavior: {
-                        let field_value = match fields_map.get("nielsen_id_3_behavior") {
+                        let field_value = match fields_map.get("nielsenId3Behavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nielsen_id_3_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nielsenId3Behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timed_metadata_behavior: {
-                        let field_value = match fields_map.get("timed_metadata_behavior") {
+                        let field_value = match fields_map.get("timedMetadataBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timed_metadata_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timedMetadataBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

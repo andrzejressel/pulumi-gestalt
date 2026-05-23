@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
                     &self.r#criteria,
                 ),
                 to_pulumi_object_field(
-                    "life_cycle",
+                    "lifeCycle",
                     &self.r#life_cycle,
                 ),
                 to_pulumi_object_field(
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#life_cycle: {
-                        let field_value = match fields_map.get("life_cycle") {
+                        let field_value = match fields_map.get("lifeCycle") {
                             Some(value) => value,
-                            None => bail!("Missing field 'life_cycle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifeCycle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

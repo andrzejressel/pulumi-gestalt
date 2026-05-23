@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_driver_enabled",
+                    "blobDriverEnabled",
                     &self.r#blob_driver_enabled,
                 ),
                 to_pulumi_object_field(
-                    "disk_driver_enabled",
+                    "diskDriverEnabled",
                     &self.r#disk_driver_enabled,
                 ),
                 to_pulumi_object_field(
-                    "file_driver_enabled",
+                    "fileDriverEnabled",
                     &self.r#file_driver_enabled,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_controller_enabled",
+                    "snapshotControllerEnabled",
                     &self.r#snapshot_controller_enabled,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#blob_driver_enabled: {
-                        let field_value = match fields_map.get("blob_driver_enabled") {
+                        let field_value = match fields_map.get("blobDriverEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'blob_driver_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blobDriverEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_driver_enabled: {
-                        let field_value = match fields_map.get("disk_driver_enabled") {
+                        let field_value = match fields_map.get("diskDriverEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_driver_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskDriverEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_driver_enabled: {
-                        let field_value = match fields_map.get("file_driver_enabled") {
+                        let field_value = match fields_map.get("fileDriverEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_driver_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileDriverEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_controller_enabled: {
-                        let field_value = match fields_map.get("snapshot_controller_enabled") {
+                        let field_value = match fields_map.get("snapshotControllerEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_controller_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotControllerEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

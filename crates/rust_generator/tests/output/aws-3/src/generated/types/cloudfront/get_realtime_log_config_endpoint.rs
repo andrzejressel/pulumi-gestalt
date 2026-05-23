@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kinesis_stream_configs",
+                    "kinesisStreamConfigs",
                     &self.r#kinesis_stream_configs,
                 ),
                 to_pulumi_object_field(
-                    "stream_type",
+                    "streamType",
                     &self.r#stream_type,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#kinesis_stream_configs: {
-                        let field_value = match fields_map.get("kinesis_stream_configs") {
+                        let field_value = match fields_map.get("kinesisStreamConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_stream_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisStreamConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_type: {
-                        let field_value = match fields_map.get("stream_type") {
+                        let field_value = match fields_map.get("streamType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stream_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'streamType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

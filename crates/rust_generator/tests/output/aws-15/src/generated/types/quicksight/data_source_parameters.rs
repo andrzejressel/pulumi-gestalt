@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "amazon_elasticsearch",
+                    "amazonElasticsearch",
                     &self.r#amazon_elasticsearch,
                 ),
                 to_pulumi_object_field(
@@ -115,11 +115,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#aurora,
                 ),
                 to_pulumi_object_field(
-                    "aurora_postgresql",
+                    "auroraPostgresql",
                     &self.r#aurora_postgresql,
                 ),
                 to_pulumi_object_field(
-                    "aws_iot_analytics",
+                    "awsIotAnalytics",
                     &self.r#aws_iot_analytics,
                 ),
                 to_pulumi_object_field(
@@ -131,7 +131,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#jira,
                 ),
                 to_pulumi_object_field(
-                    "maria_db",
+                    "mariaDb",
                     &self.r#maria_db,
                 ),
                 to_pulumi_object_field(
@@ -159,11 +159,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#redshift,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
                 to_pulumi_object_field(
-                    "service_now",
+                    "serviceNow",
                     &self.r#service_now,
                 ),
                 to_pulumi_object_field(
@@ -175,7 +175,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#spark,
                 ),
                 to_pulumi_object_field(
-                    "sql_server",
+                    "sqlServer",
                     &self.r#sql_server,
                 ),
                 to_pulumi_object_field(
@@ -210,9 +210,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#amazon_elasticsearch: {
-                        let field_value = match fields_map.get("amazon_elasticsearch") {
+                        let field_value = match fields_map.get("amazonElasticsearch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'amazon_elasticsearch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'amazonElasticsearch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -231,16 +231,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aurora_postgresql: {
-                        let field_value = match fields_map.get("aurora_postgresql") {
+                        let field_value = match fields_map.get("auroraPostgresql") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aurora_postgresql' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'auroraPostgresql' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aws_iot_analytics: {
-                        let field_value = match fields_map.get("aws_iot_analytics") {
+                        let field_value = match fields_map.get("awsIotAnalytics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_iot_analytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsIotAnalytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -259,9 +259,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maria_db: {
-                        let field_value = match fields_map.get("maria_db") {
+                        let field_value = match fields_map.get("mariaDb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maria_db' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mariaDb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -308,16 +308,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3: {
-                        let field_value = match fields_map.get("s_3") {
+                        let field_value = match fields_map.get("s3") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_now: {
-                        let field_value = match fields_map.get("service_now") {
+                        let field_value = match fields_map.get("serviceNow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_now' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceNow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -336,9 +336,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_server: {
-                        let field_value = match fields_map.get("sql_server") {
+                        let field_value = match fields_map.get("sqlServer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlServer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

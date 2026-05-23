@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "off_peak_windows",
+                    "offPeakWindows",
                     &self.r#off_peak_windows,
                 ),
             ];
@@ -64,9 +64,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#off_peak_windows: {
-                        let field_value = match fields_map.get("off_peak_windows") {
+                        let field_value = match fields_map.get("offPeakWindows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'off_peak_windows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'offPeakWindows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

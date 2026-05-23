@@ -42,15 +42,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enforcement_mode",
+                    "enforcementMode",
                     &self.r#enforcement_mode,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_mode",
+                    "evaluationMode",
                     &self.r#evaluation_mode,
                 ),
                 to_pulumi_object_field(
-                    "require_attestations_bies",
+                    "requireAttestationsBies",
                     &self.r#require_attestations_bies,
                 ),
             ];
@@ -77,23 +77,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#enforcement_mode: {
-                        let field_value = match fields_map.get("enforcement_mode") {
+                        let field_value = match fields_map.get("enforcementMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforcement_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforcementMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluation_mode: {
-                        let field_value = match fields_map.get("evaluation_mode") {
+                        let field_value = match fields_map.get("evaluationMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluation_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluationMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_attestations_bies: {
-                        let field_value = match fields_map.get("require_attestations_bies") {
+                        let field_value = match fields_map.get("requireAttestationsBies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_attestations_bies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireAttestationsBies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

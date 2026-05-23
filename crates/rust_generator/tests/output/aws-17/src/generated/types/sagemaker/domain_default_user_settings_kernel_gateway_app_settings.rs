@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_images",
+                    "customImages",
                     &self.r#custom_images,
                 ),
                 to_pulumi_object_field(
-                    "default_resource_spec",
+                    "defaultResourceSpec",
                     &self.r#default_resource_spec,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_config_arns",
+                    "lifecycleConfigArns",
                     &self.r#lifecycle_config_arns,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#custom_images: {
-                        let field_value = match fields_map.get("custom_images") {
+                        let field_value = match fields_map.get("customImages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_images' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customImages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_resource_spec: {
-                        let field_value = match fields_map.get("default_resource_spec") {
+                        let field_value = match fields_map.get("defaultResourceSpec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_resource_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultResourceSpec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_config_arns: {
-                        let field_value = match fields_map.get("lifecycle_config_arns") {
+                        let field_value = match fields_map.get("lifecycleConfigArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lifecycle_config_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifecycleConfigArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

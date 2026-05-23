@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mapping_pipeline_job",
+                    "mappingPipelineJob",
                     &self.r#mapping_pipeline_job,
                 ),
             ];
@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#mapping_pipeline_job: {
-                        let field_value = match fields_map.get("mapping_pipeline_job") {
+                        let field_value = match fields_map.get("mappingPipelineJob") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mapping_pipeline_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mappingPipelineJob' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

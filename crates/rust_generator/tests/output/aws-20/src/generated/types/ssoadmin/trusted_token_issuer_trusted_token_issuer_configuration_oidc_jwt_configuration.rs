@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tru
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "claim_attribute_path",
+                    "claimAttributePath",
                     &self.r#claim_attribute_path,
                 ),
                 to_pulumi_object_field(
-                    "identity_store_attribute_path",
+                    "identityStoreAttributePath",
                     &self.r#identity_store_attribute_path,
                 ),
                 to_pulumi_object_field(
-                    "issuer_url",
+                    "issuerUrl",
                     &self.r#issuer_url,
                 ),
                 to_pulumi_object_field(
-                    "jwks_retrieval_option",
+                    "jwksRetrievalOption",
                     &self.r#jwks_retrieval_option,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#claim_attribute_path: {
-                        let field_value = match fields_map.get("claim_attribute_path") {
+                        let field_value = match fields_map.get("claimAttributePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'claim_attribute_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'claimAttributePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_store_attribute_path: {
-                        let field_value = match fields_map.get("identity_store_attribute_path") {
+                        let field_value = match fields_map.get("identityStoreAttributePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_store_attribute_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityStoreAttributePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#issuer_url: {
-                        let field_value = match fields_map.get("issuer_url") {
+                        let field_value = match fields_map.get("issuerUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'issuer_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'issuerUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jwks_retrieval_option: {
-                        let field_value = match fields_map.get("jwks_retrieval_option") {
+                        let field_value = match fields_map.get("jwksRetrievalOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jwks_retrieval_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jwksRetrievalOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

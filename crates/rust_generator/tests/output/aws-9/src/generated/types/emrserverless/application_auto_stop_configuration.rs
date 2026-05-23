@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "idle_timeout_minutes",
+                    "idleTimeoutMinutes",
                     &self.r#idle_timeout_minutes,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idle_timeout_minutes: {
-                        let field_value = match fields_map.get("idle_timeout_minutes") {
+                        let field_value = match fields_map.get("idleTimeoutMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_timeout_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleTimeoutMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

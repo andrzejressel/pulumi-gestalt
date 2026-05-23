@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "label_name",
+                    "labelName",
                     &self.r#label_name,
                 ),
                 to_pulumi_object_field(
-                    "label_value",
+                    "labelValue",
                     &self.r#label_value,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#label_name: {
-                        let field_value = match fields_map.get("label_name") {
+                        let field_value = match fields_map.get("labelName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'label_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'labelName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#label_value: {
-                        let field_value = match fields_map.get("label_value") {
+                        let field_value = match fields_map.get("labelValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'label_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'labelValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

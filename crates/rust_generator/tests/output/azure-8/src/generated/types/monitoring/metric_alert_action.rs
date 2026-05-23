@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_group_id",
+                    "actionGroupId",
                     &self.r#action_group_id,
                 ),
                 to_pulumi_object_field(
-                    "webhook_properties",
+                    "webhookProperties",
                     &self.r#webhook_properties,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#action_group_id: {
-                        let field_value = match fields_map.get("action_group_id") {
+                        let field_value = match fields_map.get("actionGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#webhook_properties: {
-                        let field_value = match fields_map.get("webhook_properties") {
+                        let field_value = match fields_map.get("webhookProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'webhook_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webhookProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

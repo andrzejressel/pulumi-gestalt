@@ -54,31 +54,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_type",
+                    "acceleratorType",
                     &self.r#accelerator_type,
                 ),
                 to_pulumi_object_field(
-                    "milli_accelerator",
+                    "milliAccelerator",
                     &self.r#milli_accelerator,
                 ),
                 to_pulumi_object_field(
-                    "milli_dcu",
+                    "milliDcu",
                     &self.r#milli_dcu,
                 ),
                 to_pulumi_object_field(
-                    "milli_dcu_premium",
+                    "milliDcuPremium",
                     &self.r#milli_dcu_premium,
                 ),
                 to_pulumi_object_field(
-                    "shuffle_storage_gb",
+                    "shuffleStorageGb",
                     &self.r#shuffle_storage_gb,
                 ),
                 to_pulumi_object_field(
-                    "shuffle_storage_gb_premium",
+                    "shuffleStorageGbPremium",
                     &self.r#shuffle_storage_gb_premium,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_time",
+                    "snapshotTime",
                     &self.r#snapshot_time,
                 ),
             ];
@@ -105,51 +105,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#accelerator_type: {
-                        let field_value = match fields_map.get("accelerator_type") {
+                        let field_value = match fields_map.get("acceleratorType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerator_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratorType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#milli_accelerator: {
-                        let field_value = match fields_map.get("milli_accelerator") {
+                        let field_value = match fields_map.get("milliAccelerator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'milli_accelerator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'milliAccelerator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#milli_dcu: {
-                        let field_value = match fields_map.get("milli_dcu") {
+                        let field_value = match fields_map.get("milliDcu") {
                             Some(value) => value,
-                            None => bail!("Missing field 'milli_dcu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'milliDcu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#milli_dcu_premium: {
-                        let field_value = match fields_map.get("milli_dcu_premium") {
+                        let field_value = match fields_map.get("milliDcuPremium") {
                             Some(value) => value,
-                            None => bail!("Missing field 'milli_dcu_premium' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'milliDcuPremium' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shuffle_storage_gb: {
-                        let field_value = match fields_map.get("shuffle_storage_gb") {
+                        let field_value = match fields_map.get("shuffleStorageGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shuffle_storage_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shuffleStorageGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shuffle_storage_gb_premium: {
-                        let field_value = match fields_map.get("shuffle_storage_gb_premium") {
+                        let field_value = match fields_map.get("shuffleStorageGbPremium") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shuffle_storage_gb_premium' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shuffleStorageGbPremium' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_time: {
-                        let field_value = match fields_map.get("snapshot_time") {
+                        let field_value = match fields_map.get("snapshotTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

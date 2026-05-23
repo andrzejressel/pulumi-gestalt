@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
                     &self.r#column,
                 ),
                 to_pulumi_object_field(
-                    "sort_order",
+                    "sortOrder",
                     &self.r#sort_order,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sort_order: {
-                        let field_value = match fields_map.get("sort_order") {
+                        let field_value = match fields_map.get("sortOrder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sort_order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sortOrder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

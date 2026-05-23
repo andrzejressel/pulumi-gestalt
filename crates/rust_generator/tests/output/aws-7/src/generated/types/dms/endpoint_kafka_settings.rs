@@ -95,67 +95,67 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#broker,
                 ),
                 to_pulumi_object_field(
-                    "include_control_details",
+                    "includeControlDetails",
                     &self.r#include_control_details,
                 ),
                 to_pulumi_object_field(
-                    "include_null_and_empty",
+                    "includeNullAndEmpty",
                     &self.r#include_null_and_empty,
                 ),
                 to_pulumi_object_field(
-                    "include_partition_value",
+                    "includePartitionValue",
                     &self.r#include_partition_value,
                 ),
                 to_pulumi_object_field(
-                    "include_table_alter_operations",
+                    "includeTableAlterOperations",
                     &self.r#include_table_alter_operations,
                 ),
                 to_pulumi_object_field(
-                    "include_transaction_details",
+                    "includeTransactionDetails",
                     &self.r#include_transaction_details,
                 ),
                 to_pulumi_object_field(
-                    "message_format",
+                    "messageFormat",
                     &self.r#message_format,
                 ),
                 to_pulumi_object_field(
-                    "message_max_bytes",
+                    "messageMaxBytes",
                     &self.r#message_max_bytes,
                 ),
                 to_pulumi_object_field(
-                    "no_hex_prefix",
+                    "noHexPrefix",
                     &self.r#no_hex_prefix,
                 ),
                 to_pulumi_object_field(
-                    "partition_include_schema_table",
+                    "partitionIncludeSchemaTable",
                     &self.r#partition_include_schema_table,
                 ),
                 to_pulumi_object_field(
-                    "sasl_password",
+                    "saslPassword",
                     &self.r#sasl_password,
                 ),
                 to_pulumi_object_field(
-                    "sasl_username",
+                    "saslUsername",
                     &self.r#sasl_username,
                 ),
                 to_pulumi_object_field(
-                    "security_protocol",
+                    "securityProtocol",
                     &self.r#security_protocol,
                 ),
                 to_pulumi_object_field(
-                    "ssl_ca_certificate_arn",
+                    "sslCaCertificateArn",
                     &self.r#ssl_ca_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "ssl_client_certificate_arn",
+                    "sslClientCertificateArn",
                     &self.r#ssl_client_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "ssl_client_key_arn",
+                    "sslClientKeyArn",
                     &self.r#ssl_client_key_arn,
                 ),
                 to_pulumi_object_field(
-                    "ssl_client_key_password",
+                    "sslClientKeyPassword",
                     &self.r#ssl_client_key_password,
                 ),
                 to_pulumi_object_field(
@@ -193,114 +193,114 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_control_details: {
-                        let field_value = match fields_map.get("include_control_details") {
+                        let field_value = match fields_map.get("includeControlDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_control_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeControlDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_null_and_empty: {
-                        let field_value = match fields_map.get("include_null_and_empty") {
+                        let field_value = match fields_map.get("includeNullAndEmpty") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_null_and_empty' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeNullAndEmpty' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_partition_value: {
-                        let field_value = match fields_map.get("include_partition_value") {
+                        let field_value = match fields_map.get("includePartitionValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_partition_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includePartitionValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_table_alter_operations: {
-                        let field_value = match fields_map.get("include_table_alter_operations") {
+                        let field_value = match fields_map.get("includeTableAlterOperations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_table_alter_operations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeTableAlterOperations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_transaction_details: {
-                        let field_value = match fields_map.get("include_transaction_details") {
+                        let field_value = match fields_map.get("includeTransactionDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_transaction_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeTransactionDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#message_format: {
-                        let field_value = match fields_map.get("message_format") {
+                        let field_value = match fields_map.get("messageFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'message_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messageFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#message_max_bytes: {
-                        let field_value = match fields_map.get("message_max_bytes") {
+                        let field_value = match fields_map.get("messageMaxBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'message_max_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messageMaxBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_hex_prefix: {
-                        let field_value = match fields_map.get("no_hex_prefix") {
+                        let field_value = match fields_map.get("noHexPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_hex_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noHexPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#partition_include_schema_table: {
-                        let field_value = match fields_map.get("partition_include_schema_table") {
+                        let field_value = match fields_map.get("partitionIncludeSchemaTable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partition_include_schema_table' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partitionIncludeSchemaTable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sasl_password: {
-                        let field_value = match fields_map.get("sasl_password") {
+                        let field_value = match fields_map.get("saslPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sasl_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'saslPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sasl_username: {
-                        let field_value = match fields_map.get("sasl_username") {
+                        let field_value = match fields_map.get("saslUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sasl_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'saslUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_protocol: {
-                        let field_value = match fields_map.get("security_protocol") {
+                        let field_value = match fields_map.get("securityProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_ca_certificate_arn: {
-                        let field_value = match fields_map.get("ssl_ca_certificate_arn") {
+                        let field_value = match fields_map.get("sslCaCertificateArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_ca_certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslCaCertificateArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_client_certificate_arn: {
-                        let field_value = match fields_map.get("ssl_client_certificate_arn") {
+                        let field_value = match fields_map.get("sslClientCertificateArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_client_certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslClientCertificateArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_client_key_arn: {
-                        let field_value = match fields_map.get("ssl_client_key_arn") {
+                        let field_value = match fields_map.get("sslClientKeyArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_client_key_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslClientKeyArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_client_key_password: {
-                        let field_value = match fields_map.get("ssl_client_key_password") {
+                        let field_value = match fields_map.get("sslClientKeyPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_client_key_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslClientKeyPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gcp_service_account_email",
+                    "gcpServiceAccountEmail",
                     &self.r#gcp_service_account_email,
                 ),
                 to_pulumi_object_field(
-                    "policy_dir",
+                    "policyDir",
                     &self.r#policy_dir,
                 ),
                 to_pulumi_object_field(
-                    "secret_type",
+                    "secretType",
                     &self.r#secret_type,
                 ),
                 to_pulumi_object_field(
-                    "sync_repo",
+                    "syncRepo",
                     &self.r#sync_repo,
                 ),
                 to_pulumi_object_field(
-                    "sync_wait_secs",
+                    "syncWaitSecs",
                     &self.r#sync_wait_secs,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#gcp_service_account_email: {
-                        let field_value = match fields_map.get("gcp_service_account_email") {
+                        let field_value = match fields_map.get("gcpServiceAccountEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcp_service_account_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcpServiceAccountEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_dir: {
-                        let field_value = match fields_map.get("policy_dir") {
+                        let field_value = match fields_map.get("policyDir") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_dir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyDir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_type: {
-                        let field_value = match fields_map.get("secret_type") {
+                        let field_value = match fields_map.get("secretType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sync_repo: {
-                        let field_value = match fields_map.get("sync_repo") {
+                        let field_value = match fields_map.get("syncRepo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sync_repo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syncRepo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sync_wait_secs: {
-                        let field_value = match fields_map.get("sync_wait_secs") {
+                        let field_value = match fields_map.get("syncWaitSecs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sync_wait_secs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syncWaitSecs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_time_to_live_in_minutes",
+                    "maxTimeToLiveInMinutes",
                     &self.r#max_time_to_live_in_minutes,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#max_time_to_live_in_minutes: {
-                        let field_value = match fields_map.get("max_time_to_live_in_minutes") {
+                        let field_value = match fields_map.get("maxTimeToLiveInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_time_to_live_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxTimeToLiveInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

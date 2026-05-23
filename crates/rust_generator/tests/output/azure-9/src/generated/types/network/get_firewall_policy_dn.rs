@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "network_rule_fqdn_enabled",
+                    "networkRuleFqdnEnabled",
                     &self.r#network_rule_fqdn_enabled,
                 ),
                 to_pulumi_object_field(
-                    "proxy_enabled",
+                    "proxyEnabled",
                     &self.r#proxy_enabled,
                 ),
                 to_pulumi_object_field(
@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#network_rule_fqdn_enabled: {
-                        let field_value = match fields_map.get("network_rule_fqdn_enabled") {
+                        let field_value = match fields_map.get("networkRuleFqdnEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_rule_fqdn_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkRuleFqdnEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#proxy_enabled: {
-                        let field_value = match fields_map.get("proxy_enabled") {
+                        let field_value = match fields_map.get("proxyEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'proxy_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'proxyEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

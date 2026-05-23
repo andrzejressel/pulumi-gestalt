@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "configuration_set",
+                    "configurationSet",
                     &self.r#configuration_set,
                 ),
                 to_pulumi_object_field(
-                    "email_sending_account",
+                    "emailSendingAccount",
                     &self.r#email_sending_account,
                 ),
                 to_pulumi_object_field(
-                    "from_email_address",
+                    "fromEmailAddress",
                     &self.r#from_email_address,
                 ),
                 to_pulumi_object_field(
-                    "reply_to_email_address",
+                    "replyToEmailAddress",
                     &self.r#reply_to_email_address,
                 ),
                 to_pulumi_object_field(
-                    "source_arn",
+                    "sourceArn",
                     &self.r#source_arn,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#configuration_set: {
-                        let field_value = match fields_map.get("configuration_set") {
+                        let field_value = match fields_map.get("configurationSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configuration_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configurationSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_sending_account: {
-                        let field_value = match fields_map.get("email_sending_account") {
+                        let field_value = match fields_map.get("emailSendingAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_sending_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailSendingAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#from_email_address: {
-                        let field_value = match fields_map.get("from_email_address") {
+                        let field_value = match fields_map.get("fromEmailAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'from_email_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fromEmailAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reply_to_email_address: {
-                        let field_value = match fields_map.get("reply_to_email_address") {
+                        let field_value = match fields_map.get("replyToEmailAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reply_to_email_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replyToEmailAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_arn: {
-                        let field_value = match fields_map.get("source_arn") {
+                        let field_value = match fields_map.get("sourceArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

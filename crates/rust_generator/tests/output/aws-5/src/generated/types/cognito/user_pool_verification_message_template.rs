@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_email_option",
+                    "defaultEmailOption",
                     &self.r#default_email_option,
                 ),
                 to_pulumi_object_field(
-                    "email_message",
+                    "emailMessage",
                     &self.r#email_message,
                 ),
                 to_pulumi_object_field(
-                    "email_message_by_link",
+                    "emailMessageByLink",
                     &self.r#email_message_by_link,
                 ),
                 to_pulumi_object_field(
-                    "email_subject",
+                    "emailSubject",
                     &self.r#email_subject,
                 ),
                 to_pulumi_object_field(
-                    "email_subject_by_link",
+                    "emailSubjectByLink",
                     &self.r#email_subject_by_link,
                 ),
                 to_pulumi_object_field(
-                    "sms_message",
+                    "smsMessage",
                     &self.r#sms_message,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#default_email_option: {
-                        let field_value = match fields_map.get("default_email_option") {
+                        let field_value = match fields_map.get("defaultEmailOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_email_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultEmailOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_message: {
-                        let field_value = match fields_map.get("email_message") {
+                        let field_value = match fields_map.get("emailMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_message_by_link: {
-                        let field_value = match fields_map.get("email_message_by_link") {
+                        let field_value = match fields_map.get("emailMessageByLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_message_by_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailMessageByLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_subject: {
-                        let field_value = match fields_map.get("email_subject") {
+                        let field_value = match fields_map.get("emailSubject") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_subject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailSubject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_subject_by_link: {
-                        let field_value = match fields_map.get("email_subject_by_link") {
+                        let field_value = match fields_map.get("emailSubjectByLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_subject_by_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailSubjectByLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sms_message: {
-                        let field_value = match fields_map.get("sms_message") {
+                        let field_value = match fields_map.get("smsMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sms_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'smsMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

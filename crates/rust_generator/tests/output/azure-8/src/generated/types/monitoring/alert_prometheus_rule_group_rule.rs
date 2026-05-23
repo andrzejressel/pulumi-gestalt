@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#alert,
                 ),
                 to_pulumi_object_field(
-                    "alert_resolution",
+                    "alertResolution",
                     &self.r#alert_resolution,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#expression,
                 ),
                 to_pulumi_object_field(
-                    "for_",
+                    "for",
                     &self.r#for_,
                 ),
                 to_pulumi_object_field(
@@ -136,9 +136,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#alert_resolution: {
-                        let field_value = match fields_map.get("alert_resolution") {
+                        let field_value = match fields_map.get("alertResolution") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alert_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alertResolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -164,9 +164,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#for_: {
-                        let field_value = match fields_map.get("for_") {
+                        let field_value = match fields_map.get("for") {
                             Some(value) => value,
-                            None => bail!("Missing field 'for_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'for' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "inspect_template_modified_cadence",
+                    "inspectTemplateModifiedCadence",
                     &self.r#inspect_template_modified_cadence,
                 ),
                 to_pulumi_object_field(
-                    "refresh_frequency",
+                    "refreshFrequency",
                     &self.r#refresh_frequency,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#inspect_template_modified_cadence: {
-                        let field_value = match fields_map.get("inspect_template_modified_cadence") {
+                        let field_value = match fields_map.get("inspectTemplateModifiedCadence") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inspect_template_modified_cadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inspectTemplateModifiedCadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refresh_frequency: {
-                        let field_value = match fields_map.get("refresh_frequency") {
+                        let field_value = match fields_map.get("refreshFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'refresh_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'refreshFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

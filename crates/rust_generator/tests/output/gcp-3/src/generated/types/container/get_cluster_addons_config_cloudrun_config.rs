@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_type",
+                    "loadBalancerType",
                     &self.r#load_balancer_type,
                 ),
             ];
@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancer_type: {
-                        let field_value = match fields_map.get("load_balancer_type") {
+                        let field_value = match fields_map.get("loadBalancerType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancer_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancerType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_integrity_monitoring",
+                    "enableIntegrityMonitoring",
                     &self.r#enable_integrity_monitoring,
                 ),
                 to_pulumi_object_field(
-                    "enable_secure_boot",
+                    "enableSecureBoot",
                     &self.r#enable_secure_boot,
                 ),
                 to_pulumi_object_field(
-                    "enable_vtpm",
+                    "enableVtpm",
                     &self.r#enable_vtpm,
                 ),
             ];
@@ -76,23 +76,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#enable_integrity_monitoring: {
-                        let field_value = match fields_map.get("enable_integrity_monitoring") {
+                        let field_value = match fields_map.get("enableIntegrityMonitoring") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_integrity_monitoring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableIntegrityMonitoring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_secure_boot: {
-                        let field_value = match fields_map.get("enable_secure_boot") {
+                        let field_value = match fields_map.get("enableSecureBoot") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_secure_boot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableSecureBoot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_vtpm: {
-                        let field_value = match fields_map.get("enable_vtpm") {
+                        let field_value = match fields_map.get("enableVtpm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_vtpm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableVtpm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

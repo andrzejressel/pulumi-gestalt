@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_by_device_type",
+                    "cacheByDeviceType",
                     &self.r#cache_by_device_type,
                 ),
                 to_pulumi_object_field(
-                    "cache_deception_armor",
+                    "cacheDeceptionArmor",
                     &self.r#cache_deception_armor,
                 ),
                 to_pulumi_object_field(
-                    "custom_key",
+                    "customKey",
                     &self.r#custom_key,
                 ),
                 to_pulumi_object_field(
-                    "ignore_query_strings_order",
+                    "ignoreQueryStringsOrder",
                     &self.r#ignore_query_strings_order,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#cache_by_device_type: {
-                        let field_value = match fields_map.get("cache_by_device_type") {
+                        let field_value = match fields_map.get("cacheByDeviceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_by_device_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheByDeviceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_deception_armor: {
-                        let field_value = match fields_map.get("cache_deception_armor") {
+                        let field_value = match fields_map.get("cacheDeceptionArmor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_deception_armor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheDeceptionArmor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_key: {
-                        let field_value = match fields_map.get("custom_key") {
+                        let field_value = match fields_map.get("customKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_query_strings_order: {
-                        let field_value = match fields_map.get("ignore_query_strings_order") {
+                        let field_value = match fields_map.get("ignoreQueryStringsOrder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_query_strings_order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreQueryStringsOrder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

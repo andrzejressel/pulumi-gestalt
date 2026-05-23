@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "subscription_type",
+                    "subscriptionType",
                     &self.r#subscription_type,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subscription_type: {
-                        let field_value = match fields_map.get("subscription_type") {
+                        let field_value = match fields_map.get("subscriptionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subscription_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subscriptionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

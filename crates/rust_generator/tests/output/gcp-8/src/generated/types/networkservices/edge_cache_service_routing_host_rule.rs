@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
                     &self.r#hosts,
                 ),
                 to_pulumi_object_field(
-                    "path_matcher",
+                    "pathMatcher",
                     &self.r#path_matcher,
                 ),
             ];
@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_matcher: {
-                        let field_value = match fields_map.get("path_matcher") {
+                        let field_value = match fields_map.get("pathMatcher") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_matcher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathMatcher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

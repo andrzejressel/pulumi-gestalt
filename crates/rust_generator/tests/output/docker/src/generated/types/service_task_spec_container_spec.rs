@@ -119,7 +119,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#dir,
                 ),
                 to_pulumi_object_field(
-                    "dns_config",
+                    "dnsConfig",
                     &self.r#dns_config,
                 ),
                 to_pulumi_object_field(
@@ -163,7 +163,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#privileges,
                 ),
                 to_pulumi_object_field(
-                    "read_only",
+                    "readOnly",
                     &self.r#read_only,
                 ),
                 to_pulumi_object_field(
@@ -171,11 +171,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#secrets,
                 ),
                 to_pulumi_object_field(
-                    "stop_grace_period",
+                    "stopGracePeriod",
                     &self.r#stop_grace_period,
                 ),
                 to_pulumi_object_field(
-                    "stop_signal",
+                    "stopSignal",
                     &self.r#stop_signal,
                 ),
                 to_pulumi_object_field(
@@ -238,9 +238,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_config: {
-                        let field_value = match fields_map.get("dns_config") {
+                        let field_value = match fields_map.get("dnsConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -315,9 +315,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_only: {
-                        let field_value = match fields_map.get("read_only") {
+                        let field_value = match fields_map.get("readOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -329,16 +329,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stop_grace_period: {
-                        let field_value = match fields_map.get("stop_grace_period") {
+                        let field_value = match fields_map.get("stopGracePeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stop_grace_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stopGracePeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stop_signal: {
-                        let field_value = match fields_map.get("stop_signal") {
+                        let field_value = match fields_map.get("stopSignal") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stop_signal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stopSignal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

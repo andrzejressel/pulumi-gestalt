@@ -100,15 +100,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "crypto_key_backend",
+                    "cryptoKeyBackend",
                     &self.r#crypto_key_backend,
                 ),
                 to_pulumi_object_field(
-                    "destroy_scheduled_duration",
+                    "destroyScheduledDuration",
                     &self.r#destroy_scheduled_duration,
                 ),
                 to_pulumi_object_field(
-                    "effective_labels",
+                    "effectiveLabels",
                     &self.r#effective_labels,
                 ),
                 to_pulumi_object_field(
@@ -116,15 +116,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "import_only",
+                    "importOnly",
                     &self.r#import_only,
                 ),
                 to_pulumi_object_field(
-                    "key_access_justifications_policies",
+                    "keyAccessJustificationsPolicies",
                     &self.r#key_access_justifications_policies,
                 ),
                 to_pulumi_object_field(
-                    "key_ring",
+                    "keyRing",
                     &self.r#key_ring,
                 ),
                 to_pulumi_object_field(
@@ -140,7 +140,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#primaries,
                 ),
                 to_pulumi_object_field(
-                    "pulumi_labels",
+                    "pulumiLabels",
                     &self.r#pulumi_labels,
                 ),
                 to_pulumi_object_field(
@@ -148,15 +148,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#purpose,
                 ),
                 to_pulumi_object_field(
-                    "rotation_period",
+                    "rotationPeriod",
                     &self.r#rotation_period,
                 ),
                 to_pulumi_object_field(
-                    "skip_initial_version_creation",
+                    "skipInitialVersionCreation",
                     &self.r#skip_initial_version_creation,
                 ),
                 to_pulumi_object_field(
-                    "version_templates",
+                    "versionTemplates",
                     &self.r#version_templates,
                 ),
             ];
@@ -183,23 +183,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#crypto_key_backend: {
-                        let field_value = match fields_map.get("crypto_key_backend") {
+                        let field_value = match fields_map.get("cryptoKeyBackend") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crypto_key_backend' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cryptoKeyBackend' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destroy_scheduled_duration: {
-                        let field_value = match fields_map.get("destroy_scheduled_duration") {
+                        let field_value = match fields_map.get("destroyScheduledDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destroy_scheduled_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destroyScheduledDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#effective_labels: {
-                        let field_value = match fields_map.get("effective_labels") {
+                        let field_value = match fields_map.get("effectiveLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -211,23 +211,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#import_only: {
-                        let field_value = match fields_map.get("import_only") {
+                        let field_value = match fields_map.get("importOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'import_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'importOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_access_justifications_policies: {
-                        let field_value = match fields_map.get("key_access_justifications_policies") {
+                        let field_value = match fields_map.get("keyAccessJustificationsPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_access_justifications_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyAccessJustificationsPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_ring: {
-                        let field_value = match fields_map.get("key_ring") {
+                        let field_value = match fields_map.get("keyRing") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_ring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyRing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -253,9 +253,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pulumi_labels: {
-                        let field_value = match fields_map.get("pulumi_labels") {
+                        let field_value = match fields_map.get("pulumiLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pulumi_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pulumiLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -267,23 +267,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rotation_period: {
-                        let field_value = match fields_map.get("rotation_period") {
+                        let field_value = match fields_map.get("rotationPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rotation_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rotationPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skip_initial_version_creation: {
-                        let field_value = match fields_map.get("skip_initial_version_creation") {
+                        let field_value = match fields_map.get("skipInitialVersionCreation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skip_initial_version_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skipInitialVersionCreation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_templates: {
-                        let field_value = match fields_map.get("version_templates") {
+                        let field_value = match fields_map.get("versionTemplates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_templates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionTemplates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

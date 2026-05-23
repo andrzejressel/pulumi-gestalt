@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customized_capacity_metric_specification",
+                    "customizedCapacityMetricSpecification",
                     &self.r#customized_capacity_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "customized_load_metric_specification",
+                    "customizedLoadMetricSpecification",
                     &self.r#customized_load_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "customized_scaling_metric_specification",
+                    "customizedScalingMetricSpecification",
                     &self.r#customized_scaling_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "predefined_load_metric_specification",
+                    "predefinedLoadMetricSpecification",
                     &self.r#predefined_load_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "predefined_metric_pair_specification",
+                    "predefinedMetricPairSpecification",
                     &self.r#predefined_metric_pair_specification,
                 ),
                 to_pulumi_object_field(
-                    "predefined_scaling_metric_specification",
+                    "predefinedScalingMetricSpecification",
                     &self.r#predefined_scaling_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "target_value",
+                    "targetValue",
                     &self.r#target_value,
                 ),
             ];
@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#customized_capacity_metric_specification: {
-                        let field_value = match fields_map.get("customized_capacity_metric_specification") {
+                        let field_value = match fields_map.get("customizedCapacityMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customized_capacity_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customizedCapacityMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#customized_load_metric_specification: {
-                        let field_value = match fields_map.get("customized_load_metric_specification") {
+                        let field_value = match fields_map.get("customizedLoadMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customized_load_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customizedLoadMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#customized_scaling_metric_specification: {
-                        let field_value = match fields_map.get("customized_scaling_metric_specification") {
+                        let field_value = match fields_map.get("customizedScalingMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customized_scaling_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customizedScalingMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predefined_load_metric_specification: {
-                        let field_value = match fields_map.get("predefined_load_metric_specification") {
+                        let field_value = match fields_map.get("predefinedLoadMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predefined_load_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predefinedLoadMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predefined_metric_pair_specification: {
-                        let field_value = match fields_map.get("predefined_metric_pair_specification") {
+                        let field_value = match fields_map.get("predefinedMetricPairSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predefined_metric_pair_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predefinedMetricPairSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predefined_scaling_metric_specification: {
-                        let field_value = match fields_map.get("predefined_scaling_metric_specification") {
+                        let field_value = match fields_map.get("predefinedScalingMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predefined_scaling_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predefinedScalingMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_value: {
-                        let field_value = match fields_map.get("target_value") {
+                        let field_value = match fields_map.get("targetValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

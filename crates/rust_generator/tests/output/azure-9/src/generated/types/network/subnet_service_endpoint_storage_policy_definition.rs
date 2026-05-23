@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "service_resources",
+                    "serviceResources",
                     &self.r#service_resources,
                 ),
             ];
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_resources: {
-                        let field_value = match fields_map.get("service_resources") {
+                        let field_value = match fields_map.get("serviceResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

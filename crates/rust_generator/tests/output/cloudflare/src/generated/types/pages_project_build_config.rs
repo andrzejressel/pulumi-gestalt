@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "build_caching",
+                    "buildCaching",
                     &self.r#build_caching,
                 ),
                 to_pulumi_object_field(
-                    "build_command",
+                    "buildCommand",
                     &self.r#build_command,
                 ),
                 to_pulumi_object_field(
-                    "destination_dir",
+                    "destinationDir",
                     &self.r#destination_dir,
                 ),
                 to_pulumi_object_field(
-                    "root_dir",
+                    "rootDir",
                     &self.r#root_dir,
                 ),
                 to_pulumi_object_field(
-                    "web_analytics_tag",
+                    "webAnalyticsTag",
                     &self.r#web_analytics_tag,
                 ),
                 to_pulumi_object_field(
-                    "web_analytics_token",
+                    "webAnalyticsToken",
                     &self.r#web_analytics_token,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#build_caching: {
-                        let field_value = match fields_map.get("build_caching") {
+                        let field_value = match fields_map.get("buildCaching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'build_caching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'buildCaching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#build_command: {
-                        let field_value = match fields_map.get("build_command") {
+                        let field_value = match fields_map.get("buildCommand") {
                             Some(value) => value,
-                            None => bail!("Missing field 'build_command' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'buildCommand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_dir: {
-                        let field_value = match fields_map.get("destination_dir") {
+                        let field_value = match fields_map.get("destinationDir") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_dir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationDir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_dir: {
-                        let field_value = match fields_map.get("root_dir") {
+                        let field_value = match fields_map.get("rootDir") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_dir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootDir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#web_analytics_tag: {
-                        let field_value = match fields_map.get("web_analytics_tag") {
+                        let field_value = match fields_map.get("webAnalyticsTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'web_analytics_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webAnalyticsTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#web_analytics_token: {
-                        let field_value = match fields_map.get("web_analytics_token") {
+                        let field_value = match fields_map.get("webAnalyticsToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'web_analytics_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webAnalyticsToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

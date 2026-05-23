@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fie
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_type_profiles",
+                    "contentTypeProfiles",
                     &self.r#content_type_profiles,
                 ),
                 to_pulumi_object_field(
-                    "forward_when_content_type_is_unknown",
+                    "forwardWhenContentTypeIsUnknown",
                     &self.r#forward_when_content_type_is_unknown,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#content_type_profiles: {
-                        let field_value = match fields_map.get("content_type_profiles") {
+                        let field_value = match fields_map.get("contentTypeProfiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_type_profiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentTypeProfiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forward_when_content_type_is_unknown: {
-                        let field_value = match fields_map.get("forward_when_content_type_is_unknown") {
+                        let field_value = match fields_map.get("forwardWhenContentTypeIsUnknown") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forward_when_content_type_is_unknown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardWhenContentTypeIsUnknown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

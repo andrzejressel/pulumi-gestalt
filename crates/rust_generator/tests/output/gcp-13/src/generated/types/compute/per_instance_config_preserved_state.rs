@@ -42,11 +42,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Per
                     &self.r#disks,
                 ),
                 to_pulumi_object_field(
-                    "external_ips",
+                    "externalIps",
                     &self.r#external_ips,
                 ),
                 to_pulumi_object_field(
-                    "internal_ips",
+                    "internalIps",
                     &self.r#internal_ips,
                 ),
                 to_pulumi_object_field(
@@ -84,16 +84,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_ips: {
-                        let field_value = match fields_map.get("external_ips") {
+                        let field_value = match fields_map.get("externalIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#internal_ips: {
-                        let field_value = match fields_map.get("internal_ips") {
+                        let field_value = match fields_map.get("internalIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'internal_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'internalIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

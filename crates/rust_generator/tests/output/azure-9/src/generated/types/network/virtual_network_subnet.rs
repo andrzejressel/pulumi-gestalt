@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_prefixes",
+                    "addressPrefixes",
                     &self.r#address_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "default_outbound_access_enabled",
+                    "defaultOutboundAccessEnabled",
                     &self.r#default_outbound_access_enabled,
                 ),
                 to_pulumi_object_field(
@@ -91,27 +91,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_network_policies",
+                    "privateEndpointNetworkPolicies",
                     &self.r#private_endpoint_network_policies,
                 ),
                 to_pulumi_object_field(
-                    "private_link_service_network_policies_enabled",
+                    "privateLinkServiceNetworkPoliciesEnabled",
                     &self.r#private_link_service_network_policies_enabled,
                 ),
                 to_pulumi_object_field(
-                    "route_table_id",
+                    "routeTableId",
                     &self.r#route_table_id,
                 ),
                 to_pulumi_object_field(
-                    "security_group",
+                    "securityGroup",
                     &self.r#security_group,
                 ),
                 to_pulumi_object_field(
-                    "service_endpoint_policy_ids",
+                    "serviceEndpointPolicyIds",
                     &self.r#service_endpoint_policy_ids,
                 ),
                 to_pulumi_object_field(
-                    "service_endpoints",
+                    "serviceEndpoints",
                     &self.r#service_endpoints,
                 ),
             ];
@@ -138,16 +138,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#address_prefixes: {
-                        let field_value = match fields_map.get("address_prefixes") {
+                        let field_value = match fields_map.get("addressPrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addressPrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_outbound_access_enabled: {
-                        let field_value = match fields_map.get("default_outbound_access_enabled") {
+                        let field_value = match fields_map.get("defaultOutboundAccessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_outbound_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultOutboundAccessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -173,44 +173,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_endpoint_network_policies: {
-                        let field_value = match fields_map.get("private_endpoint_network_policies") {
+                        let field_value = match fields_map.get("privateEndpointNetworkPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_endpoint_network_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateEndpointNetworkPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_link_service_network_policies_enabled: {
-                        let field_value = match fields_map.get("private_link_service_network_policies_enabled") {
+                        let field_value = match fields_map.get("privateLinkServiceNetworkPoliciesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_link_service_network_policies_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateLinkServiceNetworkPoliciesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_table_id: {
-                        let field_value = match fields_map.get("route_table_id") {
+                        let field_value = match fields_map.get("routeTableId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_table_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeTableId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_group: {
-                        let field_value = match fields_map.get("security_group") {
+                        let field_value = match fields_map.get("securityGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_endpoint_policy_ids: {
-                        let field_value = match fields_map.get("service_endpoint_policy_ids") {
+                        let field_value = match fields_map.get("serviceEndpointPolicyIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_endpoint_policy_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceEndpointPolicyIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_endpoints: {
-                        let field_value = match fields_map.get("service_endpoints") {
+                        let field_value = match fields_map.get("serviceEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "level_five",
+                    "levelFive",
                     &self.r#level_five,
                 ),
                 to_pulumi_object_field(
-                    "level_four",
+                    "levelFour",
                     &self.r#level_four,
                 ),
                 to_pulumi_object_field(
-                    "level_one",
+                    "levelOne",
                     &self.r#level_one,
                 ),
                 to_pulumi_object_field(
-                    "level_three",
+                    "levelThree",
                     &self.r#level_three,
                 ),
                 to_pulumi_object_field(
-                    "level_two",
+                    "levelTwo",
                     &self.r#level_two,
                 ),
             ];
@@ -84,37 +84,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#level_five: {
-                        let field_value = match fields_map.get("level_five") {
+                        let field_value = match fields_map.get("levelFive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'level_five' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'levelFive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#level_four: {
-                        let field_value = match fields_map.get("level_four") {
+                        let field_value = match fields_map.get("levelFour") {
                             Some(value) => value,
-                            None => bail!("Missing field 'level_four' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'levelFour' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#level_one: {
-                        let field_value = match fields_map.get("level_one") {
+                        let field_value = match fields_map.get("levelOne") {
                             Some(value) => value,
-                            None => bail!("Missing field 'level_one' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'levelOne' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#level_three: {
-                        let field_value = match fields_map.get("level_three") {
+                        let field_value = match fields_map.get("levelThree") {
                             Some(value) => value,
-                            None => bail!("Missing field 'level_three' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'levelThree' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#level_two: {
-                        let field_value = match fields_map.get("level_two") {
+                        let field_value = match fields_map.get("levelTwo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'level_two' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'levelTwo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

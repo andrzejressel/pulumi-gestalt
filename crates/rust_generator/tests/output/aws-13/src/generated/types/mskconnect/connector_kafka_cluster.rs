@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "apache_kafka_cluster",
+                    "apacheKafkaCluster",
                     &self.r#apache_kafka_cluster,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#apache_kafka_cluster: {
-                        let field_value = match fields_map.get("apache_kafka_cluster") {
+                        let field_value = match fields_map.get("apacheKafkaCluster") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apache_kafka_cluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apacheKafkaCluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

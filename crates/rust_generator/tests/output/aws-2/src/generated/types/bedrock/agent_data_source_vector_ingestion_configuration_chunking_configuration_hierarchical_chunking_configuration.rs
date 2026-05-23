@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "level_configurations",
+                    "levelConfigurations",
                     &self.r#level_configurations,
                 ),
                 to_pulumi_object_field(
-                    "overlap_tokens",
+                    "overlapTokens",
                     &self.r#overlap_tokens,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#level_configurations: {
-                        let field_value = match fields_map.get("level_configurations") {
+                        let field_value = match fields_map.get("levelConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'level_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'levelConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#overlap_tokens: {
-                        let field_value = match fields_map.get("overlap_tokens") {
+                        let field_value = match fields_map.get("overlapTokens") {
                             Some(value) => value,
-                            None => bail!("Missing field 'overlap_tokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'overlapTokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

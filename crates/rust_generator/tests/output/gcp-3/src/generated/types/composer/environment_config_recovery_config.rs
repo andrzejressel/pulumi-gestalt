@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "scheduled_snapshots_config",
+                    "scheduledSnapshotsConfig",
                     &self.r#scheduled_snapshots_config,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#scheduled_snapshots_config: {
-                        let field_value = match fields_map.get("scheduled_snapshots_config") {
+                        let field_value = match fields_map.get("scheduledSnapshotsConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scheduled_snapshots_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduledSnapshotsConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

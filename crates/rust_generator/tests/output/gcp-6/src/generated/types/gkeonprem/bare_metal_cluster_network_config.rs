@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_networking",
+                    "advancedNetworking",
                     &self.r#advanced_networking,
                 ),
                 to_pulumi_object_field(
-                    "island_mode_cidr",
+                    "islandModeCidr",
                     &self.r#island_mode_cidr,
                 ),
                 to_pulumi_object_field(
-                    "multiple_network_interfaces_config",
+                    "multipleNetworkInterfacesConfig",
                     &self.r#multiple_network_interfaces_config,
                 ),
                 to_pulumi_object_field(
-                    "sr_iov_config",
+                    "srIovConfig",
                     &self.r#sr_iov_config,
                 ),
             ];
@@ -80,30 +80,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#advanced_networking: {
-                        let field_value = match fields_map.get("advanced_networking") {
+                        let field_value = match fields_map.get("advancedNetworking") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_networking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedNetworking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#island_mode_cidr: {
-                        let field_value = match fields_map.get("island_mode_cidr") {
+                        let field_value = match fields_map.get("islandModeCidr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'island_mode_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'islandModeCidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multiple_network_interfaces_config: {
-                        let field_value = match fields_map.get("multiple_network_interfaces_config") {
+                        let field_value = match fields_map.get("multipleNetworkInterfacesConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multiple_network_interfaces_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multipleNetworkInterfacesConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sr_iov_config: {
-                        let field_value = match fields_map.get("sr_iov_config") {
+                        let field_value = match fields_map.get("srIovConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sr_iov_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'srIovConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

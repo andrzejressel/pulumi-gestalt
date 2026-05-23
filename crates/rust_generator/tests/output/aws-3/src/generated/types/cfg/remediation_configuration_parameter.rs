@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "resource_value",
+                    "resourceValue",
                     &self.r#resource_value,
                 ),
                 to_pulumi_object_field(
-                    "static_value",
+                    "staticValue",
                     &self.r#static_value,
                 ),
                 to_pulumi_object_field(
-                    "static_values",
+                    "staticValues",
                     &self.r#static_values,
                 ),
             ];
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_value: {
-                        let field_value = match fields_map.get("resource_value") {
+                        let field_value = match fields_map.get("resourceValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_value: {
-                        let field_value = match fields_map.get("static_value") {
+                        let field_value = match fields_map.get("staticValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_values: {
-                        let field_value = match fields_map.get("static_values") {
+                        let field_value = match fields_map.get("staticValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

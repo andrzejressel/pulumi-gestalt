@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "launch_template_id",
+                    "launchTemplateId",
                     &self.r#launch_template_id,
                 ),
                 to_pulumi_object_field(
-                    "launch_template_name",
+                    "launchTemplateName",
                     &self.r#launch_template_name,
                 ),
                 to_pulumi_object_field(
-                    "launch_template_version",
+                    "launchTemplateVersion",
                     &self.r#launch_template_version,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#launch_template_id: {
-                        let field_value = match fields_map.get("launch_template_id") {
+                        let field_value = match fields_map.get("launchTemplateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_template_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchTemplateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_template_name: {
-                        let field_value = match fields_map.get("launch_template_name") {
+                        let field_value = match fields_map.get("launchTemplateName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_template_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchTemplateName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_template_version: {
-                        let field_value = match fields_map.get("launch_template_version") {
+                        let field_value = match fields_map.get("launchTemplateVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_template_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchTemplateVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

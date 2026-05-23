@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_mechanism",
+                    "authMechanism",
                     &self.r#auth_mechanism,
                 ),
                 to_pulumi_object_field(
-                    "auth_source",
+                    "authSource",
                     &self.r#auth_source,
                 ),
                 to_pulumi_object_field(
-                    "auth_type",
+                    "authType",
                     &self.r#auth_type,
                 ),
                 to_pulumi_object_field(
-                    "docs_to_investigate",
+                    "docsToInvestigate",
                     &self.r#docs_to_investigate,
                 ),
                 to_pulumi_object_field(
-                    "extract_doc_id",
+                    "extractDocId",
                     &self.r#extract_doc_id,
                 ),
                 to_pulumi_object_field(
-                    "nesting_level",
+                    "nestingLevel",
                     &self.r#nesting_level,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#auth_mechanism: {
-                        let field_value = match fields_map.get("auth_mechanism") {
+                        let field_value = match fields_map.get("authMechanism") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_mechanism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authMechanism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_source: {
-                        let field_value = match fields_map.get("auth_source") {
+                        let field_value = match fields_map.get("authSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_type: {
-                        let field_value = match fields_map.get("auth_type") {
+                        let field_value = match fields_map.get("authType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#docs_to_investigate: {
-                        let field_value = match fields_map.get("docs_to_investigate") {
+                        let field_value = match fields_map.get("docsToInvestigate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docs_to_investigate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'docsToInvestigate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extract_doc_id: {
-                        let field_value = match fields_map.get("extract_doc_id") {
+                        let field_value = match fields_map.get("extractDocId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extract_doc_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extractDocId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nesting_level: {
-                        let field_value = match fields_map.get("nesting_level") {
+                        let field_value = match fields_map.get("nestingLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nesting_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nestingLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

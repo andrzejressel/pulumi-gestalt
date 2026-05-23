@@ -48,19 +48,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fhir_store_destination",
+                    "fhirStoreDestination",
                     &self.r#fhir_store_destination,
                 ),
                 to_pulumi_object_field(
-                    "fhir_streaming_source",
+                    "fhirStreamingSource",
                     &self.r#fhir_streaming_source,
                 ),
                 to_pulumi_object_field(
-                    "mapping_config",
+                    "mappingConfig",
                     &self.r#mapping_config,
                 ),
                 to_pulumi_object_field(
-                    "reconciliation_destination",
+                    "reconciliationDestination",
                     &self.r#reconciliation_destination,
                 ),
             ];
@@ -87,30 +87,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#fhir_store_destination: {
-                        let field_value = match fields_map.get("fhir_store_destination") {
+                        let field_value = match fields_map.get("fhirStoreDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fhir_store_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fhirStoreDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fhir_streaming_source: {
-                        let field_value = match fields_map.get("fhir_streaming_source") {
+                        let field_value = match fields_map.get("fhirStreamingSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fhir_streaming_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fhirStreamingSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mapping_config: {
-                        let field_value = match fields_map.get("mapping_config") {
+                        let field_value = match fields_map.get("mappingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mapping_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mappingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reconciliation_destination: {
-                        let field_value = match fields_map.get("reconciliation_destination") {
+                        let field_value = match fields_map.get("reconciliationDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reconciliation_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reconciliationDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "download_speed",
+                    "downloadSpeed",
                     &self.r#download_speed,
                 ),
                 to_pulumi_object_field(
-                    "upload_speed",
+                    "uploadSpeed",
                     &self.r#upload_speed,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#download_speed: {
-                        let field_value = match fields_map.get("download_speed") {
+                        let field_value = match fields_map.get("downloadSpeed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'download_speed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'downloadSpeed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upload_speed: {
-                        let field_value = match fields_map.get("upload_speed") {
+                        let field_value = match fields_map.get("uploadSpeed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upload_speed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'uploadSpeed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

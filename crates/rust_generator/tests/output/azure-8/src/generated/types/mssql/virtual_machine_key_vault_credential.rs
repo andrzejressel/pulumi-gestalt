@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_vault_url",
+                    "keyVaultUrl",
                     &self.r#key_vault_url,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "service_principal_name",
+                    "servicePrincipalName",
                     &self.r#service_principal_name,
                 ),
                 to_pulumi_object_field(
-                    "service_principal_secret",
+                    "servicePrincipalSecret",
                     &self.r#service_principal_secret,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#key_vault_url: {
-                        let field_value = match fields_map.get("key_vault_url") {
+                        let field_value = match fields_map.get("keyVaultUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_vault_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyVaultUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_principal_name: {
-                        let field_value = match fields_map.get("service_principal_name") {
+                        let field_value = match fields_map.get("servicePrincipalName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_principal_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'servicePrincipalName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_principal_secret: {
-                        let field_value = match fields_map.get("service_principal_secret") {
+                        let field_value = match fields_map.get("servicePrincipalSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_principal_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'servicePrincipalSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

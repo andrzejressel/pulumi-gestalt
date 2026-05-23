@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_pause",
+                    "autoPause",
                     &self.r#auto_pause,
                 ),
                 to_pulumi_object_field(
-                    "max_capacity",
+                    "maxCapacity",
                     &self.r#max_capacity,
                 ),
                 to_pulumi_object_field(
-                    "min_capacity",
+                    "minCapacity",
                     &self.r#min_capacity,
                 ),
                 to_pulumi_object_field(
-                    "seconds_before_timeout",
+                    "secondsBeforeTimeout",
                     &self.r#seconds_before_timeout,
                 ),
                 to_pulumi_object_field(
-                    "seconds_until_auto_pause",
+                    "secondsUntilAutoPause",
                     &self.r#seconds_until_auto_pause,
                 ),
                 to_pulumi_object_field(
-                    "timeout_action",
+                    "timeoutAction",
                     &self.r#timeout_action,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#auto_pause: {
-                        let field_value = match fields_map.get("auto_pause") {
+                        let field_value = match fields_map.get("autoPause") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_pause' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoPause' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_capacity: {
-                        let field_value = match fields_map.get("max_capacity") {
+                        let field_value = match fields_map.get("maxCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_capacity: {
-                        let field_value = match fields_map.get("min_capacity") {
+                        let field_value = match fields_map.get("minCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#seconds_before_timeout: {
-                        let field_value = match fields_map.get("seconds_before_timeout") {
+                        let field_value = match fields_map.get("secondsBeforeTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'seconds_before_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondsBeforeTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#seconds_until_auto_pause: {
-                        let field_value = match fields_map.get("seconds_until_auto_pause") {
+                        let field_value = match fields_map.get("secondsUntilAutoPause") {
                             Some(value) => value,
-                            None => bail!("Missing field 'seconds_until_auto_pause' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondsUntilAutoPause' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_action: {
-                        let field_value = match fields_map.get("timeout_action") {
+                        let field_value = match fields_map.get("timeoutAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

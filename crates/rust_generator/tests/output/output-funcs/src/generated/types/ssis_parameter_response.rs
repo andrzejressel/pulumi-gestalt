@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_type",
+                    "dataType",
                     &self.r#data_type,
                 ),
                 to_pulumi_object_field(
-                    "default_value",
+                    "defaultValue",
                     &self.r#default_value,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "design_default_value",
+                    "designDefaultValue",
                     &self.r#design_default_value,
                 ),
                 to_pulumi_object_field(
@@ -99,15 +99,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
                     &self.r#sensitive,
                 ),
                 to_pulumi_object_field(
-                    "sensitive_default_value",
+                    "sensitiveDefaultValue",
                     &self.r#sensitive_default_value,
                 ),
                 to_pulumi_object_field(
-                    "value_set",
+                    "valueSet",
                     &self.r#value_set,
                 ),
                 to_pulumi_object_field(
-                    "value_type",
+                    "valueType",
                     &self.r#value_type,
                 ),
                 to_pulumi_object_field(
@@ -138,16 +138,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#data_type: {
-                        let field_value = match fields_map.get("data_type") {
+                        let field_value = match fields_map.get("dataType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_value: {
-                        let field_value = match fields_map.get("default_value") {
+                        let field_value = match fields_map.get("defaultValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -159,9 +159,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#design_default_value: {
-                        let field_value = match fields_map.get("design_default_value") {
+                        let field_value = match fields_map.get("designDefaultValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'design_default_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'designDefaultValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -194,23 +194,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sensitive_default_value: {
-                        let field_value = match fields_map.get("sensitive_default_value") {
+                        let field_value = match fields_map.get("sensitiveDefaultValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sensitive_default_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sensitiveDefaultValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_set: {
-                        let field_value = match fields_map.get("value_set") {
+                        let field_value = match fields_map.get("valueSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_type: {
-                        let field_value = match fields_map.get("value_type") {
+                        let field_value = match fields_map.get("valueType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

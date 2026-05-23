@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#forbidden,
                 ),
                 to_pulumi_object_field(
-                    "identity_denied",
+                    "identityDenied",
                     &self.r#identity_denied,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_denied: {
-                        let field_value = match fields_map.get("identity_denied") {
+                        let field_value = match fields_map.get("identityDenied") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_denied' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityDenied' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

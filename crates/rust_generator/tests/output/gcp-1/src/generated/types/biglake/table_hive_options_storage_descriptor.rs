@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "input_format",
+                    "inputFormat",
                     &self.r#input_format,
                 ),
                 to_pulumi_object_field(
-                    "location_uri",
+                    "locationUri",
                     &self.r#location_uri,
                 ),
                 to_pulumi_object_field(
-                    "output_format",
+                    "outputFormat",
                     &self.r#output_format,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#input_format: {
-                        let field_value = match fields_map.get("input_format") {
+                        let field_value = match fields_map.get("inputFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#location_uri: {
-                        let field_value = match fields_map.get("location_uri") {
+                        let field_value = match fields_map.get("locationUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'location_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'locationUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_format: {
-                        let field_value = match fields_map.get("output_format") {
+                        let field_value = match fields_map.get("outputFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

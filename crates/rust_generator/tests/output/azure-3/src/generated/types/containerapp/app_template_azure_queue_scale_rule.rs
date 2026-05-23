@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "queue_length",
+                    "queueLength",
                     &self.r#queue_length,
                 ),
                 to_pulumi_object_field(
-                    "queue_name",
+                    "queueName",
                     &self.r#queue_name,
                 ),
             ];
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#queue_length: {
-                        let field_value = match fields_map.get("queue_length") {
+                        let field_value = match fields_map.get("queueLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'queue_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queueLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#queue_name: {
-                        let field_value = match fields_map.get("queue_name") {
+                        let field_value = match fields_map.get("queueName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'queue_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queueName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

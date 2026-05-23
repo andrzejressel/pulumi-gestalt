@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "days_of_weeks",
+                    "daysOfWeeks",
                     &self.r#days_of_weeks,
                 ),
                 to_pulumi_object_field(
@@ -99,67 +99,67 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "off_peak_load_balancing_algorithm",
+                    "offPeakLoadBalancingAlgorithm",
                     &self.r#off_peak_load_balancing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "off_peak_start_time",
+                    "offPeakStartTime",
                     &self.r#off_peak_start_time,
                 ),
                 to_pulumi_object_field(
-                    "peak_load_balancing_algorithm",
+                    "peakLoadBalancingAlgorithm",
                     &self.r#peak_load_balancing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "peak_start_time",
+                    "peakStartTime",
                     &self.r#peak_start_time,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_capacity_threshold_percent",
+                    "rampDownCapacityThresholdPercent",
                     &self.r#ramp_down_capacity_threshold_percent,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_force_logoff_users",
+                    "rampDownForceLogoffUsers",
                     &self.r#ramp_down_force_logoff_users,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_load_balancing_algorithm",
+                    "rampDownLoadBalancingAlgorithm",
                     &self.r#ramp_down_load_balancing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_minimum_hosts_percent",
+                    "rampDownMinimumHostsPercent",
                     &self.r#ramp_down_minimum_hosts_percent,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_notification_message",
+                    "rampDownNotificationMessage",
                     &self.r#ramp_down_notification_message,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_start_time",
+                    "rampDownStartTime",
                     &self.r#ramp_down_start_time,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_stop_hosts_when",
+                    "rampDownStopHostsWhen",
                     &self.r#ramp_down_stop_hosts_when,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_wait_time_minutes",
+                    "rampDownWaitTimeMinutes",
                     &self.r#ramp_down_wait_time_minutes,
                 ),
                 to_pulumi_object_field(
-                    "ramp_up_capacity_threshold_percent",
+                    "rampUpCapacityThresholdPercent",
                     &self.r#ramp_up_capacity_threshold_percent,
                 ),
                 to_pulumi_object_field(
-                    "ramp_up_load_balancing_algorithm",
+                    "rampUpLoadBalancingAlgorithm",
                     &self.r#ramp_up_load_balancing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "ramp_up_minimum_hosts_percent",
+                    "rampUpMinimumHostsPercent",
                     &self.r#ramp_up_minimum_hosts_percent,
                 ),
                 to_pulumi_object_field(
-                    "ramp_up_start_time",
+                    "rampUpStartTime",
                     &self.r#ramp_up_start_time,
                 ),
             ];
@@ -186,9 +186,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#days_of_weeks: {
-                        let field_value = match fields_map.get("days_of_weeks") {
+                        let field_value = match fields_map.get("daysOfWeeks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_weeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfWeeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -200,114 +200,114 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#off_peak_load_balancing_algorithm: {
-                        let field_value = match fields_map.get("off_peak_load_balancing_algorithm") {
+                        let field_value = match fields_map.get("offPeakLoadBalancingAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'off_peak_load_balancing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'offPeakLoadBalancingAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#off_peak_start_time: {
-                        let field_value = match fields_map.get("off_peak_start_time") {
+                        let field_value = match fields_map.get("offPeakStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'off_peak_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'offPeakStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peak_load_balancing_algorithm: {
-                        let field_value = match fields_map.get("peak_load_balancing_algorithm") {
+                        let field_value = match fields_map.get("peakLoadBalancingAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peak_load_balancing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peakLoadBalancingAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peak_start_time: {
-                        let field_value = match fields_map.get("peak_start_time") {
+                        let field_value = match fields_map.get("peakStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peak_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peakStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_down_capacity_threshold_percent: {
-                        let field_value = match fields_map.get("ramp_down_capacity_threshold_percent") {
+                        let field_value = match fields_map.get("rampDownCapacityThresholdPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_down_capacity_threshold_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampDownCapacityThresholdPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_down_force_logoff_users: {
-                        let field_value = match fields_map.get("ramp_down_force_logoff_users") {
+                        let field_value = match fields_map.get("rampDownForceLogoffUsers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_down_force_logoff_users' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampDownForceLogoffUsers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_down_load_balancing_algorithm: {
-                        let field_value = match fields_map.get("ramp_down_load_balancing_algorithm") {
+                        let field_value = match fields_map.get("rampDownLoadBalancingAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_down_load_balancing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampDownLoadBalancingAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_down_minimum_hosts_percent: {
-                        let field_value = match fields_map.get("ramp_down_minimum_hosts_percent") {
+                        let field_value = match fields_map.get("rampDownMinimumHostsPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_down_minimum_hosts_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampDownMinimumHostsPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_down_notification_message: {
-                        let field_value = match fields_map.get("ramp_down_notification_message") {
+                        let field_value = match fields_map.get("rampDownNotificationMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_down_notification_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampDownNotificationMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_down_start_time: {
-                        let field_value = match fields_map.get("ramp_down_start_time") {
+                        let field_value = match fields_map.get("rampDownStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_down_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampDownStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_down_stop_hosts_when: {
-                        let field_value = match fields_map.get("ramp_down_stop_hosts_when") {
+                        let field_value = match fields_map.get("rampDownStopHostsWhen") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_down_stop_hosts_when' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampDownStopHostsWhen' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_down_wait_time_minutes: {
-                        let field_value = match fields_map.get("ramp_down_wait_time_minutes") {
+                        let field_value = match fields_map.get("rampDownWaitTimeMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_down_wait_time_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampDownWaitTimeMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_up_capacity_threshold_percent: {
-                        let field_value = match fields_map.get("ramp_up_capacity_threshold_percent") {
+                        let field_value = match fields_map.get("rampUpCapacityThresholdPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_up_capacity_threshold_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampUpCapacityThresholdPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_up_load_balancing_algorithm: {
-                        let field_value = match fields_map.get("ramp_up_load_balancing_algorithm") {
+                        let field_value = match fields_map.get("rampUpLoadBalancingAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_up_load_balancing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampUpLoadBalancingAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_up_minimum_hosts_percent: {
-                        let field_value = match fields_map.get("ramp_up_minimum_hosts_percent") {
+                        let field_value = match fields_map.get("rampUpMinimumHostsPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_up_minimum_hosts_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampUpMinimumHostsPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ramp_up_start_time: {
-                        let field_value = match fields_map.get("ramp_up_start_time") {
+                        let field_value = match fields_map.get("rampUpStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ramp_up_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rampUpStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

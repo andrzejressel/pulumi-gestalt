@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "include_http_headers",
+                    "includeHttpHeaders",
                     &self.r#include_http_headers,
                 ),
                 to_pulumi_object_field(
-                    "query_string_whitelists",
+                    "queryStringWhitelists",
                     &self.r#query_string_whitelists,
                 ),
             ];
@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#include_http_headers: {
-                        let field_value = match fields_map.get("include_http_headers") {
+                        let field_value = match fields_map.get("includeHttpHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_http_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeHttpHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string_whitelists: {
-                        let field_value = match fields_map.get("query_string_whitelists") {
+                        let field_value = match fields_map.get("queryStringWhitelists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string_whitelists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringWhitelists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

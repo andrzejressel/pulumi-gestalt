@@ -38,15 +38,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Obj
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_blobs_created_after",
+                    "copyBlobsCreatedAfter",
                     &self.r#copy_blobs_created_after,
                 ),
                 to_pulumi_object_field(
-                    "destination_container_name",
+                    "destinationContainerName",
                     &self.r#destination_container_name,
                 ),
                 to_pulumi_object_field(
-                    "filter_out_blobs_with_prefixes",
+                    "filterOutBlobsWithPrefixes",
                     &self.r#filter_out_blobs_with_prefixes,
                 ),
                 to_pulumi_object_field(
@@ -54,7 +54,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Obj
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "source_container_name",
+                    "sourceContainerName",
                     &self.r#source_container_name,
                 ),
             ];
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#copy_blobs_created_after: {
-                        let field_value = match fields_map.get("copy_blobs_created_after") {
+                        let field_value = match fields_map.get("copyBlobsCreatedAfter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copy_blobs_created_after' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copyBlobsCreatedAfter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_container_name: {
-                        let field_value = match fields_map.get("destination_container_name") {
+                        let field_value = match fields_map.get("destinationContainerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationContainerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_out_blobs_with_prefixes: {
-                        let field_value = match fields_map.get("filter_out_blobs_with_prefixes") {
+                        let field_value = match fields_map.get("filterOutBlobsWithPrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filter_out_blobs_with_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterOutBlobsWithPrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -109,9 +109,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_container_name: {
-                        let field_value = match fields_map.get("source_container_name") {
+                        let field_value = match fields_map.get("sourceContainerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceContainerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

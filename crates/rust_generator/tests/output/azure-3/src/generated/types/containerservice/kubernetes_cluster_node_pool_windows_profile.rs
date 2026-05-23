@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "outbound_nat_enabled",
+                    "outboundNatEnabled",
                     &self.r#outbound_nat_enabled,
                 ),
             ];
@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#outbound_nat_enabled: {
-                        let field_value = match fields_map.get("outbound_nat_enabled") {
+                        let field_value = match fields_map.get("outboundNatEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_nat_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundNatEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

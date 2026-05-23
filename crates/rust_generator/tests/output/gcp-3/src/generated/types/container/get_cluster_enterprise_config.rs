@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_tier",
+                    "clusterTier",
                     &self.r#cluster_tier,
                 ),
                 to_pulumi_object_field(
-                    "desired_tier",
+                    "desiredTier",
                     &self.r#desired_tier,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#cluster_tier: {
-                        let field_value = match fields_map.get("cluster_tier") {
+                        let field_value = match fields_map.get("clusterTier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterTier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#desired_tier: {
-                        let field_value = match fields_map.get("desired_tier") {
+                        let field_value = match fields_map.get("desiredTier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredTier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

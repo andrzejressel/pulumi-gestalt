@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "target_document_attribute_key",
+                    "targetDocumentAttributeKey",
                     &self.r#target_document_attribute_key,
                 ),
                 to_pulumi_object_field(
-                    "target_document_attribute_value",
+                    "targetDocumentAttributeValue",
                     &self.r#target_document_attribute_value,
                 ),
                 to_pulumi_object_field(
-                    "target_document_attribute_value_deletion",
+                    "targetDocumentAttributeValueDeletion",
                     &self.r#target_document_attribute_value_deletion,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#target_document_attribute_key: {
-                        let field_value = match fields_map.get("target_document_attribute_key") {
+                        let field_value = match fields_map.get("targetDocumentAttributeKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_document_attribute_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetDocumentAttributeKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_document_attribute_value: {
-                        let field_value = match fields_map.get("target_document_attribute_value") {
+                        let field_value = match fields_map.get("targetDocumentAttributeValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_document_attribute_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetDocumentAttributeValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_document_attribute_value_deletion: {
-                        let field_value = match fields_map.get("target_document_attribute_value_deletion") {
+                        let field_value = match fields_map.get("targetDocumentAttributeValueDeletion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_document_attribute_value_deletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetDocumentAttributeValueDeletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

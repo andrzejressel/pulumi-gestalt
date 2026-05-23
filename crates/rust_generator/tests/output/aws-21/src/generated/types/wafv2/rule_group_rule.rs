@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "captcha_config",
+                    "captchaConfig",
                     &self.r#captcha_config,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rule_labels",
+                    "ruleLabels",
                     &self.r#rule_labels,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#statement,
                 ),
                 to_pulumi_object_field(
-                    "visibility_config",
+                    "visibilityConfig",
                     &self.r#visibility_config,
                 ),
             ];
@@ -105,9 +105,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#captcha_config: {
-                        let field_value = match fields_map.get("captcha_config") {
+                        let field_value = match fields_map.get("captchaConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'captcha_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'captchaConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,9 +126,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_labels: {
-                        let field_value = match fields_map.get("rule_labels") {
+                        let field_value = match fields_map.get("ruleLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#visibility_config: {
-                        let field_value = match fields_map.get("visibility_config") {
+                        let field_value = match fields_map.get("visibilityConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'visibility_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'visibilityConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

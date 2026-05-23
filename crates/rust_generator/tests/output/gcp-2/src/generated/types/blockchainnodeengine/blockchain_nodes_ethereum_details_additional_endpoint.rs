@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "beacon_api_endpoint",
+                    "beaconApiEndpoint",
                     &self.r#beacon_api_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "beacon_prometheus_metrics_api_endpoint",
+                    "beaconPrometheusMetricsApiEndpoint",
                     &self.r#beacon_prometheus_metrics_api_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "execution_client_prometheus_metrics_api_endpoint",
+                    "executionClientPrometheusMetricsApiEndpoint",
                     &self.r#execution_client_prometheus_metrics_api_endpoint,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#beacon_api_endpoint: {
-                        let field_value = match fields_map.get("beacon_api_endpoint") {
+                        let field_value = match fields_map.get("beaconApiEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'beacon_api_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'beaconApiEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#beacon_prometheus_metrics_api_endpoint: {
-                        let field_value = match fields_map.get("beacon_prometheus_metrics_api_endpoint") {
+                        let field_value = match fields_map.get("beaconPrometheusMetricsApiEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'beacon_prometheus_metrics_api_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'beaconPrometheusMetricsApiEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_client_prometheus_metrics_api_endpoint: {
-                        let field_value = match fields_map.get("execution_client_prometheus_metrics_api_endpoint") {
+                        let field_value = match fields_map.get("executionClientPrometheusMetricsApiEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_client_prometheus_metrics_api_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionClientPrometheusMetricsApiEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

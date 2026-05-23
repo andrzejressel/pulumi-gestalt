@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_strategy",
+                    "allocationStrategy",
                     &self.r#allocation_strategy,
                 ),
                 to_pulumi_object_field(
-                    "instance_interruption_behavior",
+                    "instanceInterruptionBehavior",
                     &self.r#instance_interruption_behavior,
                 ),
                 to_pulumi_object_field(
-                    "instance_pools_to_use_count",
+                    "instancePoolsToUseCount",
                     &self.r#instance_pools_to_use_count,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_strategies",
+                    "maintenanceStrategies",
                     &self.r#maintenance_strategies,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#allocation_strategy: {
-                        let field_value = match fields_map.get("allocation_strategy") {
+                        let field_value = match fields_map.get("allocationStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allocation_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allocationStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_interruption_behavior: {
-                        let field_value = match fields_map.get("instance_interruption_behavior") {
+                        let field_value = match fields_map.get("instanceInterruptionBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_interruption_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceInterruptionBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_pools_to_use_count: {
-                        let field_value = match fields_map.get("instance_pools_to_use_count") {
+                        let field_value = match fields_map.get("instancePoolsToUseCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_pools_to_use_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instancePoolsToUseCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_strategies: {
-                        let field_value = match fields_map.get("maintenance_strategies") {
+                        let field_value = match fields_map.get("maintenanceStrategies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_strategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceStrategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

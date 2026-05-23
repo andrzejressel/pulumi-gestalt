@@ -79,59 +79,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customized_load_metric_specification",
+                    "customizedLoadMetricSpecification",
                     &self.r#customized_load_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "disable_dynamic_scaling",
+                    "disableDynamicScaling",
                     &self.r#disable_dynamic_scaling,
                 ),
                 to_pulumi_object_field(
-                    "max_capacity",
+                    "maxCapacity",
                     &self.r#max_capacity,
                 ),
                 to_pulumi_object_field(
-                    "min_capacity",
+                    "minCapacity",
                     &self.r#min_capacity,
                 ),
                 to_pulumi_object_field(
-                    "predefined_load_metric_specification",
+                    "predefinedLoadMetricSpecification",
                     &self.r#predefined_load_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "predictive_scaling_max_capacity_behavior",
+                    "predictiveScalingMaxCapacityBehavior",
                     &self.r#predictive_scaling_max_capacity_behavior,
                 ),
                 to_pulumi_object_field(
-                    "predictive_scaling_max_capacity_buffer",
+                    "predictiveScalingMaxCapacityBuffer",
                     &self.r#predictive_scaling_max_capacity_buffer,
                 ),
                 to_pulumi_object_field(
-                    "predictive_scaling_mode",
+                    "predictiveScalingMode",
                     &self.r#predictive_scaling_mode,
                 ),
                 to_pulumi_object_field(
-                    "resource_id",
+                    "resourceId",
                     &self.r#resource_id,
                 ),
                 to_pulumi_object_field(
-                    "scalable_dimension",
+                    "scalableDimension",
                     &self.r#scalable_dimension,
                 ),
                 to_pulumi_object_field(
-                    "scaling_policy_update_behavior",
+                    "scalingPolicyUpdateBehavior",
                     &self.r#scaling_policy_update_behavior,
                 ),
                 to_pulumi_object_field(
-                    "scheduled_action_buffer_time",
+                    "scheduledActionBufferTime",
                     &self.r#scheduled_action_buffer_time,
                 ),
                 to_pulumi_object_field(
-                    "service_namespace",
+                    "serviceNamespace",
                     &self.r#service_namespace,
                 ),
                 to_pulumi_object_field(
-                    "target_tracking_configurations",
+                    "targetTrackingConfigurations",
                     &self.r#target_tracking_configurations,
                 ),
             ];
@@ -158,100 +158,100 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#customized_load_metric_specification: {
-                        let field_value = match fields_map.get("customized_load_metric_specification") {
+                        let field_value = match fields_map.get("customizedLoadMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customized_load_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customizedLoadMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_dynamic_scaling: {
-                        let field_value = match fields_map.get("disable_dynamic_scaling") {
+                        let field_value = match fields_map.get("disableDynamicScaling") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_dynamic_scaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableDynamicScaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_capacity: {
-                        let field_value = match fields_map.get("max_capacity") {
+                        let field_value = match fields_map.get("maxCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_capacity: {
-                        let field_value = match fields_map.get("min_capacity") {
+                        let field_value = match fields_map.get("minCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predefined_load_metric_specification: {
-                        let field_value = match fields_map.get("predefined_load_metric_specification") {
+                        let field_value = match fields_map.get("predefinedLoadMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predefined_load_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predefinedLoadMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predictive_scaling_max_capacity_behavior: {
-                        let field_value = match fields_map.get("predictive_scaling_max_capacity_behavior") {
+                        let field_value = match fields_map.get("predictiveScalingMaxCapacityBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predictive_scaling_max_capacity_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predictiveScalingMaxCapacityBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predictive_scaling_max_capacity_buffer: {
-                        let field_value = match fields_map.get("predictive_scaling_max_capacity_buffer") {
+                        let field_value = match fields_map.get("predictiveScalingMaxCapacityBuffer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predictive_scaling_max_capacity_buffer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predictiveScalingMaxCapacityBuffer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predictive_scaling_mode: {
-                        let field_value = match fields_map.get("predictive_scaling_mode") {
+                        let field_value = match fields_map.get("predictiveScalingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predictive_scaling_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predictiveScalingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_id: {
-                        let field_value = match fields_map.get("resource_id") {
+                        let field_value = match fields_map.get("resourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scalable_dimension: {
-                        let field_value = match fields_map.get("scalable_dimension") {
+                        let field_value = match fields_map.get("scalableDimension") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scalable_dimension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scalableDimension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scaling_policy_update_behavior: {
-                        let field_value = match fields_map.get("scaling_policy_update_behavior") {
+                        let field_value = match fields_map.get("scalingPolicyUpdateBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scaling_policy_update_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scalingPolicyUpdateBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scheduled_action_buffer_time: {
-                        let field_value = match fields_map.get("scheduled_action_buffer_time") {
+                        let field_value = match fields_map.get("scheduledActionBufferTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scheduled_action_buffer_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduledActionBufferTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_namespace: {
-                        let field_value = match fields_map.get("service_namespace") {
+                        let field_value = match fields_map.get("serviceNamespace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceNamespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_tracking_configurations: {
-                        let field_value = match fields_map.get("target_tracking_configurations") {
+                        let field_value = match fields_map.get("targetTrackingConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_tracking_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetTrackingConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

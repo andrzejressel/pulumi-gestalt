@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_transparency_logging_preference",
+                    "certificateTransparencyLoggingPreference",
                     &self.r#certificate_transparency_logging_preference,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#certificate_transparency_logging_preference: {
-                        let field_value = match fields_map.get("certificate_transparency_logging_preference") {
+                        let field_value = match fields_map.get("certificateTransparencyLoggingPreference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_transparency_logging_preference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateTransparencyLoggingPreference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "run_as_user",
+                    "runAsUser",
                     &self.r#run_as_user,
                 ),
                 to_pulumi_object_field(
-                    "working_dir",
+                    "workingDir",
                     &self.r#working_dir,
                 ),
             ];
@@ -119,16 +119,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_as_user: {
-                        let field_value = match fields_map.get("run_as_user") {
+                        let field_value = match fields_map.get("runAsUser") {
                             Some(value) => value,
-                            None => bail!("Missing field 'run_as_user' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runAsUser' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#working_dir: {
-                        let field_value = match fields_map.get("working_dir") {
+                        let field_value = match fields_map.get("workingDir") {
                             Some(value) => value,
-                            None => bail!("Missing field 'working_dir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workingDir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

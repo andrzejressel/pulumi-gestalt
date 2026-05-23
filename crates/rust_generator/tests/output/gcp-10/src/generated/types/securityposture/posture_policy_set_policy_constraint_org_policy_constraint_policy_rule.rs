@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_all",
+                    "allowAll",
                     &self.r#allow_all,
                 ),
                 to_pulumi_object_field(
@@ -52,7 +52,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
                     &self.r#condition,
                 ),
                 to_pulumi_object_field(
-                    "deny_all",
+                    "denyAll",
                     &self.r#deny_all,
                 ),
                 to_pulumi_object_field(
@@ -87,9 +87,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#allow_all: {
-                        let field_value = match fields_map.get("allow_all") {
+                        let field_value = match fields_map.get("allowAll") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_all' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowAll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -101,9 +101,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deny_all: {
-                        let field_value = match fields_map.get("deny_all") {
+                        let field_value = match fields_map.get("denyAll") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deny_all' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'denyAll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_insecure",
+                    "allowInsecure",
                     &self.r#allow_insecure,
                 ),
                 to_pulumi_object_field(
@@ -79,9 +79,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#allow_insecure: {
-                        let field_value = match fields_map.get("allow_insecure") {
+                        let field_value = match fields_map.get("allowInsecure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_insecure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowInsecure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

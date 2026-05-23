@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#count,
                 ),
                 to_pulumi_object_field(
-                    "in_use_count",
+                    "inUseCount",
                     &self.r#in_use_count,
                 ),
                 to_pulumi_object_field(
-                    "instance_properties",
+                    "instanceProperties",
                     &self.r#instance_properties,
                 ),
             ];
@@ -75,16 +75,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#in_use_count: {
-                        let field_value = match fields_map.get("in_use_count") {
+                        let field_value = match fields_map.get("inUseCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'in_use_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inUseCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_properties: {
-                        let field_value = match fields_map.get("instance_properties") {
+                        let field_value = match fields_map.get("instanceProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

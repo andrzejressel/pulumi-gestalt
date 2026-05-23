@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2V
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "can_ip_forward",
+                    "canIpForward",
                     &self.r#can_ip_forward,
                 ),
                 to_pulumi_object_field(
-                    "enable_external_ips",
+                    "enableExternalIps",
                     &self.r#enable_external_ips,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2V
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "queue_count",
+                    "queueCount",
                     &self.r#queue_count,
                 ),
                 to_pulumi_object_field(
@@ -86,16 +86,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#can_ip_forward: {
-                        let field_value = match fields_map.get("can_ip_forward") {
+                        let field_value = match fields_map.get("canIpForward") {
                             Some(value) => value,
-                            None => bail!("Missing field 'can_ip_forward' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'canIpForward' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_external_ips: {
-                        let field_value = match fields_map.get("enable_external_ips") {
+                        let field_value = match fields_map.get("enableExternalIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_external_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableExternalIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -107,9 +107,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#queue_count: {
-                        let field_value = match fields_map.get("queue_count") {
+                        let field_value = match fields_map.get("queueCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'queue_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queueCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -69,15 +69,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_upgrade_minor_version",
+                    "autoUpgradeMinorVersion",
                     &self.r#auto_upgrade_minor_version,
                 ),
                 to_pulumi_object_field(
-                    "automatic_upgrade_enabled",
+                    "automaticUpgradeEnabled",
                     &self.r#automatic_upgrade_enabled,
                 ),
                 to_pulumi_object_field(
-                    "force_update_tag",
+                    "forceUpdateTag",
                     &self.r#force_update_tag,
                 ),
                 to_pulumi_object_field(
@@ -85,15 +85,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "protected_settings",
+                    "protectedSettings",
                     &self.r#protected_settings,
                 ),
                 to_pulumi_object_field(
-                    "protected_settings_from_key_vault",
+                    "protectedSettingsFromKeyVault",
                     &self.r#protected_settings_from_key_vault,
                 ),
                 to_pulumi_object_field(
-                    "provision_after_extensions",
+                    "provisionAfterExtensions",
                     &self.r#provision_after_extensions,
                 ),
                 to_pulumi_object_field(
@@ -105,11 +105,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
                     &self.r#settings,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "type_handler_version",
+                    "typeHandlerVersion",
                     &self.r#type_handler_version,
                 ),
             ];
@@ -136,23 +136,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#auto_upgrade_minor_version: {
-                        let field_value = match fields_map.get("auto_upgrade_minor_version") {
+                        let field_value = match fields_map.get("autoUpgradeMinorVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_upgrade_minor_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoUpgradeMinorVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#automatic_upgrade_enabled: {
-                        let field_value = match fields_map.get("automatic_upgrade_enabled") {
+                        let field_value = match fields_map.get("automaticUpgradeEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automatic_upgrade_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automaticUpgradeEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#force_update_tag: {
-                        let field_value = match fields_map.get("force_update_tag") {
+                        let field_value = match fields_map.get("forceUpdateTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'force_update_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forceUpdateTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -164,23 +164,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protected_settings: {
-                        let field_value = match fields_map.get("protected_settings") {
+                        let field_value = match fields_map.get("protectedSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protected_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protectedSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protected_settings_from_key_vault: {
-                        let field_value = match fields_map.get("protected_settings_from_key_vault") {
+                        let field_value = match fields_map.get("protectedSettingsFromKeyVault") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protected_settings_from_key_vault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protectedSettingsFromKeyVault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provision_after_extensions: {
-                        let field_value = match fields_map.get("provision_after_extensions") {
+                        let field_value = match fields_map.get("provisionAfterExtensions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provision_after_extensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionAfterExtensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -199,16 +199,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_handler_version: {
-                        let field_value = match fields_map.get("type_handler_version") {
+                        let field_value = match fields_map.get("typeHandlerVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_handler_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'typeHandlerVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

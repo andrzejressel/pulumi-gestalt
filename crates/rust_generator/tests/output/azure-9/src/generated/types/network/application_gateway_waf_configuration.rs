@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disabled_rule_groups",
+                    "disabledRuleGroups",
                     &self.r#disabled_rule_groups,
                 ),
                 to_pulumi_object_field(
@@ -67,27 +67,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#exclusions,
                 ),
                 to_pulumi_object_field(
-                    "file_upload_limit_mb",
+                    "fileUploadLimitMb",
                     &self.r#file_upload_limit_mb,
                 ),
                 to_pulumi_object_field(
-                    "firewall_mode",
+                    "firewallMode",
                     &self.r#firewall_mode,
                 ),
                 to_pulumi_object_field(
-                    "max_request_body_size_kb",
+                    "maxRequestBodySizeKb",
                     &self.r#max_request_body_size_kb,
                 ),
                 to_pulumi_object_field(
-                    "request_body_check",
+                    "requestBodyCheck",
                     &self.r#request_body_check,
                 ),
                 to_pulumi_object_field(
-                    "rule_set_type",
+                    "ruleSetType",
                     &self.r#rule_set_type,
                 ),
                 to_pulumi_object_field(
-                    "rule_set_version",
+                    "ruleSetVersion",
                     &self.r#rule_set_version,
                 ),
             ];
@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#disabled_rule_groups: {
-                        let field_value = match fields_map.get("disabled_rule_groups") {
+                        let field_value = match fields_map.get("disabledRuleGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disabled_rule_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disabledRuleGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -135,44 +135,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_upload_limit_mb: {
-                        let field_value = match fields_map.get("file_upload_limit_mb") {
+                        let field_value = match fields_map.get("fileUploadLimitMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_upload_limit_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileUploadLimitMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#firewall_mode: {
-                        let field_value = match fields_map.get("firewall_mode") {
+                        let field_value = match fields_map.get("firewallMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'firewall_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firewallMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_request_body_size_kb: {
-                        let field_value = match fields_map.get("max_request_body_size_kb") {
+                        let field_value = match fields_map.get("maxRequestBodySizeKb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_request_body_size_kb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRequestBodySizeKb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_body_check: {
-                        let field_value = match fields_map.get("request_body_check") {
+                        let field_value = match fields_map.get("requestBodyCheck") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_body_check' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestBodyCheck' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_set_type: {
-                        let field_value = match fields_map.get("rule_set_type") {
+                        let field_value = match fields_map.get("ruleSetType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_set_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleSetType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_set_version: {
-                        let field_value = match fields_map.get("rule_set_version") {
+                        let field_value = match fields_map.get("ruleSetVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_set_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleSetVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

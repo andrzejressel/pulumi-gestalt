@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Par
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "index_name",
+                    "indexName",
                     &self.r#index_name,
                 ),
                 to_pulumi_object_field(
-                    "index_status",
+                    "indexStatus",
                     &self.r#index_status,
                 ),
                 to_pulumi_object_field(
@@ -65,16 +65,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#index_name: {
-                        let field_value = match fields_map.get("index_name") {
+                        let field_value = match fields_map.get("indexName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'index_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'indexName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#index_status: {
-                        let field_value = match fields_map.get("index_status") {
+                        let field_value = match fields_map.get("indexStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'index_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'indexStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

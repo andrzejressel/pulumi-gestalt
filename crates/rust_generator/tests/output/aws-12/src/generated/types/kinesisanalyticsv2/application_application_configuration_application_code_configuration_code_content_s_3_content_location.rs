@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_arn",
+                    "bucketArn",
                     &self.r#bucket_arn,
                 ),
                 to_pulumi_object_field(
-                    "file_key",
+                    "fileKey",
                     &self.r#file_key,
                 ),
                 to_pulumi_object_field(
-                    "object_version",
+                    "objectVersion",
                     &self.r#object_version,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#bucket_arn: {
-                        let field_value = match fields_map.get("bucket_arn") {
+                        let field_value = match fields_map.get("bucketArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_key: {
-                        let field_value = match fields_map.get("file_key") {
+                        let field_value = match fields_map.get("fileKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#object_version: {
-                        let field_value = match fields_map.get("object_version") {
+                        let field_value = match fields_map.get("objectVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'object_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'objectVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

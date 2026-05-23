@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "ip_mask",
+                    "ipMask",
                     &self.r#ip_mask,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_mask: {
-                        let field_value = match fields_map.get("ip_mask") {
+                        let field_value = match fields_map.get("ipMask") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_mask' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipMask' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

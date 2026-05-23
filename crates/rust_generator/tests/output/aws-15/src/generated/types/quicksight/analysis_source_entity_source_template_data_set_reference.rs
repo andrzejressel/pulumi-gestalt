@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_set_arn",
+                    "dataSetArn",
                     &self.r#data_set_arn,
                 ),
                 to_pulumi_object_field(
-                    "data_set_placeholder",
+                    "dataSetPlaceholder",
                     &self.r#data_set_placeholder,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#data_set_arn: {
-                        let field_value = match fields_map.get("data_set_arn") {
+                        let field_value = match fields_map.get("dataSetArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_set_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataSetArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_set_placeholder: {
-                        let field_value = match fields_map.get("data_set_placeholder") {
+                        let field_value = match fields_map.get("dataSetPlaceholder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_set_placeholder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataSetPlaceholder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

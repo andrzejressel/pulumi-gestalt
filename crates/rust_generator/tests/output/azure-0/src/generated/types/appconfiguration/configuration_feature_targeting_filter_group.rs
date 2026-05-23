@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "rollout_percentage",
+                    "rolloutPercentage",
                     &self.r#rollout_percentage,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rollout_percentage: {
-                        let field_value = match fields_map.get("rollout_percentage") {
+                        let field_value = match fields_map.get("rolloutPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rollout_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rolloutPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

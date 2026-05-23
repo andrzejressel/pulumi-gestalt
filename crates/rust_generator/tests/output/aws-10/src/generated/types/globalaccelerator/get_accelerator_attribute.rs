@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "flow_logs_enabled",
+                    "flowLogsEnabled",
                     &self.r#flow_logs_enabled,
                 ),
                 to_pulumi_object_field(
-                    "flow_logs_s_3_bucket",
+                    "flowLogsS3Bucket",
                     &self.r#flow_logs_s_3_bucket,
                 ),
                 to_pulumi_object_field(
-                    "flow_logs_s_3_prefix",
+                    "flowLogsS3Prefix",
                     &self.r#flow_logs_s_3_prefix,
                 ),
             ];
@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#flow_logs_enabled: {
-                        let field_value = match fields_map.get("flow_logs_enabled") {
+                        let field_value = match fields_map.get("flowLogsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'flow_logs_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'flowLogsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#flow_logs_s_3_bucket: {
-                        let field_value = match fields_map.get("flow_logs_s_3_bucket") {
+                        let field_value = match fields_map.get("flowLogsS3Bucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'flow_logs_s_3_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'flowLogsS3Bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#flow_logs_s_3_prefix: {
-                        let field_value = match fields_map.get("flow_logs_s_3_prefix") {
+                        let field_value = match fields_map.get("flowLogsS3Prefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'flow_logs_s_3_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'flowLogsS3Prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -60,15 +60,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_address",
+                    "consumerAddress",
                     &self.r#consumer_address,
                 ),
                 to_pulumi_object_field(
-                    "consumer_forwarding_rule",
+                    "consumerForwardingRule",
                     &self.r#consumer_forwarding_rule,
                 ),
                 to_pulumi_object_field(
-                    "consumer_target_project",
+                    "consumerTargetProject",
                     &self.r#consumer_target_project,
                 ),
                 to_pulumi_object_field(
@@ -76,19 +76,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#error,
                 ),
                 to_pulumi_object_field(
-                    "error_info",
+                    "errorInfo",
                     &self.r#error_info,
                 ),
                 to_pulumi_object_field(
-                    "error_type",
+                    "errorType",
                     &self.r#error_type,
                 ),
                 to_pulumi_object_field(
-                    "gce_operation",
+                    "gceOperation",
                     &self.r#gce_operation,
                 ),
                 to_pulumi_object_field(
-                    "psc_connection_id",
+                    "pscConnectionId",
                     &self.r#psc_connection_id,
                 ),
                 to_pulumi_object_field(
@@ -119,23 +119,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#consumer_address: {
-                        let field_value = match fields_map.get("consumer_address") {
+                        let field_value = match fields_map.get("consumerAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consumer_forwarding_rule: {
-                        let field_value = match fields_map.get("consumer_forwarding_rule") {
+                        let field_value = match fields_map.get("consumerForwardingRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_forwarding_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerForwardingRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consumer_target_project: {
-                        let field_value = match fields_map.get("consumer_target_project") {
+                        let field_value = match fields_map.get("consumerTargetProject") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_target_project' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerTargetProject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -147,30 +147,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#error_info: {
-                        let field_value = match fields_map.get("error_info") {
+                        let field_value = match fields_map.get("errorInfo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorInfo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#error_type: {
-                        let field_value = match fields_map.get("error_type") {
+                        let field_value = match fields_map.get("errorType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gce_operation: {
-                        let field_value = match fields_map.get("gce_operation") {
+                        let field_value = match fields_map.get("gceOperation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gce_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gceOperation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#psc_connection_id: {
-                        let field_value = match fields_map.get("psc_connection_id") {
+                        let field_value = match fields_map.get("pscConnectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'psc_connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pscConnectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

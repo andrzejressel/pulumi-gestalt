@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_traffic_control",
+                    "automaticTrafficControl",
                     &self.r#automatic_traffic_control,
                 ),
                 to_pulumi_object_field(
-                    "canary_revision_tags",
+                    "canaryRevisionTags",
                     &self.r#canary_revision_tags,
                 ),
                 to_pulumi_object_field(
-                    "prior_revision_tags",
+                    "priorRevisionTags",
                     &self.r#prior_revision_tags,
                 ),
                 to_pulumi_object_field(
-                    "stable_revision_tags",
+                    "stableRevisionTags",
                     &self.r#stable_revision_tags,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#automatic_traffic_control: {
-                        let field_value = match fields_map.get("automatic_traffic_control") {
+                        let field_value = match fields_map.get("automaticTrafficControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automatic_traffic_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automaticTrafficControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#canary_revision_tags: {
-                        let field_value = match fields_map.get("canary_revision_tags") {
+                        let field_value = match fields_map.get("canaryRevisionTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'canary_revision_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'canaryRevisionTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prior_revision_tags: {
-                        let field_value = match fields_map.get("prior_revision_tags") {
+                        let field_value = match fields_map.get("priorRevisionTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prior_revision_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'priorRevisionTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stable_revision_tags: {
-                        let field_value = match fields_map.get("stable_revision_tags") {
+                        let field_value = match fields_map.get("stableRevisionTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stable_revision_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stableRevisionTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "abort_incomplete_multipart_upload_days",
+                    "abortIncompleteMultipartUploadDays",
                     &self.r#abort_incomplete_multipart_upload_days,
                 ),
                 to_pulumi_object_field(
@@ -73,11 +73,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "noncurrent_version_expiration",
+                    "noncurrentVersionExpiration",
                     &self.r#noncurrent_version_expiration,
                 ),
                 to_pulumi_object_field(
-                    "noncurrent_version_transitions",
+                    "noncurrentVersionTransitions",
                     &self.r#noncurrent_version_transitions,
                 ),
                 to_pulumi_object_field(
@@ -116,9 +116,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#abort_incomplete_multipart_upload_days: {
-                        let field_value = match fields_map.get("abort_incomplete_multipart_upload_days") {
+                        let field_value = match fields_map.get("abortIncompleteMultipartUploadDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'abort_incomplete_multipart_upload_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'abortIncompleteMultipartUploadDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -144,16 +144,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#noncurrent_version_expiration: {
-                        let field_value = match fields_map.get("noncurrent_version_expiration") {
+                        let field_value = match fields_map.get("noncurrentVersionExpiration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'noncurrent_version_expiration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noncurrentVersionExpiration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#noncurrent_version_transitions: {
-                        let field_value = match fields_map.get("noncurrent_version_transitions") {
+                        let field_value = match fields_map.get("noncurrentVersionTransitions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'noncurrent_version_transitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noncurrentVersionTransitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

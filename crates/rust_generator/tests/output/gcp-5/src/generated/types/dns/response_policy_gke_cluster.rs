@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gke_cluster_name",
+                    "gkeClusterName",
                     &self.r#gke_cluster_name,
                 ),
             ];
@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#gke_cluster_name: {
-                        let field_value = match fields_map.get("gke_cluster_name") {
+                        let field_value = match fields_map.get("gkeClusterName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gke_cluster_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gkeClusterName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

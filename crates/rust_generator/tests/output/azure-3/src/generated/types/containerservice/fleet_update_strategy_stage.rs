@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "after_stage_wait_in_seconds",
+                    "afterStageWaitInSeconds",
                     &self.r#after_stage_wait_in_seconds,
                 ),
                 to_pulumi_object_field(
@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#after_stage_wait_in_seconds: {
-                        let field_value = match fields_map.get("after_stage_wait_in_seconds") {
+                        let field_value = match fields_map.get("afterStageWaitInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'after_stage_wait_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'afterStageWaitInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -175,19 +175,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_threats",
+                    "activeThreats",
                     &self.r#active_threats,
                 ),
                 to_pulumi_object_field(
-                    "certificate_id",
+                    "certificateId",
                     &self.r#certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "check_disks",
+                    "checkDisks",
                     &self.r#check_disks,
                 ),
                 to_pulumi_object_field(
-                    "check_private_key",
+                    "checkPrivateKey",
                     &self.r#check_private_key,
                 ),
                 to_pulumi_object_field(
@@ -195,15 +195,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#cn,
                 ),
                 to_pulumi_object_field(
-                    "compliance_status",
+                    "complianceStatus",
                     &self.r#compliance_status,
                 ),
                 to_pulumi_object_field(
-                    "connection_id",
+                    "connectionId",
                     &self.r#connection_id,
                 ),
                 to_pulumi_object_field(
-                    "count_operator",
+                    "countOperator",
                     &self.r#count_operator,
                 ),
                 to_pulumi_object_field(
@@ -211,7 +211,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#domain,
                 ),
                 to_pulumi_object_field(
-                    "eid_last_seen",
+                    "eidLastSeen",
                     &self.r#eid_last_seen,
                 ),
                 to_pulumi_object_field(
@@ -223,7 +223,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#exists,
                 ),
                 to_pulumi_object_field(
-                    "extended_key_usages",
+                    "extendedKeyUsages",
                     &self.r#extended_key_usages,
                 ),
                 to_pulumi_object_field(
@@ -235,15 +235,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#infected,
                 ),
                 to_pulumi_object_field(
-                    "is_active",
+                    "isActive",
                     &self.r#is_active,
                 ),
                 to_pulumi_object_field(
-                    "issue_count",
+                    "issueCount",
                     &self.r#issue_count,
                 ),
                 to_pulumi_object_field(
-                    "last_seen",
+                    "lastSeen",
                     &self.r#last_seen,
                 ),
                 to_pulumi_object_field(
@@ -251,11 +251,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#locations,
                 ),
                 to_pulumi_object_field(
-                    "network_status",
+                    "networkStatus",
                     &self.r#network_status,
                 ),
                 to_pulumi_object_field(
-                    "operational_state",
+                    "operationalState",
                     &self.r#operational_state,
                 ),
                 to_pulumi_object_field(
@@ -267,15 +267,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#os,
                 ),
                 to_pulumi_object_field(
-                    "os_distro_name",
+                    "osDistroName",
                     &self.r#os_distro_name,
                 ),
                 to_pulumi_object_field(
-                    "os_distro_revision",
+                    "osDistroRevision",
                     &self.r#os_distro_revision,
                 ),
                 to_pulumi_object_field(
-                    "os_version_extra",
+                    "osVersionExtra",
                     &self.r#os_version_extra,
                 ),
                 to_pulumi_object_field(
@@ -287,11 +287,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "require_all",
+                    "requireAll",
                     &self.r#require_all,
                 ),
                 to_pulumi_object_field(
-                    "risk_level",
+                    "riskLevel",
                     &self.r#risk_level,
                 ),
                 to_pulumi_object_field(
@@ -303,11 +303,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#score,
                 ),
                 to_pulumi_object_field(
-                    "sensor_config",
+                    "sensorConfig",
                     &self.r#sensor_config,
                 ),
                 to_pulumi_object_field(
-                    "sha_256",
+                    "sha256",
                     &self.r#sha_256,
                 ),
                 to_pulumi_object_field(
@@ -319,7 +319,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#thumbprint,
                 ),
                 to_pulumi_object_field(
-                    "total_score",
+                    "totalScore",
                     &self.r#total_score,
                 ),
                 to_pulumi_object_field(
@@ -327,7 +327,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#version,
                 ),
                 to_pulumi_object_field(
-                    "version_operator",
+                    "versionOperator",
                     &self.r#version_operator,
                 ),
             ];
@@ -354,30 +354,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#active_threats: {
-                        let field_value = match fields_map.get("active_threats") {
+                        let field_value = match fields_map.get("activeThreats") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_threats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeThreats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certificate_id: {
-                        let field_value = match fields_map.get("certificate_id") {
+                        let field_value = match fields_map.get("certificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#check_disks: {
-                        let field_value = match fields_map.get("check_disks") {
+                        let field_value = match fields_map.get("checkDisks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'check_disks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkDisks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#check_private_key: {
-                        let field_value = match fields_map.get("check_private_key") {
+                        let field_value = match fields_map.get("checkPrivateKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'check_private_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkPrivateKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -389,23 +389,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compliance_status: {
-                        let field_value = match fields_map.get("compliance_status") {
+                        let field_value = match fields_map.get("complianceStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compliance_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'complianceStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_id: {
-                        let field_value = match fields_map.get("connection_id") {
+                        let field_value = match fields_map.get("connectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#count_operator: {
-                        let field_value = match fields_map.get("count_operator") {
+                        let field_value = match fields_map.get("countOperator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'count_operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'countOperator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -417,9 +417,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#eid_last_seen: {
-                        let field_value = match fields_map.get("eid_last_seen") {
+                        let field_value = match fields_map.get("eidLastSeen") {
                             Some(value) => value,
-                            None => bail!("Missing field 'eid_last_seen' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eidLastSeen' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -438,9 +438,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extended_key_usages: {
-                        let field_value = match fields_map.get("extended_key_usages") {
+                        let field_value = match fields_map.get("extendedKeyUsages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extended_key_usages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extendedKeyUsages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -459,23 +459,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_active: {
-                        let field_value = match fields_map.get("is_active") {
+                        let field_value = match fields_map.get("isActive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_active' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isActive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#issue_count: {
-                        let field_value = match fields_map.get("issue_count") {
+                        let field_value = match fields_map.get("issueCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'issue_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'issueCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_seen: {
-                        let field_value = match fields_map.get("last_seen") {
+                        let field_value = match fields_map.get("lastSeen") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_seen' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastSeen' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -487,16 +487,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_status: {
-                        let field_value = match fields_map.get("network_status") {
+                        let field_value = match fields_map.get("networkStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operational_state: {
-                        let field_value = match fields_map.get("operational_state") {
+                        let field_value = match fields_map.get("operationalState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operational_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operationalState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -515,23 +515,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_distro_name: {
-                        let field_value = match fields_map.get("os_distro_name") {
+                        let field_value = match fields_map.get("osDistroName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_distro_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osDistroName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_distro_revision: {
-                        let field_value = match fields_map.get("os_distro_revision") {
+                        let field_value = match fields_map.get("osDistroRevision") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_distro_revision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osDistroRevision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_version_extra: {
-                        let field_value = match fields_map.get("os_version_extra") {
+                        let field_value = match fields_map.get("osVersionExtra") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_version_extra' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osVersionExtra' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -550,16 +550,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_all: {
-                        let field_value = match fields_map.get("require_all") {
+                        let field_value = match fields_map.get("requireAll") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_all' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireAll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#risk_level: {
-                        let field_value = match fields_map.get("risk_level") {
+                        let field_value = match fields_map.get("riskLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'risk_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'riskLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -578,16 +578,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sensor_config: {
-                        let field_value = match fields_map.get("sensor_config") {
+                        let field_value = match fields_map.get("sensorConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sensor_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sensorConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sha_256: {
-                        let field_value = match fields_map.get("sha_256") {
+                        let field_value = match fields_map.get("sha256") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sha_256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sha256' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -606,9 +606,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total_score: {
-                        let field_value = match fields_map.get("total_score") {
+                        let field_value = match fields_map.get("totalScore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_score' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalScore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -620,9 +620,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_operator: {
-                        let field_value = match fields_map.get("version_operator") {
+                        let field_value = match fields_map.get("versionOperator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionOperator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

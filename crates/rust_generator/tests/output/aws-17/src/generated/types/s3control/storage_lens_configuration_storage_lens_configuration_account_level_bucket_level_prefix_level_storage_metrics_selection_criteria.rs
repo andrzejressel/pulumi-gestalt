@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
                     &self.r#delimiter,
                 ),
                 to_pulumi_object_field(
-                    "max_depth",
+                    "maxDepth",
                     &self.r#max_depth,
                 ),
                 to_pulumi_object_field(
-                    "min_storage_bytes_percentage",
+                    "minStorageBytesPercentage",
                     &self.r#min_storage_bytes_percentage,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_depth: {
-                        let field_value = match fields_map.get("max_depth") {
+                        let field_value = match fields_map.get("maxDepth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxDepth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_storage_bytes_percentage: {
-                        let field_value = match fields_map.get("min_storage_bytes_percentage") {
+                        let field_value = match fields_map.get("minStorageBytesPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_storage_bytes_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minStorageBytesPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "repo_sources",
+                    "repoSources",
                     &self.r#repo_sources,
                 ),
                 to_pulumi_object_field(
-                    "storage_sources",
+                    "storageSources",
                     &self.r#storage_sources,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#repo_sources: {
-                        let field_value = match fields_map.get("repo_sources") {
+                        let field_value = match fields_map.get("repoSources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repo_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repoSources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_sources: {
-                        let field_value = match fields_map.get("storage_sources") {
+                        let field_value = match fields_map.get("storageSources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageSources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

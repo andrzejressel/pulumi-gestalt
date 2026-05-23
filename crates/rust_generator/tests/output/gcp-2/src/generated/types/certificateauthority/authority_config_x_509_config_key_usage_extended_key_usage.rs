@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_auth",
+                    "clientAuth",
                     &self.r#client_auth,
                 ),
                 to_pulumi_object_field(
-                    "code_signing",
+                    "codeSigning",
                     &self.r#code_signing,
                 ),
                 to_pulumi_object_field(
-                    "email_protection",
+                    "emailProtection",
                     &self.r#email_protection,
                 ),
                 to_pulumi_object_field(
-                    "ocsp_signing",
+                    "ocspSigning",
                     &self.r#ocsp_signing,
                 ),
                 to_pulumi_object_field(
-                    "server_auth",
+                    "serverAuth",
                     &self.r#server_auth,
                 ),
                 to_pulumi_object_field(
-                    "time_stamping",
+                    "timeStamping",
                     &self.r#time_stamping,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#client_auth: {
-                        let field_value = match fields_map.get("client_auth") {
+                        let field_value = match fields_map.get("clientAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#code_signing: {
-                        let field_value = match fields_map.get("code_signing") {
+                        let field_value = match fields_map.get("codeSigning") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_signing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeSigning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_protection: {
-                        let field_value = match fields_map.get("email_protection") {
+                        let field_value = match fields_map.get("emailProtection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_protection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailProtection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ocsp_signing: {
-                        let field_value = match fields_map.get("ocsp_signing") {
+                        let field_value = match fields_map.get("ocspSigning") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ocsp_signing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ocspSigning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_auth: {
-                        let field_value = match fields_map.get("server_auth") {
+                        let field_value = match fields_map.get("serverAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_stamping: {
-                        let field_value = match fields_map.get("time_stamping") {
+                        let field_value = match fields_map.get("timeStamping") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_stamping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeStamping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

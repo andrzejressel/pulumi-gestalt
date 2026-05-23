@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_caller_ip_address_ranges",
+                    "allowedCallerIpAddressRanges",
                     &self.r#allowed_caller_ip_address_ranges,
                 ),
                 to_pulumi_object_field(
-                    "open_authentication_policies",
+                    "openAuthenticationPolicies",
                     &self.r#open_authentication_policies,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#allowed_caller_ip_address_ranges: {
-                        let field_value = match fields_map.get("allowed_caller_ip_address_ranges") {
+                        let field_value = match fields_map.get("allowedCallerIpAddressRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_caller_ip_address_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedCallerIpAddressRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#open_authentication_policies: {
-                        let field_value = match fields_map.get("open_authentication_policies") {
+                        let field_value = match fields_map.get("openAuthenticationPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'open_authentication_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'openAuthenticationPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

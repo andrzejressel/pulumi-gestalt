@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rule_definition",
+                    "ruleDefinition",
                     &self.r#rule_definition,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_definition: {
-                        let field_value = match fields_map.get("rule_definition") {
+                        let field_value = match fields_map.get("ruleDefinition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleDefinition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

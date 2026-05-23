@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#fqdns,
                 ),
                 to_pulumi_object_field(
-                    "gcp_secret_manager_certificate_config",
+                    "gcpSecretManagerCertificateConfig",
                     &self.r#gcp_secret_manager_certificate_config,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcp_secret_manager_certificate_config: {
-                        let field_value = match fields_map.get("gcp_secret_manager_certificate_config") {
+                        let field_value = match fields_map.get("gcpSecretManagerCertificateConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcp_secret_manager_certificate_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcpSecretManagerCertificateConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

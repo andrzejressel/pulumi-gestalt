@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_interface",
+                    "defaultInterface",
                     &self.r#default_interface,
                 ),
                 to_pulumi_object_field(
-                    "partition_count",
+                    "partitionCount",
                     &self.r#partition_count,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#default_interface: {
-                        let field_value = match fields_map.get("default_interface") {
+                        let field_value = match fields_map.get("defaultInterface") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_interface' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultInterface' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#partition_count: {
-                        let field_value = match fields_map.get("partition_count") {
+                        let field_value = match fields_map.get("partitionCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partition_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partitionCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

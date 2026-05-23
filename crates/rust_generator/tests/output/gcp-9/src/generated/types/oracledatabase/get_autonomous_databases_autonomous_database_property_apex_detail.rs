@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "apex_version",
+                    "apexVersion",
                     &self.r#apex_version,
                 ),
                 to_pulumi_object_field(
-                    "ords_version",
+                    "ordsVersion",
                     &self.r#ords_version,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#apex_version: {
-                        let field_value = match fields_map.get("apex_version") {
+                        let field_value = match fields_map.get("apexVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apex_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apexVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ords_version: {
-                        let field_value = match fields_map.get("ords_version") {
+                        let field_value = match fields_map.get("ordsVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ords_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ordsVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

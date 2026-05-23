@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#identity,
                 ),
                 to_pulumi_object_field(
-                    "login_server",
+                    "loginServer",
                     &self.r#login_server,
                 ),
                 to_pulumi_object_field(
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#login_server: {
-                        let field_value = match fields_map.get("login_server") {
+                        let field_value = match fields_map.get("loginServer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'login_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loginServer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

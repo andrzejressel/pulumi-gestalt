@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fixed_iops",
+                    "fixedIops",
                     &self.r#fixed_iops,
                 ),
                 to_pulumi_object_field(
-                    "iops_per_tb",
+                    "iopsPerTb",
                     &self.r#iops_per_tb,
                 ),
             ];
@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#fixed_iops: {
-                        let field_value = match fields_map.get("fixed_iops") {
+                        let field_value = match fields_map.get("fixedIops") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fixed_iops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fixedIops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iops_per_tb: {
-                        let field_value = match fields_map.get("iops_per_tb") {
+                        let field_value = match fields_map.get("iopsPerTb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iops_per_tb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iopsPerTb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

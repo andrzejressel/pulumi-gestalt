@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aggregate_key_type",
+                    "aggregateKeyType",
                     &self.r#aggregate_key_type,
                 ),
                 to_pulumi_object_field(
-                    "custom_keys",
+                    "customKeys",
                     &self.r#custom_keys,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_window_sec",
+                    "evaluationWindowSec",
                     &self.r#evaluation_window_sec,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_ip_config",
+                    "forwardedIpConfig",
                     &self.r#forwarded_ip_config,
                 ),
                 to_pulumi_object_field(
@@ -65,7 +65,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#limit,
                 ),
                 to_pulumi_object_field(
-                    "scope_down_statement",
+                    "scopeDownStatement",
                     &self.r#scope_down_statement,
                 ),
             ];
@@ -92,30 +92,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#aggregate_key_type: {
-                        let field_value = match fields_map.get("aggregate_key_type") {
+                        let field_value = match fields_map.get("aggregateKeyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aggregate_key_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aggregateKeyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_keys: {
-                        let field_value = match fields_map.get("custom_keys") {
+                        let field_value = match fields_map.get("customKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluation_window_sec: {
-                        let field_value = match fields_map.get("evaluation_window_sec") {
+                        let field_value = match fields_map.get("evaluationWindowSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluation_window_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluationWindowSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_ip_config: {
-                        let field_value = match fields_map.get("forwarded_ip_config") {
+                        let field_value = match fields_map.get("forwardedIpConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarded_ip_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardedIpConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -127,9 +127,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scope_down_statement: {
-                        let field_value = match fields_map.get("scope_down_statement") {
+                        let field_value = match fields_map.get("scopeDownStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scope_down_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scopeDownStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lambda_arn",
+                    "lambdaArn",
                     &self.r#lambda_arn,
                 ),
                 to_pulumi_object_field(
-                    "lambda_version",
+                    "lambdaVersion",
                     &self.r#lambda_version,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#lambda_arn: {
-                        let field_value = match fields_map.get("lambda_arn") {
+                        let field_value = match fields_map.get("lambdaArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_version: {
-                        let field_value = match fields_map.get("lambda_version") {
+                        let field_value = match fields_map.get("lambdaVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

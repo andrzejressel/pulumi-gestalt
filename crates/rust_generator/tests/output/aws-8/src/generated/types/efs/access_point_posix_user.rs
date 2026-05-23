@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#gid,
                 ),
                 to_pulumi_object_field(
-                    "secondary_gids",
+                    "secondaryGids",
                     &self.r#secondary_gids,
                 ),
                 to_pulumi_object_field(
@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_gids: {
-                        let field_value = match fields_map.get("secondary_gids") {
+                        let field_value = match fields_map.get("secondaryGids") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_gids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryGids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

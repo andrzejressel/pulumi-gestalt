@@ -54,7 +54,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_auth_secret_id",
+                    "basicAuthSecretId",
                     &self.r#basic_auth_secret_id,
                 ),
                 to_pulumi_object_field(
@@ -62,31 +62,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "encryption_algorithm",
+                    "encryptionAlgorithm",
                     &self.r#encryption_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "local_profile_id",
+                    "localProfileId",
                     &self.r#local_profile_id,
                 ),
                 to_pulumi_object_field(
-                    "mdn_response",
+                    "mdnResponse",
                     &self.r#mdn_response,
                 ),
                 to_pulumi_object_field(
-                    "mdn_signing_algorithm",
+                    "mdnSigningAlgorithm",
                     &self.r#mdn_signing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "message_subject",
+                    "messageSubject",
                     &self.r#message_subject,
                 ),
                 to_pulumi_object_field(
-                    "partner_profile_id",
+                    "partnerProfileId",
                     &self.r#partner_profile_id,
                 ),
                 to_pulumi_object_field(
-                    "singing_algorithm",
+                    "singingAlgorithm",
                     &self.r#singing_algorithm,
                 ),
             ];
@@ -113,9 +113,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#basic_auth_secret_id: {
-                        let field_value = match fields_map.get("basic_auth_secret_id") {
+                        let field_value = match fields_map.get("basicAuthSecretId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'basic_auth_secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'basicAuthSecretId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -127,51 +127,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_algorithm: {
-                        let field_value = match fields_map.get("encryption_algorithm") {
+                        let field_value = match fields_map.get("encryptionAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_profile_id: {
-                        let field_value = match fields_map.get("local_profile_id") {
+                        let field_value = match fields_map.get("localProfileId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_profile_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localProfileId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mdn_response: {
-                        let field_value = match fields_map.get("mdn_response") {
+                        let field_value = match fields_map.get("mdnResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mdn_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mdnResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mdn_signing_algorithm: {
-                        let field_value = match fields_map.get("mdn_signing_algorithm") {
+                        let field_value = match fields_map.get("mdnSigningAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mdn_signing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mdnSigningAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#message_subject: {
-                        let field_value = match fields_map.get("message_subject") {
+                        let field_value = match fields_map.get("messageSubject") {
                             Some(value) => value,
-                            None => bail!("Missing field 'message_subject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messageSubject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#partner_profile_id: {
-                        let field_value = match fields_map.get("partner_profile_id") {
+                        let field_value = match fields_map.get("partnerProfileId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partner_profile_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partnerProfileId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#singing_algorithm: {
-                        let field_value = match fields_map.get("singing_algorithm") {
+                        let field_value = match fields_map.get("singingAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'singing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'singingAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

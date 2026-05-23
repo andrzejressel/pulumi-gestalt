@@ -166,95 +166,95 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_count",
+                    "acceleratorCount",
                     &self.r#accelerator_count,
                 ),
                 to_pulumi_object_field(
-                    "accelerator_manufacturers",
+                    "acceleratorManufacturers",
                     &self.r#accelerator_manufacturers,
                 ),
                 to_pulumi_object_field(
-                    "accelerator_names",
+                    "acceleratorNames",
                     &self.r#accelerator_names,
                 ),
                 to_pulumi_object_field(
-                    "accelerator_total_memory_mib",
+                    "acceleratorTotalMemoryMib",
                     &self.r#accelerator_total_memory_mib,
                 ),
                 to_pulumi_object_field(
-                    "accelerator_types",
+                    "acceleratorTypes",
                     &self.r#accelerator_types,
                 ),
                 to_pulumi_object_field(
-                    "allowed_instance_types",
+                    "allowedInstanceTypes",
                     &self.r#allowed_instance_types,
                 ),
                 to_pulumi_object_field(
-                    "bare_metal",
+                    "bareMetal",
                     &self.r#bare_metal,
                 ),
                 to_pulumi_object_field(
-                    "baseline_ebs_bandwidth_mbps",
+                    "baselineEbsBandwidthMbps",
                     &self.r#baseline_ebs_bandwidth_mbps,
                 ),
                 to_pulumi_object_field(
-                    "burstable_performance",
+                    "burstablePerformance",
                     &self.r#burstable_performance,
                 ),
                 to_pulumi_object_field(
-                    "cpu_manufacturers",
+                    "cpuManufacturers",
                     &self.r#cpu_manufacturers,
                 ),
                 to_pulumi_object_field(
-                    "excluded_instance_types",
+                    "excludedInstanceTypes",
                     &self.r#excluded_instance_types,
                 ),
                 to_pulumi_object_field(
-                    "instance_generations",
+                    "instanceGenerations",
                     &self.r#instance_generations,
                 ),
                 to_pulumi_object_field(
-                    "local_storage",
+                    "localStorage",
                     &self.r#local_storage,
                 ),
                 to_pulumi_object_field(
-                    "local_storage_types",
+                    "localStorageTypes",
                     &self.r#local_storage_types,
                 ),
                 to_pulumi_object_field(
-                    "memory_gib_per_vcpu",
+                    "memoryGibPerVcpu",
                     &self.r#memory_gib_per_vcpu,
                 ),
                 to_pulumi_object_field(
-                    "memory_mib",
+                    "memoryMib",
                     &self.r#memory_mib,
                 ),
                 to_pulumi_object_field(
-                    "network_bandwidth_gbps",
+                    "networkBandwidthGbps",
                     &self.r#network_bandwidth_gbps,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_count",
+                    "networkInterfaceCount",
                     &self.r#network_interface_count,
                 ),
                 to_pulumi_object_field(
-                    "on_demand_max_price_percentage_over_lowest_price",
+                    "onDemandMaxPricePercentageOverLowestPrice",
                     &self.r#on_demand_max_price_percentage_over_lowest_price,
                 ),
                 to_pulumi_object_field(
-                    "require_hibernate_support",
+                    "requireHibernateSupport",
                     &self.r#require_hibernate_support,
                 ),
                 to_pulumi_object_field(
-                    "spot_max_price_percentage_over_lowest_price",
+                    "spotMaxPricePercentageOverLowestPrice",
                     &self.r#spot_max_price_percentage_over_lowest_price,
                 ),
                 to_pulumi_object_field(
-                    "total_local_storage_gb",
+                    "totalLocalStorageGb",
                     &self.r#total_local_storage_gb,
                 ),
                 to_pulumi_object_field(
-                    "vcpu_count",
+                    "vcpuCount",
                     &self.r#vcpu_count,
                 ),
             ];
@@ -281,163 +281,163 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#accelerator_count: {
-                        let field_value = match fields_map.get("accelerator_count") {
+                        let field_value = match fields_map.get("acceleratorCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerator_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratorCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#accelerator_manufacturers: {
-                        let field_value = match fields_map.get("accelerator_manufacturers") {
+                        let field_value = match fields_map.get("acceleratorManufacturers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerator_manufacturers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratorManufacturers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#accelerator_names: {
-                        let field_value = match fields_map.get("accelerator_names") {
+                        let field_value = match fields_map.get("acceleratorNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerator_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratorNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#accelerator_total_memory_mib: {
-                        let field_value = match fields_map.get("accelerator_total_memory_mib") {
+                        let field_value = match fields_map.get("acceleratorTotalMemoryMib") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerator_total_memory_mib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratorTotalMemoryMib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#accelerator_types: {
-                        let field_value = match fields_map.get("accelerator_types") {
+                        let field_value = match fields_map.get("acceleratorTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerator_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratorTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_instance_types: {
-                        let field_value = match fields_map.get("allowed_instance_types") {
+                        let field_value = match fields_map.get("allowedInstanceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_instance_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedInstanceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bare_metal: {
-                        let field_value = match fields_map.get("bare_metal") {
+                        let field_value = match fields_map.get("bareMetal") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bare_metal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bareMetal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#baseline_ebs_bandwidth_mbps: {
-                        let field_value = match fields_map.get("baseline_ebs_bandwidth_mbps") {
+                        let field_value = match fields_map.get("baselineEbsBandwidthMbps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'baseline_ebs_bandwidth_mbps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baselineEbsBandwidthMbps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#burstable_performance: {
-                        let field_value = match fields_map.get("burstable_performance") {
+                        let field_value = match fields_map.get("burstablePerformance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'burstable_performance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'burstablePerformance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_manufacturers: {
-                        let field_value = match fields_map.get("cpu_manufacturers") {
+                        let field_value = match fields_map.get("cpuManufacturers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_manufacturers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuManufacturers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_instance_types: {
-                        let field_value = match fields_map.get("excluded_instance_types") {
+                        let field_value = match fields_map.get("excludedInstanceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_instance_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedInstanceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_generations: {
-                        let field_value = match fields_map.get("instance_generations") {
+                        let field_value = match fields_map.get("instanceGenerations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_generations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceGenerations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_storage: {
-                        let field_value = match fields_map.get("local_storage") {
+                        let field_value = match fields_map.get("localStorage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localStorage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_storage_types: {
-                        let field_value = match fields_map.get("local_storage_types") {
+                        let field_value = match fields_map.get("localStorageTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_storage_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localStorageTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_gib_per_vcpu: {
-                        let field_value = match fields_map.get("memory_gib_per_vcpu") {
+                        let field_value = match fields_map.get("memoryGibPerVcpu") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_gib_per_vcpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryGibPerVcpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_mib: {
-                        let field_value = match fields_map.get("memory_mib") {
+                        let field_value = match fields_map.get("memoryMib") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_mib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryMib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_bandwidth_gbps: {
-                        let field_value = match fields_map.get("network_bandwidth_gbps") {
+                        let field_value = match fields_map.get("networkBandwidthGbps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_bandwidth_gbps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkBandwidthGbps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_interface_count: {
-                        let field_value = match fields_map.get("network_interface_count") {
+                        let field_value = match fields_map.get("networkInterfaceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_interface_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkInterfaceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_demand_max_price_percentage_over_lowest_price: {
-                        let field_value = match fields_map.get("on_demand_max_price_percentage_over_lowest_price") {
+                        let field_value = match fields_map.get("onDemandMaxPricePercentageOverLowestPrice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_demand_max_price_percentage_over_lowest_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onDemandMaxPricePercentageOverLowestPrice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_hibernate_support: {
-                        let field_value = match fields_map.get("require_hibernate_support") {
+                        let field_value = match fields_map.get("requireHibernateSupport") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_hibernate_support' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireHibernateSupport' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spot_max_price_percentage_over_lowest_price: {
-                        let field_value = match fields_map.get("spot_max_price_percentage_over_lowest_price") {
+                        let field_value = match fields_map.get("spotMaxPricePercentageOverLowestPrice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spot_max_price_percentage_over_lowest_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spotMaxPricePercentageOverLowestPrice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total_local_storage_gb: {
-                        let field_value = match fields_map.get("total_local_storage_gb") {
+                        let field_value = match fields_map.get("totalLocalStorageGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_local_storage_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalLocalStorageGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vcpu_count: {
-                        let field_value = match fields_map.get("vcpu_count") {
+                        let field_value = match fields_map.get("vcpuCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vcpu_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vcpuCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

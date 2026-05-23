@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_plan",
+                    "backupPlan",
                     &self.r#backup_plan,
                 ),
                 to_pulumi_object_field(
-                    "backup_plan_association",
+                    "backupPlanAssociation",
                     &self.r#backup_plan_association,
                 ),
                 to_pulumi_object_field(
-                    "backup_plan_description",
+                    "backupPlanDescription",
                     &self.r#backup_plan_description,
                 ),
                 to_pulumi_object_field(
-                    "backup_plan_rules",
+                    "backupPlanRules",
                     &self.r#backup_plan_rules,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#backup_plan: {
-                        let field_value = match fields_map.get("backup_plan") {
+                        let field_value = match fields_map.get("backupPlan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_plan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupPlan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backup_plan_association: {
-                        let field_value = match fields_map.get("backup_plan_association") {
+                        let field_value = match fields_map.get("backupPlanAssociation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_plan_association' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupPlanAssociation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backup_plan_description: {
-                        let field_value = match fields_map.get("backup_plan_description") {
+                        let field_value = match fields_map.get("backupPlanDescription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_plan_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupPlanDescription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backup_plan_rules: {
-                        let field_value = match fields_map.get("backup_plan_rules") {
+                        let field_value = match fields_map.get("backupPlanRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_plan_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupPlanRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

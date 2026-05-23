@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
                     &self.r#importance,
                 ),
                 to_pulumi_object_field(
-                    "rank_order",
+                    "rankOrder",
                     &self.r#rank_order,
                 ),
                 to_pulumi_object_field(
-                    "values_importance_map",
+                    "valuesImportanceMap",
                     &self.r#values_importance_map,
                 ),
             ];
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rank_order: {
-                        let field_value = match fields_map.get("rank_order") {
+                        let field_value = match fields_map.get("rankOrder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rank_order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rankOrder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#values_importance_map: {
-                        let field_value = match fields_map.get("values_importance_map") {
+                        let field_value = match fields_map.get("valuesImportanceMap") {
                             Some(value) => value,
-                            None => bail!("Missing field 'values_importance_map' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valuesImportanceMap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "db_name",
+                    "dbName",
                     &self.r#db_name,
                 ),
                 to_pulumi_object_field(
-                    "flash_cache_limit",
+                    "flashCacheLimit",
                     &self.r#flash_cache_limit,
                 ),
                 to_pulumi_object_field(
@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#db_name: {
-                        let field_value = match fields_map.get("db_name") {
+                        let field_value = match fields_map.get("dbName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#flash_cache_limit: {
-                        let field_value = match fields_map.get("flash_cache_limit") {
+                        let field_value = match fields_map.get("flashCacheLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'flash_cache_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'flashCacheLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

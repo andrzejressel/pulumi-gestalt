@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_range",
+                    "maxRange",
                     &self.r#max_range,
                 ),
                 to_pulumi_object_field(
-                    "min_range",
+                    "minRange",
                     &self.r#min_range,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#max_range: {
-                        let field_value = match fields_map.get("max_range") {
+                        let field_value = match fields_map.get("maxRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_range: {
-                        let field_value = match fields_map.get("min_range") {
+                        let field_value = match fields_map.get("minRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

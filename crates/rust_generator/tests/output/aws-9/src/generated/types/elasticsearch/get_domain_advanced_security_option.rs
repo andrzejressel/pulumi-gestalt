@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "internal_user_database_enabled",
+                    "internalUserDatabaseEnabled",
                     &self.r#internal_user_database_enabled,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#internal_user_database_enabled: {
-                        let field_value = match fields_map.get("internal_user_database_enabled") {
+                        let field_value = match fields_map.get("internalUserDatabaseEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'internal_user_database_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'internalUserDatabaseEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

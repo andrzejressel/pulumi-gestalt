@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_password_encryptions",
+                    "connectionPasswordEncryptions",
                     &self.r#connection_password_encryptions,
                 ),
                 to_pulumi_object_field(
-                    "encryption_at_rests",
+                    "encryptionAtRests",
                     &self.r#encryption_at_rests,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#connection_password_encryptions: {
-                        let field_value = match fields_map.get("connection_password_encryptions") {
+                        let field_value = match fields_map.get("connectionPasswordEncryptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_password_encryptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionPasswordEncryptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_at_rests: {
-                        let field_value = match fields_map.get("encryption_at_rests") {
+                        let field_value = match fields_map.get("encryptionAtRests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_at_rests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionAtRests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

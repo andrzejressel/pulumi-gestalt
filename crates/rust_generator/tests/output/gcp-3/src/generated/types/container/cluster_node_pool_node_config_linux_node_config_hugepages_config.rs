@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hugepage_size_1_g",
+                    "hugepageSize1g",
                     &self.r#hugepage_size_1_g,
                 ),
                 to_pulumi_object_field(
-                    "hugepage_size_2_m",
+                    "hugepageSize2m",
                     &self.r#hugepage_size_2_m,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#hugepage_size_1_g: {
-                        let field_value = match fields_map.get("hugepage_size_1_g") {
+                        let field_value = match fields_map.get("hugepageSize1g") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hugepage_size_1_g' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hugepageSize1g' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hugepage_size_2_m: {
-                        let field_value = match fields_map.get("hugepage_size_2_m") {
+                        let field_value = match fields_map.get("hugepageSize2m") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hugepage_size_2_m' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hugepageSize2m' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

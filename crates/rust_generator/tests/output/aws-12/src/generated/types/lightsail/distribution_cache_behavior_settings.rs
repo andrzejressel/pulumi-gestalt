@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_http_methods",
+                    "allowedHttpMethods",
                     &self.r#allowed_http_methods,
                 ),
                 to_pulumi_object_field(
-                    "cached_http_methods",
+                    "cachedHttpMethods",
                     &self.r#cached_http_methods,
                 ),
                 to_pulumi_object_field(
-                    "default_ttl",
+                    "defaultTtl",
                     &self.r#default_ttl,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_cookies",
+                    "forwardedCookies",
                     &self.r#forwarded_cookies,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_headers",
+                    "forwardedHeaders",
                     &self.r#forwarded_headers,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_query_strings",
+                    "forwardedQueryStrings",
                     &self.r#forwarded_query_strings,
                 ),
                 to_pulumi_object_field(
-                    "maximum_ttl",
+                    "maximumTtl",
                     &self.r#maximum_ttl,
                 ),
                 to_pulumi_object_field(
-                    "minimum_ttl",
+                    "minimumTtl",
                     &self.r#minimum_ttl,
                 ),
             ];
@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#allowed_http_methods: {
-                        let field_value = match fields_map.get("allowed_http_methods") {
+                        let field_value = match fields_map.get("allowedHttpMethods") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_http_methods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedHttpMethods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cached_http_methods: {
-                        let field_value = match fields_map.get("cached_http_methods") {
+                        let field_value = match fields_map.get("cachedHttpMethods") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cached_http_methods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cachedHttpMethods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_ttl: {
-                        let field_value = match fields_map.get("default_ttl") {
+                        let field_value = match fields_map.get("defaultTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_cookies: {
-                        let field_value = match fields_map.get("forwarded_cookies") {
+                        let field_value = match fields_map.get("forwardedCookies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarded_cookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardedCookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_headers: {
-                        let field_value = match fields_map.get("forwarded_headers") {
+                        let field_value = match fields_map.get("forwardedHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarded_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardedHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_query_strings: {
-                        let field_value = match fields_map.get("forwarded_query_strings") {
+                        let field_value = match fields_map.get("forwardedQueryStrings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarded_query_strings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardedQueryStrings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_ttl: {
-                        let field_value = match fields_map.get("maximum_ttl") {
+                        let field_value = match fields_map.get("maximumTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_ttl: {
-                        let field_value = match fields_map.get("minimum_ttl") {
+                        let field_value = match fields_map.get("minimumTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

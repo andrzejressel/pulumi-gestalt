@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_configs",
+                    "autoscalingConfigs",
                     &self.r#autoscaling_configs,
                 ),
                 to_pulumi_object_field(
-                    "instance_size",
+                    "instanceSize",
                     &self.r#instance_size,
                 ),
                 to_pulumi_object_field(
-                    "scaling_factor",
+                    "scalingFactor",
                     &self.r#scaling_factor,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#autoscaling_configs: {
-                        let field_value = match fields_map.get("autoscaling_configs") {
+                        let field_value = match fields_map.get("autoscalingConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_size: {
-                        let field_value = match fields_map.get("instance_size") {
+                        let field_value = match fields_map.get("instanceSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scaling_factor: {
-                        let field_value = match fields_map.get("scaling_factor") {
+                        let field_value = match fields_map.get("scalingFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scaling_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scalingFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

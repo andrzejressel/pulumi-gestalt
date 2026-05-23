@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_ip_range",
+                    "allowedIpRange",
                     &self.r#allowed_ip_range,
                 ),
                 to_pulumi_object_field(
-                    "secret_token",
+                    "secretToken",
                     &self.r#secret_token,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#allowed_ip_range: {
-                        let field_value = match fields_map.get("allowed_ip_range") {
+                        let field_value = match fields_map.get("allowedIpRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_ip_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedIpRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_token: {
-                        let field_value = match fields_map.get("secret_token") {
+                        let field_value = match fields_map.get("secretToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

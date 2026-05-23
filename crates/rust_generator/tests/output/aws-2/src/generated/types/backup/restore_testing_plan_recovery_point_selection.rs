@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "exclude_vaults",
+                    "excludeVaults",
                     &self.r#exclude_vaults,
                 ),
                 to_pulumi_object_field(
-                    "include_vaults",
+                    "includeVaults",
                     &self.r#include_vaults,
                 ),
                 to_pulumi_object_field(
-                    "recovery_point_types",
+                    "recoveryPointTypes",
                     &self.r#recovery_point_types,
                 ),
                 to_pulumi_object_field(
-                    "selection_window_days",
+                    "selectionWindowDays",
                     &self.r#selection_window_days,
                 ),
             ];
@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_vaults: {
-                        let field_value = match fields_map.get("exclude_vaults") {
+                        let field_value = match fields_map.get("excludeVaults") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_vaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeVaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_vaults: {
-                        let field_value = match fields_map.get("include_vaults") {
+                        let field_value = match fields_map.get("includeVaults") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_vaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeVaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recovery_point_types: {
-                        let field_value = match fields_map.get("recovery_point_types") {
+                        let field_value = match fields_map.get("recoveryPointTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recovery_point_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recoveryPointTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selection_window_days: {
-                        let field_value = match fields_map.get("selection_window_days") {
+                        let field_value = match fields_map.get("selectionWindowDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selection_window_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectionWindowDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "input_compression_type",
+                    "inputCompressionType",
                     &self.r#input_compression_type,
                 ),
                 to_pulumi_object_field(
-                    "input_format",
+                    "inputFormat",
                     &self.r#input_format,
                 ),
                 to_pulumi_object_field(
-                    "input_format_options",
+                    "inputFormatOptions",
                     &self.r#input_format_options,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket_source",
+                    "s3BucketSource",
                     &self.r#s_3_bucket_source,
                 ),
             ];
@@ -79,30 +79,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#input_compression_type: {
-                        let field_value = match fields_map.get("input_compression_type") {
+                        let field_value = match fields_map.get("inputCompressionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_compression_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputCompressionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_format: {
-                        let field_value = match fields_map.get("input_format") {
+                        let field_value = match fields_map.get("inputFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_format_options: {
-                        let field_value = match fields_map.get("input_format_options") {
+                        let field_value = match fields_map.get("inputFormatOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_format_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputFormatOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_bucket_source: {
-                        let field_value = match fields_map.get("s_3_bucket_source") {
+                        let field_value = match fields_map.get("s3BucketSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_bucket_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3BucketSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

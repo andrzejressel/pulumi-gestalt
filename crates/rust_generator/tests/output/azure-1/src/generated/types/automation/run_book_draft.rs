@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_link",
+                    "contentLink",
                     &self.r#content_link,
                 ),
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
-                    "edit_mode_enabled",
+                    "editModeEnabled",
                     &self.r#edit_mode_enabled,
                 ),
                 to_pulumi_object_field(
-                    "last_modified_time",
+                    "lastModifiedTime",
                     &self.r#last_modified_time,
                 ),
                 to_pulumi_object_field(
-                    "output_types",
+                    "outputTypes",
                     &self.r#output_types,
                 ),
                 to_pulumi_object_field(
@@ -88,37 +88,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#content_link: {
-                        let field_value = match fields_map.get("content_link") {
+                        let field_value = match fields_map.get("contentLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#creation_time: {
-                        let field_value = match fields_map.get("creation_time") {
+                        let field_value = match fields_map.get("creationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'creation_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'creationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#edit_mode_enabled: {
-                        let field_value = match fields_map.get("edit_mode_enabled") {
+                        let field_value = match fields_map.get("editModeEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'edit_mode_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'editModeEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_modified_time: {
-                        let field_value = match fields_map.get("last_modified_time") {
+                        let field_value = match fields_map.get("lastModifiedTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_modified_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastModifiedTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_types: {
-                        let field_value = match fields_map.get("output_types") {
+                        let field_value = match fields_map.get("outputTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_confidential_compute",
+                    "enableConfidentialCompute",
                     &self.r#enable_confidential_compute,
                 ),
                 to_pulumi_object_field(
@@ -99,19 +99,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_iops",
+                    "provisionedIops",
                     &self.r#provisioned_iops,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_throughput",
+                    "provisionedThroughput",
                     &self.r#provisioned_throughput,
                 ),
                 to_pulumi_object_field(
-                    "resource_manager_tags",
+                    "resourceManagerTags",
                     &self.r#resource_manager_tags,
                 ),
                 to_pulumi_object_field(
-                    "resource_policies",
+                    "resourcePolicies",
                     &self.r#resource_policies,
                 ),
                 to_pulumi_object_field(
@@ -119,11 +119,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#size,
                 ),
                 to_pulumi_object_field(
-                    "storage_pool",
+                    "storagePool",
                     &self.r#storage_pool,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -150,9 +150,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#enable_confidential_compute: {
-                        let field_value = match fields_map.get("enable_confidential_compute") {
+                        let field_value = match fields_map.get("enableConfidentialCompute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_confidential_compute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableConfidentialCompute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -171,30 +171,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioned_iops: {
-                        let field_value = match fields_map.get("provisioned_iops") {
+                        let field_value = match fields_map.get("provisionedIops") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioned_iops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionedIops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioned_throughput: {
-                        let field_value = match fields_map.get("provisioned_throughput") {
+                        let field_value = match fields_map.get("provisionedThroughput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioned_throughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionedThroughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_manager_tags: {
-                        let field_value = match fields_map.get("resource_manager_tags") {
+                        let field_value = match fields_map.get("resourceManagerTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_manager_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceManagerTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_policies: {
-                        let field_value = match fields_map.get("resource_policies") {
+                        let field_value = match fields_map.get("resourcePolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourcePolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -206,16 +206,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_pool: {
-                        let field_value = match fields_map.get("storage_pool") {
+                        let field_value = match fields_map.get("storagePool") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storagePool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

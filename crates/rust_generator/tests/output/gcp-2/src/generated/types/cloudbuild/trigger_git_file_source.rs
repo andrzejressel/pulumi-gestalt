@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bitbucket_server_config",
+                    "bitbucketServerConfig",
                     &self.r#bitbucket_server_config,
                 ),
                 to_pulumi_object_field(
-                    "github_enterprise_config",
+                    "githubEnterpriseConfig",
                     &self.r#github_enterprise_config,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "repo_type",
+                    "repoType",
                     &self.r#repo_type,
                 ),
                 to_pulumi_object_field(
@@ -106,16 +106,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#bitbucket_server_config: {
-                        let field_value = match fields_map.get("bitbucket_server_config") {
+                        let field_value = match fields_map.get("bitbucketServerConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bitbucket_server_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bitbucketServerConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#github_enterprise_config: {
-                        let field_value = match fields_map.get("github_enterprise_config") {
+                        let field_value = match fields_map.get("githubEnterpriseConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'github_enterprise_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'githubEnterpriseConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -127,9 +127,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repo_type: {
-                        let field_value = match fields_map.get("repo_type") {
+                        let field_value = match fields_map.get("repoType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repo_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repoType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

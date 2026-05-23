@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "header_parameters",
+                    "headerParameters",
                     &self.r#header_parameters,
                 ),
                 to_pulumi_object_field(
-                    "path_parameter_values",
+                    "pathParameterValues",
                     &self.r#path_parameter_values,
                 ),
                 to_pulumi_object_field(
-                    "query_string_parameters",
+                    "queryStringParameters",
                     &self.r#query_string_parameters,
                 ),
             ];
@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#header_parameters: {
-                        let field_value = match fields_map.get("header_parameters") {
+                        let field_value = match fields_map.get("headerParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_parameter_values: {
-                        let field_value = match fields_map.get("path_parameter_values") {
+                        let field_value = match fields_map.get("pathParameterValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_parameter_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathParameterValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string_parameters: {
-                        let field_value = match fields_map.get("query_string_parameters") {
+                        let field_value = match fields_map.get("queryStringParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

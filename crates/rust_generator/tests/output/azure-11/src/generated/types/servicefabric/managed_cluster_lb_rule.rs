@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_port",
+                    "backendPort",
                     &self.r#backend_port,
                 ),
                 to_pulumi_object_field(
-                    "frontend_port",
+                    "frontendPort",
                     &self.r#frontend_port,
                 ),
                 to_pulumi_object_field(
-                    "probe_protocol",
+                    "probeProtocol",
                     &self.r#probe_protocol,
                 ),
                 to_pulumi_object_field(
-                    "probe_request_path",
+                    "probeRequestPath",
                     &self.r#probe_request_path,
                 ),
                 to_pulumi_object_field(
@@ -82,30 +82,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#backend_port: {
-                        let field_value = match fields_map.get("backend_port") {
+                        let field_value = match fields_map.get("backendPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frontend_port: {
-                        let field_value = match fields_map.get("frontend_port") {
+                        let field_value = match fields_map.get("frontendPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frontend_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frontendPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#probe_protocol: {
-                        let field_value = match fields_map.get("probe_protocol") {
+                        let field_value = match fields_map.get("probeProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'probe_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'probeProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#probe_request_path: {
-                        let field_value = match fields_map.get("probe_request_path") {
+                        let field_value = match fields_map.get("probeRequestPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'probe_request_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'probeRequestPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -100,47 +100,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_traffic_on_latest_revision",
+                    "allTrafficOnLatestRevision",
                     &self.r#all_traffic_on_latest_revision,
                 ),
                 to_pulumi_object_field(
-                    "available_cpu",
+                    "availableCpu",
                     &self.r#available_cpu,
                 ),
                 to_pulumi_object_field(
-                    "available_memory",
+                    "availableMemory",
                     &self.r#available_memory,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "gcf_uri",
+                    "gcfUri",
                     &self.r#gcf_uri,
                 ),
                 to_pulumi_object_field(
-                    "ingress_settings",
+                    "ingressSettings",
                     &self.r#ingress_settings,
                 ),
                 to_pulumi_object_field(
-                    "max_instance_count",
+                    "maxInstanceCount",
                     &self.r#max_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "max_instance_request_concurrency",
+                    "maxInstanceRequestConcurrency",
                     &self.r#max_instance_request_concurrency,
                 ),
                 to_pulumi_object_field(
-                    "min_instance_count",
+                    "minInstanceCount",
                     &self.r#min_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "secret_environment_variables",
+                    "secretEnvironmentVariables",
                     &self.r#secret_environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "secret_volumes",
+                    "secretVolumes",
                     &self.r#secret_volumes,
                 ),
                 to_pulumi_object_field(
@@ -148,11 +148,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "service_account_email",
+                    "serviceAccountEmail",
                     &self.r#service_account_email,
                 ),
                 to_pulumi_object_field(
-                    "timeout_seconds",
+                    "timeoutSeconds",
                     &self.r#timeout_seconds,
                 ),
                 to_pulumi_object_field(
@@ -160,11 +160,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#uri,
                 ),
                 to_pulumi_object_field(
-                    "vpc_connector",
+                    "vpcConnector",
                     &self.r#vpc_connector,
                 ),
                 to_pulumi_object_field(
-                    "vpc_connector_egress_settings",
+                    "vpcConnectorEgressSettings",
                     &self.r#vpc_connector_egress_settings,
                 ),
             ];
@@ -191,79 +191,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#all_traffic_on_latest_revision: {
-                        let field_value = match fields_map.get("all_traffic_on_latest_revision") {
+                        let field_value = match fields_map.get("allTrafficOnLatestRevision") {
                             Some(value) => value,
-                            None => bail!("Missing field 'all_traffic_on_latest_revision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allTrafficOnLatestRevision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_cpu: {
-                        let field_value = match fields_map.get("available_cpu") {
+                        let field_value = match fields_map.get("availableCpu") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_cpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableCpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_memory: {
-                        let field_value = match fields_map.get("available_memory") {
+                        let field_value = match fields_map.get("availableMemory") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_memory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableMemory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_variables: {
-                        let field_value = match fields_map.get("environment_variables") {
+                        let field_value = match fields_map.get("environmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'environmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcf_uri: {
-                        let field_value = match fields_map.get("gcf_uri") {
+                        let field_value = match fields_map.get("gcfUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcf_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcfUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ingress_settings: {
-                        let field_value = match fields_map.get("ingress_settings") {
+                        let field_value = match fields_map.get("ingressSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingress_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingressSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_instance_count: {
-                        let field_value = match fields_map.get("max_instance_count") {
+                        let field_value = match fields_map.get("maxInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_instance_request_concurrency: {
-                        let field_value = match fields_map.get("max_instance_request_concurrency") {
+                        let field_value = match fields_map.get("maxInstanceRequestConcurrency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_instance_request_concurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxInstanceRequestConcurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_instance_count: {
-                        let field_value = match fields_map.get("min_instance_count") {
+                        let field_value = match fields_map.get("minInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_environment_variables: {
-                        let field_value = match fields_map.get("secret_environment_variables") {
+                        let field_value = match fields_map.get("secretEnvironmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretEnvironmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_volumes: {
-                        let field_value = match fields_map.get("secret_volumes") {
+                        let field_value = match fields_map.get("secretVolumes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_volumes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretVolumes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -275,16 +275,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_email: {
-                        let field_value = match fields_map.get("service_account_email") {
+                        let field_value = match fields_map.get("serviceAccountEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_seconds: {
-                        let field_value = match fields_map.get("timeout_seconds") {
+                        let field_value = match fields_map.get("timeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -296,16 +296,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_connector: {
-                        let field_value = match fields_map.get("vpc_connector") {
+                        let field_value = match fields_map.get("vpcConnector") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_connector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcConnector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_connector_egress_settings: {
-                        let field_value = match fields_map.get("vpc_connector_egress_settings") {
+                        let field_value = match fields_map.get("vpcConnectorEgressSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_connector_egress_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcConnectorEgressSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

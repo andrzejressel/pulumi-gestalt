@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "eventhub_name",
+                    "eventhubName",
                     &self.r#eventhub_name,
                 ),
                 to_pulumi_object_field(
-                    "eventhub_namespace_name",
+                    "eventhubNamespaceName",
                     &self.r#eventhub_namespace_name,
                 ),
                 to_pulumi_object_field(
-                    "system_event_name_filters",
+                    "systemEventNameFilters",
                     &self.r#system_event_name_filters,
                 ),
                 to_pulumi_object_field(
-                    "user_event_name_filters",
+                    "userEventNameFilters",
                     &self.r#user_event_name_filters,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#eventhub_name: {
-                        let field_value = match fields_map.get("eventhub_name") {
+                        let field_value = match fields_map.get("eventhubName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'eventhub_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventhubName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#eventhub_namespace_name: {
-                        let field_value = match fields_map.get("eventhub_namespace_name") {
+                        let field_value = match fields_map.get("eventhubNamespaceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'eventhub_namespace_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventhubNamespaceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#system_event_name_filters: {
-                        let field_value = match fields_map.get("system_event_name_filters") {
+                        let field_value = match fields_map.get("systemEventNameFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'system_event_name_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'systemEventNameFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_event_name_filters: {
-                        let field_value = match fields_map.get("user_event_name_filters") {
+                        let field_value = match fields_map.get("userEventNameFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_event_name_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userEventNameFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

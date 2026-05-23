@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "security_control_id",
+                    "securityControlId",
                     &self.r#security_control_id,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_control_id: {
-                        let field_value = match fields_map.get("security_control_id") {
+                        let field_value = match fields_map.get("securityControlId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_control_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityControlId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

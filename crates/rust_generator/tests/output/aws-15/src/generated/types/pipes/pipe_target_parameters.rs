@@ -67,51 +67,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_job_parameters",
+                    "batchJobParameters",
                     &self.r#batch_job_parameters,
                 ),
                 to_pulumi_object_field(
-                    "cloudwatch_logs_parameters",
+                    "cloudwatchLogsParameters",
                     &self.r#cloudwatch_logs_parameters,
                 ),
                 to_pulumi_object_field(
-                    "ecs_task_parameters",
+                    "ecsTaskParameters",
                     &self.r#ecs_task_parameters,
                 ),
                 to_pulumi_object_field(
-                    "eventbridge_event_bus_parameters",
+                    "eventbridgeEventBusParameters",
                     &self.r#eventbridge_event_bus_parameters,
                 ),
                 to_pulumi_object_field(
-                    "http_parameters",
+                    "httpParameters",
                     &self.r#http_parameters,
                 ),
                 to_pulumi_object_field(
-                    "input_template",
+                    "inputTemplate",
                     &self.r#input_template,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_stream_parameters",
+                    "kinesisStreamParameters",
                     &self.r#kinesis_stream_parameters,
                 ),
                 to_pulumi_object_field(
-                    "lambda_function_parameters",
+                    "lambdaFunctionParameters",
                     &self.r#lambda_function_parameters,
                 ),
                 to_pulumi_object_field(
-                    "redshift_data_parameters",
+                    "redshiftDataParameters",
                     &self.r#redshift_data_parameters,
                 ),
                 to_pulumi_object_field(
-                    "sagemaker_pipeline_parameters",
+                    "sagemakerPipelineParameters",
                     &self.r#sagemaker_pipeline_parameters,
                 ),
                 to_pulumi_object_field(
-                    "sqs_queue_parameters",
+                    "sqsQueueParameters",
                     &self.r#sqs_queue_parameters,
                 ),
                 to_pulumi_object_field(
-                    "step_function_state_machine_parameters",
+                    "stepFunctionStateMachineParameters",
                     &self.r#step_function_state_machine_parameters,
                 ),
             ];
@@ -138,86 +138,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#batch_job_parameters: {
-                        let field_value = match fields_map.get("batch_job_parameters") {
+                        let field_value = match fields_map.get("batchJobParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_job_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchJobParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloudwatch_logs_parameters: {
-                        let field_value = match fields_map.get("cloudwatch_logs_parameters") {
+                        let field_value = match fields_map.get("cloudwatchLogsParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudwatch_logs_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudwatchLogsParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ecs_task_parameters: {
-                        let field_value = match fields_map.get("ecs_task_parameters") {
+                        let field_value = match fields_map.get("ecsTaskParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ecs_task_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ecsTaskParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#eventbridge_event_bus_parameters: {
-                        let field_value = match fields_map.get("eventbridge_event_bus_parameters") {
+                        let field_value = match fields_map.get("eventbridgeEventBusParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'eventbridge_event_bus_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventbridgeEventBusParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_parameters: {
-                        let field_value = match fields_map.get("http_parameters") {
+                        let field_value = match fields_map.get("httpParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_template: {
-                        let field_value = match fields_map.get("input_template") {
+                        let field_value = match fields_map.get("inputTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_stream_parameters: {
-                        let field_value = match fields_map.get("kinesis_stream_parameters") {
+                        let field_value = match fields_map.get("kinesisStreamParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_stream_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisStreamParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_function_parameters: {
-                        let field_value = match fields_map.get("lambda_function_parameters") {
+                        let field_value = match fields_map.get("lambdaFunctionParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_function_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaFunctionParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redshift_data_parameters: {
-                        let field_value = match fields_map.get("redshift_data_parameters") {
+                        let field_value = match fields_map.get("redshiftDataParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redshift_data_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redshiftDataParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sagemaker_pipeline_parameters: {
-                        let field_value = match fields_map.get("sagemaker_pipeline_parameters") {
+                        let field_value = match fields_map.get("sagemakerPipelineParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sagemaker_pipeline_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sagemakerPipelineParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sqs_queue_parameters: {
-                        let field_value = match fields_map.get("sqs_queue_parameters") {
+                        let field_value = match fields_map.get("sqsQueueParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sqs_queue_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqsQueueParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#step_function_state_machine_parameters: {
-                        let field_value = match fields_map.get("step_function_state_machine_parameters") {
+                        let field_value = match fields_map.get("stepFunctionStateMachineParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'step_function_state_machine_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stepFunctionStateMachineParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

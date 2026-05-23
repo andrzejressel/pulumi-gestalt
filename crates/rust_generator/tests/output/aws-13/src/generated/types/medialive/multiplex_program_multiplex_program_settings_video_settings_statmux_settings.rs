@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maximum_bitrate",
+                    "maximumBitrate",
                     &self.r#maximum_bitrate,
                 ),
                 to_pulumi_object_field(
-                    "minimum_bitrate",
+                    "minimumBitrate",
                     &self.r#minimum_bitrate,
                 ),
                 to_pulumi_object_field(
@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#maximum_bitrate: {
-                        let field_value = match fields_map.get("maximum_bitrate") {
+                        let field_value = match fields_map.get("maximumBitrate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumBitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_bitrate: {
-                        let field_value = match fields_map.get("minimum_bitrate") {
+                        let field_value = match fields_map.get("minimumBitrate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumBitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

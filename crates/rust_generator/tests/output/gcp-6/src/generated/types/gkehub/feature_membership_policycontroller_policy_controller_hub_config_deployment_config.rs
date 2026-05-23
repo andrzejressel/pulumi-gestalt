@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "component_name",
+                    "componentName",
                     &self.r#component_name,
                 ),
                 to_pulumi_object_field(
-                    "container_resources",
+                    "containerResources",
                     &self.r#container_resources,
                 ),
                 to_pulumi_object_field(
-                    "pod_affinity",
+                    "podAffinity",
                     &self.r#pod_affinity,
                 ),
                 to_pulumi_object_field(
-                    "pod_tolerations",
+                    "podTolerations",
                     &self.r#pod_tolerations,
                 ),
                 to_pulumi_object_field(
-                    "replica_count",
+                    "replicaCount",
                     &self.r#replica_count,
                 ),
             ];
@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#component_name: {
-                        let field_value = match fields_map.get("component_name") {
+                        let field_value = match fields_map.get("componentName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'component_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'componentName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_resources: {
-                        let field_value = match fields_map.get("container_resources") {
+                        let field_value = match fields_map.get("containerResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_affinity: {
-                        let field_value = match fields_map.get("pod_affinity") {
+                        let field_value = match fields_map.get("podAffinity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podAffinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_tolerations: {
-                        let field_value = match fields_map.get("pod_tolerations") {
+                        let field_value = match fields_map.get("podTolerations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_tolerations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podTolerations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replica_count: {
-                        let field_value = match fields_map.get("replica_count") {
+                        let field_value = match fields_map.get("replicaCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replica_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicaCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

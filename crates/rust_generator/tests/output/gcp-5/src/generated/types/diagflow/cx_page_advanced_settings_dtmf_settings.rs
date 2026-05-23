@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxP
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "finish_digit",
+                    "finishDigit",
                     &self.r#finish_digit,
                 ),
                 to_pulumi_object_field(
-                    "max_digits",
+                    "maxDigits",
                     &self.r#max_digits,
                 ),
             ];
@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#finish_digit: {
-                        let field_value = match fields_map.get("finish_digit") {
+                        let field_value = match fields_map.get("finishDigit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'finish_digit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'finishDigit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_digits: {
-                        let field_value = match fields_map.get("max_digits") {
+                        let field_value = match fields_map.get("maxDigits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_digits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxDigits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

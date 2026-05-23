@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compression_type",
+                    "compressionType",
                     &self.r#compression_type,
                 ),
                 to_pulumi_object_field(
-                    "model_access_config",
+                    "modelAccessConfig",
                     &self.r#model_access_config,
                 ),
                 to_pulumi_object_field(
-                    "s_3_data_type",
+                    "s3DataType",
                     &self.r#s_3_data_type,
                 ),
                 to_pulumi_object_field(
-                    "s_3_uri",
+                    "s3Uri",
                     &self.r#s_3_uri,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#compression_type: {
-                        let field_value = match fields_map.get("compression_type") {
+                        let field_value = match fields_map.get("compressionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compression_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compressionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_access_config: {
-                        let field_value = match fields_map.get("model_access_config") {
+                        let field_value = match fields_map.get("modelAccessConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_access_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelAccessConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_data_type: {
-                        let field_value = match fields_map.get("s_3_data_type") {
+                        let field_value = match fields_map.get("s3DataType") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_data_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3DataType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_uri: {
-                        let field_value = match fields_map.get("s_3_uri") {
+                        let field_value = match fields_map.get("s3Uri") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

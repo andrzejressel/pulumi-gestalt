@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "primary_edge_zone",
+                    "primaryEdgeZone",
                     &self.r#primary_edge_zone,
                 ),
                 to_pulumi_object_field(
-                    "primary_zone",
+                    "primaryZone",
                     &self.r#primary_zone,
                 ),
                 to_pulumi_object_field(
-                    "recovery_edge_zone",
+                    "recoveryEdgeZone",
                     &self.r#recovery_edge_zone,
                 ),
                 to_pulumi_object_field(
-                    "recovery_zone",
+                    "recoveryZone",
                     &self.r#recovery_zone,
                 ),
             ];
@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#primary_edge_zone: {
-                        let field_value = match fields_map.get("primary_edge_zone") {
+                        let field_value = match fields_map.get("primaryEdgeZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_edge_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryEdgeZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_zone: {
-                        let field_value = match fields_map.get("primary_zone") {
+                        let field_value = match fields_map.get("primaryZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recovery_edge_zone: {
-                        let field_value = match fields_map.get("recovery_edge_zone") {
+                        let field_value = match fields_map.get("recoveryEdgeZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recovery_edge_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recoveryEdgeZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recovery_zone: {
-                        let field_value = match fields_map.get("recovery_zone") {
+                        let field_value = match fields_map.get("recoveryZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recovery_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recoveryZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

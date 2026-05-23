@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#label,
                 ),
                 to_pulumi_object_field(
-                    "latest_revision",
+                    "latestRevision",
                     &self.r#latest_revision,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#percentage,
                 ),
                 to_pulumi_object_field(
-                    "revision_suffix",
+                    "revisionSuffix",
                     &self.r#revision_suffix,
                 ),
             ];
@@ -85,9 +85,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#latest_revision: {
-                        let field_value = match fields_map.get("latest_revision") {
+                        let field_value = match fields_map.get("latestRevision") {
                             Some(value) => value,
-                            None => bail!("Missing field 'latest_revision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latestRevision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -99,9 +99,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#revision_suffix: {
-                        let field_value = match fields_map.get("revision_suffix") {
+                        let field_value = match fields_map.get("revisionSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revision_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revisionSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

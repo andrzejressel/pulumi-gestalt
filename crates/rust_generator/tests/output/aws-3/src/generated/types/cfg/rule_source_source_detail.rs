@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_source",
+                    "eventSource",
                     &self.r#event_source,
                 ),
                 to_pulumi_object_field(
-                    "maximum_execution_frequency",
+                    "maximumExecutionFrequency",
                     &self.r#maximum_execution_frequency,
                 ),
                 to_pulumi_object_field(
-                    "message_type",
+                    "messageType",
                     &self.r#message_type,
                 ),
             ];
@@ -70,23 +70,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#event_source: {
-                        let field_value = match fields_map.get("event_source") {
+                        let field_value = match fields_map.get("eventSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_execution_frequency: {
-                        let field_value = match fields_map.get("maximum_execution_frequency") {
+                        let field_value = match fields_map.get("maximumExecutionFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_execution_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumExecutionFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#message_type: {
-                        let field_value = match fields_map.get("message_type") {
+                        let field_value = match fields_map.get("messageType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'message_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messageType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

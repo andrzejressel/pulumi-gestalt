@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aws
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_groups",
+                    "adminGroups",
                     &self.r#admin_groups,
                 ),
                 to_pulumi_object_field(
-                    "admin_users",
+                    "adminUsers",
                     &self.r#admin_users,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#admin_groups: {
-                        let field_value = match fields_map.get("admin_groups") {
+                        let field_value = match fields_map.get("adminGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#admin_users: {
-                        let field_value = match fields_map.get("admin_users") {
+                        let field_value = match fields_map.get("adminUsers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_users' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminUsers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

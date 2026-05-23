@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#script,
                 ),
                 to_pulumi_object_field(
-                    "timeout_sec",
+                    "timeoutSec",
                     &self.r#timeout_sec,
                 ),
             ];
@@ -70,9 +70,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_sec: {
-                        let field_value = match fields_map.get("timeout_sec") {
+                        let field_value = match fields_map.get("timeoutSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

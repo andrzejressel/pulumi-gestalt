@@ -49,31 +49,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_cidr",
+                    "destinationCidr",
                     &self.r#destination_cidr,
                 ),
                 to_pulumi_object_field(
-                    "destination_prefix_list_id",
+                    "destinationPrefixListId",
                     &self.r#destination_prefix_list_id,
                 ),
                 to_pulumi_object_field(
-                    "egress_only_internet_gateway_id",
+                    "egressOnlyInternetGatewayId",
                     &self.r#egress_only_internet_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "gateway_id",
+                    "gatewayId",
                     &self.r#gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "instance_id",
+                    "instanceId",
                     &self.r#instance_id,
                 ),
                 to_pulumi_object_field(
-                    "nat_gateway_id",
+                    "natGatewayId",
                     &self.r#nat_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_id",
+                    "networkInterfaceId",
                     &self.r#network_interface_id,
                 ),
                 to_pulumi_object_field(
@@ -81,11 +81,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#origin,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_id",
+                    "transitGatewayId",
                     &self.r#transit_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "vpc_peering_connection_id",
+                    "vpcPeeringConnectionId",
                     &self.r#vpc_peering_connection_id,
                 ),
             ];
@@ -112,51 +112,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#destination_cidr: {
-                        let field_value = match fields_map.get("destination_cidr") {
+                        let field_value = match fields_map.get("destinationCidr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationCidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_prefix_list_id: {
-                        let field_value = match fields_map.get("destination_prefix_list_id") {
+                        let field_value = match fields_map.get("destinationPrefixListId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_prefix_list_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationPrefixListId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#egress_only_internet_gateway_id: {
-                        let field_value = match fields_map.get("egress_only_internet_gateway_id") {
+                        let field_value = match fields_map.get("egressOnlyInternetGatewayId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'egress_only_internet_gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'egressOnlyInternetGatewayId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gateway_id: {
-                        let field_value = match fields_map.get("gateway_id") {
+                        let field_value = match fields_map.get("gatewayId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gatewayId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_id: {
-                        let field_value = match fields_map.get("instance_id") {
+                        let field_value = match fields_map.get("instanceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nat_gateway_id: {
-                        let field_value = match fields_map.get("nat_gateway_id") {
+                        let field_value = match fields_map.get("natGatewayId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nat_gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'natGatewayId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_interface_id: {
-                        let field_value = match fields_map.get("network_interface_id") {
+                        let field_value = match fields_map.get("networkInterfaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_interface_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkInterfaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -168,16 +168,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transit_gateway_id: {
-                        let field_value = match fields_map.get("transit_gateway_id") {
+                        let field_value = match fields_map.get("transitGatewayId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transit_gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitGatewayId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_peering_connection_id: {
-                        let field_value = match fields_map.get("vpc_peering_connection_id") {
+                        let field_value = match fields_map.get("vpcPeeringConnectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_peering_connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcPeeringConnectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

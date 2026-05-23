@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "ocsp_custom_cname",
+                    "ocspCustomCname",
                     &self.r#ocsp_custom_cname,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ocsp_custom_cname: {
-                        let field_value = match fields_map.get("ocsp_custom_cname") {
+                        let field_value = match fields_map.get("ocspCustomCname") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ocsp_custom_cname' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ocspCustomCname' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -52,15 +52,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authenticate_cognito",
+                    "authenticateCognito",
                     &self.r#authenticate_cognito,
                 ),
                 to_pulumi_object_field(
-                    "authenticate_oidc",
+                    "authenticateOidc",
                     &self.r#authenticate_oidc,
                 ),
                 to_pulumi_object_field(
-                    "fixed_response",
+                    "fixedResponse",
                     &self.r#fixed_response,
                 ),
                 to_pulumi_object_field(
@@ -76,7 +76,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#redirect,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];
@@ -103,23 +103,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#authenticate_cognito: {
-                        let field_value = match fields_map.get("authenticate_cognito") {
+                        let field_value = match fields_map.get("authenticateCognito") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authenticate_cognito' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticateCognito' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authenticate_oidc: {
-                        let field_value = match fields_map.get("authenticate_oidc") {
+                        let field_value = match fields_map.get("authenticateOidc") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authenticate_oidc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticateOidc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fixed_response: {
-                        let field_value = match fields_map.get("fixed_response") {
+                        let field_value = match fields_map.get("fixedResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fixed_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fixedResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -145,9 +145,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

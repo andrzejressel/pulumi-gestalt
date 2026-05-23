@@ -52,7 +52,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#excludes,
                 ),
                 to_pulumi_object_field(
-                    "exclusive_patches",
+                    "exclusivePatches",
                     &self.r#exclusive_patches,
                 ),
                 to_pulumi_object_field(
@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#severities,
                 ),
                 to_pulumi_object_field(
-                    "with_optional",
+                    "withOptional",
                     &self.r#with_optional,
                 ),
                 to_pulumi_object_field(
-                    "with_update",
+                    "withUpdate",
                     &self.r#with_update,
                 ),
             ];
@@ -105,9 +105,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclusive_patches: {
-                        let field_value = match fields_map.get("exclusive_patches") {
+                        let field_value = match fields_map.get("exclusivePatches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclusive_patches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exclusivePatches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,16 +119,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#with_optional: {
-                        let field_value = match fields_map.get("with_optional") {
+                        let field_value = match fields_map.get("withOptional") {
                             Some(value) => value,
-                            None => bail!("Missing field 'with_optional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'withOptional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#with_update: {
-                        let field_value = match fields_map.get("with_update") {
+                        let field_value = match fields_map.get("withUpdate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'with_update' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'withUpdate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

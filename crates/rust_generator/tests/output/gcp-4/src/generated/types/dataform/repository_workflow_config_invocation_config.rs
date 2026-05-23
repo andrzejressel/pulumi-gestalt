@@ -44,27 +44,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fully_refresh_incremental_tables_enabled",
+                    "fullyRefreshIncrementalTablesEnabled",
                     &self.r#fully_refresh_incremental_tables_enabled,
                 ),
                 to_pulumi_object_field(
-                    "included_tags",
+                    "includedTags",
                     &self.r#included_tags,
                 ),
                 to_pulumi_object_field(
-                    "included_targets",
+                    "includedTargets",
                     &self.r#included_targets,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "transitive_dependencies_included",
+                    "transitiveDependenciesIncluded",
                     &self.r#transitive_dependencies_included,
                 ),
                 to_pulumi_object_field(
-                    "transitive_dependents_included",
+                    "transitiveDependentsIncluded",
                     &self.r#transitive_dependents_included,
                 ),
             ];
@@ -91,44 +91,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#fully_refresh_incremental_tables_enabled: {
-                        let field_value = match fields_map.get("fully_refresh_incremental_tables_enabled") {
+                        let field_value = match fields_map.get("fullyRefreshIncrementalTablesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fully_refresh_incremental_tables_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fullyRefreshIncrementalTablesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_tags: {
-                        let field_value = match fields_map.get("included_tags") {
+                        let field_value = match fields_map.get("includedTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_targets: {
-                        let field_value = match fields_map.get("included_targets") {
+                        let field_value = match fields_map.get("includedTargets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_targets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedTargets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account: {
-                        let field_value = match fields_map.get("service_account") {
+                        let field_value = match fields_map.get("serviceAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transitive_dependencies_included: {
-                        let field_value = match fields_map.get("transitive_dependencies_included") {
+                        let field_value = match fields_map.get("transitiveDependenciesIncluded") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transitive_dependencies_included' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitiveDependenciesIncluded' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transitive_dependents_included: {
-                        let field_value = match fields_map.get("transitive_dependents_included") {
+                        let field_value = match fields_map.get("transitiveDependentsIncluded") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transitive_dependents_included' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitiveDependentsIncluded' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -69,15 +69,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxP
                     &self.r#channel,
                 ),
                 to_pulumi_object_field(
-                    "conversation_success",
+                    "conversationSuccess",
                     &self.r#conversation_success,
                 ),
                 to_pulumi_object_field(
-                    "live_agent_handoff",
+                    "liveAgentHandoff",
                     &self.r#live_agent_handoff,
                 ),
                 to_pulumi_object_field(
-                    "output_audio_text",
+                    "outputAudioText",
                     &self.r#output_audio_text,
                 ),
                 to_pulumi_object_field(
@@ -85,11 +85,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxP
                     &self.r#payload,
                 ),
                 to_pulumi_object_field(
-                    "play_audio",
+                    "playAudio",
                     &self.r#play_audio,
                 ),
                 to_pulumi_object_field(
-                    "telephony_transfer_call",
+                    "telephonyTransferCall",
                     &self.r#telephony_transfer_call,
                 ),
                 to_pulumi_object_field(
@@ -127,23 +127,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#conversation_success: {
-                        let field_value = match fields_map.get("conversation_success") {
+                        let field_value = match fields_map.get("conversationSuccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'conversation_success' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conversationSuccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#live_agent_handoff: {
-                        let field_value = match fields_map.get("live_agent_handoff") {
+                        let field_value = match fields_map.get("liveAgentHandoff") {
                             Some(value) => value,
-                            None => bail!("Missing field 'live_agent_handoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'liveAgentHandoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_audio_text: {
-                        let field_value = match fields_map.get("output_audio_text") {
+                        let field_value = match fields_map.get("outputAudioText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_audio_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputAudioText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -155,16 +155,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#play_audio: {
-                        let field_value = match fields_map.get("play_audio") {
+                        let field_value = match fields_map.get("playAudio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'play_audio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'playAudio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#telephony_transfer_call: {
-                        let field_value = match fields_map.get("telephony_transfer_call") {
+                        let field_value = match fields_map.get("telephonyTransferCall") {
                             Some(value) => value,
-                            None => bail!("Missing field 'telephony_transfer_call' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'telephonyTransferCall' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

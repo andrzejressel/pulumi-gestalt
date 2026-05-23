@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_connection_drain_on_failover",
+                    "disableConnectionDrainOnFailover",
                     &self.r#disable_connection_drain_on_failover,
                 ),
                 to_pulumi_object_field(
-                    "drop_traffic_if_unhealthy",
+                    "dropTrafficIfUnhealthy",
                     &self.r#drop_traffic_if_unhealthy,
                 ),
                 to_pulumi_object_field(
-                    "failover_ratio",
+                    "failoverRatio",
                     &self.r#failover_ratio,
                 ),
             ];
@@ -83,23 +83,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#disable_connection_drain_on_failover: {
-                        let field_value = match fields_map.get("disable_connection_drain_on_failover") {
+                        let field_value = match fields_map.get("disableConnectionDrainOnFailover") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_connection_drain_on_failover' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableConnectionDrainOnFailover' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#drop_traffic_if_unhealthy: {
-                        let field_value = match fields_map.get("drop_traffic_if_unhealthy") {
+                        let field_value = match fields_map.get("dropTrafficIfUnhealthy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'drop_traffic_if_unhealthy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dropTrafficIfUnhealthy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failover_ratio: {
-                        let field_value = match fields_map.get("failover_ratio") {
+                        let field_value = match fields_map.get("failoverRatio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failover_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failoverRatio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

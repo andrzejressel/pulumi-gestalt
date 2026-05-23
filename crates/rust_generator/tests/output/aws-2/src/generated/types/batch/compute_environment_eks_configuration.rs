@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "eks_cluster_arn",
+                    "eksClusterArn",
                     &self.r#eks_cluster_arn,
                 ),
                 to_pulumi_object_field(
-                    "kubernetes_namespace",
+                    "kubernetesNamespace",
                     &self.r#kubernetes_namespace,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#eks_cluster_arn: {
-                        let field_value = match fields_map.get("eks_cluster_arn") {
+                        let field_value = match fields_map.get("eksClusterArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'eks_cluster_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eksClusterArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kubernetes_namespace: {
-                        let field_value = match fields_map.get("kubernetes_namespace") {
+                        let field_value = match fields_map.get("kubernetesNamespace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kubernetes_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kubernetesNamespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

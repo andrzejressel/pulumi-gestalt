@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_close",
+                    "autoClose",
                     &self.r#auto_close,
                 ),
                 to_pulumi_object_field(
-                    "notification_channel_strategies",
+                    "notificationChannelStrategies",
                     &self.r#notification_channel_strategies,
                 ),
                 to_pulumi_object_field(
-                    "notification_prompts",
+                    "notificationPrompts",
                     &self.r#notification_prompts,
                 ),
                 to_pulumi_object_field(
-                    "notification_rate_limit",
+                    "notificationRateLimit",
                     &self.r#notification_rate_limit,
                 ),
             ];
@@ -79,30 +79,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#auto_close: {
-                        let field_value = match fields_map.get("auto_close") {
+                        let field_value = match fields_map.get("autoClose") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_close' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoClose' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_channel_strategies: {
-                        let field_value = match fields_map.get("notification_channel_strategies") {
+                        let field_value = match fields_map.get("notificationChannelStrategies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_channel_strategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationChannelStrategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_prompts: {
-                        let field_value = match fields_map.get("notification_prompts") {
+                        let field_value = match fields_map.get("notificationPrompts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_prompts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationPrompts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_rate_limit: {
-                        let field_value = match fields_map.get("notification_rate_limit") {
+                        let field_value = match fields_map.get("notificationRateLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_rate_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationRateLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

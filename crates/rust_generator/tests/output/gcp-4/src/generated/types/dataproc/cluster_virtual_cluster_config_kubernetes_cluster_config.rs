@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gke_cluster_config",
+                    "gkeClusterConfig",
                     &self.r#gke_cluster_config,
                 ),
                 to_pulumi_object_field(
-                    "kubernetes_namespace",
+                    "kubernetesNamespace",
                     &self.r#kubernetes_namespace,
                 ),
                 to_pulumi_object_field(
-                    "kubernetes_software_config",
+                    "kubernetesSoftwareConfig",
                     &self.r#kubernetes_software_config,
                 ),
             ];
@@ -69,23 +69,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#gke_cluster_config: {
-                        let field_value = match fields_map.get("gke_cluster_config") {
+                        let field_value = match fields_map.get("gkeClusterConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gke_cluster_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gkeClusterConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kubernetes_namespace: {
-                        let field_value = match fields_map.get("kubernetes_namespace") {
+                        let field_value = match fields_map.get("kubernetesNamespace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kubernetes_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kubernetesNamespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kubernetes_software_config: {
-                        let field_value = match fields_map.get("kubernetes_software_config") {
+                        let field_value = match fields_map.get("kubernetesSoftwareConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kubernetes_software_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kubernetesSoftwareConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

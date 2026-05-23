@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "json_path",
+                    "jsonPath",
                     &self.r#json_path,
                 ),
                 to_pulumi_object_field(
-                    "match_equals",
+                    "matchEquals",
                     &self.r#match_equals,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#json_path: {
-                        let field_value = match fields_map.get("json_path") {
+                        let field_value = match fields_map.get("jsonPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'json_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsonPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_equals: {
-                        let field_value = match fields_map.get("match_equals") {
+                        let field_value = match fields_map.get("matchEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

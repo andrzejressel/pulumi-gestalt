@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "force_deletion_enabled",
+                    "forceDeletionEnabled",
                     &self.r#force_deletion_enabled,
                 ),
                 to_pulumi_object_field(
@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#force_deletion_enabled: {
-                        let field_value = match fields_map.get("force_deletion_enabled") {
+                        let field_value = match fields_map.get("forceDeletionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'force_deletion_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forceDeletionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

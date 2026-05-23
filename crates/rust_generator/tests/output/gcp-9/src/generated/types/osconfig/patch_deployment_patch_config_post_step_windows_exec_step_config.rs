@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_success_codes",
+                    "allowedSuccessCodes",
                     &self.r#allowed_success_codes,
                 ),
                 to_pulumi_object_field(
-                    "gcs_object",
+                    "gcsObject",
                     &self.r#gcs_object,
                 ),
                 to_pulumi_object_field(
@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#interpreter,
                 ),
                 to_pulumi_object_field(
-                    "local_path",
+                    "localPath",
                     &self.r#local_path,
                 ),
             ];
@@ -77,16 +77,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#allowed_success_codes: {
-                        let field_value = match fields_map.get("allowed_success_codes") {
+                        let field_value = match fields_map.get("allowedSuccessCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_success_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedSuccessCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcs_object: {
-                        let field_value = match fields_map.get("gcs_object") {
+                        let field_value = match fields_map.get("gcsObject") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcs_object' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcsObject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_path: {
-                        let field_value = match fields_map.get("local_path") {
+                        let field_value = match fields_map.get("localPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

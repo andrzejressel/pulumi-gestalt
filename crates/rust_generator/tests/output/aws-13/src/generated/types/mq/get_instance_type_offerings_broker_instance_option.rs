@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_zones",
+                    "availabilityZones",
                     &self.r#availability_zones,
                 ),
                 to_pulumi_object_field(
-                    "engine_type",
+                    "engineType",
                     &self.r#engine_type,
                 ),
                 to_pulumi_object_field(
-                    "host_instance_type",
+                    "hostInstanceType",
                     &self.r#host_instance_type,
                 ),
                 to_pulumi_object_field(
-                    "storage_type",
+                    "storageType",
                     &self.r#storage_type,
                 ),
                 to_pulumi_object_field(
-                    "supported_deployment_modes",
+                    "supportedDeploymentModes",
                     &self.r#supported_deployment_modes,
                 ),
                 to_pulumi_object_field(
-                    "supported_engine_versions",
+                    "supportedEngineVersions",
                     &self.r#supported_engine_versions,
                 ),
             ];
@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#availability_zones: {
-                        let field_value = match fields_map.get("availability_zones") {
+                        let field_value = match fields_map.get("availabilityZones") {
                             Some(value) => value,
-                            None => bail!("Missing field 'availability_zones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availabilityZones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#engine_type: {
-                        let field_value = match fields_map.get("engine_type") {
+                        let field_value = match fields_map.get("engineType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'engine_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'engineType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_instance_type: {
-                        let field_value = match fields_map.get("host_instance_type") {
+                        let field_value = match fields_map.get("hostInstanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostInstanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_type: {
-                        let field_value = match fields_map.get("storage_type") {
+                        let field_value = match fields_map.get("storageType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#supported_deployment_modes: {
-                        let field_value = match fields_map.get("supported_deployment_modes") {
+                        let field_value = match fields_map.get("supportedDeploymentModes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'supported_deployment_modes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'supportedDeploymentModes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#supported_engine_versions: {
-                        let field_value = match fields_map.get("supported_engine_versions") {
+                        let field_value = match fields_map.get("supportedEngineVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'supported_engine_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'supportedEngineVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

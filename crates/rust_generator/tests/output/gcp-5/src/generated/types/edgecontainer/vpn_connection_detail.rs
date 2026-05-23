@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_routers",
+                    "cloudRouters",
                     &self.r#cloud_routers,
                 ),
                 to_pulumi_object_field(
-                    "cloud_vpns",
+                    "cloudVpns",
                     &self.r#cloud_vpns,
                 ),
                 to_pulumi_object_field(
@@ -80,16 +80,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#cloud_routers: {
-                        let field_value = match fields_map.get("cloud_routers") {
+                        let field_value = match fields_map.get("cloudRouters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_routers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudRouters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_vpns: {
-                        let field_value = match fields_map.get("cloud_vpns") {
+                        let field_value = match fields_map.get("cloudVpns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_vpns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudVpns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

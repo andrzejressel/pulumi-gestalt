@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#trigger,
                 ),
                 to_pulumi_object_field(
-                    "workflow_management",
+                    "workflowManagement",
                     &self.r#workflow_management,
                 ),
             ];
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workflow_management: {
-                        let field_value = match fields_map.get("workflow_management") {
+                        let field_value = match fields_map.get("workflowManagement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workflow_management' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workflowManagement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

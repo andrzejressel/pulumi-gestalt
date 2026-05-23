@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "foreign_keys",
+                    "foreignKeys",
                     &self.r#foreign_keys,
                 ),
                 to_pulumi_object_field(
-                    "primary_key",
+                    "primaryKey",
                     &self.r#primary_key,
                 ),
             ];
@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#foreign_keys: {
-                        let field_value = match fields_map.get("foreign_keys") {
+                        let field_value = match fields_map.get("foreignKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'foreign_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'foreignKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_key: {
-                        let field_value = match fields_map.get("primary_key") {
+                        let field_value = match fields_map.get("primaryKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

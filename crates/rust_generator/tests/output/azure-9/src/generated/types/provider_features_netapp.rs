@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_backups_on_backup_vault_destroy",
+                    "deleteBackupsOnBackupVaultDestroy",
                     &self.r#delete_backups_on_backup_vault_destroy,
                 ),
                 to_pulumi_object_field(
-                    "prevent_volume_destruction",
+                    "preventVolumeDestruction",
                     &self.r#prevent_volume_destruction,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#delete_backups_on_backup_vault_destroy: {
-                        let field_value = match fields_map.get("delete_backups_on_backup_vault_destroy") {
+                        let field_value = match fields_map.get("deleteBackupsOnBackupVaultDestroy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delete_backups_on_backup_vault_destroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deleteBackupsOnBackupVaultDestroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prevent_volume_destruction: {
-                        let field_value = match fields_map.get("prevent_volume_destruction") {
+                        let field_value = match fields_map.get("preventVolumeDestruction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prevent_volume_destruction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preventVolumeDestruction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

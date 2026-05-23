@@ -104,51 +104,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_namespaces",
+                    "allNamespaces",
                     &self.r#all_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "cluster_resource_conflict_policy",
+                    "clusterResourceConflictPolicy",
                     &self.r#cluster_resource_conflict_policy,
                 ),
                 to_pulumi_object_field(
-                    "cluster_resource_restore_scope",
+                    "clusterResourceRestoreScope",
                     &self.r#cluster_resource_restore_scope,
                 ),
                 to_pulumi_object_field(
-                    "excluded_namespaces",
+                    "excludedNamespaces",
                     &self.r#excluded_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "namespaced_resource_restore_mode",
+                    "namespacedResourceRestoreMode",
                     &self.r#namespaced_resource_restore_mode,
                 ),
                 to_pulumi_object_field(
-                    "no_namespaces",
+                    "noNamespaces",
                     &self.r#no_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "restore_order",
+                    "restoreOrder",
                     &self.r#restore_order,
                 ),
                 to_pulumi_object_field(
-                    "selected_applications",
+                    "selectedApplications",
                     &self.r#selected_applications,
                 ),
                 to_pulumi_object_field(
-                    "selected_namespaces",
+                    "selectedNamespaces",
                     &self.r#selected_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "transformation_rules",
+                    "transformationRules",
                     &self.r#transformation_rules,
                 ),
                 to_pulumi_object_field(
-                    "volume_data_restore_policy",
+                    "volumeDataRestorePolicy",
                     &self.r#volume_data_restore_policy,
                 ),
                 to_pulumi_object_field(
-                    "volume_data_restore_policy_bindings",
+                    "volumeDataRestorePolicyBindings",
                     &self.r#volume_data_restore_policy_bindings,
                 ),
             ];
@@ -175,86 +175,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#all_namespaces: {
-                        let field_value = match fields_map.get("all_namespaces") {
+                        let field_value = match fields_map.get("allNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'all_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_resource_conflict_policy: {
-                        let field_value = match fields_map.get("cluster_resource_conflict_policy") {
+                        let field_value = match fields_map.get("clusterResourceConflictPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_resource_conflict_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterResourceConflictPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_resource_restore_scope: {
-                        let field_value = match fields_map.get("cluster_resource_restore_scope") {
+                        let field_value = match fields_map.get("clusterResourceRestoreScope") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_resource_restore_scope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterResourceRestoreScope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_namespaces: {
-                        let field_value = match fields_map.get("excluded_namespaces") {
+                        let field_value = match fields_map.get("excludedNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#namespaced_resource_restore_mode: {
-                        let field_value = match fields_map.get("namespaced_resource_restore_mode") {
+                        let field_value = match fields_map.get("namespacedResourceRestoreMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'namespaced_resource_restore_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namespacedResourceRestoreMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_namespaces: {
-                        let field_value = match fields_map.get("no_namespaces") {
+                        let field_value = match fields_map.get("noNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restore_order: {
-                        let field_value = match fields_map.get("restore_order") {
+                        let field_value = match fields_map.get("restoreOrder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restore_order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restoreOrder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selected_applications: {
-                        let field_value = match fields_map.get("selected_applications") {
+                        let field_value = match fields_map.get("selectedApplications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selected_applications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectedApplications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selected_namespaces: {
-                        let field_value = match fields_map.get("selected_namespaces") {
+                        let field_value = match fields_map.get("selectedNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selected_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectedNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transformation_rules: {
-                        let field_value = match fields_map.get("transformation_rules") {
+                        let field_value = match fields_map.get("transformationRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transformation_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transformationRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_data_restore_policy: {
-                        let field_value = match fields_map.get("volume_data_restore_policy") {
+                        let field_value = match fields_map.get("volumeDataRestorePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_data_restore_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeDataRestorePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_data_restore_policy_bindings: {
-                        let field_value = match fields_map.get("volume_data_restore_policy_bindings") {
+                        let field_value = match fields_map.get("volumeDataRestorePolicyBindings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_data_restore_policy_bindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeDataRestorePolicyBindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

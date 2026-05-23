@@ -97,79 +97,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bool_equals",
+                    "boolEquals",
                     &self.r#bool_equals,
                 ),
                 to_pulumi_object_field(
-                    "is_not_nulls",
+                    "isNotNulls",
                     &self.r#is_not_nulls,
                 ),
                 to_pulumi_object_field(
-                    "is_null_or_undefineds",
+                    "isNullOrUndefineds",
                     &self.r#is_null_or_undefineds,
                 ),
                 to_pulumi_object_field(
-                    "number_greater_than_or_equals",
+                    "numberGreaterThanOrEquals",
                     &self.r#number_greater_than_or_equals,
                 ),
                 to_pulumi_object_field(
-                    "number_greater_thans",
+                    "numberGreaterThans",
                     &self.r#number_greater_thans,
                 ),
                 to_pulumi_object_field(
-                    "number_in_ranges",
+                    "numberInRanges",
                     &self.r#number_in_ranges,
                 ),
                 to_pulumi_object_field(
-                    "number_ins",
+                    "numberIns",
                     &self.r#number_ins,
                 ),
                 to_pulumi_object_field(
-                    "number_less_than_or_equals",
+                    "numberLessThanOrEquals",
                     &self.r#number_less_than_or_equals,
                 ),
                 to_pulumi_object_field(
-                    "number_less_thans",
+                    "numberLessThans",
                     &self.r#number_less_thans,
                 ),
                 to_pulumi_object_field(
-                    "number_not_in_ranges",
+                    "numberNotInRanges",
                     &self.r#number_not_in_ranges,
                 ),
                 to_pulumi_object_field(
-                    "number_not_ins",
+                    "numberNotIns",
                     &self.r#number_not_ins,
                 ),
                 to_pulumi_object_field(
-                    "string_begins_withs",
+                    "stringBeginsWiths",
                     &self.r#string_begins_withs,
                 ),
                 to_pulumi_object_field(
-                    "string_contains",
+                    "stringContains",
                     &self.r#string_contains,
                 ),
                 to_pulumi_object_field(
-                    "string_ends_withs",
+                    "stringEndsWiths",
                     &self.r#string_ends_withs,
                 ),
                 to_pulumi_object_field(
-                    "string_ins",
+                    "stringIns",
                     &self.r#string_ins,
                 ),
                 to_pulumi_object_field(
-                    "string_not_begins_withs",
+                    "stringNotBeginsWiths",
                     &self.r#string_not_begins_withs,
                 ),
                 to_pulumi_object_field(
-                    "string_not_contains",
+                    "stringNotContains",
                     &self.r#string_not_contains,
                 ),
                 to_pulumi_object_field(
-                    "string_not_ends_withs",
+                    "stringNotEndsWiths",
                     &self.r#string_not_ends_withs,
                 ),
                 to_pulumi_object_field(
-                    "string_not_ins",
+                    "stringNotIns",
                     &self.r#string_not_ins,
                 ),
             ];
@@ -196,135 +196,135 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#bool_equals: {
-                        let field_value = match fields_map.get("bool_equals") {
+                        let field_value = match fields_map.get("boolEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bool_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'boolEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_not_nulls: {
-                        let field_value = match fields_map.get("is_not_nulls") {
+                        let field_value = match fields_map.get("isNotNulls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_not_nulls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isNotNulls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_null_or_undefineds: {
-                        let field_value = match fields_map.get("is_null_or_undefineds") {
+                        let field_value = match fields_map.get("isNullOrUndefineds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_null_or_undefineds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isNullOrUndefineds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_greater_than_or_equals: {
-                        let field_value = match fields_map.get("number_greater_than_or_equals") {
+                        let field_value = match fields_map.get("numberGreaterThanOrEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_greater_than_or_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberGreaterThanOrEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_greater_thans: {
-                        let field_value = match fields_map.get("number_greater_thans") {
+                        let field_value = match fields_map.get("numberGreaterThans") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_greater_thans' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberGreaterThans' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_in_ranges: {
-                        let field_value = match fields_map.get("number_in_ranges") {
+                        let field_value = match fields_map.get("numberInRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_in_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberInRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_ins: {
-                        let field_value = match fields_map.get("number_ins") {
+                        let field_value = match fields_map.get("numberIns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_ins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberIns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_less_than_or_equals: {
-                        let field_value = match fields_map.get("number_less_than_or_equals") {
+                        let field_value = match fields_map.get("numberLessThanOrEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_less_than_or_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberLessThanOrEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_less_thans: {
-                        let field_value = match fields_map.get("number_less_thans") {
+                        let field_value = match fields_map.get("numberLessThans") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_less_thans' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberLessThans' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_not_in_ranges: {
-                        let field_value = match fields_map.get("number_not_in_ranges") {
+                        let field_value = match fields_map.get("numberNotInRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_not_in_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberNotInRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_not_ins: {
-                        let field_value = match fields_map.get("number_not_ins") {
+                        let field_value = match fields_map.get("numberNotIns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_not_ins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberNotIns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_begins_withs: {
-                        let field_value = match fields_map.get("string_begins_withs") {
+                        let field_value = match fields_map.get("stringBeginsWiths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_begins_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringBeginsWiths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_contains: {
-                        let field_value = match fields_map.get("string_contains") {
+                        let field_value = match fields_map.get("stringContains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_contains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringContains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_ends_withs: {
-                        let field_value = match fields_map.get("string_ends_withs") {
+                        let field_value = match fields_map.get("stringEndsWiths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_ends_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringEndsWiths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_ins: {
-                        let field_value = match fields_map.get("string_ins") {
+                        let field_value = match fields_map.get("stringIns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_ins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringIns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_not_begins_withs: {
-                        let field_value = match fields_map.get("string_not_begins_withs") {
+                        let field_value = match fields_map.get("stringNotBeginsWiths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_not_begins_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringNotBeginsWiths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_not_contains: {
-                        let field_value = match fields_map.get("string_not_contains") {
+                        let field_value = match fields_map.get("stringNotContains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_not_contains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringNotContains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_not_ends_withs: {
-                        let field_value = match fields_map.get("string_not_ends_withs") {
+                        let field_value = match fields_map.get("stringNotEndsWiths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_not_ends_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringNotEndsWiths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_not_ins: {
-                        let field_value = match fields_map.get("string_not_ins") {
+                        let field_value = match fields_map.get("stringNotIns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_not_ins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringNotIns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

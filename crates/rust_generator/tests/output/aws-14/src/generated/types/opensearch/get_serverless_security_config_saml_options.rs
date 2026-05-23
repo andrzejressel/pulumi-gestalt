@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_attribute",
+                    "groupAttribute",
                     &self.r#group_attribute,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#metadata,
                 ),
                 to_pulumi_object_field(
-                    "session_timeout",
+                    "sessionTimeout",
                     &self.r#session_timeout,
                 ),
                 to_pulumi_object_field(
-                    "user_attribute",
+                    "userAttribute",
                     &self.r#user_attribute,
                 ),
             ];
@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#group_attribute: {
-                        let field_value = match fields_map.get("group_attribute") {
+                        let field_value = match fields_map.get("groupAttribute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_attribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupAttribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_timeout: {
-                        let field_value = match fields_map.get("session_timeout") {
+                        let field_value = match fields_map.get("sessionTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_attribute: {
-                        let field_value = match fields_map.get("user_attribute") {
+                        let field_value = match fields_map.get("userAttribute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_attribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userAttribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

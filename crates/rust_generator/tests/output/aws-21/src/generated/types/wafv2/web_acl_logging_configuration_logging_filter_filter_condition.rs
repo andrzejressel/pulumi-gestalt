@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_condition",
+                    "actionCondition",
                     &self.r#action_condition,
                 ),
                 to_pulumi_object_field(
-                    "label_name_condition",
+                    "labelNameCondition",
                     &self.r#label_name_condition,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#action_condition: {
-                        let field_value = match fields_map.get("action_condition") {
+                        let field_value = match fields_map.get("actionCondition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_condition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionCondition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#label_name_condition: {
-                        let field_value = match fields_map.get("label_name_condition") {
+                        let field_value = match fields_map.get("labelNameCondition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'label_name_condition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'labelNameCondition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

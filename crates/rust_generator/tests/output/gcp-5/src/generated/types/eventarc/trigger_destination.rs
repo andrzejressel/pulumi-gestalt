@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_function",
+                    "cloudFunction",
                     &self.r#cloud_function,
                 ),
                 to_pulumi_object_field(
-                    "cloud_run_service",
+                    "cloudRunService",
                     &self.r#cloud_run_service,
                 ),
                 to_pulumi_object_field(
@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#gke,
                 ),
                 to_pulumi_object_field(
-                    "http_endpoint",
+                    "httpEndpoint",
                     &self.r#http_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "network_config",
+                    "networkConfig",
                     &self.r#network_config,
                 ),
                 to_pulumi_object_field(
@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#cloud_function: {
-                        let field_value = match fields_map.get("cloud_function") {
+                        let field_value = match fields_map.get("cloudFunction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_function' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudFunction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_run_service: {
-                        let field_value = match fields_map.get("cloud_run_service") {
+                        let field_value = match fields_map.get("cloudRunService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_run_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudRunService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,16 +111,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_endpoint: {
-                        let field_value = match fields_map.get("http_endpoint") {
+                        let field_value = match fields_map.get("httpEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_config: {
-                        let field_value = match fields_map.get("network_config") {
+                        let field_value = match fields_map.get("networkConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

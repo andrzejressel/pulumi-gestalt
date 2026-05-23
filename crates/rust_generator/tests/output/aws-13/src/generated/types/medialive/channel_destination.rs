@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "media_package_settings",
+                    "mediaPackageSettings",
                     &self.r#media_package_settings,
                 ),
                 to_pulumi_object_field(
-                    "multiplex_settings",
+                    "multiplexSettings",
                     &self.r#multiplex_settings,
                 ),
                 to_pulumi_object_field(
@@ -81,16 +81,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#media_package_settings: {
-                        let field_value = match fields_map.get("media_package_settings") {
+                        let field_value = match fields_map.get("mediaPackageSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'media_package_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mediaPackageSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multiplex_settings: {
-                        let field_value = match fields_map.get("multiplex_settings") {
+                        let field_value = match fields_map.get("multiplexSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multiplex_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multiplexSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

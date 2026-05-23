@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "resource_tag_key",
+                    "resourceTagKey",
                     &self.r#resource_tag_key,
                 ),
                 to_pulumi_object_field(
-                    "resource_tag_value",
+                    "resourceTagValue",
                     &self.r#resource_tag_value,
                 ),
             ];
@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#resource_tag_key: {
-                        let field_value = match fields_map.get("resource_tag_key") {
+                        let field_value = match fields_map.get("resourceTagKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_tag_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceTagKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_tag_value: {
-                        let field_value = match fields_map.get("resource_tag_value") {
+                        let field_value = match fields_map.get("resourceTagValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_tag_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceTagValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorization_attempt_infos",
+                    "authorizationAttemptInfos",
                     &self.r#authorization_attempt_infos,
                 ),
                 to_pulumi_object_field(
-                    "dns_authorizations",
+                    "dnsAuthorizations",
                     &self.r#dns_authorizations,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#domains,
                 ),
                 to_pulumi_object_field(
-                    "issuance_config",
+                    "issuanceConfig",
                     &self.r#issuance_config,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_issues",
+                    "provisioningIssues",
                     &self.r#provisioning_issues,
                 ),
                 to_pulumi_object_field(
@@ -94,16 +94,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#authorization_attempt_infos: {
-                        let field_value = match fields_map.get("authorization_attempt_infos") {
+                        let field_value = match fields_map.get("authorizationAttemptInfos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorization_attempt_infos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizationAttemptInfos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_authorizations: {
-                        let field_value = match fields_map.get("dns_authorizations") {
+                        let field_value = match fields_map.get("dnsAuthorizations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_authorizations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsAuthorizations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -115,16 +115,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#issuance_config: {
-                        let field_value = match fields_map.get("issuance_config") {
+                        let field_value = match fields_map.get("issuanceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'issuance_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'issuanceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioning_issues: {
-                        let field_value = match fields_map.get("provisioning_issues") {
+                        let field_value = match fields_map.get("provisioningIssues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioning_issues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisioningIssues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aws
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "per_node_pool_sg_rules_disabled",
+                    "perNodePoolSgRulesDisabled",
                     &self.r#per_node_pool_sg_rules_disabled,
                 ),
                 to_pulumi_object_field(
-                    "pod_address_cidr_blocks",
+                    "podAddressCidrBlocks",
                     &self.r#pod_address_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "service_address_cidr_blocks",
+                    "serviceAddressCidrBlocks",
                     &self.r#service_address_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "vpc_id",
+                    "vpcId",
                     &self.r#vpc_id,
                 ),
             ];
@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#per_node_pool_sg_rules_disabled: {
-                        let field_value = match fields_map.get("per_node_pool_sg_rules_disabled") {
+                        let field_value = match fields_map.get("perNodePoolSgRulesDisabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'per_node_pool_sg_rules_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'perNodePoolSgRulesDisabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_address_cidr_blocks: {
-                        let field_value = match fields_map.get("pod_address_cidr_blocks") {
+                        let field_value = match fields_map.get("podAddressCidrBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_address_cidr_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podAddressCidrBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_address_cidr_blocks: {
-                        let field_value = match fields_map.get("service_address_cidr_blocks") {
+                        let field_value = match fields_map.get("serviceAddressCidrBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_address_cidr_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAddressCidrBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_id: {
-                        let field_value = match fields_map.get("vpc_id") {
+                        let field_value = match fields_map.get("vpcId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "target_read_bytes_per_second",
+                    "targetReadBytesPerSecond",
                     &self.r#target_read_bytes_per_second,
                 ),
                 to_pulumi_object_field(
-                    "target_read_ops_per_second",
+                    "targetReadOpsPerSecond",
                     &self.r#target_read_ops_per_second,
                 ),
                 to_pulumi_object_field(
-                    "target_write_bytes_per_second",
+                    "targetWriteBytesPerSecond",
                     &self.r#target_write_bytes_per_second,
                 ),
                 to_pulumi_object_field(
-                    "target_write_ops_per_second",
+                    "targetWriteOpsPerSecond",
                     &self.r#target_write_ops_per_second,
                 ),
             ];
@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#target_read_bytes_per_second: {
-                        let field_value = match fields_map.get("target_read_bytes_per_second") {
+                        let field_value = match fields_map.get("targetReadBytesPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_read_bytes_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetReadBytesPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_read_ops_per_second: {
-                        let field_value = match fields_map.get("target_read_ops_per_second") {
+                        let field_value = match fields_map.get("targetReadOpsPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_read_ops_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetReadOpsPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_write_bytes_per_second: {
-                        let field_value = match fields_map.get("target_write_bytes_per_second") {
+                        let field_value = match fields_map.get("targetWriteBytesPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_write_bytes_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetWriteBytesPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_write_ops_per_second: {
-                        let field_value = match fields_map.get("target_write_ops_per_second") {
+                        let field_value = match fields_map.get("targetWriteOpsPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_write_ops_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetWriteOpsPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

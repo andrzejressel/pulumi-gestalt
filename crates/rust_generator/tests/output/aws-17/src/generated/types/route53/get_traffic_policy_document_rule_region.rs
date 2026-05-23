@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_reference",
+                    "endpointReference",
                     &self.r#endpoint_reference,
                 ),
                 to_pulumi_object_field(
-                    "evaluate_target_health",
+                    "evaluateTargetHealth",
                     &self.r#evaluate_target_health,
                 ),
                 to_pulumi_object_field(
-                    "health_check",
+                    "healthCheck",
                     &self.r#health_check,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "rule_reference",
+                    "ruleReference",
                     &self.r#rule_reference,
                 ),
             ];
@@ -82,23 +82,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#endpoint_reference: {
-                        let field_value = match fields_map.get("endpoint_reference") {
+                        let field_value = match fields_map.get("endpointReference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_reference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointReference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluate_target_health: {
-                        let field_value = match fields_map.get("evaluate_target_health") {
+                        let field_value = match fields_map.get("evaluateTargetHealth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluate_target_health' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluateTargetHealth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_check: {
-                        let field_value = match fields_map.get("health_check") {
+                        let field_value = match fields_map.get("healthCheck") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_check' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthCheck' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_reference: {
-                        let field_value = match fields_map.get("rule_reference") {
+                        let field_value = match fields_map.get("ruleReference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_reference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleReference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

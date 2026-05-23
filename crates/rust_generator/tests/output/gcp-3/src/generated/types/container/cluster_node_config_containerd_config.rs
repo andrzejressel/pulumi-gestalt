@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "private_registry_access_config",
+                    "privateRegistryAccessConfig",
                     &self.r#private_registry_access_config,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#private_registry_access_config: {
-                        let field_value = match fields_map.get("private_registry_access_config") {
+                        let field_value = match fields_map.get("privateRegistryAccessConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_registry_access_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateRegistryAccessConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

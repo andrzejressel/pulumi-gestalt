@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "float_value",
+                    "floatValue",
                     &self.r#float_value,
                 ),
                 to_pulumi_object_field(
-                    "integer_value",
+                    "integerValue",
                     &self.r#integer_value,
                 ),
             ];
@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#float_value: {
-                        let field_value = match fields_map.get("float_value") {
+                        let field_value = match fields_map.get("floatValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'float_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'floatValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#integer_value: {
-                        let field_value = match fields_map.get("integer_value") {
+                        let field_value = match fields_map.get("integerValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'integer_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'integerValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

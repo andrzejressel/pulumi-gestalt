@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lak
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_assets",
+                    "activeAssets",
                     &self.r#active_assets,
                 ),
                 to_pulumi_object_field(
-                    "security_policy_applying_assets",
+                    "securityPolicyApplyingAssets",
                     &self.r#security_policy_applying_assets,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#active_assets: {
-                        let field_value = match fields_map.get("active_assets") {
+                        let field_value = match fields_map.get("activeAssets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_assets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeAssets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_policy_applying_assets: {
-                        let field_value = match fields_map.get("security_policy_applying_assets") {
+                        let field_value = match fields_map.get("securityPolicyApplyingAssets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_policy_applying_assets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityPolicyApplyingAssets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#update_time: {
-                        let field_value = match fields_map.get("update_time") {
+                        let field_value = match fields_map.get("updateTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'update_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updateTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_pools",
+                    "connectionPools",
                     &self.r#connection_pools,
                 ),
                 to_pulumi_object_field(
-                    "health_checks",
+                    "healthChecks",
                     &self.r#health_checks,
                 ),
                 to_pulumi_object_field(
-                    "port_mappings",
+                    "portMappings",
                     &self.r#port_mappings,
                 ),
                 to_pulumi_object_field(
@@ -70,23 +70,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#connection_pools: {
-                        let field_value = match fields_map.get("connection_pools") {
+                        let field_value = match fields_map.get("connectionPools") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionPools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_checks: {
-                        let field_value = match fields_map.get("health_checks") {
+                        let field_value = match fields_map.get("healthChecks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_checks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthChecks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_mappings: {
-                        let field_value = match fields_map.get("port_mappings") {
+                        let field_value = match fields_map.get("portMappings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_mappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portMappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

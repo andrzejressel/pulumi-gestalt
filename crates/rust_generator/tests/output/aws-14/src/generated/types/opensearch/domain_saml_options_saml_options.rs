@@ -55,23 +55,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#idp,
                 ),
                 to_pulumi_object_field(
-                    "master_backend_role",
+                    "masterBackendRole",
                     &self.r#master_backend_role,
                 ),
                 to_pulumi_object_field(
-                    "master_user_name",
+                    "masterUserName",
                     &self.r#master_user_name,
                 ),
                 to_pulumi_object_field(
-                    "roles_key",
+                    "rolesKey",
                     &self.r#roles_key,
                 ),
                 to_pulumi_object_field(
-                    "session_timeout_minutes",
+                    "sessionTimeoutMinutes",
                     &self.r#session_timeout_minutes,
                 ),
                 to_pulumi_object_field(
-                    "subject_key",
+                    "subjectKey",
                     &self.r#subject_key,
                 ),
             ];
@@ -112,37 +112,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#master_backend_role: {
-                        let field_value = match fields_map.get("master_backend_role") {
+                        let field_value = match fields_map.get("masterBackendRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'master_backend_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'masterBackendRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#master_user_name: {
-                        let field_value = match fields_map.get("master_user_name") {
+                        let field_value = match fields_map.get("masterUserName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'master_user_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'masterUserName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#roles_key: {
-                        let field_value = match fields_map.get("roles_key") {
+                        let field_value = match fields_map.get("rolesKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'roles_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rolesKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_timeout_minutes: {
-                        let field_value = match fields_map.get("session_timeout_minutes") {
+                        let field_value = match fields_map.get("sessionTimeoutMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_timeout_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionTimeoutMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject_key: {
-                        let field_value = match fields_map.get("subject_key") {
+                        let field_value = match fields_map.get("subjectKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subject_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subjectKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

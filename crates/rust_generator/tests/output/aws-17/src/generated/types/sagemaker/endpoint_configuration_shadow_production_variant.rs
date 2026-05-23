@@ -79,63 +79,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_type",
+                    "acceleratorType",
                     &self.r#accelerator_type,
                 ),
                 to_pulumi_object_field(
-                    "container_startup_health_check_timeout_in_seconds",
+                    "containerStartupHealthCheckTimeoutInSeconds",
                     &self.r#container_startup_health_check_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "core_dump_config",
+                    "coreDumpConfig",
                     &self.r#core_dump_config,
                 ),
                 to_pulumi_object_field(
-                    "enable_ssm_access",
+                    "enableSsmAccess",
                     &self.r#enable_ssm_access,
                 ),
                 to_pulumi_object_field(
-                    "inference_ami_version",
+                    "inferenceAmiVersion",
                     &self.r#inference_ami_version,
                 ),
                 to_pulumi_object_field(
-                    "initial_instance_count",
+                    "initialInstanceCount",
                     &self.r#initial_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "initial_variant_weight",
+                    "initialVariantWeight",
                     &self.r#initial_variant_weight,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "managed_instance_scaling",
+                    "managedInstanceScaling",
                     &self.r#managed_instance_scaling,
                 ),
                 to_pulumi_object_field(
-                    "model_data_download_timeout_in_seconds",
+                    "modelDataDownloadTimeoutInSeconds",
                     &self.r#model_data_download_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "model_name",
+                    "modelName",
                     &self.r#model_name,
                 ),
                 to_pulumi_object_field(
-                    "routing_configs",
+                    "routingConfigs",
                     &self.r#routing_configs,
                 ),
                 to_pulumi_object_field(
-                    "serverless_config",
+                    "serverlessConfig",
                     &self.r#serverless_config,
                 ),
                 to_pulumi_object_field(
-                    "variant_name",
+                    "variantName",
                     &self.r#variant_name,
                 ),
                 to_pulumi_object_field(
-                    "volume_size_in_gb",
+                    "volumeSizeInGb",
                     &self.r#volume_size_in_gb,
                 ),
             ];
@@ -162,107 +162,107 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#accelerator_type: {
-                        let field_value = match fields_map.get("accelerator_type") {
+                        let field_value = match fields_map.get("acceleratorType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerator_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratorType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_startup_health_check_timeout_in_seconds: {
-                        let field_value = match fields_map.get("container_startup_health_check_timeout_in_seconds") {
+                        let field_value = match fields_map.get("containerStartupHealthCheckTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_startup_health_check_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerStartupHealthCheckTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#core_dump_config: {
-                        let field_value = match fields_map.get("core_dump_config") {
+                        let field_value = match fields_map.get("coreDumpConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'core_dump_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coreDumpConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_ssm_access: {
-                        let field_value = match fields_map.get("enable_ssm_access") {
+                        let field_value = match fields_map.get("enableSsmAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_ssm_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableSsmAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inference_ami_version: {
-                        let field_value = match fields_map.get("inference_ami_version") {
+                        let field_value = match fields_map.get("inferenceAmiVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inference_ami_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inferenceAmiVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initial_instance_count: {
-                        let field_value = match fields_map.get("initial_instance_count") {
+                        let field_value = match fields_map.get("initialInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initial_variant_weight: {
-                        let field_value = match fields_map.get("initial_variant_weight") {
+                        let field_value = match fields_map.get("initialVariantWeight") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_variant_weight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialVariantWeight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_type: {
-                        let field_value = match fields_map.get("instance_type") {
+                        let field_value = match fields_map.get("instanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_instance_scaling: {
-                        let field_value = match fields_map.get("managed_instance_scaling") {
+                        let field_value = match fields_map.get("managedInstanceScaling") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_instance_scaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedInstanceScaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_data_download_timeout_in_seconds: {
-                        let field_value = match fields_map.get("model_data_download_timeout_in_seconds") {
+                        let field_value = match fields_map.get("modelDataDownloadTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_data_download_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelDataDownloadTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_name: {
-                        let field_value = match fields_map.get("model_name") {
+                        let field_value = match fields_map.get("modelName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#routing_configs: {
-                        let field_value = match fields_map.get("routing_configs") {
+                        let field_value = match fields_map.get("routingConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'routing_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routingConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#serverless_config: {
-                        let field_value = match fields_map.get("serverless_config") {
+                        let field_value = match fields_map.get("serverlessConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'serverless_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverlessConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#variant_name: {
-                        let field_value = match fields_map.get("variant_name") {
+                        let field_value = match fields_map.get("variantName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'variant_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'variantName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_size_in_gb: {
-                        let field_value = match fields_map.get("volume_size_in_gb") {
+                        let field_value = match fields_map.get("volumeSizeInGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_size_in_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeSizeInGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

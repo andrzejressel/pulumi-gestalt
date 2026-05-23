@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "regex_file_set",
+                    "regexFileSet",
                     &self.r#regex_file_set,
                 ),
                 to_pulumi_object_field(
@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#regex_file_set: {
-                        let field_value = match fields_map.get("regex_file_set") {
+                        let field_value = match fields_map.get("regexFileSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regex_file_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regexFileSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

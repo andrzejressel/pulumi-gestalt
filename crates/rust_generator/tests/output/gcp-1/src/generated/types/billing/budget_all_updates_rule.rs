@@ -53,23 +53,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_default_iam_recipients",
+                    "disableDefaultIamRecipients",
                     &self.r#disable_default_iam_recipients,
                 ),
                 to_pulumi_object_field(
-                    "enable_project_level_recipients",
+                    "enableProjectLevelRecipients",
                     &self.r#enable_project_level_recipients,
                 ),
                 to_pulumi_object_field(
-                    "monitoring_notification_channels",
+                    "monitoringNotificationChannels",
                     &self.r#monitoring_notification_channels,
                 ),
                 to_pulumi_object_field(
-                    "pubsub_topic",
+                    "pubsubTopic",
                     &self.r#pubsub_topic,
                 ),
                 to_pulumi_object_field(
-                    "schema_version",
+                    "schemaVersion",
                     &self.r#schema_version,
                 ),
             ];
@@ -96,37 +96,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#disable_default_iam_recipients: {
-                        let field_value = match fields_map.get("disable_default_iam_recipients") {
+                        let field_value = match fields_map.get("disableDefaultIamRecipients") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_default_iam_recipients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableDefaultIamRecipients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_project_level_recipients: {
-                        let field_value = match fields_map.get("enable_project_level_recipients") {
+                        let field_value = match fields_map.get("enableProjectLevelRecipients") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_project_level_recipients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableProjectLevelRecipients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitoring_notification_channels: {
-                        let field_value = match fields_map.get("monitoring_notification_channels") {
+                        let field_value = match fields_map.get("monitoringNotificationChannels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monitoring_notification_channels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monitoringNotificationChannels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pubsub_topic: {
-                        let field_value = match fields_map.get("pubsub_topic") {
+                        let field_value = match fields_map.get("pubsubTopic") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pubsub_topic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pubsubTopic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_version: {
-                        let field_value = match fields_map.get("schema_version") {
+                        let field_value = match fields_map.get("schemaVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

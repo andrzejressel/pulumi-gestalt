@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "slot_id",
+                    "slotId",
                     &self.r#slot_id,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slot_id: {
-                        let field_value = match fields_map.get("slot_id") {
+                        let field_value = match fields_map.get("slotId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slot_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'slotId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

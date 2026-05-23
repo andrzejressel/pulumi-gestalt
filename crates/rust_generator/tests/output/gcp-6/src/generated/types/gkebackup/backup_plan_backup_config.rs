@@ -55,31 +55,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_namespaces",
+                    "allNamespaces",
                     &self.r#all_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "encryption_key",
+                    "encryptionKey",
                     &self.r#encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "include_secrets",
+                    "includeSecrets",
                     &self.r#include_secrets,
                 ),
                 to_pulumi_object_field(
-                    "include_volume_data",
+                    "includeVolumeData",
                     &self.r#include_volume_data,
                 ),
                 to_pulumi_object_field(
-                    "permissive_mode",
+                    "permissiveMode",
                     &self.r#permissive_mode,
                 ),
                 to_pulumi_object_field(
-                    "selected_applications",
+                    "selectedApplications",
                     &self.r#selected_applications,
                 ),
                 to_pulumi_object_field(
-                    "selected_namespaces",
+                    "selectedNamespaces",
                     &self.r#selected_namespaces,
                 ),
             ];
@@ -106,51 +106,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#all_namespaces: {
-                        let field_value = match fields_map.get("all_namespaces") {
+                        let field_value = match fields_map.get("allNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'all_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_key: {
-                        let field_value = match fields_map.get("encryption_key") {
+                        let field_value = match fields_map.get("encryptionKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_secrets: {
-                        let field_value = match fields_map.get("include_secrets") {
+                        let field_value = match fields_map.get("includeSecrets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_secrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeSecrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_volume_data: {
-                        let field_value = match fields_map.get("include_volume_data") {
+                        let field_value = match fields_map.get("includeVolumeData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_volume_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeVolumeData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permissive_mode: {
-                        let field_value = match fields_map.get("permissive_mode") {
+                        let field_value = match fields_map.get("permissiveMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permissive_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permissiveMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selected_applications: {
-                        let field_value = match fields_map.get("selected_applications") {
+                        let field_value = match fields_map.get("selectedApplications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selected_applications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectedApplications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selected_namespaces: {
-                        let field_value = match fields_map.get("selected_namespaces") {
+                        let field_value = match fields_map.get("selectedNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selected_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectedNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

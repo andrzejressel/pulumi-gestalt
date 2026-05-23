@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_hierarchical_resource_quota",
+                    "enableHierarchicalResourceQuota",
                     &self.r#enable_hierarchical_resource_quota,
                 ),
                 to_pulumi_object_field(
-                    "enable_pod_tree_labels",
+                    "enablePodTreeLabels",
                     &self.r#enable_pod_tree_labels,
                 ),
                 to_pulumi_object_field(
@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#enable_hierarchical_resource_quota: {
-                        let field_value = match fields_map.get("enable_hierarchical_resource_quota") {
+                        let field_value = match fields_map.get("enableHierarchicalResourceQuota") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_hierarchical_resource_quota' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableHierarchicalResourceQuota' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_pod_tree_labels: {
-                        let field_value = match fields_map.get("enable_pod_tree_labels") {
+                        let field_value = match fields_map.get("enablePodTreeLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_pod_tree_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePodTreeLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

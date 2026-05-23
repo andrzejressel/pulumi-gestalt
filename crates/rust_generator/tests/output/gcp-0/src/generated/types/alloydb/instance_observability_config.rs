@@ -55,31 +55,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "max_query_string_length",
+                    "maxQueryStringLength",
                     &self.r#max_query_string_length,
                 ),
                 to_pulumi_object_field(
-                    "preserve_comments",
+                    "preserveComments",
                     &self.r#preserve_comments,
                 ),
                 to_pulumi_object_field(
-                    "query_plans_per_minute",
+                    "queryPlansPerMinute",
                     &self.r#query_plans_per_minute,
                 ),
                 to_pulumi_object_field(
-                    "record_application_tags",
+                    "recordApplicationTags",
                     &self.r#record_application_tags,
                 ),
                 to_pulumi_object_field(
-                    "track_active_queries",
+                    "trackActiveQueries",
                     &self.r#track_active_queries,
                 ),
                 to_pulumi_object_field(
-                    "track_wait_event_types",
+                    "trackWaitEventTypes",
                     &self.r#track_wait_event_types,
                 ),
                 to_pulumi_object_field(
-                    "track_wait_events",
+                    "trackWaitEvents",
                     &self.r#track_wait_events,
                 ),
             ];
@@ -113,51 +113,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_query_string_length: {
-                        let field_value = match fields_map.get("max_query_string_length") {
+                        let field_value = match fields_map.get("maxQueryStringLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_query_string_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxQueryStringLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_comments: {
-                        let field_value = match fields_map.get("preserve_comments") {
+                        let field_value = match fields_map.get("preserveComments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_comments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preserveComments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_plans_per_minute: {
-                        let field_value = match fields_map.get("query_plans_per_minute") {
+                        let field_value = match fields_map.get("queryPlansPerMinute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_plans_per_minute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryPlansPerMinute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_application_tags: {
-                        let field_value = match fields_map.get("record_application_tags") {
+                        let field_value = match fields_map.get("recordApplicationTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_application_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordApplicationTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#track_active_queries: {
-                        let field_value = match fields_map.get("track_active_queries") {
+                        let field_value = match fields_map.get("trackActiveQueries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'track_active_queries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trackActiveQueries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#track_wait_event_types: {
-                        let field_value = match fields_map.get("track_wait_event_types") {
+                        let field_value = match fields_map.get("trackWaitEventTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'track_wait_event_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trackWaitEventTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#track_wait_events: {
-                        let field_value = match fields_map.get("track_wait_events") {
+                        let field_value = match fields_map.get("trackWaitEvents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'track_wait_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trackWaitEvents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

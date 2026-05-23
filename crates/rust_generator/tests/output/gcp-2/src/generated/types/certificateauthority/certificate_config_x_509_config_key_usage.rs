@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_key_usage",
+                    "baseKeyUsage",
                     &self.r#base_key_usage,
                 ),
                 to_pulumi_object_field(
-                    "extended_key_usage",
+                    "extendedKeyUsage",
                     &self.r#extended_key_usage,
                 ),
                 to_pulumi_object_field(
-                    "unknown_extended_key_usages",
+                    "unknownExtendedKeyUsages",
                     &self.r#unknown_extended_key_usages,
                 ),
             ];
@@ -69,23 +69,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#base_key_usage: {
-                        let field_value = match fields_map.get("base_key_usage") {
+                        let field_value = match fields_map.get("baseKeyUsage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'base_key_usage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baseKeyUsage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extended_key_usage: {
-                        let field_value = match fields_map.get("extended_key_usage") {
+                        let field_value = match fields_map.get("extendedKeyUsage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extended_key_usage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extendedKeyUsage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unknown_extended_key_usages: {
-                        let field_value = match fields_map.get("unknown_extended_key_usages") {
+                        let field_value = match fields_map.get("unknownExtendedKeyUsages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unknown_extended_key_usages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unknownExtendedKeyUsages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

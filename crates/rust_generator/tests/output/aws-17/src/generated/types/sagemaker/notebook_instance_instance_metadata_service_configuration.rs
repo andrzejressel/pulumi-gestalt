@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Not
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "minimum_instance_metadata_service_version",
+                    "minimumInstanceMetadataServiceVersion",
                     &self.r#minimum_instance_metadata_service_version,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#minimum_instance_metadata_service_version: {
-                        let field_value = match fields_map.get("minimum_instance_metadata_service_version") {
+                        let field_value = match fields_map.get("minimumInstanceMetadataServiceVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_instance_metadata_service_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumInstanceMetadataServiceVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

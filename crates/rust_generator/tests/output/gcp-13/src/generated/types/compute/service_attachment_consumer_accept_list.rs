@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_limit",
+                    "connectionLimit",
                     &self.r#connection_limit,
                 ),
                 to_pulumi_object_field(
-                    "network_url",
+                    "networkUrl",
                     &self.r#network_url,
                 ),
                 to_pulumi_object_field(
-                    "project_id_or_num",
+                    "projectIdOrNum",
                     &self.r#project_id_or_num,
                 ),
             ];
@@ -69,23 +69,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#connection_limit: {
-                        let field_value = match fields_map.get("connection_limit") {
+                        let field_value = match fields_map.get("connectionLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_url: {
-                        let field_value = match fields_map.get("network_url") {
+                        let field_value = match fields_map.get("networkUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#project_id_or_num: {
-                        let field_value = match fields_map.get("project_id_or_num") {
+                        let field_value = match fields_map.get("projectIdOrNum") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_id_or_num' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectIdOrNum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

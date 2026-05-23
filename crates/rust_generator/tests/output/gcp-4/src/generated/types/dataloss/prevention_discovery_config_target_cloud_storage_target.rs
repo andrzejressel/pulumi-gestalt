@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "generation_cadence",
+                    "generationCadence",
                     &self.r#generation_cadence,
                 ),
             ];
@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#generation_cadence: {
-                        let field_value = match fields_map.get("generation_cadence") {
+                        let field_value = match fields_map.get("generationCadence") {
                             Some(value) => value,
-                            None => bail!("Missing field 'generation_cadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'generationCadence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

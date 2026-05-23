@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_sqls",
+                    "customSqls",
                     &self.r#custom_sqls,
                 ),
                 to_pulumi_object_field(
-                    "physical_table_map_id",
+                    "physicalTableMapId",
                     &self.r#physical_table_map_id,
                 ),
                 to_pulumi_object_field(
-                    "relational_tables",
+                    "relationalTables",
                     &self.r#relational_tables,
                 ),
                 to_pulumi_object_field(
-                    "s_3_sources",
+                    "s3Sources",
                     &self.r#s_3_sources,
                 ),
             ];
@@ -70,30 +70,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#custom_sqls: {
-                        let field_value = match fields_map.get("custom_sqls") {
+                        let field_value = match fields_map.get("customSqls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_sqls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customSqls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#physical_table_map_id: {
-                        let field_value = match fields_map.get("physical_table_map_id") {
+                        let field_value = match fields_map.get("physicalTableMapId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'physical_table_map_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'physicalTableMapId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#relational_tables: {
-                        let field_value = match fields_map.get("relational_tables") {
+                        let field_value = match fields_map.get("relationalTables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'relational_tables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'relationalTables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_sources: {
-                        let field_value = match fields_map.get("s_3_sources") {
+                        let field_value = match fields_map.get("s3Sources") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

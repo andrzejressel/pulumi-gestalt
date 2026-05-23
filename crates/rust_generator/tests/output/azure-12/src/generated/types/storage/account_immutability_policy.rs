@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_protected_append_writes",
+                    "allowProtectedAppendWrites",
                     &self.r#allow_protected_append_writes,
                 ),
                 to_pulumi_object_field(
-                    "period_since_creation_in_days",
+                    "periodSinceCreationInDays",
                     &self.r#period_since_creation_in_days,
                 ),
                 to_pulumi_object_field(
@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#allow_protected_append_writes: {
-                        let field_value = match fields_map.get("allow_protected_append_writes") {
+                        let field_value = match fields_map.get("allowProtectedAppendWrites") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_protected_append_writes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowProtectedAppendWrites' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#period_since_creation_in_days: {
-                        let field_value = match fields_map.get("period_since_creation_in_days") {
+                        let field_value = match fields_map.get("periodSinceCreationInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'period_since_creation_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'periodSinceCreationInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#double,
                 ),
                 to_pulumi_object_field(
-                    "enum_",
+                    "enum",
                     &self.r#enum_,
                 ),
                 to_pulumi_object_field(
-                    "enum_list",
+                    "enumList",
                     &self.r#enum_list,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#int,
                 ),
                 to_pulumi_object_field(
-                    "int_list",
+                    "intList",
                     &self.r#int_list,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#string,
                 ),
                 to_pulumi_object_field(
-                    "string_list",
+                    "stringList",
                     &self.r#string_list,
                 ),
                 to_pulumi_object_field(
-                    "value_type",
+                    "valueType",
                     &self.r#value_type,
                 ),
             ];
@@ -136,16 +136,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enum_: {
-                        let field_value = match fields_map.get("enum_") {
+                        let field_value = match fields_map.get("enum") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enum_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enum_list: {
-                        let field_value = match fields_map.get("enum_list") {
+                        let field_value = match fields_map.get("enumList") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enum_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enumList' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -157,9 +157,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#int_list: {
-                        let field_value = match fields_map.get("int_list") {
+                        let field_value = match fields_map.get("intList") {
                             Some(value) => value,
-                            None => bail!("Missing field 'int_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intList' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -178,16 +178,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_list: {
-                        let field_value = match fields_map.get("string_list") {
+                        let field_value = match fields_map.get("stringList") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringList' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_type: {
-                        let field_value = match fields_map.get("value_type") {
+                        let field_value = match fields_map.get("valueType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "approvals_needed",
+                    "approvalsNeeded",
                     &self.r#approvals_needed,
                 ),
                 to_pulumi_object_field(
-                    "email_addresses",
+                    "emailAddresses",
                     &self.r#email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "email_list_uuid",
+                    "emailListUuid",
                     &self.r#email_list_uuid,
                 ),
             ];
@@ -65,23 +65,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#approvals_needed: {
-                        let field_value = match fields_map.get("approvals_needed") {
+                        let field_value = match fields_map.get("approvalsNeeded") {
                             Some(value) => value,
-                            None => bail!("Missing field 'approvals_needed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'approvalsNeeded' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_addresses: {
-                        let field_value = match fields_map.get("email_addresses") {
+                        let field_value = match fields_map.get("emailAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_list_uuid: {
-                        let field_value = match fields_map.get("email_list_uuid") {
+                        let field_value = match fields_map.get("emailListUuid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_list_uuid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailListUuid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

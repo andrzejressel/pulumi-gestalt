@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#oci,
                 ),
                 to_pulumi_object_field(
-                    "prevent_drift",
+                    "preventDrift",
                     &self.r#prevent_drift,
                 ),
                 to_pulumi_object_field(
-                    "source_format",
+                    "sourceFormat",
                     &self.r#source_format,
                 ),
             ];
@@ -105,16 +105,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prevent_drift: {
-                        let field_value = match fields_map.get("prevent_drift") {
+                        let field_value = match fields_map.get("preventDrift") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prevent_drift' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preventDrift' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_format: {
-                        let field_value = match fields_map.get("source_format") {
+                        let field_value = match fields_map.get("sourceFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

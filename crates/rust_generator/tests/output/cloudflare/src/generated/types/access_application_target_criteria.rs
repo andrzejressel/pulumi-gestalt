@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "target_attributes",
+                    "targetAttributes",
                     &self.r#target_attributes,
                 ),
             ];
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_attributes: {
-                        let field_value = match fields_map.get("target_attributes") {
+                        let field_value = match fields_map.get("targetAttributes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetAttributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

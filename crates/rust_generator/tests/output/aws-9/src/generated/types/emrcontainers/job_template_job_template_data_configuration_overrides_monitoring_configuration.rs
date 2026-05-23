@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_watch_monitoring_configuration",
+                    "cloudWatchMonitoringConfiguration",
                     &self.r#cloud_watch_monitoring_configuration,
                 ),
                 to_pulumi_object_field(
-                    "persistent_app_ui",
+                    "persistentAppUi",
                     &self.r#persistent_app_ui,
                 ),
                 to_pulumi_object_field(
-                    "s_3_monitoring_configuration",
+                    "s3MonitoringConfiguration",
                     &self.r#s_3_monitoring_configuration,
                 ),
             ];
@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#cloud_watch_monitoring_configuration: {
-                        let field_value = match fields_map.get("cloud_watch_monitoring_configuration") {
+                        let field_value = match fields_map.get("cloudWatchMonitoringConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_watch_monitoring_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudWatchMonitoringConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#persistent_app_ui: {
-                        let field_value = match fields_map.get("persistent_app_ui") {
+                        let field_value = match fields_map.get("persistentAppUi") {
                             Some(value) => value,
-                            None => bail!("Missing field 'persistent_app_ui' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'persistentAppUi' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_monitoring_configuration: {
-                        let field_value = match fields_map.get("s_3_monitoring_configuration") {
+                        let field_value = match fields_map.get("s3MonitoringConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_monitoring_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3MonitoringConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -59,31 +59,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_auth_credentials",
+                    "basicAuthCredentials",
                     &self.r#basic_auth_credentials,
                 ),
                 to_pulumi_object_field(
-                    "build_spec",
+                    "buildSpec",
                     &self.r#build_spec,
                 ),
                 to_pulumi_object_field(
-                    "enable_auto_build",
+                    "enableAutoBuild",
                     &self.r#enable_auto_build,
                 ),
                 to_pulumi_object_field(
-                    "enable_basic_auth",
+                    "enableBasicAuth",
                     &self.r#enable_basic_auth,
                 ),
                 to_pulumi_object_field(
-                    "enable_performance_mode",
+                    "enablePerformanceMode",
                     &self.r#enable_performance_mode,
                 ),
                 to_pulumi_object_field(
-                    "enable_pull_request_preview",
+                    "enablePullRequestPreview",
                     &self.r#enable_pull_request_preview,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#framework,
                 ),
                 to_pulumi_object_field(
-                    "pull_request_environment_name",
+                    "pullRequestEnvironmentName",
                     &self.r#pull_request_environment_name,
                 ),
                 to_pulumi_object_field(
@@ -122,51 +122,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#basic_auth_credentials: {
-                        let field_value = match fields_map.get("basic_auth_credentials") {
+                        let field_value = match fields_map.get("basicAuthCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'basic_auth_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'basicAuthCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#build_spec: {
-                        let field_value = match fields_map.get("build_spec") {
+                        let field_value = match fields_map.get("buildSpec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'build_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'buildSpec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_auto_build: {
-                        let field_value = match fields_map.get("enable_auto_build") {
+                        let field_value = match fields_map.get("enableAutoBuild") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_auto_build' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAutoBuild' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_basic_auth: {
-                        let field_value = match fields_map.get("enable_basic_auth") {
+                        let field_value = match fields_map.get("enableBasicAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_basic_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableBasicAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_performance_mode: {
-                        let field_value = match fields_map.get("enable_performance_mode") {
+                        let field_value = match fields_map.get("enablePerformanceMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_performance_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePerformanceMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_pull_request_preview: {
-                        let field_value = match fields_map.get("enable_pull_request_preview") {
+                        let field_value = match fields_map.get("enablePullRequestPreview") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_pull_request_preview' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePullRequestPreview' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_variables: {
-                        let field_value = match fields_map.get("environment_variables") {
+                        let field_value = match fields_map.get("environmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'environmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -178,9 +178,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pull_request_environment_name: {
-                        let field_value = match fields_map.get("pull_request_environment_name") {
+                        let field_value = match fields_map.get("pullRequestEnvironmentName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pull_request_environment_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pullRequestEnvironmentName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "output_schema_version",
+                    "outputSchemaVersion",
                     &self.r#output_schema_version,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_schema_version: {
-                        let field_value = match fields_map.get("output_schema_version") {
+                        let field_value = match fields_map.get("outputSchemaVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_schema_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputSchemaVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

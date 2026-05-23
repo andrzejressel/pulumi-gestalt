@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
                     &self.r#comparator,
                 ),
                 to_pulumi_object_field(
-                    "tag_values",
+                    "tagValues",
                     &self.r#tag_values,
                 ),
             ];
@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_values: {
-                        let field_value = match fields_map.get("tag_values") {
+                        let field_value = match fields_map.get("tagValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

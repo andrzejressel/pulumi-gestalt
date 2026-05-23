@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dic
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pubsub_topic",
+                    "pubsubTopic",
                     &self.r#pubsub_topic,
                 ),
                 to_pulumi_object_field(
-                    "send_for_bulk_import",
+                    "sendForBulkImport",
                     &self.r#send_for_bulk_import,
                 ),
             ];
@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#pubsub_topic: {
-                        let field_value = match fields_map.get("pubsub_topic") {
+                        let field_value = match fields_map.get("pubsubTopic") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pubsub_topic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pubsubTopic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_for_bulk_import: {
-                        let field_value = match fields_map.get("send_for_bulk_import") {
+                        let field_value = match fields_map.get("sendForBulkImport") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_for_bulk_import' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendForBulkImport' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

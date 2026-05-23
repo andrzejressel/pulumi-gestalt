@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "owner_user_profile_name",
+                    "ownerUserProfileName",
                     &self.r#owner_user_profile_name,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#owner_user_profile_name: {
-                        let field_value = match fields_map.get("owner_user_profile_name") {
+                        let field_value = match fields_map.get("ownerUserProfileName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'owner_user_profile_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ownerUserProfileName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

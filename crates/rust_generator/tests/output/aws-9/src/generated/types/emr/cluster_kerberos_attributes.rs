@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ad_domain_join_password",
+                    "adDomainJoinPassword",
                     &self.r#ad_domain_join_password,
                 ),
                 to_pulumi_object_field(
-                    "ad_domain_join_user",
+                    "adDomainJoinUser",
                     &self.r#ad_domain_join_user,
                 ),
                 to_pulumi_object_field(
-                    "cross_realm_trust_principal_password",
+                    "crossRealmTrustPrincipalPassword",
                     &self.r#cross_realm_trust_principal_password,
                 ),
                 to_pulumi_object_field(
-                    "kdc_admin_password",
+                    "kdcAdminPassword",
                     &self.r#kdc_admin_password,
                 ),
                 to_pulumi_object_field(
@@ -82,30 +82,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#ad_domain_join_password: {
-                        let field_value = match fields_map.get("ad_domain_join_password") {
+                        let field_value = match fields_map.get("adDomainJoinPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ad_domain_join_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adDomainJoinPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ad_domain_join_user: {
-                        let field_value = match fields_map.get("ad_domain_join_user") {
+                        let field_value = match fields_map.get("adDomainJoinUser") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ad_domain_join_user' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adDomainJoinUser' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cross_realm_trust_principal_password: {
-                        let field_value = match fields_map.get("cross_realm_trust_principal_password") {
+                        let field_value = match fields_map.get("crossRealmTrustPrincipalPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_realm_trust_principal_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossRealmTrustPrincipalPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kdc_admin_password: {
-                        let field_value = match fields_map.get("kdc_admin_password") {
+                        let field_value = match fields_map.get("kdcAdminPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kdc_admin_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kdcAdminPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

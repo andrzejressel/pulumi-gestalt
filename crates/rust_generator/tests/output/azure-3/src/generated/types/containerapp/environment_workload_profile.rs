@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maximum_count",
+                    "maximumCount",
                     &self.r#maximum_count,
                 ),
                 to_pulumi_object_field(
-                    "minimum_count",
+                    "minimumCount",
                     &self.r#minimum_count,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "workload_profile_type",
+                    "workloadProfileType",
                     &self.r#workload_profile_type,
                 ),
             ];
@@ -78,16 +78,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#maximum_count: {
-                        let field_value = match fields_map.get("maximum_count") {
+                        let field_value = match fields_map.get("maximumCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_count: {
-                        let field_value = match fields_map.get("minimum_count") {
+                        let field_value = match fields_map.get("minimumCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -99,9 +99,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workload_profile_type: {
-                        let field_value = match fields_map.get("workload_profile_type") {
+                        let field_value = match fields_map.get("workloadProfileType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workload_profile_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workloadProfileType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

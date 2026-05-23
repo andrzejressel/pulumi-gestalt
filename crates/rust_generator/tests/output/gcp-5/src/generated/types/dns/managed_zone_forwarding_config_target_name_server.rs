@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "forwarding_path",
+                    "forwardingPath",
                     &self.r#forwarding_path,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_address",
+                    "ipv4Address",
                     &self.r#ipv_4_address,
                 ),
             ];
@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#forwarding_path: {
-                        let field_value = match fields_map.get("forwarding_path") {
+                        let field_value = match fields_map.get("forwardingPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarding_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardingPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_4_address: {
-                        let field_value = match fields_map.get("ipv_4_address") {
+                        let field_value = match fields_map.get("ipv4Address") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_4_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv4Address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "efs_file_system_config",
+                    "efsFileSystemConfig",
                     &self.r#efs_file_system_config,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#efs_file_system_config: {
-                        let field_value = match fields_map.get("efs_file_system_config") {
+                        let field_value = match fields_map.get("efsFileSystemConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'efs_file_system_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'efsFileSystemConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

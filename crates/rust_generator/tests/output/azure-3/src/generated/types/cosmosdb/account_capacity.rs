@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "total_throughput_limit",
+                    "totalThroughputLimit",
                     &self.r#total_throughput_limit,
                 ),
             ];
@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#total_throughput_limit: {
-                        let field_value = match fields_map.get("total_throughput_limit") {
+                        let field_value = match fields_map.get("totalThroughputLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_throughput_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalThroughputLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
