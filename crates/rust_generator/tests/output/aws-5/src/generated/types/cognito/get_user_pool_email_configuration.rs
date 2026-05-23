@@ -1,27 +1,22 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetUserPoolEmailConfiguration {
     /// - Configuration set used for sending emails.
     #[builder(into)]
-    #[serde(rename = "configurationSet")]
     pub r#configuration_set: String,
     /// - Email sending account.
     #[builder(into)]
-    #[serde(rename = "emailSendingAccount")]
     pub r#email_sending_account: String,
     /// - Email sender address.
     #[builder(into)]
-    #[serde(rename = "from")]
     pub r#from: String,
     /// - Reply-to email address.
     #[builder(into)]
-    #[serde(rename = "replyToEmailAddress")]
     pub r#reply_to_email_address: String,
     /// - Source Amazon Resource Name (ARN) for emails.
     #[builder(into)]
-    #[serde(rename = "sourceArn")]
     pub r#source_arn: String,
 }
 

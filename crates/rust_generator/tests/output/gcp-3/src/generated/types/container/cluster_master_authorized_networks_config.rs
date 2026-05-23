@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,16 +6,13 @@ pub struct ClusterMasterAuthorizedNetworksConfig {
     /// External networks that can access the
     /// Kubernetes cluster master through HTTPS.
     #[builder(into)]
-    #[serde(rename = "cidrBlocks")]
     pub r#cidr_blocks: Option<Vec<super::super::types::container::ClusterMasterAuthorizedNetworksConfigCidrBlock>>,
     /// Whether Kubernetes master is
     /// accessible via Google Compute Engine Public IPs.
     #[builder(into)]
-    #[serde(rename = "gcpPublicCidrsAccessEnabled")]
     pub r#gcp_public_cidrs_access_enabled: Option<bool>,
     /// Whether authorized networks is enforced on the private endpoint or not. Defaults to false.
     #[builder(into)]
-    #[serde(rename = "privateEndpointEnforcementEnabled")]
     pub r#private_endpoint_enforcement_enabled: Option<bool>,
 }
 

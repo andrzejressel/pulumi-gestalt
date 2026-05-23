@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct PipelinePipelineDefinitionS3Location {
     /// Name of the S3 bucket.
     #[builder(into)]
-    #[serde(rename = "bucket")]
     pub r#bucket: String,
     /// The object key (or key name) uniquely identifies the object in an S3 bucket.
     #[builder(into)]
-    #[serde(rename = "objectKey")]
     pub r#object_key: String,
     /// Version Id of the pipeline definition file. If not specified, Amazon SageMaker will retrieve the latest version.
     #[builder(into)]
-    #[serde(rename = "versionId")]
     pub r#version_id: Option<String>,
 }
 

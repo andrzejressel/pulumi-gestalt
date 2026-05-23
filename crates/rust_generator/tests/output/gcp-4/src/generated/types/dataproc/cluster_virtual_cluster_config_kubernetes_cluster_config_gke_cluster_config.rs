@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,13 +6,11 @@ pub struct ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfig {
     /// A target GKE cluster to deploy to. It must be in the same project and region as the Dataproc cluster 
     /// (the GKE cluster can be zonal or regional)
     #[builder(into)]
-    #[serde(rename = "gkeClusterTarget")]
     pub r#gke_cluster_target: Option<String>,
     /// GKE node pools where workloads will be scheduled. At least one node pool must be assigned the `DEFAULT` 
     /// GkeNodePoolTarget.Role. If a GkeNodePoolTarget is not specified, Dataproc constructs a `DEFAULT` GkeNodePoolTarget.
     /// Each role can be given to only one GkeNodePoolTarget. All node pools must have the same location settings.
     #[builder(into)]
-    #[serde(rename = "nodePoolTargets")]
     pub r#node_pool_targets: Option<Vec<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTarget>>,
 }
 

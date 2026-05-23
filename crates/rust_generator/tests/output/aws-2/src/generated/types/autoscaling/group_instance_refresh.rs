@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GroupInstanceRefresh {
     /// Override default parameters for Instance Refresh.
     #[builder(into)]
-    #[serde(rename = "preferences")]
     pub r#preferences: Option<Box<super::super::types::autoscaling::GroupInstanceRefreshPreferences>>,
     /// Strategy to use for instance refresh. The only allowed value is `Rolling`. See [StartInstanceRefresh Action](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_StartInstanceRefresh.html#API_StartInstanceRefresh_RequestParameters) for more information.
     #[builder(into)]
-    #[serde(rename = "strategy")]
     pub r#strategy: String,
     /// Set of additional property names that will trigger an Instance Refresh. A refresh will always be triggered by a change in any of `launch_configuration`, `launch_template`, or `mixed_instances_policy`.
     /// 
@@ -21,7 +19,6 @@ pub struct GroupInstanceRefresh {
     /// 
     /// > **NOTE:** Depending on health check settings and group size, an instance refresh may take a long time or fail. This resource does not wait for the instance refresh to complete.
     #[builder(into)]
-    #[serde(rename = "triggers")]
     pub r#triggers: Option<Vec<String>>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,17 +7,14 @@ pub struct ServiceTemplateVpcAccessNetworkInterface {
     /// network and subnetwork are specified, the given VPC subnetwork must belong to the given VPC network. If network is not specified, it will be
     /// looked up from the subnetwork.
     #[builder(into)]
-    #[serde(rename = "network")]
     pub r#network: Option<String>,
     /// The VPC subnetwork that the Cloud Run resource will get IPs from. At least one of network or subnetwork must be specified. If both
     /// network and subnetwork are specified, the given VPC subnetwork must belong to the given VPC network. If subnetwork is not specified, the
     /// subnetwork with the same name with the network will be used.
     #[builder(into)]
-    #[serde(rename = "subnetwork")]
     pub r#subnetwork: Option<String>,
     /// Network tags applied to this Cloud Run service.
     #[builder(into)]
-    #[serde(rename = "tags")]
     pub r#tags: Option<Vec<String>>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,21 +6,17 @@ pub struct AwsLogSourceSource {
     /// Specify the AWS account information where you want to enable Security Lake.
     /// If not specified, uses all accounts included in the Security Lake.
     #[builder(into)]
-    #[serde(rename = "accounts")]
     pub r#accounts: Option<Vec<String>>,
     /// Specify the Regions where you want to enable Security Lake.
     #[builder(into)]
-    #[serde(rename = "regions")]
     pub r#regions: Vec<String>,
     /// The name for a AWS source. This must be a Regionally unique value. Valid values: `ROUTE53`, `VPC_FLOW`, `SH_FINDINGS`, `CLOUD_TRAIL_MGMT`, `LAMBDA_EXECUTION`, `S3_DATA`, `EKS_AUDIT`, `WAF`.
     #[builder(into)]
-    #[serde(rename = "sourceName")]
     pub r#source_name: String,
     /// The version for a AWS source.
     /// If not specified, the version will be the default.
     /// This must be a Regionally unique value.
     #[builder(into)]
-    #[serde(rename = "sourceVersion")]
     pub r#source_version: Option<String>,
 }
 

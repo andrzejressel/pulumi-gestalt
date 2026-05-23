@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,11 +8,9 @@ pub struct BackupPlanBackupRuleStandardScheduleBackupWindow {
     /// 
     /// - - -
     #[builder(into)]
-    #[serde(rename = "endHourOfDay")]
     pub r#end_hour_of_day: Option<i32>,
     /// The hour of the day (0-23) when the window starts, for example, if the value of the start hour of the day is 6, that means the backup window starts at 6:00.
     #[builder(into)]
-    #[serde(rename = "startHourOfDay")]
     pub r#start_hour_of_day: i32,
 }
 

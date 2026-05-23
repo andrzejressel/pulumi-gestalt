@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ThemeConfiguration {
     /// Color properties that apply to chart data colors. See data_color_palette.
     #[builder(into)]
-    #[serde(rename = "dataColorPalette")]
     pub r#data_color_palette: Option<Box<super::super::types::quicksight::ThemeConfigurationDataColorPalette>>,
     /// Display options related to sheets. See sheet.
     #[builder(into)]
-    #[serde(rename = "sheet")]
     pub r#sheet: Option<Box<super::super::types::quicksight::ThemeConfigurationSheet>>,
     /// Determines the typography options. See typography.
     #[builder(into)]
-    #[serde(rename = "typography")]
     pub r#typography: Option<Box<super::super::types::quicksight::ThemeConfigurationTypography>>,
     /// Color properties that apply to the UI and to charts, excluding the colors that apply to data. See ui_color_palette.
     #[builder(into)]
-    #[serde(rename = "uiColorPalette")]
     pub r#ui_color_palette: Option<Box<super::super::types::quicksight::ThemeConfigurationUiColorPalette>>,
 }
 

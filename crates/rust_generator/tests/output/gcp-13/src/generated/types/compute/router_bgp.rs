@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,7 +7,6 @@ pub struct RouterBgp {
     /// Default value is `DEFAULT`.
     /// Possible values are: `DEFAULT`, `CUSTOM`.
     #[builder(into)]
-    #[serde(rename = "advertiseMode")]
     pub r#advertise_mode: Option<String>,
     /// User-specified list of prefix groups to advertise in custom mode.
     /// This field can only be populated if advertiseMode is CUSTOM and
@@ -16,7 +15,6 @@ pub struct RouterBgp {
     /// blank to advertise no custom groups.
     /// This enum field has the one valid value: ALL_SUBNETS
     #[builder(into)]
-    #[serde(rename = "advertisedGroups")]
     pub r#advertised_groups: Option<Vec<String>>,
     /// User-specified list of individual IP ranges to advertise in
     /// custom mode. This field can only be populated if advertiseMode
@@ -25,14 +23,12 @@ pub struct RouterBgp {
     /// Leave this field blank to advertise no custom IP ranges.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "advertisedIpRanges")]
     pub r#advertised_ip_ranges: Option<Vec<super::super::types::compute::RouterBgpAdvertisedIpRange>>,
     /// Local BGP Autonomous System Number (ASN). Must be an RFC6996
     /// private ASN, either 16-bit or 32-bit. The value will be fixed for
     /// this router resource. All VPN tunnels that link to this router
     /// will have the same local ASN.
     #[builder(into)]
-    #[serde(rename = "asn")]
     pub r#asn: i32,
     /// Explicitly specifies a range of valid BGP Identifiers for this Router.
     /// It is provided as a link-local IPv4 range (from 169.254.0.0/16), of
@@ -40,7 +36,6 @@ pub struct RouterBgp {
     /// not overlap with any IPv4 BGP session ranges. Other vendors commonly
     /// call this router ID.
     #[builder(into)]
-    #[serde(rename = "identifierRange")]
     pub r#identifier_range: Option<String>,
     /// The interval in seconds between BGP keepalive messages that are sent
     /// to the peer. Hold time is three times the interval at which keepalive
@@ -52,7 +47,6 @@ pub struct RouterBgp {
     /// between the two peers. If set, this value must be between 20 and 60.
     /// The default is 20.
     #[builder(into)]
-    #[serde(rename = "keepaliveInterval")]
     pub r#keepalive_interval: Option<i32>,
 }
 

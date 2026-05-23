@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct EventTargetSagemakerPipelineTarget {
     /// List of Parameter names and values for SageMaker Model Building Pipeline execution.
     #[builder(into)]
-    #[serde(rename = "pipelineParameterLists")]
     pub r#pipeline_parameter_lists: Option<Vec<super::super::types::cloudwatch::EventTargetSagemakerPipelineTargetPipelineParameterList>>,
 }
 

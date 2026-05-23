@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct BatchEnvironmentConfigExecutionConfig {
     /// The Cloud KMS key to use for encryption.
     #[builder(into)]
-    #[serde(rename = "kmsKey")]
     pub r#kms_key: Option<String>,
     /// Tags used for network traffic control.
     #[builder(into)]
-    #[serde(rename = "networkTags")]
     pub r#network_tags: Option<Vec<String>>,
     /// Network configuration for workload execution.
     #[builder(into)]
-    #[serde(rename = "networkUri")]
     pub r#network_uri: Option<String>,
     /// Service account that used to execute workload.
     #[builder(into)]
-    #[serde(rename = "serviceAccount")]
     pub r#service_account: Option<String>,
     /// A Cloud Storage bucket used to stage workload dependencies, config files, and store
     /// workload output and other ephemeral data, such as Spark history files. If you do not specify a staging bucket,
@@ -25,11 +21,9 @@ pub struct BatchEnvironmentConfigExecutionConfig {
     /// and then create and manage project-level, per-location staging and temporary buckets.
     /// This field requires a Cloud Storage bucket name, not a gs://... URI to a Cloud Storage bucket.
     #[builder(into)]
-    #[serde(rename = "stagingBucket")]
     pub r#staging_bucket: Option<String>,
     /// Subnetwork configuration for workload execution.
     #[builder(into)]
-    #[serde(rename = "subnetworkUri")]
     pub r#subnetwork_uri: Option<String>,
     /// The duration after which the workload will be terminated.
     /// When the workload exceeds this duration, it will be unconditionally terminated without waiting for ongoing
@@ -40,7 +34,6 @@ pub struct BatchEnvironmentConfigExecutionConfig {
     /// the conditions are treated as OR conditions: the workload will be terminated when it has been idle for idleTtl or
     /// when ttl has been exceeded, whichever occurs first.
     #[builder(into)]
-    #[serde(rename = "ttl")]
     pub r#ttl: Option<String>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,22 +6,18 @@ pub struct AutonomousDatabasePropertiesLocalStandbyDb {
     /// The date and time the Autonomous Data Guard role was switched for the
     /// standby Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "dataGuardRoleChangedTime")]
     pub r#data_guard_role_changed_time: Option<String>,
     /// The date and time the Disaster Recovery role was switched for the standby
     /// Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "disasterRecoveryRoleChangedTime")]
     pub r#disaster_recovery_role_changed_time: Option<String>,
     /// The amount of time, in seconds, that the data of the standby database lags
     /// in comparison to the data of the primary database.
     #[builder(into)]
-    #[serde(rename = "lagTimeDuration")]
     pub r#lag_time_duration: Option<String>,
     /// The additional details about the current lifecycle state of the
     /// Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "lifecycleDetails")]
     pub r#lifecycle_details: Option<String>,
     /// Possible values:
     ///  STATE_UNSPECIFIED
@@ -47,7 +43,6 @@ pub struct AutonomousDatabasePropertiesLocalStandbyDb {
     /// INACCESSIBLE
     /// STANDBY
     #[builder(into)]
-    #[serde(rename = "state")]
     pub r#state: Option<String>,
 }
 

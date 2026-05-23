@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,15 +6,12 @@ pub struct RecordSetRoutingPolicyWrr {
     /// The list of targets to be health checked. Note that if DNSSEC is enabled for this zone, only one of `rrdatas` or `health_checked_targets` can be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "healthCheckedTargets")]
     pub r#health_checked_targets: Option<Box<super::super::types::dns::RecordSetRoutingPolicyWrrHealthCheckedTargets>>,
     /// Same as `rrdatas` above.
     #[builder(into)]
-    #[serde(rename = "rrdatas")]
     pub r#rrdatas: Option<Vec<String>>,
     /// The ratio of traffic routed to the target.
     #[builder(into)]
-    #[serde(rename = "weight")]
     pub r#weight: f64,
 }
 

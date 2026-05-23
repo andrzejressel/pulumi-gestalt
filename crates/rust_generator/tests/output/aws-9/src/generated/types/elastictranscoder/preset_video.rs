@@ -1,59 +1,46 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct PresetVideo {
     /// The display aspect ratio of the video in the output file. Valid values are: `auto`, `1:1`, `4:3`, `3:2`, `16:9`. (Note; to better control resolution and aspect ratio of output videos, we recommend that you use the values `max_width`, `max_height`, `sizing_policy`, `padding_policy`, and `display_aspect_ratio` instead of `resolution` and `aspect_ratio`.)
     #[builder(into)]
-    #[serde(rename = "aspectRatio")]
     pub r#aspect_ratio: Option<String>,
     /// The bit rate of the video stream in the output file, in kilobits/second. You can configure variable bit rate or constant bit rate encoding.
     #[builder(into)]
-    #[serde(rename = "bitRate")]
     pub r#bit_rate: Option<String>,
     /// The video codec for the output file. Valid values are `gif`, `H.264`, `mpeg2`, `vp8`, and `vp9`.
     #[builder(into)]
-    #[serde(rename = "codec")]
     pub r#codec: Option<String>,
     /// The value that Elastic Transcoder adds to the metadata in the output file. If you set DisplayAspectRatio to auto, Elastic Transcoder chooses an aspect ratio that ensures square pixels. If you specify another option, Elastic Transcoder sets that value in the output file.
     #[builder(into)]
-    #[serde(rename = "displayAspectRatio")]
     pub r#display_aspect_ratio: Option<String>,
     /// Whether to use a fixed value for Video:FixedGOP. Not applicable for containers of type gif. Valid values are true and false. Also known as, Fixed Number of Frames Between Keyframes.
     #[builder(into)]
-    #[serde(rename = "fixedGop")]
     pub r#fixed_gop: Option<String>,
     /// The frames per second for the video stream in the output file. The following values are valid: `auto`, `10`, `15`, `23.97`, `24`, `25`, `29.97`, `30`, `50`, `60`.
     #[builder(into)]
-    #[serde(rename = "frameRate")]
     pub r#frame_rate: Option<String>,
     /// The maximum number of frames between key frames. Not applicable for containers of type gif.
     #[builder(into)]
-    #[serde(rename = "keyframesMaxDist")]
     pub r#keyframes_max_dist: Option<String>,
     /// If you specify auto for FrameRate, Elastic Transcoder uses the frame rate of the input video for the frame rate of the output video, up to the maximum frame rate. If you do not specify a MaxFrameRate, Elastic Transcoder will use a default of 30.
     #[builder(into)]
-    #[serde(rename = "maxFrameRate")]
     pub r#max_frame_rate: Option<String>,
     /// The maximum height of the output video in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 96 and 3072, inclusive.
     #[builder(into)]
-    #[serde(rename = "maxHeight")]
     pub r#max_height: Option<String>,
     /// The maximum width of the output video in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 128 and 4096, inclusive.
     #[builder(into)]
-    #[serde(rename = "maxWidth")]
     pub r#max_width: Option<String>,
     /// When you set PaddingPolicy to Pad, Elastic Transcoder might add black bars to the top and bottom and/or left and right sides of the output video to make the total size of the output video match the values that you specified for `max_width` and `max_height`.
     #[builder(into)]
-    #[serde(rename = "paddingPolicy")]
     pub r#padding_policy: Option<String>,
     /// The width and height of the video in the output file, in pixels. Valid values are `auto` and `widthxheight`. (see note for `aspect_ratio`)
     #[builder(into)]
-    #[serde(rename = "resolution")]
     pub r#resolution: Option<String>,
     /// A value that controls scaling of the output video. Valid values are: `Fit`, `Fill`, `Stretch`, `Keep`, `ShrinkToFit`, `ShrinkToFill`.
     #[builder(into)]
-    #[serde(rename = "sizingPolicy")]
     pub r#sizing_policy: Option<String>,
 }
 

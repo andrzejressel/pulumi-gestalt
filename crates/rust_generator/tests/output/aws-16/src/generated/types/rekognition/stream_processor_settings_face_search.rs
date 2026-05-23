@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct StreamProcessorSettingsFaceSearch {
     /// ID of a collection that contains faces that you want to search for.
     #[builder(into)]
-    #[serde(rename = "collectionId")]
     pub r#collection_id: String,
     /// Minimum face match confidence score that must be met to return a result for a recognized face.
     #[builder(into)]
-    #[serde(rename = "faceMatchThreshold")]
     pub r#face_match_threshold: Option<f64>,
 }
 

@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct BucketV2LifecycleRuleTransition {
     /// Specifies the date after which you want the corresponding action to take effect.
     #[builder(into)]
-    #[serde(rename = "date")]
     pub r#date: Option<String>,
     /// Specifies the number of days after object creation when the specific rule action takes effect.
     #[builder(into)]
-    #[serde(rename = "days")]
     pub r#days: Option<i32>,
     /// Specifies the Amazon S3 [storage class](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Transition.html#AmazonS3-Type-Transition-StorageClass) to which you want the object to transition.
     #[builder(into)]
-    #[serde(rename = "storageClass")]
     pub r#storage_class: String,
 }
 

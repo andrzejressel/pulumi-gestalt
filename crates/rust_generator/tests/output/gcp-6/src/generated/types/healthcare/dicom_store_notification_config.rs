@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,11 +10,9 @@ pub struct DicomStoreNotificationConfig {
     /// project. service-PROJECT_NUMBER@gcp-sa-healthcare.iam.gserviceaccount.com must have publisher permissions on the given
     /// Cloud Pub/Sub topic. Not having adequate permissions will cause the calls that send notifications to fail.
     #[builder(into)]
-    #[serde(rename = "pubsubTopic")]
     pub r#pubsub_topic: String,
     /// Indicates whether or not to send Pub/Sub notifications on bulk import. Only supported for DICOM imports.
     #[builder(into)]
-    #[serde(rename = "sendForBulkImport")]
     pub r#send_for_bulk_import: Option<bool>,
 }
 

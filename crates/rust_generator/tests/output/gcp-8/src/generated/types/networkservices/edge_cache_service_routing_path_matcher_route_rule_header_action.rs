@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,23 +6,19 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderAction {
     /// Describes a header to add.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "requestHeaderToAdds")]
     pub r#request_header_to_adds: Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd>>,
     /// A list of header names for headers that need to be removed from the request prior to forwarding the request to the origin.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "requestHeaderToRemoves")]
     pub r#request_header_to_removes: Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemove>>,
     /// Headers to add to the response prior to sending it back to the client.
     /// Response headers are only sent to the client, and do not have an effect on the cache serving the response.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "responseHeaderToAdds")]
     pub r#response_header_to_adds: Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAdd>>,
     /// A list of header names for headers that need to be removed from the request prior to forwarding the request to the origin.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "responseHeaderToRemoves")]
     pub r#response_header_to_removes: Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemove>>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,7 +9,6 @@ pub struct InterconnectMacsec {
     /// connection is configured with a must-secure security policy that drops all traffic
     /// if the MKA session cannot be established with your router.
     #[builder(into)]
-    #[serde(rename = "failOpen")]
     pub r#fail_open: Option<bool>,
     /// A keychain placeholder describing a set of named key objects along with their
     /// start times. A MACsec CKN/CAK is generated for each key in the key chain.
@@ -17,7 +16,6 @@ pub struct InterconnectMacsec {
     /// or re-establishing a MACsec secure link.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "preSharedKeys")]
     pub r#pre_shared_keys: Vec<super::super::types::compute::InterconnectMacsecPreSharedKey>,
 }
 

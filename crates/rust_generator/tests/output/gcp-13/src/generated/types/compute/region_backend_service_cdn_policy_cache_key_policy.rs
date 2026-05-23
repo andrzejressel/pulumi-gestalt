@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct RegionBackendServiceCdnPolicyCacheKeyPolicy {
     /// If true requests to different hosts will be cached separately.
     #[builder(into)]
-    #[serde(rename = "includeHost")]
     pub r#include_host: Option<bool>,
     /// Names of cookies to include in cache keys.
     #[builder(into)]
-    #[serde(rename = "includeNamedCookies")]
     pub r#include_named_cookies: Option<Vec<String>>,
     /// If true, http and https requests will be cached separately.
     #[builder(into)]
-    #[serde(rename = "includeProtocol")]
     pub r#include_protocol: Option<bool>,
     /// If true, include query string parameters in the cache key
     /// according to query_string_whitelist and
@@ -22,7 +19,6 @@ pub struct RegionBackendServiceCdnPolicyCacheKeyPolicy {
     /// If false, the query string will be excluded from the cache
     /// key entirely.
     #[builder(into)]
-    #[serde(rename = "includeQueryString")]
     pub r#include_query_string: Option<bool>,
     /// Names of query string parameters to exclude in cache keys.
     /// All other parameters will be included. Either specify
@@ -30,7 +26,6 @@ pub struct RegionBackendServiceCdnPolicyCacheKeyPolicy {
     /// '&' and '=' will be percent encoded and not treated as
     /// delimiters.
     #[builder(into)]
-    #[serde(rename = "queryStringBlacklists")]
     pub r#query_string_blacklists: Option<Vec<String>>,
     /// Names of query string parameters to include in cache keys.
     /// All other parameters will be excluded. Either specify
@@ -38,7 +33,6 @@ pub struct RegionBackendServiceCdnPolicyCacheKeyPolicy {
     /// '&' and '=' will be percent encoded and not treated as
     /// delimiters.
     #[builder(into)]
-    #[serde(rename = "queryStringWhitelists")]
     pub r#query_string_whitelists: Option<Vec<String>>,
 }
 

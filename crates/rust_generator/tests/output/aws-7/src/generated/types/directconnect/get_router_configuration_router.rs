@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetRouterConfigurationRouter {
     /// Router platform
     #[builder(into)]
-    #[serde(rename = "platform")]
     pub r#platform: String,
     /// ID of the Router Type. For example: `CiscoSystemsInc-2900SeriesRouters-IOS124`
     /// 
@@ -26,22 +25,17 @@ pub struct GetRouterConfigurationRouter {
     /// }
     /// ```
     #[builder(into)]
-    #[serde(rename = "routerTypeIdentifier")]
     pub r#router_type_identifier: String,
     /// Router operating system
     #[builder(into)]
-    #[serde(rename = "software")]
     pub r#software: String,
     /// Router vendor
     #[builder(into)]
-    #[serde(rename = "vendor")]
     pub r#vendor: String,
     /// Router XSLT Template Name
     #[builder(into)]
-    #[serde(rename = "xsltTemplateName")]
     pub r#xslt_template_name: String,
     #[builder(into)]
-    #[serde(rename = "xsltTemplateNameForMacSec")]
     pub r#xslt_template_name_for_mac_sec: String,
 }
 

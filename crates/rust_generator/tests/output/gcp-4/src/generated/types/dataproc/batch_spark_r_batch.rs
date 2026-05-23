@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,20 +6,16 @@ pub struct BatchSparkRBatch {
     /// HCFS URIs of archives to be extracted into the working directory of each executor.
     /// Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip.
     #[builder(into)]
-    #[serde(rename = "archiveUris")]
     pub r#archive_uris: Option<Vec<String>>,
     /// The arguments to pass to the driver. Do not include arguments that can be set as batch
     /// properties, such as --conf, since a collision can occur that causes an incorrect batch submission.
     #[builder(into)]
-    #[serde(rename = "args")]
     pub r#args: Option<Vec<String>>,
     /// HCFS URIs of files to be placed in the working directory of each executor.
     #[builder(into)]
-    #[serde(rename = "fileUris")]
     pub r#file_uris: Option<Vec<String>>,
     /// The HCFS URI of the main R file to use as the driver. Must be a .R or .r file.
     #[builder(into)]
-    #[serde(rename = "mainRFileUri")]
     pub r#main_r_file_uri: Option<String>,
 }
 

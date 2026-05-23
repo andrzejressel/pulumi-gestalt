@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,12 +7,10 @@ pub struct EngineSplitTrafficSplit {
     /// 
     /// - - -
     #[builder(into)]
-    #[serde(rename = "allocations")]
     pub r#allocations: std::collections::HashMap<String, String>,
     /// Mechanism used to determine which version a request is sent to. The traffic selection algorithm will be stable for either type until allocations are changed.
     /// Possible values are: `UNSPECIFIED`, `COOKIE`, `IP`, `RANDOM`.
     #[builder(into)]
-    #[serde(rename = "shardBy")]
     pub r#shard_by: Option<String>,
 }
 

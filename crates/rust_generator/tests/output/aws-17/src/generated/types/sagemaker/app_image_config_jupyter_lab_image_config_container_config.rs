@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct AppImageConfigJupyterLabImageConfigContainerConfig {
     /// The arguments for the container when you're running the application.
     #[builder(into)]
-    #[serde(rename = "containerArguments")]
     pub r#container_arguments: Option<Vec<String>>,
     /// The entrypoint used to run the application in the container.
     #[builder(into)]
-    #[serde(rename = "containerEntrypoints")]
     pub r#container_entrypoints: Option<Vec<String>>,
     /// The environment variables to set in the container.
     #[builder(into)]
-    #[serde(rename = "containerEnvironmentVariables")]
     pub r#container_environment_variables: Option<std::collections::HashMap<String, String>>,
 }
 

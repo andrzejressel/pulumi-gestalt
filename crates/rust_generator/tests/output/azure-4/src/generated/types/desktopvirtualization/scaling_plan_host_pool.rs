@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ScalingPlanHostPool {
     /// The ID of the HostPool to assign the Scaling Plan to.
     #[builder(into)]
-    #[serde(rename = "hostpoolId")]
     pub r#hostpool_id: String,
     /// Specifies if the scaling plan is enabled or disabled for the HostPool.
     #[builder(into)]
-    #[serde(rename = "scalingPlanEnabled")]
     pub r#scaling_plan_enabled: bool,
 }
 

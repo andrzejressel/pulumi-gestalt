@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetNetworkManagerConnectivityConfigurationAppliesToGroup {
     /// Whether global mesh is supported.
     #[builder(into)]
-    #[serde(rename = "globalMeshEnabled")]
     pub r#global_mesh_enabled: bool,
     /// The group connectivity type.
     #[builder(into)]
-    #[serde(rename = "groupConnectivity")]
     pub r#group_connectivity: String,
     /// The ID of the Network Manager Network Group.
     #[builder(into)]
-    #[serde(rename = "networkGroupId")]
     pub r#network_group_id: String,
     /// Whether hub gateway is used.
     #[builder(into)]
-    #[serde(rename = "useHubGateway")]
     pub r#use_hub_gateway: bool,
 }
 

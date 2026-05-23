@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,7 +9,6 @@ pub struct AttachedClusterAuthorization {
     /// For more info on RBAC, see
     /// https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
     #[builder(into)]
-    #[serde(rename = "adminGroups")]
     pub r#admin_groups: Option<Vec<String>>,
     /// Users that can perform operations as a cluster admin. A managed
     /// ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
@@ -17,7 +16,6 @@ pub struct AttachedClusterAuthorization {
     /// For more info on RBAC, see
     /// https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
     #[builder(into)]
-    #[serde(rename = "adminUsers")]
     pub r#admin_users: Option<Vec<String>>,
 }
 

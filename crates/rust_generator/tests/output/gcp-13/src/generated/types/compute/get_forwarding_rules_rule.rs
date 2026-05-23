@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -19,7 +19,6 @@ pub struct GetForwardingRulesRule {
     /// forwarding rule. The L3_DEFAULT protocol requires 'allPorts' be set to
     /// true.
     #[builder(into)]
-    #[serde(rename = "allPorts")]
     pub r#all_ports: bool,
     /// This field is used along with the 'backend_service' field for
     /// internal load balancing or with the 'target' field for internal
@@ -31,38 +30,30 @@ pub struct GetForwardingRulesRule {
     /// Otherwise only allows access from clients in the same region as the
     /// internal load balancer.
     #[builder(into)]
-    #[serde(rename = "allowGlobalAccess")]
     pub r#allow_global_access: bool,
     /// This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region.
     #[builder(into)]
-    #[serde(rename = "allowPscGlobalAccess")]
     pub r#allow_psc_global_access: bool,
     /// Identifies the backend service to which the forwarding rule sends traffic.
     /// 
     /// Required for Internal TCP/UDP Load Balancing and Network Load Balancing;
     /// must be omitted for all other load balancer types.
     #[builder(into)]
-    #[serde(rename = "backendService")]
     pub r#backend_service: String,
     /// [Output Only] The URL for the corresponding base Forwarding Rule. By base Forwarding Rule, we mean the Forwarding Rule that has the same IP address, protocol, and port settings with the current Forwarding Rule, but without sourceIPRanges specified. Always empty if the current Forwarding Rule does not have sourceIPRanges specified.
     #[builder(into)]
-    #[serde(rename = "baseForwardingRule")]
     pub r#base_forwarding_rule: String,
     /// Creation timestamp in RFC3339 text format.
     #[builder(into)]
-    #[serde(rename = "creationTimestamp")]
     pub r#creation_timestamp: String,
     /// An optional description of this resource. Provide this property when
     /// you create the resource.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: String,
     #[builder(into)]
-    #[serde(rename = "effectiveLabels")]
     pub r#effective_labels: std::collections::HashMap<String, String>,
     /// The unique identifier number for the resource. This identifier is defined by the server.
     #[builder(into)]
-    #[serde(rename = "forwardingRuleId")]
     pub r#forwarding_rule_id: i32,
     /// IP address for which this forwarding rule accepts traffic. When a client
     /// sends traffic to this IP address, the forwarding rule directs the traffic
@@ -103,7 +94,6 @@ pub struct GetForwardingRulesRule {
     /// When reading an 'IPAddress', the API always returns the IP
     /// address number.
     #[builder(into)]
-    #[serde(rename = "ipAddress")]
     pub r#ip_address: String,
     /// The IP protocol to which this rule applies.
     /// 
@@ -120,14 +110,12 @@ pub struct GetForwardingRulesRule {
     /// backend service with UNSPECIFIED protocol.
     /// A forwarding rule with "L3_DEFAULT" IPProtocal cannot be attached to a backend service with TCP or UDP. Possible values: ["TCP", "UDP", "ESP", "AH", "SCTP", "ICMP", "L3_DEFAULT"]
     #[builder(into)]
-    #[serde(rename = "ipProtocol")]
     pub r#ip_protocol: String,
     /// The IP address version that will be used by this forwarding rule.
     /// Valid options are IPV4 and IPV6.
     /// 
     /// If not set, the IPv4 address will be used by default. Possible values: ["IPV4", "IPV6"]
     #[builder(into)]
-    #[serde(rename = "ipVersion")]
     pub r#ip_version: String,
     /// Indicates whether or not this load balancer can be used as a collector for
     /// packet mirroring. To prevent mirroring loops, instances behind this
@@ -137,12 +125,10 @@ pub struct GetForwardingRulesRule {
     /// This can only be set to true for load balancers that have their
     /// 'loadBalancingScheme' set to 'INTERNAL'.
     #[builder(into)]
-    #[serde(rename = "isMirroringCollector")]
     pub r#is_mirroring_collector: bool,
     /// The fingerprint used for optimistic locking of this resource.  Used
     /// internally during updates.
     #[builder(into)]
-    #[serde(rename = "labelFingerprint")]
     pub r#label_fingerprint: String,
     /// Labels to apply to this forwarding rule.  A list of key->value pairs.
     /// 
@@ -150,14 +136,12 @@ pub struct GetForwardingRulesRule {
     /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
     /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
     #[builder(into)]
-    #[serde(rename = "labels")]
     pub r#labels: std::collections::HashMap<String, String>,
     /// Specifies the forwarding rule type.
     /// 
     /// For more information about forwarding rules, refer to
     /// [Forwarding rule concepts](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts). Default value: "EXTERNAL" Possible values: ["EXTERNAL", "EXTERNAL_MANAGED", "INTERNAL", "INTERNAL_MANAGED"]
     #[builder(into)]
-    #[serde(rename = "loadBalancingScheme")]
     pub r#load_balancing_scheme: String,
     /// Name of the resource; provided by the client when the resource is created.
     /// The name must be 1-63 characters long, and comply with
@@ -173,7 +157,6 @@ pub struct GetForwardingRulesRule {
     /// APIs, the forwarding rule name must be a 1-20 characters string with
     /// lowercase letters and numbers and must start with a letter.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// This field is not used for external load balancing.
     /// 
@@ -186,7 +169,6 @@ pub struct GetForwardingRulesRule {
     /// For Private Service Connect forwarding rules that forward traffic to Google
     /// APIs, a network must be provided.
     #[builder(into)]
-    #[serde(rename = "network")]
     pub r#network: String,
     /// This signifies the networking tier used for configuring
     /// this load balancer and can only take the following values:
@@ -200,11 +182,9 @@ pub struct GetForwardingRulesRule {
     /// If 'IPAddress' is specified, this value must be equal to the
     /// networkTier of the Address. Possible values: ["PREMIUM", "STANDARD"]
     #[builder(into)]
-    #[serde(rename = "networkTier")]
     pub r#network_tier: String,
     /// This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field.
     #[builder(into)]
-    #[serde(rename = "noAutomateDnsZone")]
     pub r#no_automate_dns_zone: bool,
     /// The 'ports', 'portRange', and 'allPorts' fields are mutually exclusive.
     /// Only packets addressed to ports in the specified range will be forwarded
@@ -231,7 +211,6 @@ pub struct GetForwardingRulesRule {
     /// 
     /// @pattern: \d+(?:-\d+)?
     #[builder(into)]
-    #[serde(rename = "portRange")]
     pub r#port_range: String,
     /// The 'ports', 'portRange', and 'allPorts' fields are mutually exclusive.
     /// Only packets addressed to ports in the specified range will be forwarded
@@ -256,43 +235,34 @@ pub struct GetForwardingRulesRule {
     /// 
     /// @pattern: \d+(?:-\d+)?
     #[builder(into)]
-    #[serde(rename = "ports")]
     pub r#ports: Vec<String>,
     /// The name of the project.
     #[builder(into)]
-    #[serde(rename = "project")]
     pub r#project: String,
     /// The PSC connection id of the PSC Forwarding Rule.
     #[builder(into)]
-    #[serde(rename = "pscConnectionId")]
     pub r#psc_connection_id: String,
     /// The PSC connection status of the PSC Forwarding Rule. Possible values: 'STATUS_UNSPECIFIED', 'PENDING', 'ACCEPTED', 'REJECTED', 'CLOSED'
     #[builder(into)]
-    #[serde(rename = "pscConnectionStatus")]
     pub r#psc_connection_status: String,
     /// The combination of labels configured directly on the resource
     ///  and default labels configured on the provider.
     #[builder(into)]
-    #[serde(rename = "pulumiLabels")]
     pub r#pulumi_labels: std::collections::HashMap<String, String>,
     #[builder(into)]
-    #[serde(rename = "recreateClosedPsc")]
     pub r#recreate_closed_psc: bool,
     /// The region you want to get the forwarding rules from.
     /// 
     /// These arguments must be set in either the provider or the resource in order for the information to be queried.
     #[builder(into)]
-    #[serde(rename = "region")]
     pub r#region: String,
     /// The URI of the resource.
     #[builder(into)]
-    #[serde(rename = "selfLink")]
     pub r#self_link: String,
     /// Service Directory resources to register this forwarding rule with.
     /// 
     /// Currently, only supports a single Service Directory resource.
     #[builder(into)]
-    #[serde(rename = "serviceDirectoryRegistrations")]
     pub r#service_directory_registrations: Vec<super::super::types::compute::GetForwardingRulesRuleServiceDirectoryRegistration>,
     /// An optional prefix to the service name for this Forwarding Rule.
     /// If specified, will be the first label of the fully qualified service
@@ -307,17 +277,14 @@ pub struct GetForwardingRulesRule {
     /// 
     /// This field is only used for INTERNAL load balancing.
     #[builder(into)]
-    #[serde(rename = "serviceLabel")]
     pub r#service_label: String,
     /// The internal fully qualified service name for this Forwarding Rule.
     /// 
     /// This field is only used for INTERNAL load balancing.
     #[builder(into)]
-    #[serde(rename = "serviceName")]
     pub r#service_name: String,
     /// If not empty, this Forwarding Rule will only forward the traffic when the source IP address matches one of the IP addresses or CIDR ranges set here. Note that a Forwarding Rule can only have up to 64 source IP ranges, and this field can only be used with a regional Forwarding Rule whose scheme is EXTERNAL. Each sourceIpRange entry should be either an IP address (for example, 1.2.3.4) or a CIDR range (for example, 1.2.3.0/24).
     #[builder(into)]
-    #[serde(rename = "sourceIpRanges")]
     pub r#source_ip_ranges: Vec<String>,
     /// This field identifies the subnetwork that the load balanced IP should
     /// belong to for this Forwarding Rule, used in internal load balancing and
@@ -327,7 +294,6 @@ pub struct GetForwardingRulesRule {
     /// However, a subnetwork must be specified if the network is in custom subnet
     /// mode or when creating external forwarding rule with IPv6.
     #[builder(into)]
-    #[serde(rename = "subnetwork")]
     pub r#subnetwork: String,
     /// The URL of the target resource to receive the matched traffic.  For
     /// regional forwarding rules, this target must be in the same region as the
@@ -342,7 +308,6 @@ pub struct GetForwardingRulesRule {
     /// 
     /// For Private Service Connect forwarding rules that forward traffic to managed services, the target must be a service attachment.
     #[builder(into)]
-    #[serde(rename = "target")]
     pub r#target: String,
 }
 

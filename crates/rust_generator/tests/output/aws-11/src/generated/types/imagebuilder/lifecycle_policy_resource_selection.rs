@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct LifecyclePolicyResourceSelection {
     /// A list of recipe that are used as selection criteria for the output images that the lifecycle policy applies to. Detailed below.
     #[builder(into)]
-    #[serde(rename = "recipes")]
     pub r#recipes: Option<Vec<super::super::types::imagebuilder::LifecyclePolicyResourceSelectionRecipe>>,
     /// A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.
     #[builder(into)]
-    #[serde(rename = "tagMap")]
     pub r#tag_map: Option<std::collections::HashMap<String, String>>,
 }
 

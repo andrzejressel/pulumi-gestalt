@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,11 +9,9 @@ pub struct HostingCustomDomainCert {
     /// before, that formerly-active cert provides SSL coverage for the domain name
     /// until the current cert propagates.
     #[builder(into)]
-    #[serde(rename = "state")]
     pub r#state: Option<String>,
     /// The record's type, which determines what data the record contains.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: Option<String>,
     /// A set of ACME challenges you can add to your DNS records or existing,
     /// non-Hosting hosting provider to allow Hosting to create an SSL certificate
@@ -22,7 +20,6 @@ pub struct HostingCustomDomainCert {
     /// provider to Hosting.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "verification")]
     pub r#verification: Option<Box<super::super::types::firebase::HostingCustomDomainCertVerification>>,
 }
 

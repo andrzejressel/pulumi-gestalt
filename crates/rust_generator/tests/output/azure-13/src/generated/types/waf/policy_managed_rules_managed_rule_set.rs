@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct PolicyManagedRulesManagedRuleSet {
     /// One or more `rule_group_override` block defined below.
     #[builder(into)]
-    #[serde(rename = "ruleGroupOverrides")]
     pub r#rule_group_overrides: Option<Vec<super::super::types::waf::PolicyManagedRulesManagedRuleSetRuleGroupOverride>>,
     /// The rule set type. Possible values: `Microsoft_BotManagerRuleSet`, `Microsoft_DefaultRuleSet` and `OWASP`. Defaults to `OWASP`.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: Option<String>,
     /// The rule set version. Possible values: `0.1`, `1.0`, `1.1`, `2.1`, `2.2.9`, `3.0`, `3.1` and `3.2`.
     #[builder(into)]
-    #[serde(rename = "version")]
     pub r#version: String,
 }
 

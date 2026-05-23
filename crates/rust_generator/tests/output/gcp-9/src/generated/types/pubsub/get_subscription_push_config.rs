@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -27,23 +27,19 @@ pub struct GetSubscriptionPushConfig {
     /// - v1beta1: uses the push format defined in the v1beta1 Pub/Sub API.
     /// - v1 or v1beta2: uses the push format defined in the v1 Pub/Sub API.
     #[builder(into)]
-    #[serde(rename = "attributes")]
     pub r#attributes: std::collections::HashMap<String, String>,
     /// When set, the payload to the push endpoint is not wrapped.Sets the
     /// 'data' field as the HTTP body for delivery.
     #[builder(into)]
-    #[serde(rename = "noWrappers")]
     pub r#no_wrappers: Vec<super::super::types::pubsub::GetSubscriptionPushConfigNoWrapper>,
     /// If specified, Pub/Sub will generate and attach an OIDC JWT token as
     /// an Authorization header in the HTTP request for every pushed message.
     #[builder(into)]
-    #[serde(rename = "oidcTokens")]
     pub r#oidc_tokens: Vec<super::super::types::pubsub::GetSubscriptionPushConfigOidcToken>,
     /// A URL locating the endpoint to which messages should be pushed.
     /// For example, a Webhook endpoint might use
     /// "https://example.com/push".
     #[builder(into)]
-    #[serde(rename = "pushEndpoint")]
     pub r#push_endpoint: String,
 }
 

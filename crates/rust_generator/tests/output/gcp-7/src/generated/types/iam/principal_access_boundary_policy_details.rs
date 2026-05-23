@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,12 +8,10 @@ pub struct PrincipalAccessBoundaryPolicyDetails {
     /// PAB policy version will be set to the current latest version, and this version
     /// won't get updated when new versions are released.
     #[builder(into)]
-    #[serde(rename = "enforcementVersion")]
     pub r#enforcement_version: Option<String>,
     /// A list of principal access boundary policy rules. The number of rules in a policy is limited to 500.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "rules")]
     pub r#rules: Vec<super::super::types::iam::PrincipalAccessBoundaryPolicyDetailsRule>,
 }
 

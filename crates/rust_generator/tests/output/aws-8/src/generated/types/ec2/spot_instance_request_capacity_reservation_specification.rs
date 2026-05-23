@@ -1,17 +1,15 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct SpotInstanceRequestCapacityReservationSpecification {
     /// Indicates the instance's Capacity Reservation preferences. Can be `"open"` or `"none"`. (Default: `"open"`).
     #[builder(into)]
-    #[serde(rename = "capacityReservationPreference")]
     pub r#capacity_reservation_preference: Option<String>,
     /// Information about the target Capacity Reservation. See Capacity Reservation Target below for more details.
     /// 
     /// For more information, see the documentation on [Capacity Reservations](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html).
     #[builder(into)]
-    #[serde(rename = "capacityReservationTarget")]
     pub r#capacity_reservation_target: Option<Box<super::super::types::ec2::SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget>>,
 }
 

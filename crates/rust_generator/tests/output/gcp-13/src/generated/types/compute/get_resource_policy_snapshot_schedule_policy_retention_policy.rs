@@ -1,16 +1,14 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetResourcePolicySnapshotSchedulePolicyRetentionPolicy {
     /// Maximum age of the snapshot that is allowed to be kept.
     #[builder(into)]
-    #[serde(rename = "maxRetentionDays")]
     pub r#max_retention_days: i32,
     /// Specifies the behavior to apply to scheduled snapshots when
     /// the source disk is deleted. Default value: "KEEP_AUTO_SNAPSHOTS" Possible values: ["KEEP_AUTO_SNAPSHOTS", "APPLY_RETENTION_POLICY"]
     #[builder(into)]
-    #[serde(rename = "onSourceDiskDelete")]
     pub r#on_source_disk_delete: String,
 }
 

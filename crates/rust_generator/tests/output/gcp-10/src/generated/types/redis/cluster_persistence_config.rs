@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,7 +6,6 @@ pub struct ClusterPersistenceConfig {
     /// AOF configuration. This field will be ignored if mode is not AOF.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "aofConfig")]
     pub r#aof_config: Option<Box<super::super::types::redis::ClusterPersistenceConfigAofConfig>>,
     /// Optional. Controls whether Persistence features are enabled. If not provided, the existing value will be used.
     /// - DISABLED: 	Persistence (both backup and restore) is disabled for the cluster.
@@ -14,12 +13,10 @@ pub struct ClusterPersistenceConfig {
     /// - AOF: AOF based Persistence is enabled.
     /// Possible values are: `PERSISTENCE_MODE_UNSPECIFIED`, `DISABLED`, `RDB`, `AOF`.
     #[builder(into)]
-    #[serde(rename = "mode")]
     pub r#mode: Option<String>,
     /// RDB configuration. This field will be ignored if mode is not RDB.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "rdbConfig")]
     pub r#rdb_config: Option<Box<super::super::types::redis::ClusterPersistenceConfigRdbConfig>>,
 }
 

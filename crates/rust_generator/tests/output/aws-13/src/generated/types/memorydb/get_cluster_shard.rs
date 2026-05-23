@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetClusterShard {
     /// Name of the cluster.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Set of nodes in this shard.
     #[builder(into)]
-    #[serde(rename = "nodes")]
     pub r#nodes: Vec<super::super::types::memorydb::GetClusterShardNode>,
     /// Number of individual nodes in this shard.
     #[builder(into)]
-    #[serde(rename = "numNodes")]
     pub r#num_nodes: i32,
     /// Keyspace for this shard. Example: `0-16383`.
     #[builder(into)]
-    #[serde(rename = "slots")]
     pub r#slots: String,
 }
 

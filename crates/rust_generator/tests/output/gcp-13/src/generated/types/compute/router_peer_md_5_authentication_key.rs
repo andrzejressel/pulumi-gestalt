@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct RouterPeerMd5AuthenticationKey {
     /// Value of the key.
     #[builder(into)]
-    #[serde(rename = "key")]
     pub r#key: String,
     /// Name of this BGP peer. The name must be 1-63 characters long,
     /// and comply with RFC1035. Specifically, the name must be 1-63 characters
@@ -14,7 +13,6 @@ pub struct RouterPeerMd5AuthenticationKey {
     /// following characters must be a dash, lowercase letter, or digit,
     /// except the last character, which cannot be a dash.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
 }
 

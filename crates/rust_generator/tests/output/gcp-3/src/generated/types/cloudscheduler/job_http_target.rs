@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,32 +8,26 @@ pub struct JobHttpTarget {
     /// It is an error to set body on a job with an incompatible HttpMethod.
     /// A base64-encoded string.
     #[builder(into)]
-    #[serde(rename = "body")]
     pub r#body: Option<String>,
     /// This map contains the header field names and values.
     /// Repeated headers are not supported, but a header value can contain commas.
     #[builder(into)]
-    #[serde(rename = "headers")]
     pub r#headers: Option<std::collections::HashMap<String, String>>,
     /// Which HTTP method to use for the request.
     #[builder(into)]
-    #[serde(rename = "httpMethod")]
     pub r#http_method: Option<String>,
     /// Contains information needed for generating an OAuth token.
     /// This type of authorization should be used when sending requests to a GCP endpoint.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "oauthToken")]
     pub r#oauth_token: Option<Box<super::super::types::cloudscheduler::JobHttpTargetOauthToken>>,
     /// Contains information needed for generating an OpenID Connect token.
     /// This type of authorization should be used when sending requests to third party endpoints or Cloud Run.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "oidcToken")]
     pub r#oidc_token: Option<Box<super::super::types::cloudscheduler::JobHttpTargetOidcToken>>,
     /// The full URI path that the request will be sent to.
     #[builder(into)]
-    #[serde(rename = "uri")]
     pub r#uri: String,
 }
 

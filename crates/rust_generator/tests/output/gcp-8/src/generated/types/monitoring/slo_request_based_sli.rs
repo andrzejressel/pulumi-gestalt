@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -11,7 +11,6 @@ pub struct SloRequestBasedSli {
     /// Exactly one of `distribution_cut` or `good_total_ratio` can be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "distributionCut")]
     pub r#distribution_cut: Option<Box<super::super::types::monitoring::SloRequestBasedSliDistributionCut>>,
     /// A means to compute a ratio of `good_service` to `total_service`.
     /// Defines computing this ratio with two TimeSeries [monitoring filters](https://cloud.google.com/monitoring/api/v3/filters)
@@ -21,7 +20,6 @@ pub struct SloRequestBasedSli {
     /// Exactly one of `distribution_cut` or `good_total_ratio` can be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "goodTotalRatio")]
     pub r#good_total_ratio: Option<Box<super::super::types::monitoring::SloRequestBasedSliGoodTotalRatio>>,
 }
 

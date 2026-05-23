@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct InstanceScratchDisk {
     /// Name with which the attached disk is accessible under /dev/disk/by-id/
     #[builder(into)]
-    #[serde(rename = "deviceName")]
     pub r#device_name: Option<String>,
     /// The disk interface to use for attaching this disk; either SCSI or NVME.
     #[builder(into)]
-    #[serde(rename = "interface")]
     pub r#interface: String,
     /// The size of the disk in gigabytes. One of 375 or 3000.
     #[builder(into)]
-    #[serde(rename = "size")]
     pub r#size: Option<i32>,
 }
 

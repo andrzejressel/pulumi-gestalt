@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,7 +9,6 @@ pub struct RouterPeerBfd {
     /// and the transmit interval of the other router. If set, this value
     /// must be between 1000 and 30000.
     #[builder(into)]
-    #[serde(rename = "minReceiveInterval")]
     pub r#min_receive_interval: Option<i32>,
     /// The minimum interval, in milliseconds, between BFD control packets
     /// transmitted to the peer router. The actual value is negotiated
@@ -17,7 +16,6 @@ pub struct RouterPeerBfd {
     /// and the corresponding receive interval of the other router. If set,
     /// this value must be between 1000 and 30000.
     #[builder(into)]
-    #[serde(rename = "minTransmitInterval")]
     pub r#min_transmit_interval: Option<i32>,
     /// The number of consecutive BFD packets that must be missed before
     /// BFD declares that a peer is unavailable. If set, the value must
@@ -25,7 +23,6 @@ pub struct RouterPeerBfd {
     /// 
     /// <a name="nested_md5_authentication_key"></a>The `md5_authentication_key` block supports:
     #[builder(into)]
-    #[serde(rename = "multiplier")]
     pub r#multiplier: Option<i32>,
     /// The BFD session initialization mode for this BGP peer.
     /// If set to `ACTIVE`, the Cloud Router will initiate the BFD session
@@ -34,7 +31,6 @@ pub struct RouterPeerBfd {
     /// If set to `DISABLED`, BFD is disabled for this BGP peer.
     /// Possible values are: `ACTIVE`, `DISABLED`, `PASSIVE`.
     #[builder(into)]
-    #[serde(rename = "sessionInitializationMode")]
     pub r#session_initialization_mode: String,
 }
 

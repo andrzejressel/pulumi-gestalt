@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,13 +8,11 @@ pub struct ClusterControlPlaneEncryption {
     /// to use for protecting control plane disks. If not specified, a
     /// Google-managed key will be used instead.
     #[builder(into)]
-    #[serde(rename = "kmsKey")]
     pub r#kms_key: Option<String>,
     /// (Output)
     /// The Cloud KMS CryptoKeyVersion currently in use for protecting control
     /// plane disks. Only applicable if kms_key is set.
     #[builder(into)]
-    #[serde(rename = "kmsKeyActiveVersion")]
     pub r#kms_key_active_version: Option<String>,
     /// (Output)
     /// Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
@@ -22,7 +20,6 @@ pub struct ClusterControlPlaneEncryption {
     /// caused by a lack of permissions to use the key, or if the key is disabled
     /// or deleted.
     #[builder(into)]
-    #[serde(rename = "kmsKeyState")]
     pub r#kms_key_state: Option<String>,
     /// (Output)
     /// Error status returned by Cloud KMS when using this key. This field may be
@@ -33,7 +30,6 @@ pub struct ClusterControlPlaneEncryption {
     /// 
     /// <a name="nested_kms_status"></a>The `kms_status` block contains:
     #[builder(into)]
-    #[serde(rename = "kmsStatuses")]
     pub r#kms_statuses: Option<Vec<super::super::types::edgecontainer::ClusterControlPlaneEncryptionKmsStatus>>,
 }
 

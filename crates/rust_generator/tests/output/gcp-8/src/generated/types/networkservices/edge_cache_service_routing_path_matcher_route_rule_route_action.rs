@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,17 +6,14 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteAction {
     /// The policy to use for defining caching and signed request behaviour for requests that match this route.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "cdnPolicy")]
     pub r#cdn_policy: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy>>,
     /// CORSPolicy defines Cross-Origin-Resource-Sharing configuration, including which CORS response headers will be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "corsPolicy")]
     pub r#cors_policy: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicy>>,
     /// The URL rewrite configuration for requests that match this route.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "urlRewrite")]
     pub r#url_rewrite: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewrite>>,
 }
 

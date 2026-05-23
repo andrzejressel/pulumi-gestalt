@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,21 +8,18 @@ pub struct TriggerBuildArtifacts {
     /// The digests of the pushed images will be stored in the Build resource's results field.
     /// If any of the images fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
-    #[serde(rename = "images")]
     pub r#images: Option<Vec<String>>,
     /// A Maven artifact to upload to Artifact Registry upon successful completion of all build steps.
     /// The location and generation of the uploaded objects will be stored in the Build resource's results field.
     /// If any objects fail to be pushed, the build is marked FAILURE.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "mavenArtifacts")]
     pub r#maven_artifacts: Option<Vec<super::super::types::cloudbuild::TriggerBuildArtifactsMavenArtifact>>,
     /// Npm package to upload to Artifact Registry upon successful completion of all build steps.
     /// The location and generation of the uploaded objects will be stored in the Build resource's results field.
     /// If any objects fail to be pushed, the build is marked FAILURE.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "npmPackages")]
     pub r#npm_packages: Option<Vec<super::super::types::cloudbuild::TriggerBuildArtifactsNpmPackage>>,
     /// A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps.
     /// Files in the workspace matching specified paths globs will be uploaded to the
@@ -31,14 +28,12 @@ pub struct TriggerBuildArtifacts {
     /// If any objects fail to be pushed, the build is marked FAILURE.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "objects")]
     pub r#objects: Option<Box<super::super::types::cloudbuild::TriggerBuildArtifactsObjects>>,
     /// Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.
     /// The location and generation of the uploaded objects will be stored in the Build resource's results field.
     /// If any objects fail to be pushed, the build is marked FAILURE.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "pythonPackages")]
     pub r#python_packages: Option<Vec<super::super::types::cloudbuild::TriggerBuildArtifactsPythonPackage>>,
 }
 

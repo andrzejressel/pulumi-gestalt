@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetEnvironmentV3InboundNetworkDependency {
     /// A short description of the purpose of the network traffic.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: String,
     /// A list of IP addresses that network traffic will originate from in CIDR notation.
     #[builder(into)]
-    #[serde(rename = "ipAddresses")]
     pub r#ip_addresses: Vec<String>,
     /// The ports that network traffic will arrive to the App Service Environment V3 on.
     #[builder(into)]
-    #[serde(rename = "ports")]
     pub r#ports: Vec<String>,
 }
 

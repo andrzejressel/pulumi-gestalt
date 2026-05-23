@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,7 +8,6 @@ pub struct SecurityPolicyAdvancedOptionsConfigJsonCustomConfig {
     /// [RFC 1341](https://www.ietf.org/rfc/rfc1341.txt). When configuring a custom Content-Type header
     /// value, only the type/subtype needs to be specified, and the parameters should be excluded.
     #[builder(into)]
-    #[serde(rename = "contentTypes")]
     pub r#content_types: Vec<String>,
 }
 

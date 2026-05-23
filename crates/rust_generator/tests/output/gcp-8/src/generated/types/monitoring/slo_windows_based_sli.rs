@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,7 +9,6 @@ pub struct SloWindowsBasedSli {
     /// `good_total_ratio_threshold`, `metric_mean_in_range`,
     /// `metric_sum_in_range` must be set for `windows_based_sli`.
     #[builder(into)]
-    #[serde(rename = "goodBadMetricFilter")]
     pub r#good_bad_metric_filter: Option<String>,
     /// Criterion that describes a window as good if its performance is
     /// high enough. One of `good_bad_metric_filter`,
@@ -17,7 +16,6 @@ pub struct SloWindowsBasedSli {
     /// `metric_sum_in_range` must be set for `windows_based_sli`.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "goodTotalRatioThreshold")]
     pub r#good_total_ratio_threshold: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThreshold>>,
     /// Criterion that describes a window as good if the metric's value
     /// is in a good range, *averaged* across returned streams.
@@ -28,7 +26,6 @@ pub struct SloWindowsBasedSli {
     /// `range.min <= X <= range.max` for a good window.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "metricMeanInRange")]
     pub r#metric_mean_in_range: Option<Box<super::super::types::monitoring::SloWindowsBasedSliMetricMeanInRange>>,
     /// Criterion that describes a window as good if the metric's value
     /// is in a good range, *summed* across returned streams.
@@ -39,13 +36,11 @@ pub struct SloWindowsBasedSli {
     /// `metric_sum_in_range` must be set for `windows_based_sli`.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "metricSumInRange")]
     pub r#metric_sum_in_range: Option<Box<super::super::types::monitoring::SloWindowsBasedSliMetricSumInRange>>,
     /// Duration over which window quality is evaluated, given as a
     /// duration string "{X}s" representing X seconds. Must be an
     /// integer fraction of a day and at least 60s.
     #[builder(into)]
-    #[serde(rename = "windowPeriod")]
     pub r#window_period: Option<String>,
 }
 

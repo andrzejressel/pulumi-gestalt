@@ -1,21 +1,18 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ComputeClusterSsh {
     /// Password of the administrator user account. Changing this forces a new Machine Learning Compute Cluster to be created.
     #[builder(into)]
-    #[serde(rename = "adminPassword")]
     pub r#admin_password: Option<String>,
     /// Name of the administrator user account which can be used to SSH to nodes. Changing this forces a new Machine Learning Compute Cluster to be created.
     #[builder(into)]
-    #[serde(rename = "adminUsername")]
     pub r#admin_username: String,
     /// SSH public key of the administrator user account. Changing this forces a new Machine Learning Compute Cluster to be created.
     /// 
     /// > **NOTE:** At least one of `admin_password` and `key_value` shoud be specified.
     #[builder(into)]
-    #[serde(rename = "keyValue")]
     pub r#key_value: Option<String>,
 }
 

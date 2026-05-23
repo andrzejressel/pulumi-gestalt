@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,25 +7,21 @@ pub struct UrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatch {
     /// the contents of exactMatch. Only one of presentMatch, exactMatch and regexMatch
     /// must be set.
     #[builder(into)]
-    #[serde(rename = "exactMatch")]
     pub r#exact_match: Option<String>,
     /// The name of the query parameter to match. The query parameter must exist in the
     /// request, in the absence of which the request match fails.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Specifies that the queryParameterMatch matches if the request contains the query
     /// parameter, irrespective of whether the parameter has a value or not. Only one of
     /// presentMatch, exactMatch and regexMatch must be set.
     #[builder(into)]
-    #[serde(rename = "presentMatch")]
     pub r#present_match: Option<bool>,
     /// The queryParameterMatch matches if the value of the parameter matches the
     /// regular expression specified by regexMatch. For the regular expression grammar,
     /// please see en.cppreference.com/w/cpp/regex/ecmascript  Only one of presentMatch,
     /// exactMatch and regexMatch must be set.
     #[builder(into)]
-    #[serde(rename = "regexMatch")]
     pub r#regex_match: Option<String>,
 }
 

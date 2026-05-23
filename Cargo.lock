@@ -2678,7 +2678,6 @@ dependencies = [
  "futures",
  "pulumi_gestalt_providers_typesystem",
  "pulumi_gestalt_rust",
- "serde_json",
 ]
 
 [[package]]
@@ -2756,7 +2755,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2766,7 +2764,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2776,7 +2773,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2786,7 +2782,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2796,7 +2791,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2806,7 +2800,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2816,7 +2809,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2826,7 +2818,16 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
+]
+
+[[package]]
+name = "pulumi_gestalt_pulumi_constant_string"
+version = "0.0.0-DEV"
+dependencies = [
+ "futures",
+ "pulumi_gestalt_model",
+ "rootcause",
+ "serde_json",
 ]
 
 [[package]]
@@ -2839,8 +2840,8 @@ dependencies = [
  "hex",
  "pulumi_gestalt_build",
  "pulumi_gestalt_model",
+ "pulumi_gestalt_pulumi_constant_string",
  "pulumi_gestalt_rust_integration",
- "pulumi_gestalt_serde_constant_string",
  "serde",
  "serde_json",
  "sha1 0.11.0",
@@ -2906,9 +2907,6 @@ dependencies = [
 name = "pulumi_gestalt_serde_constant_string"
 version = "0.0.0-DEV"
 dependencies = [
- "futures",
- "pulumi_gestalt_model",
- "rootcause",
  "serde",
  "serde_json",
 ]

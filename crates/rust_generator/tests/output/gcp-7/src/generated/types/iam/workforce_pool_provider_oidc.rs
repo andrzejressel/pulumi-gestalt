@@ -1,20 +1,17 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct WorkforcePoolProviderOidc {
     /// The client ID. Must match the audience claim of the JWT issued by the identity provider.
     #[builder(into)]
-    #[serde(rename = "clientId")]
     pub r#client_id: String,
     /// The optional client secret. Required to enable Authorization Code flow for web sign-in.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "clientSecret")]
     pub r#client_secret: Option<Box<super::super::types::iam::WorkforcePoolProviderOidcClientSecret>>,
     /// The OIDC issuer URI. Must be a valid URI using the 'https' scheme.
     #[builder(into)]
-    #[serde(rename = "issuerUri")]
     pub r#issuer_uri: String,
     /// OIDC JWKs in JSON String format. For details on definition of a
     /// JWK, see https:tools.ietf.org/html/rfc7517. If not set, then we
@@ -40,12 +37,10 @@ pub struct WorkforcePoolProviderOidc {
     /// }
     /// ```
     #[builder(into)]
-    #[serde(rename = "jwksJson")]
     pub r#jwks_json: Option<String>,
     /// Configuration for web single sign-on for the OIDC provider. Here, web sign-in refers to console sign-in and gcloud sign-in through the browser.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "webSsoConfig")]
     pub r#web_sso_config: Option<Box<super::super::types::iam::WorkforcePoolProviderOidcWebSsoConfig>>,
 }
 

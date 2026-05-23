@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,17 +6,14 @@ pub struct PreventionDiscoveryConfigAction {
     /// Export data profiles into a provided location
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "exportData")]
     pub r#export_data: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionExportData>>,
     /// Publish a message into the Pub/Sub topic.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "pubSubNotification")]
     pub r#pub_sub_notification: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotification>>,
     /// Publish a message into the Pub/Sub topic.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "tagResources")]
     pub r#tag_resources: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionTagResources>>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,22 +6,18 @@ pub struct TableExternalDataConfigurationCsvOptions {
     /// Indicates if BigQuery should accept rows
     /// that are missing trailing optional columns.
     #[builder(into)]
-    #[serde(rename = "allowJaggedRows")]
     pub r#allow_jagged_rows: Option<bool>,
     /// Indicates if BigQuery should allow
     /// quoted data sections that contain newline characters in a CSV file.
     /// The default value is false.
     #[builder(into)]
-    #[serde(rename = "allowQuotedNewlines")]
     pub r#allow_quoted_newlines: Option<bool>,
     /// The character encoding of the data. The supported
     /// values are UTF-8 or ISO-8859-1.
     #[builder(into)]
-    #[serde(rename = "encoding")]
     pub r#encoding: Option<String>,
     /// The separator for fields in a CSV file.
     #[builder(into)]
-    #[serde(rename = "fieldDelimiter")]
     pub r#field_delimiter: Option<String>,
     /// The value that is used to quote data sections in a
     /// CSV file. If your data does not contain quoted sections, set the
@@ -31,12 +27,10 @@ pub struct TableExternalDataConfigurationCsvOptions {
     /// limitations with default values, this value is required to be
     /// explicitly set.
     #[builder(into)]
-    #[serde(rename = "quote")]
     pub r#quote: String,
     /// The number of rows at the top of a CSV
     /// file that BigQuery will skip when reading the data.
     #[builder(into)]
-    #[serde(rename = "skipLeadingRows")]
     pub r#skip_leading_rows: Option<i32>,
 }
 

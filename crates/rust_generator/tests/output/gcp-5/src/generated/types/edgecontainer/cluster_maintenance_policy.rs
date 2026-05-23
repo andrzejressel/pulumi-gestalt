@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,12 +8,10 @@ pub struct ClusterMaintenancePolicy {
     /// The max number of maintenance exclusions allowed at a given time is 3.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "maintenanceExclusions")]
     pub r#maintenance_exclusions: Option<Vec<super::super::types::edgecontainer::ClusterMaintenancePolicyMaintenanceExclusion>>,
     /// Specifies the maintenance window in which maintenance may be performed.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "window")]
     pub r#window: Box<super::super::types::edgecontainer::ClusterMaintenancePolicyWindow>,
 }
 

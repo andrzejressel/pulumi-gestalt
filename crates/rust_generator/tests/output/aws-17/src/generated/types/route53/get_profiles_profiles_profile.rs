@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetProfilesProfilesProfile {
     /// ARN of the Profile.
     #[builder(into)]
-    #[serde(rename = "arn")]
     pub r#arn: String,
     /// ID of the Profile.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: String,
     /// Name of the Profile.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Share status of the Profile. Valid values [AWS docs](https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_Profile.html)
     #[builder(into)]
-    #[serde(rename = "shareStatus")]
     pub r#share_status: String,
 }
 

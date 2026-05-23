@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -11,7 +11,6 @@ pub struct GetEntitlementApprovalWorkflow {
     /// * Require an approval from any user in a group G and then from a user U. etc.
     /// A single user might be part of 'approvers' ACL for multiple steps in this workflow but they can only approve once and that approval will only be considered to satisfy the approval step at which it was granted.
     #[builder(into)]
-    #[serde(rename = "manualApprovals")]
     pub r#manual_approvals: Vec<super::super::types::privilegedaccessmanager::GetEntitlementApprovalWorkflowManualApproval>,
 }
 

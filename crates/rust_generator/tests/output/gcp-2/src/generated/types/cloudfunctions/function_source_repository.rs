@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct FunctionSourceRepository {
     /// The URL pointing to the hosted repository where the function was defined at the time of deployment.
     #[builder(into)]
-    #[serde(rename = "deployedUrl")]
     pub r#deployed_url: Option<String>,
     /// The URL pointing to the hosted repository where the function is defined. There are supported Cloud Source Repository URLs in the following formats:
     /// 
@@ -13,7 +12,6 @@ pub struct FunctionSourceRepository {
     /// * To refer to a moveable alias (branch): `https://source.developers.google.com/projects/*/repos/*/moveable-aliases/*/paths/*`. To refer to HEAD, use the `master` moveable alias.
     /// * To refer to a specific fixed alias (tag): `https://source.developers.google.com/projects/*/repos/*/fixed-aliases/*/paths/*`
     #[builder(into)]
-    #[serde(rename = "url")]
     pub r#url: String,
 }
 

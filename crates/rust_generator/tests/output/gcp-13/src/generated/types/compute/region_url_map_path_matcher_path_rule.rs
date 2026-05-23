@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,7 +8,6 @@ pub struct RegionUrlMapPathMatcherPathRule {
     /// does not include any text after the first ? or #, and those chars are not
     /// allowed here.
     #[builder(into)]
-    #[serde(rename = "paths")]
     pub r#paths: Vec<String>,
     /// In response to a matching path, the load balancer performs advanced routing
     /// actions like URL rewrites, header transformations, etc. prior to forwarding the
@@ -18,7 +17,6 @@ pub struct RegionUrlMapPathMatcherPathRule {
     /// or urlRedirect must be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "routeAction")]
     pub r#route_action: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteAction>>,
     /// The region backend service resource to which traffic is
     /// directed if this rule is matched. If routeAction is additionally specified,
@@ -28,14 +26,12 @@ pub struct RegionUrlMapPathMatcherPathRule {
     /// weightedBackendServices, service must not be specified. Only one of urlRedirect,
     /// service or routeAction.weightedBackendService must be set.
     #[builder(into)]
-    #[serde(rename = "service")]
     pub r#service: Option<String>,
     /// When a path pattern is matched, the request is redirected to a URL specified
     /// by urlRedirect. If urlRedirect is specified, service or routeAction must not
     /// be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "urlRedirect")]
     pub r#url_redirect: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherPathRuleUrlRedirect>>,
 }
 

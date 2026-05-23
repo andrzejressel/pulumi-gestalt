@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,7 +6,6 @@ pub struct CxPageFormParameterFillBehavior {
     /// The fulfillment to provide the initial prompt that the agent can present to the user in order to fill the parameter.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "initialPromptFulfillment")]
     pub r#initial_prompt_fulfillment: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillment>>,
     /// The handlers for parameter-level events, used to provide reprompt for the parameter or transition to a different page/flow. The supported events are:
     /// * sys.no-match-<N>, where N can be from 1 to 6
@@ -21,7 +20,6 @@ pub struct CxPageFormParameterFillBehavior {
     /// If the event handler for the corresponding event can't be found on the parameter, initialPromptFulfillment will be re-prompted.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "repromptEventHandlers")]
     pub r#reprompt_event_handlers: Option<Vec<super::super::types::diagflow::CxPageFormParameterFillBehaviorRepromptEventHandler>>,
 }
 

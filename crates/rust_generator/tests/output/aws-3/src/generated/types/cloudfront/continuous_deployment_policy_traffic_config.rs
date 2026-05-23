@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ContinuousDeploymentPolicyTrafficConfig {
     /// Determines which HTTP requests are sent to the staging distribution. See `single_header_config`.
     #[builder(into)]
-    #[serde(rename = "singleHeaderConfig")]
     pub r#single_header_config: Option<Box<super::super::types::cloudfront::ContinuousDeploymentPolicyTrafficConfigSingleHeaderConfig>>,
     /// Contains the percentage of traffic to send to the staging distribution. See `single_weight_config`.
     #[builder(into)]
-    #[serde(rename = "singleWeightConfig")]
     pub r#single_weight_config: Option<Box<super::super::types::cloudfront::ContinuousDeploymentPolicyTrafficConfigSingleWeightConfig>>,
     /// Type of traffic configuration. Valid values are `SingleWeight` and `SingleHeader`.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: String,
 }
 

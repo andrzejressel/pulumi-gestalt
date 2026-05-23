@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,12 +7,10 @@ pub struct InstanceDesiredPscAutoConnection {
     /// Output only. The consumer network where the IP address resides, in the form of
     /// projects/{project_id}/global/networks/{network_id}.
     #[builder(into)]
-    #[serde(rename = "network")]
     pub r#network: String,
     /// (Output)
     /// Output only. The consumer project_id where the forwarding rule is created from.
     #[builder(into)]
-    #[serde(rename = "projectId")]
     pub r#project_id: String,
 }
 

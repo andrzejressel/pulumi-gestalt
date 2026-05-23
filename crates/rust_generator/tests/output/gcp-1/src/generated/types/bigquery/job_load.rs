@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,16 +7,13 @@ pub struct JobLoad {
     /// If false, records with missing trailing columns are treated as bad records, and if there are too many bad records,
     /// an invalid error is returned in the job result. The default value is false. Only applicable to CSV, ignored for other formats.
     #[builder(into)]
-    #[serde(rename = "allowJaggedRows")]
     pub r#allow_jagged_rows: Option<bool>,
     /// Indicates if BigQuery should allow quoted data sections that contain newline characters in a CSV file.
     /// The default value is false.
     #[builder(into)]
-    #[serde(rename = "allowQuotedNewlines")]
     pub r#allow_quoted_newlines: Option<bool>,
     /// Indicates if we should automatically infer the options and schema for CSV and JSON sources.
     #[builder(into)]
-    #[serde(rename = "autodetect")]
     pub r#autodetect: Option<bool>,
     /// Specifies whether the job is allowed to create new tables. The following values are supported:
     /// CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table.
@@ -25,23 +22,19 @@ pub struct JobLoad {
     /// Default value is `CREATE_IF_NEEDED`.
     /// Possible values are: `CREATE_IF_NEEDED`, `CREATE_NEVER`.
     #[builder(into)]
-    #[serde(rename = "createDisposition")]
     pub r#create_disposition: Option<String>,
     /// Custom encryption configuration (e.g., Cloud KMS keys)
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "destinationEncryptionConfiguration")]
     pub r#destination_encryption_configuration: Option<Box<super::super::types::bigquery::JobLoadDestinationEncryptionConfiguration>>,
     /// The destination table to load the data into.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "destinationTable")]
     pub r#destination_table: Box<super::super::types::bigquery::JobLoadDestinationTable>,
     /// The character encoding of the data. The supported values are UTF-8 or ISO-8859-1.
     /// The default value is UTF-8. BigQuery decodes the data after the raw, binary data
     /// has been split using the values of the quote and fieldDelimiter properties.
     #[builder(into)]
-    #[serde(rename = "encoding")]
     pub r#encoding: Option<String>,
     /// The separator for fields in a CSV file. The separator can be any ISO-8859-1 single-byte character.
     /// To use a character in the range 128-255, you must encode the character as UTF8. BigQuery converts
@@ -49,7 +42,6 @@ pub struct JobLoad {
     /// data in its raw, binary state. BigQuery also supports the escape sequence "\t" to specify a tab separator.
     /// The default value is a comma (',').
     #[builder(into)]
-    #[serde(rename = "fieldDelimiter")]
     pub r#field_delimiter: Option<String>,
     /// Indicates if BigQuery should allow extra values that are not represented in the table schema.
     /// If true, the extra values are ignored. If false, records with extra columns are treated as bad records,
@@ -58,43 +50,36 @@ pub struct JobLoad {
     /// CSV: Trailing columns
     /// JSON: Named values that don't match any column names
     #[builder(into)]
-    #[serde(rename = "ignoreUnknownValues")]
     pub r#ignore_unknown_values: Option<bool>,
     /// If sourceFormat is set to newline-delimited JSON, indicates whether it should be processed as a JSON variant such as GeoJSON.
     /// For a sourceFormat other than JSON, omit this field. If the sourceFormat is newline-delimited JSON: - for newline-delimited
     /// GeoJSON: set to GEOJSON.
     #[builder(into)]
-    #[serde(rename = "jsonExtension")]
     pub r#json_extension: Option<String>,
     /// The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value,
     /// an invalid error is returned in the job result. The default value is 0, which requires that all records are valid.
     #[builder(into)]
-    #[serde(rename = "maxBadRecords")]
     pub r#max_bad_records: Option<i32>,
     /// Specifies a string that represents a null value in a CSV file. The default value is the empty string. If you set this
     /// property to a custom value, BigQuery throws an error if an
     /// empty string is present for all data types except for STRING and BYTE. For STRING and BYTE columns, BigQuery interprets the empty string as
     /// an empty value.
     #[builder(into)]
-    #[serde(rename = "nullMarker")]
     pub r#null_marker: Option<String>,
     /// Parquet Options for load and make external tables.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "parquetOptions")]
     pub r#parquet_options: Option<Box<super::super::types::bigquery::JobLoadParquetOptions>>,
     /// If sourceFormat is set to "DATASTORE_BACKUP", indicates which entity properties to load into BigQuery from a Cloud Datastore backup.
     /// Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties.
     /// If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result.
     #[builder(into)]
-    #[serde(rename = "projectionFields")]
     pub r#projection_fields: Option<Vec<String>>,
     /// The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding,
     /// and then uses the first byte of the encoded string to split the data in its raw, binary state.
     /// The default value is a double-quote ('"'). If your data does not contain quoted sections, set the property value to an empty string.
     /// If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true.
     #[builder(into)]
-    #[serde(rename = "quote")]
     pub r#quote: Option<String>,
     /// Allows the schema of the destination table to be updated as a side effect of the load job if a schema is autodetected or
     /// supplied in the job configuration. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND;
@@ -103,7 +88,6 @@ pub struct JobLoad {
     /// ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema.
     /// ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original schema to nullable.
     #[builder(into)]
-    #[serde(rename = "schemaUpdateOptions")]
     pub r#schema_update_options: Option<Vec<String>>,
     /// The number of rows at the top of a CSV file that BigQuery will skip when loading the data.
     /// The default value is 0. This property is useful if you have header rows in the file that should be skipped.
@@ -114,14 +98,12 @@ pub struct JobLoad {
     /// skipLeadingRows = N > 0 - Autodetect skips N-1 rows and tries to detect headers in row N. If headers are not detected,
     /// row N is just skipped. Otherwise row N is used to extract column names for the detected schema.
     #[builder(into)]
-    #[serde(rename = "skipLeadingRows")]
     pub r#skip_leading_rows: Option<i32>,
     /// The format of the data files. For CSV files, specify "CSV". For datastore backups, specify "DATASTORE_BACKUP".
     /// For newline-delimited JSON, specify "NEWLINE_DELIMITED_JSON". For Avro, specify "AVRO". For parquet, specify "PARQUET".
     /// For orc, specify "ORC". [Beta] For Bigtable, specify "BIGTABLE".
     /// The default value is CSV.
     #[builder(into)]
-    #[serde(rename = "sourceFormat")]
     pub r#source_format: Option<String>,
     /// The fully-qualified URIs that point to your data in Google Cloud.
     /// For Google Cloud Storage URIs: Each URI can contain one '\*' wildcard character
@@ -130,12 +112,10 @@ pub struct JobLoad {
     /// specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table.
     /// For Google Cloud Datastore backups: Exactly one URI can be specified. Also, the '\*' wildcard character is not allowed.
     #[builder(into)]
-    #[serde(rename = "sourceUris")]
     pub r#source_uris: Vec<String>,
     /// Time-based partitioning specification for the destination table.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "timePartitioning")]
     pub r#time_partitioning: Option<Box<super::super::types::bigquery::JobLoadTimePartitioning>>,
     /// Specifies the action that occurs if the destination table already exists. The following values are supported:
     /// WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data and uses the schema from the query result.
@@ -146,7 +126,6 @@ pub struct JobLoad {
     /// Default value is `WRITE_EMPTY`.
     /// Possible values are: `WRITE_TRUNCATE`, `WRITE_APPEND`, `WRITE_EMPTY`.
     #[builder(into)]
-    #[serde(rename = "writeDisposition")]
     pub r#write_disposition: Option<String>,
 }
 

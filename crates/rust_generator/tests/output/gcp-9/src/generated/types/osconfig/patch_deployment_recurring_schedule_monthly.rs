@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,12 +7,10 @@ pub struct PatchDeploymentRecurringScheduleMonthly {
     /// Months without the target day will be skipped. For example, a schedule to run "every month on the 31st"
     /// will not run in February, April, June, etc.
     #[builder(into)]
-    #[serde(rename = "monthDay")]
     pub r#month_day: Option<i32>,
     /// Week day in a month.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "weekDayOfMonth")]
     pub r#week_day_of_month: Option<Box<super::super::types::osconfig::PatchDeploymentRecurringScheduleMonthlyWeekDayOfMonth>>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -15,7 +15,6 @@ pub struct GetSubscriptionDeadLetterPolicy {
     /// Users should ensure that there is a subscription attached to this topic
     /// since messages published to a topic with no subscriptions are lost.
     #[builder(into)]
-    #[serde(rename = "deadLetterTopic")]
     pub r#dead_letter_topic: String,
     /// The maximum number of delivery attempts for any message. The value must be
     /// between 5 and 100.
@@ -30,7 +29,6 @@ pub struct GetSubscriptionDeadLetterPolicy {
     /// 
     /// If this parameter is 0, a default value of 5 is used.
     #[builder(into)]
-    #[serde(rename = "maxDeliveryAttempts")]
     pub r#max_delivery_attempts: i32,
 }
 

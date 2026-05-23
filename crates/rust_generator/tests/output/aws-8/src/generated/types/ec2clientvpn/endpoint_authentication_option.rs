@@ -1,27 +1,22 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct EndpointAuthenticationOption {
     /// The ID of the Active Directory to be used for authentication if type is `directory-service-authentication`.
     #[builder(into)]
-    #[serde(rename = "activeDirectoryId")]
     pub r#active_directory_id: Option<String>,
     /// The ARN of the client certificate. The certificate must be signed by a certificate authority (CA) and it must be provisioned in AWS Certificate Manager (ACM). Only necessary when type is set to `certificate-authentication`.
     #[builder(into)]
-    #[serde(rename = "rootCertificateChainArn")]
     pub r#root_certificate_chain_arn: Option<String>,
     /// The ARN of the IAM SAML identity provider if type is `federated-authentication`.
     #[builder(into)]
-    #[serde(rename = "samlProviderArn")]
     pub r#saml_provider_arn: Option<String>,
     /// The ARN of the IAM SAML identity provider for the self service portal if type is `federated-authentication`.
     #[builder(into)]
-    #[serde(rename = "selfServiceSamlProviderArn")]
     pub r#self_service_saml_provider_arn: Option<String>,
     /// The type of client authentication to be used. Specify `certificate-authentication` to use certificate-based authentication, `directory-service-authentication` to use Active Directory authentication, or `federated-authentication` to use Federated Authentication via SAML 2.0.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: String,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,7 +7,6 @@ pub struct GetRegionNetworkEndpointGroupAppEngine {
     /// The service name must be 1-63 characters long, and comply with RFC1035.
     /// Example value: "default", "my-service".
     #[builder(into)]
-    #[serde(rename = "service")]
     pub r#service: String,
     /// A template to parse service and version fields from a request URL.
     /// URL mask allows for routing to multiple App Engine services without
@@ -18,13 +17,11 @@ pub struct GetRegionNetworkEndpointGroupAppEngine {
     /// URL mask "-dot-appname.appspot.com/". The URL mask will parse
     /// them to { service = "foo1", version = "v1" } and { service = "foo1", version = "v2" } respectively.
     #[builder(into)]
-    #[serde(rename = "urlMask")]
     pub r#url_mask: String,
     /// Optional serving version.
     /// The version must be 1-63 characters long, and comply with RFC1035.
     /// Example value: "v1", "v2".
     #[builder(into)]
-    #[serde(rename = "version")]
     pub r#version: String,
 }
 

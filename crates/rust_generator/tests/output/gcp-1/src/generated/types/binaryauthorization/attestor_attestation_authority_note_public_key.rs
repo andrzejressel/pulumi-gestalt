@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -13,11 +13,9 @@ pub struct AttestorAttestationAuthorityNotePublicKey {
     /// upper-case hex. If id is provided by the caller, it will
     /// be overwritten by the API-calculated ID.
     #[builder(into)]
-    #[serde(rename = "asciiArmoredPgpPublicKey")]
     pub r#ascii_armored_pgp_public_key: Option<String>,
     /// A descriptive comment. This field may be updated.
     #[builder(into)]
-    #[serde(rename = "comment")]
     pub r#comment: Option<String>,
     /// The ID of this public key. Signatures verified by BinAuthz
     /// must include the ID of the public key that can be used to
@@ -26,7 +24,6 @@ pub struct AttestorAttestationAuthorityNotePublicKey {
     /// be imposed based on which public key type is encapsulated.
     /// See the documentation on publicKey cases below for details.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: Option<String>,
     /// A raw PKIX SubjectPublicKeyInfo format public key.
     /// NOTE: id may be explicitly provided by the caller when using this
@@ -35,7 +32,6 @@ pub struct AttestorAttestationAuthorityNotePublicKey {
     /// encoding of the public key.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "pkixPublicKey")]
     pub r#pkix_public_key: Option<Box<super::super::types::binaryauthorization::AttestorAttestationAuthorityNotePublicKeyPkixPublicKey>>,
 }
 

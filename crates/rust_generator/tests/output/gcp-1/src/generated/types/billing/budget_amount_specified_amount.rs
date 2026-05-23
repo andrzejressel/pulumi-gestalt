@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct BudgetAmountSpecifiedAmount {
     /// The 3-letter currency code defined in ISO 4217.
     #[builder(into)]
-    #[serde(rename = "currencyCode")]
     pub r#currency_code: Option<String>,
     /// Number of nano (10^-9) units of the amount.
     /// The value must be between -999,999,999 and +999,999,999
@@ -17,12 +16,10 @@ pub struct BudgetAmountSpecifiedAmount {
     /// 
     /// - - -
     #[builder(into)]
-    #[serde(rename = "nanos")]
     pub r#nanos: Option<i32>,
     /// The whole units of the amount. For example if currencyCode
     /// is "USD", then 1 unit is one US dollar.
     #[builder(into)]
-    #[serde(rename = "units")]
     pub r#units: Option<String>,
 }
 

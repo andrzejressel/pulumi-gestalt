@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ClusterNodePool {
     /// Configuration required by cluster autoscaler to adjust the size of the node pool to the current cluster usage.
     #[builder(into)]
-    #[serde(rename = "autoscaling")]
     pub r#autoscaling: Option<Box<super::super::types::container::ClusterNodePoolAutoscaling>>,
     /// The number of nodes to create in this
     /// cluster's default node pool. In regional or multi-zonal clusters, this is the
@@ -14,39 +13,31 @@ pub struct ClusterNodePool {
     /// set this to a value of at least `1`, alongside setting
     /// `remove_default_node_pool` to `true`.
     #[builder(into)]
-    #[serde(rename = "initialNodeCount")]
     pub r#initial_node_count: Option<i32>,
     /// The resource URLs of the managed instance groups associated with this node pool.
     #[builder(into)]
-    #[serde(rename = "instanceGroupUrls")]
     pub r#instance_group_urls: Option<Vec<String>>,
     /// List of instance group URLs which have been assigned to this node pool.
     #[builder(into)]
-    #[serde(rename = "managedInstanceGroupUrls")]
     pub r#managed_instance_group_urls: Option<Vec<String>>,
     /// Node management configuration, wherein auto-repair and auto-upgrade is configured.
     #[builder(into)]
-    #[serde(rename = "management")]
     pub r#management: Option<Box<super::super::types::container::ClusterNodePoolManagement>>,
     /// The maximum number of pods per node in this node pool. Note that this does not work on node pools which are "route-based" - that is, node pools belonging to clusters that do not have IP Aliasing enabled.
     #[builder(into)]
-    #[serde(rename = "maxPodsPerNode")]
     pub r#max_pods_per_node: Option<i32>,
     /// The name of the cluster, unique within the project and
     /// location.
     /// 
     /// - - -
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: Option<String>,
     /// Creates a unique name for the node pool beginning with the specified prefix. Conflicts with name.
     #[builder(into)]
-    #[serde(rename = "namePrefix")]
     pub r#name_prefix: Option<String>,
     /// Configuration for
     /// [Adding Pod IP address ranges](https://cloud.google.com/kubernetes-engine/docs/how-to/multi-pod-cidr)) to the node pool. Structure is documented below
     #[builder(into)]
-    #[serde(rename = "networkConfig")]
     pub r#network_config: Option<Box<super::super::types::container::ClusterNodePoolNetworkConfig>>,
     /// Parameters used in creating the default node pool.
     /// Generally, this field should not be used at the same time as a
@@ -54,11 +45,9 @@ pub struct ClusterNodePool {
     /// manages the default node pool, which isn't recommended to be used.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "nodeConfig")]
     pub r#node_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfig>>,
     /// The number of nodes per instance group. This field can be used to update the number of nodes per instance group but should not be used alongside autoscaling.
     #[builder(into)]
-    #[serde(rename = "nodeCount")]
     pub r#node_count: Option<i32>,
     /// The list of zones in which the cluster's nodes
     /// are located. Nodes must be in the region of their regional cluster or in the
@@ -72,22 +61,17 @@ pub struct ClusterNodePool {
     /// in multiple zones in the region. For that reason, regional clusters should be
     /// preferred.
     #[builder(into)]
-    #[serde(rename = "nodeLocations")]
     pub r#node_locations: Option<Vec<String>>,
     /// Specifies the node placement policy
     #[builder(into)]
-    #[serde(rename = "placementPolicy")]
     pub r#placement_policy: Option<Box<super::super::types::container::ClusterNodePoolPlacementPolicy>>,
     /// Specifies the configuration of queued provisioning
     #[builder(into)]
-    #[serde(rename = "queuedProvisioning")]
     pub r#queued_provisioning: Option<Box<super::super::types::container::ClusterNodePoolQueuedProvisioning>>,
     /// Specify node upgrade settings to change how many nodes GKE attempts to upgrade at once. The number of nodes upgraded simultaneously is the sum of max_surge and max_unavailable. The maximum number of nodes upgraded simultaneously is limited to 20.
     #[builder(into)]
-    #[serde(rename = "upgradeSettings")]
     pub r#upgrade_settings: Option<Box<super::super::types::container::ClusterNodePoolUpgradeSettings>>,
     #[builder(into)]
-    #[serde(rename = "version")]
     pub r#version: Option<String>,
 }
 

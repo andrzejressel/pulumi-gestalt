@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,7 +7,6 @@ pub struct RegionUrlMapDefaultRouteAction {
     /// [W3C Recommendation for Cross Origin Resource Sharing](https://www.w3.org/TR/cors/)
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "corsPolicy")]
     pub r#cors_policy: Option<Box<super::super::types::compute::RegionUrlMapDefaultRouteActionCorsPolicy>>,
     /// The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure.
     /// As part of fault injection, when clients send requests to a backend service, delays can be introduced by a load balancer on a percentage of requests before sending those requests to the backend service.
@@ -16,39 +15,33 @@ pub struct RegionUrlMapDefaultRouteAction {
     /// Fault injection is not supported with the global external HTTP(S) load balancer (classic). To see which load balancers support fault injection, see Load balancing: [Routing and traffic management features](https://cloud.google.com/load-balancing/docs/features#routing-traffic-management).
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "faultInjectionPolicy")]
     pub r#fault_injection_policy: Option<Box<super::super::types::compute::RegionUrlMapDefaultRouteActionFaultInjectionPolicy>>,
     /// Specifies the policy on how requests intended for the route's backends are shadowed to a separate mirrored backend service.
     /// The load balancer does not wait for responses from the shadow service. Before sending traffic to the shadow service, the host / authority header is suffixed with -shadow.
     /// Not supported when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "requestMirrorPolicy")]
     pub r#request_mirror_policy: Option<Box<super::super::types::compute::RegionUrlMapDefaultRouteActionRequestMirrorPolicy>>,
     /// Specifies the retry policy associated with this route.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "retryPolicy")]
     pub r#retry_policy: Option<Box<super::super::types::compute::RegionUrlMapDefaultRouteActionRetryPolicy>>,
     /// Specifies the timeout for the selected route. Timeout is computed from the time the request has been fully processed (known as end-of-stream) up until the response has been processed. Timeout includes all retries.
     /// If not specified, this field uses the largest timeout among all backend services associated with the route.
     /// Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "timeout")]
     pub r#timeout: Option<Box<super::super::types::compute::RegionUrlMapDefaultRouteActionTimeout>>,
     /// The spec to modify the URL of the request, before forwarding the request to the matched service.
     /// urlRewrite is the only action supported in UrlMaps for external HTTP(S) load balancers.
     /// Not supported when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "urlRewrite")]
     pub r#url_rewrite: Option<Box<super::super::types::compute::RegionUrlMapDefaultRouteActionUrlRewrite>>,
     /// A list of weighted backend services to send traffic to when a route match occurs. The weights determine the fraction of traffic that flows to their corresponding backend service. If all traffic needs to go to a single backend service, there must be one weightedBackendService with weight set to a non-zero number.
     /// After a backend service is identified and before forwarding the request to the backend service, advanced routing actions such as URL rewrites and header transformations are applied depending on additional settings specified in this HttpRouteAction.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "weightedBackendServices")]
     pub r#weighted_backend_services: Option<Vec<super::super::types::compute::RegionUrlMapDefaultRouteActionWeightedBackendService>>,
 }
 

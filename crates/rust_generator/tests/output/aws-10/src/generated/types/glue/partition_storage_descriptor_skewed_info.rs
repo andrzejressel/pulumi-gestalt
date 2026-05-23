@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct PartitionStorageDescriptorSkewedInfo {
     /// A list of names of columns that contain skewed values.
     #[builder(into)]
-    #[serde(rename = "skewedColumnNames")]
     pub r#skewed_column_names: Option<Vec<String>>,
     /// A list of values that appear so frequently as to be considered skewed.
     #[builder(into)]
-    #[serde(rename = "skewedColumnValueLocationMaps")]
     pub r#skewed_column_value_location_maps: Option<std::collections::HashMap<String, String>>,
     /// A map of skewed values to the columns that contain them.
     #[builder(into)]
-    #[serde(rename = "skewedColumnValues")]
     pub r#skewed_column_values: Option<Vec<String>>,
 }
 

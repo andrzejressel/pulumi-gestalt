@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,13 +6,11 @@ pub struct SettingsApplicationSettingsAttributePropagationSettings {
     /// Whether the provided attribute propagation settings should be evaluated on user requests.
     /// If set to true, attributes returned from the expression will be propagated in the set output credentials.
     #[builder(into)]
-    #[serde(rename = "enable")]
     pub r#enable: Option<bool>,
     /// Raw string CEL expression. Must return a list of attributes. A maximum of 45 attributes can
     /// be selected. Expressions can select different attribute types from attributes:
     /// attributes.saml_attributes, attributes.iap_attributes.
     #[builder(into)]
-    #[serde(rename = "expression")]
     pub r#expression: Option<String>,
     /// Which output credentials attributes selected by the CEL expression should be propagated in.
     /// All attributes will be fully duplicated in each selected output credential.
@@ -24,7 +22,6 @@ pub struct SettingsApplicationSettingsAttributePropagationSettings {
     /// additional_claims": { "my_attribute": ["value1", "value2"] }
     /// Each value may be one of: `HEADER`, `JWT`, `RCTOKEN`.
     #[builder(into)]
-    #[serde(rename = "outputCredentials")]
     pub r#output_credentials: Option<Vec<String>>,
 }
 

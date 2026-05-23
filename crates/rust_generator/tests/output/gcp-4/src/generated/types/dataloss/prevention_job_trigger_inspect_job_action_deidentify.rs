@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,24 +9,20 @@ pub struct PreventionJobTriggerInspectJobActionDeidentify {
     /// De-identified files will overwrite files in the output path.
     /// Form of: gs://bucket/folder/ or gs://bucket
     #[builder(into)]
-    #[serde(rename = "cloudStorageOutput")]
     pub r#cloud_storage_output: String,
     /// List of user-specified file type groups to transform. If specified, only the files with these filetypes will be transformed.
     /// If empty, all supported files will be transformed. Supported types may be automatically added over time.
     /// If a file type is set in this field that isn't supported by the Deidentify action then the job will fail and will not be successfully created/started.
     /// Each value may be one of: `IMAGE`, `TEXT_FILE`, `CSV`, `TSV`.
     #[builder(into)]
-    #[serde(rename = "fileTypesToTransforms")]
     pub r#file_types_to_transforms: Option<Vec<String>>,
     /// User specified deidentify templates and configs for structured, unstructured, and image files.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "transformationConfig")]
     pub r#transformation_config: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobActionDeidentifyTransformationConfig>>,
     /// Config for storing transformation details.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "transformationDetailsStorageConfig")]
     pub r#transformation_details_storage_config: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfig>>,
 }
 

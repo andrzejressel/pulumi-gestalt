@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetConfigurationInstallPatch {
     /// A `linux` block as defined below.
     #[builder(into)]
-    #[serde(rename = "linuxes")]
     pub r#linuxes: Vec<super::super::types::maintenance::GetConfigurationInstallPatchLinux>,
     /// Possible reboot preference as defined by the user based on which it would be decided to reboot the machine or not after the patch operation is completed.
     #[builder(into)]
-    #[serde(rename = "reboot")]
     pub r#reboot: String,
     /// A `windows` block as defined below.
     #[builder(into)]
-    #[serde(rename = "windows")]
     pub r#windows: Vec<super::super::types::maintenance::GetConfigurationInstallPatchWindow>,
 }
 

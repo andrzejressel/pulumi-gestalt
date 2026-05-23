@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,17 +6,14 @@ pub struct GetAutonomousDatabaseProperty {
     /// The amount of storage currently being used for user and system data, in
     /// terabytes.
     #[builder(into)]
-    #[serde(rename = "actualUsedDataStorageSizeTb")]
     pub r#actual_used_data_storage_size_tb: f64,
     /// The amount of storage currently allocated for the database tables and
     /// billed for, rounded up in terabytes.
     #[builder(into)]
-    #[serde(rename = "allocatedStorageSizeTb")]
     pub r#allocated_storage_size_tb: f64,
     /// Oracle APEX Application Development.
     /// https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/AutonomousDatabaseApex
     #[builder(into)]
-    #[serde(rename = "apexDetails")]
     pub r#apex_details: Vec<super::super::types::oracledatabase::GetAutonomousDatabasePropertyApexDetail>,
     /// This field indicates the status of Data Guard and Access control for the
     /// Autonomous Database. The field's value is null if Data Guard is disabled
@@ -27,45 +24,36 @@ pub struct GetAutonomousDatabaseProperty {
     /// Database is using a different IP access control list (ACL) for standby
     /// compared to primary.
     #[builder(into)]
-    #[serde(rename = "arePrimaryAllowlistedIpsUsed")]
     pub r#are_primary_allowlisted_ips_used: bool,
     /// The Autonomous Container Database OCID.
     #[builder(into)]
-    #[serde(rename = "autonomousContainerDatabaseId")]
     pub r#autonomous_container_database_id: String,
     /// The list of available Oracle Database upgrade versions for an Autonomous
     /// Database.
     #[builder(into)]
-    #[serde(rename = "availableUpgradeVersions")]
     pub r#available_upgrade_versions: Vec<String>,
     /// The retention period for the Autonomous Database. This field is specified
     /// in days, can range from 1 day to 60 days, and has a default value of
     /// 60 days.
     #[builder(into)]
-    #[serde(rename = "backupRetentionPeriodDays")]
     pub r#backup_retention_period_days: i32,
     /// The character set for the Autonomous Database. The default is AL32UTF8.
     #[builder(into)]
-    #[serde(rename = "characterSet")]
     pub r#character_set: String,
     /// The number of compute servers for the Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "computeCount")]
     pub r#compute_count: f64,
     /// The connection string used to connect to the Autonomous Database.
     /// https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/AutonomousDatabaseConnectionStrings
     #[builder(into)]
-    #[serde(rename = "connectionStrings")]
     pub r#connection_strings: Vec<super::super::types::oracledatabase::GetAutonomousDatabasePropertyConnectionString>,
     /// The URLs for accessing Oracle Application Express (APEX) and SQL Developer
     /// Web with a browser from a Compute instance.
     /// https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/AutonomousDatabaseConnectionUrls
     #[builder(into)]
-    #[serde(rename = "connectionUrls")]
     pub r#connection_urls: Vec<super::super::types::oracledatabase::GetAutonomousDatabasePropertyConnectionUrl>,
     /// The list of customer contacts.
     #[builder(into)]
-    #[serde(rename = "customerContacts")]
     pub r#customer_contacts: Vec<super::super::types::oracledatabase::GetAutonomousDatabasePropertyCustomerContact>,
     /// The current state of the Data Safe registration for the
     /// Autonomous Database. 
@@ -77,15 +65,12 @@ pub struct GetAutonomousDatabaseProperty {
     /// NOT_REGISTERED
     /// FAILED
     #[builder(into)]
-    #[serde(rename = "dataSafeState")]
     pub r#data_safe_state: String,
     /// The size of the data stored in the database, in gigabytes.
     #[builder(into)]
-    #[serde(rename = "dataStorageSizeGb")]
     pub r#data_storage_size_gb: i32,
     /// The size of the data stored in the database, in terabytes.
     #[builder(into)]
-    #[serde(rename = "dataStorageSizeTb")]
     pub r#data_storage_size_tb: i32,
     /// The current state of database management for the Autonomous Database. 
     ///  Possible values:
@@ -97,7 +82,6 @@ pub struct GetAutonomousDatabaseProperty {
     /// FAILED_ENABLING
     /// FAILED_DISABLING
     #[builder(into)]
-    #[serde(rename = "databaseManagementState")]
     pub r#database_management_state: String,
     /// The edition of the Autonomous Databases. 
     ///  Possible values:
@@ -105,11 +89,9 @@ pub struct GetAutonomousDatabaseProperty {
     /// STANDARD_EDITION
     /// ENTERPRISE_EDITION
     #[builder(into)]
-    #[serde(rename = "dbEdition")]
     pub r#db_edition: String,
     /// The Oracle Database version for the Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "dbVersion")]
     pub r#db_version: String,
     /// Possible values:
     ///  DB_WORKLOAD_UNSPECIFIED
@@ -118,27 +100,22 @@ pub struct GetAutonomousDatabaseProperty {
     /// AJD
     /// APEX
     #[builder(into)]
-    #[serde(rename = "dbWorkload")]
     pub r#db_workload: String,
     /// This field indicates the number of seconds of data loss during a Data
     /// Guard failover.
     #[builder(into)]
-    #[serde(rename = "failedDataRecoveryDuration")]
     pub r#failed_data_recovery_duration: String,
     /// This field indicates if auto scaling is enabled for the Autonomous Database
     /// CPU core count.
     #[builder(into)]
-    #[serde(rename = "isAutoScalingEnabled")]
     pub r#is_auto_scaling_enabled: bool,
     /// This field indicates whether the Autonomous Database has local (in-region)
     /// Data Guard enabled.
     #[builder(into)]
-    #[serde(rename = "isLocalDataGuardEnabled")]
     pub r#is_local_data_guard_enabled: bool,
     /// This field indicates if auto scaling is enabled for the Autonomous Database
     /// storage.
     #[builder(into)]
-    #[serde(rename = "isStorageAutoScalingEnabled")]
     pub r#is_storage_auto_scaling_enabled: bool,
     /// The license type used for the Autonomous Database. 
     ///  Possible values:
@@ -146,16 +123,13 @@ pub struct GetAutonomousDatabaseProperty {
     /// LICENSE_INCLUDED
     /// BRING_YOUR_OWN_LICENSE
     #[builder(into)]
-    #[serde(rename = "licenseType")]
     pub r#license_type: String,
     /// The details of the current lifestyle state of the Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "lifecycleDetails")]
     pub r#lifecycle_details: String,
     /// This field indicates the maximum data loss limit for an Autonomous
     /// Database, in seconds.
     #[builder(into)]
-    #[serde(rename = "localAdgAutoFailoverMaxDataLossLimit")]
     pub r#local_adg_auto_failover_max_data_loss_limit: i32,
     /// This field indicates the local disaster recovery (DR) type of an
     /// Autonomous Database. 
@@ -164,20 +138,16 @@ pub struct GetAutonomousDatabaseProperty {
     /// ADG
     /// BACKUP_BASED
     #[builder(into)]
-    #[serde(rename = "localDisasterRecoveryType")]
     pub r#local_disaster_recovery_type: String,
     /// Autonomous Data Guard standby database details.
     /// https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/AutonomousDatabaseStandbySummary
     #[builder(into)]
-    #[serde(rename = "localStandbyDbs")]
     pub r#local_standby_dbs: Vec<super::super::types::oracledatabase::GetAutonomousDatabasePropertyLocalStandbyDb>,
     /// The date and time when maintenance will begin.
     #[builder(into)]
-    #[serde(rename = "maintenanceBeginTime")]
     pub r#maintenance_begin_time: String,
     /// The date and time when maintenance will end.
     #[builder(into)]
-    #[serde(rename = "maintenanceEndTime")]
     pub r#maintenance_end_time: String,
     /// The maintenance schedule of the Autonomous Database. 
     ///  Possible values:
@@ -185,37 +155,29 @@ pub struct GetAutonomousDatabaseProperty {
     /// EARLY
     /// REGULAR
     #[builder(into)]
-    #[serde(rename = "maintenanceScheduleType")]
     pub r#maintenance_schedule_type: String,
     /// The amount of memory enabled per ECPU, in gigabytes.
     #[builder(into)]
-    #[serde(rename = "memoryPerOracleComputeUnitGbs")]
     pub r#memory_per_oracle_compute_unit_gbs: i32,
     /// The memory assigned to in-memory tables in an Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "memoryTableGbs")]
     pub r#memory_table_gbs: i32,
     /// This field specifies if the Autonomous Database requires mTLS connections.
     #[builder(into)]
-    #[serde(rename = "mtlsConnectionRequired")]
     pub r#mtls_connection_required: bool,
     /// The national character set for the Autonomous Database. The default is
     /// AL16UTF16.
     #[builder(into)]
-    #[serde(rename = "nCharacterSet")]
     pub r#n_character_set: String,
     /// The long term backup schedule of the Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "nextLongTermBackupTime")]
     pub r#next_long_term_backup_time: String,
     /// The Oracle Cloud Infrastructure link for the Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "ociUrl")]
     pub r#oci_url: String,
     /// OCID of the Autonomous Database.
     /// https://docs.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm#Oracle
     #[builder(into)]
-    #[serde(rename = "ocid")]
     pub r#ocid: String,
     /// This field indicates the current mode of the Autonomous Database. 
     ///  Possible values:
@@ -223,7 +185,6 @@ pub struct GetAutonomousDatabaseProperty {
     /// READ_ONLY
     /// READ_WRITE
     #[builder(into)]
-    #[serde(rename = "openMode")]
     pub r#open_mode: String,
     /// Possible values:
     ///  OPERATIONS_INSIGHTS_STATE_UNSPECIFIED
@@ -234,12 +195,10 @@ pub struct GetAutonomousDatabaseProperty {
     /// FAILED_ENABLING
     /// FAILED_DISABLING
     #[builder(into)]
-    #[serde(rename = "operationsInsightsState")]
     pub r#operations_insights_state: String,
     /// The list of OCIDs of standby databases located in Autonomous Data Guard
     /// remote regions that are associated with the source database.
     #[builder(into)]
-    #[serde(rename = "peerDbIds")]
     pub r#peer_db_ids: Vec<String>,
     /// The permission level of the Autonomous Database. 
     ///  Possible values:
@@ -247,19 +206,15 @@ pub struct GetAutonomousDatabaseProperty {
     /// RESTRICTED
     /// UNRESTRICTED
     #[builder(into)]
-    #[serde(rename = "permissionLevel")]
     pub r#permission_level: String,
     /// The private endpoint for the Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "privateEndpoint")]
     pub r#private_endpoint: String,
     /// The private endpoint IP address for the Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "privateEndpointIp")]
     pub r#private_endpoint_ip: String,
     /// The private endpoint label for the Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "privateEndpointLabel")]
     pub r#private_endpoint_label: String,
     /// The refresh mode of the cloned Autonomous Database. 
     ///  Possible values:
@@ -267,7 +222,6 @@ pub struct GetAutonomousDatabaseProperty {
     /// AUTOMATIC
     /// MANUAL
     #[builder(into)]
-    #[serde(rename = "refreshableMode")]
     pub r#refreshable_mode: String,
     /// The refresh State of the clone. 
     ///  Possible values:
@@ -275,7 +229,6 @@ pub struct GetAutonomousDatabaseProperty {
     /// REFRESHING
     /// NOT_REFRESHING
     #[builder(into)]
-    #[serde(rename = "refreshableState")]
     pub r#refreshable_state: String,
     /// The Data Guard role of the Autonomous Database. 
     ///  Possible values:
@@ -286,16 +239,13 @@ pub struct GetAutonomousDatabaseProperty {
     /// BACKUP_COPY
     /// SNAPSHOT_STANDBY
     #[builder(into)]
-    #[serde(rename = "role")]
     pub r#role: String,
     /// The list and details of the scheduled operations of the Autonomous
     /// Database.
     #[builder(into)]
-    #[serde(rename = "scheduledOperationDetails")]
     pub r#scheduled_operation_details: Vec<super::super::types::oracledatabase::GetAutonomousDatabasePropertyScheduledOperationDetail>,
     /// The SQL Web Developer URL for the Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "sqlWebDeveloperUrl")]
     pub r#sql_web_developer_url: String,
     /// Possible values:
     ///  STATE_UNSPECIFIED
@@ -321,21 +271,17 @@ pub struct GetAutonomousDatabaseProperty {
     /// INACCESSIBLE
     /// STANDBY
     #[builder(into)]
-    #[serde(rename = "state")]
     pub r#state: String,
     /// The list of available regions that can be used to create a clone for the
     /// Autonomous Database.
     #[builder(into)]
-    #[serde(rename = "supportedCloneRegions")]
     pub r#supported_clone_regions: Vec<String>,
     /// The storage space used by automatic backups of Autonomous Database, in
     /// gigabytes.
     #[builder(into)]
-    #[serde(rename = "totalAutoBackupStorageSizeGbs")]
     pub r#total_auto_backup_storage_size_gbs: f64,
     /// The storage space used by Autonomous Database, in gigabytes.
     #[builder(into)]
-    #[serde(rename = "usedDataStorageSizeTbs")]
     pub r#used_data_storage_size_tbs: i32,
 }
 

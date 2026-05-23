@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,13 +10,11 @@ pub struct FhirStoreStreamConfig {
     /// See the [streaming config reference](https://cloud.google.com/healthcare/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores#streamconfig) for more details.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "bigqueryDestination")]
     pub r#bigquery_destination: Box<super::super::types::healthcare::FhirStoreStreamConfigBigqueryDestination>,
     /// Supply a FHIR resource type (such as "Patient" or "Observation"). See
     /// https://www.hl7.org/fhir/valueset-resource-types.html for a list of all FHIR resource types. The server treats
     /// an empty list as an intent to stream all the supported resource types in this FHIR store.
     #[builder(into)]
-    #[serde(rename = "resourceTypes")]
     pub r#resource_types: Option<Vec<String>>,
 }
 

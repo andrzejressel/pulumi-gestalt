@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,13 +7,11 @@ pub struct EdgeCacheOriginOriginOverrideAction {
     /// headers, for request handled by this origin.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "headerAction")]
     pub r#header_action: Option<Box<super::super::types::networkservices::EdgeCacheOriginOriginOverrideActionHeaderAction>>,
     /// The URL rewrite configuration for request that are
     /// handled by this origin.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "urlRewrite")]
     pub r#url_rewrite: Option<Box<super::super::types::networkservices::EdgeCacheOriginOriginOverrideActionUrlRewrite>>,
 }
 

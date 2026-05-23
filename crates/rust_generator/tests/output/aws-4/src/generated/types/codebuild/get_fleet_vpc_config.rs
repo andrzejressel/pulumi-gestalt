@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetFleetVpcConfig {
     /// A list of one or more security groups IDs in your Amazon VPC.
     #[builder(into)]
-    #[serde(rename = "securityGroupIds")]
     pub r#security_group_ids: Vec<String>,
     /// A list of one or more subnet IDs in your Amazon VPC.
     #[builder(into)]
-    #[serde(rename = "subnets")]
     pub r#subnets: Vec<String>,
     /// The ID of the Amazon VPC.
     #[builder(into)]
-    #[serde(rename = "vpcId")]
     pub r#vpc_id: String,
 }
 

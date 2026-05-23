@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct AccessPolicyAssociationAccessScope {
     /// The namespaces to which the access scope applies when type is namespace.
     #[builder(into)]
-    #[serde(rename = "namespaces")]
     pub r#namespaces: Option<Vec<String>>,
     /// Valid values are `namespace` or `cluster`.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: String,
 }
 

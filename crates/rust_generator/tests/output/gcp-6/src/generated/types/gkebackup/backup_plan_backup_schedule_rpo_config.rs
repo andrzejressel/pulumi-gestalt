@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -12,13 +12,11 @@ pub struct BackupPlanBackupScheduleRpoConfig {
     /// restriction on number of single occurrence windows.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "exclusionWindows")]
     pub r#exclusion_windows: Option<Vec<super::super::types::gkebackup::BackupPlanBackupScheduleRpoConfigExclusionWindow>>,
     /// Defines the target RPO for the BackupPlan in minutes, which means the target
     /// maximum data loss in time that is acceptable for this BackupPlan. This must be
     /// at least 60, i.e., 1 hour, and at most 86400, i.e., 60 days.
     #[builder(into)]
-    #[serde(rename = "targetRpoMinutes")]
     pub r#target_rpo_minutes: i32,
 }
 

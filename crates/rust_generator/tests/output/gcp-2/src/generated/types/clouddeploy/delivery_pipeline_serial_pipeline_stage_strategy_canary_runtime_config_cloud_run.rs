@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun {
     /// Whether Cloud Deploy should update the traffic stanza in a Cloud Run Service on the user's behalf to facilitate traffic splitting. This is required to be true for CanaryDeployments, but optional for CustomCanaryDeployments.
     #[builder(into)]
-    #[serde(rename = "automaticTrafficControl")]
     pub r#automatic_traffic_control: Option<bool>,
     /// Optional. A list of tags that are added to the canary revision while the canary phase is in progress.
     #[builder(into)]
-    #[serde(rename = "canaryRevisionTags")]
     pub r#canary_revision_tags: Option<Vec<String>>,
     /// Optional. A list of tags that are added to the prior revision while the canary phase is in progress.
     #[builder(into)]
-    #[serde(rename = "priorRevisionTags")]
     pub r#prior_revision_tags: Option<Vec<String>>,
     /// Optional. A list of tags that are added to the final stable revision when the stable phase is applied.
     #[builder(into)]
-    #[serde(rename = "stableRevisionTags")]
     pub r#stable_revision_tags: Option<Vec<String>>,
 }
 

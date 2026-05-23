@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct RefreshScheduleScheduleScheduleFrequencyRefreshOnDay {
     /// The day of the month that you want to schedule refresh on.
     #[builder(into)]
-    #[serde(rename = "dayOfMonth")]
     pub r#day_of_month: Option<String>,
     /// The day of the week that you want to schedule a refresh on. Valid values are `SUNDAY`, `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY` and `SATURDAY`.
     #[builder(into)]
-    #[serde(rename = "dayOfWeek")]
     pub r#day_of_week: Option<String>,
 }
 

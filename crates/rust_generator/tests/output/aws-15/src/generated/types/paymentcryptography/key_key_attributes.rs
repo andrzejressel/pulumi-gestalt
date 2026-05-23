@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct KeyKeyAttributes {
     /// Key algorithm to be use during creation of an AWS Payment Cryptography key.
     #[builder(into)]
-    #[serde(rename = "keyAlgorithm")]
     pub r#key_algorithm: String,
     /// Type of AWS Payment Cryptography key to create.
     #[builder(into)]
-    #[serde(rename = "keyClass")]
     pub r#key_class: String,
     /// List of cryptographic operations that you can perform using the key.
     #[builder(into)]
-    #[serde(rename = "keyModesOfUse")]
     pub r#key_modes_of_use: Option<Box<super::super::types::paymentcryptography::KeyKeyAttributesKeyModesOfUse>>,
     /// Cryptographic usage of an AWS Payment Cryptography key as defined in section A.5.2 of the TR-31 spec.
     #[builder(into)]
-    #[serde(rename = "keyUsage")]
     pub r#key_usage: String,
 }
 

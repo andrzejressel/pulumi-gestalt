@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,14 +10,12 @@ pub struct FirewallAllow {
     /// Example inputs include: [22], [80, 443], and
     /// ["12345-12349"].
     #[builder(into)]
-    #[serde(rename = "ports")]
     pub r#ports: Option<Vec<String>>,
     /// The IP protocol to which this rule applies. The protocol type is
     /// required when creating a firewall rule. This value can either be
     /// one of the following well known protocol strings (tcp, udp,
     /// icmp, esp, ah, sctp, ipip, all), or the IP protocol number.
     #[builder(into)]
-    #[serde(rename = "protocol")]
     pub r#protocol: String,
 }
 

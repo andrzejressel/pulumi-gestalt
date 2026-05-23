@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -14,7 +14,6 @@ pub struct AttestorAttestationAuthorityNote {
     /// account email; future versions may use an email based on a
     /// different naming pattern.
     #[builder(into)]
-    #[serde(rename = "delegationServiceAccountEmail")]
     pub r#delegation_service_account_email: Option<String>,
     /// The resource name of a ATTESTATION_AUTHORITY Note, created by the
     /// user. If the Note is in a different project from the Attestor, it
@@ -24,7 +23,6 @@ pub struct AttestorAttestationAuthorityNote {
     /// ATTESTATION_AUTHORITY Occurrence that names a container image
     /// and that links to this Note.
     #[builder(into)]
-    #[serde(rename = "noteReference")]
     pub r#note_reference: String,
     /// Public keys that verify attestations signed by this attestor. This
     /// field may be updated.
@@ -35,7 +33,6 @@ pub struct AttestorAttestationAuthorityNote {
     /// attestations exist.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "publicKeys")]
     pub r#public_keys: Option<Vec<super::super::types::binaryauthorization::AttestorAttestationAuthorityNotePublicKey>>,
 }
 

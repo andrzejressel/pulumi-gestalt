@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,23 +6,19 @@ pub struct TableImportTable {
     /// Type of compression to be used on the input coming from the imported table.
     /// Valid values are `GZIP`, `ZSTD` and `NONE`.
     #[builder(into)]
-    #[serde(rename = "inputCompressionType")]
     pub r#input_compression_type: Option<String>,
     /// The format of the source data.
     /// Valid values are `CSV`, `DYNAMODB_JSON`, and `ION`.
     #[builder(into)]
-    #[serde(rename = "inputFormat")]
     pub r#input_format: String,
     /// Describe the format options for the data that was imported into the target table.
     /// There is one value, `csv`.
     /// See below.
     #[builder(into)]
-    #[serde(rename = "inputFormatOptions")]
     pub r#input_format_options: Option<Box<super::super::types::dynamodb::TableImportTableInputFormatOptions>>,
     /// Values for the S3 bucket the source file is imported from.
     /// See below.
     #[builder(into)]
-    #[serde(rename = "s3BucketSource")]
     pub r#s_3_bucket_source: Box<super::super::types::dynamodb::TableImportTableS3BucketSource>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -18,7 +18,6 @@ pub struct AlertPolicyConditionConditionAbsentAggregation {
     /// this field must be defined;
     /// otherwise an error is returned.
     #[builder(into)]
-    #[serde(rename = "alignmentPeriod")]
     pub r#alignment_period: Option<String>,
     /// The approach to be used to combine
     /// time series. Not all reducer
@@ -39,7 +38,6 @@ pub struct AlertPolicyConditionConditionAbsentAggregation {
     /// returned.
     /// Possible values are: `REDUCE_NONE`, `REDUCE_MEAN`, `REDUCE_MIN`, `REDUCE_MAX`, `REDUCE_SUM`, `REDUCE_STDDEV`, `REDUCE_COUNT`, `REDUCE_COUNT_TRUE`, `REDUCE_COUNT_FALSE`, `REDUCE_FRACTION_TRUE`, `REDUCE_PERCENTILE_99`, `REDUCE_PERCENTILE_95`, `REDUCE_PERCENTILE_50`, `REDUCE_PERCENTILE_05`.
     #[builder(into)]
-    #[serde(rename = "crossSeriesReducer")]
     pub r#cross_series_reducer: Option<String>,
     /// The set of fields to preserve when
     /// crossSeriesReducer is specified.
@@ -67,7 +65,6 @@ pub struct AlertPolicyConditionConditionAbsentAggregation {
     /// is not defined, this field is
     /// ignored.
     #[builder(into)]
-    #[serde(rename = "groupByFields")]
     pub r#group_by_fields: Option<Vec<String>>,
     /// The approach to be used to align
     /// individual time series. Not all
@@ -88,7 +85,6 @@ pub struct AlertPolicyConditionConditionAbsentAggregation {
     /// returned.
     /// Possible values are: `ALIGN_NONE`, `ALIGN_DELTA`, `ALIGN_RATE`, `ALIGN_INTERPOLATE`, `ALIGN_NEXT_OLDER`, `ALIGN_MIN`, `ALIGN_MAX`, `ALIGN_MEAN`, `ALIGN_COUNT`, `ALIGN_SUM`, `ALIGN_STDDEV`, `ALIGN_COUNT_TRUE`, `ALIGN_COUNT_FALSE`, `ALIGN_FRACTION_TRUE`, `ALIGN_PERCENTILE_99`, `ALIGN_PERCENTILE_95`, `ALIGN_PERCENTILE_50`, `ALIGN_PERCENTILE_05`, `ALIGN_PERCENT_CHANGE`.
     #[builder(into)]
-    #[serde(rename = "perSeriesAligner")]
     pub r#per_series_aligner: Option<String>,
 }
 

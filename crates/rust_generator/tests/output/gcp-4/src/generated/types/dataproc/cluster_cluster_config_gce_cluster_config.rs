@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ClusterClusterConfigGceClusterConfig {
     /// Confidential Instance Config for clusters using [Confidential VMs](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/confidential-compute)
     #[builder(into)]
-    #[serde(rename = "confidentialInstanceConfig")]
     pub r#confidential_instance_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigConfidentialInstanceConfig>>,
     /// By default, clusters are not restricted to internal IP addresses,
     /// and will have ephemeral external IP addresses assigned to each instance. If set to true, all
@@ -13,31 +12,25 @@ pub struct ClusterClusterConfigGceClusterConfig {
     /// (also known as `privateIpGoogleAccess`) must be enabled on the subnetwork that the cluster
     /// will be launched in.
     #[builder(into)]
-    #[serde(rename = "internalIpOnly")]
     pub r#internal_ip_only: Option<bool>,
     /// A map of the Compute Engine metadata entries to add to all instances
     /// (see [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
     #[builder(into)]
-    #[serde(rename = "metadata")]
     pub r#metadata: Option<std::collections::HashMap<String, String>>,
     /// The name or self_link of the Google Compute Engine
     /// network to the cluster will be part of. Conflicts with `subnetwork`.
     /// If neither is specified, this defaults to the "default" network.
     #[builder(into)]
-    #[serde(rename = "network")]
     pub r#network: Option<String>,
     /// Node Group Affinity for sole-tenant clusters.
     #[builder(into)]
-    #[serde(rename = "nodeGroupAffinity")]
     pub r#node_group_affinity: Option<Box<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigNodeGroupAffinity>>,
     /// Reservation Affinity for consuming zonal reservation.
     #[builder(into)]
-    #[serde(rename = "reservationAffinity")]
     pub r#reservation_affinity: Option<Box<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigReservationAffinity>>,
     /// The service account to be used by the Node VMs.
     /// If not specified, the "default" service account is used.
     #[builder(into)]
-    #[serde(rename = "serviceAccount")]
     pub r#service_account: Option<String>,
     /// The set of Google API scopes
     /// to be made available on all of the node VMs under the `service_account`
@@ -45,23 +38,19 @@ pub struct ClusterClusterConfigGceClusterConfig {
     /// short names are supported. To allow full access to all Cloud APIs, use the
     /// `cloud-platform` scope. See a complete list of scopes [here](https://cloud.google.com/sdk/gcloud/reference/alpha/compute/instances/set-scopes#--scopes).
     #[builder(into)]
-    #[serde(rename = "serviceAccountScopes")]
     pub r#service_account_scopes: Option<Vec<String>>,
     /// Shielded Instance Config for clusters using [Compute Engine Shielded VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
     /// 
     /// - - -
     #[builder(into)]
-    #[serde(rename = "shieldedInstanceConfig")]
     pub r#shielded_instance_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigShieldedInstanceConfig>>,
     /// The name or self_link of the Google Compute Engine
     /// subnetwork the cluster will be part of. Conflicts with `network`.
     #[builder(into)]
-    #[serde(rename = "subnetwork")]
     pub r#subnetwork: Option<String>,
     /// The list of instance tags applied to instances in the cluster.
     /// Tags are used to identify valid sources or targets for network firewalls.
     #[builder(into)]
-    #[serde(rename = "tags")]
     pub r#tags: Option<Vec<String>>,
     /// The GCP zone where your data is stored and used (i.e. where
     /// the master and the worker nodes will be created in). If `region` is set to 'global' (default)
@@ -71,7 +60,6 @@ pub struct ClusterClusterConfigGceClusterConfig {
     /// which computing resources are available for use with other configs such as
     /// `cluster_config.master_config.machine_type` and `cluster_config.worker_config.machine_type`.
     #[builder(into)]
-    #[serde(rename = "zone")]
     pub r#zone: Option<String>,
 }
 

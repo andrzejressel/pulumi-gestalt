@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,13 +9,11 @@ pub struct ServicePerimetersServicePerimeterSpecEgressPolicyEgressToOperation {
     /// AND permissions for the service specified in `serviceName`.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "methodSelectors")]
     pub r#method_selectors: Option<Vec<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpecEgressPolicyEgressToOperationMethodSelector>>,
     /// The name of the API whose methods or permissions the `IngressPolicy` or
     /// `EgressPolicy` want to allow. A single `ApiOperation` with serviceName
     /// field set to `*` will allow all methods AND permissions for all services.
     #[builder(into)]
-    #[serde(rename = "serviceName")]
     pub r#service_name: Option<String>,
 }
 

@@ -1,20 +1,17 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ServiceTemplateContainerEnv {
     /// Name of the environment variable. Must be a C_IDENTIFIER, and may not exceed 32768 characters.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Literal value of the environment variable. Defaults to "" and the maximum allowed length is 32768 characters. Variable references are not supported in Cloud Run.
     #[builder(into)]
-    #[serde(rename = "value")]
     pub r#value: Option<String>,
     /// Source for the environment variable's value.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "valueSource")]
     pub r#value_source: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerEnvValueSource>>,
 }
 

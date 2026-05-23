@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct TaskNotebookInfrastructureSpecContainerImage {
     /// Container image to use.
     #[builder(into)]
-    #[serde(rename = "image")]
     pub r#image: Option<String>,
     /// A list of Java JARS to add to the classpath. Valid input includes Cloud Storage URIs to Jar binaries. For example, gs://bucket-name/my/path/to/file.jar
     #[builder(into)]
-    #[serde(rename = "javaJars")]
     pub r#java_jars: Option<Vec<String>>,
     /// Override to common configuration of open source components installed on the Dataproc cluster. The properties to set on daemon config files. Property keys are specified in prefix:property format, for example core:hadoop.tmp.dir. For more information, see Cluster properties.
     #[builder(into)]
-    #[serde(rename = "properties")]
     pub r#properties: Option<std::collections::HashMap<String, String>>,
     /// A list of python packages to be installed. Valid formats include Cloud Storage URI to a PIP installable library. For example, gs://bucket-name/my/path/to/lib.tar.gz
     #[builder(into)]
-    #[serde(rename = "pythonPackages")]
     pub r#python_packages: Option<Vec<String>>,
 }
 

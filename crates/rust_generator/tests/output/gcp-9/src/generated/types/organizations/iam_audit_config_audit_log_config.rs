@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,11 +10,9 @@ pub struct IamAuditConfigAuditLogConfig {
     /// * **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.
     /// * **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
     #[builder(into)]
-    #[serde(rename = "exemptedMembers")]
     pub r#exempted_members: Option<Vec<String>>,
     /// Permission type for which logging is to be configured.  Must be one of `DATA_READ`, `DATA_WRITE`, or `ADMIN_READ`.
     #[builder(into)]
-    #[serde(rename = "logType")]
     pub r#log_type: String,
 }
 

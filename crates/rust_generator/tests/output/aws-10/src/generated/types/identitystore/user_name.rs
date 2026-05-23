@@ -1,33 +1,27 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct UserName {
     /// The family name of the user.
     #[builder(into)]
-    #[serde(rename = "familyName")]
     pub r#family_name: String,
     /// The name that is typically displayed when the name is shown for display.
     #[builder(into)]
-    #[serde(rename = "formatted")]
     pub r#formatted: Option<String>,
     /// The given name of the user.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
-    #[serde(rename = "givenName")]
     pub r#given_name: String,
     /// The honorific prefix of the user.
     #[builder(into)]
-    #[serde(rename = "honorificPrefix")]
     pub r#honorific_prefix: Option<String>,
     /// The honorific suffix of the user.
     #[builder(into)]
-    #[serde(rename = "honorificSuffix")]
     pub r#honorific_suffix: Option<String>,
     /// The middle name of the user.
     #[builder(into)]
-    #[serde(rename = "middleName")]
     pub r#middle_name: Option<String>,
 }
 

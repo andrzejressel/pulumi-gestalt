@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,7 +10,6 @@ pub struct FhirStoreNotificationConfig {
     /// project. service-PROJECT_NUMBER@gcp-sa-healthcare.iam.gserviceaccount.com must have publisher permissions on the given
     /// Cloud Pub/Sub topic. Not having adequate permissions will cause the calls that send notifications to fail.
     #[builder(into)]
-    #[serde(rename = "pubsubTopic")]
     pub r#pubsub_topic: String,
     /// Whether to send full FHIR resource to this Pub/Sub topic for Create and Update operation.
     /// Note that setting this to true does not guarantee that all resources will be sent in the format of
@@ -18,7 +17,6 @@ pub struct FhirStoreNotificationConfig {
     /// sent. Clients should always check the "payloadType" label from a Pub/Sub message to determine whether
     /// it needs to fetch the full resource as a separate operation.
     #[builder(into)]
-    #[serde(rename = "sendFullResource")]
     pub r#send_full_resource: Option<bool>,
     /// Whether to send full FHIR resource to this Pub/Sub topic for deleting FHIR resource. Note that setting this to
     /// true does not guarantee that all previous resources will be sent in the format of full FHIR resource. When a
@@ -26,7 +24,6 @@ pub struct FhirStoreNotificationConfig {
     /// check the "payloadType" label from a Pub/Sub message to determine whether it needs to fetch the full previous
     /// resource as a separate operation.
     #[builder(into)]
-    #[serde(rename = "sendPreviousResourceOnDelete")]
     pub r#send_previous_resource_on_delete: Option<bool>,
 }
 

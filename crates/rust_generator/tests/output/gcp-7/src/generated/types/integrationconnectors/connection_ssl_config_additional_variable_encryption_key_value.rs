@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,12 +7,10 @@ pub struct ConnectionSslConfigAdditionalVariableEncryptionKeyValue {
     /// expected format: projects/*/locations/*/keyRings/*/cryptoKeys/*.
     /// Will be empty string if google managed.
     #[builder(into)]
-    #[serde(rename = "kmsKeyName")]
     pub r#kms_key_name: Option<String>,
     /// Type of Encryption Key
     /// Possible values are: `GOOGLE_MANAGED`, `CUSTOMER_MANAGED`.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: Option<String>,
 }
 

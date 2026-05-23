@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,7 +7,6 @@ pub struct UrlMapPathMatcherRouteRuleRouteAction {
     /// Recommendation for Cross Origin Resource Sharing
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "corsPolicy")]
     pub r#cors_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionCorsPolicy>>,
     /// The specification for fault injection introduced into traffic to test the
     /// resiliency of clients to backend service failure. As part of fault injection,
@@ -18,7 +17,6 @@ pub struct UrlMapPathMatcherRouteRuleRouteAction {
     /// ignored by clients that are configured with a fault_injection_policy.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "faultInjectionPolicy")]
     pub r#fault_injection_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy>>,
     /// Specifies the policy on how requests intended for the route's backends are
     /// shadowed to a separate mirrored backend service. Loadbalancer does not wait for
@@ -26,12 +24,10 @@ pub struct UrlMapPathMatcherRouteRuleRouteAction {
     /// service, the host / authority header is suffixed with -shadow.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "requestMirrorPolicy")]
     pub r#request_mirror_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy>>,
     /// Specifies the retry policy associated with this route.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "retryPolicy")]
     pub r#retry_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionRetryPolicy>>,
     /// Specifies the timeout for the selected route. Timeout is computed from the time
     /// the request is has been fully processed (i.e. end-of-stream) up until the
@@ -39,13 +35,11 @@ pub struct UrlMapPathMatcherRouteRuleRouteAction {
     /// specified, the default value is 15 seconds.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "timeout")]
     pub r#timeout: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionTimeout>>,
     /// The spec to modify the URL of the request, prior to forwarding the request to
     /// the matched service
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "urlRewrite")]
     pub r#url_rewrite: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionUrlRewrite>>,
     /// A list of weighted backend services to send traffic to when a route match
     /// occurs. The weights determine the fraction of traffic that flows to their
@@ -57,7 +51,6 @@ pub struct UrlMapPathMatcherRouteRuleRouteAction {
     /// HttpRouteAction.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "weightedBackendServices")]
     pub r#weighted_backend_services: Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionWeightedBackendService>>,
 }
 

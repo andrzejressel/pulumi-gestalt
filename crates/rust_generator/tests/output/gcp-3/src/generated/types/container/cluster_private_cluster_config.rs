@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,20 +8,17 @@ pub struct ClusterPrivateClusterConfig {
     /// is disabled. When `false`, either endpoint can be used. This field only applies
     /// to private clusters, when `enable_private_nodes` is `true`.
     #[builder(into)]
-    #[serde(rename = "enablePrivateEndpoint")]
     pub r#enable_private_endpoint: Option<bool>,
     /// Enables the private cluster feature,
     /// creating a private endpoint on the cluster. In a private cluster, nodes only
     /// have RFC 1918 private addresses and communicate with the master's private
     /// endpoint via private networking.
     #[builder(into)]
-    #[serde(rename = "enablePrivateNodes")]
     pub r#enable_private_nodes: Option<bool>,
     /// Controls cluster master global
     /// access settings. If unset, the provider will no longer manage this field and will
     /// not modify the previously-set value. Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "masterGlobalAccessConfig")]
     pub r#master_global_access_config: Option<Box<super::super::types::container::ClusterPrivateClusterConfigMasterGlobalAccessConfig>>,
     /// The IP range in CIDR notation to use for
     /// the hosted master network. This range will be used for assigning private IP
@@ -31,19 +28,15 @@ pub struct ClusterPrivateClusterConfig {
     /// for more details. This field only applies to private clusters, when
     /// `enable_private_nodes` is `true`.
     #[builder(into)]
-    #[serde(rename = "masterIpv4CidrBlock")]
     pub r#master_ipv_4_cidr_block: Option<String>,
     /// The name of the peering between this cluster and the Google owned VPC.
     #[builder(into)]
-    #[serde(rename = "peeringName")]
     pub r#peering_name: Option<String>,
     /// The internal IP address of this cluster's master endpoint.
     #[builder(into)]
-    #[serde(rename = "privateEndpoint")]
     pub r#private_endpoint: Option<String>,
     /// Subnetwork in cluster's network where master's endpoint will be provisioned.
     #[builder(into)]
-    #[serde(rename = "privateEndpointSubnetwork")]
     pub r#private_endpoint_subnetwork: Option<String>,
     /// The external IP address of this cluster's master endpoint.
     /// 
@@ -51,7 +44,6 @@ pub struct ClusterPrivateClusterConfig {
     /// `private_cluster_config` when `enable_private_nodes` is `false`. It's
     /// recommended that you omit the block entirely if the field is not set to `true`.
     #[builder(into)]
-    #[serde(rename = "publicEndpoint")]
     pub r#public_endpoint: Option<String>,
 }
 

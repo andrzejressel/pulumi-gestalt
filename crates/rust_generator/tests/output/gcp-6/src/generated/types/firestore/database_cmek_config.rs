@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,7 +10,6 @@ pub struct DatabaseCmekConfig {
     /// The expected format is
     /// `projects/{project_id}/locations/{kms_location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{key_version}`.
     #[builder(into)]
-    #[serde(rename = "activeKeyVersions")]
     pub r#active_key_versions: Option<Vec<String>>,
     /// The resource ID of a Cloud KMS key. If set, the database created will
     /// be a Customer-managed Encryption Key (CMEK) database encrypted with
@@ -24,7 +23,6 @@ pub struct DatabaseCmekConfig {
     /// How to retrive this resource ID is listed at
     /// https://cloud.google.com/kms/docs/getting-resource-ids#getting_the_id_for_a_key_and_version.
     #[builder(into)]
-    #[serde(rename = "kmsKeyName")]
     pub r#kms_key_name: String,
 }
 

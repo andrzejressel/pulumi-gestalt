@@ -1,21 +1,18 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct LifecyclePolicyPolicyDetail {
     /// Configuration details for the policy action.
     #[builder(into)]
-    #[serde(rename = "action")]
     pub r#action: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailAction>>,
     /// Additional rules to specify resources that should be exempt from policy actions.
     #[builder(into)]
-    #[serde(rename = "exclusionRules")]
     pub r#exclusion_rules: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRules>>,
     /// Specifies the resources that the lifecycle policy applies to.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
-    #[serde(rename = "filter")]
     pub r#filter: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailFilter>>,
 }
 

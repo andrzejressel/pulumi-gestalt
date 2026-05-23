@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,18 +6,15 @@ pub struct ServicePerimetersServicePerimeter {
     /// (Output)
     /// Time the AccessPolicy was created in UTC.
     #[builder(into)]
-    #[serde(rename = "createTime")]
     pub r#create_time: Option<String>,
     /// Description of the ServicePerimeter and its use. Does not affect
     /// behavior.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// Resource name for the ServicePerimeter. The short_name component must
     /// begin with a letter and only include alphanumeric and '_'.
     /// Format: accessPolicies/{policy_id}/servicePerimeters/{short_name}
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Specifies the type of the Perimeter. There are two types: regular and
     /// bridge. Regular Service Perimeter contains resources, access levels,
@@ -36,7 +33,6 @@ pub struct ServicePerimetersServicePerimeter {
     /// Default value is `PERIMETER_TYPE_REGULAR`.
     /// Possible values are: `PERIMETER_TYPE_REGULAR`, `PERIMETER_TYPE_BRIDGE`.
     #[builder(into)]
-    #[serde(rename = "perimeterType")]
     pub r#perimeter_type: Option<String>,
     /// Proposed (or dry run) ServicePerimeter configuration.
     /// This configuration allows to specify and test ServicePerimeter configuration
@@ -44,23 +40,19 @@ pub struct ServicePerimetersServicePerimeter {
     /// the `useExplicitDryRunSpec` flag is set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "spec")]
     pub r#spec: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpec>>,
     /// ServicePerimeter configuration. Specifies sets of resources,
     /// restricted services and access levels that determine
     /// perimeter content and boundaries.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "status")]
     pub r#status: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatus>>,
     /// Human readable title. Must be unique within the Policy.
     #[builder(into)]
-    #[serde(rename = "title")]
     pub r#title: String,
     /// (Output)
     /// Time the AccessPolicy was updated in UTC.
     #[builder(into)]
-    #[serde(rename = "updateTime")]
     pub r#update_time: Option<String>,
     /// Use explicit dry run spec flag. Ordinarily, a dry-run spec implicitly exists
     /// for all Service Perimeters, and that spec is identical to the status for those
@@ -72,7 +64,6 @@ pub struct ServicePerimetersServicePerimeter {
     /// between currently enforced and suggested restrictions. useExplicitDryRunSpec must
     /// bet set to True if any of the fields in the spec are set to non-default values.
     #[builder(into)]
-    #[serde(rename = "useExplicitDryRunSpec")]
     pub r#use_explicit_dry_run_spec: Option<bool>,
 }
 

@@ -1,63 +1,49 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetLoadBalancerPoolsPool {
     /// List of regions (specified by region code) from which to run health checks. Empty means every Cloudflare data center (the default), but requires an Enterprise plan. Region codes can be found [here](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions).
     #[builder(into)]
-    #[serde(rename = "checkRegions")]
     pub r#check_regions: Vec<String>,
     /// The RFC3339 timestamp of when the load balancer was created.
     #[builder(into)]
-    #[serde(rename = "createdOn")]
     pub r#created_on: String,
     /// Brief description of the Load Balancer Pool intention.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: String,
     /// Whether this pool is enabled. Disabled pools will not receive traffic and are excluded from health checks.
     #[builder(into)]
-    #[serde(rename = "enabled")]
     pub r#enabled: bool,
     /// ID for this load balancer pool.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: String,
     /// Latitude this pool is physically located at; used for proximity steering.
     #[builder(into)]
-    #[serde(rename = "latitude")]
     pub r#latitude: f64,
     /// Setting for controlling load shedding for this pool.
     #[builder(into)]
-    #[serde(rename = "loadSheddings")]
     pub r#load_sheddings: Vec<super::types::GetLoadBalancerPoolsPoolLoadShedding>,
     /// Longitude this pool is physically located at; used for proximity steering.
     #[builder(into)]
-    #[serde(rename = "longitude")]
     pub r#longitude: f64,
     /// Minimum number of origins that must be healthy for this pool to serve traffic.
     #[builder(into)]
-    #[serde(rename = "minimumOrigins")]
     pub r#minimum_origins: i32,
     /// The RFC3339 timestamp of when the load balancer was last modified.
     #[builder(into)]
-    #[serde(rename = "modifiedOn")]
     pub r#modified_on: String,
     /// ID of the Monitor to use for health checking origins within this pool.
     #[builder(into)]
-    #[serde(rename = "monitor")]
     pub r#monitor: String,
     /// Short name (tag) for the pool.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Email address to send health status notifications to. Multiple emails are set as a comma delimited list.
     #[builder(into)]
-    #[serde(rename = "notificationEmail")]
     pub r#notification_email: String,
     /// The list of origins within this pool.
     #[builder(into)]
-    #[serde(rename = "origins")]
     pub r#origins: Vec<super::types::GetLoadBalancerPoolsPoolOrigin>,
 }
 

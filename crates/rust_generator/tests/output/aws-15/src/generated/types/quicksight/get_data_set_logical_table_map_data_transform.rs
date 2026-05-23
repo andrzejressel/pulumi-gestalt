@@ -1,28 +1,21 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetDataSetLogicalTableMapDataTransform {
     #[builder(into)]
-    #[serde(rename = "castColumnTypeOperations")]
     pub r#cast_column_type_operations: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformCastColumnTypeOperation>,
     #[builder(into)]
-    #[serde(rename = "createColumnsOperations")]
     pub r#create_columns_operations: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformCreateColumnsOperation>,
     #[builder(into)]
-    #[serde(rename = "filterOperations")]
     pub r#filter_operations: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformFilterOperation>,
     #[builder(into)]
-    #[serde(rename = "projectOperations")]
     pub r#project_operations: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformProjectOperation>,
     #[builder(into)]
-    #[serde(rename = "renameColumnOperations")]
     pub r#rename_column_operations: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformRenameColumnOperation>,
     #[builder(into)]
-    #[serde(rename = "tagColumnOperations")]
     pub r#tag_column_operations: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformTagColumnOperation>,
     #[builder(into)]
-    #[serde(rename = "untagColumnOperations")]
     pub r#untag_column_operations: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformUntagColumnOperation>,
 }
 

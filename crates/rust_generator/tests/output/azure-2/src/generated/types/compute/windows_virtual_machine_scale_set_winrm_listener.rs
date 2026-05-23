@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,11 +7,9 @@ pub struct WindowsVirtualMachineScaleSetWinrmListener {
     /// 
     /// > **Note:** This can be sourced from the `secret_id` field within the `azure.keyvault.Certificate` Resource.
     #[builder(into)]
-    #[serde(rename = "certificateUrl")]
     pub r#certificate_url: Option<String>,
     /// The Protocol of the WinRM Listener. Possible values are `Http` and `Https`. Changing this forces a new resource to be created.
     #[builder(into)]
-    #[serde(rename = "protocol")]
     pub r#protocol: String,
 }
 

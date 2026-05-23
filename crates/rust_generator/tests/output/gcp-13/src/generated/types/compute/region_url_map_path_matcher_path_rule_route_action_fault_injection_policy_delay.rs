@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,12 +6,10 @@ pub struct RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelay {
     /// Specifies the value of the fixed delay interval.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "fixedDelay")]
     pub r#fixed_delay: Box<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayFixedDelay>,
     /// The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
     /// The value must be between 0.0 and 100.0 inclusive.
     #[builder(into)]
-    #[serde(rename = "percentage")]
     pub r#percentage: f64,
 }
 

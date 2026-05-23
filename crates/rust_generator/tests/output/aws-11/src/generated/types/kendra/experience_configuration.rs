@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ExperienceConfiguration {
     /// The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the `BatchPutDocument API`. The provider will only perform drift detection of its value when present in a configuration. Detailed below.
     #[builder(into)]
-    #[serde(rename = "contentSourceConfiguration")]
     pub r#content_source_configuration: Option<Box<super::super::types::kendra::ExperienceConfigurationContentSourceConfiguration>>,
     /// The AWS SSO field name that contains the identifiers of your users, such as their emails. Detailed below.
     #[builder(into)]
-    #[serde(rename = "userIdentityConfiguration")]
     pub r#user_identity_configuration: Option<Box<super::super::types::kendra::ExperienceConfigurationUserIdentityConfiguration>>,
 }
 

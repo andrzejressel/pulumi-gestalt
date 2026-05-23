@@ -1,27 +1,22 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct RegistryTaskBaseImageTrigger {
     /// Should the trigger be enabled? Defaults to `true`.
     #[builder(into)]
-    #[serde(rename = "enabled")]
     pub r#enabled: Option<bool>,
     /// The name which should be used for this trigger.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// The type of the trigger. Possible values are `All` and `Runtime`.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: String,
     /// The endpoint URL for receiving the trigger.
     #[builder(into)]
-    #[serde(rename = "updateTriggerEndpoint")]
     pub r#update_trigger_endpoint: Option<String>,
     /// Type of payload body for the trigger. Possible values are `Default` and `Token`.
     #[builder(into)]
-    #[serde(rename = "updateTriggerPayloadType")]
     pub r#update_trigger_payload_type: Option<String>,
 }
 

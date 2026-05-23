@@ -1,25 +1,21 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ClusterClusterConfigPreemptibleWorkerConfig {
     /// Disk Config
     #[builder(into)]
-    #[serde(rename = "diskConfig")]
     pub r#disk_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigDiskConfig>>,
     /// Instance flexibility Policy allowing a mixture of VM shapes and provisioning models.
     #[builder(into)]
-    #[serde(rename = "instanceFlexibilityPolicy")]
     pub r#instance_flexibility_policy: Option<Box<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy>>,
     /// List of preemptible instance names which have been assigned
     /// to the cluster.
     #[builder(into)]
-    #[serde(rename = "instanceNames")]
     pub r#instance_names: Option<Vec<String>>,
     /// Specifies the number of preemptible nodes to create.
     /// Defaults to 0.
     #[builder(into)]
-    #[serde(rename = "numInstances")]
     pub r#num_instances: Option<i32>,
     /// Specifies the preemptibility of the secondary workers. The default value is `PREEMPTIBLE`
     /// Accepted values are:
@@ -27,7 +23,6 @@ pub struct ClusterClusterConfigPreemptibleWorkerConfig {
     /// * NON_PREEMPTIBLE
     /// * PREEMPTIBLE
     #[builder(into)]
-    #[serde(rename = "preemptibility")]
     pub r#preemptibility: Option<String>,
 }
 

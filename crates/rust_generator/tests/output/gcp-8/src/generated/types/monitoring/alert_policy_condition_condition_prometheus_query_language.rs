@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -13,17 +13,14 @@ pub struct AlertPolicyConditionConditionPrometheusQueryLanguage {
     /// This field is optional. If this field is not empty, then it must be a
     /// valid Prometheus label name.
     #[builder(into)]
-    #[serde(rename = "alertRule")]
     pub r#alert_rule: Option<String>,
     #[builder(into)]
-    #[serde(rename = "disableMetricValidation")]
     pub r#disable_metric_validation: Option<bool>,
     /// Alerts are considered firing once their PromQL expression evaluated
     /// to be "true" for this long. Alerts whose PromQL expression was not
     /// evaluated to be "true" for long enough are considered pending. The
     /// default value is zero. Must be zero or positive.
     #[builder(into)]
-    #[serde(rename = "duration")]
     pub r#duration: Option<String>,
     /// How often this rule should be evaluated. Must be a positive multiple
     /// of 30 seconds or missing. The default value is 30 seconds. If this
@@ -31,7 +28,6 @@ pub struct AlertPolicyConditionConditionPrometheusQueryLanguage {
     /// alerting rule, then this value should be taken from the enclosing
     /// rule group.
     #[builder(into)]
-    #[serde(rename = "evaluationInterval")]
     pub r#evaluation_interval: Option<String>,
     /// Labels to add to or overwrite in the PromQL query result. Label names
     /// must be valid.
@@ -40,13 +36,11 @@ pub struct AlertPolicyConditionConditionPrometheusQueryLanguage {
     /// "__name__" and "value". "labels" may be empty. This field is intended to be
     /// used for organizing and identifying the AlertPolicy
     #[builder(into)]
-    #[serde(rename = "labels")]
     pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// The PromQL expression to evaluate. Every evaluation cycle this
     /// expression is evaluated at the current time, and all resultant time
     /// series become pending/firing alerts. This field must not be empty.
     #[builder(into)]
-    #[serde(rename = "query")]
     pub r#query: String,
     /// The rule group name of this alert in the corresponding Prometheus
     /// configuration file.
@@ -56,7 +50,6 @@ pub struct AlertPolicyConditionConditionPrometheusQueryLanguage {
     /// relevant AlertPolicies in case the definition of the rule group changes
     /// in the future. This field is optional.
     #[builder(into)]
-    #[serde(rename = "ruleGroup")]
     pub r#rule_group: Option<String>,
 }
 

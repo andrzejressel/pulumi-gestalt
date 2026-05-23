@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,14 +8,12 @@ pub struct BudgetAmount {
     /// Boolean. Set value to true to use. Do not set to false, instead
     /// use the `specified_amount` block.
     #[builder(into)]
-    #[serde(rename = "lastPeriodAmount")]
     pub r#last_period_amount: Option<bool>,
     /// A specified amount to use as the budget. currencyCode is
     /// optional. If specified, it must match the currency of the
     /// billing account. The currencyCode is provided on output.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "specifiedAmount")]
     pub r#specified_amount: Option<Box<super::super::types::billing::BudgetAmountSpecifiedAmount>>,
 }
 

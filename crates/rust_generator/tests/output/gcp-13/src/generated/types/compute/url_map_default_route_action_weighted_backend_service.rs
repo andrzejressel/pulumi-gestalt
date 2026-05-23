@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,7 +7,6 @@ pub struct UrlMapDefaultRouteActionWeightedBackendService {
     /// request to backendService, the loadbalancer applies any relevant headerActions
     /// specified as part of this backendServiceWeight.
     #[builder(into)]
-    #[serde(rename = "backendService")]
     pub r#backend_service: Option<String>,
     /// Specifies changes to request and response headers that need to take effect for
     /// the selected backendService.
@@ -15,7 +14,6 @@ pub struct UrlMapDefaultRouteActionWeightedBackendService {
     /// HttpRouteRule, PathMatcher and UrlMap.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "headerAction")]
     pub r#header_action: Option<Box<super::super::types::compute::UrlMapDefaultRouteActionWeightedBackendServiceHeaderAction>>,
     /// Specifies the fraction of traffic sent to backendService, computed as
     /// weight / (sum of all weightedBackendService weights in routeAction) .
@@ -24,7 +22,6 @@ pub struct UrlMapDefaultRouteActionWeightedBackendService {
     /// as determined by the BackendService's session affinity policy.
     /// The value must be between 0 and 1000
     #[builder(into)]
-    #[serde(rename = "weight")]
     pub r#weight: Option<i32>,
 }
 

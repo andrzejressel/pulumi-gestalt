@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,15 +7,12 @@ pub struct FrontdoorRuleConditionsRemoteAddressCondition {
     /// 
     /// ->**NOTE:** See the `Specifying IP Address Ranges` section below on how to correctly define the `match_values` field.
     #[builder(into)]
-    #[serde(rename = "matchValues")]
     pub r#match_values: Option<Vec<String>>,
     /// If `true` operator becomes the opposite of its value. Possible values `true` or `false`. Defaults to `false`. Details can be found in the `Condition Operator List` below.
     #[builder(into)]
-    #[serde(rename = "negateCondition")]
     pub r#negate_condition: Option<bool>,
     /// The type of the remote address to match. Possible values include `Any`, `GeoMatch` or `IPMatch`. Use the `negate_condition` to specify Not `GeoMatch` or Not `IPMatch`. Defaults to `IPMatch`.
     #[builder(into)]
-    #[serde(rename = "operator")]
     pub r#operator: Option<String>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,13 +7,11 @@ pub struct ClusterClusterAutoscalingAutoProvisioningDefaultsShieldedInstanceConf
     /// 
     /// Enables monitoring and attestation of the boot integrity of the instance. The attestation is performed against the integrity policy baseline. This baseline is initially derived from the implicitly trusted boot image when the instance is created.  Defaults to `true`.
     #[builder(into)]
-    #[serde(rename = "enableIntegrityMonitoring")]
     pub r#enable_integrity_monitoring: Option<bool>,
     /// Defines if the instance has Secure Boot enabled.
     /// 
     /// Secure Boot helps ensure that the system only runs authentic software by verifying the digital signature of all boot components, and halting the boot process if signature verification fails.  Defaults to `false`.
     #[builder(into)]
-    #[serde(rename = "enableSecureBoot")]
     pub r#enable_secure_boot: Option<bool>,
 }
 

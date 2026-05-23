@@ -1,31 +1,25 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ExportExport {
     /// Data query for this specific data export. See the `data_query` argument reference below.
     #[builder(into)]
-    #[serde(rename = "dataQueries")]
     pub r#data_queries: Option<Vec<super::super::types::bcmdata::ExportExportDataQuery>>,
     /// Description for this specific data export.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// Destination configuration for this specific data export. See the `destination_configurations` argument reference below.
     #[builder(into)]
-    #[serde(rename = "destinationConfigurations")]
     pub r#destination_configurations: Option<Vec<super::super::types::bcmdata::ExportExportDestinationConfiguration>>,
     /// Amazon Resource Name (ARN) for this export.
     #[builder(into)]
-    #[serde(rename = "exportArn")]
     pub r#export_arn: Option<String>,
     /// Name of this specific data export.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Cadence for Amazon Web Services to update the export in your S3 bucket. See the `refresh_cadence` argument reference below.
     #[builder(into)]
-    #[serde(rename = "refreshCadences")]
     pub r#refresh_cadences: Option<Vec<super::super::types::bcmdata::ExportExportRefreshCadence>>,
 }
 

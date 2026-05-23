@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -19,18 +19,15 @@ pub struct RegionBackendServiceConnectionTrackingPolicy {
     /// Default value is `DEFAULT_FOR_PROTOCOL`.
     /// Possible values are: `DEFAULT_FOR_PROTOCOL`, `NEVER_PERSIST`, `ALWAYS_PERSIST`.
     #[builder(into)]
-    #[serde(rename = "connectionPersistenceOnUnhealthyBackends")]
     pub r#connection_persistence_on_unhealthy_backends: Option<String>,
     /// Enable Strong Session Affinity for Network Load Balancing. This option is not available publicly.
     #[builder(into)]
-    #[serde(rename = "enableStrongAffinity")]
     pub r#enable_strong_affinity: Option<bool>,
     /// Specifies how long to keep a Connection Tracking entry while there is
     /// no matching traffic (in seconds).
     /// For L4 ILB the minimum(default) is 10 minutes and maximum is 16 hours.
     /// For NLB the minimum(default) is 60 seconds and the maximum is 16 hours.
     #[builder(into)]
-    #[serde(rename = "idleTimeoutSec")]
     pub r#idle_timeout_sec: Option<i32>,
     /// Specifies the key used for connection tracking. There are two options:
     /// `PER_CONNECTION`: The Connection Tracking is performed as per the
@@ -40,7 +37,6 @@ pub struct RegionBackendServiceConnectionTrackingPolicy {
     /// Default value is `PER_CONNECTION`.
     /// Possible values are: `PER_CONNECTION`, `PER_SESSION`.
     #[builder(into)]
-    #[serde(rename = "trackingMode")]
     pub r#tracking_mode: Option<String>,
 }
 

@@ -1,42 +1,33 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationInput {
     #[builder(into)]
-    #[serde(rename = "inAppStreamNames")]
     pub r#in_app_stream_names: Option<Vec<String>>,
     #[builder(into)]
-    #[serde(rename = "inputId")]
     pub r#input_id: Option<String>,
     /// Describes the number of in-application streams to create.
     #[builder(into)]
-    #[serde(rename = "inputParallelism")]
     pub r#input_parallelism: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputParallelism>>,
     /// The input processing configuration for the input.
     /// An input processor transforms records as they are received from the stream, before the application's SQL code executes.
     #[builder(into)]
-    #[serde(rename = "inputProcessingConfiguration")]
     pub r#input_processing_configuration: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfiguration>>,
     /// Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.
     #[builder(into)]
-    #[serde(rename = "inputSchema")]
     pub r#input_schema: Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchema>,
     /// The point at which the application starts processing records from the streaming source.
     #[builder(into)]
-    #[serde(rename = "inputStartingPositionConfigurations")]
     pub r#input_starting_position_configurations: Option<Vec<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration>>,
     /// If the streaming source is a Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.
     #[builder(into)]
-    #[serde(rename = "kinesisFirehoseInput")]
     pub r#kinesis_firehose_input: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisFirehoseInput>>,
     /// If the streaming source is a Kinesis data stream, identifies the stream's Amazon Resource Name (ARN).
     #[builder(into)]
-    #[serde(rename = "kinesisStreamsInput")]
     pub r#kinesis_streams_input: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInput>>,
     /// The name prefix to use when creating an in-application stream.
     #[builder(into)]
-    #[serde(rename = "namePrefix")]
     pub r#name_prefix: String,
 }
 

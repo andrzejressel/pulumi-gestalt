@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct EdgeCacheServiceRoutingHostRule {
     /// A human-readable description of the hostRule.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// The list of host patterns to match.
     /// Host patterns must be valid hostnames. Ports are not allowed. Wildcard hosts are supported in the suffix or prefix form. * matches any string of ([a-z0-9-.]*). It does not match the empty string.
@@ -19,11 +18,9 @@ pub struct EdgeCacheServiceRoutingHostRule {
     /// Hosts are matched against the HTTP Host header, or for HTTP/2 and HTTP/3, the ":authority" header, from the incoming request.
     /// You may specify up to 10 hosts.
     #[builder(into)]
-    #[serde(rename = "hosts")]
     pub r#hosts: Vec<String>,
     /// The name of the pathMatcher associated with this hostRule.
     #[builder(into)]
-    #[serde(rename = "pathMatcher")]
     pub r#path_matcher: String,
 }
 

@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct WindowsVirtualMachineScaleSetNetworkInterfaceIpConfiguration {
     /// A list of Backend Address Pools ID's from a Application Gateway which this Virtual Machine Scale Set should be connected to.
     #[builder(into)]
-    #[serde(rename = "applicationGatewayBackendAddressPoolIds")]
     pub r#application_gateway_backend_address_pool_ids: Option<Vec<String>>,
     /// A list of Application Security Group ID's which this Virtual Machine Scale Set should be connected to.
     #[builder(into)]
-    #[serde(rename = "applicationSecurityGroupIds")]
     pub r#application_security_group_ids: Option<Vec<String>>,
     /// A list of Backend Address Pools ID's from a Load Balancer which this Virtual Machine Scale Set should be connected to.
     /// 
@@ -17,37 +15,30 @@ pub struct WindowsVirtualMachineScaleSetNetworkInterfaceIpConfiguration {
     /// 
     /// > **Note:** When using this field you'll also need to configure a Rule for the Load Balancer, and use a `depends_on` between this resource and the Load Balancer Rule.
     #[builder(into)]
-    #[serde(rename = "loadBalancerBackendAddressPoolIds")]
     pub r#load_balancer_backend_address_pool_ids: Option<Vec<String>>,
     /// A list of NAT Rule ID's from a Load Balancer which this Virtual Machine Scale Set should be connected to.
     /// 
     /// > **Note:** When using this field you'll also need to configure a Rule for the Load Balancer, and use a `depends_on` between this resource and the Load Balancer Rule.
     #[builder(into)]
-    #[serde(rename = "loadBalancerInboundNatRulesIds")]
     pub r#load_balancer_inbound_nat_rules_ids: Option<Vec<String>>,
     /// The Name which should be used for this IP Configuration.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Is this the Primary IP Configuration for this Network Interface? Defaults to `false`.
     /// 
     /// > **Note:** One `ip_configuration` block must be marked as Primary for each Network Interface.
     #[builder(into)]
-    #[serde(rename = "primary")]
     pub r#primary: Option<bool>,
     /// A `public_ip_address` block as defined below.
     #[builder(into)]
-    #[serde(rename = "publicIpAddresses")]
     pub r#public_ip_addresses: Option<Vec<super::super::types::compute::WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddress>>,
     /// The ID of the Subnet which this IP Configuration should be connected to.
     /// 
     /// > `subnet_id` is required if `version` is set to `IPv4`.
     #[builder(into)]
-    #[serde(rename = "subnetId")]
     pub r#subnet_id: Option<String>,
     /// The Internet Protocol Version which should be used for this IP Configuration. Possible values are `IPv4` and `IPv6`. Defaults to `IPv4`.
     #[builder(into)]
-    #[serde(rename = "version")]
     pub r#version: Option<String>,
 }
 

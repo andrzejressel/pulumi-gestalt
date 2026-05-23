@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,19 +7,16 @@ pub struct HostingVersionConfig {
     /// triggers Hosting to apply the specified custom response headers.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "headers")]
     pub r#headers: Option<Vec<super::super::types::firebase::HostingVersionConfigHeader>>,
     /// An array of objects (called redirect rules), where each rule specifies a URL pattern that, if matched to the request URL path,
     /// triggers Hosting to respond with a redirect to the specified destination path.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "redirects")]
     pub r#redirects: Option<Vec<super::super::types::firebase::HostingVersionConfigRedirect>>,
     /// An array of objects (called rewrite rules), where each rule specifies a URL pattern that, if matched to the
     /// request URL path, triggers Hosting to respond as if the service were given the specified destination URL.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "rewrites")]
     pub r#rewrites: Option<Vec<super::super::types::firebase::HostingVersionConfigRewrite>>,
 }
 

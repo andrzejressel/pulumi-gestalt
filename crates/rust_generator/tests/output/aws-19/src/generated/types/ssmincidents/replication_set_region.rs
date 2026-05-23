@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,20 +7,16 @@ pub struct ReplicationSetRegion {
     /// 
     /// The following arguments are optional:
     #[builder(into)]
-    #[serde(rename = "kmsKeyArn")]
     pub r#kms_key_arn: Option<String>,
     /// The name of the Region, such as `ap-southeast-2`.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// The current status of the Region.
     /// * Valid Values: `ACTIVE` | `CREATING` | `UPDATING` | `DELETING` | `FAILED`
     #[builder(into)]
-    #[serde(rename = "status")]
     pub r#status: Option<String>,
     /// More information about the status of a Region.
     #[builder(into)]
-    #[serde(rename = "statusMessage")]
     pub r#status_message: Option<String>,
 }
 

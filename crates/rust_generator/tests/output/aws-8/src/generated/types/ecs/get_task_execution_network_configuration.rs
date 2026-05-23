@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,15 +7,12 @@ pub struct GetTaskExecutionNetworkConfiguration {
     /// 
     /// For more information, see the [Task Networking](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html) documentation.
     #[builder(into)]
-    #[serde(rename = "assignPublicIp")]
     pub r#assign_public_ip: Option<bool>,
     /// Security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used.
     #[builder(into)]
-    #[serde(rename = "securityGroups")]
     pub r#security_groups: Option<Vec<String>>,
     /// Subnets associated with the task or service.
     #[builder(into)]
-    #[serde(rename = "subnets")]
     pub r#subnets: Vec<String>,
 }
 

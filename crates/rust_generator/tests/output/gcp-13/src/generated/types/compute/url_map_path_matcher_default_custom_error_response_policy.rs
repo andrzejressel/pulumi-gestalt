@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,7 +9,6 @@ pub struct UrlMapPathMatcherDefaultCustomErrorResponsePolicy {
     /// If the backend service returns a 401, then the rule for 401 will be applied. However if the backend service returns a 403, the rule for 4xx takes effect.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "errorResponseRules")]
     pub r#error_response_rules: Option<Vec<super::super::types::compute::UrlMapPathMatcherDefaultCustomErrorResponsePolicyErrorResponseRule>>,
     /// The full or partial URL to the BackendBucket resource that contains the custom error content. Examples are:
     /// https://www.googleapis.com/compute/v1/projects/project/global/backendBuckets/myBackendBucket
@@ -18,7 +17,6 @@ pub struct UrlMapPathMatcherDefaultCustomErrorResponsePolicy {
     /// If errorService is not specified at lower levels like pathMatcher, pathRule and routeRule, an errorService specified at a higher level in the UrlMap will be used. If UrlMap.defaultCustomErrorResponsePolicy contains one or more errorResponseRules[], it must specify errorService.
     /// If load balancer cannot reach the backendBucket, a simple Not Found Error will be returned, with the original response code (or overrideResponseCode if configured).
     #[builder(into)]
-    #[serde(rename = "errorService")]
     pub r#error_service: Option<String>,
 }
 

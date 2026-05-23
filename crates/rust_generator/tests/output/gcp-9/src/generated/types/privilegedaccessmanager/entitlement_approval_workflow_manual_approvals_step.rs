@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,16 +8,13 @@ pub struct EntitlementApprovalWorkflowManualApprovalsStep {
     /// will indefinitely block. Should always be greater than 0. Currently 1 is the only
     /// supported value.
     #[builder(into)]
-    #[serde(rename = "approvalsNeeded")]
     pub r#approvals_needed: Option<i32>,
     /// Optional. Additional email addresses to be notified when a grant is pending approval.
     #[builder(into)]
-    #[serde(rename = "approverEmailRecipients")]
     pub r#approver_email_recipients: Option<Vec<String>>,
     /// The potential set of approvers in this step. This list should contain at only one entry.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "approvers")]
     pub r#approvers: Box<super::super::types::privilegedaccessmanager::EntitlementApprovalWorkflowManualApprovalsStepApprovers>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,18 +9,15 @@ pub struct GetHealthCheckGrpcHealthCheck {
     ///   - Non-empty serviceName means the health of that gRPC service, as defined by the owner of the service.
     /// The grpcServiceName can only be ASCII.
     #[builder(into)]
-    #[serde(rename = "grpcServiceName")]
     pub r#grpc_service_name: String,
     /// The port number for the health check request.
     /// Must be specified if portName and portSpecification are not set
     /// or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
     #[builder(into)]
-    #[serde(rename = "port")]
     pub r#port: i32,
     /// Port name as defined in InstanceGroup#NamedPort#name. If both port and
     /// port_name are defined, port takes precedence.
     #[builder(into)]
-    #[serde(rename = "portName")]
     pub r#port_name: String,
     /// Specifies how port is selected for health checking, can be one of the
     /// following values:
@@ -37,7 +34,6 @@ pub struct GetHealthCheckGrpcHealthCheck {
     /// If not specified, gRPC health check follows behavior specified in 'port' and
     /// 'portName' fields. Possible values: ["USE_FIXED_PORT", "USE_NAMED_PORT", "USE_SERVING_PORT"]
     #[builder(into)]
-    #[serde(rename = "portSpecification")]
     pub r#port_specification: String,
 }
 

@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct VirtualGatewaySpecListenerConnectionPool {
     /// Connection pool information for gRPC listeners.
     #[builder(into)]
-    #[serde(rename = "grpc")]
     pub r#grpc: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPoolGrpc>>,
     /// Connection pool information for HTTP listeners.
     #[builder(into)]
-    #[serde(rename = "http")]
     pub r#http: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPoolHttp>>,
     /// Connection pool information for HTTP2 listeners.
     #[builder(into)]
-    #[serde(rename = "http2")]
     pub r#http_2: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPoolHttp2>>,
 }
 

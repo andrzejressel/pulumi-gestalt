@@ -1,27 +1,22 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct EnvironmentLoggingConfiguration {
     /// (Optional) Log configuration options for processing DAGs. See Module logging configuration for more information. Disabled by default.
     #[builder(into)]
-    #[serde(rename = "dagProcessingLogs")]
     pub r#dag_processing_logs: Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationDagProcessingLogs>>,
     /// Log configuration options for the schedulers. See Module logging configuration for more information. Disabled by default.
     #[builder(into)]
-    #[serde(rename = "schedulerLogs")]
     pub r#scheduler_logs: Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationSchedulerLogs>>,
     /// Log configuration options for DAG tasks. See Module logging configuration for more information. Enabled by default with `INFO` log level.
     #[builder(into)]
-    #[serde(rename = "taskLogs")]
     pub r#task_logs: Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationTaskLogs>>,
     /// Log configuration options for the webservers. See Module logging configuration for more information. Disabled by default.
     #[builder(into)]
-    #[serde(rename = "webserverLogs")]
     pub r#webserver_logs: Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationWebserverLogs>>,
     /// Log configuration options for the workers. See Module logging configuration for more information. Disabled by default.
     #[builder(into)]
-    #[serde(rename = "workerLogs")]
     pub r#worker_logs: Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationWorkerLogs>>,
 }
 

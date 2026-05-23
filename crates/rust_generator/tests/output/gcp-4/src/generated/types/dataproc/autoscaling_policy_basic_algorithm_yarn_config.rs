@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,7 +8,6 @@ pub struct AutoscalingPolicyBasicAlgorithmYarnConfig {
     /// (and potentially interrupting jobs). Only applicable to downscaling operations.
     /// Bounds: [0s, 1d].
     #[builder(into)]
-    #[serde(rename = "gracefulDecommissionTimeout")]
     pub r#graceful_decommission_timeout: String,
     /// Fraction of average pending memory in the last cooldown period for which to
     /// remove workers. A scale-down factor of 1 will result in scaling down so that there
@@ -17,7 +16,6 @@ pub struct AutoscalingPolicyBasicAlgorithmYarnConfig {
     /// autoscaling a single job.
     /// Bounds: [0.0, 1.0].
     #[builder(into)]
-    #[serde(rename = "scaleDownFactor")]
     pub r#scale_down_factor: f64,
     /// Minimum scale-down threshold as a fraction of total cluster size before scaling occurs.
     /// For example, in a 20-worker cluster, a threshold of 0.1 means the autoscaler must
@@ -25,7 +23,6 @@ pub struct AutoscalingPolicyBasicAlgorithmYarnConfig {
     /// means the autoscaler will scale down on any recommended change.
     /// Bounds: [0.0, 1.0]. Default: 0.0.
     #[builder(into)]
-    #[serde(rename = "scaleDownMinWorkerFraction")]
     pub r#scale_down_min_worker_fraction: Option<f64>,
     /// Fraction of average pending memory in the last cooldown period for which to
     /// add workers. A scale-up factor of 1.0 will result in scaling up so that there
@@ -34,7 +31,6 @@ pub struct AutoscalingPolicyBasicAlgorithmYarnConfig {
     /// (less aggressive scaling).
     /// Bounds: [0.0, 1.0].
     #[builder(into)]
-    #[serde(rename = "scaleUpFactor")]
     pub r#scale_up_factor: f64,
     /// Minimum scale-up threshold as a fraction of total cluster size before scaling
     /// occurs. For example, in a 20-worker cluster, a threshold of 0.1 means the autoscaler
@@ -42,7 +38,6 @@ pub struct AutoscalingPolicyBasicAlgorithmYarnConfig {
     /// 0 means the autoscaler will scale up on any recommended change.
     /// Bounds: [0.0, 1.0]. Default: 0.0.
     #[builder(into)]
-    #[serde(rename = "scaleUpMinWorkerFraction")]
     pub r#scale_up_min_worker_fraction: Option<f64>,
 }
 

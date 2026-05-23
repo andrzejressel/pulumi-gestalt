@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,7 +7,6 @@ pub struct MetricMetricDescriptor {
     /// without an ending period, for example "Request count". This field is optional but it is
     /// recommended to be set for any metrics associated with user-visible concepts, such as Quota.
     #[builder(into)]
-    #[serde(rename = "displayName")]
     pub r#display_name: Option<String>,
     /// The set of labels that can be used to describe a specific instance of this metric type. For
     /// example, the appengine.googleapis.com/http/server/response_latencies metric type has a label
@@ -15,27 +14,23 @@ pub struct MetricMetricDescriptor {
     /// or just for responses that failed.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "labels")]
     pub r#labels: Option<Vec<super::super::types::logging::MetricMetricDescriptorLabel>>,
     /// Whether the metric records instantaneous values, changes to a value, etc.
     /// Some combinations of metricKind and valueType might not be supported.
     /// For counter metrics, set this to DELTA.
     /// Possible values are: `DELTA`, `GAUGE`, `CUMULATIVE`.
     #[builder(into)]
-    #[serde(rename = "metricKind")]
     pub r#metric_kind: String,
     /// The unit in which the metric value is reported. It is only applicable if the valueType is
     /// `INT64`, `DOUBLE`, or `DISTRIBUTION`. The supported units are a subset of
     /// [The Unified Code for Units of Measure](http://unitsofmeasure.org/ucum.html) standard
     #[builder(into)]
-    #[serde(rename = "unit")]
     pub r#unit: Option<String>,
     /// Whether the measurement is an integer, a floating-point number, etc.
     /// Some combinations of metricKind and valueType might not be supported.
     /// For counter metrics, set this to INT64.
     /// Possible values are: `BOOL`, `INT64`, `DOUBLE`, `STRING`, `DISTRIBUTION`, `MONEY`.
     #[builder(into)]
-    #[serde(rename = "valueType")]
     pub r#value_type: String,
 }
 

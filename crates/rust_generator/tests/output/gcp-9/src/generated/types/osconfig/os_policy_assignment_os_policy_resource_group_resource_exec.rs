@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,7 +8,6 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceExec {
     /// indicates a failure running enforce. Structure is
     /// documented below.
     #[builder(into)]
-    #[serde(rename = "enforce")]
     pub r#enforce: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce>>,
     /// What to run to validate this resource is in the
     /// desired state. An exit code of 100 indicates "in desired state", and exit
@@ -16,7 +15,6 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceExec {
     /// a failure running validate. Structure is
     /// documented below.
     #[builder(into)]
-    #[serde(rename = "validate")]
     pub r#validate: Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidate>,
 }
 

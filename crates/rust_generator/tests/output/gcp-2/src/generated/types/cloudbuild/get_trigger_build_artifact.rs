@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -11,7 +11,6 @@ pub struct GetTriggerBuildArtifact {
     /// 
     /// If any of the images fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
-    #[serde(rename = "images")]
     pub r#images: Vec<String>,
     /// A Maven artifact to upload to Artifact Registry upon successful completion of all build steps.
     /// 
@@ -19,7 +18,6 @@ pub struct GetTriggerBuildArtifact {
     /// 
     /// If any objects fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
-    #[serde(rename = "mavenArtifacts")]
     pub r#maven_artifacts: Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactMavenArtifact>,
     /// Npm package to upload to Artifact Registry upon successful completion of all build steps.
     /// 
@@ -27,7 +25,6 @@ pub struct GetTriggerBuildArtifact {
     /// 
     /// If any objects fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
-    #[serde(rename = "npmPackages")]
     pub r#npm_packages: Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactNpmPackage>,
     /// A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps.
     /// 
@@ -38,7 +35,6 @@ pub struct GetTriggerBuildArtifact {
     /// 
     /// If any objects fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
-    #[serde(rename = "objects")]
     pub r#objects: Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactObject>,
     /// Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.
     /// 
@@ -46,7 +42,6 @@ pub struct GetTriggerBuildArtifact {
     /// 
     /// If any objects fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
-    #[serde(rename = "pythonPackages")]
     pub r#python_packages: Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactPythonPackage>,
 }
 

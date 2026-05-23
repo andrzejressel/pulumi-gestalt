@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,13 +6,11 @@ pub struct VolumeTieringPolicy {
     /// Optional. Time in days to mark the volume's data block as cold and make it eligible for tiering, can be range from 7-183.
     /// Default is 31.
     #[builder(into)]
-    #[serde(rename = "coolingThresholdDays")]
     pub r#cooling_threshold_days: Option<i32>,
     /// Optional. Flag indicating if the volume has tiering policy enable/pause. Default is PAUSED.
     /// Default value is `PAUSED`.
     /// Possible values are: `ENABLED`, `PAUSED`.
     #[builder(into)]
-    #[serde(rename = "tierAction")]
     pub r#tier_action: Option<String>,
 }
 

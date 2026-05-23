@@ -5,12 +5,12 @@ use std::fmt::Debug;
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 #[serde(untagged)]
-pub enum OneOf2<A: Serialize + Debug, B: Serialize + Debug> {
+pub enum OneOf2<A: Debug, B: Debug> {
     Left(A),
     Right(B),
 }
 
-impl<A: Serialize + Debug, B: Serialize + Debug> OneOf2<A, B> {
+impl<A: Debug, B: Debug> OneOf2<A, B> {
     pub fn left(a: A) -> Self {
         OneOf2::Left(a)
     }
@@ -21,8 +21,8 @@ impl<A: Serialize + Debug, B: Serialize + Debug> OneOf2<A, B> {
 
 impl<A, B> ToPulumiValue for OneOf2<A, B>
 where
-    A: Serialize + Debug + ToPulumiValue + Sync,
-    B: Serialize + Debug + ToPulumiValue + Sync,
+    A: Debug + ToPulumiValue + Sync,
+    B: Debug + ToPulumiValue + Sync,
 {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         async move {
@@ -36,8 +36,8 @@ where
 
 impl<A, B> FromPulumiValue for OneOf2<A, B>
 where
-    A: Serialize + Debug + FromPulumiValue,
-    B: Serialize + Debug + FromPulumiValue,
+    A: Debug + FromPulumiValue,
+    B: Debug + FromPulumiValue,
 {
     fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
         match A::from_pulumi_value(value) {
@@ -58,13 +58,13 @@ where
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OneOf3<A: Serialize + Debug, B: Serialize + Debug, C: Serialize + Debug> {
+pub enum OneOf3<A: Debug, B: Debug, C: Debug> {
     Left(A),
     Middle(B),
     Right(C),
 }
 
-impl<A: Serialize + Debug, B: Serialize + Debug, C: Serialize + Debug> OneOf3<A, B, C> {
+impl<A: Debug, B: Debug, C: Debug> OneOf3<A, B, C> {
     pub fn left(a: A) -> Self {
         OneOf3::Left(a)
     }
@@ -78,9 +78,9 @@ impl<A: Serialize + Debug, B: Serialize + Debug, C: Serialize + Debug> OneOf3<A,
 
 impl<A, B, C> ToPulumiValue for OneOf3<A, B, C>
 where
-    A: Serialize + Debug + ToPulumiValue + Sync,
-    B: Serialize + Debug + ToPulumiValue + Sync,
-    C: Serialize + Debug + ToPulumiValue + Sync,
+    A: Debug + ToPulumiValue + Sync,
+    B: Debug + ToPulumiValue + Sync,
+    C: Debug + ToPulumiValue + Sync,
 {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         async move {
@@ -95,9 +95,9 @@ where
 
 impl<A, B, C> FromPulumiValue for OneOf3<A, B, C>
 where
-    A: Serialize + Debug + FromPulumiValue,
-    B: Serialize + Debug + FromPulumiValue,
-    C: Serialize + Debug + FromPulumiValue,
+    A: Debug + FromPulumiValue,
+    B: Debug + FromPulumiValue,
+    C: Debug + FromPulumiValue,
 {
     fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
         match A::from_pulumi_value(value) {
@@ -123,21 +123,14 @@ where
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OneOf4<
-    A: Serialize + Debug,
-    B: Serialize + Debug,
-    C: Serialize + Debug,
-    D: Serialize + Debug,
-> {
+pub enum OneOf4<A: Debug, B: Debug, C: Debug, D: Debug> {
     Left(A),
     Middle1(B),
     Middle2(C),
     Right(D),
 }
 
-impl<A: Serialize + Debug, B: Serialize + Debug, C: Serialize + Debug, D: Serialize + Debug>
-    OneOf4<A, B, C, D>
-{
+impl<A: Debug, B: Debug, C: Debug, D: Debug> OneOf4<A, B, C, D> {
     pub fn left(a: A) -> Self {
         OneOf4::Left(a)
     }
@@ -154,10 +147,10 @@ impl<A: Serialize + Debug, B: Serialize + Debug, C: Serialize + Debug, D: Serial
 
 impl<A, B, C, D> ToPulumiValue for OneOf4<A, B, C, D>
 where
-    A: Serialize + Debug + ToPulumiValue + Sync,
-    B: Serialize + Debug + ToPulumiValue + Sync,
-    C: Serialize + Debug + ToPulumiValue + Sync,
-    D: Serialize + Debug + ToPulumiValue + Sync,
+    A: Debug + ToPulumiValue + Sync,
+    B: Debug + ToPulumiValue + Sync,
+    C: Debug + ToPulumiValue + Sync,
+    D: Debug + ToPulumiValue + Sync,
 {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         async move {
@@ -173,10 +166,10 @@ where
 
 impl<A, B, C, D> FromPulumiValue for OneOf4<A, B, C, D>
 where
-    A: Serialize + Debug + FromPulumiValue,
-    B: Serialize + Debug + FromPulumiValue,
-    C: Serialize + Debug + FromPulumiValue,
-    D: Serialize + Debug + FromPulumiValue,
+    A: Debug + FromPulumiValue,
+    B: Debug + FromPulumiValue,
+    C: Debug + FromPulumiValue,
+    D: Debug + FromPulumiValue,
 {
     fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
         match A::from_pulumi_value(value) {

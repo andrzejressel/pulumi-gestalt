@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,17 +7,14 @@ pub struct NodePoolPlacementPolicy {
     /// The resource policy must be in the same project and region as the node pool.
     /// If not found, InvalidArgument error is returned.
     #[builder(into)]
-    #[serde(rename = "policyName")]
     pub r#policy_name: Option<String>,
     /// The [TPU placement topology](https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies) for pod slice node pool.
     #[builder(into)]
-    #[serde(rename = "tpuTopology")]
     pub r#tpu_topology: Option<String>,
     /// The type of the policy. Supports a single value: COMPACT.
     /// Specifying COMPACT placement policy type places node pool's nodes in a closer
     /// physical proximity in order to reduce network latency between nodes.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: String,
 }
 

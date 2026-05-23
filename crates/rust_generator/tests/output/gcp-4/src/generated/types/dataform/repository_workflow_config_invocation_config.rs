@@ -1,32 +1,26 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct RepositoryWorkflowConfigInvocationConfig {
     /// Optional. When set to true, any incremental tables will be fully refreshed.
     #[builder(into)]
-    #[serde(rename = "fullyRefreshIncrementalTablesEnabled")]
     pub r#fully_refresh_incremental_tables_enabled: Option<bool>,
     /// Optional. The set of tags to include.
     #[builder(into)]
-    #[serde(rename = "includedTags")]
     pub r#included_tags: Option<Vec<String>>,
     /// Optional. The set of action identifiers to include.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "includedTargets")]
     pub r#included_targets: Option<Vec<super::super::types::dataform::RepositoryWorkflowConfigInvocationConfigIncludedTarget>>,
     /// Optional. The service account to run workflow invocations under.
     #[builder(into)]
-    #[serde(rename = "serviceAccount")]
     pub r#service_account: Option<String>,
     /// Optional. When set to true, transitive dependencies of included actions will be executed.
     #[builder(into)]
-    #[serde(rename = "transitiveDependenciesIncluded")]
     pub r#transitive_dependencies_included: Option<bool>,
     /// Optional. When set to true, transitive dependents of included actions will be executed.
     #[builder(into)]
-    #[serde(rename = "transitiveDependentsIncluded")]
     pub r#transitive_dependents_included: Option<bool>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,7 +7,6 @@ pub struct SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig {
     /// HTTP_HEADER -- Name of the HTTP header whose value is taken as the key value.
     /// HTTP_COOKIE -- Name of the HTTP cookie whose value is taken as the key value.
     #[builder(into)]
-    #[serde(rename = "enforceOnKeyName")]
     pub r#enforce_on_key_name: Option<String>,
     /// Determines the key to enforce the rateLimitThreshold on. Possible values are:
     /// * ALL: A single rate limit threshold is applied to all the requests matching this rule. This is the default value if "enforceOnKeyConfigs" is not configured.
@@ -22,7 +21,6 @@ pub struct SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig {
     /// * USER_IP: The IP address of the originating client, which is resolved based on "userIpRequestHeaders" configured with the security policy. If there is no "userIpRequestHeaders" configuration or an IP address cannot be resolved from it, the key type defaults to IP.
     /// Possible values are: `ALL`, `IP`, `HTTP_HEADER`, `XFF_IP`, `HTTP_COOKIE`, `HTTP_PATH`, `SNI`, `REGION_CODE`, `TLS_JA3_FINGERPRINT`, `USER_IP`.
     #[builder(into)]
-    #[serde(rename = "enforceOnKeyType")]
     pub r#enforce_on_key_type: Option<String>,
 }
 

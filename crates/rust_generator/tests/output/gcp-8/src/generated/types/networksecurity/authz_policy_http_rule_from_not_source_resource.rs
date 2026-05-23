@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,12 +6,10 @@ pub struct AuthzPolicyHttpRuleFromNotSourceResource {
     /// An IAM service account to match against the source service account of the VM sending the request.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "iamServiceAccount")]
     pub r#iam_service_account: Option<Box<super::super::types::networksecurity::AuthzPolicyHttpRuleFromNotSourceResourceIamServiceAccount>>,
     /// A list of resource tag value permanent IDs to match against the resource manager tags value associated with the source VM of a request.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "tagValueIdSet")]
     pub r#tag_value_id_set: Option<Box<super::super::types::networksecurity::AuthzPolicyHttpRuleFromNotSourceResourceTagValueIdSet>>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,20 +8,16 @@ pub struct PreventionJobTriggerInspectJobStorageConfigTimespanConfig {
     /// be based on the time of the execution of the last run of the JobTrigger or the timespan endTime
     /// used in the last run of the JobTrigger.
     #[builder(into)]
-    #[serde(rename = "enableAutoPopulationOfTimespanConfig")]
     pub r#enable_auto_population_of_timespan_config: Option<bool>,
     /// Exclude files, tables, or rows newer than this value. If not set, no upper time limit is applied.
     #[builder(into)]
-    #[serde(rename = "endTime")]
     pub r#end_time: Option<String>,
     /// Exclude files, tables, or rows older than this value. If not set, no lower time limit is applied.
     #[builder(into)]
-    #[serde(rename = "startTime")]
     pub r#start_time: Option<String>,
     /// Specification of the field containing the timestamp of scanned items.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "timestampField")]
     pub r#timestamp_field: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField>>,
 }
 

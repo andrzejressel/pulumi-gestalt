@@ -1,35 +1,28 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct WorkflowTemplateJobPrestoJob {
     /// Presto client tags to attach to this query
     #[builder(into)]
-    #[serde(rename = "clientTags")]
     pub r#client_tags: Option<Vec<String>>,
     /// Whether to continue executing queries if a query fails. The default value is `false`. Setting to `true` can be useful when executing independent parallel queries.
     #[builder(into)]
-    #[serde(rename = "continueOnFailure")]
     pub r#continue_on_failure: Option<bool>,
     /// The runtime log config for job execution.
     #[builder(into)]
-    #[serde(rename = "loggingConfig")]
     pub r#logging_config: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPrestoJobLoggingConfig>>,
     /// The format in which query output will be displayed. See the Presto documentation for supported output formats
     #[builder(into)]
-    #[serde(rename = "outputFormat")]
     pub r#output_format: Option<String>,
     /// A mapping of property names to values. Used to set Presto (https://prestodb.io/docs/current/sql/set-session.html) Equivalent to using the --session flag in the Presto CLI
     #[builder(into)]
-    #[serde(rename = "properties")]
     pub r#properties: Option<std::collections::HashMap<String, String>>,
     /// The HCFS URI of the script that contains SQL queries.
     #[builder(into)]
-    #[serde(rename = "queryFileUri")]
     pub r#query_file_uri: Option<String>,
     /// A list of queries.
     #[builder(into)]
-    #[serde(rename = "queryList")]
     pub r#query_list: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPrestoJobQueryList>>,
 }
 

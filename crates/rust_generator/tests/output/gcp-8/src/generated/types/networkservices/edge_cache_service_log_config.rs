@@ -1,16 +1,14 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct EdgeCacheServiceLogConfig {
     /// Specifies whether to enable logging for traffic served by this service.
     #[builder(into)]
-    #[serde(rename = "enable")]
     pub r#enable: Option<bool>,
     /// Configures the sampling rate of requests, where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0, and the value of the field must be in [0, 1].
     /// This field can only be specified if logging is enabled for this service.
     #[builder(into)]
-    #[serde(rename = "sampleRate")]
     pub r#sample_rate: Option<f64>,
 }
 

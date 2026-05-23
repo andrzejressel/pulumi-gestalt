@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,26 +6,21 @@ pub struct StreamSourceConfig {
     /// MySQL data source configuration.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "mysqlSourceConfig")]
     pub r#mysql_source_config: Option<Box<super::super::types::datastream::StreamSourceConfigMysqlSourceConfig>>,
     /// MySQL data source configuration.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "oracleSourceConfig")]
     pub r#oracle_source_config: Option<Box<super::super::types::datastream::StreamSourceConfigOracleSourceConfig>>,
     /// PostgreSQL data source configuration.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "postgresqlSourceConfig")]
     pub r#postgresql_source_config: Option<Box<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfig>>,
     /// Source connection profile resource. Format: projects/{project}/locations/{location}/connectionProfiles/{name}
     #[builder(into)]
-    #[serde(rename = "sourceConnectionProfile")]
     pub r#source_connection_profile: String,
     /// SQL Server data source configuration.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "sqlServerSourceConfig")]
     pub r#sql_server_source_config: Option<Box<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfig>>,
 }
 

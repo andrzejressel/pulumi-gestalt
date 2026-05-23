@@ -1,19 +1,15 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetRouteSpecHttp2Route {
     #[builder(into)]
-    #[serde(rename = "actions")]
     pub r#actions: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteAction>,
     #[builder(into)]
-    #[serde(rename = "matches")]
     pub r#matches: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteMatch>,
     #[builder(into)]
-    #[serde(rename = "retryPolicies")]
     pub r#retry_policies: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteRetryPolicy>,
     #[builder(into)]
-    #[serde(rename = "timeouts")]
     pub r#timeouts: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteTimeout>,
 }
 

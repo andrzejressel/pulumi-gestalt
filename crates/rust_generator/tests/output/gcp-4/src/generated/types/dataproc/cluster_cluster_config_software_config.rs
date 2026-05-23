@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,25 +9,21 @@ pub struct ClusterClusterConfigSoftwareConfig {
     /// latest version. For a list of valid versions see
     /// [Cloud Dataproc versions](https://cloud.google.com/dataproc/docs/concepts/dataproc-versions)
     #[builder(into)]
-    #[serde(rename = "imageVersion")]
     pub r#image_version: Option<String>,
     /// The set of optional components to activate on the cluster. See [Available Optional Components](https://cloud.google.com/dataproc/docs/concepts/components/overview#available_optional_components).
     /// 
     /// - - -
     #[builder(into)]
-    #[serde(rename = "optionalComponents")]
     pub r#optional_components: Option<Vec<String>>,
     /// A list of override and additional properties (key/value pairs)
     /// used to modify various aspects of the common configuration files used when creating
     /// a cluster. For a list of valid properties please see
     /// [Cluster properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties)
     #[builder(into)]
-    #[serde(rename = "overrideProperties")]
     pub r#override_properties: Option<std::collections::HashMap<String, String>>,
     /// A list of the properties used to set the daemon config files.
     /// This will include any values supplied by the user via `cluster_config.software_config.override_properties`
     #[builder(into)]
-    #[serde(rename = "properties")]
     pub r#properties: Option<std::collections::HashMap<String, String>>,
 }
 

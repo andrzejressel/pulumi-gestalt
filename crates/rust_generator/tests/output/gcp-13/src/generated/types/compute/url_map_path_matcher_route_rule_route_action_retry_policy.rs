@@ -1,18 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct UrlMapPathMatcherRouteRuleRouteActionRetryPolicy {
     /// Specifies the allowed number retries. This number must be > 0. If not specified, defaults to 1.
     #[builder(into)]
-    #[serde(rename = "numRetries")]
     pub r#num_retries: i32,
     /// Specifies a non-zero timeout per retry attempt.
     /// If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set,
     /// will use the largest timeout among all backend services associated with the route.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "perTryTimeout")]
     pub r#per_try_timeout: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeout>>,
     /// Specfies one or more conditions when this retry rule applies. Valid values are:
     /// * 5xx: Loadbalancer will attempt a retry if the backend service responds with any 5xx response code,
@@ -30,7 +28,6 @@ pub struct UrlMapPathMatcherRouteRuleRouteActionRetryPolicy {
     /// * resource-exhausted: Loadbalancer will retry if the gRPC status code in the response header is set to resource-exhausted
     /// * unavailable: Loadbalancer will retry if the gRPC status code in the response header is set to unavailable
     #[builder(into)]
-    #[serde(rename = "retryConditions")]
     pub r#retry_conditions: Option<Vec<String>>,
 }
 

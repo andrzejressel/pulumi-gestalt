@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -15,11 +15,9 @@ pub struct WorkloadIdentityPoolProviderOidc {
     /// https://iam.googleapis.com/projects/<project-number>/locations/<location>/workloadIdentityPools/<pool-id>/providers/<provider-id>
     /// ```
     #[builder(into)]
-    #[serde(rename = "allowedAudiences")]
     pub r#allowed_audiences: Option<Vec<String>>,
     /// The OIDC issuer URL.
     #[builder(into)]
-    #[serde(rename = "issuerUri")]
     pub r#issuer_uri: String,
     /// OIDC JWKs in JSON String format. For details on definition of a
     /// JWK, see https:tools.ietf.org/html/rfc7517. If not set, then we
@@ -45,7 +43,6 @@ pub struct WorkloadIdentityPoolProviderOidc {
     /// }
     /// ```
     #[builder(into)]
-    #[serde(rename = "jwksJson")]
     pub r#jwks_json: Option<String>,
 }
 

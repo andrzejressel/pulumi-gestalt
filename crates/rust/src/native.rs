@@ -6,7 +6,7 @@ use pulumi_gestalt_model::{
 };
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::{ConfigValue, FieldName};
-use serde::{Deserialize, Serialize, de::DeserializeOwned};
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::sync::Arc;
 use tokio::runtime::Runtime;
@@ -89,9 +89,9 @@ impl Context {
         self.runtime.block_on(self.inner.finish())
     }
 
-    pub fn new_output<'a, T>(&self, value: &'a T) -> Output<T>
+    pub fn new_output<T>(&self, value: &T) -> Output<T>
     where
-        T: Serialize + Deserialize<'a> + Clone + Send + Sync + 'static,
+        T: Clone + Send + Sync + 'static,
     {
         let value = value.clone();
         Output::from_resolved_future(async move {
@@ -105,7 +105,7 @@ impl Context {
 
     pub fn new_secret<T>(&self, value: &T) -> Output<T>
     where
-        T: Serialize + DeserializeOwned + Clone + Send + Sync + 'static,
+        T: Clone + Send + Sync + 'static,
     {
         self.new_output(value).secret()
     }

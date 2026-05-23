@@ -1,38 +1,30 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct UserProfileUserSettingsCanvasAppSettings {
     /// The model deployment settings for the SageMaker Canvas application. See Direct Deploy Settings below.
     #[builder(into)]
-    #[serde(rename = "directDeploySettings")]
     pub r#direct_deploy_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsDirectDeploySettings>>,
     /// The settings for running Amazon EMR Serverless jobs in SageMaker Canvas. See `emr_serverless_settings` Block below.
     #[builder(into)]
-    #[serde(rename = "emrServerlessSettings")]
     pub r#emr_serverless_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsEmrServerlessSettings>>,
     #[builder(into)]
-    #[serde(rename = "generativeAiSettings")]
     pub r#generative_ai_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsGenerativeAiSettings>>,
     /// The settings for connecting to an external data source with OAuth. See Identity Provider OAuth Settings below.
     #[builder(into)]
-    #[serde(rename = "identityProviderOauthSettings")]
     pub r#identity_provider_oauth_settings: Option<Vec<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsIdentityProviderOauthSetting>>,
     /// The settings for document querying. See Kendra Settings below.
     #[builder(into)]
-    #[serde(rename = "kendraSettings")]
     pub r#kendra_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsKendraSettings>>,
     /// The model registry settings for the SageMaker Canvas application. See Model Register Settings below.
     #[builder(into)]
-    #[serde(rename = "modelRegisterSettings")]
     pub r#model_register_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsModelRegisterSettings>>,
     /// Time series forecast settings for the Canvas app. See Time Series Forecasting Settings below.
     #[builder(into)]
-    #[serde(rename = "timeSeriesForecastingSettings")]
     pub r#time_series_forecasting_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsTimeSeriesForecastingSettings>>,
     /// The workspace settings for the SageMaker Canvas application. See Workspace Settings below.
     #[builder(into)]
-    #[serde(rename = "workspaceSettings")]
     pub r#workspace_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsWorkspaceSettings>>,
 }
 

@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct PipelineNotifications {
     /// The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job in this pipeline.
     #[builder(into)]
-    #[serde(rename = "completed")]
     pub r#completed: Option<String>,
     /// The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition while processing a job in this pipeline.
     #[builder(into)]
-    #[serde(rename = "error")]
     pub r#error: Option<String>,
     /// The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process a job in this pipeline.
     #[builder(into)]
-    #[serde(rename = "progressing")]
     pub r#progressing: Option<String>,
     /// The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition while processing a job in this pipeline.
     /// 
@@ -27,7 +24,6 @@ pub struct PipelineNotifications {
     /// ThumbnailPattern in the topic Create Job.) If you specify values for
     /// `content_config` and `thumbnail_config`, omit the OutputBucket object.
     #[builder(into)]
-    #[serde(rename = "warning")]
     pub r#warning: Option<String>,
 }
 

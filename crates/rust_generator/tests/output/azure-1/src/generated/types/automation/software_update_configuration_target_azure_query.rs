@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct SoftwareUpdateConfigurationTargetAzureQuery {
     /// Specifies a list of locations to scope the query to.
     #[builder(into)]
-    #[serde(rename = "locations")]
     pub r#locations: Option<Vec<String>>,
     /// Specifies a list of Subscription or Resource Group ARM Ids to query.
     #[builder(into)]
-    #[serde(rename = "scopes")]
     pub r#scopes: Option<Vec<String>>,
     /// Specifies how the specified tags to filter VMs. Possible values are `Any` and `All`.
     #[builder(into)]
-    #[serde(rename = "tagFilter")]
     pub r#tag_filter: Option<String>,
     /// A mapping of tags used for query filter. One or more `tags` block as defined below.
     #[builder(into)]
-    #[serde(rename = "tags")]
     pub r#tags: Option<Vec<super::super::types::automation::SoftwareUpdateConfigurationTargetAzureQueryTag>>,
 }
 
