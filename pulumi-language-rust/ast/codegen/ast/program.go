@@ -3,6 +3,7 @@ package ast
 import (
 	"encoding/base64"
 	"fmt"
+	"reflect"
 
 	"github.com/andrzejressel/pulumi-gestalt/pulumi-language-rust/ast/codegen/shared"
 	astproto "github.com/andrzejressel/pulumi-gestalt/pulumi-language-rust/ast/protobuf/schemapcl"

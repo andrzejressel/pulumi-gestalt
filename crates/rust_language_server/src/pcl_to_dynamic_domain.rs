@@ -192,6 +192,17 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
                 other
             ),
         },
+        expression::Value::NewPackageTypeExpression(new_package_type) => match &expr_type {
+            ExprType::Dynamic | ExprType::Object(_) | ExprType::None | ExprType::Union(_) => {
+                let json = lower_new_package_type_to_json(new_package_type)
+                    .context("Failed to lower NewPackageTypeExpression")?;
+                Ok(make_expr(expr_type, ExprValue::PulumiAny(json)))
+            }
+            other => bail!(
+                "NewPackageTypeExpression with non-dynamic expression type {:?} is not supported",
+                other
+            ),
+        },
         expression::Value::TupleConsExpression(TupleConsExpression { items }) => {
             let lowered = items
                 .iter()
@@ -318,6 +329,29 @@ fn lower_object_to_json(
     Ok(JsonValue::Object(props))
 }
 
+fn lower_new_package_type_to_json(
+    value: &pcl_model::NewPackageTypeExpression,
+) -> Result<JsonValue> {
+    let lowered_properties = value
+        .properties
+        .iter()
+        .map(|(key, expr)| {
+            let lowered = lower_expression_to_json(expr)
+                .context("Failed to lower NewPackageTypeExpression property")?;
+            Ok((key.clone(), lowered))
+        })
+        .collect::<Result<Vec<_>>>()
+        .context("Failed to lower NewPackageTypeExpression properties")?;
+
+    Ok(JsonValue::Object(vec![
+        ("token".to_string(), JsonValue::String(value.token.clone())),
+        (
+            "properties".to_string(),
+            JsonValue::Object(lowered_properties),
+        ),
+    ]))
+}
+
 fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
     match &expression.value {
         expression::Value::LiteralValueExpression(lit) => match &lit.value {
@@ -336,6 +370,9 @@ fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
                     other
                 ),
             }
+        }
+        expression::Value::NewPackageTypeExpression(new_package_type) => {
+            lower_new_package_type_to_json(new_package_type)
         }
         expression::Value::TupleConsExpression(TupleConsExpression { items }) => {
             let elems = items

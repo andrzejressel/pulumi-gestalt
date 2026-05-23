@@ -1,0 +1,378 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "ref-ref:index:Resource",
+        "inputs": [
+          {
+            "name": "data",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "boolArray": {
+                    "tupleConsExpression": {},
+                    "type": {
+                      "tupleType": {}
+                    }
+                  },
+                  "boolean": {
+                    "literalValueExpression": {
+                      "boolValue": true
+                    },
+                    "type": {
+                      "boolType": {}
+                    }
+                  },
+                  "float": {
+                    "literalValueExpression": {
+                      "numberValue": 4.5
+                    },
+                    "type": {
+                      "numberType": {}
+                    }
+                  },
+                  "innerData": {
+                    "objectConsExpression": {
+                      "properties": {
+                        "boolArray": {
+                          "tupleConsExpression": {
+                            "items": [
+                              {
+                                "literalValueExpression": {
+                                  "boolValue": false
+                                },
+                                "type": {
+                                  "boolType": {}
+                                }
+                              },
+                              {
+                                "literalValueExpression": {
+                                  "boolValue": true
+                                },
+                                "type": {
+                                  "boolType": {}
+                                }
+                              }
+                            ]
+                          },
+                          "type": {
+                            "tupleType": {
+                              "element_types": [
+                                {
+                                  "boolType": {}
+                                },
+                                {
+                                  "boolType": {}
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "boolean": {
+                          "literalValueExpression": {
+                            "boolValue": false
+                          },
+                          "type": {
+                            "boolType": {}
+                          }
+                        },
+                        "float": {
+                          "literalValueExpression": {
+                            "numberValue": 2.17
+                          },
+                          "type": {
+                            "numberType": {}
+                          }
+                        },
+                        "integer": {
+                          "literalValueExpression": {
+                            "numberValue": -12
+                          },
+                          "type": {
+                            "intType": {}
+                          }
+                        },
+                        "string": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "Goodbye"
+                                },
+                                "type": {
+                                  "stringType": {}
+                                }
+                              }
+                            ]
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        },
+                        "stringMap": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "three": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "french hens"
+                                      },
+                                      "type": {
+                                        "stringType": {}
+                                      }
+                                    }
+                                  ]
+                                },
+                                "type": {
+                                  "stringType": {}
+                                }
+                              },
+                              "two": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "turtle doves"
+                                      },
+                                      "type": {
+                                        "stringType": {}
+                                      }
+                                    }
+                                  ]
+                                },
+                                "type": {
+                                  "stringType": {}
+                                }
+                              }
+                            }
+                          },
+                          "type": {
+                            "objectType": {
+                              "properties": {
+                                "three": {
+                                  "stringType": {}
+                                },
+                                "two": {
+                                  "stringType": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "type": {
+                      "objectType": {
+                        "properties": {
+                          "boolArray": {
+                            "tupleType": {
+                              "element_types": [
+                                {
+                                  "boolType": {}
+                                },
+                                {
+                                  "boolType": {}
+                                }
+                              ]
+                            }
+                          },
+                          "boolean": {
+                            "boolType": {}
+                          },
+                          "float": {
+                            "numberType": {}
+                          },
+                          "integer": {
+                            "intType": {}
+                          },
+                          "string": {
+                            "stringType": {}
+                          },
+                          "stringMap": {
+                            "objectType": {
+                              "properties": {
+                                "three": {
+                                  "stringType": {}
+                                },
+                                "two": {
+                                  "stringType": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "integer": {
+                    "literalValueExpression": {
+                      "numberValue": 1024
+                    },
+                    "type": {
+                      "intType": {}
+                    }
+                  },
+                  "string": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "Hello"
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        }
+                      ]
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  },
+                  "stringMap": {
+                    "objectConsExpression": {
+                      "properties": {
+                        "x": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "100"
+                                },
+                                "type": {
+                                  "stringType": {}
+                                }
+                              }
+                            ]
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        },
+                        "y": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "200"
+                                },
+                                "type": {
+                                  "stringType": {}
+                                }
+                              }
+                            ]
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        }
+                      }
+                    },
+                    "type": {
+                      "objectType": {
+                        "properties": {
+                          "x": {
+                            "stringType": {}
+                          },
+                          "y": {
+                            "stringType": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "type": {
+                "objectType": {
+                  "properties": {
+                    "boolArray": {
+                      "tupleType": {}
+                    },
+                    "boolean": {
+                      "boolType": {}
+                    },
+                    "float": {
+                      "numberType": {}
+                    },
+                    "innerData": {
+                      "objectType": {
+                        "properties": {
+                          "boolArray": {
+                            "tupleType": {
+                              "element_types": [
+                                {
+                                  "boolType": {}
+                                },
+                                {
+                                  "boolType": {}
+                                }
+                              ]
+                            }
+                          },
+                          "boolean": {
+                            "boolType": {}
+                          },
+                          "float": {
+                            "numberType": {}
+                          },
+                          "integer": {
+                            "intType": {}
+                          },
+                          "string": {
+                            "stringType": {}
+                          },
+                          "stringMap": {
+                            "objectType": {
+                              "properties": {
+                                "three": {
+                                  "stringType": {}
+                                },
+                                "two": {
+                                  "stringType": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "integer": {
+                      "intType": {}
+                    },
+                    "string": {
+                      "stringType": {}
+                    },
+                    "stringMap": {
+                      "objectType": {
+                        "properties": {
+                          "x": {
+                            "stringType": {}
+                          },
+                          "y": {
+                            "stringType": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "provider_name": "ref-ref"
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "ref-ref",
+      "version": "12.0.0"
+    }
+  ]
+}

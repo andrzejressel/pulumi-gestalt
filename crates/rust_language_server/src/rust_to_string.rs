@@ -18,10 +18,12 @@ pub fn render(file: &RustFile) -> Result<String> {
 
     let source = include_str!("main.rs.template").replace("{{CONTENT}}", &statements);
 
-    let syntax_tree = syn::parse_file(source.as_str())
-        .context_with(|| format!("Failed to parse file [{}]", source))?;
+    Ok(source)
 
-    Ok(prettyplease::unparse(&syntax_tree))
+    // let syntax_tree = syn::parse_file(source.as_str())
+    //     .context_with(|| format!("Failed to parse file [{}]", source))?;
+    //
+    // Ok(prettyplease::unparse(&syntax_tree))
 }
 
 fn render_statement(stmt: &RustStatement) -> String {
