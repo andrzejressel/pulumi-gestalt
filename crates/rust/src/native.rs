@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 use crate::PulumiAny;
 use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
@@ -8,6 +7,7 @@ use pulumi_gestalt_model::{
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::{ConfigValue, FieldName};
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use std::sync::Arc;
 use tokio::runtime::Runtime;
 
