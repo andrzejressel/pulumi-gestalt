@@ -1,0 +1,5 @@
+type: Announcement
+title: Align serialization and deserialization internals with official Pulumi language implementations
+description: |
+  Performed a significant internal refactor of serialization and deserialization logic
+  to better align behavior and architecture with official Pulumi language ecosystems.
