@@ -9,7 +9,8 @@
           {
             "name": "data",
             "value": {
-              "objectConsExpression": {
+              "newPackageTypeExpression": {
+                "token": "ref-ref:index:Data",
                 "properties": {
                   "boolArray": {
                     "tupleConsExpression": {},
@@ -34,7 +35,8 @@
                     }
                   },
                   "innerData": {
-                    "objectConsExpression": {
+                    "newPackageTypeExpression": {
+                      "token": "ref-ref:index:InnerData",
                       "properties": {
                         "boolArray": {
                           "tupleConsExpression": {

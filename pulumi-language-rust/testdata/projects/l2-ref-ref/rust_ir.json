@@ -31,7 +31,7 @@
                         {
                           "MacroCall": {
                             "path": "pulumi_gestalt_rust::pulumi_any!",
-                            "body": "{\"boolArray\": [], \"boolean\": true, \"float\": 4.5, \"innerData\": {\"boolArray\": [false, true], \"boolean\": false, \"float\": 2.17, \"integer\": -12, \"string\": (\"Goodbye\"), \"stringMap\": {\"three\": (\"french hens\"), \"two\": (\"turtle doves\")}}, \"integer\": 1024, \"string\": (\"Hello\"), \"stringMap\": {\"x\": (\"100\"), \"y\": (\"200\")}}"
+                            "body": "{\"token\": \"ref-ref:index:Data\", \"properties\": {\"boolArray\": [], \"boolean\": true, \"float\": 4.5, \"innerData\": {\"token\": \"ref-ref:index:InnerData\", \"properties\": {\"boolArray\": [false, true], \"boolean\": false, \"float\": 2.17, \"integer\": -12, \"string\": (\"Goodbye\"), \"stringMap\": {\"three\": (\"french hens\"), \"two\": (\"turtle doves\")}}}, \"integer\": 1024, \"string\": (\"Hello\"), \"stringMap\": {\"x\": (\"100\"), \"y\": (\"200\")}}}"
                           }
                         }
                       ]

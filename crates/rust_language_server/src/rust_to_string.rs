@@ -18,12 +18,17 @@ pub fn render(file: &RustFile) -> Result<String> {
 
     let source = include_str!("main.rs.template").replace("{{CONTENT}}", &statements);
 
-    Ok(source)
-
-    // let syntax_tree = syn::parse_file(source.as_str())
-    //     .context_with(|| format!("Failed to parse file [{}]", source))?;
-    //
-    // Ok(prettyplease::unparse(&syntax_tree))
+    let syntax_tree = syn::parse_file(source.as_str());
+    
+    match syntax_tree {
+        Ok(syntax_tree) => Ok(prettyplease::unparse(&syntax_tree)),
+        Err(_) => {
+            // It will not compile anyway, but at least we will have a file to debug
+            Ok(source)
+        }
+    }
+    
+    
 }
 
 fn render_statement(stmt: &RustStatement) -> String {
