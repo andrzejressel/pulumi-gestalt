@@ -1,14 +1,16 @@
 [package]
-name = "pulumi_gestalt_serde_constant_string"
+name = "pulumi_gestalt_pulumi_constant_string"
 version.workspace = true
 edition.workspace = true
 repository.workspace = true
 license.workspace = true
 readme.workspace = true
-description = "Const string values for serde"
+description = "Const string values with Pulumi conversions"
 
 [dependencies]
-serde.workspace = true
+pulumi_gestalt_model.workspace = true
+rootcause.workspace = true
 
 [dev-dependencies]
 serde_json.workspace = true
+futures.workspace = true
