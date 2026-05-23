@@ -56,174 +56,227 @@
                 }
               },
               "value": {
-                "PulumiAny": {
-                  "Object": [
+                "NewStruct": {
+                  "token": "ref-ref:index:Data",
+                  "properties": [
                     [
-                      "token",
+                      "boolArray",
                       {
-                        "String": "ref-ref:index:Data"
+                        "expr_type": {
+                          "Tuple": []
+                        },
+                        "value": {
+                          "List": []
+                        }
                       }
                     ],
                     [
-                      "properties",
+                      "boolean",
                       {
-                        "Object": [
-                          [
-                            "boolArray",
-                            {
-                              "Array": []
-                            }
-                          ],
-                          [
-                            "boolean",
-                            {
-                              "Bool": true
-                            }
-                          ],
-                          [
-                            "float",
-                            {
-                              "Number": 4.5
-                            }
-                          ],
-                          [
-                            "innerData",
-                            {
-                              "Object": [
-                                [
-                                  "token",
-                                  {
-                                    "String": "ref-ref:index:InnerData"
-                                  }
-                                ],
-                                [
-                                  "properties",
-                                  {
-                                    "Object": [
-                                      [
-                                        "boolArray",
-                                        {
-                                          "Array": [
-                                            {
-                                              "Bool": false
-                                            },
-                                            {
-                                              "Bool": true
-                                            }
-                                          ]
-                                        }
-                                      ],
-                                      [
-                                        "boolean",
-                                        {
-                                          "Bool": false
-                                        }
-                                      ],
-                                      [
-                                        "float",
-                                        {
-                                          "Number": 2.17
-                                        }
-                                      ],
-                                      [
-                                        "integer",
-                                        {
-                                          "Number": -12.0
-                                        }
-                                      ],
-                                      [
-                                        "string",
-                                        {
-                                          "Expr": {
-                                            "expr_type": "String",
-                                            "value": {
-                                              "String": "Goodbye"
-                                            }
-                                          }
-                                        }
-                                      ],
-                                      [
-                                        "stringMap",
-                                        {
-                                          "Object": [
-                                            [
-                                              "three",
-                                              {
-                                                "Expr": {
-                                                  "expr_type": "String",
-                                                  "value": {
-                                                    "String": "french hens"
-                                                  }
-                                                }
-                                              }
-                                            ],
-                                            [
-                                              "two",
-                                              {
-                                                "Expr": {
-                                                  "expr_type": "String",
-                                                  "value": {
-                                                    "String": "turtle doves"
-                                                  }
-                                                }
-                                              }
-                                            ]
-                                          ]
-                                        }
-                                      ]
-                                    ]
-                                  }
-                                ]
+                        "expr_type": "Bool",
+                        "value": {
+                          "Bool": true
+                        }
+                      }
+                    ],
+                    [
+                      "float",
+                      {
+                        "expr_type": "Number",
+                        "value": {
+                          "Number": 4.5
+                        }
+                      }
+                    ],
+                    [
+                      "innerData",
+                      {
+                        "expr_type": {
+                          "Object": {
+                            "boolArray": {
+                              "Tuple": [
+                                "Bool",
+                                "Bool"
                               ]
-                            }
-                          ],
-                          [
-                            "integer",
-                            {
-                              "Number": 1024.0
-                            }
-                          ],
-                          [
-                            "string",
-                            {
-                              "Expr": {
-                                "expr_type": "String",
-                                "value": {
-                                  "String": "Hello"
-                                }
+                            },
+                            "boolean": "Bool",
+                            "float": "Number",
+                            "integer": "Int",
+                            "string": "String",
+                            "stringMap": {
+                              "Object": {
+                                "three": "String",
+                                "two": "String"
                               }
                             }
-                          ],
-                          [
-                            "stringMap",
-                            {
-                              "Object": [
-                                [
-                                  "x",
-                                  {
-                                    "Expr": {
-                                      "expr_type": "String",
-                                      "value": {
-                                        "String": "100"
+                          }
+                        },
+                        "value": {
+                          "NewStruct": {
+                            "token": "ref-ref:index:InnerData",
+                            "properties": [
+                              [
+                                "boolArray",
+                                {
+                                  "expr_type": {
+                                    "Tuple": [
+                                      "Bool",
+                                      "Bool"
+                                    ]
+                                  },
+                                  "value": {
+                                    "List": [
+                                      {
+                                        "expr_type": "Bool",
+                                        "value": {
+                                          "Bool": false
+                                        }
+                                      },
+                                      {
+                                        "expr_type": "Bool",
+                                        "value": {
+                                          "Bool": true
+                                        }
                                       }
+                                    ]
+                                  }
+                                }
+                              ],
+                              [
+                                "boolean",
+                                {
+                                  "expr_type": "Bool",
+                                  "value": {
+                                    "Bool": false
+                                  }
+                                }
+                              ],
+                              [
+                                "float",
+                                {
+                                  "expr_type": "Number",
+                                  "value": {
+                                    "Number": 2.17
+                                  }
+                                }
+                              ],
+                              [
+                                "integer",
+                                {
+                                  "expr_type": "Int",
+                                  "value": {
+                                    "Number": -12.0
+                                  }
+                                }
+                              ],
+                              [
+                                "string",
+                                {
+                                  "expr_type": "String",
+                                  "value": {
+                                    "String": "Goodbye"
+                                  }
+                                }
+                              ],
+                              [
+                                "stringMap",
+                                {
+                                  "expr_type": {
+                                    "Object": {
+                                      "three": "String",
+                                      "two": "String"
+                                    }
+                                  },
+                                  "value": {
+                                    "PulumiAny": {
+                                      "Object": [
+                                        [
+                                          "three",
+                                          {
+                                            "Expr": {
+                                              "expr_type": "String",
+                                              "value": {
+                                                "String": "french hens"
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        [
+                                          "two",
+                                          {
+                                            "Expr": {
+                                              "expr_type": "String",
+                                              "value": {
+                                                "String": "turtle doves"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      ]
                                     }
                                   }
-                                ],
-                                [
-                                  "y",
-                                  {
-                                    "Expr": {
-                                      "expr_type": "String",
-                                      "value": {
-                                        "String": "200"
-                                      }
-                                    }
-                                  }
-                                ]
+                                }
                               ]
-                            }
-                          ]
-                        ]
+                            ]
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "integer",
+                      {
+                        "expr_type": "Int",
+                        "value": {
+                          "Number": 1024.0
+                        }
+                      }
+                    ],
+                    [
+                      "string",
+                      {
+                        "expr_type": "String",
+                        "value": {
+                          "String": "Hello"
+                        }
+                      }
+                    ],
+                    [
+                      "stringMap",
+                      {
+                        "expr_type": {
+                          "Object": {
+                            "x": "String",
+                            "y": "String"
+                          }
+                        },
+                        "value": {
+                          "PulumiAny": {
+                            "Object": [
+                              [
+                                "x",
+                                {
+                                  "Expr": {
+                                    "expr_type": "String",
+                                    "value": {
+                                      "String": "100"
+                                    }
+                                  }
+                                }
+                              ],
+                              [
+                                "y",
+                                {
+                                  "Expr": {
+                                    "expr_type": "String",
+                                    "value": {
+                                      "String": "200"
+                                    }
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
                       }
                     ]
                   ]

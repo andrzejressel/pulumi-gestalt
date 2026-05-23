@@ -5,7 +5,6 @@
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
 use quote::quote;
 use rootcause::Result;
-use rootcause::prelude::ResultExt;
 use syn::LitStr;
 
 pub fn render(file: &RustFile) -> Result<String> {
@@ -19,7 +18,7 @@ pub fn render(file: &RustFile) -> Result<String> {
     let source = include_str!("main.rs.template").replace("{{CONTENT}}", &statements);
 
     let syntax_tree = syn::parse_file(source.as_str());
-    
+
     match syntax_tree {
         Ok(syntax_tree) => Ok(prettyplease::unparse(&syntax_tree)),
         Err(_) => {
@@ -27,8 +26,6 @@ pub fn render(file: &RustFile) -> Result<String> {
             Ok(source)
         }
     }
-    
-    
 }
 
 fn render_statement(stmt: &RustStatement) -> String {

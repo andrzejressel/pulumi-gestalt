@@ -107,6 +107,10 @@ pub enum ExprValue {
     MakeUnsecret(Box<Expr>),
     NewSecret(Box<Expr>),
     NewOutput(Box<Expr>),
+    NewStruct {
+        token: String,
+        properties: Vec<(String, Expr)>,
+    },
     PulumiAny(JsonValue),
 
     // Stdlib

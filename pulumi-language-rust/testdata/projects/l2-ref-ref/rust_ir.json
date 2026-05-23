@@ -5,7 +5,7 @@
         "name": "res",
         "value": {
           "FunctionCall": {
-            "path": "pulumi_ref-ref::resource::create",
+            "path": "pulumi_ref_ref::resource::create",
             "args": [
               {
                 "Ref": {
@@ -21,7 +21,7 @@
                     "MethodCall": {
                       "receiver": {
                         "FunctionCall": {
-                          "path": "pulumi_ref-ref::resource::ResourceArgs::builder",
+                          "path": "pulumi_ref_ref::resource::ResourceArgs::builder",
                           "args": []
                         }
                       },
@@ -29,9 +29,188 @@
                       "type_params": [],
                       "args": [
                         {
-                          "MacroCall": {
-                            "path": "pulumi_gestalt_rust::pulumi_any!",
-                            "body": "{\"token\": \"ref-ref:index:Data\", \"properties\": {\"boolArray\": [], \"boolean\": true, \"float\": 4.5, \"innerData\": {\"token\": \"ref-ref:index:InnerData\", \"properties\": {\"boolArray\": [false, true], \"boolean\": false, \"float\": 2.17, \"integer\": -12, \"string\": (\"Goodbye\"), \"stringMap\": {\"three\": (\"french hens\"), \"two\": (\"turtle doves\")}}}, \"integer\": 1024, \"string\": (\"Hello\"), \"stringMap\": {\"x\": (\"100\"), \"y\": (\"200\")}}}"
+                          "MethodCall": {
+                            "receiver": {
+                              "MethodCall": {
+                                "receiver": {
+                                  "MethodCall": {
+                                    "receiver": {
+                                      "MethodCall": {
+                                        "receiver": {
+                                          "MethodCall": {
+                                            "receiver": {
+                                              "MethodCall": {
+                                                "receiver": {
+                                                  "MethodCall": {
+                                                    "receiver": {
+                                                      "MethodCall": {
+                                                        "receiver": {
+                                                          "FunctionCall": {
+                                                            "path": "pulumi_ref_ref::types::Data::builder",
+                                                            "args": []
+                                                          }
+                                                        },
+                                                        "method": "bool_array",
+                                                        "type_params": [],
+                                                        "args": [
+                                                          {
+                                                            "Vec": {
+                                                              "elements": [],
+                                                              "type_hint": null
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    },
+                                                    "method": "boolean",
+                                                    "type_params": [],
+                                                    "args": [
+                                                      {
+                                                        "BoolLiteral": true
+                                                      }
+                                                    ]
+                                                  }
+                                                },
+                                                "method": "float",
+                                                "type_params": [],
+                                                "args": [
+                                                  {
+                                                    "NumberLiteral": 4.5
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            "method": "inner_data",
+                                            "type_params": [],
+                                            "args": [
+                                              {
+                                                "MethodCall": {
+                                                  "receiver": {
+                                                    "MethodCall": {
+                                                      "receiver": {
+                                                        "MethodCall": {
+                                                          "receiver": {
+                                                            "MethodCall": {
+                                                              "receiver": {
+                                                                "MethodCall": {
+                                                                  "receiver": {
+                                                                    "MethodCall": {
+                                                                      "receiver": {
+                                                                        "MethodCall": {
+                                                                          "receiver": {
+                                                                            "FunctionCall": {
+                                                                              "path": "pulumi_ref_ref::types::InnerData::builder",
+                                                                              "args": []
+                                                                            }
+                                                                          },
+                                                                          "method": "bool_array",
+                                                                          "type_params": [],
+                                                                          "args": [
+                                                                            {
+                                                                              "Vec": {
+                                                                                "elements": [
+                                                                                  {
+                                                                                    "BoolLiteral": false
+                                                                                  },
+                                                                                  {
+                                                                                    "BoolLiteral": true
+                                                                                  }
+                                                                                ],
+                                                                                "type_hint": null
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      },
+                                                                      "method": "boolean",
+                                                                      "type_params": [],
+                                                                      "args": [
+                                                                        {
+                                                                          "BoolLiteral": false
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  },
+                                                                  "method": "float",
+                                                                  "type_params": [],
+                                                                  "args": [
+                                                                    {
+                                                                      "NumberLiteral": 2.17
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              },
+                                                              "method": "integer",
+                                                              "type_params": [],
+                                                              "args": [
+                                                                {
+                                                                  "NumberLiteral": -12.0
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          "method": "string",
+                                                          "type_params": [],
+                                                          "args": [
+                                                            {
+                                                              "StringLiteral": "Goodbye"
+                                                            }
+                                                          ]
+                                                        }
+                                                      },
+                                                      "method": "string_map",
+                                                      "type_params": [],
+                                                      "args": [
+                                                        {
+                                                          "MacroCall": {
+                                                            "path": "pulumi_gestalt_rust::pulumi_any!",
+                                                            "body": "{\"three\": (\"french hens\"), \"two\": (\"turtle doves\")}"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "method": "build_struct",
+                                                  "type_params": [],
+                                                  "args": []
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "method": "integer",
+                                        "type_params": [],
+                                        "args": [
+                                          {
+                                            "NumberLiteral": 1024.0
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "method": "string",
+                                    "type_params": [],
+                                    "args": [
+                                      {
+                                        "StringLiteral": "Hello"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "method": "string_map",
+                                "type_params": [],
+                                "args": [
+                                  {
+                                    "MacroCall": {
+                                      "path": "pulumi_gestalt_rust::pulumi_any!",
+                                      "body": "{\"x\": (\"100\"), \"y\": (\"200\")}"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            "method": "build_struct",
+                            "type_params": [],
+                            "args": []
                           }
                         }
                       ]

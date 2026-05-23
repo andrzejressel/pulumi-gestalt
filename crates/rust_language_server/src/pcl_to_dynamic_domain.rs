@@ -194,9 +194,9 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
         },
         expression::Value::NewPackageTypeExpression(new_package_type) => match &expr_type {
             ExprType::Dynamic | ExprType::Object(_) | ExprType::None | ExprType::Union(_) => {
-                let json = lower_new_package_type_to_json(new_package_type)
+                let new_struct = lower_new_package_type_to_struct_expr(new_package_type)
                     .context("Failed to lower NewPackageTypeExpression")?;
-                Ok(make_expr(expr_type, ExprValue::PulumiAny(json)))
+                Ok(make_expr(expr_type, new_struct))
             }
             other => bail!(
                 "NewPackageTypeExpression with non-dynamic expression type {:?} is not supported",
@@ -329,27 +329,24 @@ fn lower_object_to_json(
     Ok(JsonValue::Object(props))
 }
 
-fn lower_new_package_type_to_json(
+fn lower_new_package_type_to_struct_expr(
     value: &pcl_model::NewPackageTypeExpression,
-) -> Result<JsonValue> {
+) -> Result<ExprValue> {
     let lowered_properties = value
         .properties
         .iter()
         .map(|(key, expr)| {
-            let lowered = lower_expression_to_json(expr)
+            let lowered = lower_expression(expr)
                 .context("Failed to lower NewPackageTypeExpression property")?;
             Ok((key.clone(), lowered))
         })
         .collect::<Result<Vec<_>>>()
         .context("Failed to lower NewPackageTypeExpression properties")?;
 
-    Ok(JsonValue::Object(vec![
-        ("token".to_string(), JsonValue::String(value.token.clone())),
-        (
-            "properties".to_string(),
-            JsonValue::Object(lowered_properties),
-        ),
-    ]))
+    Ok(ExprValue::NewStruct {
+        token: value.token.clone(),
+        properties: lowered_properties,
+    })
 }
 
 fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
@@ -372,7 +369,10 @@ fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
             }
         }
         expression::Value::NewPackageTypeExpression(new_package_type) => {
-            lower_new_package_type_to_json(new_package_type)
+            let expr_type = require_expression_type(expression)?;
+            let lowered = lower_new_package_type_to_struct_expr(new_package_type)
+                .context("Failed to lower NewPackageTypeExpression as expression")?;
+            Ok(JsonValue::Expr(Box::new(make_expr(expr_type, lowered))))
         }
         expression::Value::TupleConsExpression(TupleConsExpression { items }) => {
             let elems = items
@@ -766,4 +766,96 @@ fn ensure_arity(name: &str, got: usize, expected: usize) -> Result<()> {
         expected,
         got
     )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::pcl_model::{ExpressionType, NewPackageTypeExpression, ObjectConsExpression};
+    use std::collections::BTreeMap;
+
+    fn lit_string(value: &str) -> Expression {
+        Expression {
+            value: expression::Value::LiteralValueExpression(pcl_model::LiteralValueExpression {
+                value: literal_value_expression::Value::StringValue(value.to_string()),
+            }),
+            expression_type: Some(ExpressionType::String),
+        }
+    }
+
+    fn lit_bool(value: bool) -> Expression {
+        Expression {
+            value: expression::Value::LiteralValueExpression(pcl_model::LiteralValueExpression {
+                value: literal_value_expression::Value::BoolValue(value),
+            }),
+            expression_type: Some(ExpressionType::Bool),
+        }
+    }
+
+    #[test]
+    fn lower_new_package_type_to_new_struct_expr() {
+        let mut props = BTreeMap::new();
+        props.insert("string".to_string(), lit_string("hello"));
+        let expression = Expression {
+            value: expression::Value::NewPackageTypeExpression(NewPackageTypeExpression {
+                token: "ref-ref:index:Data".to_string(),
+                properties: props,
+            }),
+            expression_type: Some(ExpressionType::Dynamic),
+        };
+
+        let lowered = lower_expression(&expression).expect("lower expression");
+        match lowered.value {
+            ExprValue::NewStruct { token, properties } => {
+                assert_eq!(token, "ref-ref:index:Data");
+                assert_eq!(properties.len(), 1);
+                assert_eq!(properties[0].0, "string");
+            }
+            other => panic!("expected NewStruct, got {:?}", other),
+        }
+    }
+
+    #[test]
+    fn lower_new_package_type_in_json_context_wraps_expr() {
+        let mut nested_props = BTreeMap::new();
+        nested_props.insert("boolean".to_string(), lit_bool(true));
+        let nested_new_struct =
+            expression::Value::NewPackageTypeExpression(NewPackageTypeExpression {
+                token: "ref-ref:index:InnerData".to_string(),
+                properties: nested_props,
+            });
+
+        let mut root_props = BTreeMap::new();
+        root_props.insert(
+            "innerData".to_string(),
+            Expression {
+                value: nested_new_struct,
+                expression_type: Some(ExpressionType::Dynamic),
+            },
+        );
+        let root = Expression {
+            value: expression::Value::ObjectConsExpression(ObjectConsExpression {
+                properties: root_props,
+            }),
+            expression_type: Some(ExpressionType::Dynamic),
+        };
+
+        let lowered = lower_expression_to_json(&root).expect("lower object as json");
+        let JsonValue::Object(entries) = lowered else {
+            panic!("expected object json value");
+        };
+        let (_, value) = entries
+            .iter()
+            .find(|(k, _)| k == "innerData")
+            .expect("missing innerData key");
+        match value {
+            JsonValue::Expr(expr) => match &expr.value {
+                ExprValue::NewStruct { token, .. } => {
+                    assert_eq!(token, "ref-ref:index:InnerData");
+                }
+                other => panic!("expected NewStruct expression, got {:?}", other),
+            },
+            other => panic!("expected JsonValue::Expr, got {:?}", other),
+        }
+    }
 }

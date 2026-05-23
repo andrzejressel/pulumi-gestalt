@@ -241,6 +241,13 @@ fn lower_expr_value(value: &dynamic::ExprValue) -> typesafe::ExprValue {
         dynamic::ExprValue::NewOutput(inner) => {
             typesafe::ExprValue::NewOutput(Box::new(lower_expr(inner)))
         }
+        dynamic::ExprValue::NewStruct { token, properties } => typesafe::ExprValue::NewStruct {
+            token: token.clone(),
+            properties: properties
+                .iter()
+                .map(|(name, expr)| (name.clone(), lower_expr(expr)))
+                .collect(),
+        },
         dynamic::ExprValue::PulumiAny(json) => {
             typesafe::ExprValue::PulumiAny(lower_json_value(json))
         }

@@ -140,16 +140,35 @@ pub(crate) trait GlobalTypePropertyExt {
 
 impl GlobalTypePropertyExt for GlobalTypeProperty {
     fn get_field_name(&self) -> String {
+        PropertyName::new(self.name.clone()).get_rust_field_name()
+    }
+}
+
+pub struct PropertyName {
+    original: String
+}
+
+impl PropertyName {
+    pub fn new(original: String) -> Self {
+        Self { original }
+    }
+
+    pub fn get_rust_field_name(&self) -> String {
         escape_rust_name(
             &self
-                .name
+                .original
                 .clone()
                 .from_case(Case::Camel)
                 .to_case(Case::Snake),
         )
         .to_string()
     }
+    
+    pub fn get_original_name(&self) -> String {
+        self.original.clone()
+    }
 }
+
 
 pub(crate) trait ElementIdExt {
     fn get_rust_struct_name(&self) -> String;
