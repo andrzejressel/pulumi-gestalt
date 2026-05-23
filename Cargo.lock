@@ -2678,7 +2678,6 @@ dependencies = [
  "futures",
  "pulumi_gestalt_providers_typesystem",
  "pulumi_gestalt_rust",
- "serde_json",
 ]
 
 [[package]]
@@ -2756,7 +2755,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2766,7 +2764,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2776,7 +2773,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2786,7 +2782,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2796,7 +2791,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2806,7 +2800,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2816,7 +2809,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
@@ -2826,7 +2818,6 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
- "serde",
 ]
 
 [[package]]
