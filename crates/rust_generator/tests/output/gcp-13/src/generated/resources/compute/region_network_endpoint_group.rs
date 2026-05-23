@@ -56,7 +56,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let cloudrunNeg = region_network_endpoint_group::create(
@@ -173,7 +173,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let appengineNeg = region_network_endpoint_group::create(
@@ -192,7 +192,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let pscNeg = region_network_endpoint_group::create(
@@ -292,7 +292,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let default = network::create(
@@ -315,7 +315,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let default = network::create(
@@ -338,7 +338,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let default = network::create(

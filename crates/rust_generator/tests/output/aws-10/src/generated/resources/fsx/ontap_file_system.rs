@@ -5,7 +5,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let test = ontap_file_system::create(
@@ -23,7 +23,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let testhapairs = ontap_file_system::create(
@@ -42,7 +42,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let testsingleazgen2 = ontap_file_system::create(
@@ -61,7 +61,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let testmultiazgen2 = ontap_file_system::create(
