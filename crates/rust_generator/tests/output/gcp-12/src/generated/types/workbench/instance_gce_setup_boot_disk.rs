@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,24 +7,20 @@ pub struct InstanceGceSetupBootDisk {
     /// data disks, defaults to GMEK.
     /// Possible values are: `GMEK`, `CMEK`.
     #[builder(into)]
-    #[serde(rename = "diskEncryption")]
     pub r#disk_encryption: Option<String>,
     /// Optional. The size of the boot disk in GB attached to this instance,
     /// up to a maximum of 64000 GB (64 TB). If not specified, this defaults to the
     /// recommended value of 150GB.
     #[builder(into)]
-    #[serde(rename = "diskSizeGb")]
     pub r#disk_size_gb: Option<String>,
     /// Optional. Indicates the type of the disk.
     /// Possible values are: `PD_STANDARD`, `PD_SSD`, `PD_BALANCED`, `PD_EXTREME`.
     #[builder(into)]
-    #[serde(rename = "diskType")]
     pub r#disk_type: Option<String>,
     /// 'Optional. The KMS key used to encrypt the disks, only
     /// applicable if disk_encryption is CMEK. Format: `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
     /// Learn more about using your own encryption keys.'
     #[builder(into)]
-    #[serde(rename = "kmsKey")]
     pub r#kms_key: Option<String>,
 }
 

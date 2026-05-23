@@ -1,21 +1,18 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct PolicyClusterAdmissionRule {
     /// The identifier for this object. Format specified above.
     #[builder(into)]
-    #[serde(rename = "cluster")]
     pub r#cluster: String,
     /// The action when a pod creation is denied by the admission rule.
     /// Possible values are: `ENFORCED_BLOCK_AND_AUDIT_LOG`, `DRYRUN_AUDIT_LOG_ONLY`.
     #[builder(into)]
-    #[serde(rename = "enforcementMode")]
     pub r#enforcement_mode: String,
     /// How this admission rule will be evaluated.
     /// Possible values are: `ALWAYS_ALLOW`, `REQUIRE_ATTESTATION`, `ALWAYS_DENY`.
     #[builder(into)]
-    #[serde(rename = "evaluationMode")]
     pub r#evaluation_mode: String,
     /// The resource names of the attestors that must attest to a
     /// container image. If the attestor is in a different project from the
@@ -26,7 +23,6 @@ pub struct PolicyClusterAdmissionRule {
     /// Note: this field must be non-empty when the evaluation_mode field
     /// specifies REQUIRE_ATTESTATION, otherwise it must be empty.
     #[builder(into)]
-    #[serde(rename = "requireAttestationsBies")]
     pub r#require_attestations_bies: Option<Vec<String>>,
 }
 

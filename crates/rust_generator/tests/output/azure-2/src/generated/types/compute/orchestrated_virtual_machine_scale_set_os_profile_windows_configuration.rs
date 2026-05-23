@@ -1,61 +1,49 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct OrchestratedVirtualMachineScaleSetOsProfileWindowsConfiguration {
     /// One or more `additional_unattend_content` blocks as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
-    #[serde(rename = "additionalUnattendContents")]
     pub r#additional_unattend_contents: Option<Vec<super::super::types::compute::OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationAdditionalUnattendContent>>,
     /// The Password which should be used for the local-administrator on this Virtual Machine. Changing this forces a new resource to be created.
     #[builder(into)]
-    #[serde(rename = "adminPassword")]
     pub r#admin_password: String,
     /// The username of the local administrator on each Virtual Machine Scale Set instance. Changing this forces a new resource to be created.
     #[builder(into)]
-    #[serde(rename = "adminUsername")]
     pub r#admin_username: String,
     /// The prefix which should be used for the name of the Virtual Machines in this Scale Set. If unspecified this defaults to the value for the `name` field. If the value of the `name` field is not a valid `computer_name_prefix`, then you must specify `computer_name_prefix`. Changing this forces a new resource to be created.
     #[builder(into)]
-    #[serde(rename = "computerNamePrefix")]
     pub r#computer_name_prefix: Option<String>,
     /// Are automatic updates enabled for this Virtual Machine? Defaults to `true`.
     #[builder(into)]
-    #[serde(rename = "enableAutomaticUpdates")]
     pub r#enable_automatic_updates: Option<bool>,
     /// Should the VM be patched without requiring a reboot? Possible values are `true` or `false`. Defaults to `false`. For more information about hot patching please see the [product documentation](https://docs.microsoft.com/azure/automanage/automanage-hotpatch).
     /// 
     /// > **Note:** Hotpatching can only be enabled if the `patch_mode` is set to `AutomaticByPlatform`, the `provision_vm_agent` is set to `true`, your `source_image_reference` references a hotpatching enabled image, the VM's `sku_name` is set to a [Azure generation 2](https://docs.microsoft.com/azure/virtual-machines/generation-2#generation-2-vm-sizes) VM SKU and the `extension` contains an application health extension. An example of how to correctly configure a Virtual Machine Scale Set to provision a Windows Virtual Machine with hotpatching enabled can be found in the `./examples/orchestrated-vm-scale-set/hotpatching-enabled` directory within the GitHub Repository.
     #[builder(into)]
-    #[serde(rename = "hotpatchingEnabled")]
     pub r#hotpatching_enabled: Option<bool>,
     /// Specifies the mode of VM Guest Patching for the virtual machines that are associated to the Virtual Machine Scale Set. Possible values are `AutomaticByPlatform` or `ImageDefault`. Defaults to `ImageDefault`.
     /// 
     /// > **Note:** If the `patch_assessment_mode` is set to `AutomaticByPlatform` then the `provision_vm_agent` field must be set to `true`.
     #[builder(into)]
-    #[serde(rename = "patchAssessmentMode")]
     pub r#patch_assessment_mode: Option<String>,
     /// Specifies the mode of in-guest patching of this Windows Virtual Machine. Possible values are `Manual`, `AutomaticByOS` and `AutomaticByPlatform`. Defaults to `AutomaticByOS`. For more information on patch modes please see the [product documentation](https://docs.microsoft.com/azure/virtual-machines/automatic-vm-guest-patching#patch-orchestration-modes).
     /// 
     /// > **Note:** If `patch_mode` is set to `AutomaticByPlatform` the `provision_vm_agent` must be set to `true` and the `extension` must contain at least one application health extension.
     #[builder(into)]
-    #[serde(rename = "patchMode")]
     pub r#patch_mode: Option<String>,
     /// Should the Azure VM Agent be provisioned on each Virtual Machine in the Scale Set? Defaults to `true`. Changing this value forces a new resource to be created.
     #[builder(into)]
-    #[serde(rename = "provisionVmAgent")]
     pub r#provision_vm_agent: Option<bool>,
     /// One or more `secret` blocks as defined below.
     #[builder(into)]
-    #[serde(rename = "secrets")]
     pub r#secrets: Option<Vec<super::super::types::compute::OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecret>>,
     /// Specifies the time zone of the virtual machine, the possible values are defined [here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/).
     #[builder(into)]
-    #[serde(rename = "timezone")]
     pub r#timezone: Option<String>,
     /// One or more `winrm_listener` blocks as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
-    #[serde(rename = "winrmListeners")]
     pub r#winrm_listeners: Option<Vec<super::super::types::compute::OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationWinrmListener>>,
 }
 

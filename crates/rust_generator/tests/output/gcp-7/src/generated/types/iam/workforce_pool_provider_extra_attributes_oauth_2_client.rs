@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,23 +9,18 @@ pub struct WorkforcePoolProviderExtraAttributesOauth2Client {
     /// See https://learn.microsoft.com/en-us/graph/api/resources/group?view=graph-rest-1.0#properties for more details on
     /// 'microsoft.graph.group' properties. The attributes obtained from idntity provider are mapped to 'assertion.groups'. Possible values: ["AZURE_AD_GROUPS_MAIL"]
     #[builder(into)]
-    #[serde(rename = "attributesType")]
     pub r#attributes_type: String,
     /// The OAuth 2.0 client ID for retrieving extra attributes from the identity provider. Required to get the Access Token using client credentials grant flow.
     #[builder(into)]
-    #[serde(rename = "clientId")]
     pub r#client_id: String,
     /// The OAuth 2.0 client secret for retrieving extra attributes from the identity provider. Required to get the Access Token using client credentials grant flow.
     #[builder(into)]
-    #[serde(rename = "clientSecret")]
     pub r#client_secret: Box<super::super::types::iam::WorkforcePoolProviderExtraAttributesOauth2ClientClientSecret>,
     /// The OIDC identity provider's issuer URI. Must be a valid URI using the 'https' scheme. Required to get the OIDC discovery document.
     #[builder(into)]
-    #[serde(rename = "issuerUri")]
     pub r#issuer_uri: String,
     /// Represents the parameters to control which claims are fetched from an IdP.
     #[builder(into)]
-    #[serde(rename = "queryParameters")]
     pub r#query_parameters: Option<Box<super::super::types::iam::WorkforcePoolProviderExtraAttributesOauth2ClientQueryParameters>>,
 }
 

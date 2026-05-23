@@ -1,29 +1,24 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct BrokerUser {
     /// Whether to enable access to the [ActiveMQ Web Console](http://activemq.apache.org/web-console.html) for the user. Applies to `engine_type` of `ActiveMQ` only.
     #[builder(into)]
-    #[serde(rename = "consoleAccess")]
     pub r#console_access: Option<bool>,
     /// List of groups (20 maximum) to which the ActiveMQ user belongs. Applies to `engine_type` of `ActiveMQ` only.
     #[builder(into)]
-    #[serde(rename = "groups")]
     pub r#groups: Option<Vec<String>>,
     /// Password of the user. It must be 12 to 250 characters long, at least 4 unique characters, and must not contain commas.
     #[builder(into)]
-    #[serde(rename = "password")]
     pub r#password: String,
     /// Whether to set set replication user. Defaults to `false`.
     #[builder(into)]
-    #[serde(rename = "replicationUser")]
     pub r#replication_user: Option<bool>,
     /// Username of the user.
     /// 
     /// > **NOTE:** AWS currently does not support updating RabbitMQ users. Updates to users can only be in the RabbitMQ UI.
     #[builder(into)]
-    #[serde(rename = "username")]
     pub r#username: String,
 }
 

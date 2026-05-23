@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -11,12 +11,10 @@ pub struct SecurityPolicyRulePreconfiguredWafConfigExclusionRequestUri {
     /// CONTAINS: The operator matches if the field value contains the specified value.
     /// EQUALS_ANY: The operator matches if the field value is any value.
     #[builder(into)]
-    #[serde(rename = "operator")]
     pub r#operator: String,
     /// A request field matching the specified value will be excluded from inspection during preconfigured WAF evaluation.
     /// The field value must be given if the field operator is not EQUALS_ANY, and cannot be given if the field operator is EQUALS_ANY.
     #[builder(into)]
-    #[serde(rename = "value")]
     pub r#value: Option<String>,
 }
 

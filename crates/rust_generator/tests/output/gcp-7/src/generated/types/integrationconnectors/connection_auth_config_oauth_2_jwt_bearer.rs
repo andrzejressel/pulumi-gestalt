@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,11 +7,9 @@ pub struct ConnectionAuthConfigOauth2JwtBearer {
     /// This private key will be used to sign JWTs used for the jwt-bearer authorization grant.
     /// Specified in the form as: projects/*/secrets/*/versions/*.
     #[builder(into)]
-    #[serde(rename = "clientKey")]
     pub r#client_key: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerClientKey>>,
     /// JwtClaims providers fields to generate the token.
     #[builder(into)]
-    #[serde(rename = "jwtClaims")]
     pub r#jwt_claims: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerJwtClaims>>,
 }
 

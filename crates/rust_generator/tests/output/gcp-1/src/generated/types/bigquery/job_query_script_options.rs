@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,15 +7,12 @@ pub struct JobQueryScriptOptions {
     /// used to populate the schema and query results of the script job.
     /// Possible values are: `LAST`, `FIRST_SELECT`.
     #[builder(into)]
-    #[serde(rename = "keyResultStatement")]
     pub r#key_result_statement: Option<String>,
     /// Limit on the number of bytes billed per statement. Exceeding this budget results in an error.
     #[builder(into)]
-    #[serde(rename = "statementByteBudget")]
     pub r#statement_byte_budget: Option<String>,
     /// Timeout period for each statement in a script.
     #[builder(into)]
-    #[serde(rename = "statementTimeoutMs")]
     pub r#statement_timeout_ms: Option<String>,
 }
 

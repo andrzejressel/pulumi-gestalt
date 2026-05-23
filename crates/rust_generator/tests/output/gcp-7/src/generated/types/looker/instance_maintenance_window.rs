@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -13,12 +13,10 @@ pub struct InstanceMaintenanceWindow {
     /// - SUNDAY: Sunday
     /// Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
     #[builder(into)]
-    #[serde(rename = "dayOfWeek")]
     pub r#day_of_week: String,
     /// Required. Start time of the window in UTC time.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "startTime")]
     pub r#start_time: Box<super::super::types::looker::InstanceMaintenanceWindowStartTime>,
 }
 

@@ -1,21 +1,18 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct MetricDescriptorLabel {
     /// A human-readable description for the label.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// The key for this label. The key must not exceed 100 characters. The first character of the key must be an upper- or lower-case letter, the remaining characters must be letters, digits or underscores, and the key must match the regular expression [a-zA-Z][a-zA-Z0-9_]*
     #[builder(into)]
-    #[serde(rename = "key")]
     pub r#key: String,
     /// The type of data that can be assigned to the label.
     /// Default value is `STRING`.
     /// Possible values are: `STRING`, `BOOL`, `INT64`.
     #[builder(into)]
-    #[serde(rename = "valueType")]
     pub r#value_type: Option<String>,
 }
 

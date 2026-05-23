@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfiguration {
     /// Describes the metadata sent to the HTTP endpoint destination. See `common_attributes` block below for details.
     #[builder(into)]
-    #[serde(rename = "commonAttributes")]
     pub r#common_attributes: Option<Vec<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationCommonAttribute>>,
     /// Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. Valid values are `NONE` and `GZIP`.  Default value is `NONE`.
     #[builder(into)]
-    #[serde(rename = "contentEncoding")]
     pub r#content_encoding: Option<String>,
 }
 

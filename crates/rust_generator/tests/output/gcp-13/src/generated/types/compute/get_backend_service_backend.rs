@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -12,7 +12,6 @@ pub struct GetBackendServiceBackend {
     /// See the [Backend Services Overview](https://cloud.google.com/load-balancing/docs/backend-service#balancing-mode)
     /// for an explanation of load balancing modes. Default value: "UTILIZATION" Possible values: ["UTILIZATION", "RATE", "CONNECTION"]
     #[builder(into)]
-    #[serde(rename = "balancingMode")]
     pub r#balancing_mode: String,
     /// A multiplier applied to the group's maximum servicing capacity
     /// (based on UTILIZATION, RATE or CONNECTION).
@@ -22,11 +21,9 @@ pub struct GetBackendServiceBackend {
     /// setting of 0 means the group is completely drained, offering
     /// 0% of its available Capacity. Valid range is [0.0,1.0].
     #[builder(into)]
-    #[serde(rename = "capacityScaler")]
     pub r#capacity_scaler: f64,
     /// Textual description for the Backend Service.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: String,
     /// The fully-qualified URL of an Instance Group or Network Endpoint
     /// Group resource. In case of instance group this defines the list
@@ -46,7 +43,6 @@ pub struct GetBackendServiceBackend {
     /// Group resource using the fully-qualified URL, rather than a
     /// partial URL.
     #[builder(into)]
-    #[serde(rename = "group")]
     pub r#group: String,
     /// The max number of simultaneous connections for the group. Can
     /// be used with either CONNECTION or UTILIZATION balancing modes.
@@ -55,7 +51,6 @@ pub struct GetBackendServiceBackend {
     /// of maxConnectionsPerInstance or maxConnectionsPerEndpoint,
     /// as appropriate for group type, must be set.
     #[builder(into)]
-    #[serde(rename = "maxConnections")]
     pub r#max_connections: i32,
     /// The max number of simultaneous connections that a single backend
     /// network endpoint can handle. This is used to calculate the
@@ -65,7 +60,6 @@ pub struct GetBackendServiceBackend {
     /// For CONNECTION mode, either
     /// maxConnections or maxConnectionsPerEndpoint must be set.
     #[builder(into)]
-    #[serde(rename = "maxConnectionsPerEndpoint")]
     pub r#max_connections_per_endpoint: i32,
     /// The max number of simultaneous connections that a single
     /// backend instance can handle. This is used to calculate the
@@ -75,7 +69,6 @@ pub struct GetBackendServiceBackend {
     /// For CONNECTION mode, either maxConnections or
     /// maxConnectionsPerInstance must be set.
     #[builder(into)]
-    #[serde(rename = "maxConnectionsPerInstance")]
     pub r#max_connections_per_instance: i32,
     /// The max requests per second (RPS) of the group.
     /// 
@@ -84,26 +77,22 @@ pub struct GetBackendServiceBackend {
     /// of maxRatePerInstance or maxRatePerEndpoint, as appropriate for
     /// group type, must be set.
     #[builder(into)]
-    #[serde(rename = "maxRate")]
     pub r#max_rate: i32,
     /// The max requests per second (RPS) that a single backend network
     /// endpoint can handle. This is used to calculate the capacity of
     /// the group. Can be used in either balancing mode. For RATE mode,
     /// either maxRate or maxRatePerEndpoint must be set.
     #[builder(into)]
-    #[serde(rename = "maxRatePerEndpoint")]
     pub r#max_rate_per_endpoint: f64,
     /// The max requests per second (RPS) that a single backend
     /// instance can handle. This is used to calculate the capacity of
     /// the group. Can be used in either balancing mode. For RATE mode,
     /// either maxRate or maxRatePerInstance must be set.
     #[builder(into)]
-    #[serde(rename = "maxRatePerInstance")]
     pub r#max_rate_per_instance: f64,
     /// Used when balancingMode is UTILIZATION. This ratio defines the
     /// CPU utilization target for the group. Valid range is [0.0, 1.0].
     #[builder(into)]
-    #[serde(rename = "maxUtilization")]
     pub r#max_utilization: f64,
 }
 

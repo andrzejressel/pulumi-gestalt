@@ -1,39 +1,31 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct FluxConfigurationKustomization {
     /// Specifies other kustomizations that this kustomization depends on. This kustomization will not reconcile until all dependencies have completed their reconciliation.
     #[builder(into)]
-    #[serde(rename = "dependsOns")]
     pub r#depends_ons: Option<Vec<String>>,
     /// Whether garbage collections of Kubernetes objects created by this kustomization is enabled. Defaults to `false`.
     #[builder(into)]
-    #[serde(rename = "garbageCollectionEnabled")]
     pub r#garbage_collection_enabled: Option<bool>,
     /// Specifies the name of the kustomization.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Specifies the path in the source reference to reconcile on the cluster.
     #[builder(into)]
-    #[serde(rename = "path")]
     pub r#path: Option<String>,
     /// Whether re-creating Kubernetes resources on the cluster is enabled when patching fails due to an immutable field change. Defaults to `false`.
     #[builder(into)]
-    #[serde(rename = "recreatingEnabled")]
     pub r#recreating_enabled: Option<bool>,
     /// The interval at which to re-reconcile the kustomization on the cluster in the event of failure on reconciliation. Defaults to `600`.
     #[builder(into)]
-    #[serde(rename = "retryIntervalInSeconds")]
     pub r#retry_interval_in_seconds: Option<i32>,
     /// The interval at which to re-reconcile the kustomization on the cluster. Defaults to `600`.
     #[builder(into)]
-    #[serde(rename = "syncIntervalInSeconds")]
     pub r#sync_interval_in_seconds: Option<i32>,
     /// The maximum time to attempt to reconcile the kustomization on the cluster. Defaults to `600`.
     #[builder(into)]
-    #[serde(rename = "timeoutInSeconds")]
     pub r#timeout_in_seconds: Option<i32>,
 }
 

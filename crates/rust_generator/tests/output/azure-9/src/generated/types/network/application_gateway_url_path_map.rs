@@ -1,52 +1,41 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ApplicationGatewayUrlPathMap {
     /// The ID of the Default Backend Address Pool.
     #[builder(into)]
-    #[serde(rename = "defaultBackendAddressPoolId")]
     pub r#default_backend_address_pool_id: Option<String>,
     /// The Name of the Default Backend Address Pool which should be used for this URL Path Map. Cannot be set if `default_redirect_configuration_name` is set.
     #[builder(into)]
-    #[serde(rename = "defaultBackendAddressPoolName")]
     pub r#default_backend_address_pool_name: Option<String>,
     /// The ID of the Default Backend HTTP Settings Collection.
     #[builder(into)]
-    #[serde(rename = "defaultBackendHttpSettingsId")]
     pub r#default_backend_http_settings_id: Option<String>,
     /// The Name of the Default Backend HTTP Settings Collection which should be used for this URL Path Map. Cannot be set if `default_redirect_configuration_name` is set.
     #[builder(into)]
-    #[serde(rename = "defaultBackendHttpSettingsName")]
     pub r#default_backend_http_settings_name: Option<String>,
     /// The ID of the Default Redirect Configuration.
     #[builder(into)]
-    #[serde(rename = "defaultRedirectConfigurationId")]
     pub r#default_redirect_configuration_id: Option<String>,
     /// The Name of the Default Redirect Configuration which should be used for this URL Path Map. Cannot be set if either `default_backend_address_pool_name` or `default_backend_http_settings_name` is set.
     /// 
     /// > **NOTE:** Both `default_backend_address_pool_name` and `default_backend_http_settings_name` or `default_redirect_configuration_name` should be specified.
     #[builder(into)]
-    #[serde(rename = "defaultRedirectConfigurationName")]
     pub r#default_redirect_configuration_name: Option<String>,
     #[builder(into)]
-    #[serde(rename = "defaultRewriteRuleSetId")]
     pub r#default_rewrite_rule_set_id: Option<String>,
     /// The Name of the Default Rewrite Rule Set which should be used for this URL Path Map. Only valid for v2 SKUs.
     #[builder(into)]
-    #[serde(rename = "defaultRewriteRuleSetName")]
     pub r#default_rewrite_rule_set_name: Option<String>,
     /// The ID of the Rewrite Rule Set
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: Option<String>,
     /// The Name of the URL Path Map.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// One or more `path_rule` blocks as defined above.
     #[builder(into)]
-    #[serde(rename = "pathRules")]
     pub r#path_rules: Vec<super::super::types::network::ApplicationGatewayUrlPathMapPathRule>,
 }
 

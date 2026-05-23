@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,39 +7,31 @@ pub struct CxPageFormParameter {
     /// Hierarchy: Agent->Flow->Page->Fulfillment/Parameter.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "advancedSettings")]
     pub r#advanced_settings: Option<Box<super::super::types::diagflow::CxPageFormParameterAdvancedSettings>>,
     /// The default value of an optional parameter. If the parameter is required, the default value will be ignored.
     #[builder(into)]
-    #[serde(rename = "defaultValue")]
     pub r#default_value: Option<String>,
     /// The human-readable name of the parameter, unique within the form.
     #[builder(into)]
-    #[serde(rename = "displayName")]
     pub r#display_name: Option<String>,
     /// The entity type of the parameter.
     /// Format: projects/-/locations/-/agents/-/entityTypes/<System Entity Type ID> for system entity types (for example, projects/-/locations/-/agents/-/entityTypes/sys.date), or projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/entityTypes/<Entity Type ID> for developer entity types.
     #[builder(into)]
-    #[serde(rename = "entityType")]
     pub r#entity_type: Option<String>,
     /// Defines fill behavior for the parameter.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "fillBehavior")]
     pub r#fill_behavior: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehavior>>,
     /// Indicates whether the parameter represents a list of values.
     #[builder(into)]
-    #[serde(rename = "isList")]
     pub r#is_list: Option<bool>,
     /// Indicates whether the parameter content should be redacted in log.
     /// If redaction is enabled, the parameter content will be replaced by parameter name during logging. Note: the parameter content is subject to redaction if either parameter level redaction or entity type level redaction is enabled.
     #[builder(into)]
-    #[serde(rename = "redact")]
     pub r#redact: Option<bool>,
     /// Indicates whether the parameter is required. Optional parameters will not trigger prompts; however, they are filled if the user specifies them.
     /// Required parameters must be filled before form filling concludes.
     #[builder(into)]
-    #[serde(rename = "required")]
     pub r#required: Option<bool>,
 }
 

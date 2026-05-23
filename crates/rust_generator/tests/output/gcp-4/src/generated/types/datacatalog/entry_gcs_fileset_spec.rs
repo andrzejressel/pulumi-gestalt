@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -15,7 +15,6 @@ pub struct EntryGcsFilesetSpec {
     /// * gs://bucket_name/a/*/b: matches all files in bucket_name that match a/*/b pattern, such as a/c/b, a/d/b
     /// * gs://another_bucket/a.txt: matches gs://another_bucket/a.txt
     #[builder(into)]
-    #[serde(rename = "filePatterns")]
     pub r#file_patterns: Vec<String>,
     /// (Output)
     /// Sample files contained in this fileset, not all files contained in this fileset are represented here.
@@ -24,7 +23,6 @@ pub struct EntryGcsFilesetSpec {
     /// 
     /// <a name="nested_sample_gcs_file_specs"></a>The `sample_gcs_file_specs` block contains:
     #[builder(into)]
-    #[serde(rename = "sampleGcsFileSpecs")]
     pub r#sample_gcs_file_specs: Option<Vec<super::super::types::datacatalog::EntryGcsFilesetSpecSampleGcsFileSpec>>,
 }
 

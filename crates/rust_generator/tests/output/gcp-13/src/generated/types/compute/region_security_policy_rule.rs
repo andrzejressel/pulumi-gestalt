@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,17 +10,14 @@ pub struct RegionSecurityPolicyRule {
     /// * redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. This action is only supported in Global Security Policies of type CLOUD_ARMOR.
     /// * throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rateLimitOptions to be set for this.
     #[builder(into)]
-    #[serde(rename = "action")]
     pub r#action: String,
     /// An optional description of this resource. Provide this property when you create the resource.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// A match condition that incoming traffic is evaluated against.
     /// If it evaluates to true, the corresponding 'action' is enforced.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "match")]
     pub r#match_: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleMatch>>,
     /// A match condition that incoming packets are evaluated against for CLOUD_ARMOR_NETWORK security policies. If it matches, the corresponding 'action' is enforced.
     /// The match criteria for a rule consists of built-in match fields (like 'srcIpRanges') and potentially multiple user-defined match fields ('userDefinedFields').
@@ -32,28 +29,23 @@ pub struct RegionSecurityPolicyRule {
     /// The above match condition matches packets with a source IP in 192.0.2.0/24 or 198.51.100.0/24 and a user-defined field named "ipv4_fragment_offset" with a value between 1 and 0x1fff inclusive
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "networkMatch")]
     pub r#network_match: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleNetworkMatch>>,
     /// Preconfigured WAF configuration to be applied for the rule.
     /// If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "preconfiguredWafConfig")]
     pub r#preconfigured_waf_config: Option<Box<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfig>>,
     /// If set to true, the specified action is not enforced.
     #[builder(into)]
-    #[serde(rename = "preview")]
     pub r#preview: Option<bool>,
     /// An integer indicating the priority of a rule in the list.
     /// The priority must be a positive value between 0 and 2147483647.
     /// Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
     #[builder(into)]
-    #[serde(rename = "priority")]
     pub r#priority: i32,
     /// Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "rateLimitOptions")]
     pub r#rate_limit_options: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleRateLimitOptions>>,
 }
 

@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct PageRuleActionsCacheKeyFieldsUser {
     /// `true` - classifies a request as “mobile”, “desktop”, or “tablet” based on the User Agent; defaults to `false`.
     #[builder(into)]
-    #[serde(rename = "deviceType")]
     pub r#device_type: Option<bool>,
     /// `true` - includes the client’s country, derived from the IP address; defaults to `false`.
     #[builder(into)]
-    #[serde(rename = "geo")]
     pub r#geo: Option<bool>,
     /// `true` - includes the first language code contained in the `Accept-Language` header sent by the client; defaults to `false`.
     /// 
@@ -68,7 +66,6 @@ pub struct PageRuleActionsCacheKeyFieldsUser {
     /// }
     /// ```
     #[builder(into)]
-    #[serde(rename = "lang")]
     pub r#lang: Option<bool>,
 }
 

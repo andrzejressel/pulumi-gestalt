@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,7 +10,6 @@ pub struct DomainMappingSslSettings {
     /// authorized to administer the `AuthorizedCertificate` resource to manually map it to a DomainMapping resource.
     /// Example: 12345.
     #[builder(into)]
-    #[serde(rename = "certificateId")]
     pub r#certificate_id: Option<String>,
     /// (Output)
     /// ID of the managed `AuthorizedCertificate` resource currently being provisioned, if applicable. Until the new
@@ -19,13 +18,11 @@ pub struct DomainMappingSslSettings {
     /// field will be left empty. To remove SSL support while there is still a pending managed certificate, clear the
     /// `certificateId` field with an update request.
     #[builder(into)]
-    #[serde(rename = "pendingManagedCertificateId")]
     pub r#pending_managed_certificate_id: Option<String>,
     /// SSL management type for this domain. If `AUTOMATIC`, a managed certificate is automatically provisioned.
     /// If `MANUAL`, `certificateId` must be manually specified in order to configure SSL for this domain.
     /// Possible values are: `AUTOMATIC`, `MANUAL`.
     #[builder(into)]
-    #[serde(rename = "sslManagementType")]
     pub r#ssl_management_type: String,
 }
 

@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct JobTemplateConfigOverlayAnimationAnimationFade {
     /// The time to end the fade animation, in seconds.
     #[builder(into)]
-    #[serde(rename = "endTimeOffset")]
     pub r#end_time_offset: Option<String>,
     /// Required. Type of fade animation: `FADE_IN` or `FADE_OUT`.
     /// The possible values are:
@@ -14,16 +13,13 @@ pub struct JobTemplateConfigOverlayAnimationAnimationFade {
     /// * `FADE_OUT`: Fade the overlay object out of view.
     /// Possible values are: `FADE_TYPE_UNSPECIFIED`, `FADE_IN`, `FADE_OUT`.
     #[builder(into)]
-    #[serde(rename = "fadeType")]
     pub r#fade_type: String,
     /// The time to start the fade animation, in seconds.
     #[builder(into)]
-    #[serde(rename = "startTimeOffset")]
     pub r#start_time_offset: Option<String>,
     /// Normalized coordinates based on output video resolution.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "xy")]
     pub r#xy: Option<Box<super::super::types::transcoder::JobTemplateConfigOverlayAnimationAnimationFadeXy>>,
 }
 

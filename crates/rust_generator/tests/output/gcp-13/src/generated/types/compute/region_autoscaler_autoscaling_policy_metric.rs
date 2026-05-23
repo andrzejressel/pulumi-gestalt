@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -31,13 +31,11 @@ pub struct RegionAutoscalerAutoscalingPolicyMetric {
     /// TimeSeries are returned upon the query execution, the autoscaler
     /// will sum their respective values to obtain its scaling value.
     #[builder(into)]
-    #[serde(rename = "filter")]
     pub r#filter: Option<String>,
     /// The identifier (type) of the Stackdriver Monitoring metric.
     /// The metric cannot have negative values.
     /// The metric must have a value type of INT64 or DOUBLE.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// If scaling is based on a per-group metric value that represents the
     /// total amount of work to be done or resource usage, set this value to
@@ -54,7 +52,6 @@ pub struct RegionAutoscalerAutoscalingPolicyMetric {
     /// single instance, it could be better used with utilization_target
     /// instead.
     #[builder(into)]
-    #[serde(rename = "singleInstanceAssignment")]
     pub r#single_instance_assignment: Option<f64>,
     /// The target value of the metric that autoscaler should
     /// maintain. This must be a positive value. A utilization
@@ -65,13 +62,11 @@ pub struct RegionAutoscalerAutoscalingPolicyMetric {
     /// The autoscaler will work to keep this value constant for each
     /// of the instances.
     #[builder(into)]
-    #[serde(rename = "target")]
     pub r#target: Option<f64>,
     /// Defines how target utilization value is expressed for a
     /// Stackdriver Monitoring metric.
     /// Possible values are: `GAUGE`, `DELTA_PER_SECOND`, `DELTA_PER_MINUTE`.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: Option<String>,
 }
 

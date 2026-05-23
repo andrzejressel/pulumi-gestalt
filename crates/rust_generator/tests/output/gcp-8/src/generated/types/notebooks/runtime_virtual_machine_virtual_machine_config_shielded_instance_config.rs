@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,7 +10,6 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig {
     /// from the implicitly trusted boot image when the instance is
     /// created. Enabled by default.
     #[builder(into)]
-    #[serde(rename = "enableIntegrityMonitoring")]
     pub r#enable_integrity_monitoring: Option<bool>,
     /// Defines whether the instance has Secure Boot enabled.Secure
     /// Boot helps ensure that the system only runs authentic software
@@ -18,12 +17,10 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig {
     /// halting the boot process if signature verification fails.
     /// Disabled by default.
     #[builder(into)]
-    #[serde(rename = "enableSecureBoot")]
     pub r#enable_secure_boot: Option<bool>,
     /// Defines whether the instance has the vTPM enabled. Enabled by
     /// default.
     #[builder(into)]
-    #[serde(rename = "enableVtpm")]
     pub r#enable_vtpm: Option<bool>,
 }
 

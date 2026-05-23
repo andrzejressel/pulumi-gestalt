@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,12 +6,10 @@ pub struct ClientTlsPolicyClientCertificate {
     /// The certificate provider instance specification that will be passed to the data plane, which will be used to load necessary credential information.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "certificateProviderInstance")]
     pub r#certificate_provider_instance: Option<Box<super::super::types::networksecurity::ClientTlsPolicyClientCertificateCertificateProviderInstance>>,
     /// gRPC specific configuration to access the gRPC server to obtain the cert and private key.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "grpcEndpoint")]
     pub r#grpc_endpoint: Option<Box<super::super::types::networksecurity::ClientTlsPolicyClientCertificateGrpcEndpoint>>,
 }
 

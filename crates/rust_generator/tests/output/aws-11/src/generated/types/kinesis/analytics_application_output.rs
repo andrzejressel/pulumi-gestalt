@@ -1,33 +1,27 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct AnalyticsApplicationOutput {
     /// The ARN of the Kinesis Analytics Application.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: Option<String>,
     /// The Kinesis Firehose configuration for the destination stream. Conflicts with `kinesis_stream`.
     /// See Kinesis Firehose below for more details.
     #[builder(into)]
-    #[serde(rename = "kinesisFirehose")]
     pub r#kinesis_firehose: Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputKinesisFirehose>>,
     /// The Kinesis Stream configuration for the destination stream. Conflicts with `kinesis_firehose`.
     /// See Kinesis Stream below for more details.
     #[builder(into)]
-    #[serde(rename = "kinesisStream")]
     pub r#kinesis_stream: Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputKinesisStream>>,
     /// The Lambda function destination. See Lambda below for more details.
     #[builder(into)]
-    #[serde(rename = "lambda")]
     pub r#lambda: Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputLambda>>,
     /// The Name of the in-application stream.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// The Schema format of the data written to the destination. See Destination Schema below for more details.
     #[builder(into)]
-    #[serde(rename = "schema")]
     pub r#schema: Box<super::super::types::kinesis::AnalyticsApplicationOutputSchema>,
 }
 

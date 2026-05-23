@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ApplicationGatewayGatewayIpConfiguration {
     /// The ID of the Rewrite Rule Set
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: Option<String>,
     /// The Name of this Gateway IP Configuration.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// The ID of the Subnet which the Application Gateway should be connected to.
     #[builder(into)]
-    #[serde(rename = "subnetId")]
     pub r#subnet_id: String,
 }
 

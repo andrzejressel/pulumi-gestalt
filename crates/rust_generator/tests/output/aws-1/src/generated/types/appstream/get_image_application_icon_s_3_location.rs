@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetImageApplicationIconS3Location {
     /// S3 bucket of the S3 object.
     #[builder(into)]
-    #[serde(rename = "s3Bucket")]
     pub r#s_3_bucket: String,
     /// S3 key of the S3 object.
     #[builder(into)]
-    #[serde(rename = "s3Key")]
     pub r#s_3_key: String,
 }
 

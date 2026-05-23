@@ -1,11 +1,10 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct BareMetalClusterClusterOperations {
     /// Whether collection of application logs/metrics should be enabled (in addition to system logs/metrics).
     #[builder(into)]
-    #[serde(rename = "enableApplicationLogs")]
     pub r#enable_application_logs: Option<bool>,
 }
 

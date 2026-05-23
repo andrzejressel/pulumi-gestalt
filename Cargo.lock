@@ -2901,7 +2901,6 @@ dependencies = [
  "pulumi_gestalt_model",
  "rootcause",
  "serde",
- "serde_json",
 ]
 
 [[package]]

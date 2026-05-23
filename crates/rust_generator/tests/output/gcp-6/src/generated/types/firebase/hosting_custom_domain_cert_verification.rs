@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,13 +7,11 @@ pub struct HostingCustomDomainCertVerification {
     /// let Hosting create an SSL cert for your domain name.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "dns")]
     pub r#dns: Option<Box<super::super::types::firebase::HostingCustomDomainCertVerificationDns>>,
     /// A file to add to your existing, non-Hosting hosting service that confirms
     /// your intent to let Hosting create an SSL cert for your domain name.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "http")]
     pub r#http: Option<Box<super::super::types::firebase::HostingCustomDomainCertVerificationHttp>>,
 }
 

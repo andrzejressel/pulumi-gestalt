@@ -1,35 +1,28 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct PolicyPredictiveScalingConfigurationMetricSpecification {
     /// Customized capacity metric specification. The field is only valid when you use `customized_load_metric_specification`
     #[builder(into)]
-    #[serde(rename = "customizedCapacityMetricSpecification")]
     pub r#customized_capacity_metric_specification: Option<Box<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecification>>,
     /// Customized load metric specification.
     #[builder(into)]
-    #[serde(rename = "customizedLoadMetricSpecification")]
     pub r#customized_load_metric_specification: Option<Box<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecification>>,
     /// Customized scaling metric specification.
     #[builder(into)]
-    #[serde(rename = "customizedScalingMetricSpecification")]
     pub r#customized_scaling_metric_specification: Option<Box<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecification>>,
     /// Predefined load metric specification.
     #[builder(into)]
-    #[serde(rename = "predefinedLoadMetricSpecification")]
     pub r#predefined_load_metric_specification: Option<Box<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification>>,
     /// Metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate scaling metric and load metric to use.
     #[builder(into)]
-    #[serde(rename = "predefinedMetricPairSpecification")]
     pub r#predefined_metric_pair_specification: Option<Box<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecification>>,
     /// Predefined scaling metric specification.
     #[builder(into)]
-    #[serde(rename = "predefinedScalingMetricSpecification")]
     pub r#predefined_scaling_metric_specification: Option<Box<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecification>>,
     /// Target value for the metric.
     #[builder(into)]
-    #[serde(rename = "targetValue")]
     pub r#target_value: f64,
 }
 

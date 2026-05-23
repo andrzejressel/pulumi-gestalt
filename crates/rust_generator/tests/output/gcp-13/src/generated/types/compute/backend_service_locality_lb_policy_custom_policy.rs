@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,7 +6,6 @@ pub struct BackendServiceLocalityLbPolicyCustomPolicy {
     /// An optional, arbitrary JSON object with configuration data, understood
     /// by a locally installed custom policy implementation.
     #[builder(into)]
-    #[serde(rename = "data")]
     pub r#data: Option<String>,
     /// Identifies the custom policy.
     /// The value should match the type the custom implementation is registered
@@ -16,7 +15,6 @@ pub struct BackendServiceLocalityLbPolicyCustomPolicy {
     /// Note that specifying the same custom policy more than once for a
     /// backend is not a valid configuration and will be rejected.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
 }
 

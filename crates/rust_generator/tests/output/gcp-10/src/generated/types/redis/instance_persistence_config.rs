@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,7 +8,6 @@ pub struct InstancePersistenceConfig {
     /// - RDB: RDB based Persistence is enabled.
     /// Possible values are: `DISABLED`, `RDB`.
     #[builder(into)]
-    #[serde(rename = "persistenceMode")]
     pub r#persistence_mode: Option<String>,
     /// (Output)
     /// Output only. The next time that a snapshot attempt is scheduled to occur.
@@ -16,7 +15,6 @@ pub struct InstancePersistenceConfig {
     /// to nine fractional digits.
     /// Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
-    #[serde(rename = "rdbNextSnapshotTime")]
     pub r#rdb_next_snapshot_time: Option<String>,
     /// Optional. Available snapshot periods for scheduling.
     /// - ONE_HOUR:	Snapshot every 1 hour.
@@ -25,7 +23,6 @@ pub struct InstancePersistenceConfig {
     /// - TWENTY_FOUR_HOURS:	Snapshot every 24 hours.
     /// Possible values are: `ONE_HOUR`, `SIX_HOURS`, `TWELVE_HOURS`, `TWENTY_FOUR_HOURS`.
     #[builder(into)]
-    #[serde(rename = "rdbSnapshotPeriod")]
     pub r#rdb_snapshot_period: Option<String>,
     /// Optional. Date and time that the first snapshot was/will be attempted,
     /// and to which future snapshots will be aligned. If not provided,
@@ -34,7 +31,6 @@ pub struct InstancePersistenceConfig {
     /// and up to nine fractional digits.
     /// Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
-    #[serde(rename = "rdbSnapshotStartTime")]
     pub r#rdb_snapshot_start_time: Option<String>,
 }
 

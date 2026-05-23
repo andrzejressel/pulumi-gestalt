@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,11 +7,9 @@ pub struct GetCloudExadataInfrastructuresCloudExadataInfrastructurePropertyMaint
     /// database server patching operation. Custom action timeout is in minutes and
     /// valid value is between 15 to 120 (inclusive).
     #[builder(into)]
-    #[serde(rename = "customActionTimeoutMins")]
     pub r#custom_action_timeout_mins: i32,
     /// Days during the week when maintenance should be performed.
     #[builder(into)]
-    #[serde(rename = "daysOfWeeks")]
     pub r#days_of_weeks: Vec<String>,
     /// The window of hours during the day when maintenance should be performed.
     /// The window is a 4 hour slot. Valid values are:
@@ -22,21 +20,17 @@ pub struct GetCloudExadataInfrastructuresCloudExadataInfrastructurePropertyMaint
     ///   16 - represents time slot 16:00 - 19:59 UTC
     ///   20 - represents time slot 20:00 - 23:59 UTC
     #[builder(into)]
-    #[serde(rename = "hoursOfDays")]
     pub r#hours_of_days: Vec<i32>,
     /// If true, enables the configuration of a custom action timeout (waiting
     /// period) between database server patching operations.
     #[builder(into)]
-    #[serde(rename = "isCustomActionTimeoutEnabled")]
     pub r#is_custom_action_timeout_enabled: bool,
     /// Lead time window allows user to set a lead time to prepare for a down time.
     /// The lead time is in weeks and valid value is between 1 to 4.
     #[builder(into)]
-    #[serde(rename = "leadTimeWeek")]
     pub r#lead_time_week: i32,
     /// Months during the year when maintenance should be performed.
     #[builder(into)]
-    #[serde(rename = "months")]
     pub r#months: Vec<String>,
     /// Cloud CloudExadataInfrastructure node patching method, either "ROLLING"
     ///  or "NONROLLING". Default value is ROLLING. 
@@ -45,7 +39,6 @@ pub struct GetCloudExadataInfrastructuresCloudExadataInfrastructurePropertyMaint
     /// ROLLING
     /// NON_ROLLING
     #[builder(into)]
-    #[serde(rename = "patchingMode")]
     pub r#patching_mode: String,
     /// The maintenance window scheduling preference. 
     ///  Possible values:
@@ -53,13 +46,11 @@ pub struct GetCloudExadataInfrastructuresCloudExadataInfrastructurePropertyMaint
     /// CUSTOM_PREFERENCE
     /// NO_PREFERENCE
     #[builder(into)]
-    #[serde(rename = "preference")]
     pub r#preference: String,
     /// Weeks during the month when maintenance should be performed. Weeks start on
     /// the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7
     /// days. Weeks start and end based on calendar dates, not days of the week.
     #[builder(into)]
-    #[serde(rename = "weeksOfMonths")]
     pub r#weeks_of_months: Vec<i32>,
 }
 

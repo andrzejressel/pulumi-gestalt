@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -12,7 +12,6 @@ pub struct InterconnectMacsecPreSharedKey {
     /// 
     /// > **Warning:** `failOpen` is deprecated and will be removed in a future major release. Use other `failOpen` instead.
     #[builder(into)]
-    #[serde(rename = "failOpen")]
     pub r#fail_open: Option<bool>,
     /// A name for this pre-shared key. The name must be 1-63 characters long, and
     /// comply with RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -20,7 +19,6 @@ pub struct InterconnectMacsecPreSharedKey {
     /// must be a lowercase letter, and all following characters must be a dash, lowercase
     /// letter, or digit, except the last character, which cannot be a dash.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// A RFC3339 timestamp on or after which the key is valid. startTime can be in the
     /// future. If the keychain has a single key, startTime can be omitted. If the keychain
@@ -28,7 +26,6 @@ pub struct InterconnectMacsecPreSharedKey {
     /// be in increasing order. The start times of two consecutive keys must be at least 6
     /// hours apart.
     #[builder(into)]
-    #[serde(rename = "startTime")]
     pub r#start_time: Option<String>,
 }
 

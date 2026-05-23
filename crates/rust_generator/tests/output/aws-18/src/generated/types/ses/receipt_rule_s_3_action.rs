@@ -1,31 +1,25 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ReceiptRuleS3Action {
     /// The name of the S3 bucket
     #[builder(into)]
-    #[serde(rename = "bucketName")]
     pub r#bucket_name: String,
     /// The ARN of the IAM role to be used by Amazon Simple Email Service while writing to the Amazon S3 bucket, optionally encrypting your mail via the provided customer managed key, and publishing to the Amazon SNS topic
     #[builder(into)]
-    #[serde(rename = "iamRoleArn")]
     pub r#iam_role_arn: Option<String>,
     /// The ARN of the KMS key
     #[builder(into)]
-    #[serde(rename = "kmsKeyArn")]
     pub r#kms_key_arn: Option<String>,
     /// The key prefix of the S3 bucket
     #[builder(into)]
-    #[serde(rename = "objectKeyPrefix")]
     pub r#object_key_prefix: Option<String>,
     /// The position of the action in the receipt rule
     #[builder(into)]
-    #[serde(rename = "position")]
     pub r#position: i32,
     /// The ARN of an SNS topic to notify
     #[builder(into)]
-    #[serde(rename = "topicArn")]
     pub r#topic_arn: Option<String>,
 }
 

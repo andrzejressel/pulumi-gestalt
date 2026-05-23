@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,14 +8,12 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigDataDisk {
     /// when the instance is deleted (but not when the disk is
     /// detached from the instance).
     #[builder(into)]
-    #[serde(rename = "autoDelete")]
     pub r#auto_delete: Option<bool>,
     /// (Output)
     /// Optional. Indicates that this is a boot disk. The virtual
     /// machine will use the first partition of the disk for its
     /// root filesystem.
     #[builder(into)]
-    #[serde(rename = "boot")]
     pub r#boot: Option<bool>,
     /// (Output)
     /// Optional. Specifies a unique device name of your choice
@@ -28,7 +26,6 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigDataDisk {
     /// x is a number assigned by Google Compute Engine. This field
     /// is only applicable for persistent disks.
     #[builder(into)]
-    #[serde(rename = "deviceName")]
     pub r#device_name: Option<String>,
     /// (Output)
     /// Indicates a list of features to enable on the guest operating
@@ -37,14 +34,12 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigDataDisk {
     /// images/create-delete-deprecate-private-images#guest-os-features`
     /// options. ``
     #[builder(into)]
-    #[serde(rename = "guestOsFeatures")]
     pub r#guest_os_features: Option<Vec<String>>,
     /// (Output)
     /// Output only. A zero-based index to this disk, where 0 is
     /// reserved for the boot disk. If you have many disks attached
     /// to an instance, each disk would have a unique index number.
     #[builder(into)]
-    #[serde(rename = "index")]
     pub r#index: Option<i32>,
     /// Input only. Specifies the parameters for a new disk that will
     /// be created alongside the new instance. Use initialization
@@ -54,7 +49,6 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigDataDisk {
     /// both.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "initializeParams")]
     pub r#initialize_params: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams>>,
     /// "Specifies the disk interface to use for attaching this disk,
     /// which is either SCSI or NVME. The default is SCSI. Persistent
@@ -63,34 +57,28 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigDataDisk {
     /// can use either NVME or SCSI. For performance characteristics of SCSI
     /// over NVMe, see Local SSD performance. Valid values: * NVME * SCSI".
     #[builder(into)]
-    #[serde(rename = "interface")]
     pub r#interface: Option<String>,
     /// (Output)
     /// Type of the resource. Always compute#attachedDisk for attached
     /// disks.
     #[builder(into)]
-    #[serde(rename = "kind")]
     pub r#kind: Option<String>,
     /// (Output)
     /// Output only. Any valid publicly visible licenses.
     #[builder(into)]
-    #[serde(rename = "licenses")]
     pub r#licenses: Option<Vec<String>>,
     /// The mode in which to attach this disk, either READ_WRITE
     /// or READ_ONLY. If not specified, the default is to attach
     /// the disk in READ_WRITE mode.
     #[builder(into)]
-    #[serde(rename = "mode")]
     pub r#mode: Option<String>,
     /// Specifies a valid partial or full URL to an existing
     /// Persistent Disk resource.
     #[builder(into)]
-    #[serde(rename = "source")]
     pub r#source: Option<String>,
     /// Specifies the type of the disk, either SCRATCH or PERSISTENT.
     /// If not specified, the default is PERSISTENT.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: Option<String>,
 }
 

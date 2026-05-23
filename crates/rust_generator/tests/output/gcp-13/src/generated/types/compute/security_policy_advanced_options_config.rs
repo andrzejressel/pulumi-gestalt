@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,24 +6,20 @@ pub struct SecurityPolicyAdvancedOptionsConfig {
     /// Custom configuration to apply the JSON parsing. Only applicable when
     /// `json_parsing` is set to `STANDARD`. Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "jsonCustomConfig")]
     pub r#json_custom_config: Option<Box<super::super::types::compute::SecurityPolicyAdvancedOptionsConfigJsonCustomConfig>>,
     /// Whether or not to JSON parse the payload body. Defaults to `DISABLED`.
     /// * `DISABLED` - Don't parse JSON payloads in POST bodies.
     /// * `STANDARD` - Parse JSON payloads in POST bodies.
     /// * `STANDARD_WITH_GRAPHQL` - Parse JSON and GraphQL payloads in POST bodies.
     #[builder(into)]
-    #[serde(rename = "jsonParsing")]
     pub r#json_parsing: Option<String>,
     /// Log level to use. Defaults to `NORMAL`.
     /// * `NORMAL` - Normal log level.
     /// * `VERBOSE` - Verbose log level.
     #[builder(into)]
-    #[serde(rename = "logLevel")]
     pub r#log_level: Option<String>,
     /// An optional list of case-insensitive request header names to use for resolving the callers client IP address.
     #[builder(into)]
-    #[serde(rename = "userIpRequestHeaders")]
     pub r#user_ip_request_headers: Option<Vec<String>>,
 }
 

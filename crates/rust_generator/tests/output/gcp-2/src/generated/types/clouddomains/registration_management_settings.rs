@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -11,7 +11,6 @@ pub struct RegistrationManagementSettings {
     /// problems with the billing account or reported domain abuse. In such cases, check the issues field on the Registration. After
     /// the problem is resolved, the renewalMethod is automatically updated to preferredRenewalMethod in a few hours.
     #[builder(into)]
-    #[serde(rename = "preferredRenewalMethod")]
     pub r#preferred_renewal_method: Option<String>,
     /// (Output)
     /// Output only. The actual renewal method for this Registration. When preferredRenewalMethod is set to AUTOMATIC_RENEWAL,
@@ -19,11 +18,9 @@ pub struct RegistrationManagementSettings {
     /// or reported domain abuse. In such cases, check the issues field on the Registration. After the problem is resolved, the
     /// renewalMethod is automatically updated to preferredRenewalMethod in a few hours.
     #[builder(into)]
-    #[serde(rename = "renewalMethod")]
     pub r#renewal_method: Option<String>,
     /// Controls whether the domain can be transferred to another registrar. Values are UNLOCKED or LOCKED.
     #[builder(into)]
-    #[serde(rename = "transferLockState")]
     pub r#transfer_lock_state: Option<String>,
 }
 

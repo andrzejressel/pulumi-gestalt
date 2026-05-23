@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct DefinitionEligibleAuthorization {
     /// A `just_in_time_access_policy` block as defined below.
     #[builder(into)]
-    #[serde(rename = "justInTimeAccessPolicy")]
     pub r#just_in_time_access_policy: Option<Box<super::super::types::lighthouse::DefinitionEligibleAuthorizationJustInTimeAccessPolicy>>,
     /// The display name of the Azure Active Directory Principal.
     #[builder(into)]
-    #[serde(rename = "principalDisplayName")]
     pub r#principal_display_name: Option<String>,
     /// Principal ID of the security group/service principal/user that would be assigned permissions to the projected subscription.
     #[builder(into)]
-    #[serde(rename = "principalId")]
     pub r#principal_id: String,
     /// The Principal ID of the Azure built-in role that defines the permissions that the Azure Active Directory will have on the projected scope.
     #[builder(into)]
-    #[serde(rename = "roleDefinitionId")]
     pub r#role_definition_id: String,
 }
 

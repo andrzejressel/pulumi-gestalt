@@ -1,35 +1,28 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct DimensionsResponse {
     /// Depth of the device.
     #[builder(into)]
-    #[serde(rename = "depth")]
     pub r#depth: f64,
     /// Height of the device.
     #[builder(into)]
-    #[serde(rename = "height")]
     pub r#height: f64,
     /// Length of the device.
     #[builder(into)]
-    #[serde(rename = "length")]
     pub r#length: f64,
     /// Unit for the dimensions of length, height and width.
     #[builder(into)]
-    #[serde(rename = "lengthHeightUnit")]
     pub r#length_height_unit: String,
     /// Weight of the device.
     #[builder(into)]
-    #[serde(rename = "weight")]
     pub r#weight: f64,
     /// Unit for the dimensions of weight.
     #[builder(into)]
-    #[serde(rename = "weightUnit")]
     pub r#weight_unit: String,
     /// Width of the device.
     #[builder(into)]
-    #[serde(rename = "width")]
     pub r#width: f64,
 }
 

@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct VaultEncryption {
     /// Enabling/Disabling the Double Encryption state.
     #[builder(into)]
-    #[serde(rename = "infrastructureEncryptionEnabled")]
     pub r#infrastructure_encryption_enabled: bool,
     /// The Key Vault key id used to encrypt this vault. Key managed by Vault Managed Hardware Security Module is also supported.
     #[builder(into)]
-    #[serde(rename = "keyId")]
     pub r#key_id: String,
     /// Indicate that system assigned identity should be used or not. Defaults to `true`. Must be set to `false` when `user_assigned_identity_id` is set.
     /// 
@@ -17,11 +15,9 @@ pub struct VaultEncryption {
     /// 
     /// !> **Note:** Once `infrastructure_encryption_enabled` has been set it's not possible to change it.
     #[builder(into)]
-    #[serde(rename = "useSystemAssignedIdentity")]
     pub r#use_system_assigned_identity: Option<bool>,
     /// Specifies the user assigned identity ID to be used.
     #[builder(into)]
-    #[serde(rename = "userAssignedIdentityId")]
     pub r#user_assigned_identity_id: Option<String>,
 }
 

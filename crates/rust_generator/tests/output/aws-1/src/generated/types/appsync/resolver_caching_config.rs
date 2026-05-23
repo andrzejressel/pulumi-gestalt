@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ResolverCachingConfig {
     /// The caching keys for a resolver that has caching activated. Valid values are entries from the $context.arguments, $context.source, and $context.identity maps.
     #[builder(into)]
-    #[serde(rename = "cachingKeys")]
     pub r#caching_keys: Option<Vec<String>>,
     /// The TTL in seconds for a resolver that has caching activated. Valid values are between `1` and `3600` seconds.
     #[builder(into)]
-    #[serde(rename = "ttl")]
     pub r#ttl: Option<i32>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,7 +8,6 @@ pub struct CxFlowAdvancedSettings {
     /// * Flow level
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "audioExportGcsDestination")]
     pub r#audio_export_gcs_destination: Option<Box<super::super::types::diagflow::CxFlowAdvancedSettingsAudioExportGcsDestination>>,
     /// Define behaviors for DTMF (dual tone multi frequency). DTMF settings does not override each other. DTMF settings set at different levels define DTMF detections running in parallel. Exposed at the following levels:
     /// * Agent level
@@ -17,13 +16,11 @@ pub struct CxFlowAdvancedSettings {
     /// * Parameter level
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "dtmfSettings")]
     pub r#dtmf_settings: Option<Box<super::super::types::diagflow::CxFlowAdvancedSettingsDtmfSettings>>,
     /// Settings for logging. Settings for Dialogflow History, Contact Center messages, StackDriver logs, and speech logging. Exposed at the following levels:
     /// * Agent level
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "loggingSettings")]
     pub r#logging_settings: Option<Box<super::super::types::diagflow::CxFlowAdvancedSettingsLoggingSettings>>,
     /// Settings for speech to text detection. Exposed at the following levels:
     /// * Agent level
@@ -32,7 +29,6 @@ pub struct CxFlowAdvancedSettings {
     /// * Parameter level
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "speechSettings")]
     pub r#speech_settings: Option<Box<super::super::types::diagflow::CxFlowAdvancedSettingsSpeechSettings>>,
 }
 

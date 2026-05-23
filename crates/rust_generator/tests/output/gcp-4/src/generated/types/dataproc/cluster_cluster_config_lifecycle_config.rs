@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,17 +9,14 @@ pub struct ClusterClusterConfigLifecycleConfig {
     /// 
     /// - - -
     #[builder(into)]
-    #[serde(rename = "autoDeleteTime")]
     pub r#auto_delete_time: Option<String>,
     /// The duration to keep the cluster alive while idling
     /// (no jobs running). After this TTL, the cluster will be deleted. Valid range: [10m, 14d].
     #[builder(into)]
-    #[serde(rename = "idleDeleteTtl")]
     pub r#idle_delete_ttl: Option<String>,
     /// Time when the cluster became idle
     /// (most recent job finished) and became eligible for deletion due to idleness.
     #[builder(into)]
-    #[serde(rename = "idleStartTime")]
     pub r#idle_start_time: Option<String>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,7 +7,6 @@ pub struct SettingsAccessSettingsGcipSettings {
     /// the same project share the same login page, though it could be overridden at the
     /// sub resource level.
     #[builder(into)]
-    #[serde(rename = "loginPageUri")]
     pub r#login_page_uri: Option<String>,
     /// GCIP tenant ids that are linked to the IAP resource. tenantIds could be a string
     /// beginning with a number character to indicate authenticating with GCIP tenant flow,
@@ -15,7 +14,6 @@ pub struct SettingsAccessSettingsGcipSettings {
     /// is used, tenantIds should only contain one single element, while for tenant flow,
     /// tenantIds can contain multiple elements.
     #[builder(into)]
-    #[serde(rename = "tenantIds")]
     pub r#tenant_ids: Option<Vec<String>>,
 }
 

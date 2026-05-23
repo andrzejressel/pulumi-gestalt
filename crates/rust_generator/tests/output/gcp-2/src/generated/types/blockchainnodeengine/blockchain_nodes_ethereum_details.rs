@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,45 +7,36 @@ pub struct BlockchainNodesEthereumDetails {
     /// User-provided key-value pairs
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "additionalEndpoints")]
     pub r#additional_endpoints: Option<Vec<super::super::types::blockchainnodeengine::BlockchainNodesEthereumDetailsAdditionalEndpoint>>,
     /// Enables JSON-RPC access to functions in the admin namespace. Defaults to false.
     #[builder(into)]
-    #[serde(rename = "apiEnableAdmin")]
     pub r#api_enable_admin: Option<bool>,
     /// Enables JSON-RPC access to functions in the debug namespace. Defaults to false.
     #[builder(into)]
-    #[serde(rename = "apiEnableDebug")]
     pub r#api_enable_debug: Option<bool>,
     /// The consensus client
     /// Possible values are: `CONSENSUS_CLIENT_UNSPECIFIED`, `LIGHTHOUSE`.
     #[builder(into)]
-    #[serde(rename = "consensusClient")]
     pub r#consensus_client: Option<String>,
     /// The execution client
     /// Possible values are: `EXECUTION_CLIENT_UNSPECIFIED`, `GETH`, `ERIGON`.
     #[builder(into)]
-    #[serde(rename = "executionClient")]
     pub r#execution_client: Option<String>,
     /// User-provided key-value pairs
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "gethDetails")]
     pub r#geth_details: Option<Box<super::super::types::blockchainnodeengine::BlockchainNodesEthereumDetailsGethDetails>>,
     /// The Ethereum environment being accessed.
     /// Possible values are: `MAINNET`, `TESTNET_GOERLI_PRATER`, `TESTNET_SEPOLIA`.
     #[builder(into)]
-    #[serde(rename = "network")]
     pub r#network: Option<String>,
     /// The type of Ethereum node.
     /// Possible values are: `LIGHT`, `FULL`, `ARCHIVE`.
     #[builder(into)]
-    #[serde(rename = "nodeType")]
     pub r#node_type: Option<String>,
     /// Configuration for validator-related parameters on the beacon client, and for any managed validator client.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "validatorConfig")]
     pub r#validator_config: Option<Box<super::super::types::blockchainnodeengine::BlockchainNodesEthereumDetailsValidatorConfig>>,
 }
 

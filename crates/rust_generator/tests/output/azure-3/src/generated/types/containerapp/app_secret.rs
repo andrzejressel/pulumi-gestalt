@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,23 +7,19 @@ pub struct AppSecret {
     /// 
     /// !> **Note:** `identity` must be used together with `key_vault_secret_id`
     #[builder(into)]
-    #[serde(rename = "identity")]
     pub r#identity: Option<String>,
     /// The ID of a Key Vault secret. This can be a versioned or version-less ID.
     /// 
     /// !> **Note:** When using `key_vault_secret_id`, `ignore_changes` should be used to ignore any changes to `value`.
     #[builder(into)]
-    #[serde(rename = "keyVaultSecretId")]
     pub r#key_vault_secret_id: Option<String>,
     /// The secret name.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// The value for this secret.
     /// 
     /// !> **Note:** `value` will be ignored if `key_vault_secret_id` and `identity` are provided.
     #[builder(into)]
-    #[serde(rename = "value")]
     pub r#value: Option<String>,
 }
 

@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct LaunchExecution {
     /// The date and time that the launch ended.
     #[builder(into)]
-    #[serde(rename = "endedTime")]
     pub r#ended_time: Option<String>,
     /// The date and time that the launch started.
     #[builder(into)]
-    #[serde(rename = "startedTime")]
     pub r#started_time: Option<String>,
 }
 

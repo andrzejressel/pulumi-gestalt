@@ -1,29 +1,24 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ConnectionProfileAlloydbSettingsPrimaryInstanceSettings {
     /// Database flags to pass to AlloyDB when DMS is creating the AlloyDB cluster and instances. See the AlloyDB documentation for how these can be used.
     #[builder(into)]
-    #[serde(rename = "databaseFlags")]
     pub r#database_flags: Option<std::collections::HashMap<String, String>>,
     /// The database username.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: String,
     /// Labels for the AlloyDB primary instance created by DMS.
     #[builder(into)]
-    #[serde(rename = "labels")]
     pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// Configuration for the machines that host the underlying database engine.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "machineConfig")]
     pub r#machine_config: Box<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig>,
     /// (Output)
     /// Output only. The private IP address for the Instance. This is the connection endpoint for an end-user application.
     #[builder(into)]
-    #[serde(rename = "privateIp")]
     pub r#private_ip: Option<String>,
 }
 

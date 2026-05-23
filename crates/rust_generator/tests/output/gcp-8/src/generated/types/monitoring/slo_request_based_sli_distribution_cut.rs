@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,7 +8,6 @@ pub struct SloRequestBasedSliDistributionCut {
     /// Must have ValueType = DISTRIBUTION and
     /// MetricKind = DELTA or MetricKind = CUMULATIVE.
     #[builder(into)]
-    #[serde(rename = "distributionFilter")]
     pub r#distribution_filter: String,
     /// Range of numerical values. The computed good_service
     /// will be the count of values x in the Distribution such
@@ -17,7 +16,6 @@ pub struct SloRequestBasedSliDistributionCut {
     /// just one of min or max.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "range")]
     pub r#range: Box<super::super::types::monitoring::SloRequestBasedSliDistributionCutRange>,
 }
 

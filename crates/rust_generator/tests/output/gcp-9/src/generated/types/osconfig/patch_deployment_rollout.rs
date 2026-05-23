@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,12 +10,10 @@ pub struct PatchDeploymentRollout {
     /// For example, if the disruption budget has a fixed value of 10, and 8 VMs fail to patch in the current zone, the patch job continues to patch 2 VMs at a time until the zone is completed. When that zone is completed successfully, patching begins with 10 VMs at a time in the next zone. If 10 VMs in the next zone fail to patch, the patch job stops.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "disruptionBudget")]
     pub r#disruption_budget: Box<super::super::types::osconfig::PatchDeploymentRolloutDisruptionBudget>,
     /// Mode of the patch rollout.
     /// Possible values are: `ZONE_BY_ZONE`, `CONCURRENT_ZONES`.
     #[builder(into)]
-    #[serde(rename = "mode")]
     pub r#mode: String,
 }
 

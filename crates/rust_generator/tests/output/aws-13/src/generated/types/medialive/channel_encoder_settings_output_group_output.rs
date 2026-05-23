@@ -1,27 +1,22 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ChannelEncoderSettingsOutputGroupOutput {
     /// The names of the audio descriptions used as audio sources for the output.
     #[builder(into)]
-    #[serde(rename = "audioDescriptionNames")]
     pub r#audio_description_names: Option<Vec<String>>,
     /// The names of the caption descriptions used as caption sources for the output.
     #[builder(into)]
-    #[serde(rename = "captionDescriptionNames")]
     pub r#caption_description_names: Option<Vec<String>>,
     /// The name used to identify an output.
     #[builder(into)]
-    #[serde(rename = "outputName")]
     pub r#output_name: Option<String>,
     /// Settings for output. See Output Settings for more details.
     #[builder(into)]
-    #[serde(rename = "outputSettings")]
     pub r#output_settings: Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettings>,
     /// The name of the video description used as video source for the output.
     #[builder(into)]
-    #[serde(rename = "videoDescriptionName")]
     pub r#video_description_name: Option<String>,
 }
 

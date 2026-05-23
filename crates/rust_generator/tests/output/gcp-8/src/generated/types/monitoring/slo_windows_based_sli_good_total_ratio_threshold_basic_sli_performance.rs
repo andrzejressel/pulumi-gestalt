@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,12 +6,10 @@ pub struct SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance {
     /// Availability based SLI, dervied from count of requests made to this service that return successfully.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "availability")]
     pub r#availability: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability>>,
     /// Parameters for a latency threshold SLI.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "latency")]
     pub r#latency: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency>>,
     /// An optional set of locations to which this SLI is relevant.
     /// Telemetry from other locations will not be used to calculate
@@ -20,7 +18,6 @@ pub struct SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance {
     /// that don't support breaking down by location, setting this
     /// field will result in an error.
     #[builder(into)]
-    #[serde(rename = "locations")]
     pub r#locations: Option<Vec<String>>,
     /// An optional set of RPCs to which this SLI is relevant.
     /// Telemetry from other methods will not be used to calculate
@@ -29,7 +26,6 @@ pub struct SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance {
     /// breaking down by method, setting this field will result in an
     /// error.
     #[builder(into)]
-    #[serde(rename = "methods")]
     pub r#methods: Option<Vec<String>>,
     /// The set of API versions to which this SLI is relevant.
     /// Telemetry from other API versions will not be used to
@@ -38,7 +34,6 @@ pub struct SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance {
     /// that don't support breaking down by version, setting this
     /// field will result in an error.
     #[builder(into)]
-    #[serde(rename = "versions")]
     pub r#versions: Option<Vec<String>>,
 }
 

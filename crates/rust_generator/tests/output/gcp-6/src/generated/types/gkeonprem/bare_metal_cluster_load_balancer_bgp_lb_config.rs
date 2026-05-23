@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,12 +8,10 @@ pub struct BareMetalClusterLoadBalancerBgpLbConfig {
     /// IngressVIP must be included in the pools.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "addressPools")]
     pub r#address_pools: Vec<super::super::types::gkeonprem::BareMetalClusterLoadBalancerBgpLbConfigAddressPool>,
     /// BGP autonomous system number (ASN) of the cluster.
     /// This field can be updated after cluster creation.
     #[builder(into)]
-    #[serde(rename = "asn")]
     pub r#asn: i32,
     /// The list of BGP peers that the cluster will connect to.
     /// At least one peer must be configured for each control plane node.
@@ -22,14 +20,12 @@ pub struct BareMetalClusterLoadBalancerBgpLbConfig {
     /// This field can be updated after cluster creation.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "bgpPeerConfigs")]
     pub r#bgp_peer_configs: Vec<super::super::types::gkeonprem::BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfig>,
     /// Specifies the node pool running data plane load balancing. L2 connectivity
     /// is required among nodes in this pool. If missing, the control plane node
     /// pool is used for data plane load balancing.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "loadBalancerNodePoolConfig")]
     pub r#load_balancer_node_pool_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfig>>,
 }
 

@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetApplicationProvidersApplicationProvider {
     /// ARN of the application provider.
     #[builder(into)]
-    #[serde(rename = "applicationProviderArn")]
     pub r#application_provider_arn: String,
     /// An object describing how IAM Identity Center represents the application provider in the portal. See `display_data` below.
     #[builder(into)]
-    #[serde(rename = "displayDatas")]
     pub r#display_datas: Option<Vec<super::super::types::ssoadmin::GetApplicationProvidersApplicationProviderDisplayData>>,
     /// Protocol that the application provider uses to perform federation. Valid values are `SAML` and `OAUTH`.
     #[builder(into)]
-    #[serde(rename = "federationProtocol")]
     pub r#federation_protocol: String,
 }
 

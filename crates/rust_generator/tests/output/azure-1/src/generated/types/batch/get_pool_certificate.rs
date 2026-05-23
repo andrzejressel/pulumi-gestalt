@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetPoolCertificate {
     /// The fully qualified ID of the certificate installed on the pool.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: String,
     /// The location of the certificate store on the compute node into which the certificate is installed, either `CurrentUser` or `LocalMachine`.
     #[builder(into)]
-    #[serde(rename = "storeLocation")]
     pub r#store_location: String,
     /// The name of the certificate store on the compute node into which the certificate is installed.
     #[builder(into)]
-    #[serde(rename = "storeName")]
     pub r#store_name: String,
     /// Which user accounts on the compute node have access to the private data of the certificate.
     #[builder(into)]
-    #[serde(rename = "visibilities")]
     pub r#visibilities: Vec<String>,
 }
 

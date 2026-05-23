@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -13,7 +13,6 @@ pub struct UrlMapPathMatcher {
     /// defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "defaultCustomErrorResponsePolicy")]
     pub r#default_custom_error_response_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultCustomErrorResponsePolicy>>,
     /// defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs
     /// advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request
@@ -22,34 +21,28 @@ pub struct UrlMapPathMatcher {
     /// Only one of defaultRouteAction or defaultUrlRedirect must be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "defaultRouteAction")]
     pub r#default_route_action: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultRouteAction>>,
     /// The backend service or backend bucket to use when none of the given paths match.
     #[builder(into)]
-    #[serde(rename = "defaultService")]
     pub r#default_service: Option<String>,
     /// When none of the specified hostRules match, the request is redirected to a URL specified
     /// by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
     /// defaultRouteAction must not be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "defaultUrlRedirect")]
     pub r#default_url_redirect: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultUrlRedirect>>,
     /// An optional description of this resource. Provide this property when you create
     /// the resource.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// Specifies changes to request and response headers that need to take effect for
     /// the selected backendService. HeaderAction specified here are applied after the
     /// matching HttpRouteRule HeaderAction and before the HeaderAction in the UrlMap
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "headerAction")]
     pub r#header_action: Option<Box<super::super::types::compute::UrlMapPathMatcherHeaderAction>>,
     /// The name to which this PathMatcher is referred by the HostRule.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// The list of path rules. Use this list instead of routeRules when routing based
     /// on simple path matching is all that's required. The order by which path rules
@@ -59,7 +52,6 @@ pub struct UrlMapPathMatcher {
     /// given pathMatcher, only one of pathRules or routeRules must be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "pathRules")]
     pub r#path_rules: Option<Vec<super::super::types::compute::UrlMapPathMatcherPathRule>>,
     /// The list of ordered HTTP route rules. Use this list instead of pathRules when
     /// advanced route matching and routing actions are desired. The order of specifying
@@ -69,7 +61,6 @@ pub struct UrlMapPathMatcher {
     /// External load balancers.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "routeRules")]
     pub r#route_rules: Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRule>>,
 }
 

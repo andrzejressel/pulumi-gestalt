@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ClassifierGrokClassifier {
     /// An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.
     #[builder(into)]
-    #[serde(rename = "classification")]
     pub r#classification: String,
     /// Custom grok patterns used by this classifier.
     #[builder(into)]
-    #[serde(rename = "customPatterns")]
     pub r#custom_patterns: Option<String>,
     /// The grok pattern used by this classifier.
     #[builder(into)]
-    #[serde(rename = "grokPattern")]
     pub r#grok_pattern: String,
 }
 

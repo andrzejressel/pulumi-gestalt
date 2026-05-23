@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -12,7 +12,6 @@ pub struct SloRequestBasedSliGoodTotalRatio {
     /// Must have ValueType = DOUBLE or ValueType = INT64 and
     /// must have MetricKind = DELTA or MetricKind = CUMULATIVE.
     #[builder(into)]
-    #[serde(rename = "badServiceFilter")]
     pub r#bad_service_filter: Option<String>,
     /// A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
     /// quantifying good service provided. Exactly two of
@@ -21,7 +20,6 @@ pub struct SloRequestBasedSliGoodTotalRatio {
     /// Must have ValueType = DOUBLE or ValueType = INT64 and
     /// must have MetricKind = DELTA or MetricKind = CUMULATIVE.
     #[builder(into)]
-    #[serde(rename = "goodServiceFilter")]
     pub r#good_service_filter: Option<String>,
     /// A TimeSeries [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
     /// quantifying total demanded service. Exactly two of
@@ -30,7 +28,6 @@ pub struct SloRequestBasedSliGoodTotalRatio {
     /// Must have ValueType = DOUBLE or ValueType = INT64 and
     /// must have MetricKind = DELTA or MetricKind = CUMULATIVE.
     #[builder(into)]
-    #[serde(rename = "totalServiceFilter")]
     pub r#total_service_filter: Option<String>,
 }
 

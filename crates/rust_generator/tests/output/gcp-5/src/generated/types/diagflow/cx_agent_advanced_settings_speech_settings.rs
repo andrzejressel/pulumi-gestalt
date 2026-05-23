@@ -1,25 +1,21 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct CxAgentAdvancedSettingsSpeechSettings {
     /// Sensitivity of the speech model that detects the end of speech. Scale from 0 to 100.
     #[builder(into)]
-    #[serde(rename = "endpointerSensitivity")]
     pub r#endpointer_sensitivity: Option<i32>,
     /// Mapping from language to Speech-to-Text model. The mapped Speech-to-Text model will be selected for requests from its corresponding language. For more information, see [Speech models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
     /// An object containing a list of **"key": value** pairs. Example: **{ "name": "wrench", "mass": "1.3kg", "count": "3" }**.
     #[builder(into)]
-    #[serde(rename = "models")]
     pub r#models: Option<std::collections::HashMap<String, String>>,
     /// Timeout before detecting no speech.
     /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
     #[builder(into)]
-    #[serde(rename = "noSpeechTimeout")]
     pub r#no_speech_timeout: Option<String>,
     /// Use timeout based endpointing, interpreting endpointer sensitivy as seconds of timeout value.
     #[builder(into)]
-    #[serde(rename = "useTimeoutBasedEndpointing")]
     pub r#use_timeout_based_endpointing: Option<bool>,
 }
 

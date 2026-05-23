@@ -1,31 +1,25 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetServiceReplicaSet {
     /// A list of subnet IP addresses for the domain controllers in the replica set, typically two.
     #[builder(into)]
-    #[serde(rename = "domainControllerIpAddresses")]
     pub r#domain_controller_ip_addresses: Vec<String>,
     /// The publicly routable IP address for the domain controllers in the replica set.
     #[builder(into)]
-    #[serde(rename = "externalAccessIpAddress")]
     pub r#external_access_ip_address: String,
     /// The ID of the Domain Service.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: String,
     /// The Azure location in which the replica set resides.
     #[builder(into)]
-    #[serde(rename = "location")]
     pub r#location: String,
     /// The current service status for the replica set.
     #[builder(into)]
-    #[serde(rename = "serviceStatus")]
     pub r#service_status: String,
     /// The ID of the subnet in which the replica set resides.
     #[builder(into)]
-    #[serde(rename = "subnetId")]
     pub r#subnet_id: String,
 }
 

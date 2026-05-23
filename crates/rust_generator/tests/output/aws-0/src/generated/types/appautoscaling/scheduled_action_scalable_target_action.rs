@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ScheduledActionScalableTargetAction {
     /// Maximum capacity. At least one of `max_capacity` or `min_capacity` must be set.
     #[builder(into)]
-    #[serde(rename = "maxCapacity")]
     pub r#max_capacity: Option<i32>,
     /// Minimum capacity. At least one of `min_capacity` or `max_capacity` must be set.
     #[builder(into)]
-    #[serde(rename = "minCapacity")]
     pub r#min_capacity: Option<i32>,
 }
 

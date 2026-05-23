@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -12,7 +12,6 @@ pub struct ServicePerimeterDryRunIngressPolicyIngressFromSource {
     /// Example `accessPolicies/MY_POLICY/accessLevels/MY_LEVEL.`
     /// If * is specified, then all IngressSources will be allowed.
     #[builder(into)]
-    #[serde(rename = "accessLevel")]
     pub r#access_level: Option<String>,
     /// A Google Cloud resource that is allowed to ingress the perimeter.
     /// Requests from these resources will be allowed to access perimeter data.
@@ -21,7 +20,6 @@ pub struct ServicePerimeterDryRunIngressPolicyIngressFromSource {
     /// organization that the perimeter is defined in. `*` is not allowed, the case
     /// of allowing all Google Cloud resources only is not supported.
     #[builder(into)]
-    #[serde(rename = "resource")]
     pub r#resource: Option<String>,
 }
 

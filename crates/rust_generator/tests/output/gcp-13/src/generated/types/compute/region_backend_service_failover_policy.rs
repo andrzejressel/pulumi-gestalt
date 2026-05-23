@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -12,14 +12,12 @@ pub struct RegionBackendServiceFailoverPolicy {
     /// This can be set to true only if the protocol is TCP.
     /// The default is false.
     #[builder(into)]
-    #[serde(rename = "disableConnectionDrainOnFailover")]
     pub r#disable_connection_drain_on_failover: Option<bool>,
     /// This option is used only when no healthy VMs are detected in the primary
     /// and backup instance groups. When set to true, traffic is dropped. When
     /// set to false, new connections are sent across all VMs in the primary group.
     /// The default is false.
     #[builder(into)]
-    #[serde(rename = "dropTrafficIfUnhealthy")]
     pub r#drop_traffic_if_unhealthy: Option<bool>,
     /// The value of the field must be in [0, 1]. If the ratio of the healthy
     /// VMs in the primary backend is at or below this number, traffic arriving
@@ -30,7 +28,6 @@ pub struct RegionBackendServiceFailoverPolicy {
     /// VMs with the best effort, or to all VMs when no VM is healthy.
     /// This field is only used with l4 load balancing.
     #[builder(into)]
-    #[serde(rename = "failoverRatio")]
     pub r#failover_ratio: Option<f64>,
 }
 

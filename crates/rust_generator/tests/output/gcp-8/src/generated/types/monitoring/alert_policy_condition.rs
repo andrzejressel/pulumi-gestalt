@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,18 +7,15 @@ pub struct AlertPolicyCondition {
     /// continues to receive new data points.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "conditionAbsent")]
     pub r#condition_absent: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionAbsent>>,
     /// A condition that checks for log messages matching given constraints.
     /// If set, no other conditions can be present.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "conditionMatchedLog")]
     pub r#condition_matched_log: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionMatchedLog>>,
     /// A Monitoring Query Language query that outputs a boolean stream
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "conditionMonitoringQueryLanguage")]
     pub r#condition_monitoring_query_language: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionMonitoringQueryLanguage>>,
     /// A condition type that allows alert policies to be defined using
     /// Prometheus Query Language (PromQL).
@@ -26,13 +23,11 @@ pub struct AlertPolicyCondition {
     /// from a Prometheus alerting rule and its associated rule group.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "conditionPrometheusQueryLanguage")]
     pub r#condition_prometheus_query_language: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionPrometheusQueryLanguage>>,
     /// A condition that compares a time series against a
     /// threshold.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "conditionThreshold")]
     pub r#condition_threshold: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionThreshold>>,
     /// A short name or phrase used to identify the
     /// condition in dashboards, notifications, and
@@ -40,7 +35,6 @@ pub struct AlertPolicyCondition {
     /// display name for multiple conditions in the same
     /// policy.
     #[builder(into)]
-    #[serde(rename = "displayName")]
     pub r#display_name: String,
     /// (Output)
     /// The unique resource name for this condition.
@@ -50,7 +44,6 @@ pub struct AlertPolicyCondition {
     /// the condition is created as part of a new or updated alerting
     /// policy.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: Option<String>,
 }
 

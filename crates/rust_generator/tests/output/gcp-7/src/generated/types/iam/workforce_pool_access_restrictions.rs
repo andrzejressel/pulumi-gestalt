@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,12 +7,10 @@ pub struct WorkforcePoolAccessRestrictions {
     /// If not set by default there are no restrictions.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "allowedServices")]
     pub r#allowed_services: Option<Vec<super::super::types::iam::WorkforcePoolAccessRestrictionsAllowedService>>,
     /// Disable programmatic sign-in by disabling token issue via the Security Token API endpoint.
     /// See [Security Token Service API](https://cloud.google.com/iam/docs/reference/sts/rest).
     #[builder(into)]
-    #[serde(rename = "disableProgrammaticSignin")]
     pub r#disable_programmatic_signin: Option<bool>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,16 +6,13 @@ pub struct ExtensionsInstanceRuntimeData {
     /// The fatal error state for the extension instance
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "fatalError")]
     pub r#fatal_error: Option<Box<super::super::types::firebase::ExtensionsInstanceRuntimeDataFatalError>>,
     /// The processing state for the extension instance
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "processingState")]
     pub r#processing_state: Option<Box<super::super::types::firebase::ExtensionsInstanceRuntimeDataProcessingState>>,
     /// The time of the last state update.
     #[builder(into)]
-    #[serde(rename = "stateUpdateTime")]
     pub r#state_update_time: Option<String>,
 }
 

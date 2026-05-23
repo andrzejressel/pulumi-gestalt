@@ -1,39 +1,31 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct RulesetRuleRatelimit {
     /// List of parameters that define how Cloudflare tracks the request rate for this rule.
     #[builder(into)]
-    #[serde(rename = "characteristics")]
     pub r#characteristics: Option<Vec<String>>,
     /// Criteria for counting HTTP requests to trigger the Rate Limiting action. Uses the Firewall Rules expression language based on Wireshark display filters. Refer to the [Firewall Rules language](https://developers.cloudflare.com/firewall/cf-firewall-language) documentation for all available fields, operators, and functions.
     #[builder(into)]
-    #[serde(rename = "countingExpression")]
     pub r#counting_expression: Option<String>,
     /// Once the request rate is reached, the Rate Limiting rule blocks further requests for the period of time defined in this field.
     #[builder(into)]
-    #[serde(rename = "mitigationTimeout")]
     pub r#mitigation_timeout: Option<i32>,
     /// The period of time to consider (in seconds) when evaluating the request rate.
     #[builder(into)]
-    #[serde(rename = "period")]
     pub r#period: Option<i32>,
     /// The number of requests over the period of time that will trigger the Rate Limiting rule.
     #[builder(into)]
-    #[serde(rename = "requestsPerPeriod")]
     pub r#requests_per_period: Option<i32>,
     /// Whether to include requests to origin within the Rate Limiting count.
     #[builder(into)]
-    #[serde(rename = "requestsToOrigin")]
     pub r#requests_to_origin: Option<bool>,
     /// The maximum aggregate score over the period of time that will trigger Rate Limiting rule.
     #[builder(into)]
-    #[serde(rename = "scorePerPeriod")]
     pub r#score_per_period: Option<i32>,
     /// Name of HTTP header in the response, set by the origin server, with the score for the current request.
     #[builder(into)]
-    #[serde(rename = "scoreResponseHeaderName")]
     pub r#score_response_header_name: Option<String>,
 }
 

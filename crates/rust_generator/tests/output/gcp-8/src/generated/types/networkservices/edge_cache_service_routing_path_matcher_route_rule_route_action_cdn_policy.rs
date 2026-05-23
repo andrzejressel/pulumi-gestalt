@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,18 +7,15 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     /// This field may only be specified when signedRequestMode is set to REQUIRE_TOKENS.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "addSignatures")]
     pub r#add_signatures: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignatures>>,
     /// Defines the request parameters that contribute to the cache key.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "cacheKeyPolicy")]
     pub r#cache_key_policy: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyCacheKeyPolicy>>,
     /// Cache modes allow users to control the behaviour of the cache, what content it should cache automatically, whether to respect origin headers, or whether to unconditionally cache all responses.
     /// For all cache modes, Cache-Control headers will be passed to the client. Use clientTtl to override what is sent to the client.
     /// Possible values are: `CACHE_ALL_STATIC`, `USE_ORIGIN_HEADERS`, `FORCE_CACHE_ALL`, `BYPASS_CACHE`.
     #[builder(into)]
-    #[serde(rename = "cacheMode")]
     pub r#cache_mode: Option<String>,
     /// Specifies a separate client (e.g. browser client) TTL, separate from the TTL used by the edge caches. Leaving this empty will use the same cache TTL for both the CDN and the client-facing response.
     /// - The TTL must be > 0 and <= 86400s (1 day)
@@ -28,7 +25,6 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     /// When the cache mode is set to "USE_ORIGIN_HEADERS" or "BYPASS_CACHE", you must omit this field.
     /// A duration in seconds terminated by 's'. Example: "3s".
     #[builder(into)]
-    #[serde(rename = "clientTtl")]
     pub r#client_ttl: Option<String>,
     /// Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age).
     /// Defaults to 3600s (1 hour).
@@ -41,7 +37,6 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     /// When the cache mode is set to "USE_ORIGIN_HEADERS" or "BYPASS_CACHE", you must omit this field.
     /// A duration in seconds terminated by 's'. Example: "3s".
     #[builder(into)]
-    #[serde(rename = "defaultTtl")]
     pub r#default_ttl: Option<String>,
     /// Specifies the maximum allowed TTL for cached content served by this origin.
     /// Defaults to 86400s (1 day).
@@ -53,7 +48,6 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     /// When the cache mode is set to "USE_ORIGIN_HEADERS", "FORCE_CACHE_ALL", or "BYPASS_CACHE", you must omit this field.
     /// A duration in seconds terminated by 's'. Example: "3s".
     #[builder(into)]
-    #[serde(rename = "maxTtl")]
     pub r#max_ttl: Option<String>,
     /// Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency.
     /// By default, the CDNPolicy will apply the following default TTLs to these status codes:
@@ -62,18 +56,15 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     /// - HTTP 405 (Method Not Found), 414 (URI Too Long), 501 (Not Implemented): 60s
     /// These defaults can be overridden in negativeCachingPolicy
     #[builder(into)]
-    #[serde(rename = "negativeCaching")]
     pub r#negative_caching: Option<bool>,
     /// Sets a cache TTL for the specified HTTP status code. negativeCaching must be enabled to configure negativeCachingPolicy.
     /// - Omitting the policy and leaving negativeCaching enabled will use the default TTLs for each status code, defined in negativeCaching.
     /// - TTLs must be >= 0 (where 0 is "always revalidate") and <= 86400s (1 day)
     /// Note that when specifying an explicit negativeCachingPolicy, you should take care to specify a cache TTL for all response codes that you wish to cache. The CDNPolicy will not apply any default negative caching when a policy exists.
     #[builder(into)]
-    #[serde(rename = "negativeCachingPolicy")]
     pub r#negative_caching_policy: Option<std::collections::HashMap<String, String>>,
     /// The EdgeCacheKeyset containing the set of public keys used to validate signed requests at the edge.
     #[builder(into)]
-    #[serde(rename = "signedRequestKeyset")]
     pub r#signed_request_keyset: Option<String>,
     /// Limit how far into the future the expiration time of a signed request may be.
     /// When set, a signed request is rejected if its expiration time is later than now + signedRequestMaximumExpirationTtl, where now is the time at which the signed request is first handled by the CDN.
@@ -81,20 +72,17 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     /// - Fractions of a second are not allowed.
     /// By default, signedRequestMaximumExpirationTtl is not set and the expiration time of a signed request may be arbitrarily far into future.
     #[builder(into)]
-    #[serde(rename = "signedRequestMaximumExpirationTtl")]
     pub r#signed_request_maximum_expiration_ttl: Option<String>,
     /// Whether to enforce signed requests. The default value is DISABLED, which means all content is public, and does not authorize access.
     /// You must also set a signedRequestKeyset to enable signed requests.
     /// When set to REQUIRE_SIGNATURES, all matching requests will have their signature validated. Requests that were not signed with the corresponding private key, or that are otherwise invalid (expired, do not match the signature, IP address, or header) will be rejected with a HTTP 403 and (if enabled) logged.
     /// Possible values are: `DISABLED`, `REQUIRE_SIGNATURES`, `REQUIRE_TOKENS`.
     #[builder(into)]
-    #[serde(rename = "signedRequestMode")]
     pub r#signed_request_mode: Option<String>,
     /// Additional options for signed tokens.
     /// signedTokenOptions may only be specified when signedRequestMode is REQUIRE_TOKENS.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "signedTokenOptions")]
     pub r#signed_token_options: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicySignedTokenOptions>>,
 }
 

@@ -123,21 +123,14 @@ where
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OneOf4<
-    A: Debug,
-    B: Debug,
-    C: Debug,
-    D: Debug,
-> {
+pub enum OneOf4<A: Debug, B: Debug, C: Debug, D: Debug> {
     Left(A),
     Middle1(B),
     Middle2(C),
     Right(D),
 }
 
-impl<A: Debug, B: Debug, C: Debug, D: Debug>
-    OneOf4<A, B, C, D>
-{
+impl<A: Debug, B: Debug, C: Debug, D: Debug> OneOf4<A, B, C, D> {
     pub fn left(a: A) -> Self {
         OneOf4::Left(a)
     }

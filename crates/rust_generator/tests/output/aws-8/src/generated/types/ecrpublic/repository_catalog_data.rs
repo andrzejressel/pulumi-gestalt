@@ -1,31 +1,25 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct RepositoryCatalogData {
     /// A detailed description of the contents of the repository. It is publicly visible in the Amazon ECR Public Gallery. The text must be in markdown format.
     #[builder(into)]
-    #[serde(rename = "aboutText")]
     pub r#about_text: Option<String>,
     /// The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported architectures will appear as badges on the repository and are used as search filters: `ARM`, `ARM 64`, `x86`, `x86-64`
     #[builder(into)]
-    #[serde(rename = "architectures")]
     pub r#architectures: Option<Vec<String>>,
     /// A short description of the contents of the repository. This text appears in both the image details and also when searching for repositories on the Amazon ECR Public Gallery.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// The base64-encoded repository logo payload. (Only visible for verified accounts) Note that drift detection is disabled for this attribute.
     #[builder(into)]
-    #[serde(rename = "logoImageBlob")]
     pub r#logo_image_blob: Option<String>,
     /// The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported operating systems will appear as badges on the repository and are used as search filters: `Linux`, `Windows`
     #[builder(into)]
-    #[serde(rename = "operatingSystems")]
     pub r#operating_systems: Option<Vec<String>>,
     /// Detailed information on how to use the contents of the repository. It is publicly visible in the Amazon ECR Public Gallery. The usage text provides context, support information, and additional usage details for users of the repository. The text must be in markdown format.
     #[builder(into)]
-    #[serde(rename = "usageText")]
     pub r#usage_text: Option<String>,
 }
 

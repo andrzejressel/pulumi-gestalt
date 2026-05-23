@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -13,7 +13,6 @@ pub struct ServicePerimetersServicePerimeterStatus {
     /// be empty.
     /// Format: accessPolicies/{policy_id}/accessLevels/{access_level_name}
     #[builder(into)]
-    #[serde(rename = "accessLevels")]
     pub r#access_levels: Option<Vec<String>>,
     /// List of EgressPolicies to apply to the perimeter. A perimeter may
     /// have multiple EgressPolicies, each of which is evaluated separately.
@@ -21,7 +20,6 @@ pub struct ServicePerimetersServicePerimeterStatus {
     /// a perimeter bridge.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "egressPolicies")]
     pub r#egress_policies: Option<Vec<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatusEgressPolicy>>,
     /// List of `IngressPolicies` to apply to the perimeter. A perimeter may
     /// have multiple `IngressPolicies`, each of which is evaluated
@@ -29,13 +27,11 @@ pub struct ServicePerimetersServicePerimeterStatus {
     /// Must be empty for a perimeter bridge.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "ingressPolicies")]
     pub r#ingress_policies: Option<Vec<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatusIngressPolicy>>,
     /// A list of GCP resources that are inside of the service perimeter.
     /// Currently only projects are allowed.
     /// Format: projects/{project_number}
     #[builder(into)]
-    #[serde(rename = "resources")]
     pub r#resources: Option<Vec<String>>,
     /// GCP services that are subject to the Service Perimeter
     /// restrictions. Must contain a list of services. For example, if
@@ -43,13 +39,11 @@ pub struct ServicePerimetersServicePerimeterStatus {
     /// buckets inside the perimeter must meet the perimeter's access
     /// restrictions.
     #[builder(into)]
-    #[serde(rename = "restrictedServices")]
     pub r#restricted_services: Option<Vec<String>>,
     /// Specifies how APIs are allowed to communicate within the Service
     /// Perimeter.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "vpcAccessibleServices")]
     pub r#vpc_accessible_services: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatusVpcAccessibleServices>>,
 }
 

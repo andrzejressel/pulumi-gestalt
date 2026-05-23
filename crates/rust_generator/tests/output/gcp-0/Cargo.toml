@@ -5,7 +5,6 @@ edition = "2021"
 
 [dependencies]
 pulumi_gestalt_rust = { path = "../../../../rust" }
-serde = "1.0.197"
 bon = "3.3.1"
 
 [workspace]

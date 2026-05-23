@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,7 +6,6 @@ pub struct RestorePlanRestoreConfigTransformationRule {
     /// The description is a user specified string description
     /// of the transformation rule.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// A list of transformation rule actions to take against candidate
     /// resources. Actions are executed in order defined - this order
@@ -14,7 +13,6 @@ pub struct RestorePlanRestoreConfigTransformationRule {
     /// the first operation could affect the outcome of the second operation.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "fieldActions")]
     pub r#field_actions: Vec<super::super::types::gkebackup::RestorePlanRestoreConfigTransformationRuleFieldAction>,
     /// This field is used to specify a set of fields that should be used to
     /// determine which resources in backup should be acted upon by the
@@ -22,7 +20,6 @@ pub struct RestorePlanRestoreConfigTransformationRule {
     /// specific resources are affected by transformation rule actions.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "resourceFilter")]
     pub r#resource_filter: Option<Box<super::super::types::gkebackup::RestorePlanRestoreConfigTransformationRuleResourceFilter>>,
 }
 

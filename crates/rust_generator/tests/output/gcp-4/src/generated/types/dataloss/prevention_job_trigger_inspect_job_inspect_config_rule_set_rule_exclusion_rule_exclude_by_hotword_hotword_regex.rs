@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,12 +6,10 @@ pub struct PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleEx
     /// The index of the submatch to extract as findings. When not specified,
     /// the entire match is returned. No more than 3 may be included.
     #[builder(into)]
-    #[serde(rename = "groupIndexes")]
     pub r#group_indexes: Option<Vec<i32>>,
     /// Pattern defining the regular expression. Its syntax
     /// (https://github.com/google/re2/wiki/Syntax) can be found under the google/re2 repository on GitHub.
     #[builder(into)]
-    #[serde(rename = "pattern")]
     pub r#pattern: Option<String>,
 }
 

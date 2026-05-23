@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,20 +6,16 @@ pub struct ApplicationIap {
     /// (Optional) Whether the serving infrastructure will authenticate and authorize all incoming requests. 
     /// (default is false)
     #[builder(into)]
-    #[serde(rename = "enabled")]
     pub r#enabled: Option<bool>,
     /// OAuth2 client ID to use for the authentication flow.
     #[builder(into)]
-    #[serde(rename = "oauth2ClientId")]
     pub r#oauth_2_client_id: String,
     /// OAuth2 client secret to use for the authentication flow.
     /// The SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field.
     #[builder(into)]
-    #[serde(rename = "oauth2ClientSecret")]
     pub r#oauth_2_client_secret: String,
     /// Hex-encoded SHA-256 hash of the client secret.
     #[builder(into)]
-    #[serde(rename = "oauth2ClientSecretSha256")]
     pub r#oauth_2_client_secret_sha_256: Option<String>,
 }
 

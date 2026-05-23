@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,7 +10,6 @@ pub struct NetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4Config {
     /// known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp),
     /// or the IP protocol number.
     #[builder(into)]
-    #[serde(rename = "ipProtocol")]
     pub r#ip_protocol: Option<String>,
     /// (Output)
     /// An optional list of ports to which this rule applies. This field
@@ -20,7 +19,6 @@ pub struct NetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4Config {
     /// Example inputs include: ["22"], ["80","443"], and
     /// ["12345-12349"].
     #[builder(into)]
-    #[serde(rename = "ports")]
     pub r#ports: Option<Vec<String>>,
 }
 

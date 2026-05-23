@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct CrawlerCatalogTarget {
     /// The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a Catalog connection type paired with a `NETWORK` Connection type.
     #[builder(into)]
-    #[serde(rename = "connectionName")]
     pub r#connection_name: Option<String>,
     /// The name of the Glue database to be synchronized.
     #[builder(into)]
-    #[serde(rename = "databaseName")]
     pub r#database_name: String,
     /// A valid Amazon SQS ARN.
     /// 
@@ -17,15 +15,12 @@ pub struct CrawlerCatalogTarget {
     /// 
     /// > **Note:** `configuration` for catalog target crawlers will have `{ ... "Grouping": { "TableGroupingPolicy": "CombineCompatibleSchemas"} }` by default.
     #[builder(into)]
-    #[serde(rename = "dlqEventQueueArn")]
     pub r#dlq_event_queue_arn: Option<String>,
     /// A valid Amazon SQS ARN.
     #[builder(into)]
-    #[serde(rename = "eventQueueArn")]
     pub r#event_queue_arn: Option<String>,
     /// A list of catalog tables to be synchronized.
     #[builder(into)]
-    #[serde(rename = "tables")]
     pub r#tables: Vec<String>,
 }
 

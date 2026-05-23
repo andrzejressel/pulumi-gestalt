@@ -1,16 +1,14 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ClusterAddonsConfigCloudrunConfig {
     /// The status of the CloudRun addon. It is disabled by default. Set `disabled=false` to enable.
     #[builder(into)]
-    #[serde(rename = "disabled")]
     pub r#disabled: bool,
     /// The load balancer type of CloudRun ingress service. It is external load balancer by default.
     /// Set `load_balancer_type=LOAD_BALANCER_TYPE_INTERNAL` to configure it as internal load balancer.
     #[builder(into)]
-    #[serde(rename = "loadBalancerType")]
     pub r#load_balancer_type: Option<String>,
 }
 

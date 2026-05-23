@@ -1,30 +1,24 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetPoolNetworkConfiguration {
     #[builder(into)]
-    #[serde(rename = "acceleratedNetworkingEnabled")]
     pub r#accelerated_networking_enabled: bool,
     /// The scope of dynamic vnet assignment.
     #[builder(into)]
-    #[serde(rename = "dynamicVnetAssignmentScope")]
     pub r#dynamic_vnet_assignment_scope: String,
     /// The inbound NAT pools that are used to address specific ports on the individual compute node externally.
     #[builder(into)]
-    #[serde(rename = "endpointConfigurations")]
     pub r#endpoint_configurations: Vec<super::super::types::batch::GetPoolNetworkConfigurationEndpointConfiguration>,
     /// Type of public IP address provisioning.
     #[builder(into)]
-    #[serde(rename = "publicAddressProvisioningType")]
     pub r#public_address_provisioning_type: String,
     /// A list of public IP ids that will be allocated to nodes.
     #[builder(into)]
-    #[serde(rename = "publicIps")]
     pub r#public_ips: Vec<String>,
     /// The ARM resource identifier of the virtual network subnet which the compute nodes of the pool are joined too.
     #[builder(into)]
-    #[serde(rename = "subnetId")]
     pub r#subnet_id: String,
 }
 

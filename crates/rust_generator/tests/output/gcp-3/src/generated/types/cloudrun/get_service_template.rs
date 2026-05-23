@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -11,11 +11,9 @@ pub struct GetServiceTemplate {
     /// connections for the revision, use the "run.googleapis.com/cloudsql-instances"
     /// annotation key.
     #[builder(into)]
-    #[serde(rename = "metadatas")]
     pub r#metadatas: Vec<super::super::types::cloudrun::GetServiceTemplateMetadata>,
     /// RevisionSpec holds the desired state of the Revision (from the client).
     #[builder(into)]
-    #[serde(rename = "specs")]
     pub r#specs: Vec<super::super::types::cloudrun::GetServiceTemplateSpec>,
 }
 

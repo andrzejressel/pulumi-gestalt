@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,11 +7,9 @@ pub struct NetworkManagerScope {
     /// 
     /// > **NOTE:** When specifying a scope at the management group level, you need to register the `Microsoft.Network` at the management group scope before deploying a Network Manager, more information can be found in the [Azure document](https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-network-manager-scope#scope).
     #[builder(into)]
-    #[serde(rename = "managementGroupIds")]
     pub r#management_group_ids: Option<Vec<String>>,
     /// A list of subscription IDs.
     #[builder(into)]
-    #[serde(rename = "subscriptionIds")]
     pub r#subscription_ids: Option<Vec<String>>,
 }
 

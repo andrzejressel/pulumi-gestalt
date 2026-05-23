@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct DeploymentGroupAlarmConfiguration {
     /// A list of alarms configured for the deployment group.
     #[builder(into)]
-    #[serde(rename = "alarms")]
     pub r#alarms: Option<Vec<String>>,
     /// Indicates whether the alarm configuration is enabled. This option is useful when you want to temporarily deactivate alarm monitoring for a deployment group without having to add the same alarms again later.
     #[builder(into)]
-    #[serde(rename = "enabled")]
     pub r#enabled: Option<bool>,
     /// Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from CloudWatch. The default value is `false`.
     #[builder(into)]
-    #[serde(rename = "ignorePollAlarmFailure")]
     pub r#ignore_poll_alarm_failure: Option<bool>,
 }
 

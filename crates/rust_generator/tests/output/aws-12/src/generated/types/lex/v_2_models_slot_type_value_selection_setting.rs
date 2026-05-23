@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,17 +7,14 @@ pub struct V2ModelsSlotTypeValueSelectionSetting {
     /// You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.
     /// See `advanced_recognition_setting` argument reference below.
     #[builder(into)]
-    #[serde(rename = "advancedRecognitionSettings")]
     pub r#advanced_recognition_settings: Option<Vec<super::super::types::lex::V2ModelsSlotTypeValueSelectionSettingAdvancedRecognitionSetting>>,
     /// Used to validate the value of the slot.
     /// See `regex_filter` argument reference below.
     #[builder(into)]
-    #[serde(rename = "regexFilters")]
     pub r#regex_filters: Option<Vec<super::super::types::lex::V2ModelsSlotTypeValueSelectionSettingRegexFilter>>,
     /// Determines the slot resolution strategy that Amazon Lex uses to return slot type values.
     /// Valid values are `OriginalValue`, `TopResolution`, and `Concatenation`.
     #[builder(into)]
-    #[serde(rename = "resolutionStrategy")]
     pub r#resolution_strategy: String,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,12 +9,10 @@ pub struct UrlMapPathMatcherRouteRule {
     /// outeAction.weightedBackendService.backendServiceWeightAction[].headerAction
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "headerAction")]
     pub r#header_action: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleHeaderAction>>,
     /// The rules for determining a match.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "matchRules")]
     pub r#match_rules: Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleMatchRule>>,
     /// For routeRules within a given pathMatcher, priority determines the order
     /// in which load balancer will interpret routeRules. RouteRules are evaluated
@@ -30,7 +28,6 @@ pub struct UrlMapPathMatcherRouteRule {
     /// you could add rules numbered from 6 to 8, 10 to 11, and 13 to 15 in the
     /// future without any impact on existing rules.
     #[builder(into)]
-    #[serde(rename = "priority")]
     pub r#priority: i32,
     /// In response to a matching matchRule, the load balancer performs advanced routing
     /// actions like URL rewrites, header transformations, etc. prior to forwarding the
@@ -40,7 +37,6 @@ pub struct UrlMapPathMatcherRouteRule {
     /// or urlRedirect must be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "routeAction")]
     pub r#route_action: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteAction>>,
     /// The backend service resource to which traffic is
     /// directed if this rule is matched. If routeAction is additionally specified,
@@ -50,14 +46,12 @@ pub struct UrlMapPathMatcherRouteRule {
     /// weightedBackendServices, service must not be specified. Only one of urlRedirect,
     /// service or routeAction.weightedBackendService must be set.
     #[builder(into)]
-    #[serde(rename = "service")]
     pub r#service: Option<String>,
     /// When this rule is matched, the request is redirected to a URL specified by
     /// urlRedirect. If urlRedirect is specified, service or routeAction must not be
     /// set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "urlRedirect")]
     pub r#url_redirect: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleUrlRedirect>>,
 }
 

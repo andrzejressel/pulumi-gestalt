@@ -38,9 +38,7 @@ mod tests {
         let value3 = block_on(enum3.to_pulumi_value());
         assert!(matches!(value1.content, PulumiValueContent::String(ref s) if s == "VALUE1"));
         assert!(matches!(value2.content, PulumiValueContent::String(ref s) if s == "Value2"));
-        assert!(
-            matches!(value3.content, PulumiValueContent::String(ref s) if s == "Plants'R'Us")
-        );
+        assert!(matches!(value3.content, PulumiValueContent::String(ref s) if s == "Plants'R'Us"));
 
         let deserialized_enum1: MyEnum = MyEnum::from_pulumi_value(&value1).unwrap();
         let deserialized_enum2: MyEnum = MyEnum::from_pulumi_value(&value2).unwrap();

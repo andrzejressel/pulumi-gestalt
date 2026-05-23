@@ -1,27 +1,22 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct SpringCloudGatewayApiMetadata {
     /// Detailed description of the APIs available on the Gateway instance.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// Location of additional documentation for the APIs available on the Gateway instance.
     #[builder(into)]
-    #[serde(rename = "documentationUrl")]
     pub r#documentation_url: Option<String>,
     /// Base URL that API consumers will use to access APIs on the Gateway instance.
     #[builder(into)]
-    #[serde(rename = "serverUrl")]
     pub r#server_url: Option<String>,
     /// Specifies the title describing the context of the APIs available on the Gateway instance.
     #[builder(into)]
-    #[serde(rename = "title")]
     pub r#title: Option<String>,
     /// Specifies the version of APIs available on this Gateway instance.
     #[builder(into)]
-    #[serde(rename = "version")]
     pub r#version: Option<String>,
 }
 

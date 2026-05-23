@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,12 +8,10 @@ pub struct OsPolicyAssignmentOsPolicy {
     /// are applicable for a VM. Set this value to `true` if the policy needs to be
     /// reported as compliant even if the policy has nothing to validate or enforce.
     #[builder(into)]
-    #[serde(rename = "allowNoResourceGroupMatch")]
     pub r#allow_no_resource_group_match: Option<bool>,
     /// Policy description. Length of the description is
     /// limited to 1024 characters.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// The id of the OS policy with the following restrictions:
     /// 
@@ -23,12 +21,10 @@ pub struct OsPolicyAssignmentOsPolicy {
     /// *   Must end with a number or a letter.
     /// *   Must be unique within the assignment.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: String,
     /// Policy mode Possible values are: `MODE_UNSPECIFIED`,
     /// `VALIDATION`, `ENFORCEMENT`.
     #[builder(into)]
-    #[serde(rename = "mode")]
     pub r#mode: String,
     /// List of resource groups for the policy. For a
     /// particular VM, resource groups are evaluated in the order specified and the
@@ -38,7 +34,6 @@ pub struct OsPolicyAssignmentOsPolicy {
     /// toggled by the flag `allow_no_resource_group_match` Structure is
     /// documented below.
     #[builder(into)]
-    #[serde(rename = "resourceGroups")]
     pub r#resource_groups: Vec<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroup>,
 }
 

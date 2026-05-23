@@ -1,21 +1,18 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ConfigurationAggregatorOrganizationAggregationSource {
     /// If true, aggregate existing AWS Config regions and future regions.
     #[builder(into)]
-    #[serde(rename = "allRegions")]
     pub r#all_regions: Option<bool>,
     /// List of source regions being aggregated.
     #[builder(into)]
-    #[serde(rename = "regions")]
     pub r#regions: Option<Vec<String>>,
     /// ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
     /// 
     /// Either `regions` or `all_regions` (as true) must be specified.
     #[builder(into)]
-    #[serde(rename = "roleArn")]
     pub r#role_arn: String,
 }
 

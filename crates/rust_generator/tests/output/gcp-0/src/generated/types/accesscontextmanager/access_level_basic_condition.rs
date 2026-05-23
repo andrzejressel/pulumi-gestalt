@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,7 +8,6 @@ pub struct AccessLevelBasicCondition {
     /// allowed.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "devicePolicy")]
     pub r#device_policy: Option<Box<super::super::types::accesscontextmanager::AccessLevelBasicConditionDevicePolicy>>,
     /// A list of CIDR block IP subnetwork specification. May be IPv4
     /// or IPv6.
@@ -21,7 +20,6 @@ pub struct AccessLevelBasicCondition {
     /// listed subnets in order for this Condition to be true.
     /// If empty, all IP addresses are allowed.
     #[builder(into)]
-    #[serde(rename = "ipSubnetworks")]
     pub r#ip_subnetworks: Option<Vec<String>>,
     /// An allowed list of members (users, service accounts).
     /// Using groups is not supported yet.
@@ -31,19 +29,16 @@ pub struct AccessLevelBasicCondition {
     /// groups, etc.).
     /// Formats: `user:{emailid}`, `serviceAccount:{emailid}`
     #[builder(into)]
-    #[serde(rename = "members")]
     pub r#members: Option<Vec<String>>,
     /// Whether to negate the Condition. If true, the Condition becomes
     /// a NAND over its non-empty fields, each field must be false for
     /// the Condition overall to be satisfied. Defaults to false.
     #[builder(into)]
-    #[serde(rename = "negate")]
     pub r#negate: Option<bool>,
     /// The request must originate from one of the provided
     /// countries/regions.
     /// Format: A valid ISO 3166-1 alpha-2 code.
     #[builder(into)]
-    #[serde(rename = "regions")]
     pub r#regions: Option<Vec<String>>,
     /// A list of other access levels defined in the same Policy,
     /// referenced by resource name. Referencing an AccessLevel which
@@ -51,12 +46,10 @@ pub struct AccessLevelBasicCondition {
     /// granted for the Condition to be true.
     /// Format: accessPolicies/{policy_id}/accessLevels/{short_name}
     #[builder(into)]
-    #[serde(rename = "requiredAccessLevels")]
     pub r#required_access_levels: Option<Vec<String>>,
     /// The request must originate from one of the provided VPC networks in Google Cloud. Cannot specify this field together with `ip_subnetworks`.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "vpcNetworkSources")]
     pub r#vpc_network_sources: Option<Vec<super::super::types::accesscontextmanager::AccessLevelBasicConditionVpcNetworkSource>>,
 }
 

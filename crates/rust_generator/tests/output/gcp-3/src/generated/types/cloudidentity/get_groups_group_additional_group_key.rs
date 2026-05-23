@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,7 +8,6 @@ pub struct GetGroupsGroupAdditionalGroupKey {
     /// For external-identity-mapped entities, the id is a string conforming
     /// to the Identity Source's requirements.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: String,
     /// The namespace in which the entity exists.
     /// If not populated, the EntityKey represents a Google-managed entity
@@ -17,7 +16,6 @@ pub struct GetGroupsGroupAdditionalGroupKey {
     /// The namespace must correspond to an identity source created in Admin Console
     /// and must be in the form of `identitysources/{identity_source_id}`.
     #[builder(into)]
-    #[serde(rename = "namespace")]
     pub r#namespace: String,
 }
 

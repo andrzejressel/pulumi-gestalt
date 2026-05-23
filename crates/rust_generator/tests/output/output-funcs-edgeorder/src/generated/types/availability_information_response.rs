@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct AvailabilityInformationResponse {
     /// Current availability stage of the product. Availability stage
     #[builder(into)]
-    #[serde(rename = "availabilityStage")]
     pub r#availability_stage: String,
     /// Reason why the product is disabled.
     #[builder(into)]
-    #[serde(rename = "disabledReason")]
     pub r#disabled_reason: String,
     /// Message for why the product is disabled.
     #[builder(into)]
-    #[serde(rename = "disabledReasonMessage")]
     pub r#disabled_reason_message: String,
 }
 

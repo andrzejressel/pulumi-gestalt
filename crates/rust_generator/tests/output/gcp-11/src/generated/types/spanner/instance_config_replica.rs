@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -8,18 +8,15 @@ pub struct InstanceConfigReplica {
     /// 
     /// - - -
     #[builder(into)]
-    #[serde(rename = "defaultLeaderLocation")]
     pub r#default_leader_location: Option<bool>,
     /// The location of the serving resources, e.g. "us-central1".
     #[builder(into)]
-    #[serde(rename = "location")]
     pub r#location: Option<String>,
     /// Indicates the type of replica.  See the [replica types
     /// documentation](https://cloud.google.com/spanner/docs/replication#replica_types)
     /// for more details.
     /// Possible values are: `READ_WRITE`, `READ_ONLY`, `WITNESS`.
     #[builder(into)]
-    #[serde(rename = "type")]
     pub r#type_: Option<String>,
 }
 

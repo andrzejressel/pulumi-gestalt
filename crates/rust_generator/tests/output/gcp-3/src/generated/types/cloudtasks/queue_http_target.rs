@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -12,34 +12,29 @@ pub struct QueueHttpTarget {
     /// The size of the headers must be less than 80KB. Queue-level headers to override headers of all the tasks in the queue.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "headerOverrides")]
     pub r#header_overrides: Option<Vec<super::super::types::cloudtasks::QueueHttpTargetHeaderOverride>>,
     /// The HTTP method to use for the request.
     /// When specified, it overrides HttpRequest for the task.
     /// Note that if the value is set to GET the body of the task will be ignored at execution time.
     /// Possible values are: `HTTP_METHOD_UNSPECIFIED`, `POST`, `GET`, `HEAD`, `PUT`, `DELETE`, `PATCH`, `OPTIONS`.
     #[builder(into)]
-    #[serde(rename = "httpMethod")]
     pub r#http_method: Option<String>,
     /// If specified, an OAuth token is generated and attached as the Authorization header in the HTTP request.
     /// This type of authorization should generally be used only when calling Google APIs hosted on *.googleapis.com.
     /// Note that both the service account email and the scope MUST be specified when using the queue-level authorization override.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "oauthToken")]
     pub r#oauth_token: Option<Box<super::super::types::cloudtasks::QueueHttpTargetOauthToken>>,
     /// If specified, an OIDC token is generated and attached as an Authorization header in the HTTP request.
     /// This type of authorization can be used for many scenarios, including calling Cloud Run, or endpoints where you intend to validate the token yourself.
     /// Note that both the service account email and the audience MUST be specified when using the queue-level authorization override.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "oidcToken")]
     pub r#oidc_token: Option<Box<super::super::types::cloudtasks::QueueHttpTargetOidcToken>>,
     /// URI override.
     /// When specified, overrides the execution URI for all the tasks in the queue.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "uriOverride")]
     pub r#uri_override: Option<Box<super::super::types::cloudtasks::QueueHttpTargetUriOverride>>,
 }
 

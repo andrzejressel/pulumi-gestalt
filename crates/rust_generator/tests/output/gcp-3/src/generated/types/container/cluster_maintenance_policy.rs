@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,11 +9,9 @@ pub struct ClusterMaintenancePolicy {
     /// 
     /// Examples:
     #[builder(into)]
-    #[serde(rename = "dailyMaintenanceWindow")]
     pub r#daily_maintenance_window: Option<Box<super::super::types::container::ClusterMaintenancePolicyDailyMaintenanceWindow>>,
     /// Exceptions to maintenance window. Non-emergency maintenance should not occur in these windows. A cluster can have up to 20 maintenance exclusions at a time [Maintenance Window and Exclusions](https://cloud.google.com/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions)
     #[builder(into)]
-    #[serde(rename = "maintenanceExclusions")]
     pub r#maintenance_exclusions: Option<Vec<super::super::types::container::ClusterMaintenancePolicyMaintenanceExclusion>>,
     /// Time window for recurring maintenance operations.
     /// 
@@ -43,7 +41,6 @@ pub struct ClusterMaintenancePolicy {
     /// }
     /// ```
     #[builder(into)]
-    #[serde(rename = "recurringWindow")]
     pub r#recurring_window: Option<Box<super::super::types::container::ClusterMaintenancePolicyRecurringWindow>>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -10,18 +10,15 @@ pub struct ImageRawDisk {
     /// Default value is `TAR`.
     /// Possible values are: `TAR`.
     #[builder(into)]
-    #[serde(rename = "containerType")]
     pub r#container_type: Option<String>,
     /// An optional SHA1 checksum of the disk image before unpackaging.
     /// This is provided by the client when the disk image is created.
     #[builder(into)]
-    #[serde(rename = "sha1")]
     pub r#sha_1: Option<String>,
     /// The full Google Cloud Storage URL where disk storage is stored
     /// You must provide either this property or the sourceDisk property
     /// but not both.
     #[builder(into)]
-    #[serde(rename = "source")]
     pub r#source: String,
 }
 

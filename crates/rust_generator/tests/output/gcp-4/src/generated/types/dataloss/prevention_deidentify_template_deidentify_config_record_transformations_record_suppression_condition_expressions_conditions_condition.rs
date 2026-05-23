@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,17 +6,14 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsReco
     /// Field within the record this condition is evaluated against.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "field")]
     pub r#field: Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionField>,
     /// Operator used to compare the field or infoType to the value.
     /// Possible values are: `EQUAL_TO`, `NOT_EQUAL_TO`, `GREATER_THAN`, `LESS_THAN`, `GREATER_THAN_OR_EQUALS`, `LESS_THAN_OR_EQUALS`, `EXISTS`.
     #[builder(into)]
-    #[serde(rename = "operator")]
     pub r#operator: String,
     /// Value to compare against. [Mandatory, except for EXISTS tests.]
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "value")]
     pub r#value: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValue>>,
 }
 

@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct FleetUpdateRunStage {
     /// Specifies the time in seconds to wait at the end of this stage before starting the next one.
     #[builder(into)]
-    #[serde(rename = "afterStageWaitInSeconds")]
     pub r#after_stage_wait_in_seconds: Option<i32>,
     /// One or more `group` blocks as defined below.
     #[builder(into)]
-    #[serde(rename = "groups")]
     pub r#groups: Vec<super::super::types::containerservice::FleetUpdateRunStageGroup>,
     /// The name which should be used for this stage.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
 }
 

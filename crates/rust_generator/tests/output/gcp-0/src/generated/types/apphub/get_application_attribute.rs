@@ -1,27 +1,22 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetApplicationAttribute {
     /// Optional. Business team that ensures user needs are met and value is delivered
     #[builder(into)]
-    #[serde(rename = "businessOwners")]
     pub r#business_owners: Vec<super::super::types::apphub::GetApplicationAttributeBusinessOwner>,
     /// Criticality of the Application, Service, or Workload
     #[builder(into)]
-    #[serde(rename = "criticalities")]
     pub r#criticalities: Vec<super::super::types::apphub::GetApplicationAttributeCriticality>,
     /// Optional. Developer team that owns development and coding.
     #[builder(into)]
-    #[serde(rename = "developerOwners")]
     pub r#developer_owners: Vec<super::super::types::apphub::GetApplicationAttributeDeveloperOwner>,
     /// Environment of the Application, Service, or Workload
     #[builder(into)]
-    #[serde(rename = "environments")]
     pub r#environments: Vec<super::super::types::apphub::GetApplicationAttributeEnvironment>,
     /// Optional. Operator team that ensures runtime and operations.
     #[builder(into)]
-    #[serde(rename = "operatorOwners")]
     pub r#operator_owners: Vec<super::super::types::apphub::GetApplicationAttributeOperatorOwner>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -12,11 +12,9 @@ pub struct GetAutonomousDatabasePropertyConnectionStringProfile {
     /// TP
     /// TPURGENT
     #[builder(into)]
-    #[serde(rename = "consumerGroup")]
     pub r#consumer_group: String,
     /// The display name for the database connection.
     #[builder(into)]
-    #[serde(rename = "displayName")]
     pub r#display_name: String,
     /// The host name format being currently used in connection string. 
     ///  Possible values:
@@ -24,12 +22,10 @@ pub struct GetAutonomousDatabasePropertyConnectionStringProfile {
     /// FQDN
     /// IP
     #[builder(into)]
-    #[serde(rename = "hostFormat")]
     pub r#host_format: String,
     /// This field indicates if the connection string is regional and is only
     /// applicable for cross-region Data Guard.
     #[builder(into)]
-    #[serde(rename = "isRegional")]
     pub r#is_regional: bool,
     /// The protocol being used by the connection. 
     ///  Possible values:
@@ -37,7 +33,6 @@ pub struct GetAutonomousDatabasePropertyConnectionStringProfile {
     /// TCP
     /// TCPS
     #[builder(into)]
-    #[serde(rename = "protocol")]
     pub r#protocol: String,
     /// The current session mode of the connection. 
     ///  Possible values:
@@ -45,7 +40,6 @@ pub struct GetAutonomousDatabasePropertyConnectionStringProfile {
     /// DIRECT
     /// INDIRECT
     #[builder(into)]
-    #[serde(rename = "sessionMode")]
     pub r#session_mode: String,
     /// The syntax of the connection string. 
     ///  Possible values:
@@ -54,7 +48,6 @@ pub struct GetAutonomousDatabasePropertyConnectionStringProfile {
     /// EZCONNECT
     /// EZCONNECTPLUS
     #[builder(into)]
-    #[serde(rename = "syntaxFormat")]
     pub r#syntax_format: String,
     /// This field indicates the TLS authentication type of the connection. 
     ///  Possible values:
@@ -62,11 +55,9 @@ pub struct GetAutonomousDatabasePropertyConnectionStringProfile {
     /// SERVER
     /// MUTUAL
     #[builder(into)]
-    #[serde(rename = "tlsAuthentication")]
     pub r#tls_authentication: String,
     /// The value of the connection string.
     #[builder(into)]
-    #[serde(rename = "value")]
     pub r#value: String,
 }
 

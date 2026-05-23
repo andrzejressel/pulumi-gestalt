@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -15,7 +15,6 @@ pub struct GetClusterAutoscalingSetting {
     /// Currently the map must contain only one element
     /// that describes the autoscaling policy for compute nodes.
     #[builder(into)]
-    #[serde(rename = "autoscalingPolicies")]
     pub r#autoscaling_policies: Vec<super::super::types::vmwareengine::GetClusterAutoscalingSettingAutoscalingPolicy>,
     /// The minimum duration between consecutive autoscale operations.
     /// It starts once addition or removal of nodes is fully completed.
@@ -23,17 +22,14 @@ pub struct GetClusterAutoscalingSetting {
     /// Cool down period must be in whole minutes (for example, 30m, 31m, 50m).
     /// Mandatory for successful addition of autoscaling settings in cluster.
     #[builder(into)]
-    #[serde(rename = "coolDownPeriod")]
     pub r#cool_down_period: String,
     /// Maximum number of nodes of any type in a cluster.
     /// Mandatory for successful addition of autoscaling settings in cluster.
     #[builder(into)]
-    #[serde(rename = "maxClusterNodeCount")]
     pub r#max_cluster_node_count: i32,
     /// Minimum number of nodes of any type in a cluster.
     /// Mandatory for successful addition of autoscaling settings in cluster.
     #[builder(into)]
-    #[serde(rename = "minClusterNodeCount")]
     pub r#min_cluster_node_count: i32,
 }
 

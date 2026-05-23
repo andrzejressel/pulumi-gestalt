@@ -15,5 +15,4 @@ pulumi_gestalt_model.workspace = true
 rootcause.workspace = true
 
 [dev-dependencies]
-serde_json.workspace = true
 futures.workspace = true

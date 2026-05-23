@@ -1,27 +1,22 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct RegistryTaskSourceTriggerAuthentication {
     /// Time in seconds that the token remains valid.
     #[builder(into)]
-    #[serde(rename = "expireInSeconds")]
     pub r#expire_in_seconds: Option<i32>,
     /// The refresh token used to refresh the access token.
     #[builder(into)]
-    #[serde(rename = "refreshToken")]
     pub r#refresh_token: Option<String>,
     /// The scope of the access token.
     #[builder(into)]
-    #[serde(rename = "scope")]
     pub r#scope: Option<String>,
     /// The access token used to access the source control provider.
     #[builder(into)]
-    #[serde(rename = "token")]
     pub r#token: String,
     /// The type of the token. Possible values are `PAT` (personal access token) and `OAuth`.
     #[builder(into)]
-    #[serde(rename = "tokenType")]
     pub r#token_type: String,
 }
 

@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct IndexIndexStatistic {
     /// A block that specifies the number of question and answer topics in the index. Detailed below.
     #[builder(into)]
-    #[serde(rename = "faqStatistics")]
     pub r#faq_statistics: Option<Vec<super::super::types::kendra::IndexIndexStatisticFaqStatistic>>,
     /// A block that specifies the number of text documents indexed. Detailed below.
     #[builder(into)]
-    #[serde(rename = "textDocumentStatistics")]
     pub r#text_document_statistics: Option<Vec<super::super::types::kendra::IndexIndexStatisticTextDocumentStatistic>>,
 }
 

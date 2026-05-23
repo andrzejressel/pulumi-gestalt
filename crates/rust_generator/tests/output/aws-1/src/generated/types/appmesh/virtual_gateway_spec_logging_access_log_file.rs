@@ -1,15 +1,13 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct VirtualGatewaySpecLoggingAccessLogFile {
     /// The specified format for the logs.
     #[builder(into)]
-    #[serde(rename = "format")]
     pub r#format: Option<Box<super::super::types::appmesh::VirtualGatewaySpecLoggingAccessLogFileFormat>>,
     /// File path to write access logs to. You can use `/dev/stdout` to send access logs to standard out. Must be between 1 and 255 characters in length.
     #[builder(into)]
-    #[serde(rename = "path")]
     pub r#path: String,
 }
 

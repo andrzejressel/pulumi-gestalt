@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,16 +6,13 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceFile {
     /// A a file with this content. The size of the content
     /// is limited to 1024 characters.
     #[builder(into)]
-    #[serde(rename = "content")]
     pub r#content: Option<String>,
     /// A remote or local source. Structure is
     /// documented below.
     #[builder(into)]
-    #[serde(rename = "file")]
     pub r#file: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile>>,
     /// The absolute path of the file within the VM.
     #[builder(into)]
-    #[serde(rename = "path")]
     pub r#path: String,
     /// Consists of three octal digits which represent, in
     /// order, the permissions of the owner, group, and other users for the file
@@ -26,12 +23,10 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceFile {
     /// some examples of permissions and their associated values: read, write, and
     /// execute: 7 read and execute: 5 read and write: 6 read only: 4
     #[builder(into)]
-    #[serde(rename = "permissions")]
     pub r#permissions: Option<String>,
     /// Desired state of the file. Possible values are:
     /// `DESIRED_STATE_UNSPECIFIED`, `PRESENT`, `ABSENT`, `CONTENTS_MATCH`.
     #[builder(into)]
-    #[serde(rename = "state")]
     pub r#state: String,
 }
 

@@ -1,22 +1,18 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetFirewallFirewallStatus {
     /// Aggregated count of all resources used by reference sets in a firewall.
     #[builder(into)]
-    #[serde(rename = "capacityUsageSummaries")]
     pub r#capacity_usage_summaries: Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusCapacityUsageSummary>,
     /// Summary of sync states for all availability zones in which the firewall is configured.
     #[builder(into)]
-    #[serde(rename = "configurationSyncStateSummary")]
     pub r#configuration_sync_state_summary: String,
     #[builder(into)]
-    #[serde(rename = "status")]
     pub r#status: String,
     /// Set of subnets configured for use by the firewall.
     #[builder(into)]
-    #[serde(rename = "syncStates")]
     pub r#sync_states: Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusSyncState>,
 }
 

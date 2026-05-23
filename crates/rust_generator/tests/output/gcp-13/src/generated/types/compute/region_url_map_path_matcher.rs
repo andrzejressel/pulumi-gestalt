@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,22 +7,18 @@ pub struct RegionUrlMapPathMatcher {
     /// none of the pathRules defined by this PathMatcher is matched by
     /// the URL's path portion.
     #[builder(into)]
-    #[serde(rename = "defaultService")]
     pub r#default_service: Option<String>,
     /// When none of the specified hostRules match, the request is redirected to a URL specified
     /// by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
     /// defaultRouteAction must not be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "defaultUrlRedirect")]
     pub r#default_url_redirect: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherDefaultUrlRedirect>>,
     /// An optional description of this resource.
     #[builder(into)]
-    #[serde(rename = "description")]
     pub r#description: Option<String>,
     /// The name to which this PathMatcher is referred by the HostRule.
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// The list of path rules. Use this list instead of routeRules when routing based
     /// on simple path matching is all that's required. The order by which path rules
@@ -32,7 +28,6 @@ pub struct RegionUrlMapPathMatcher {
     /// given pathMatcher, only one of pathRules or routeRules must be set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "pathRules")]
     pub r#path_rules: Option<Vec<super::super::types::compute::RegionUrlMapPathMatcherPathRule>>,
     /// The list of ordered HTTP route rules. Use this list instead of pathRules when
     /// advanced route matching and routing actions are desired. The order of specifying
@@ -42,7 +37,6 @@ pub struct RegionUrlMapPathMatcher {
     /// External load balancers.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "routeRules")]
     pub r#route_rules: Option<Vec<super::super::types::compute::RegionUrlMapPathMatcherRouteRule>>,
 }
 

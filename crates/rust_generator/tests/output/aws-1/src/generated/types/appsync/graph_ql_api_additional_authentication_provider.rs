@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GraphQlApiAdditionalAuthenticationProvider {
     /// Authentication type. Valid values: `API_KEY`, `AWS_IAM`, `AMAZON_COGNITO_USER_POOLS`, `OPENID_CONNECT`, `AWS_LAMBDA`
     #[builder(into)]
-    #[serde(rename = "authenticationType")]
     pub r#authentication_type: String,
     /// Nested argument containing Lambda authorizer configuration. See `lambda_authorizer_config` Block for details.
     #[builder(into)]
-    #[serde(rename = "lambdaAuthorizerConfig")]
     pub r#lambda_authorizer_config: Option<Box<super::super::types::appsync::GraphQlApiAdditionalAuthenticationProviderLambdaAuthorizerConfig>>,
     /// Nested argument containing OpenID Connect configuration. See `openid_connect_config` Block for details.
     #[builder(into)]
-    #[serde(rename = "openidConnectConfig")]
     pub r#openid_connect_config: Option<Box<super::super::types::appsync::GraphQlApiAdditionalAuthenticationProviderOpenidConnectConfig>>,
     /// Amazon Cognito User Pool configuration. See `user_pool_config` Block for details.
     #[builder(into)]
-    #[serde(rename = "userPoolConfig")]
     pub r#user_pool_config: Option<Box<super::super::types::appsync::GraphQlApiAdditionalAuthenticationProviderUserPoolConfig>>,
 }
 

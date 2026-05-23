@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,11 +7,9 @@ pub struct AutoscalingPolicySecondaryWorkerConfig {
     /// secondary workers. Required for secondary workers if the minimum secondary instances is set.
     /// Bounds: [minInstances, ). Defaults to 0.
     #[builder(into)]
-    #[serde(rename = "maxInstances")]
     pub r#max_instances: Option<i32>,
     /// Minimum number of instances for this group. Bounds: [0, maxInstances]. Defaults to 0.
     #[builder(into)]
-    #[serde(rename = "minInstances")]
     pub r#min_instances: Option<i32>,
     /// Weight for the instance group, which is used to determine the fraction of total workers
     /// in the cluster from this instance group. For example, if primary workers have weight 2,
@@ -26,7 +24,6 @@ pub struct AutoscalingPolicySecondaryWorkerConfig {
     /// the cluster will default to zero weight on the unset group. For example if weight is set
     /// only on primary workers, the cluster will use primary workers only and no secondary workers.
     #[builder(into)]
-    #[serde(rename = "weight")]
     pub r#weight: Option<i32>,
 }
 

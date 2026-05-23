@@ -1,20 +1,17 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct DatabaseInstanceRestoreBackupContext {
     /// The ID of the backup run to restore from.
     #[builder(into)]
-    #[serde(rename = "backupRunId")]
     pub r#backup_run_id: i32,
     /// The ID of the instance that the backup was taken from. If left empty,
     /// this instance's ID will be used.
     #[builder(into)]
-    #[serde(rename = "instanceId")]
     pub r#instance_id: Option<String>,
     /// The full project ID of the source instance.`
     #[builder(into)]
-    #[serde(rename = "project")]
     pub r#project: Option<String>,
 }
 

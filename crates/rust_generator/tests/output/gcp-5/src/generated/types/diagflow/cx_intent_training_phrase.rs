@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -6,7 +6,6 @@ pub struct CxIntentTrainingPhrase {
     /// (Output)
     /// The unique identifier of the training phrase.
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: Option<String>,
     /// The ordered list of training phrase parts. The parts are concatenated in order to form the training phrase.
     /// Note: The API does not automatically annotate training phrases like the Dialogflow Console does.
@@ -17,11 +16,9 @@ pub struct CxIntentTrainingPhrase {
     /// Part.text is set to a part of the phrase that you want to annotate, and the parameterId field is set.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "parts")]
     pub r#parts: Vec<super::super::types::diagflow::CxIntentTrainingPhrasePart>,
     /// Indicates how many times this example was added to the intent.
     #[builder(into)]
-    #[serde(rename = "repeatCount")]
     pub r#repeat_count: Option<i32>,
 }
 

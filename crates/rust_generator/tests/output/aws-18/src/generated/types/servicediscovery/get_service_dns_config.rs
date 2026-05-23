@@ -1,19 +1,16 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetServiceDnsConfig {
     /// An array that contains one DnsRecord object for each resource record set. See `dns_records` Block for details.
     #[builder(into)]
-    #[serde(rename = "dnsRecords")]
     pub r#dns_records: Vec<super::super::types::servicediscovery::GetServiceDnsConfigDnsRecord>,
     /// ID of the namespace that the service belongs to.
     #[builder(into)]
-    #[serde(rename = "namespaceId")]
     pub r#namespace_id: String,
     /// Routing policy that you want to apply to all records that Route 53 creates when you register an instance and specify the service. Valid Values: MULTIVALUE, WEIGHTED
     #[builder(into)]
-    #[serde(rename = "routingPolicy")]
     pub r#routing_policy: String,
 }
 

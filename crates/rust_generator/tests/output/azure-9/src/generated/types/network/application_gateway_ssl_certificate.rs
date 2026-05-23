@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,11 +7,9 @@ pub struct ApplicationGatewaySslCertificate {
     /// 
     /// > **NOTE:** When specifying a file, use `data = filebase64("path/to/file")` to encode the contents of that file.
     #[builder(into)]
-    #[serde(rename = "data")]
     pub r#data: Option<String>,
     /// The ID of the Rewrite Rule Set
     #[builder(into)]
-    #[serde(rename = "id")]
     pub r#id: Option<String>,
     /// The Secret ID of the (base-64 encoded unencrypted pfx) `Secret` or `Certificate` object stored in Azure KeyVault. You need to enable soft delete for Key Vault to use this feature. Required if `data` is not set.
     /// 
@@ -21,19 +19,15 @@ pub struct ApplicationGatewaySslCertificate {
     /// 
     /// > **NOTE:** For TLS termination with Key Vault certificates to work properly, an existing user-assigned managed identity, which Application Gateway uses to retrieve certificates from Key Vault, should be defined via `identity` block. Additionally, access policies in the Key Vault to allow the identity to be granted *get* access to the secret should be defined.
     #[builder(into)]
-    #[serde(rename = "keyVaultSecretId")]
     pub r#key_vault_secret_id: Option<String>,
     /// The Name of the SSL certificate that is unique within this Application Gateway
     #[builder(into)]
-    #[serde(rename = "name")]
     pub r#name: String,
     /// Password for the pfx file specified in data. Required if `data` is set.
     #[builder(into)]
-    #[serde(rename = "password")]
     pub r#password: Option<String>,
     /// The Public Certificate Data associated with the SSL Certificate.
     #[builder(into)]
-    #[serde(rename = "publicCertData")]
     pub r#public_cert_data: Option<String>,
 }
 

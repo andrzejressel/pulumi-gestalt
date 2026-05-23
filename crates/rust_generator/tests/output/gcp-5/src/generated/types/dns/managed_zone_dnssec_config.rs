@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,22 +9,18 @@ pub struct ManagedZoneDnssecConfig {
     /// default_key_specs can only be updated when the state is `off`.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "defaultKeySpecs")]
     pub r#default_key_specs: Option<Vec<super::super::types::dns::ManagedZoneDnssecConfigDefaultKeySpec>>,
     /// Identifies what kind of resource this is
     #[builder(into)]
-    #[serde(rename = "kind")]
     pub r#kind: Option<String>,
     /// Specifies the mechanism used to provide authenticated denial-of-existence responses.
     /// non_existence can only be updated when the state is `off`.
     /// Possible values are: `nsec`, `nsec3`.
     #[builder(into)]
-    #[serde(rename = "nonExistence")]
     pub r#non_existence: Option<String>,
     /// Specifies whether DNSSEC is enabled, and what mode it is in
     /// Possible values are: `off`, `on`, `transfer`.
     #[builder(into)]
-    #[serde(rename = "state")]
     pub r#state: Option<String>,
 }
 

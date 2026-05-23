@@ -1,16 +1,14 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct ListingBigqueryDataset {
     /// Resource name of the dataset source for this listing. e.g. projects/myproject/datasets/123
     #[builder(into)]
-    #[serde(rename = "dataset")]
     pub r#dataset: String,
     /// Resource in this dataset that is selectively shared. This field is required for data clean room exchanges.
     /// Structure is documented below.
     #[builder(into)]
-    #[serde(rename = "selectedResources")]
     pub r#selected_resources: Option<Vec<super::super::types::bigqueryanalyticshub::ListingBigqueryDatasetSelectedResource>>,
 }
 

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,17 +7,14 @@ pub struct RuntimeAccessConfig {
     /// `https://cloud.google.com/vertex-ai/docs/workbench/reference/
     /// rest/v1/projects.locations.runtimes#RuntimeAccessType`.
     #[builder(into)]
-    #[serde(rename = "accessType")]
     pub r#access_type: Option<String>,
     /// (Output)
     /// The proxy endpoint that is used to access the runtime.
     #[builder(into)]
-    #[serde(rename = "proxyUri")]
     pub r#proxy_uri: Option<String>,
     /// The owner of this runtime after creation. Format: `alias@example.com`.
     /// Currently supports one owner only.
     #[builder(into)]
-    #[serde(rename = "runtimeOwner")]
     pub r#runtime_owner: Option<String>,
 }
 

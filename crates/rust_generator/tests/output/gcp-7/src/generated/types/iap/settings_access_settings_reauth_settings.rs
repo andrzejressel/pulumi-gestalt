@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,7 +7,6 @@ pub struct SettingsAccessSettingsReauthSettings {
     /// A duration in seconds with up to nine fractional digits, ending with 's'.
     /// Example: "3.5s".
     #[builder(into)]
-    #[serde(rename = "maxAge")]
     pub r#max_age: String,
     /// Reauth method requested. The possible values are:
     /// * `LOGIN`: Prompts the user to log in again.
@@ -15,7 +14,6 @@ pub struct SettingsAccessSettingsReauthSettings {
     /// * `ENROLLED_SECOND_FACTORS`: User can use any enabled 2nd factor.
     /// Possible values are: `LOGIN`, `SECURE_KEY`, `ENROLLED_SECOND_FACTORS`.
     #[builder(into)]
-    #[serde(rename = "method")]
     pub r#method: String,
     /// How IAP determines the effective policy in cases of hierarchical policies.
     /// Policies are merged from higher in the hierarchy to lower in the hierarchy.
@@ -25,7 +23,6 @@ pub struct SettingsAccessSettingsReauthSettings {
     /// * `DEFAULT`: This policy acts as a default if no other reauth policy is set.
     /// Possible values are: `MINIMUM`, `DEFAULT`.
     #[builder(into)]
-    #[serde(rename = "policyType")]
     pub r#policy_type: String,
 }
 

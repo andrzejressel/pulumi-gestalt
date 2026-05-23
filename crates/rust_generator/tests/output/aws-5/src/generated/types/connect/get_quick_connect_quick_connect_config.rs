@@ -1,23 +1,19 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetQuickConnectQuickConnectConfig {
     /// Phone configuration of the Quick Connect. This is returned only if `quick_connect_type` is `PHONE_NUMBER`. The `phone_config` block is documented below.
     #[builder(into)]
-    #[serde(rename = "phoneConfigs")]
     pub r#phone_configs: Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigPhoneConfig>,
     /// Queue configuration of the Quick Connect. This is returned only if `quick_connect_type` is `QUEUE`. The `queue_config` block is documented below.
     #[builder(into)]
-    #[serde(rename = "queueConfigs")]
     pub r#queue_configs: Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigQueueConfig>,
     /// Configuration type of the Quick Connect. Valid values are `PHONE_NUMBER`, `QUEUE`, `USER`.
     #[builder(into)]
-    #[serde(rename = "quickConnectType")]
     pub r#quick_connect_type: String,
     /// User configuration of the Quick Connect. This is returned only if `quick_connect_type` is `USER`. The `user_config` block is documented below.
     #[builder(into)]
-    #[serde(rename = "userConfigs")]
     pub r#user_configs: Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigUserConfig>,
 }
 

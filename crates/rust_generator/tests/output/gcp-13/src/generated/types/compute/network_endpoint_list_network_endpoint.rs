@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -7,19 +7,16 @@ pub struct NetworkEndpointListNetworkEndpoint {
     /// This is required for network endpoints of type GCE_VM_IP_PORT.
     /// The instance must be in the same zone as the network endpoint group.
     #[builder(into)]
-    #[serde(rename = "instance")]
     pub r#instance: Option<String>,
     /// IPv4 address of network endpoint. The IP address must belong
     /// to a VM in GCE (either the primary IP or as part of an aliased IP
     /// range).
     #[builder(into)]
-    #[serde(rename = "ipAddress")]
     pub r#ip_address: String,
     /// Port number of network endpoint.
     /// **Note** `port` is required unless the Network Endpoint Group is created
     /// with the type of `GCE_VM_IP`
     #[builder(into)]
-    #[serde(rename = "port")]
     pub r#port: Option<i32>,
 }
 
