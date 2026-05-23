@@ -1369,6 +1369,7 @@ type Expression struct {
 	//	*Expression_BinaryOpExpression
 	//	*Expression_UnaryOpExpression
 	//	*Expression_NewPackageTypeExpression
+	//	*Expression_CreateMapExpression
 	Value         isExpression_Value `protobuf_oneof:"value"`
 	Type          *ExpressionType    `protobuf:"bytes,13,opt,name=type,proto3,oneof" json:"type,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1529,6 +1530,15 @@ func (x *Expression) GetNewPackageTypeExpression() *CreatePackageTypeExpression 
 	return nil
 }
 
+func (x *Expression) GetCreateMapExpression() *CreateMapExpression {
+	if x != nil {
+		if x, ok := x.Value.(*Expression_CreateMapExpression); ok {
+			return x.CreateMapExpression
+		}
+	}
+	return nil
+}
+
 func (x *Expression) GetType() *ExpressionType {
 	if x != nil {
 		return x.Type
@@ -1592,6 +1602,10 @@ type Expression_NewPackageTypeExpression struct {
 	NewPackageTypeExpression *CreatePackageTypeExpression `protobuf:"bytes,14,opt,name=newPackageTypeExpression,proto3,oneof"`
 }
 
+type Expression_CreateMapExpression struct {
+	CreateMapExpression *CreateMapExpression `protobuf:"bytes,15,opt,name=createMapExpression,proto3,oneof"`
+}
+
 func (*Expression_LiteralValueExpression) isExpression_Value() {}
 
 func (*Expression_TemplateExpression) isExpression_Value() {}
@@ -1617,6 +1631,8 @@ func (*Expression_BinaryOpExpression) isExpression_Value() {}
 func (*Expression_UnaryOpExpression) isExpression_Value() {}
 
 func (*Expression_NewPackageTypeExpression) isExpression_Value() {}
+
+func (*Expression_CreateMapExpression) isExpression_Value() {}
 
 type LiteralValueExpression struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
@@ -1924,6 +1940,50 @@ func (x *CreatePackageTypeExpression) GetProperties() map[string]*Expression {
 	return nil
 }
 
+type CreateMapExpression struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Properties    map[string]*Expression `protobuf:"bytes,1,rep,name=properties,proto3" json:"properties,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateMapExpression) Reset() {
+	*x = CreateMapExpression{}
+	mi := &file_pcl_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateMapExpression) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateMapExpression) ProtoMessage() {}
+
+func (x *CreateMapExpression) ProtoReflect() protoreflect.Message {
+	mi := &file_pcl_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateMapExpression.ProtoReflect.Descriptor instead.
+func (*CreateMapExpression) Descriptor() ([]byte, []int) {
+	return file_pcl_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *CreateMapExpression) GetProperties() map[string]*Expression {
+	if x != nil {
+		return x.Properties
+	}
+	return nil
+}
+
 type TupleConsExpression struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*Expression          `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
@@ -1933,7 +1993,7 @@ type TupleConsExpression struct {
 
 func (x *TupleConsExpression) Reset() {
 	*x = TupleConsExpression{}
-	mi := &file_pcl_proto_msgTypes[21]
+	mi := &file_pcl_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1945,7 +2005,7 @@ func (x *TupleConsExpression) String() string {
 func (*TupleConsExpression) ProtoMessage() {}
 
 func (x *TupleConsExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[21]
+	mi := &file_pcl_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1958,7 +2018,7 @@ func (x *TupleConsExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TupleConsExpression.ProtoReflect.Descriptor instead.
 func (*TupleConsExpression) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{21}
+	return file_pcl_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *TupleConsExpression) GetItems() []*Expression {
@@ -1978,7 +2038,7 @@ type FunctionCallExpression struct {
 
 func (x *FunctionCallExpression) Reset() {
 	*x = FunctionCallExpression{}
-	mi := &file_pcl_proto_msgTypes[22]
+	mi := &file_pcl_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1990,7 +2050,7 @@ func (x *FunctionCallExpression) String() string {
 func (*FunctionCallExpression) ProtoMessage() {}
 
 func (x *FunctionCallExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[22]
+	mi := &file_pcl_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2003,7 +2063,7 @@ func (x *FunctionCallExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FunctionCallExpression.ProtoReflect.Descriptor instead.
 func (*FunctionCallExpression) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{22}
+	return file_pcl_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *FunctionCallExpression) GetName() string {
@@ -2030,7 +2090,7 @@ type FunctionCallArgument struct {
 
 func (x *FunctionCallArgument) Reset() {
 	*x = FunctionCallArgument{}
-	mi := &file_pcl_proto_msgTypes[23]
+	mi := &file_pcl_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2042,7 +2102,7 @@ func (x *FunctionCallArgument) String() string {
 func (*FunctionCallArgument) ProtoMessage() {}
 
 func (x *FunctionCallArgument) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[23]
+	mi := &file_pcl_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2055,7 +2115,7 @@ func (x *FunctionCallArgument) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FunctionCallArgument.ProtoReflect.Descriptor instead.
 func (*FunctionCallArgument) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{23}
+	return file_pcl_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *FunctionCallArgument) GetValue() *Expression {
@@ -2089,7 +2149,7 @@ type Type struct {
 
 func (x *Type) Reset() {
 	*x = Type{}
-	mi := &file_pcl_proto_msgTypes[24]
+	mi := &file_pcl_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2101,7 +2161,7 @@ func (x *Type) String() string {
 func (*Type) ProtoMessage() {}
 
 func (x *Type) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[24]
+	mi := &file_pcl_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2114,7 +2174,7 @@ func (x *Type) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Type.ProtoReflect.Descriptor instead.
 func (*Type) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{24}
+	return file_pcl_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *Type) GetValue() isType_Value {
@@ -2226,7 +2286,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_pcl_proto_msgTypes[25]
+	mi := &file_pcl_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2238,7 +2298,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[25]
+	mi := &file_pcl_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2251,7 +2311,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{25}
+	return file_pcl_proto_rawDescGZIP(), []int{26}
 }
 
 type RelativeTraversalExpression struct {
@@ -2264,7 +2324,7 @@ type RelativeTraversalExpression struct {
 
 func (x *RelativeTraversalExpression) Reset() {
 	*x = RelativeTraversalExpression{}
-	mi := &file_pcl_proto_msgTypes[26]
+	mi := &file_pcl_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2276,7 +2336,7 @@ func (x *RelativeTraversalExpression) String() string {
 func (*RelativeTraversalExpression) ProtoMessage() {}
 
 func (x *RelativeTraversalExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[26]
+	mi := &file_pcl_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2289,7 +2349,7 @@ func (x *RelativeTraversalExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RelativeTraversalExpression.ProtoReflect.Descriptor instead.
 func (*RelativeTraversalExpression) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{26}
+	return file_pcl_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *RelativeTraversalExpression) GetSource() *Expression {
@@ -2316,7 +2376,7 @@ type ScopeTraversalExpression struct {
 
 func (x *ScopeTraversalExpression) Reset() {
 	*x = ScopeTraversalExpression{}
-	mi := &file_pcl_proto_msgTypes[27]
+	mi := &file_pcl_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2328,7 +2388,7 @@ func (x *ScopeTraversalExpression) String() string {
 func (*ScopeTraversalExpression) ProtoMessage() {}
 
 func (x *ScopeTraversalExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[27]
+	mi := &file_pcl_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2341,7 +2401,7 @@ func (x *ScopeTraversalExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScopeTraversalExpression.ProtoReflect.Descriptor instead.
 func (*ScopeTraversalExpression) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{27}
+	return file_pcl_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *ScopeTraversalExpression) GetRootName() string {
@@ -2368,7 +2428,7 @@ type AnonymousFunctionExpression struct {
 
 func (x *AnonymousFunctionExpression) Reset() {
 	*x = AnonymousFunctionExpression{}
-	mi := &file_pcl_proto_msgTypes[28]
+	mi := &file_pcl_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2380,7 +2440,7 @@ func (x *AnonymousFunctionExpression) String() string {
 func (*AnonymousFunctionExpression) ProtoMessage() {}
 
 func (x *AnonymousFunctionExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[28]
+	mi := &file_pcl_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2393,7 +2453,7 @@ func (x *AnonymousFunctionExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnonymousFunctionExpression.ProtoReflect.Descriptor instead.
 func (*AnonymousFunctionExpression) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{28}
+	return file_pcl_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *AnonymousFunctionExpression) GetBody() *Expression {
@@ -2421,7 +2481,7 @@ type ConditionalExpression struct {
 
 func (x *ConditionalExpression) Reset() {
 	*x = ConditionalExpression{}
-	mi := &file_pcl_proto_msgTypes[29]
+	mi := &file_pcl_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2433,7 +2493,7 @@ func (x *ConditionalExpression) String() string {
 func (*ConditionalExpression) ProtoMessage() {}
 
 func (x *ConditionalExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[29]
+	mi := &file_pcl_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2446,7 +2506,7 @@ func (x *ConditionalExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConditionalExpression.ProtoReflect.Descriptor instead.
 func (*ConditionalExpression) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{29}
+	return file_pcl_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *ConditionalExpression) GetCondition() *Expression {
@@ -2481,7 +2541,7 @@ type BinaryOpExpression struct {
 
 func (x *BinaryOpExpression) Reset() {
 	*x = BinaryOpExpression{}
-	mi := &file_pcl_proto_msgTypes[30]
+	mi := &file_pcl_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2493,7 +2553,7 @@ func (x *BinaryOpExpression) String() string {
 func (*BinaryOpExpression) ProtoMessage() {}
 
 func (x *BinaryOpExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[30]
+	mi := &file_pcl_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2506,7 +2566,7 @@ func (x *BinaryOpExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BinaryOpExpression.ProtoReflect.Descriptor instead.
 func (*BinaryOpExpression) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{30}
+	return file_pcl_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *BinaryOpExpression) GetOperation() Operation {
@@ -2540,7 +2600,7 @@ type UnaryOpExpression struct {
 
 func (x *UnaryOpExpression) Reset() {
 	*x = UnaryOpExpression{}
-	mi := &file_pcl_proto_msgTypes[31]
+	mi := &file_pcl_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2552,7 +2612,7 @@ func (x *UnaryOpExpression) String() string {
 func (*UnaryOpExpression) ProtoMessage() {}
 
 func (x *UnaryOpExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[31]
+	mi := &file_pcl_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2565,7 +2625,7 @@ func (x *UnaryOpExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnaryOpExpression.ProtoReflect.Descriptor instead.
 func (*UnaryOpExpression) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{31}
+	return file_pcl_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *UnaryOpExpression) GetOperation() Operation {
@@ -2591,7 +2651,7 @@ type Traversal struct {
 
 func (x *Traversal) Reset() {
 	*x = Traversal{}
-	mi := &file_pcl_proto_msgTypes[32]
+	mi := &file_pcl_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2603,7 +2663,7 @@ func (x *Traversal) String() string {
 func (*Traversal) ProtoMessage() {}
 
 func (x *Traversal) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[32]
+	mi := &file_pcl_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2616,7 +2676,7 @@ func (x *Traversal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Traversal.ProtoReflect.Descriptor instead.
 func (*Traversal) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{32}
+	return file_pcl_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *Traversal) GetEach() []*Traverser {
@@ -2641,7 +2701,7 @@ type Traverser struct {
 
 func (x *Traverser) Reset() {
 	*x = Traverser{}
-	mi := &file_pcl_proto_msgTypes[33]
+	mi := &file_pcl_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2653,7 +2713,7 @@ func (x *Traverser) String() string {
 func (*Traverser) ProtoMessage() {}
 
 func (x *Traverser) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[33]
+	mi := &file_pcl_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2666,7 +2726,7 @@ func (x *Traverser) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Traverser.ProtoReflect.Descriptor instead.
 func (*Traverser) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{33}
+	return file_pcl_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *Traverser) GetValue() isTraverser_Value {
@@ -2749,7 +2809,7 @@ type TraverseAttr struct {
 
 func (x *TraverseAttr) Reset() {
 	*x = TraverseAttr{}
-	mi := &file_pcl_proto_msgTypes[34]
+	mi := &file_pcl_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2761,7 +2821,7 @@ func (x *TraverseAttr) String() string {
 func (*TraverseAttr) ProtoMessage() {}
 
 func (x *TraverseAttr) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[34]
+	mi := &file_pcl_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2774,7 +2834,7 @@ func (x *TraverseAttr) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TraverseAttr.ProtoReflect.Descriptor instead.
 func (*TraverseAttr) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{34}
+	return file_pcl_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *TraverseAttr) GetName() string {
@@ -2797,7 +2857,7 @@ type TraverseIndex struct {
 
 func (x *TraverseIndex) Reset() {
 	*x = TraverseIndex{}
-	mi := &file_pcl_proto_msgTypes[35]
+	mi := &file_pcl_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2809,7 +2869,7 @@ func (x *TraverseIndex) String() string {
 func (*TraverseIndex) ProtoMessage() {}
 
 func (x *TraverseIndex) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[35]
+	mi := &file_pcl_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2822,7 +2882,7 @@ func (x *TraverseIndex) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TraverseIndex.ProtoReflect.Descriptor instead.
 func (*TraverseIndex) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{35}
+	return file_pcl_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *TraverseIndex) GetValue() isTraverseIndex_Value {
@@ -2875,7 +2935,7 @@ type TraverseRoot struct {
 
 func (x *TraverseRoot) Reset() {
 	*x = TraverseRoot{}
-	mi := &file_pcl_proto_msgTypes[36]
+	mi := &file_pcl_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2887,7 +2947,7 @@ func (x *TraverseRoot) String() string {
 func (*TraverseRoot) ProtoMessage() {}
 
 func (x *TraverseRoot) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[36]
+	mi := &file_pcl_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2900,7 +2960,7 @@ func (x *TraverseRoot) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TraverseRoot.ProtoReflect.Descriptor instead.
 func (*TraverseRoot) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{36}
+	return file_pcl_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *TraverseRoot) GetName() string {
@@ -2919,7 +2979,7 @@ type TraverseSplat struct {
 
 func (x *TraverseSplat) Reset() {
 	*x = TraverseSplat{}
-	mi := &file_pcl_proto_msgTypes[37]
+	mi := &file_pcl_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2931,7 +2991,7 @@ func (x *TraverseSplat) String() string {
 func (*TraverseSplat) ProtoMessage() {}
 
 func (x *TraverseSplat) ProtoReflect() protoreflect.Message {
-	mi := &file_pcl_proto_msgTypes[37]
+	mi := &file_pcl_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2944,7 +3004,7 @@ func (x *TraverseSplat) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TraverseSplat.ProtoReflect.Descriptor instead.
 func (*TraverseSplat) Descriptor() ([]byte, []int) {
-	return file_pcl_proto_rawDescGZIP(), []int{37}
+	return file_pcl_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *TraverseSplat) GetEach() *Traversal {
@@ -3070,7 +3130,8 @@ const file_pcl_proto_rawDesc = "" +
 	"\vlogicalName\x18\x02 \x01(\tR\vlogicalName\x12+\n" +
 	"\x05value\x18\x03 \x01(\v2\x15.pulumipcl.ExpressionR\x05value\x12G\n" +
 	"\x0fexpression_type\x18\x04 \x01(\v2\x19.pulumipcl.ExpressionTypeH\x00R\x0eexpressionType\x88\x01\x01B\x12\n" +
-	"\x10_expression_type\"\xea\t\n" +
+	"\x10_expression_type\"\xbe\n" +
+	"\n" +
 	"\n" +
 	"Expression\x12[\n" +
 	"\x16literalValueExpression\x18\x01 \x01(\v2!.pulumipcl.LiteralValueExpressionH\x00R\x16literalValueExpression\x12O\n" +
@@ -3086,7 +3147,8 @@ const file_pcl_proto_rawDesc = "" +
 	" \x01(\v2 .pulumipcl.ConditionalExpressionH\x00R\x15conditionalExpression\x12O\n" +
 	"\x12binaryOpExpression\x18\v \x01(\v2\x1d.pulumipcl.BinaryOpExpressionH\x00R\x12binaryOpExpression\x12L\n" +
 	"\x11unaryOpExpression\x18\f \x01(\v2\x1c.pulumipcl.UnaryOpExpressionH\x00R\x11unaryOpExpression\x12d\n" +
-	"\x18newPackageTypeExpression\x18\x0e \x01(\v2&.pulumipcl.CreatePackageTypeExpressionH\x00R\x18newPackageTypeExpression\x122\n" +
+	"\x18newPackageTypeExpression\x18\x0e \x01(\v2&.pulumipcl.CreatePackageTypeExpressionH\x00R\x18newPackageTypeExpression\x12R\n" +
+	"\x13createMapExpression\x18\x0f \x01(\v2\x1e.pulumipcl.CreateMapExpressionH\x00R\x13createMapExpression\x122\n" +
 	"\x04type\x18\r \x01(\v2\x19.pulumipcl.ExpressionTypeH\x01R\x04type\x88\x01\x01B\a\n" +
 	"\x05valueB\a\n" +
 	"\x05_type\"\xaf\x01\n" +
@@ -3114,6 +3176,13 @@ const file_pcl_proto_rawDesc = "" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12V\n" +
 	"\n" +
 	"properties\x18\x02 \x03(\v26.pulumipcl.CreatePackageTypeExpression.PropertiesEntryR\n" +
+	"properties\x1aT\n" +
+	"\x0fPropertiesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12+\n" +
+	"\x05value\x18\x02 \x01(\v2\x15.pulumipcl.ExpressionR\x05value:\x028\x01\"\xbb\x01\n" +
+	"\x13CreateMapExpression\x12N\n" +
+	"\n" +
+	"properties\x18\x01 \x03(\v2..pulumipcl.CreateMapExpression.PropertiesEntryR\n" +
 	"properties\x1aT\n" +
 	"\x0fPropertiesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12+\n" +
@@ -3216,7 +3285,7 @@ func file_pcl_proto_rawDescGZIP() []byte {
 }
 
 var file_pcl_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_pcl_proto_msgTypes = make([]protoimpl.MessageInfo, 41)
+var file_pcl_proto_msgTypes = make([]protoimpl.MessageInfo, 43)
 var file_pcl_proto_goTypes = []any{
 	(Operation)(0),                      // 0: pulumipcl.Operation
 	(*PclProtobufProgram)(nil),          // 1: pulumipcl.PclProtobufProgram
@@ -3240,26 +3309,28 @@ var file_pcl_proto_goTypes = []any{
 	(*IndexExpression)(nil),             // 19: pulumipcl.IndexExpression
 	(*ObjectConsExpression)(nil),        // 20: pulumipcl.ObjectConsExpression
 	(*CreatePackageTypeExpression)(nil), // 21: pulumipcl.CreatePackageTypeExpression
-	(*TupleConsExpression)(nil),         // 22: pulumipcl.TupleConsExpression
-	(*FunctionCallExpression)(nil),      // 23: pulumipcl.FunctionCallExpression
-	(*FunctionCallArgument)(nil),        // 24: pulumipcl.FunctionCallArgument
-	(*Type)(nil),                        // 25: pulumipcl.Type
-	(*Empty)(nil),                       // 26: pulumipcl.Empty
-	(*RelativeTraversalExpression)(nil), // 27: pulumipcl.RelativeTraversalExpression
-	(*ScopeTraversalExpression)(nil),    // 28: pulumipcl.ScopeTraversalExpression
-	(*AnonymousFunctionExpression)(nil), // 29: pulumipcl.AnonymousFunctionExpression
-	(*ConditionalExpression)(nil),       // 30: pulumipcl.ConditionalExpression
-	(*BinaryOpExpression)(nil),          // 31: pulumipcl.BinaryOpExpression
-	(*UnaryOpExpression)(nil),           // 32: pulumipcl.UnaryOpExpression
-	(*Traversal)(nil),                   // 33: pulumipcl.Traversal
-	(*Traverser)(nil),                   // 34: pulumipcl.Traverser
-	(*TraverseAttr)(nil),                // 35: pulumipcl.TraverseAttr
-	(*TraverseIndex)(nil),               // 36: pulumipcl.TraverseIndex
-	(*TraverseRoot)(nil),                // 37: pulumipcl.TraverseRoot
-	(*TraverseSplat)(nil),               // 38: pulumipcl.TraverseSplat
-	nil,                                 // 39: pulumipcl.ObjectExpressionType.PropertiesEntry
-	nil,                                 // 40: pulumipcl.ObjectConsExpression.PropertiesEntry
-	nil,                                 // 41: pulumipcl.CreatePackageTypeExpression.PropertiesEntry
+	(*CreateMapExpression)(nil),         // 22: pulumipcl.CreateMapExpression
+	(*TupleConsExpression)(nil),         // 23: pulumipcl.TupleConsExpression
+	(*FunctionCallExpression)(nil),      // 24: pulumipcl.FunctionCallExpression
+	(*FunctionCallArgument)(nil),        // 25: pulumipcl.FunctionCallArgument
+	(*Type)(nil),                        // 26: pulumipcl.Type
+	(*Empty)(nil),                       // 27: pulumipcl.Empty
+	(*RelativeTraversalExpression)(nil), // 28: pulumipcl.RelativeTraversalExpression
+	(*ScopeTraversalExpression)(nil),    // 29: pulumipcl.ScopeTraversalExpression
+	(*AnonymousFunctionExpression)(nil), // 30: pulumipcl.AnonymousFunctionExpression
+	(*ConditionalExpression)(nil),       // 31: pulumipcl.ConditionalExpression
+	(*BinaryOpExpression)(nil),          // 32: pulumipcl.BinaryOpExpression
+	(*UnaryOpExpression)(nil),           // 33: pulumipcl.UnaryOpExpression
+	(*Traversal)(nil),                   // 34: pulumipcl.Traversal
+	(*Traverser)(nil),                   // 35: pulumipcl.Traverser
+	(*TraverseAttr)(nil),                // 36: pulumipcl.TraverseAttr
+	(*TraverseIndex)(nil),               // 37: pulumipcl.TraverseIndex
+	(*TraverseRoot)(nil),                // 38: pulumipcl.TraverseRoot
+	(*TraverseSplat)(nil),               // 39: pulumipcl.TraverseSplat
+	nil,                                 // 40: pulumipcl.ObjectExpressionType.PropertiesEntry
+	nil,                                 // 41: pulumipcl.ObjectConsExpression.PropertiesEntry
+	nil,                                 // 42: pulumipcl.CreatePackageTypeExpression.PropertiesEntry
+	nil,                                 // 43: pulumipcl.CreateMapExpression.PropertiesEntry
 }
 var file_pcl_proto_depIdxs = []int32{
 	3,  // 0: pulumipcl.PclProtobufProgram.nodes:type_name -> pulumipcl.Node
@@ -3283,27 +3354,27 @@ var file_pcl_proto_depIdxs = []int32{
 	16, // 18: pulumipcl.LocalVariable.value:type_name -> pulumipcl.Expression
 	10, // 19: pulumipcl.ConfigVariable.configType:type_name -> pulumipcl.ConfigType
 	16, // 20: pulumipcl.ConfigVariable.defaultValue:type_name -> pulumipcl.Expression
-	26, // 21: pulumipcl.ConfigType.stringType:type_name -> pulumipcl.Empty
-	26, // 22: pulumipcl.ConfigType.numberType:type_name -> pulumipcl.Empty
-	26, // 23: pulumipcl.ConfigType.intType:type_name -> pulumipcl.Empty
-	26, // 24: pulumipcl.ConfigType.boolType:type_name -> pulumipcl.Empty
+	27, // 21: pulumipcl.ConfigType.stringType:type_name -> pulumipcl.Empty
+	27, // 22: pulumipcl.ConfigType.numberType:type_name -> pulumipcl.Empty
+	27, // 23: pulumipcl.ConfigType.intType:type_name -> pulumipcl.Empty
+	27, // 24: pulumipcl.ConfigType.boolType:type_name -> pulumipcl.Empty
 	10, // 25: pulumipcl.ConfigType.listType:type_name -> pulumipcl.ConfigType
 	10, // 26: pulumipcl.ConfigType.mapType:type_name -> pulumipcl.ConfigType
 	10, // 27: pulumipcl.ConfigType.optionalType:type_name -> pulumipcl.ConfigType
 	14, // 28: pulumipcl.TupleExpressionType.element_types:type_name -> pulumipcl.ExpressionType
-	39, // 29: pulumipcl.ObjectExpressionType.properties:type_name -> pulumipcl.ObjectExpressionType.PropertiesEntry
+	40, // 29: pulumipcl.ObjectExpressionType.properties:type_name -> pulumipcl.ObjectExpressionType.PropertiesEntry
 	14, // 30: pulumipcl.UnionExpressionType.element_types:type_name -> pulumipcl.ExpressionType
-	26, // 31: pulumipcl.ExpressionType.stringType:type_name -> pulumipcl.Empty
-	26, // 32: pulumipcl.ExpressionType.numberType:type_name -> pulumipcl.Empty
-	26, // 33: pulumipcl.ExpressionType.intType:type_name -> pulumipcl.Empty
-	26, // 34: pulumipcl.ExpressionType.boolType:type_name -> pulumipcl.Empty
+	27, // 31: pulumipcl.ExpressionType.stringType:type_name -> pulumipcl.Empty
+	27, // 32: pulumipcl.ExpressionType.numberType:type_name -> pulumipcl.Empty
+	27, // 33: pulumipcl.ExpressionType.intType:type_name -> pulumipcl.Empty
+	27, // 34: pulumipcl.ExpressionType.boolType:type_name -> pulumipcl.Empty
 	14, // 35: pulumipcl.ExpressionType.listType:type_name -> pulumipcl.ExpressionType
 	14, // 36: pulumipcl.ExpressionType.mapType:type_name -> pulumipcl.ExpressionType
 	14, // 37: pulumipcl.ExpressionType.outputType:type_name -> pulumipcl.ExpressionType
 	11, // 38: pulumipcl.ExpressionType.tupleType:type_name -> pulumipcl.TupleExpressionType
-	26, // 39: pulumipcl.ExpressionType.dynamicType:type_name -> pulumipcl.Empty
+	27, // 39: pulumipcl.ExpressionType.dynamicType:type_name -> pulumipcl.Empty
 	12, // 40: pulumipcl.ExpressionType.objectType:type_name -> pulumipcl.ObjectExpressionType
-	26, // 41: pulumipcl.ExpressionType.noneType:type_name -> pulumipcl.Empty
+	27, // 41: pulumipcl.ExpressionType.noneType:type_name -> pulumipcl.Empty
 	13, // 42: pulumipcl.ExpressionType.unionType:type_name -> pulumipcl.UnionExpressionType
 	16, // 43: pulumipcl.OutputVariable.value:type_name -> pulumipcl.Expression
 	14, // 44: pulumipcl.OutputVariable.expression_type:type_name -> pulumipcl.ExpressionType
@@ -3311,57 +3382,60 @@ var file_pcl_proto_depIdxs = []int32{
 	18, // 46: pulumipcl.Expression.templateExpression:type_name -> pulumipcl.TemplateExpression
 	19, // 47: pulumipcl.Expression.indexExpression:type_name -> pulumipcl.IndexExpression
 	20, // 48: pulumipcl.Expression.objectConsExpression:type_name -> pulumipcl.ObjectConsExpression
-	22, // 49: pulumipcl.Expression.tupleConsExpression:type_name -> pulumipcl.TupleConsExpression
-	23, // 50: pulumipcl.Expression.functionCallExpression:type_name -> pulumipcl.FunctionCallExpression
-	27, // 51: pulumipcl.Expression.relativeTraversalExpression:type_name -> pulumipcl.RelativeTraversalExpression
-	28, // 52: pulumipcl.Expression.scopeTraversalExpression:type_name -> pulumipcl.ScopeTraversalExpression
-	29, // 53: pulumipcl.Expression.anonymousFunctionExpression:type_name -> pulumipcl.AnonymousFunctionExpression
-	30, // 54: pulumipcl.Expression.conditionalExpression:type_name -> pulumipcl.ConditionalExpression
-	31, // 55: pulumipcl.Expression.binaryOpExpression:type_name -> pulumipcl.BinaryOpExpression
-	32, // 56: pulumipcl.Expression.unaryOpExpression:type_name -> pulumipcl.UnaryOpExpression
+	23, // 49: pulumipcl.Expression.tupleConsExpression:type_name -> pulumipcl.TupleConsExpression
+	24, // 50: pulumipcl.Expression.functionCallExpression:type_name -> pulumipcl.FunctionCallExpression
+	28, // 51: pulumipcl.Expression.relativeTraversalExpression:type_name -> pulumipcl.RelativeTraversalExpression
+	29, // 52: pulumipcl.Expression.scopeTraversalExpression:type_name -> pulumipcl.ScopeTraversalExpression
+	30, // 53: pulumipcl.Expression.anonymousFunctionExpression:type_name -> pulumipcl.AnonymousFunctionExpression
+	31, // 54: pulumipcl.Expression.conditionalExpression:type_name -> pulumipcl.ConditionalExpression
+	32, // 55: pulumipcl.Expression.binaryOpExpression:type_name -> pulumipcl.BinaryOpExpression
+	33, // 56: pulumipcl.Expression.unaryOpExpression:type_name -> pulumipcl.UnaryOpExpression
 	21, // 57: pulumipcl.Expression.newPackageTypeExpression:type_name -> pulumipcl.CreatePackageTypeExpression
-	14, // 58: pulumipcl.Expression.type:type_name -> pulumipcl.ExpressionType
-	16, // 59: pulumipcl.TemplateExpression.parts:type_name -> pulumipcl.Expression
-	16, // 60: pulumipcl.IndexExpression.collection:type_name -> pulumipcl.Expression
-	16, // 61: pulumipcl.IndexExpression.key:type_name -> pulumipcl.Expression
-	40, // 62: pulumipcl.ObjectConsExpression.properties:type_name -> pulumipcl.ObjectConsExpression.PropertiesEntry
-	41, // 63: pulumipcl.CreatePackageTypeExpression.properties:type_name -> pulumipcl.CreatePackageTypeExpression.PropertiesEntry
-	16, // 64: pulumipcl.TupleConsExpression.items:type_name -> pulumipcl.Expression
-	24, // 65: pulumipcl.FunctionCallExpression.args:type_name -> pulumipcl.FunctionCallArgument
-	16, // 66: pulumipcl.FunctionCallArgument.value:type_name -> pulumipcl.Expression
-	25, // 67: pulumipcl.FunctionCallArgument.type:type_name -> pulumipcl.Type
-	26, // 68: pulumipcl.Type.boolType:type_name -> pulumipcl.Empty
-	26, // 69: pulumipcl.Type.intType:type_name -> pulumipcl.Empty
-	26, // 70: pulumipcl.Type.numberType:type_name -> pulumipcl.Empty
-	26, // 71: pulumipcl.Type.stringType:type_name -> pulumipcl.Empty
-	26, // 72: pulumipcl.Type.composite:type_name -> pulumipcl.Empty
-	25, // 73: pulumipcl.Type.outputType:type_name -> pulumipcl.Type
-	16, // 74: pulumipcl.RelativeTraversalExpression.source:type_name -> pulumipcl.Expression
-	33, // 75: pulumipcl.RelativeTraversalExpression.traversal:type_name -> pulumipcl.Traversal
-	33, // 76: pulumipcl.ScopeTraversalExpression.traversal:type_name -> pulumipcl.Traversal
-	16, // 77: pulumipcl.AnonymousFunctionExpression.body:type_name -> pulumipcl.Expression
-	16, // 78: pulumipcl.ConditionalExpression.condition:type_name -> pulumipcl.Expression
-	16, // 79: pulumipcl.ConditionalExpression.trueExpr:type_name -> pulumipcl.Expression
-	16, // 80: pulumipcl.ConditionalExpression.falseExpr:type_name -> pulumipcl.Expression
-	0,  // 81: pulumipcl.BinaryOpExpression.operation:type_name -> pulumipcl.Operation
-	16, // 82: pulumipcl.BinaryOpExpression.left:type_name -> pulumipcl.Expression
-	16, // 83: pulumipcl.BinaryOpExpression.right:type_name -> pulumipcl.Expression
-	0,  // 84: pulumipcl.UnaryOpExpression.operation:type_name -> pulumipcl.Operation
-	16, // 85: pulumipcl.UnaryOpExpression.operand:type_name -> pulumipcl.Expression
-	34, // 86: pulumipcl.Traversal.each:type_name -> pulumipcl.Traverser
-	35, // 87: pulumipcl.Traverser.traverseAttr:type_name -> pulumipcl.TraverseAttr
-	36, // 88: pulumipcl.Traverser.traverseIndex:type_name -> pulumipcl.TraverseIndex
-	37, // 89: pulumipcl.Traverser.traverseRoot:type_name -> pulumipcl.TraverseRoot
-	38, // 90: pulumipcl.Traverser.traverseSplat:type_name -> pulumipcl.TraverseSplat
-	33, // 91: pulumipcl.TraverseSplat.each:type_name -> pulumipcl.Traversal
-	14, // 92: pulumipcl.ObjectExpressionType.PropertiesEntry.value:type_name -> pulumipcl.ExpressionType
-	16, // 93: pulumipcl.ObjectConsExpression.PropertiesEntry.value:type_name -> pulumipcl.Expression
-	16, // 94: pulumipcl.CreatePackageTypeExpression.PropertiesEntry.value:type_name -> pulumipcl.Expression
-	95, // [95:95] is the sub-list for method output_type
-	95, // [95:95] is the sub-list for method input_type
-	95, // [95:95] is the sub-list for extension type_name
-	95, // [95:95] is the sub-list for extension extendee
-	0,  // [0:95] is the sub-list for field type_name
+	22, // 58: pulumipcl.Expression.createMapExpression:type_name -> pulumipcl.CreateMapExpression
+	14, // 59: pulumipcl.Expression.type:type_name -> pulumipcl.ExpressionType
+	16, // 60: pulumipcl.TemplateExpression.parts:type_name -> pulumipcl.Expression
+	16, // 61: pulumipcl.IndexExpression.collection:type_name -> pulumipcl.Expression
+	16, // 62: pulumipcl.IndexExpression.key:type_name -> pulumipcl.Expression
+	41, // 63: pulumipcl.ObjectConsExpression.properties:type_name -> pulumipcl.ObjectConsExpression.PropertiesEntry
+	42, // 64: pulumipcl.CreatePackageTypeExpression.properties:type_name -> pulumipcl.CreatePackageTypeExpression.PropertiesEntry
+	43, // 65: pulumipcl.CreateMapExpression.properties:type_name -> pulumipcl.CreateMapExpression.PropertiesEntry
+	16, // 66: pulumipcl.TupleConsExpression.items:type_name -> pulumipcl.Expression
+	25, // 67: pulumipcl.FunctionCallExpression.args:type_name -> pulumipcl.FunctionCallArgument
+	16, // 68: pulumipcl.FunctionCallArgument.value:type_name -> pulumipcl.Expression
+	26, // 69: pulumipcl.FunctionCallArgument.type:type_name -> pulumipcl.Type
+	27, // 70: pulumipcl.Type.boolType:type_name -> pulumipcl.Empty
+	27, // 71: pulumipcl.Type.intType:type_name -> pulumipcl.Empty
+	27, // 72: pulumipcl.Type.numberType:type_name -> pulumipcl.Empty
+	27, // 73: pulumipcl.Type.stringType:type_name -> pulumipcl.Empty
+	27, // 74: pulumipcl.Type.composite:type_name -> pulumipcl.Empty
+	26, // 75: pulumipcl.Type.outputType:type_name -> pulumipcl.Type
+	16, // 76: pulumipcl.RelativeTraversalExpression.source:type_name -> pulumipcl.Expression
+	34, // 77: pulumipcl.RelativeTraversalExpression.traversal:type_name -> pulumipcl.Traversal
+	34, // 78: pulumipcl.ScopeTraversalExpression.traversal:type_name -> pulumipcl.Traversal
+	16, // 79: pulumipcl.AnonymousFunctionExpression.body:type_name -> pulumipcl.Expression
+	16, // 80: pulumipcl.ConditionalExpression.condition:type_name -> pulumipcl.Expression
+	16, // 81: pulumipcl.ConditionalExpression.trueExpr:type_name -> pulumipcl.Expression
+	16, // 82: pulumipcl.ConditionalExpression.falseExpr:type_name -> pulumipcl.Expression
+	0,  // 83: pulumipcl.BinaryOpExpression.operation:type_name -> pulumipcl.Operation
+	16, // 84: pulumipcl.BinaryOpExpression.left:type_name -> pulumipcl.Expression
+	16, // 85: pulumipcl.BinaryOpExpression.right:type_name -> pulumipcl.Expression
+	0,  // 86: pulumipcl.UnaryOpExpression.operation:type_name -> pulumipcl.Operation
+	16, // 87: pulumipcl.UnaryOpExpression.operand:type_name -> pulumipcl.Expression
+	35, // 88: pulumipcl.Traversal.each:type_name -> pulumipcl.Traverser
+	36, // 89: pulumipcl.Traverser.traverseAttr:type_name -> pulumipcl.TraverseAttr
+	37, // 90: pulumipcl.Traverser.traverseIndex:type_name -> pulumipcl.TraverseIndex
+	38, // 91: pulumipcl.Traverser.traverseRoot:type_name -> pulumipcl.TraverseRoot
+	39, // 92: pulumipcl.Traverser.traverseSplat:type_name -> pulumipcl.TraverseSplat
+	34, // 93: pulumipcl.TraverseSplat.each:type_name -> pulumipcl.Traversal
+	14, // 94: pulumipcl.ObjectExpressionType.PropertiesEntry.value:type_name -> pulumipcl.ExpressionType
+	16, // 95: pulumipcl.ObjectConsExpression.PropertiesEntry.value:type_name -> pulumipcl.Expression
+	16, // 96: pulumipcl.CreatePackageTypeExpression.PropertiesEntry.value:type_name -> pulumipcl.Expression
+	16, // 97: pulumipcl.CreateMapExpression.PropertiesEntry.value:type_name -> pulumipcl.Expression
+	98, // [98:98] is the sub-list for method output_type
+	98, // [98:98] is the sub-list for method input_type
+	98, // [98:98] is the sub-list for extension type_name
+	98, // [98:98] is the sub-list for extension extendee
+	0,  // [0:98] is the sub-list for field type_name
 }
 
 func init() { file_pcl_proto_init() }
@@ -3416,6 +3490,7 @@ func file_pcl_proto_init() {
 		(*Expression_BinaryOpExpression)(nil),
 		(*Expression_UnaryOpExpression)(nil),
 		(*Expression_NewPackageTypeExpression)(nil),
+		(*Expression_CreateMapExpression)(nil),
 	}
 	file_pcl_proto_msgTypes[16].OneofWrappers = []any{
 		(*LiteralValueExpression_UnknownValue)(nil),
@@ -3423,7 +3498,7 @@ func file_pcl_proto_init() {
 		(*LiteralValueExpression_NumberValue)(nil),
 		(*LiteralValueExpression_BoolValue)(nil),
 	}
-	file_pcl_proto_msgTypes[24].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[25].OneofWrappers = []any{
 		(*Type_BoolType)(nil),
 		(*Type_IntType)(nil),
 		(*Type_NumberType)(nil),
@@ -3431,13 +3506,13 @@ func file_pcl_proto_init() {
 		(*Type_Composite)(nil),
 		(*Type_OutputType)(nil),
 	}
-	file_pcl_proto_msgTypes[33].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[34].OneofWrappers = []any{
 		(*Traverser_TraverseAttr)(nil),
 		(*Traverser_TraverseIndex)(nil),
 		(*Traverser_TraverseRoot)(nil),
 		(*Traverser_TraverseSplat)(nil),
 	}
-	file_pcl_proto_msgTypes[35].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[36].OneofWrappers = []any{
 		(*TraverseIndex_IntIndex)(nil),
 		(*TraverseIndex_StringIndex)(nil),
 	}
@@ -3447,7 +3522,7 @@ func file_pcl_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_pcl_proto_rawDesc), len(file_pcl_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   41,
+			NumMessages:   43,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

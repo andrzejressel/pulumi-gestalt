@@ -192,6 +192,20 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
                 other
             ),
         },
+        expression::Value::CreateMapExpression(map) => match &expr_type {
+            ExprType::Dynamic
+            | ExprType::Map(_)
+            | ExprType::Object(_)
+            | ExprType::None
+            | ExprType::Union(_) => {
+                let json = lower_map_to_json(map).context("Failed to lower CreateMapExpression")?;
+                Ok(make_expr(expr_type, ExprValue::PulumiAny(json)))
+            }
+            other => bail!(
+                "CreateMapExpression with unsupported expression type {:?}",
+                other
+            ),
+        },
         expression::Value::NewPackageTypeExpression(new_package_type) => match &expr_type {
             ExprType::Dynamic | ExprType::Object(_) | ExprType::None | ExprType::Union(_) => {
                 let new_struct = lower_new_package_type_to_struct_expr(new_package_type)
@@ -349,6 +363,20 @@ fn lower_new_package_type_to_struct_expr(
     })
 }
 
+fn lower_map_to_json(map: &pcl_model::CreateMapExpression) -> Result<JsonValue> {
+    let props = map
+        .properties
+        .iter()
+        .map(|(key, val)| {
+            let v = lower_expression_to_json(val)
+                .context("Failed to lower CreateMapExpression property")?;
+            Ok((key.clone(), v))
+        })
+        .collect::<Result<Vec<_>>>()
+        .context("Failed to lower CreateMapExpression properties")?;
+    Ok(JsonValue::Object(props))
+}
+
 fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
     match &expression.value {
         expression::Value::LiteralValueExpression(lit) => match &lit.value {
@@ -368,6 +396,17 @@ fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
                 ),
             }
         }
+        expression::Value::CreateMapExpression(map) => match require_expression_type(expression)? {
+            ExprType::Dynamic
+            | ExprType::Map(_)
+            | ExprType::Object(_)
+            | ExprType::None
+            | ExprType::Union(_) => lower_map_to_json(map),
+            other => bail!(
+                "CreateMapExpression with unsupported expression type {:?}",
+                other
+            ),
+        },
         expression::Value::NewPackageTypeExpression(new_package_type) => {
             let expr_type = require_expression_type(expression)?;
             let lowered = lower_new_package_type_to_struct_expr(new_package_type)
@@ -771,7 +810,9 @@ fn ensure_arity(name: &str, got: usize, expected: usize) -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::pcl_model::{ExpressionType, NewPackageTypeExpression, ObjectConsExpression};
+    use crate::pcl_model::{
+        CreateMapExpression, ExpressionType, NewPackageTypeExpression, ObjectConsExpression,
+    };
     use std::collections::BTreeMap;
 
     fn lit_string(value: &str) -> Expression {
@@ -856,6 +897,27 @@ mod tests {
                 other => panic!("expected NewStruct expression, got {:?}", other),
             },
             other => panic!("expected JsonValue::Expr, got {:?}", other),
+        }
+    }
+
+    #[test]
+    fn lower_create_map_to_pulumi_any() {
+        let mut props = BTreeMap::new();
+        props.insert("string".to_string(), lit_string("hello"));
+        let expression = Expression {
+            value: expression::Value::CreateMapExpression(CreateMapExpression {
+                properties: props,
+            }),
+            expression_type: Some(ExpressionType::Map(Box::new(ExpressionType::String))),
+        };
+
+        let lowered = lower_expression(&expression).expect("lower expression");
+        match lowered.value {
+            ExprValue::PulumiAny(JsonValue::Object(entries)) => {
+                assert_eq!(entries.len(), 1);
+                assert_eq!(entries[0].0, "string");
+            }
+            other => panic!("expected PulumiAny object, got {:?}", other),
         }
     }
 }

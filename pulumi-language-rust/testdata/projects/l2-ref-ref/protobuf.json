@@ -114,7 +114,7 @@
                           }
                         },
                         "stringMap": {
-                          "objectConsExpression": {
+                          "createMapExpression": {
                             "properties": {
                               "three": {
                                 "templateExpression": {
@@ -236,7 +236,7 @@
                     }
                   },
                   "stringMap": {
-                    "objectConsExpression": {
+                    "createMapExpression": {
                       "properties": {
                         "x": {
                           "templateExpression": {

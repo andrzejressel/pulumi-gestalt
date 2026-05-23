@@ -129,6 +129,7 @@ message Expression {
     BinaryOpExpression binaryOpExpression = 11;
     UnaryOpExpression unaryOpExpression = 12;
     CreatePackageTypeExpression newPackageTypeExpression = 14;
+    CreateMapExpression createMapExpression = 15;
   }
   optional ExpressionType type = 13;
 }
@@ -158,6 +159,10 @@ message ObjectConsExpression {
 message CreatePackageTypeExpression {
   string token = 1;
   map<string, Expression> properties = 2;
+}
+
+message CreateMapExpression {
+  map<string, Expression> properties = 1;
 }
 
 message TupleConsExpression {

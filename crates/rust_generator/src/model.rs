@@ -145,7 +145,7 @@ impl GlobalTypePropertyExt for GlobalTypeProperty {
 }
 
 pub struct PropertyName {
-    original: String
+    original: String,
 }
 
 impl PropertyName {
@@ -163,12 +163,11 @@ impl PropertyName {
         )
         .to_string()
     }
-    
+
     pub fn get_original_name(&self) -> String {
         self.original.clone()
     }
 }
-
 
 pub(crate) trait ElementIdExt {
     fn get_rust_struct_name(&self) -> String;

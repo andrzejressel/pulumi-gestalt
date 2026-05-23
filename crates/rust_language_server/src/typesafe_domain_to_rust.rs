@@ -9,6 +9,7 @@ use crate::typesafe_domain_ir::{
     BinOp, ConfigBinding, ConfigType, Expr, ExprType, ExprValue, JsonValue, Program, ResourceInput,
     ResourceToken, Statement, StdlibFn, UnaryOp,
 };
+use pulumi_gestalt_generator::PropertyName;
 use pulumi_gestalt_schema::model::ElementId;
 use quote::quote;
 use rootcause::Result;
@@ -16,7 +17,6 @@ use rootcause::compat::IntoRootcause;
 use rootcause::option_ext::OptionExt;
 use rootcause::prelude::ResultExt;
 use syn::LitStr;
-use pulumi_gestalt_generator::PropertyName;
 
 pub fn lower(program: &Program) -> Result<RustFile> {
     let statements = program
@@ -683,18 +683,16 @@ fn lower_new_struct_expr(token: &str, properties: &[(String, Expr)]) -> Result<R
         path: format!("{type_path}::builder"),
         args: vec![],
     };
-    let with_fields = properties
-        .iter()
-        .fold(builder, |acc, (name, expr)| {
-            let proparty_name = PropertyName::new(name.clone());
+    let with_fields = properties.iter().fold(builder, |acc, (name, expr)| {
+        let proparty_name = PropertyName::new(name.clone());
 
-            RustExpr::MethodCall {
-                receiver: Box::new(acc),
-                method: proparty_name.get_rust_field_name().clone(),
-                type_params: vec![],
-                args: vec![lower_expr(expr)],
-            }
-        });
+        RustExpr::MethodCall {
+            receiver: Box::new(acc),
+            method: proparty_name.get_rust_field_name().clone(),
+            type_params: vec![],
+            args: vec![lower_expr(expr)],
+        }
+    });
 
     Ok(RustExpr::MethodCall {
         receiver: Box::new(with_fields),

@@ -676,8 +676,8 @@ func transformResourceInputExpression(
 			)
 		}
 		return &astproto.Expression{
-			Value: &astproto.Expression_ObjectConsExpression{
-				ObjectConsExpression: &astproto.ObjectConsExpression{
+			Value: &astproto.Expression_CreateMapExpression{
+				CreateMapExpression: &astproto.CreateMapExpression{
 					Properties: properties,
 				},
 			},

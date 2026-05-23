@@ -195,7 +195,7 @@ pub struct Expression {
     pub r#type: ::core::option::Option<ExpressionType>,
     #[prost(
         oneof = "expression::Value",
-        tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14"
+        tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15"
     )]
     pub value: ::core::option::Option<expression::Value>,
 }
@@ -228,7 +228,9 @@ pub mod expression {
         #[prost(message, tag = "12")]
         UnaryOpExpression(::prost::alloc::boxed::Box<super::UnaryOpExpression>),
         #[prost(message, tag = "14")]
-        NewPackageTypeExpression(super::NewPackageTypeExpression),
+        NewPackageTypeExpression(super::CreatePackageTypeExpression),
+        #[prost(message, tag = "15")]
+        CreateMapExpression(super::CreateMapExpression),
     }
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -268,10 +270,15 @@ pub struct ObjectConsExpression {
     pub properties: ::std::collections::HashMap<::prost::alloc::string::String, Expression>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct NewPackageTypeExpression {
+pub struct CreatePackageTypeExpression {
     #[prost(string, tag = "1")]
     pub token: ::prost::alloc::string::String,
     #[prost(map = "string, message", tag = "2")]
+    pub properties: ::std::collections::HashMap<::prost::alloc::string::String, Expression>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreateMapExpression {
+    #[prost(map = "string, message", tag = "1")]
     pub properties: ::std::collections::HashMap<::prost::alloc::string::String, Expression>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]

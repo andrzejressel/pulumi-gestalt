@@ -90,11 +90,11 @@ func TestTransformResourceRecursesArrayAndMapValues(t *testing.T) {
 		t.Fatalf("expected array element to be wrapped with ElementType token")
 	}
 
-	tagsObject := root.Properties["tags"].GetObjectConsExpression()
-	if tagsObject == nil {
-		t.Fatalf("expected object for tags map literal")
+	tagsMap := root.Properties["tags"].GetCreateMapExpression()
+	if tagsMap == nil {
+		t.Fatalf("expected createMapExpression for tags map literal")
 	}
-	tagA := tagsObject.Properties["a"].GetNewPackageTypeExpression()
+	tagA := tagsMap.Properties["a"].GetNewPackageTypeExpression()
 	if tagA == nil || tagA.Token != "pkg:index:MapValueType" {
 		t.Fatalf("expected map value to be wrapped with MapValueType token")
 	}
