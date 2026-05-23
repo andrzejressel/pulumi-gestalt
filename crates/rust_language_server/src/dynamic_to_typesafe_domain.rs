@@ -4,17 +4,24 @@
 /// between dynamic and typesafe domains in the codegen pipeline.
 use crate::dynamic_domain_ir as dynamic;
 use crate::typesafe_domain_ir as typesafe;
+use rootcause::prelude::ResultExt;
+use rootcause::{Result, bail};
 
-pub fn lower(program: &dynamic::Program) -> rootcause::Result<typesafe::Program> {
+pub fn lower(program: &dynamic::Program) -> Result<typesafe::Program> {
     Ok(typesafe::Program {
-        statements: program.statements.iter().map(lower_statement).collect(),
+        statements: program
+            .statements
+            .iter()
+            .map(lower_statement)
+            .collect::<Result<Vec<_>>>()
+            .context("Failed to lower statements")?,
     })
 }
 
-fn lower_statement(statement: &dynamic::Statement) -> typesafe::Statement {
-    match statement {
+fn lower_statement(statement: &dynamic::Statement) -> Result<typesafe::Statement> {
+    Ok(match statement {
         dynamic::Statement::ConfigBinding(config) => {
-            typesafe::Statement::ConfigBinding(lower_config_binding(config))
+            typesafe::Statement::ConfigBinding(lower_config_binding(config)?)
         }
         dynamic::Statement::LocalBinding { name, value } => typesafe::Statement::LocalBinding {
             name: name.clone(),
@@ -38,7 +45,7 @@ fn lower_statement(statement: &dynamic::Statement) -> typesafe::Statement {
             token: lower_resource_token(token),
             inputs: inputs.iter().map(lower_resource_input).collect(),
         },
-    }
+    })
 }
 
 fn lower_resource_input(input: &dynamic::ResourceInput) -> typesafe::ResourceInput {
@@ -61,109 +68,210 @@ fn lower_resource_token(token: &dynamic::ResourceToken) -> typesafe::ResourceTok
     }
 }
 
-fn lower_config_binding(binding: &dynamic::ConfigBinding) -> typesafe::ConfigBinding {
-    typesafe::ConfigBinding {
+fn lower_config_binding(binding: &dynamic::ConfigBinding) -> Result<typesafe::ConfigBinding> {
+    Ok(typesafe::ConfigBinding {
         name: binding.name.clone(),
         config_type: lower_config_type(&binding.config_type),
         default: binding
             .default
             .as_ref()
-            .map(|expr| lower_config_default_expr(expr, &binding.config_type)),
+            .map(|expr| {
+                lower_config_default_expr(expr, &binding.config_type).context_with(|| {
+                    format!(
+                        "Failed to map config default expression for [{}]",
+                        binding.name
+                    )
+                })
+            })
+            .transpose()?,
         secret: binding.secret,
-    }
+    })
 }
 
 fn lower_config_default_expr(
     expr: &dynamic::Expr,
     config_type: &dynamic::ConfigType,
-) -> typesafe::Expr {
+) -> Result<typesafe::Expr> {
+    map_expr_for_config_type(config_type, expr, "default")
+}
+
+fn map_expr_for_config_type(
+    config_type: &dynamic::ConfigType,
+    expr: &dynamic::Expr,
+    path: &str,
+) -> Result<typesafe::Expr> {
     match config_type {
-        dynamic::ConfigType::Optional(inner) => lower_optional_config_default(expr, inner),
-        dynamic::ConfigType::List(inner) => lower_list_config_default(expr, inner),
-        dynamic::ConfigType::Map(inner) => lower_map_config_default(expr, inner),
-        _ => lower_expr(expr),
+        dynamic::ConfigType::String
+        | dynamic::ConfigType::Number
+        | dynamic::ConfigType::Int
+        | dynamic::ConfigType::Bool => map_scalar_expr(config_type, expr, path),
+        dynamic::ConfigType::Optional(inner) => lower_optional_config_default(expr, inner, path),
+        dynamic::ConfigType::List(inner) => lower_list_config_default(expr, inner, path),
+        dynamic::ConfigType::Map(inner) => lower_map_config_default(expr, inner, path),
     }
+}
+
+fn map_scalar_expr(
+    config_type: &dynamic::ConfigType,
+    expr: &dynamic::Expr,
+    path: &str,
+) -> Result<typesafe::Expr> {
+    let expected = lower_config_type_to_expr_type(config_type);
+    let converted = convert_expr_for_config_type(config_type, expr, path)?;
+    if converted.expr_type != expected {
+        bail!(
+            "Type mismatch at {path}: expected {:?}, got {:?}",
+            expected,
+            converted.expr_type
+        );
+    }
+    Ok(converted)
 }
 
 fn lower_optional_config_default(
     expr: &dynamic::Expr,
     inner_type: &dynamic::ConfigType,
-) -> typesafe::Expr {
+    path: &str,
+) -> Result<typesafe::Expr> {
     let lowered_inner_type = lower_config_type_to_expr_type(inner_type);
     let optional_type = typesafe::ExprType::Optional(Box::new(lowered_inner_type));
 
     if matches!(expr.value, dynamic::ExprValue::Null)
         || matches!(expr.expr_type, dynamic::ExprType::None)
     {
-        return typesafe::Expr {
+        return Ok(typesafe::Expr {
             expr_type: optional_type,
             value: typesafe::ExprValue::Null,
-        };
+        });
     }
 
-    let inner = lower_config_default_expr(expr, inner_type);
-    typesafe::Expr {
+    let inner = map_expr_for_config_type(inner_type, expr, path)?;
+    Ok(typesafe::Expr {
         expr_type: optional_type,
         value: typesafe::ExprValue::Some(Box::new(inner)),
-    }
+    })
 }
 
 fn lower_list_config_default(
     expr: &dynamic::Expr,
     inner_type: &dynamic::ConfigType,
-) -> typesafe::Expr {
+    path: &str,
+) -> Result<typesafe::Expr> {
     match (&expr.expr_type, &expr.value) {
         (dynamic::ExprType::Tuple(_), dynamic::ExprValue::List(items))
         | (dynamic::ExprType::List(_), dynamic::ExprValue::List(items)) => {
             let lowered_items = items
                 .iter()
-                .map(|item| lower_config_default_expr(item, inner_type))
-                .collect::<Vec<_>>();
+                .enumerate()
+                .map(|(idx, item)| {
+                    map_expr_for_config_type(inner_type, item, &format!("{path}[{idx}]"))
+                })
+                .collect::<Result<Vec<_>>>()?;
             let tuple_type = typesafe::ExprType::Tuple(
                 lowered_items
                     .iter()
                     .map(|item| item.expr_type.clone())
                     .collect::<Vec<_>>(),
             );
-            typesafe::Expr {
+            Ok(typesafe::Expr {
                 expr_type: tuple_type,
                 value: typesafe::ExprValue::List(lowered_items),
-            }
+            })
         }
-        _ => lower_expr(expr),
+        _ => bail!(
+            "Type mismatch at {path}: expected list/tuple expression, got {:?}",
+            expr.expr_type
+        ),
     }
 }
 
 fn lower_map_config_default(
     expr: &dynamic::Expr,
     inner_type: &dynamic::ConfigType,
-) -> typesafe::Expr {
+    path: &str,
+) -> Result<typesafe::Expr> {
     match &expr.value {
-        dynamic::ExprValue::PulumiAny(dynamic::JsonValue::Object(props)) => typesafe::Expr {
-            expr_type: typesafe::ExprType::Map(Box::new(lower_config_type_to_expr_type(
-                inner_type,
-            ))),
-            value: typesafe::ExprValue::PulumiAny(typesafe::JsonValue::Object(
-                props
-                    .iter()
-                    .map(|(k, v)| (k.clone(), lower_config_default_json(v, inner_type)))
-                    .collect(),
-            )),
-        },
-        _ => lower_expr(expr),
+        dynamic::ExprValue::PulumiAny(dynamic::JsonValue::Object(props))
+            if matches!(
+                expr.expr_type,
+                dynamic::ExprType::Map(_)
+                    | dynamic::ExprType::Dynamic
+                    | dynamic::ExprType::Object(_)
+            ) =>
+        {
+            Ok(typesafe::Expr {
+                expr_type: typesafe::ExprType::Map(Box::new(lower_config_type_to_expr_type(
+                    inner_type,
+                ))),
+                value: typesafe::ExprValue::PulumiAny(typesafe::JsonValue::Object(
+                    props
+                        .iter()
+                        .map(|(k, v)| {
+                            Ok((
+                                k.clone(),
+                                lower_config_default_json(
+                                    v,
+                                    inner_type,
+                                    &format!("{path}[\"{k}\"]"),
+                                )?,
+                            ))
+                        })
+                        .collect::<Result<Vec<_>>>()?,
+                )),
+            })
+        }
+        _ => bail!(
+            "Type mismatch at {path}: expected map/object expression, got {:?}",
+            expr.expr_type
+        ),
     }
 }
 
 fn lower_config_default_json(
     value: &dynamic::JsonValue,
     inner_type: &dynamic::ConfigType,
-) -> typesafe::JsonValue {
+    path: &str,
+) -> Result<typesafe::JsonValue> {
     match value {
-        dynamic::JsonValue::Expr(expr) => {
-            typesafe::JsonValue::Expr(Box::new(lower_config_default_expr(expr, inner_type)))
-        }
-        _ => lower_json_value(value),
+        dynamic::JsonValue::Expr(expr) => Ok(typesafe::JsonValue::Expr(Box::new(
+            map_expr_for_config_type(inner_type, expr, path)?,
+        ))),
+        dynamic::JsonValue::Array(items) => match inner_type {
+            dynamic::ConfigType::List(item_type) => Ok(typesafe::JsonValue::Array(
+                items
+                    .iter()
+                    .enumerate()
+                    .map(|(idx, item)| {
+                        lower_config_default_json(item, item_type, &format!("{path}[{idx}]"))
+                    })
+                    .collect::<Result<Vec<_>>>()?,
+            )),
+            _ => bail!(
+                "Type mismatch at {path}: expected {:?}, got json array",
+                lower_config_type_to_expr_type(inner_type)
+            ),
+        },
+        _ => Ok(lower_json_value(value)),
     }
+}
+
+fn convert_expr_for_config_type(
+    config_type: &dynamic::ConfigType,
+    expr: &dynamic::Expr,
+    path: &str,
+) -> Result<typesafe::Expr> {
+    // Conversion hook for future coercions (e.g. Number -> Int).
+    // Current behavior: strict identity conversion only.
+    let lowered = lower_expr(expr);
+    let expected = lower_config_type_to_expr_type(config_type);
+    if lowered.expr_type != expected {
+        bail!(
+            "No conversion available at {path}: expected {:?}, got {:?}",
+            expected,
+            lowered.expr_type
+        );
+    }
+    Ok(lowered)
 }
 
 fn lower_config_type(config_type: &dynamic::ConfigType) -> typesafe::ConfigType {
@@ -378,5 +486,261 @@ fn lower_unary_op(op: dynamic::UnaryOp) -> typesafe::UnaryOp {
     match op {
         dynamic::UnaryOp::Not => typesafe::UnaryOp::Not,
         dynamic::UnaryOp::Neg => typesafe::UnaryOp::Neg,
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn expr(expr_type: dynamic::ExprType, value: dynamic::ExprValue) -> dynamic::Expr {
+        dynamic::Expr { expr_type, value }
+    }
+
+    fn json_expr(expr: dynamic::Expr) -> dynamic::JsonValue {
+        dynamic::JsonValue::Expr(Box::new(expr))
+    }
+
+    #[test]
+    fn scalar_identity_mapping_succeeds() {
+        let mapped = map_expr_for_config_type(
+            &dynamic::ConfigType::String,
+            &expr(
+                dynamic::ExprType::String,
+                dynamic::ExprValue::String("abc".to_string()),
+            ),
+            "default",
+        )
+        .expect("string config should map from string expr");
+
+        assert_eq!(
+            mapped,
+            typesafe::Expr {
+                expr_type: typesafe::ExprType::String,
+                value: typesafe::ExprValue::String("abc".to_string()),
+            }
+        );
+    }
+
+    #[test]
+    fn optional_null_maps_to_none() {
+        let mapped = map_expr_for_config_type(
+            &dynamic::ConfigType::Optional(Box::new(dynamic::ConfigType::String)),
+            &expr(dynamic::ExprType::None, dynamic::ExprValue::Null),
+            "default",
+        )
+        .expect("optional null should map to none");
+
+        assert_eq!(
+            mapped,
+            typesafe::Expr {
+                expr_type: typesafe::ExprType::Optional(Box::new(typesafe::ExprType::String)),
+                value: typesafe::ExprValue::Null,
+            }
+        );
+    }
+
+    #[test]
+    fn optional_non_null_maps_to_some() {
+        let mapped = map_expr_for_config_type(
+            &dynamic::ConfigType::Optional(Box::new(dynamic::ConfigType::String)),
+            &expr(
+                dynamic::ExprType::String,
+                dynamic::ExprValue::String("abc".to_string()),
+            ),
+            "default",
+        )
+        .expect("optional non-null should map to some");
+
+        assert_eq!(
+            mapped,
+            typesafe::Expr {
+                expr_type: typesafe::ExprType::Optional(Box::new(typesafe::ExprType::String)),
+                value: typesafe::ExprValue::Some(Box::new(typesafe::Expr {
+                    expr_type: typesafe::ExprType::String,
+                    value: typesafe::ExprValue::String("abc".to_string()),
+                })),
+            }
+        );
+    }
+
+    #[test]
+    fn list_accepts_tuple_and_validates_items() {
+        let mapped = map_expr_for_config_type(
+            &dynamic::ConfigType::List(Box::new(dynamic::ConfigType::String)),
+            &expr(
+                dynamic::ExprType::Tuple(vec![dynamic::ExprType::String]),
+                dynamic::ExprValue::List(vec![expr(
+                    dynamic::ExprType::String,
+                    dynamic::ExprValue::String("x".to_string()),
+                )]),
+            ),
+            "default",
+        )
+        .expect("tuple literal should be accepted for list config");
+
+        assert_eq!(
+            mapped,
+            typesafe::Expr {
+                expr_type: typesafe::ExprType::Tuple(vec![typesafe::ExprType::String]),
+                value: typesafe::ExprValue::List(vec![typesafe::Expr {
+                    expr_type: typesafe::ExprType::String,
+                    value: typesafe::ExprValue::String("x".to_string()),
+                }]),
+            }
+        );
+    }
+
+    #[test]
+    fn map_accepts_dynamic_object_and_validates_values() {
+        let mapped = map_expr_for_config_type(
+            &dynamic::ConfigType::Map(Box::new(dynamic::ConfigType::Int)),
+            &expr(
+                dynamic::ExprType::Dynamic,
+                dynamic::ExprValue::PulumiAny(dynamic::JsonValue::Object(vec![(
+                    "a".to_string(),
+                    json_expr(expr(
+                        dynamic::ExprType::Int,
+                        dynamic::ExprValue::Number(1.0),
+                    )),
+                )])),
+            ),
+            "default",
+        )
+        .expect("dynamic object should map for map config");
+
+        assert_eq!(
+            mapped,
+            typesafe::Expr {
+                expr_type: typesafe::ExprType::Map(Box::new(typesafe::ExprType::Int)),
+                value: typesafe::ExprValue::PulumiAny(typesafe::JsonValue::Object(vec![(
+                    "a".to_string(),
+                    typesafe::JsonValue::Expr(Box::new(typesafe::Expr {
+                        expr_type: typesafe::ExprType::Int,
+                        value: typesafe::ExprValue::Number(1.0),
+                    })),
+                )])),
+            }
+        );
+    }
+
+    #[test]
+    fn deeply_nested_mapping_succeeds() {
+        let config = dynamic::ConfigType::Map(Box::new(dynamic::ConfigType::List(Box::new(
+            dynamic::ConfigType::Map(Box::new(dynamic::ConfigType::Optional(Box::new(
+                dynamic::ConfigType::String,
+            )))),
+        ))));
+
+        let nested = expr(
+            dynamic::ExprType::Dynamic,
+            dynamic::ExprValue::PulumiAny(dynamic::JsonValue::Object(vec![(
+                "k".to_string(),
+                dynamic::JsonValue::Array(vec![dynamic::JsonValue::Expr(Box::new(expr(
+                    dynamic::ExprType::Dynamic,
+                    dynamic::ExprValue::PulumiAny(dynamic::JsonValue::Object(vec![
+                        ("s".to_string(), dynamic::JsonValue::Null),
+                        (
+                            "t".to_string(),
+                            json_expr(expr(
+                                dynamic::ExprType::String,
+                                dynamic::ExprValue::String("v".to_string()),
+                            )),
+                        ),
+                    ])),
+                )))]),
+            )])),
+        );
+
+        let mapped = map_expr_for_config_type(&config, &nested, "default")
+            .expect("deeply nested map/list/optional should map");
+        assert_eq!(
+            mapped,
+            typesafe::Expr {
+                expr_type: typesafe::ExprType::Map(Box::new(typesafe::ExprType::List(Box::new(
+                    typesafe::ExprType::Map(Box::new(typesafe::ExprType::Optional(Box::new(
+                        typesafe::ExprType::String,
+                    )))),
+                )))),
+                value: typesafe::ExprValue::PulumiAny(typesafe::JsonValue::Object(vec![(
+                    "k".to_string(),
+                    typesafe::JsonValue::Array(vec![typesafe::JsonValue::Expr(Box::new(
+                        typesafe::Expr {
+                            expr_type: typesafe::ExprType::Map(Box::new(
+                                typesafe::ExprType::Optional(Box::new(typesafe::ExprType::String)),
+                            )),
+                            value: typesafe::ExprValue::PulumiAny(typesafe::JsonValue::Object(
+                                vec![
+                                    ("s".to_string(), typesafe::JsonValue::Null),
+                                    (
+                                        "t".to_string(),
+                                        typesafe::JsonValue::Expr(Box::new(typesafe::Expr {
+                                            expr_type: typesafe::ExprType::Optional(Box::new(
+                                                typesafe::ExprType::String,
+                                            )),
+                                            value: typesafe::ExprValue::Some(Box::new(
+                                                typesafe::Expr {
+                                                    expr_type: typesafe::ExprType::String,
+                                                    value: typesafe::ExprValue::String(
+                                                        "v".to_string(),
+                                                    ),
+                                                },
+                                            )),
+                                        })),
+                                    ),
+                                ],
+                            )),
+                        },
+                    ))]),
+                )])),
+            }
+        );
+    }
+
+    #[test]
+    fn mismatch_reports_deep_path() {
+        let config = dynamic::ConfigType::Map(Box::new(dynamic::ConfigType::List(Box::new(
+            dynamic::ConfigType::String,
+        ))));
+        let invalid = expr(
+            dynamic::ExprType::Dynamic,
+            dynamic::ExprValue::PulumiAny(dynamic::JsonValue::Object(vec![(
+                "a".to_string(),
+                dynamic::JsonValue::Array(vec![json_expr(expr(
+                    dynamic::ExprType::Bool,
+                    dynamic::ExprValue::Bool(true),
+                ))]),
+            )])),
+        );
+
+        let err = map_expr_for_config_type(&config, &invalid, "default")
+            .expect_err("bool inside list<string> should fail");
+        let msg = err.to_string();
+        assert!(msg.contains("default[\"a\"][0]"));
+    }
+
+    #[test]
+    fn list_rejects_non_list_shape() {
+        let err = map_expr_for_config_type(
+            &dynamic::ConfigType::List(Box::new(dynamic::ConfigType::String)),
+            &expr(
+                dynamic::ExprType::String,
+                dynamic::ExprValue::String("nope".to_string()),
+            ),
+            "default",
+        )
+        .expect_err("non-list should fail");
+        assert!(err.to_string().contains("expected list/tuple expression"));
+    }
+
+    #[test]
+    fn map_rejects_non_object_shape() {
+        let err = map_expr_for_config_type(
+            &dynamic::ConfigType::Map(Box::new(dynamic::ConfigType::String)),
+            &expr(dynamic::ExprType::Dynamic, dynamic::ExprValue::Null),
+            "default",
+        )
+        .expect_err("non-object map default should fail");
+        assert!(err.to_string().contains("expected map/object expression"));
     }
 }
