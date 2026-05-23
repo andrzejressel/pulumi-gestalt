@@ -4,7 +4,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let frontend = record_set::create(
@@ -57,7 +57,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let a = record_set::create(
@@ -84,7 +84,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let mx = record_set::create(
@@ -119,7 +119,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let prod = managed_zone::create(
@@ -152,7 +152,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let cname = record_set::create(
@@ -180,7 +180,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let geo = record_set::create(
@@ -211,7 +211,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let a = record_set::create(

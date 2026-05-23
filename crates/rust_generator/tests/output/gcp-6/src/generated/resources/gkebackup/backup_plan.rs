@@ -14,7 +14,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let basic = backup_plan::create(
@@ -64,7 +64,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let autopilot = backup_plan::create(
@@ -113,7 +113,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let cmek = backup_plan::create(
@@ -183,7 +183,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let full = backup_plan::create(
@@ -255,7 +255,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let permissive = backup_plan::create(
@@ -328,7 +328,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let primary = cluster::create(
@@ -409,7 +409,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let primary = cluster::create(
