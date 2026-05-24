@@ -1,6 +1,7 @@
 use anyhow::Result;
 fn main() {
-    pulumi_gestalt_rust::run(pulumi_main).unwrap();
+    pulumi_gestalt_rust::run_with_packages(vec![pulumi_simple::package()], pulumi_main)
+        .unwrap();
 }
 fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
     let aresource = pulumi_simple::resource::create(

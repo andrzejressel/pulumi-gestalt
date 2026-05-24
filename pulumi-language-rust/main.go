@@ -149,37 +149,162 @@ func (host *rustLanguageHost) GetPluginInfo(context.Context, *emptypb.Empty) (*p
 }
 
 func (host *rustLanguageHost) GetProgramDependencies(ctx context.Context, req *pulumirpc.GetProgramDependenciesRequest) (*pulumirpc.GetProgramDependenciesResponse, error) {
-
-	if req.Info != nil && strings.Contains(req.Info.ProgramDirectory, "l2-destroy") {
-		return &pulumirpc.GetProgramDependenciesResponse{
-			Dependencies: []*pulumirpc.DependencyInfo{
-				{
-					Name:    "simple",
-					Version: "2.0.0",
-				},
-			},
-		}, nil
-	} else {
-		return &pulumirpc.GetProgramDependenciesResponse{}, nil
-
+	packages, err := host.getRequiredPackagesMetadata(req.GetInfo())
+	if err != nil {
+		return nil, fmt.Errorf("failed to resolve program dependencies: %w", err)
 	}
 
+	dependencies := make([]*pulumirpc.DependencyInfo, 0, len(packages))
+	for _, pkg := range packages {
+		dependencies = append(dependencies, &pulumirpc.DependencyInfo{
+			Name:    pkg.Name,
+			Version: pkg.Version,
+		})
+	}
+
+	return &pulumirpc.GetProgramDependenciesResponse{
+		Dependencies: dependencies,
+	}, nil
 }
 
 func (host *rustLanguageHost) GetRequiredPackages(ctx context.Context, req *pulumirpc.GetRequiredPackagesRequest) (*pulumirpc.GetRequiredPackagesResponse, error) {
-	if req.Info != nil && strings.Contains(req.Info.ProgramDirectory, "l2-destroy") {
-		return &pulumirpc.GetRequiredPackagesResponse{
-			Packages: []*pulumirpc.PackageDependency{
-				{
-					Name:    "simple",
-					Version: "2.0.0",
-					Kind:    "resource",
-				},
-			},
-		}, nil
-	} else {
-		return &pulumirpc.GetRequiredPackagesResponse{}, nil
+	packages, err := host.getRequiredPackagesMetadata(req.GetInfo())
+	if err != nil {
+		return nil, fmt.Errorf("failed to resolve required packages: %w", err)
 	}
+
+	result := make([]*pulumirpc.PackageDependency, 0, len(packages))
+	for _, pkg := range packages {
+		var parameterization *pulumirpc.PackageParameterization
+		if pkg.Parameterization != nil {
+			parameterization = &pulumirpc.PackageParameterization{
+				Name:    pkg.Parameterization.Name,
+				Version: pkg.Parameterization.Version,
+				Value:   pkg.Parameterization.Value,
+			}
+		}
+
+		result = append(result, &pulumirpc.PackageDependency{
+			Name:             pkg.Name,
+			Kind:             pkg.Kind,
+			Version:          pkg.Version,
+			Server:           pkg.Server,
+			Checksums:        pkg.Checksums,
+			Parameterization: parameterization,
+		})
+	}
+
+	return &pulumirpc.GetRequiredPackagesResponse{
+		Packages: result,
+	}, nil
+}
+
+type generatedPackage struct {
+	Name             string                     `json:"name"`
+	Kind             string                     `json:"kind"`
+	Version          string                     `json:"version"`
+	Server           string                     `json:"server"`
+	Checksums        map[string][]byte          `json:"checksums"`
+	Parameterization *generatedParameterization `json:"parameterization"`
+}
+
+type generatedParameterization struct {
+	Name    string `json:"name"`
+	Version string `json:"version"`
+	Value   []byte `json:"value"`
+}
+
+func (host *rustLanguageHost) getRequiredPackagesMetadata(info *pulumirpc.ProgramInfo) ([]generatedPackage, error) {
+	if info == nil {
+		return nil, fmt.Errorf("missing program info in request")
+	}
+
+	options := map[string]interface{}{}
+	if info.Options != nil {
+		options = info.Options.AsMap()
+	}
+	opts, err := parseOptions(options)
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse program options: %w", err)
+	}
+
+	tmpFile, err := os.CreateTemp("", "pulumi-rust-packages-*.json")
+	if err != nil {
+		return nil, fmt.Errorf("failed to create temp file for package metadata: %w", err)
+	}
+	tmpPath := tmpFile.Name()
+	if err := tmpFile.Close(); err != nil {
+		return nil, fmt.Errorf("failed to close temp file for package metadata: %w", err)
+	}
+	defer os.Remove(tmpPath)
+
+	cmd, env, err := host.makePackageDiscoveryCommand(info, opts, tmpPath)
+	if err != nil {
+		return nil, err
+	}
+	cmd.Dir = info.ProgramDirectory
+	cmd.Env = env
+
+	var stdoutBuf bytes.Buffer
+	var stderrBuf bytes.Buffer
+	cmd.Stdout = &stdoutBuf
+	cmd.Stderr = &stderrBuf
+
+	if err := runCommand(cmd); err != nil {
+		os.Stdout.Write(stdoutBuf.Bytes())
+		os.Stderr.Write(stderrBuf.Bytes())
+		return nil, fmt.Errorf("failed to execute package metadata command: %w", err)
+	}
+
+	content, err := os.ReadFile(tmpPath)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read package metadata file: %w", err)
+	}
+
+	var packages []generatedPackage
+	if err := json.Unmarshal(content, &packages); err != nil {
+		return nil, fmt.Errorf("failed to parse package metadata JSON: %w", err)
+	}
+
+	for i := range packages {
+		if packages[i].Kind == "" {
+			packages[i].Kind = "resource"
+		}
+		if packages[i].Checksums == nil {
+			packages[i].Checksums = map[string][]byte{}
+		}
+	}
+
+	return packages, nil
+}
+
+func (host *rustLanguageHost) makePackageDiscoveryCommand(
+	info *pulumirpc.ProgramInfo,
+	opts rustOptions,
+	outputPath string,
+) (*exec.Cmd, []string, error) {
+	args := []string{"get-packages", outputPath}
+	if opts.binary != "" {
+		binaryPath := opts.binary
+		if !filepath.IsAbs(binaryPath) {
+			binaryPath = filepath.Join(info.ProgramDirectory, binaryPath)
+		}
+		return exec.Command(binaryPath, args...), os.Environ(), nil // nolint: gosec
+	}
+
+	env := os.Environ()
+	if host.testing {
+		home, err := os.UserHomeDir()
+		if err != nil {
+			return nil, nil, fmt.Errorf("could not get user home directory: %w", err)
+		}
+		directoryName := path.Base(info.RootDirectory) + "-" + path.Base(info.ProgramDirectory)
+		env = append(env, "CARGO_TARGET_DIR="+filepath.Join(home, "test_target", directoryName))
+	}
+
+	cargoArgs := []string{"run", "--"}
+	cargoArgs = append(cargoArgs, args...)
+	return exec.Command("cargo", cargoArgs...), env, nil // nolint: gosec
 }
 
 func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) (*pulumirpc.RunResponse, error) {

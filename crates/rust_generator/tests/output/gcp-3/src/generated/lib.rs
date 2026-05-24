@@ -1266,3 +1266,13 @@ static PULUMI_WASM_PROVIDER_GCP: [u8; 45] = *b"{\"version\":\"8.12.1\",\"pluginD
 pub(crate) fn get_version() -> String {
     "8.12.1".to_string()
 }
+pub fn package() -> pulumi_gestalt_rust::Package {
+    pulumi_gestalt_rust::Package {
+        name: "gcp".to_string(),
+        kind: "resource".to_string(),
+        version: "8.12.1".to_string(),
+        server: "".to_string(),
+        checksums: std::collections::HashMap::new(),
+        parameterization: None,
+    }
+}
