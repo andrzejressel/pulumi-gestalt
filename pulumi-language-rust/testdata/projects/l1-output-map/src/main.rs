@@ -7,19 +7,21 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
     ctx.add_export(
         "strings",
         &pulumi_gestalt_rust::pulumi_any!(
-            { "farewell" : ("Goodbye, world!"), "greeting" : ("Hello, world!") }
+            { "farewell" : (("Goodbye, world!").clone()), "greeting" : (("Hello, world!")
+            .clone()) }
         ),
     );
     ctx.add_export(
         "adversarialStrings",
         &pulumi_gestalt_rust::pulumi_any!(
-            { "" : ("empty key"),
+            { "" : (("empty key").clone()),
             "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u{1b} (escape), \u{7} (bell), \0 (null), \u{e0021} (tag space)"
             :
-            ("Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u{1b} (escape), \u{7} (bell), \0 (null), \u{e0021} (tag space)"),
-            "__internal" : ("dunder internal"), "__provider" : ("dunder provider"),
-            "__type" : ("dunder type"), "__version" : ("dunder version"), "dunder value"
-            : ("__dunder"), "empty value" : ("") }
+            (("Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u{1b} (escape), \u{7} (bell), \0 (null), \u{e0021} (tag space)")
+            .clone()), "__internal" : (("dunder internal").clone()), "__provider" :
+            (("dunder provider").clone()), "__type" : (("dunder type").clone()),
+            "__version" : (("dunder version").clone()), "dunder value" : (("__dunder")
+            .clone()), "empty value" : (("").clone()) }
         ),
     );
     ctx.add_export("numbers", &pulumi_gestalt_rust::pulumi_any!({ "1" : 1, "2" : 2 }));

@@ -1,0 +1,497 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aString",
+        "logicalName": "aString",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "aNumber",
+        "logicalName": "aNumber",
+        "configType": {
+          "numberType": {}
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "aList",
+        "logicalName": "aList",
+        "configType": {
+          "listType": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "aSecret",
+        "logicalName": "aSecret",
+        "configType": {
+          "stringType": {}
+        },
+        "secret": true
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "stringOutput",
+        "logicalName": "stringOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aString",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aString"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "numberOutput",
+        "logicalName": "numberOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aNumber",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aNumber"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "numberType": {}
+                  }
+                },
+                "type": {
+                  "numberType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "boolOutput",
+        "logicalName": "boolOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "literalValueExpression": {
+                    "boolValue": true
+                  },
+                  "type": {
+                    "boolType": {}
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "arrayOutput",
+        "logicalName": "arrayOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "tupleConsExpression": {
+                    "items": [
+                      {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "x"
+                              },
+                              "type": {
+                                "stringType": {}
+                              }
+                            }
+                          ]
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      },
+                      {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "y"
+                              },
+                              "type": {
+                                "stringType": {}
+                              }
+                            }
+                          ]
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      },
+                      {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "z"
+                              },
+                              "type": {
+                                "stringType": {}
+                              }
+                            }
+                          ]
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "tupleType": {
+                      "element_types": [
+                        {
+                          "stringType": {}
+                        },
+                        {
+                          "stringType": {}
+                        },
+                        {
+                          "stringType": {}
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "objectOutput",
+        "logicalName": "objectOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "count": {
+                        "literalValueExpression": {
+                          "numberValue": 1
+                        },
+                        "type": {
+                          "intType": {}
+                        }
+                      },
+                      "key": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "value"
+                              },
+                              "type": {
+                                "stringType": {}
+                              }
+                            }
+                          ]
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    }
+                  },
+                  "type": {
+                    "objectType": {
+                      "properties": {
+                        "count": {
+                          "intType": {}
+                        },
+                        "key": {
+                          "stringType": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "localVariable": {
+        "name": "nestedObject",
+        "logicalName": "nestedObject",
+        "value": {
+          "objectConsExpression": {
+            "properties": {
+              "a_secret": {
+                "scopeTraversalExpression": {
+                  "rootName": "aSecret",
+                  "traversal": {
+                    "each": [
+                      {
+                        "traverseRoot": {
+                          "name": "aSecret"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "stringType": {}
+                  }
+                }
+              },
+              "anObject": {
+                "objectConsExpression": {
+                  "properties": {
+                    "items": {
+                      "scopeTraversalExpression": {
+                        "rootName": "aList",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "aList"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "type": {
+                        "listType": {
+                          "stringType": {}
+                        }
+                      }
+                    },
+                    "name": {
+                      "scopeTraversalExpression": {
+                        "rootName": "aString",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "aString"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "objectType": {
+                    "properties": {
+                      "items": {
+                        "listType": {
+                          "stringType": {}
+                        }
+                      },
+                      "name": {
+                        "stringType": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "type": {
+            "objectType": {
+              "properties": {
+                "a_secret": {
+                  "outputType": {
+                    "stringType": {}
+                  }
+                },
+                "anObject": {
+                  "objectType": {
+                    "properties": {
+                      "items": {
+                        "listType": {
+                          "stringType": {}
+                        }
+                      },
+                      "name": {
+                        "stringType": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "nestedOutput",
+        "logicalName": "nestedOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "nestedObject",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "nestedObject"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "objectType": {
+                      "properties": {
+                        "a_secret": {
+                          "outputType": {
+                            "stringType": {}
+                          }
+                        },
+                        "anObject": {
+                          "objectType": {
+                            "properties": {
+                              "items": {
+                                "listType": {
+                                  "stringType": {}
+                                }
+                              },
+                              "name": {
+                                "stringType": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "outputType": {
+              "stringType": {}
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ]
+}

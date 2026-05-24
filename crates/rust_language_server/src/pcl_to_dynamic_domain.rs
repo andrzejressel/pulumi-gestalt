@@ -525,6 +525,16 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
                 },
             ))
         }
+        "toJSON" => {
+            ensure_arity(&call.name, arg_count, 1)?;
+            Ok(make_expr(
+                expr_type,
+                ExprValue::StdlibCall {
+                    func: StdlibFn::ToJson,
+                    args: args_lowered()?,
+                },
+            ))
+        }
         "sha1" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
@@ -928,5 +938,46 @@ mod tests {
             }
             other => panic!("expected typed map, got {:?}", other),
         }
+    }
+
+    #[test]
+    fn lower_to_json_function_call_succeeds() {
+        let expression = Expression {
+            value: expression::Value::FunctionCallExpression(FunctionCallExpression {
+                name: "toJSON".to_string(),
+                args: vec![crate::pcl_model::FunctionCallArgument {
+                    value: lit_string("hello"),
+                    r#type: crate::pcl_model::Type {
+                        value: crate::pcl_model::r#type::Value::StringType(
+                            crate::pcl_model::Empty {},
+                        ),
+                    },
+                }],
+            }),
+            expression_type: Some(ExpressionType::String),
+        };
+
+        let lowered = lower_expression(&expression).expect("lower toJSON call");
+        match lowered.value {
+            ExprValue::StdlibCall { func, args } => {
+                assert_eq!(func, StdlibFn::ToJson);
+                assert_eq!(args.len(), 1);
+            }
+            other => panic!("expected StdlibCall, got {:?}", other),
+        }
+    }
+
+    #[test]
+    fn lower_to_json_function_call_with_invalid_arity_fails() {
+        let expression = Expression {
+            value: expression::Value::FunctionCallExpression(FunctionCallExpression {
+                name: "toJSON".to_string(),
+                args: vec![],
+            }),
+            expression_type: Some(ExpressionType::String),
+        };
+
+        let err = lower_expression(&expression).expect_err("toJSON with invalid arity should fail");
+        assert!(err.to_string().contains("expected 1, got 0"));
     }
 }

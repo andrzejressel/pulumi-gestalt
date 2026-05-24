@@ -28,3 +28,4 @@ unicode-segmentation.workspace = true
 [dev-dependencies]
 pulumi_gestalt_build = { path = "../rust_build" }
 tempfile.workspace = true
+futures.workspace = true

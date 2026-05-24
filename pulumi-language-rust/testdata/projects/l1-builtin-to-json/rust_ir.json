@@ -1,0 +1,376 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "aString",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config",
+                "type_params": [],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aString"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aString] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "aNumber",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "f64"
+                ],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aNumber"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aNumber] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "aList",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "Vec<String>"
+                ],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aList"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aList] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "aSecret",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_secret",
+                "type_params": [],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aSecret"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aSecret] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "stringOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::to_json",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Identifier": "aString"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "numberOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::to_json",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Identifier": "aNumber"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "boolOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::to_json",
+                  "args": [
+                    {
+                      "Ref": {
+                        "BoolLiteral": true
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "arrayOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::to_json",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Vec": {
+                          "elements": [
+                            {
+                              "StringLiteral": "x"
+                            },
+                            {
+                              "StringLiteral": "y"
+                            },
+                            {
+                              "StringLiteral": "z"
+                            }
+                          ],
+                          "type_hint": null
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "objectOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::to_json",
+                  "args": [
+                    {
+                      "Ref": {
+                        "PulumiAny": {
+                          "Object": [
+                            [
+                              "count",
+                              {
+                                "Number": 1.0
+                              }
+                            ],
+                            [
+                              "key",
+                              {
+                                "Expr": {
+                                  "Clone": {
+                                    "StringLiteral": "value"
+                                  }
+                                }
+                              }
+                            ]
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "nestedObject",
+        "value": {
+          "PulumiAny": {
+            "Object": [
+              [
+                "a_secret",
+                {
+                  "Expr": {
+                    "Clone": {
+                      "Identifier": "aSecret"
+                    }
+                  }
+                }
+              ],
+              [
+                "anObject",
+                {
+                  "Object": [
+                    [
+                      "items",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "Identifier": "aList"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "name",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "Identifier": "aString"
+                          }
+                        }
+                      }
+                    ]
+                  ]
+                }
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "nestedOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::to_json",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Identifier": "nestedObject"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

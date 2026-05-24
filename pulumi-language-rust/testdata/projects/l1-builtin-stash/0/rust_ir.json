@@ -29,9 +29,36 @@
                       "type_params": [],
                       "args": [
                         {
-                          "MacroCall": {
-                            "path": "pulumi_gestalt_rust::pulumi_any!",
-                            "body": "{\"\": false, \"key\": [(\"value\"), (\"s\")]}"
+                          "PulumiAny": {
+                            "Object": [
+                              [
+                                "",
+                                {
+                                  "Bool": false
+                                }
+                              ],
+                              [
+                                "key",
+                                {
+                                  "Array": [
+                                    {
+                                      "Expr": {
+                                        "Clone": {
+                                          "StringLiteral": "value"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "Expr": {
+                                        "Clone": {
+                                          "StringLiteral": "s"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            ]
                           }
                         }
                       ]
