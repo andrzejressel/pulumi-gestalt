@@ -208,12 +208,12 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 	var cmd *exec.Cmd
 	if opts.binary != "" {
 		// Run the pre-built binary directly.
-		binaryPath := opts.binary
+		binaryPath := filepath.Clean(opts.binary)
 		if !filepath.IsAbs(binaryPath) {
 			binaryPath = filepath.Join(req.Info.ProgramDirectory, binaryPath)
 		}
 		logging.V(5).Infof("Run: using pre-built binary: %s", binaryPath)
-		cmd = exec.Command(binaryPath) // nolint: gosec
+		cmd = exec.Command(binaryPath)
 	} else {
 		// Run from source via cargo.
 		if host.testing {
@@ -223,7 +223,11 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 			}
 			env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=%s/test_target/%s", home, directoryName))
 		}
-		cmd = exec.Command("cargo", "run") // nolint: gosec
+		cargoPath, err := exec.LookPath("cargo")
+		if err != nil {
+			return nil, fmt.Errorf("could not find 'cargo' in PATH: %w", err)
+		}
+		cmd = exec.Command(cargoPath, "run")
 	}
 
 	cmd.Stdout = &stdoutBuf
@@ -341,7 +345,11 @@ func (host *rustLanguageHost) InstallDependencies(
 		env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=%s/test_target/%s", home, directoryName))
 	}
 
-	cmd := exec.Command("cargo", "build") // nolint: gosec
+	cargoPath, err := exec.LookPath("cargo")
+	if err != nil {
+		return fmt.Errorf("could not find 'cargo' in PATH: %w", err)
+	}
+	cmd := exec.Command(cargoPath, "build")
 	cmd.Dir = req.Info.ProgramDirectory
 	cmd.Stdout = stdout
 	cmd.Stderr = stderr
@@ -542,7 +550,7 @@ func generateProject(
 
 	for filePath, data := range filesWithPackages {
 		dir := filepath.Dir(filePath)
-		err := os.MkdirAll(dir, os.ModePerm)
+		err := os.MkdirAll(dir, 0755)
 		if err != nil {
 			return fmt.Errorf("could not create output directory %s: %w", dir, err)
 		}

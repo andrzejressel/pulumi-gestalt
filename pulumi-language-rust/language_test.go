@@ -90,7 +90,7 @@ func TestLanguage(t *testing.T) {
 				t.Skipf("Skipping known failure: %s", expected)
 			}
 
-			err := os.MkdirAll(filepath.Join(rootDir, "testdata", tt), os.ModePerm)
+			err := os.MkdirAll(filepath.Join(rootDir, "testdata", tt), 0755)
 			require.NoError(t, err)
 
 			result, err := engine.RunLanguageTest(context.Background(), &testingrpc.RunLanguageTestRequest{
@@ -298,12 +298,14 @@ func runTestingHost(t *testing.T) (string, testingrpc.LanguageTestClient) {
 	// We can't just go run the pulumi-test-language package because of
 	// https://github.com/golang/go/issues/39172, so we build it to a temp file then run that.
 	binary := t.TempDir() + "/pulumi-test-language"
-	cmd := exec.Command("go", "build", "-o", binary, "github.com/pulumi/pulumi/pkg/v3/testing/pulumi-test-language") //nolint:gosec,lll
+	goPath, err := exec.LookPath("go")
+	require.NoError(t, err)
+	cmd := exec.Command(goPath, "build", "-o", binary, "github.com/pulumi/pulumi/pkg/v3/testing/pulumi-test-language")
 	output, err := cmd.CombinedOutput()
 	t.Logf("build output: %s", output)
 	require.NoError(t, err)
 
-	cmd = exec.Command(binary)
+	cmd = exec.Command(filepath.Clean(binary))
 	stdout, err := cmd.StdoutPipe()
 	require.NoError(t, err)
 	stderr, err := cmd.StderrPipe()
