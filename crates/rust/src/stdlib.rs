@@ -1,7 +1,7 @@
 use anyhow::{Context as AnyhowContext, Result, anyhow, bail};
 use base64::Engine;
 use base64::engine::general_purpose::STANDARD;
-use pulumi_gestalt_model::{PulumiValue, PulumiValueContent, ToPulumiValue};
+use pulumi_gestalt_model::{Output, PulumiValue, PulumiValueContent, ToPulumiValue};
 use sha1::{Digest, Sha1};
 use std::borrow::Borrow;
 use std::collections::BTreeMap;
@@ -70,8 +70,49 @@ pub fn from_base64(input: impl AsRef<str>) -> Result<String> {
     )
 }
 
-pub fn to_json<T: ToPulumiValue>(_value: &T) -> String {
-    panic!("stdlib::to_json is not implemented yet");
+fn pulumi_content_to_json_value(content: PulumiValueContent) -> Option<serde_json::Value> {
+    match content {
+        PulumiValueContent::String(value) => Some(serde_json::Value::String(value)),
+        PulumiValueContent::Integer(value) => Some(serde_json::Value::from(value)),
+        PulumiValueContent::Number(value) => Some(serde_json::Value::from(value)),
+        PulumiValueContent::Boolean(value) => Some(serde_json::Value::from(value)),
+        PulumiValueContent::Array(values) => values
+            .into_iter()
+            .map(|value| pulumi_content_to_json_value(value.content))
+            .collect::<Option<Vec<_>>>()
+            .map(serde_json::Value::Array),
+        PulumiValueContent::Object(fields) => fields
+            .into_iter()
+            .map(|(key, value)| pulumi_content_to_json_value(value.content).map(|v| (key, v)))
+            .collect::<Option<serde_json::Map<_, _>>>()
+            .map(serde_json::Value::Object),
+        PulumiValueContent::None => Some(serde_json::Value::Null),
+        PulumiValueContent::Nothing => None,
+    }
+}
+
+pub fn to_json<T>(value: &T) -> Output<String>
+where
+    T: ToPulumiValue + Clone + Send + Sync + 'static,
+{
+    let value = value.clone();
+    Output::from_resolved_future(async move {
+        let pulumi_value = value.to_pulumi_value().await;
+        let secret = pulumi_value.secret;
+        let dependencies = pulumi_value.dependencies.clone();
+        match pulumi_content_to_json_value(pulumi_value.content) {
+            None => pulumi_gestalt_model::ResolvedOutput {
+                value: None,
+                secret,
+                dependencies,
+            },
+            Some(json) => pulumi_gestalt_model::ResolvedOutput {
+                value: Some(json.to_string()),
+                secret,
+                dependencies,
+            },
+        }
+    })
 }
 
 pub fn sha1(input: impl AsRef<str>) -> String {
@@ -178,9 +219,11 @@ where
 mod tests {
     use super::{
         Entry, cwd, element, entries, filebase64, filebase64sha256, from_base64, join, length,
-        length_string, lookup, read_file, sha1, single_or_none, split, to_base64,
+        length_string, lookup, read_file, sha1, single_or_none, split, to_base64, to_json,
     };
-    use pulumi_gestalt_model::{PulumiValueContent, ToPulumiValue};
+    use crate::pulumi_any;
+    use futures::executor::block_on;
+    use pulumi_gestalt_model::{Output, PulumiValueContent, ToPulumiValue};
     use std::collections::BTreeMap;
 
     #[test]
@@ -232,11 +275,120 @@ mod tests {
         assert!(from_base64("%%%").is_err());
     }
 
-    // #[test]
-    // #[should_panic(expected = "stdlib::to_json is not implemented yet")]
-    // fn to_json_panics_as_not_implemented_placeholder() {
-    //     let _ = to_json("hello");
-    // }
+    #[test]
+    fn to_json_serializes_scalars() {
+        let string_resolved = block_on(to_json(&"hello").resolve());
+        let number_resolved = block_on(to_json(&42.5f64).resolve());
+        let bool_resolved = block_on(to_json(&true).resolve());
+
+        assert_eq!(string_resolved.value, Some("\"hello\"".to_string()));
+        assert_eq!(number_resolved.value, Some("42.5".to_string()));
+        assert_eq!(bool_resolved.value, Some("true".to_string()));
+    }
+
+    #[test]
+    fn to_json_serializes_arrays_and_objects() {
+        let value = pulumi_any!({
+            "items": ["x", "y", "z"],
+            "metadata": {"count": 3}
+        });
+        let resolved = block_on(to_json(&value).resolve());
+
+        let parsed: serde_json::Value =
+            serde_json::from_str(resolved.value.as_ref().unwrap()).unwrap();
+        assert_eq!(
+            parsed,
+            serde_json::json!({
+                "items": ["x", "y", "z"],
+                "metadata": {"count": 3}
+            })
+        );
+    }
+
+    #[test]
+    fn to_json_serializes_none_as_null() {
+        let none_value: Option<String> = None;
+        let resolved = block_on(to_json(&none_value).resolve());
+        assert_eq!(resolved.value, Some("null".to_string()));
+    }
+
+    #[test]
+    fn to_json_returns_unknown_for_root_nothing() {
+        let value: Output<String> = Output::new_nothing();
+        let resolved = block_on(to_json(&value).resolve());
+        assert_eq!(resolved.value, None);
+    }
+
+    #[test]
+    fn to_json_returns_unknown_for_nested_nothing() {
+        let value = pulumi_any!({
+            "known": "value",
+            "unknown": Output::<String>::new_nothing(),
+        });
+        let resolved = block_on(to_json(&value).resolve());
+        assert_eq!(resolved.value, None);
+    }
+
+    #[test]
+    fn to_json_returns_unknown_for_deeply_nested_nothing() {
+        let value = pulumi_any!({
+            "l1": {
+                "l2": [
+                    {"l3": "still-known"},
+                    {"l3": Output::<String>::new_nothing()},
+                ]
+            }
+        });
+        let resolved = block_on(to_json(&value).resolve());
+        assert_eq!(resolved.value, None);
+    }
+
+    #[test]
+    fn to_json_preserves_secret_on_root_secret() {
+        let value = Output::new_secret("top-secret".to_string());
+        let resolved = block_on(to_json(&value).resolve());
+        assert_eq!(resolved.value, Some("\"top-secret\"".to_string()));
+        assert!(resolved.secret);
+    }
+
+    #[test]
+    fn to_json_preserves_secret_for_nested_secret() {
+        let value = pulumi_any!({
+            "public": "ok",
+            "secret": Output::new_secret("hidden".to_string()),
+        });
+        let resolved = block_on(to_json(&value).resolve());
+        assert!(resolved.secret);
+    }
+
+    #[test]
+    fn to_json_preserves_secret_for_deeply_nested_secret() {
+        let value = pulumi_any!({
+            "l1": {
+                "l2": [
+                    {"l3": "visible"},
+                    {"l3": Output::new_secret("hidden".to_string())},
+                ]
+            }
+        });
+        let resolved = block_on(to_json(&value).resolve());
+        assert!(resolved.secret);
+    }
+
+    #[test]
+    fn to_json_unknown_and_secret_nested_results_in_unknown_secret_output() {
+        let value = pulumi_any!({
+            "l1": {
+                "unknown": Output::<String>::new_nothing(),
+                "l2": {
+                    "secret": Output::new_secret("hidden".to_string()),
+                }
+            }
+        });
+        let resolved = block_on(to_json(&value).resolve());
+        assert_eq!(resolved.value, None);
+        assert!(resolved.secret);
+    }
 
     #[test]
     fn to_base64_accepts_multiple_input_types() {
@@ -448,8 +600,7 @@ mod tests {
         let mut map = BTreeMap::new();
         map.insert("a".to_string(), 1i32);
         let values = entries(&map);
-        let output =
-            pulumi_gestalt_model::__private::futures::executor::block_on(values.to_pulumi_value());
+        let output = block_on(values.to_pulumi_value());
 
         assert!(matches!(output.content, PulumiValueContent::Array(_)));
     }

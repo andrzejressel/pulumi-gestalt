@@ -2837,6 +2837,7 @@ dependencies = [
  "anyhow",
  "base64",
  "bon",
+ "futures",
  "hex",
  "pulumi_gestalt_build",
  "pulumi_gestalt_model",
