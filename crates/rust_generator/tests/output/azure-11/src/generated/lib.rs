@@ -324,7 +324,7 @@ pub fn package() -> pulumi_gestalt_rust::Package {
         kind: "resource".to_string(),
         version: "6.14.0".to_string(),
         server: "".to_string(),
-        checksums: std::collections::HashMap::new(),
+        checksums: std::collections::BTreeMap::new(),
         parameterization: None,
     }
 }
