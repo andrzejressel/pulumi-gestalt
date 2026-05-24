@@ -26,6 +26,25 @@ pub use native::{
 pub use pulumi_gestalt_model::FromPulumiValue;
 pub use pulumi_gestalt_model::Output;
 pub use pulumi_gestalt_model::ToPulumiValue;
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+
+#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
+pub struct PackageParameterization {
+    pub name: String,
+    pub version: String,
+    pub value: Vec<u8>,
+}
+
+#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Package {
+    pub name: String,
+    pub kind: String,
+    pub version: String,
+    pub server: String,
+    pub checksums: HashMap<String, Vec<u8>>,
+    pub parameterization: Option<PackageParameterization>,
+}
 
 /// Entrypoint for execution
 /// ```rust,no_run
@@ -36,10 +55,35 @@ pub use pulumi_gestalt_model::ToPulumiValue;
 ///     Ok(())
 /// }).unwrap();
 pub fn run<F: Fn(&Context) -> Result<()>>(f: F) -> Result<()> {
+    run_with_packages(vec![], f)
+}
+
+pub fn run_with_packages<F: Fn(&Context) -> Result<()>>(
+    packages: Vec<Package>,
+    f: F,
+) -> Result<()> {
+    if try_write_packages_from_args(&packages)? {
+        return Ok(());
+    }
+
     let ctx = Context::new();
     f(&ctx).context("Failed to run Pulumi program")?;
     ctx.finish();
     Ok(())
+}
+
+fn try_write_packages_from_args(packages: &[Package]) -> Result<bool> {
+    let args = std::env::args().collect::<Vec<_>>();
+    if args.len() >= 3 && args[1] == "get-packages" {
+        let output_path = &args[2];
+        let serialized =
+            serde_json::to_string(packages).context("Failed to serialize packages metadata")?;
+        std::fs::write(output_path, serialized)
+            .with_context(|| format!("Failed to write packages file at [{output_path}]"))?;
+        return Ok(true);
+    }
+
+    Ok(false)
 }
 
 /// Load specific generated provider

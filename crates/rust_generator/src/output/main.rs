@@ -12,6 +12,7 @@ struct TemplateModel<'a> {
     constants: Vec<String>,
     provider_name: &'a str,
     provider_version: &'a str,
+    provider_server: &'a str,
     provider_metadata: &'a str,
 }
 
@@ -43,6 +44,7 @@ pub(crate) fn generate(
         constants,
         provider_name: &package.name,
         provider_version: &package.version,
+        provider_server: package.plugin_download_url.as_deref().unwrap_or(""),
         provider_metadata: &provider,
     }
     .render()?;

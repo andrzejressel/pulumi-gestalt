@@ -20,3 +20,13 @@ static PULUMI_WASM_PROVIDER_RANDOM: [u8; 45] = *b"{\"version\":\"4.15.1\",\"plug
 pub(crate) fn get_version() -> String {
     "4.15.1".to_string()
 }
+pub fn package() -> pulumi_gestalt_rust::Package {
+    pulumi_gestalt_rust::Package {
+        name: "random".to_string(),
+        kind: "resource".to_string(),
+        version: "4.15.1".to_string(),
+        server: "".to_string(),
+        checksums: std::collections::HashMap::new(),
+        parameterization: None,
+    }
+}

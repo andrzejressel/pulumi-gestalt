@@ -1,0 +1,21 @@
+type: Added
+title: Add `run_with_packages` for Rust programs and provider package metadata wiring
+description: |
+  Rust programs can now use `pulumi_gestalt_rust::run_with_packages(...)` to declare
+  required provider packages in a typed way.
+
+  Generated provider crates now expose `package()` returning
+  `pulumi_gestalt_rust::Package`, so programs can pass provider package metadata directly:
+
+  ```rust
+  fn main() {
+      pulumi_gestalt_rust::run_with_packages(
+          vec![pulumi_simple::package()],
+          pulumi_main,
+      )
+      .unwrap();
+  }
+  ```
+
+  For compatibility, existing programs can continue using `pulumi_gestalt_rust::run(...)`
+  for now.

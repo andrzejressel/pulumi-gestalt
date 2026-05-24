@@ -554,3 +554,13 @@ static PULUMI_WASM_PROVIDER_AWS: [u8; 45] = *b"{\"version\":\"6.66.2\",\"pluginD
 pub(crate) fn get_version() -> String {
     "6.66.2".to_string()
 }
+pub fn package() -> pulumi_gestalt_rust::Package {
+    pulumi_gestalt_rust::Package {
+        name: "aws".to_string(),
+        kind: "resource".to_string(),
+        version: "6.66.2".to_string(),
+        server: "".to_string(),
+        checksums: std::collections::HashMap::new(),
+        parameterization: None,
+    }
+}
