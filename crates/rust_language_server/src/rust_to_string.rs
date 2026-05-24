@@ -5,7 +5,6 @@
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
 use quote::quote;
 use rootcause::Result;
-use rootcause::prelude::ResultExt;
 
 pub fn render(file: &RustFile, packages_expr: &str) -> Result<String> {
     let statements = file
@@ -19,10 +18,15 @@ pub fn render(file: &RustFile, packages_expr: &str) -> Result<String> {
         .replace("{{CONTENT}}", &statements)
         .replace("{{PACKAGES}}", packages_expr);
 
-    let syntax_tree = syn::parse_file(source.as_str())
-        .context_with(|| format!("Failed to parse file [{}]", source))?;
+    let syntax_tree = syn::parse_file(source.as_str());
 
-    Ok(prettyplease::unparse(&syntax_tree))
+    match syntax_tree {
+        Ok(syntax_tree) => Ok(prettyplease::unparse(&syntax_tree)),
+        Err(_) => {
+            // It will not compile anyway, but at least we will have a file to debug
+            Ok(source)
+        }
+    }
 }
 
 fn render_statement(stmt: &RustStatement) -> String {
@@ -70,6 +74,25 @@ pub fn render_expr(expr: &RustExpr) -> String {
                     .collect::<Vec<_>>()
                     .join(", ");
                 format!("vec!({})", inner)
+            }
+        }
+        RustExpr::BTreeMap { entries } => {
+            if entries.is_empty() {
+                "std::collections::BTreeMap::new()".to_string()
+            } else {
+                let inner = entries
+                    .iter()
+                    // FIXME
+                    .map(|(k, v)| {
+                        format!(
+                            "(({}).to_string(), ({}).to_string())",
+                            render_expr(k),
+                            render_expr(v)
+                        )
+                    })
+                    .collect::<Vec<_>>()
+                    .join(", ");
+                format!("std::collections::BTreeMap::from([{}])", inner)
             }
         }
         RustExpr::Format { fmt, args } => {

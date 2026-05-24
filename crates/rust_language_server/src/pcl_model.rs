@@ -98,6 +98,8 @@ pub mod expression {
         TemplateExpression(super::TemplateExpression),
         IndexExpression(Box<super::IndexExpression>),
         ObjectConsExpression(super::ObjectConsExpression),
+        CreateMapExpression(super::CreateMapExpression),
+        NewPackageTypeExpression(super::NewPackageTypeExpression),
         TupleConsExpression(super::TupleConsExpression),
         FunctionCallExpression(super::FunctionCallExpression),
         RelativeTraversalExpression(Box<super::RelativeTraversalExpression>),
@@ -137,6 +139,17 @@ pub struct IndexExpression {
 
 #[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct ObjectConsExpression {
+    pub properties: BTreeMap<String, Expression>,
+}
+
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
+pub struct NewPackageTypeExpression {
+    pub token: String,
+    pub properties: BTreeMap<String, Expression>,
+}
+
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
+pub struct CreateMapExpression {
     pub properties: BTreeMap<String, Expression>,
 }
 
@@ -437,6 +450,12 @@ fn map_expression_value(value: pb::expression::Value) -> expression::Value {
         pb::expression::Value::ObjectConsExpression(v) => {
             expression::Value::ObjectConsExpression(map_object_cons_expression(v))
         }
+        pb::expression::Value::CreateMapExpression(v) => {
+            expression::Value::CreateMapExpression(map_create_map_expression(v))
+        }
+        pb::expression::Value::NewPackageTypeExpression(v) => {
+            expression::Value::NewPackageTypeExpression(map_new_package_type_expression(v))
+        }
         pb::expression::Value::TupleConsExpression(v) => {
             expression::Value::TupleConsExpression(map_tuple_cons_expression(v))
         }
@@ -508,6 +527,29 @@ fn map_index_expression(value: pb::IndexExpression) -> IndexExpression {
 
 fn map_object_cons_expression(value: pb::ObjectConsExpression) -> ObjectConsExpression {
     ObjectConsExpression {
+        properties: value
+            .properties
+            .into_iter()
+            .map(|(name, expr)| (name, map_expression(expr)))
+            .collect(),
+    }
+}
+
+fn map_new_package_type_expression(
+    value: pb::CreatePackageTypeExpression,
+) -> NewPackageTypeExpression {
+    NewPackageTypeExpression {
+        token: value.token,
+        properties: value
+            .properties
+            .into_iter()
+            .map(|(name, expr)| (name, map_expression(expr)))
+            .collect(),
+    }
+}
+
+fn map_create_map_expression(value: pb::CreateMapExpression) -> CreateMapExpression {
+    CreateMapExpression {
         properties: value
             .properties
             .into_iter()
