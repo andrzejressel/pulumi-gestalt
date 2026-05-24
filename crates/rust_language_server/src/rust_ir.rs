@@ -65,6 +65,8 @@ pub enum RustExpr {
     },
     /// `path!(body)` — macro invocation with a pre-rendered body.
     MacroCall { path: String, body: String },
+    /// `pulumi_gestalt_rust::pulumi_any!(...)` with typed JSON payload.
+    PulumiAny(RustJsonExpr),
     /// `expr.expect("message")`
     Expect {
         expr: Box<RustExpr>,
@@ -74,6 +76,19 @@ pub enum RustExpr {
     Ref(Box<RustExpr>),
     /// `expr.to_string()`
     ToStringCall(Box<RustExpr>),
+    /// `expr.clone()`
+    Clone(Box<RustExpr>),
     /// `pulumi_gestalt_rust::pulumi_any!(null)`
     Null,
+}
+
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
+pub enum RustJsonExpr {
+    String(String),
+    Number(f64),
+    Bool(bool),
+    Null,
+    Object(Vec<(String, RustJsonExpr)>),
+    Array(Vec<RustJsonExpr>),
+    Expr(Box<RustExpr>),
 }

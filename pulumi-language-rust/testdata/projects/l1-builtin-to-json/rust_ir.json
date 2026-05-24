@@ -130,7 +130,9 @@
                   "path": "pulumi_gestalt_rust::stdlib::to_json",
                   "args": [
                     {
-                      "Identifier": "aString"
+                      "Ref": {
+                        "Identifier": "aString"
+                      }
                     }
                   ]
                 }
@@ -158,7 +160,9 @@
                   "path": "pulumi_gestalt_rust::stdlib::to_json",
                   "args": [
                     {
-                      "Identifier": "aNumber"
+                      "Ref": {
+                        "Identifier": "aNumber"
+                      }
                     }
                   ]
                 }
@@ -186,7 +190,9 @@
                   "path": "pulumi_gestalt_rust::stdlib::to_json",
                   "args": [
                     {
-                      "BoolLiteral": true
+                      "Ref": {
+                        "BoolLiteral": true
+                      }
                     }
                   ]
                 }
@@ -214,19 +220,21 @@
                   "path": "pulumi_gestalt_rust::stdlib::to_json",
                   "args": [
                     {
-                      "Vec": {
-                        "elements": [
-                          {
-                            "StringLiteral": "x"
-                          },
-                          {
-                            "StringLiteral": "y"
-                          },
-                          {
-                            "StringLiteral": "z"
-                          }
-                        ],
-                        "type_hint": null
+                      "Ref": {
+                        "Vec": {
+                          "elements": [
+                            {
+                              "StringLiteral": "x"
+                            },
+                            {
+                              "StringLiteral": "y"
+                            },
+                            {
+                              "StringLiteral": "z"
+                            }
+                          ],
+                          "type_hint": null
+                        }
                       }
                     }
                   ]
@@ -255,9 +263,27 @@
                   "path": "pulumi_gestalt_rust::stdlib::to_json",
                   "args": [
                     {
-                      "MacroCall": {
-                        "path": "pulumi_gestalt_rust::pulumi_any!",
-                        "body": "{\"count\": 1, \"key\": (\"value\")}"
+                      "Ref": {
+                        "PulumiAny": {
+                          "Object": [
+                            [
+                              "count",
+                              {
+                                "Number": 1.0
+                              }
+                            ],
+                            [
+                              "key",
+                              {
+                                "Expr": {
+                                  "Clone": {
+                                    "StringLiteral": "value"
+                                  }
+                                }
+                              }
+                            ]
+                          ]
+                        }
                       }
                     }
                   ]
@@ -272,9 +298,46 @@
       "Let": {
         "name": "nestedObject",
         "value": {
-          "MacroCall": {
-            "path": "pulumi_gestalt_rust::pulumi_any!",
-            "body": "{\"a_secret\": (aSecret), \"anObject\": {\"items\": (aList), \"name\": (aString)}}"
+          "PulumiAny": {
+            "Object": [
+              [
+                "a_secret",
+                {
+                  "Expr": {
+                    "Clone": {
+                      "Identifier": "aSecret"
+                    }
+                  }
+                }
+              ],
+              [
+                "anObject",
+                {
+                  "Object": [
+                    [
+                      "items",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "Identifier": "aList"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "name",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "Identifier": "aString"
+                          }
+                        }
+                      }
+                    ]
+                  ]
+                }
+              ]
+            ]
           }
         }
       }
@@ -297,7 +360,9 @@
                   "path": "pulumi_gestalt_rust::stdlib::to_json",
                   "args": [
                     {
-                      "Identifier": "nestedObject"
+                      "Ref": {
+                        "Identifier": "nestedObject"
+                      }
                     }
                   ]
                 }

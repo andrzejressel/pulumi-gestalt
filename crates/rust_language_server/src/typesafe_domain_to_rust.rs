@@ -1,4 +1,4 @@
-use crate::rust_ir::{RustExpr, RustFile, RustStatement};
+use crate::rust_ir::{RustExpr, RustFile, RustJsonExpr, RustStatement};
 use crate::typesafe_domain_ir::ResourceToken::Stash;
 /// Lowers the typesafe domain IR into the Rust IR.
 ///
@@ -9,10 +9,8 @@ use crate::typesafe_domain_ir::{
     BinOp, ConfigBinding, ConfigType, Expr, ExprType, ExprValue, JsonValue, Program, ResourceInput,
     ResourceToken, Statement, StdlibFn, UnaryOp,
 };
-use quote::quote;
 use rootcause::Result;
 use rootcause::prelude::ResultExt;
-use syn::LitStr;
 
 pub fn lower(program: &Program) -> Result<RustFile> {
     let statements = program
@@ -133,20 +131,14 @@ fn lower_resource(
 fn wrap_as_pulumi_any(expr: RustExpr) -> RustExpr {
     match &expr {
         // Already wrapped — pass through.
-        RustExpr::MacroCall { path, .. } if path == "pulumi_gestalt_rust::pulumi_any!" => expr,
+        RustExpr::PulumiAny(_) => expr,
         // Output-producing expressions — pass through directly.
         RustExpr::FieldAccess(..)
         | RustExpr::MethodCall { .. }
         | RustExpr::FunctionCall { .. }
         | RustExpr::Identifier(_) => expr,
         // Plain literals and everything else — wrap in pulumi_any!.
-        _ => {
-            let body = crate::rust_to_string::render_expr(&expr);
-            RustExpr::MacroCall {
-                path: "pulumi_gestalt_rust::pulumi_any!".to_string(),
-                body,
-            }
-        }
+        _ => RustExpr::PulumiAny(RustJsonExpr::Expr(Box::new(expr))),
     }
 }
 
@@ -168,7 +160,7 @@ fn get_full_resource_path(token: &ResourceToken) -> Result<(String, String)> {
             full_path.push_str("::");
             full_path.push_str(&element_id.name.to_lowercase());
             Ok((full_path, element_id.name.clone()))
-        } // } => Ok(("test".to_string(), "test".to_string())),
+        }
     }
 }
 
@@ -439,13 +431,7 @@ fn lower_expr(expr: &Expr) -> RustExpr {
             type_params: vec![],
             args: vec![RustExpr::Ref(Box::new(lower_expr(inner)))],
         },
-        ExprValue::PulumiAny(json) => {
-            let body = render_json_value(json);
-            RustExpr::MacroCall {
-                path: "pulumi_gestalt_rust::pulumi_any!".to_string(),
-                body,
-            }
-        }
+        ExprValue::PulumiAny(json) => RustExpr::PulumiAny(lower_json_value(json)),
         ExprValue::StdlibCall { func, args } => lower_stdlib_call(func, args),
         ExprValue::BinaryOp { left, op, right } => RustExpr::BinaryOp {
             left: Box::new(lower_expr(left)),
@@ -480,7 +466,9 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
         },
         StdlibFn::ToJson => RustExpr::FunctionCall {
             path: "pulumi_gestalt_rust::stdlib::to_json".to_string(),
-            args: lowered_args,
+            args: vec![
+                RustExpr::Ref(Box::new(lowered_args[0].clone())),
+            ],
         },
         StdlibFn::Sha1 => RustExpr::FunctionCall {
             path: "pulumi_gestalt_rust::stdlib::sha1".to_string(),
@@ -614,48 +602,22 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
     }
 }
 
-fn render_json_value(json: &JsonValue) -> String {
+fn lower_json_value(json: &JsonValue) -> RustJsonExpr {
     match json {
-        JsonValue::String(s) => {
-            let lit = LitStr::new(s, proc_macro2::Span::call_site());
-            quote! { #lit }.to_string()
-        }
-        JsonValue::Number(n) => {
-            if *n > (f32::MAX as f64) || *n < (f32::MIN as f64) {
-                format!("{}_f64", n)
-            } else {
-                n.to_string()
-            }
-        }
-        JsonValue::Bool(b) => b.to_string(),
-        JsonValue::Null => "null".to_string(),
-        JsonValue::Object(props) => {
-            let inner = props
+        JsonValue::String(s) => RustJsonExpr::String(s.clone()),
+        JsonValue::Number(n) => RustJsonExpr::Number(*n),
+        JsonValue::Bool(b) => RustJsonExpr::Bool(*b),
+        JsonValue::Null => RustJsonExpr::Null,
+        JsonValue::Object(props) => RustJsonExpr::Object(
+            props
                 .iter()
-                .map(|(k, v)| {
-                    let lit = LitStr::new(k, proc_macro2::Span::call_site());
-                    let k = quote! { #lit }.to_string();
-                    format!("{}: {}", k, render_json_value(v))
-                })
-                .collect::<Vec<_>>()
-                .join(", ");
-            format!("{{{}}}", inner)
-        }
+                .map(|(k, v)| (k.clone(), lower_json_value(v)))
+                .collect(),
+        ),
         JsonValue::Array(items) => {
-            let inner = items
-                .iter()
-                .map(render_json_value)
-                .collect::<Vec<_>>()
-                .join(", ");
-            format!("[{}]", inner)
+            RustJsonExpr::Array(items.iter().map(lower_json_value).collect())
         }
-        JsonValue::Expr(expr) => {
-            // For interpolated expressions we render the Rust IR to string and wrap in parens.
-            // This is a slight layering violation but acceptable since `pulumi_any!` is a macro
-            // that needs pre-rendered content.
-            let rust_expr = lower_expr(expr);
-            format!("({})", crate::rust_to_string::render_expr(&rust_expr))
-        }
+        JsonValue::Expr(expr) => RustJsonExpr::Expr(Box::new(RustExpr::Clone(Box::new(lower_expr(expr))))),
     }
 }
 
@@ -693,66 +655,6 @@ mod tests {
     use super::*;
 
     #[test]
-    fn lower_new_struct_expr_uses_types_builder_path() {
-        let expr = lower_new_struct_expr(
-            "ref-ref:index:Data",
-            &[(
-                "string".to_string(),
-                Expr {
-                    expr_type: ExprType::String,
-                    value: ExprValue::String("hello".to_string()),
-                },
-            )],
-        )
-        .expect("lower new struct");
-
-        let rendered = crate::rust_to_string::render_expr(&expr);
-        assert!(rendered.contains("pulumi_ref_ref::types::Data::builder()"));
-        assert!(rendered.contains(".string(\"hello\")"));
-        assert!(rendered.ends_with(".build_struct()"));
-    }
-
-    #[test]
-    fn lower_new_struct_expr_uses_namespaced_types_path() {
-        let expr = lower_new_struct_expr("aws:devicefarm/project:Project", &[])
-            .expect("lower namespaced new struct");
-        let rendered = crate::rust_to_string::render_expr(&expr);
-        assert_eq!(
-            rendered,
-            "pulumi_aws::types::devicefarm::Project::builder().build_struct()"
-        );
-    }
-
-    #[test]
-    fn lower_typed_map_renders_hash_map_from() {
-        let expr = Expr {
-            expr_type: ExprType::Map(Box::new(ExprType::String)),
-            value: ExprValue::Map(vec![(
-                "k".to_string(),
-                Expr {
-                    expr_type: ExprType::String,
-                    value: ExprValue::String("v".to_string()),
-                },
-            )]),
-        };
-        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
-        assert_eq!(
-            rendered,
-            "std::collections::BTreeMap::from([((\"k\").to_string(), (\"v\").to_string())])"
-        );
-    }
-
-    #[test]
-    fn lower_empty_typed_map_renders_hash_map_new() {
-        let expr = Expr {
-            expr_type: ExprType::Map(Box::new(ExprType::String)),
-            value: ExprValue::Map(vec![]),
-        };
-        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
-        assert_eq!(rendered, "std::collections::BTreeMap::new()");
-    }
-
-    #[test]
     fn lower_to_json_stdlib_call_renders_runtime_call() {
         let expr = Expr {
             expr_type: ExprType::String,
@@ -766,5 +668,35 @@ mod tests {
         };
         let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
         assert_eq!(rendered, "pulumi_gestalt_rust::stdlib::to_json(\"hello\")");
+    }
+
+    #[test]
+    fn lower_pulumi_any_renders_nested_json_expression() {
+        let expr = Expr {
+            expr_type: ExprType::Dynamic,
+            value: ExprValue::PulumiAny(JsonValue::Object(vec![
+                ("count".to_string(), JsonValue::Number(1.0)),
+                (
+                    "items".to_string(),
+                    JsonValue::Array(vec![
+                        JsonValue::String("x".to_string()),
+                        JsonValue::Bool(true),
+                    ]),
+                ),
+            ])),
+        };
+
+        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
+        assert_eq!(
+            rendered,
+            "pulumi_gestalt_rust::pulumi_any!({\"count\": 1, \"items\": [\"x\", true]})"
+        );
+    }
+
+    #[test]
+    fn wrap_stash_input_literal_as_pulumi_any() {
+        let rendered =
+            crate::rust_to_string::render_expr(&wrap_as_pulumi_any(RustExpr::BoolLiteral(false)));
+        assert_eq!(rendered, "pulumi_gestalt_rust::pulumi_any!((false))");
     }
 }

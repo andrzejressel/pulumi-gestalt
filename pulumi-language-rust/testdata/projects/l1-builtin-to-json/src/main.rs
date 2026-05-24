@@ -15,23 +15,25 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
     let aSecret = ctx
         .require_config_secret(None, "aSecret")
         .expect("Expected config [aSecret] to exist");
-    ctx.add_export("stringOutput", &pulumi_gestalt_rust::stdlib::to_json(aString));
-    ctx.add_export("numberOutput", &pulumi_gestalt_rust::stdlib::to_json(aNumber));
-    ctx.add_export("boolOutput", &pulumi_gestalt_rust::stdlib::to_json(true));
+    ctx.add_export("stringOutput", &pulumi_gestalt_rust::stdlib::to_json(&aString));
+    ctx.add_export("numberOutput", &pulumi_gestalt_rust::stdlib::to_json(&aNumber));
+    ctx.add_export("boolOutput", &pulumi_gestalt_rust::stdlib::to_json(&true));
     ctx.add_export(
         "arrayOutput",
-        &pulumi_gestalt_rust::stdlib::to_json(vec!("x", "y", "z")),
+        &pulumi_gestalt_rust::stdlib::to_json(&vec!("x", "y", "z")),
     );
     ctx.add_export(
         "objectOutput",
         &pulumi_gestalt_rust::stdlib::to_json(
-            pulumi_gestalt_rust::pulumi_any!({ "count" : 1, "key" : ("value") }),
+            &pulumi_gestalt_rust::pulumi_any!(
+                { "count" : 1, "key" : (("value").clone()) }
+            ),
         ),
     );
     let nestedObject = pulumi_gestalt_rust::pulumi_any!(
-        { "a_secret" : (aSecret), "anObject" : { "items" : (aList), "name" : (aString) }
-        }
+        { "a_secret" : ((aSecret).clone()), "anObject" : { "items" : ((aList).clone()),
+        "name" : ((aString).clone()) } }
     );
-    ctx.add_export("nestedOutput", &pulumi_gestalt_rust::stdlib::to_json(nestedObject));
+    ctx.add_export("nestedOutput", &pulumi_gestalt_rust::stdlib::to_json(&nestedObject));
     Ok(())
 }

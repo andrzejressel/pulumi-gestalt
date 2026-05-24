@@ -70,7 +70,7 @@ pub fn from_base64(input: impl AsRef<str>) -> Result<String> {
     )
 }
 
-pub fn to_json<T: ToPulumiValue>(_value: T) -> String {
+pub fn to_json<T: ToPulumiValue>(_value: &T) -> String {
     panic!("stdlib::to_json is not implemented yet");
 }
 

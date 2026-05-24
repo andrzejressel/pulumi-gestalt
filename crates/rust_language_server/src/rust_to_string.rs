@@ -2,7 +2,7 @@
 ///
 /// This layer handles string escaping, formatting, template wrapping,
 /// and `prettyplease` formatting. It knows nothing about Pulumi semantics.
-use crate::rust_ir::{RustExpr, RustFile, RustStatement};
+use crate::rust_ir::{RustExpr, RustFile, RustJsonExpr, RustStatement};
 use quote::quote;
 use rootcause::Result;
 use rootcause::prelude::ResultExt;
@@ -121,6 +121,12 @@ pub fn render_expr(expr: &RustExpr) -> String {
         RustExpr::MacroCall { path, body } => {
             format!("{}({})", path, body)
         }
+        RustExpr::PulumiAny(value) => {
+            format!(
+                "pulumi_gestalt_rust::pulumi_any!({})",
+                render_json_expr(value)
+            )
+        }
         RustExpr::Expect { expr, message } => {
             format!("{}.expect(\"{}\")", render_expr(expr), message)
         }
@@ -130,6 +136,47 @@ pub fn render_expr(expr: &RustExpr) -> String {
         RustExpr::ToStringCall(inner) => {
             format!("({}).to_string()", render_expr(inner))
         }
+        RustExpr::Clone(inner) => {
+            format!("({}).clone()", render_expr(inner))
+        }
         RustExpr::Null => "pulumi_gestalt_rust::pulumi_any!(null)".to_string(),
+    }
+}
+
+fn render_json_expr(expr: &RustJsonExpr) -> String {
+    match expr {
+        RustJsonExpr::String(s) => {
+            let lit = LitStr::new(s, proc_macro2::Span::call_site());
+            quote! { #lit }.to_string()
+        }
+        RustJsonExpr::Number(n) => {
+            if *n > (f32::MAX as f64) || *n < (f32::MIN as f64) {
+                format!("{}_f64", n)
+            } else {
+                n.to_string()
+            }
+        }
+        RustJsonExpr::Bool(b) => b.to_string(),
+        RustJsonExpr::Null => "null".to_string(),
+        RustJsonExpr::Object(props) => {
+            let inner = props
+                .iter()
+                .map(|(k, v)| {
+                    let key = LitStr::new(k, proc_macro2::Span::call_site());
+                    format!("{}: {}", quote! { #key }, render_json_expr(v))
+                })
+                .collect::<Vec<_>>()
+                .join(", ");
+            format!("{{{inner}}}")
+        }
+        RustJsonExpr::Array(items) => {
+            let inner = items
+                .iter()
+                .map(render_json_expr)
+                .collect::<Vec<_>>()
+                .join(", ");
+            format!("[{inner}]")
+        }
+        RustJsonExpr::Expr(expr) => format!("({})", render_expr(expr)),
     }
 }
