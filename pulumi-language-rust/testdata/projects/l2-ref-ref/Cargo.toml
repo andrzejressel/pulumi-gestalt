@@ -7,4 +7,4 @@ edition = "2024"
 anyhow = "1.0.102"
 serde_json = "1.0.140"
 pulumi_gestalt_rust = "VERSION"
-pulumi_ref-ref = { path = "/tmp/TestLanguage737248416/002/sdks/ref-ref-12.0.0" }
+pulumi_ref-ref = "VERSION"
