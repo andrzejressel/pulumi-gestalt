@@ -8,7 +8,7 @@ use rootcause::Result;
 use rootcause::prelude::ResultExt;
 use syn::LitStr;
 
-pub fn render(file: &RustFile) -> Result<String> {
+pub fn render(file: &RustFile, packages_expr: &str) -> Result<String> {
     let statements = file
         .statements
         .iter()
@@ -16,7 +16,9 @@ pub fn render(file: &RustFile) -> Result<String> {
         .collect::<Vec<_>>()
         .join("\n");
 
-    let source = include_str!("main.rs.template").replace("{{CONTENT}}", &statements);
+    let source = include_str!("main.rs.template")
+        .replace("{{CONTENT}}", &statements)
+        .replace("{{PACKAGES}}", packages_expr);
 
     let syntax_tree = syn::parse_file(source.as_str())
         .context_with(|| format!("Failed to parse file [{}]", source))?;

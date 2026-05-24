@@ -21,3 +21,13 @@ static PULUMI_WASM_PROVIDER_AZURE_NATIVE: [u8; 44] = *b"{\"version\":\"0.0.1\",\
 pub(crate) fn get_version() -> String {
     "0.0.1".to_string()
 }
+pub fn package() -> pulumi_gestalt_rust::Package {
+    pulumi_gestalt_rust::Package {
+        name: "azure-native".to_string(),
+        kind: "resource".to_string(),
+        version: "0.0.1".to_string(),
+        server: "".to_string(),
+        checksums: std::collections::HashMap::new(),
+        parameterization: None,
+    }
+}

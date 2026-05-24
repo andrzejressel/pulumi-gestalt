@@ -717,3 +717,13 @@ static PULUMI_WASM_PROVIDER_CLOUDFLARE: [u8; 45] = *b"{\"version\":\"5.43.1\",\"
 pub(crate) fn get_version() -> String {
     "5.43.1".to_string()
 }
+pub fn package() -> pulumi_gestalt_rust::Package {
+    pulumi_gestalt_rust::Package {
+        name: "cloudflare".to_string(),
+        kind: "resource".to_string(),
+        version: "5.43.1".to_string(),
+        server: "".to_string(),
+        checksums: std::collections::HashMap::new(),
+        parameterization: None,
+    }
+}
