@@ -10,7 +10,7 @@ pub mod get_client_config {
         pub access_token: pulumi_gestalt_rust::Output<String>,
         /// The default labels configured on the provider.
         pub default_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the project to apply any resources to.

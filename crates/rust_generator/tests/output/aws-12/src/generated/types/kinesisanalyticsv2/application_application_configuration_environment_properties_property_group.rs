@@ -8,7 +8,7 @@ pub struct ApplicationApplicationConfigurationEnvironmentPropertiesPropertyGroup
     pub r#property_group_id: String,
     /// Application execution property key-value map.
     #[builder(into)]
-    pub r#property_map: std::collections::HashMap<String, String>,
+    pub r#property_map: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ApplicationApplicationConfigurationEnvironmentPropertiesPropertyGroup {

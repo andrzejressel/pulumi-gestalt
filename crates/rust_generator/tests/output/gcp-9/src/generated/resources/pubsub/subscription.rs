@@ -536,7 +536,7 @@ pub mod subscription {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// How long to retain unacknowledged messages in the subscription's
         /// backlog, from the moment a message is published. If
@@ -636,7 +636,7 @@ pub mod subscription {
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// If `true`, Pub/Sub provides the following guarantees for the delivery
         /// of a message with a given value of messageId on this Subscriptions':
@@ -670,7 +670,7 @@ pub mod subscription {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// How long to retain unacknowledged messages in the subscription's
         /// backlog, from the moment a message is published. If
@@ -689,7 +689,7 @@ pub mod subscription {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// If push delivery is used with this subscription, this field is used to
         /// configure it. An empty pushConfig signifies that the subscriber will

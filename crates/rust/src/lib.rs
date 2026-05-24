@@ -27,7 +27,7 @@ pub use pulumi_gestalt_model::FromPulumiValue;
 pub use pulumi_gestalt_model::Output;
 pub use pulumi_gestalt_model::ToPulumiValue;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PackageParameterization {
@@ -42,7 +42,7 @@ pub struct Package {
     pub kind: String,
     pub version: String,
     pub server: String,
-    pub checksums: HashMap<String, Vec<u8>>,
+    pub checksums: BTreeMap<String, Vec<u8>>,
     pub parameterization: Option<PackageParameterization>,
 }
 

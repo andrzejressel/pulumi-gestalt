@@ -138,7 +138,9 @@ pub mod get_application_gateway {
             Vec<super::super::super::types::network::GetApplicationGatewaySslProfile>,
         >,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// One or more `trusted_client_certificate` blocks as defined below.
         pub trusted_client_certificates: pulumi_gestalt_rust::Output<
             Vec<

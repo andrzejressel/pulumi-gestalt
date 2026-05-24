@@ -161,7 +161,7 @@ pub mod container {
         /// Key/value pairs to use as options for the logging driver.
         #[builder(into, default)]
         pub log_opts: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Save the container logs (`attach` must be enabled). Defaults to `false`.
         #[builder(into, default)]
@@ -243,17 +243,17 @@ pub mod container {
         /// Key/value pairs for the storage driver options, e.g. `size`: `120G`
         #[builder(into, default)]
         pub storage_opts: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of kernel parameters (sysctls) to set in the container.
         #[builder(into, default)]
         pub sysctls: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.
         #[builder(into, default)]
         pub tmpfs: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
         #[builder(into, default)]
@@ -362,7 +362,7 @@ pub mod container {
         pub log_driver: pulumi_gestalt_rust::Output<String>,
         /// Key/value pairs to use as options for the logging driver.
         pub log_opts: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Save the container logs (`attach` must be enabled). Defaults to `false`.
         pub logs: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -423,15 +423,15 @@ pub mod container {
         pub stop_timeout: pulumi_gestalt_rust::Output<i32>,
         /// Key/value pairs for the storage driver options, e.g. `size`: `120G`
         pub storage_opts: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of kernel parameters (sysctls) to set in the container.
         pub sysctls: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.
         pub tmpfs: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
         pub tty: pulumi_gestalt_rust::Output<Option<bool>>,

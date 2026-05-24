@@ -90,7 +90,7 @@ pub mod trigger_schedule {
         /// The pipeline parameters that the trigger will act upon.
         #[builder(into, default)]
         pub pipeline_parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `pipeline` block as defined below.
         #[builder(into, default)]
@@ -136,7 +136,7 @@ pub mod trigger_schedule {
         pub pipeline_name: pulumi_gestalt_rust::Output<String>,
         /// The pipeline parameters that the trigger will act upon.
         pub pipeline_parameters: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A `pipeline` block as defined below.
         pub pipelines: pulumi_gestalt_rust::Output<

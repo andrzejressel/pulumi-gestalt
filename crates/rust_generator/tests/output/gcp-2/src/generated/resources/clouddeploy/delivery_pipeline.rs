@@ -193,7 +193,7 @@ pub mod delivery_pipeline {
         /// `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Description of the `DeliveryPipeline`. Max length is 255 characters.
         #[builder(into, default)]
@@ -207,7 +207,7 @@ pub mod delivery_pipeline {
         /// resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
@@ -239,7 +239,7 @@ pub mod delivery_pipeline {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Output only. Information around the state of the Delivery Pipeline.
         pub conditions: pulumi_gestalt_rust::Output<
@@ -250,11 +250,11 @@ pub mod delivery_pipeline {
         /// Description of the `DeliveryPipeline`. Max length is 255 characters.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -266,7 +266,7 @@ pub mod delivery_pipeline {
         /// labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the
         /// resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -276,7 +276,7 @@ pub mod delivery_pipeline {
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// SerialPipeline defines a sequential set of stages for a `DeliveryPipeline`.
         pub serial_pipeline: pulumi_gestalt_rust::Output<

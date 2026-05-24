@@ -63,7 +63,7 @@ pub mod volume {
         /// Options specific to the driver.
         #[builder(into, default)]
         pub driver_opts: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// User-defined key/value metadata
         #[builder(into, default)]
@@ -83,7 +83,7 @@ pub mod volume {
         pub driver: pulumi_gestalt_rust::Output<String>,
         /// Options specific to the driver.
         pub driver_opts: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// User-defined key/value metadata
         pub labels: pulumi_gestalt_rust::Output<Option<Vec<super::types::VolumeLabel>>>,

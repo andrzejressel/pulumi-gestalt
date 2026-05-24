@@ -17,7 +17,7 @@ pub mod get_listener {
         /// List of tags associated with the listener.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -49,7 +49,9 @@ pub mod get_listener {
         pub service_id: pulumi_gestalt_rust::Output<String>,
         pub service_identifier: pulumi_gestalt_rust::Output<String>,
         /// List of tags associated with the listener.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

@@ -20,7 +20,7 @@ pub mod get_quick_connect {
         /// Map of tags to assign to the Quick Connect.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -40,7 +40,9 @@ pub mod get_quick_connect {
         /// Identifier for the Quick Connect.
         pub quick_connect_id: pulumi_gestalt_rust::Output<String>,
         /// Map of tags to assign to the Quick Connect.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

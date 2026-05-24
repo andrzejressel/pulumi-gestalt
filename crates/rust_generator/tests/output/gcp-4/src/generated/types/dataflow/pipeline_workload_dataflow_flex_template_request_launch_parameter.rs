@@ -17,15 +17,15 @@ pub struct PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter {
     /// Launch options for this Flex Template job. This is a common set of options across languages and templates. This should not be used to pass job parameters.
     /// 'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.'
     #[builder(into)]
-    pub r#launch_options: Option<std::collections::HashMap<String, String>>,
+    pub r#launch_options: Option<std::collections::BTreeMap<String, String>>,
     /// 'The parameters for the Flex Template. Example: {"numWorkers":"5"}'
     /// 'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.'
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// 'Use this to pass transform name mappings for streaming update jobs. Example: {"oldTransformName":"newTransformName",...}'
     /// 'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.'
     #[builder(into)]
-    pub r#transform_name_mappings: Option<std::collections::HashMap<String, String>>,
+    pub r#transform_name_mappings: Option<std::collections::BTreeMap<String, String>>,
     /// Set this to true if you are sending a request to update a running streaming job. When set, the job name should be the same as the running job.
     #[builder(into)]
     pub r#update: Option<bool>,

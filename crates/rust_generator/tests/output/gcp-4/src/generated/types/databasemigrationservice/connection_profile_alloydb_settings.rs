@@ -9,7 +9,7 @@ pub struct ConnectionProfileAlloydbSettings {
     pub r#initial_user: Box<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettingsInitialUser>,
     /// Labels for the AlloyDB cluster created by DMS.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Settings for the cluster's primary instance
     /// Structure is documented below.
     #[builder(into)]

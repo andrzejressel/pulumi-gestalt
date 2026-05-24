@@ -36,7 +36,9 @@ pub mod get_connector {
             Vec<super::super::super::types::transfer::GetConnectorSftpConfig>,
         >,
         /// Object containing the following attributes:
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// URL of the partner's AS2 or SFTP endpoint.
         pub url: pulumi_gestalt_rust::Output<String>,
     }

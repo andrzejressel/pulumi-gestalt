@@ -28,7 +28,7 @@ pub mod get_network {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
         pub options: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Scope of the network. One of `swarm`, `global`, or `local`.
         pub scope: pulumi_gestalt_rust::Output<String>,

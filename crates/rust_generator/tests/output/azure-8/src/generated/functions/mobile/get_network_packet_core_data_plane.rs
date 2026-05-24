@@ -28,7 +28,9 @@ pub mod get_network_packet_core_data_plane {
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Mobile Network Packet Core Data Plane.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The IPv4 address for the user plane interface.
         pub user_plane_access_ipv4_address: pulumi_gestalt_rust::Output<String>,
         /// The default IPv4 gateway for the user plane interface.

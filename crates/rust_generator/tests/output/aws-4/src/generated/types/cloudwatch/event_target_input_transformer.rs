@@ -8,7 +8,7 @@ pub struct EventTargetInputTransformer {
     /// * You must use JSON dot notation, not bracket notation.
     /// * The keys can't start with "AWS".
     #[builder(into)]
-    pub r#input_paths: Option<std::collections::HashMap<String, String>>,
+    pub r#input_paths: Option<std::collections::BTreeMap<String, String>>,
     /// Template to customize data sent to the target. Must be valid JSON. To send a string value, the string value must include double quotes.
     #[builder(into)]
     pub r#input_template: String,

@@ -60,7 +60,9 @@ pub mod get_cache {
         /// The SSL Port of the Redis Instance
         pub ssl_port: pulumi_gestalt_rust::Output<i32>,
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A list of Availability Zones in which this Redis Cache is located.
         pub zones: pulumi_gestalt_rust::Output<Vec<String>>,
     }

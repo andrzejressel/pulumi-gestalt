@@ -52,7 +52,7 @@ pub mod workflow {
         /// A map of default run properties for this workflow. These properties are passed to all jobs associated to the workflow.
         #[builder(into, default)]
         pub default_run_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Description of the workflow.
         #[builder(into, default)]
@@ -66,7 +66,7 @@ pub mod workflow {
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -80,7 +80,7 @@ pub mod workflow {
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A map of default run properties for this workflow. These properties are passed to all jobs associated to the workflow.
         pub default_run_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Description of the workflow.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
@@ -90,11 +90,11 @@ pub mod workflow {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

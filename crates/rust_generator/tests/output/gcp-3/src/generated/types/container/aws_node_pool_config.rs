@@ -23,7 +23,7 @@ pub struct AwsNodePoolConfig {
     pub r#instance_type: Option<String>,
     /// Optional. The initial labels assigned to nodes of this node pool. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Proxy configuration for outbound HTTP(S) traffic.
     #[builder(into)]
     pub r#proxy_config: Option<Box<super::super::types::container::AwsNodePoolConfigProxyConfig>>,
@@ -41,7 +41,7 @@ pub struct AwsNodePoolConfig {
     pub r#ssh_config: Option<Box<super::super::types::container::AwsNodePoolConfigSshConfig>>,
     /// Optional. Key/value metadata to assign to each underlying AWS resource. Specify at most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to 255 Unicode characters.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// Optional. The initial taints assigned to nodes of this node pool.
     #[builder(into)]
     pub r#taints: Option<Vec<super::super::types::container::AwsNodePoolConfigTaint>>,

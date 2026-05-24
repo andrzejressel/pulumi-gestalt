@@ -28,7 +28,7 @@ pub mod get_bucket {
         >,
         pub default_event_based_hold: pulumi_gestalt_rust::Output<bool>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub enable_object_retention: pulumi_gestalt_rust::Output<bool>,
         pub encryptions: pulumi_gestalt_rust::Output<
@@ -41,7 +41,7 @@ pub mod get_bucket {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub lifecycle_rules: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::storage::GetBucketLifecycleRule>,
@@ -55,7 +55,7 @@ pub mod get_bucket {
         pub project_number: pulumi_gestalt_rust::Output<i32>,
         pub public_access_prevention: pulumi_gestalt_rust::Output<String>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub requester_pays: pulumi_gestalt_rust::Output<bool>,
         pub retention_policies: pulumi_gestalt_rust::Output<

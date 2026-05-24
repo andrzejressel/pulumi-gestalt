@@ -167,7 +167,7 @@ pub mod pool {
         /// A map of custom batch pool metadata.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `mount` block defined as below.
         #[builder(into, default)]
@@ -286,7 +286,7 @@ pub mod pool {
         pub max_tasks_per_node: pulumi_gestalt_rust::Output<Option<i32>>,
         /// A map of custom batch pool metadata.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `mount` block defined as below.
         pub mounts: pulumi_gestalt_rust::Output<

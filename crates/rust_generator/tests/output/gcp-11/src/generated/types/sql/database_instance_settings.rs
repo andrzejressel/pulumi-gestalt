@@ -85,7 +85,7 @@ pub struct DatabaseInstanceSettings {
     pub r#time_zone: Option<String>,
     /// A set of key/value user label pairs to assign to the instance.
     #[builder(into)]
-    pub r#user_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#user_labels: Option<std::collections::BTreeMap<String, String>>,
     /// Used to make sure changes to the `settings` block are
     /// atomic.
     #[builder(into)]

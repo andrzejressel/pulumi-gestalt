@@ -23,7 +23,7 @@ pub struct GetFunctionBuildConfig {
     pub r#entry_point: String,
     /// User-provided build-time environment variables for the function.
     #[builder(into)]
-    pub r#environment_variables: std::collections::HashMap<String, String>,
+    pub r#environment_variables: std::collections::BTreeMap<String, String>,
     /// Security patches are only applied when a function is redeployed.
     #[builder(into)]
     pub r#on_deploy_update_policies: Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigOnDeployUpdatePolicy>,

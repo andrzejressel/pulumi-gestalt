@@ -144,7 +144,7 @@ pub mod table {
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// If specified, configures this table as a materialized view.
         /// Structure is documented below.
@@ -180,7 +180,7 @@ pub mod table {
         /// expected to be the short name, for example "Production".
         #[builder(into, default)]
         pub resource_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A JSON schema for the table.
         #[builder(into, default)]
@@ -258,7 +258,7 @@ pub mod table {
         /// with `external_data_configuration.schema`. Otherwise, schemas must be
         /// specified with this top-level field.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Specifies how the table should be encrypted.
         /// If left blank, the table will be encrypted with a Google-managed key; that process
@@ -287,7 +287,7 @@ pub mod table {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The time when this table was last modified, in milliseconds since the epoch.
         pub last_modified_time: pulumi_gestalt_rust::Output<i32>,
@@ -314,7 +314,7 @@ pub mod table {
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// If specified, configures range-based
         /// partitioning for this table. Structure is documented below.
@@ -331,7 +331,7 @@ pub mod table {
         /// parent organization or project resource for this tag key. Tag value is
         /// expected to be the short name, for example "Production".
         pub resource_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A JSON schema for the table.
         pub schema: pulumi_gestalt_rust::Output<String>,

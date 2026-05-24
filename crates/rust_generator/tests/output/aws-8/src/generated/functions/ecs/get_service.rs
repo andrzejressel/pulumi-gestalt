@@ -17,7 +17,7 @@ pub mod get_service {
         /// Resource tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -36,7 +36,9 @@ pub mod get_service {
         pub scheduling_strategy: pulumi_gestalt_rust::Output<String>,
         pub service_name: pulumi_gestalt_rust::Output<String>,
         /// Resource tags.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Family for the latest ACTIVE revision or full ARN of the task definition.
         pub task_definition: pulumi_gestalt_rust::Output<String>,
     }

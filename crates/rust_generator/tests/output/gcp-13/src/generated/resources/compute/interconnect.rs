@@ -95,7 +95,7 @@ pub mod interconnect {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Type of link requested. Note that this field indicates the speed of each of the links in the
         /// bundle, not the speed of the entire bundle. Can take one of the following values:
@@ -184,7 +184,7 @@ pub mod interconnect {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A list of outages expected for this Interconnect.
         /// Structure is documented below.
@@ -220,7 +220,7 @@ pub mod interconnect {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Type of link requested. Note that this field indicates the speed of each of the links in the
         /// bundle, not the speed of the entire bundle. Can take one of the following values:
@@ -272,7 +272,7 @@ pub mod interconnect {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside
         /// of Google's network that the interconnect is connected to.

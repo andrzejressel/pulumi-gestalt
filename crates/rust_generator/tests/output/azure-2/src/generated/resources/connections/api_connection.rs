@@ -68,7 +68,7 @@ pub mod api_connection {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub parameter_values: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Resource Group where this API Connection should exist. Changing this forces a new API Connection to be created.
         #[builder(into)]
@@ -76,7 +76,7 @@ pub mod api_connection {
         /// A mapping of tags which should be assigned to the API Connection.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -93,13 +93,13 @@ pub mod api_connection {
         /// The Name which should be used for this API Connection. Changing this forces a new API Connection to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         pub parameter_values: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Resource Group where this API Connection should exist. Changing this forces a new API Connection to be created.
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the API Connection.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

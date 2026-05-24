@@ -30,7 +30,7 @@ pub struct FileCacheDataRepositoryAssociation {
     pub r#resource_arn: Option<String>,
     /// A map of tags to assign to the file cache. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FileCacheDataRepositoryAssociation {

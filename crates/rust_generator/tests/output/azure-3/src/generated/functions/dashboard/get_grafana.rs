@@ -56,7 +56,9 @@ pub mod get_grafana {
         /// The name of the SKU used for the Grafana instance.
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The zone redundancy setting of the Grafana instance.
         pub zone_redundancy_enabled: pulumi_gestalt_rust::Output<bool>,
     }

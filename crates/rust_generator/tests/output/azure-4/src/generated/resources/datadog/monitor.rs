@@ -101,7 +101,7 @@ pub mod monitor {
         /// A mapping of tags which should be assigned to the Datadog Monitor.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `user` block as defined below.
         #[builder(into)]
@@ -136,7 +136,7 @@ pub mod monitor {
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Datadog Monitor.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `user` block as defined below.
         pub user: pulumi_gestalt_rust::Output<super::super::types::datadog::MonitorUser>,

@@ -8,7 +8,7 @@ pub struct BucketIntelligentTieringConfigurationFilter {
     pub r#prefix: Option<String>,
     /// All of these tags must exist in the object's tag set in order for the configuration to apply.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BucketIntelligentTieringConfigurationFilter {

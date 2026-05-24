@@ -42,7 +42,7 @@ pub mod resource_group_template_deployment {
         /// A mapping of tags which should be assigned to the Resource Group Template Deployment.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The contents of the ARM Template which should be deployed into this Resource Group. Cannot be specified with `template_spec_version_id`.
         #[builder(into, default)]
@@ -76,7 +76,7 @@ pub mod resource_group_template_deployment {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Resource Group Template Deployment.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The contents of the ARM Template which should be deployed into this Resource Group. Cannot be specified with `template_spec_version_id`.
         pub template_content: pulumi_gestalt_rust::Output<String>,

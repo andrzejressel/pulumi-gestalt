@@ -17,7 +17,7 @@ pub mod get_query_suggestions_block_list {
         /// Metadata that helps organize the block list you create.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -51,7 +51,9 @@ pub mod get_query_suggestions_block_list {
         /// Current status of the block list. When the value is `ACTIVE`, the block list is ready for use.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// Metadata that helps organize the block list you create.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Date and time that the block list was last updated.
         pub updated_at: pulumi_gestalt_rust::Output<String>,
     }

@@ -89,7 +89,7 @@ pub struct ClusterNodePoolNodeConfig {
     /// The Kubernetes labels (key/value pairs) to be applied to each node. The kubernetes.io/ and k8s.io/ prefixes are
     /// reserved by Kubernetes Core components and cannot be specified.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Parameters that can be configured on Linux nodes. Structure is documented below.
     #[builder(into)]
     pub r#linux_node_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigLinuxNodeConfig>>,
@@ -120,7 +120,7 @@ pub struct ClusterNodePoolNodeConfig {
     /// included, the provider will attempt to unset the value. To avoid this, set the
     /// value in your config.
     #[builder(into)]
-    pub r#metadata: Option<std::collections::HashMap<String, String>>,
+    pub r#metadata: Option<std::collections::BTreeMap<String, String>>,
     /// Minimum CPU platform to be used by this instance.
     /// The instance may be scheduled on the specified or newer CPU platform. Applicable
     /// values are the friendly names of CPU platforms, such as `Intel Haswell`. See the
@@ -149,10 +149,10 @@ pub struct ClusterNodePoolNodeConfig {
     /// The GCP labels (key/value pairs) to be applied to each node. Refer [here](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-managing-labels)
     /// for how these labels are applied to clusters, node pools and nodes.
     #[builder(into)]
-    pub r#resource_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#resource_labels: Option<std::collections::BTreeMap<String, String>>,
     /// A map of resource manager tag keys and values to be attached to the nodes for managing Compute Engine firewalls using Network Firewall Policies. Tags must be according to specifications found [here](https://cloud.google.com/vpc/docs/tags-firewalls-overview#specifications). A maximum of 5 tag key-value pairs can be specified. Existing tags will be replaced with new values. Tags must be in one of the following formats ([KEY]=[VALUE]) 1. `tagKeys/{tag_key_id}=tagValues/{tag_value_id}` 2. `{org_id}/{tag_key_name}={tag_value_name}` 3. `{project_id}/{tag_key_name}={tag_value_name}`.
     #[builder(into)]
-    pub r#resource_manager_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#resource_manager_tags: Option<std::collections::BTreeMap<String, String>>,
     /// Sandbox configuration for this node.
     #[builder(into)]
     pub r#sandbox_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigSandboxConfig>>,

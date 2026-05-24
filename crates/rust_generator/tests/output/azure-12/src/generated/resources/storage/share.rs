@@ -84,7 +84,7 @@ pub mod share {
         /// A mapping of MetaData for this File Share.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the share. Must be unique within the storage account where the share is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -126,7 +126,7 @@ pub mod share {
         pub enabled_protocol: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of MetaData for this File Share.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The name of the share. Must be unique within the storage account where the share is located. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

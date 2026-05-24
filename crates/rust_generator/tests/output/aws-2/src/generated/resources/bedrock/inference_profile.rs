@@ -55,7 +55,7 @@ pub mod inference_profile {
         /// Key-value mapping of resource tags for the inference profile.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub timeouts: pulumi_gestalt_rust::Input<
@@ -91,10 +91,10 @@ pub mod inference_profile {
         pub status: pulumi_gestalt_rust::Output<String>,
         /// Key-value mapping of resource tags for the inference profile.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub timeouts: pulumi_gestalt_rust::Output<
             Option<super::super::types::bedrock::InferenceProfileTimeouts>,

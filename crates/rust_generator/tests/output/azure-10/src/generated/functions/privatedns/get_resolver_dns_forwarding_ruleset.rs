@@ -28,7 +28,9 @@ pub mod get_resolver_dns_forwarding_ruleset {
         >,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// The tags assigned to the Private DNS Resolver Dns Forwarding Ruleset.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

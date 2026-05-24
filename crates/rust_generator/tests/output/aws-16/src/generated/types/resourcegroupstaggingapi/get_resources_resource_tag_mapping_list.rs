@@ -11,7 +11,7 @@ pub struct GetResourcesResourceTagMappingList {
     pub r#resource_arn: String,
     /// Map of tags assigned to the resource.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetResourcesResourceTagMappingList {

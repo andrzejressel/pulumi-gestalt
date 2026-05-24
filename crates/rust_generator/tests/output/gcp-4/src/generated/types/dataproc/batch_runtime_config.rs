@@ -16,10 +16,10 @@ pub struct BatchRuntimeConfig {
     /// (Output)
     /// A mapping of property names to values, which are used to configure workload execution.
     #[builder(into)]
-    pub r#effective_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#effective_properties: Option<std::collections::BTreeMap<String, String>>,
     /// A mapping of property names to values, which are used to configure workload execution.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// Version of the batch runtime.
     #[builder(into)]
     pub r#version: Option<String>,

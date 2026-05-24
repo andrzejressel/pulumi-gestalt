@@ -34,7 +34,9 @@ pub mod get_server {
         /// A list of dropped restorable database IDs on the server.
         pub restorable_dropped_database_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A mapping of tags assigned to this Microsoft SQL Server.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Key Vault key URI to be used as the `Customer Managed Key`(CMK/BYOK) for the `Transparent Data Encryption`(TDE) layer.
         pub transparent_data_encryption_key_vault_key_id: pulumi_gestalt_rust::Output<
             String,

@@ -67,7 +67,7 @@ pub mod dataset_delimited_text {
         /// The following supported locations for a Delimited Text Dataset (exactly one of them must be set):
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset.
         #[builder(into, default)]
@@ -134,7 +134,7 @@ pub mod dataset_delimited_text {
         /// A map of parameters to associate with the Data Factory Dataset.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The quote character. Defaults to `"`.
         #[builder(into, default)]
@@ -161,7 +161,7 @@ pub mod dataset_delimited_text {
         ///
         /// The following supported locations for a Delimited Text Dataset (exactly one of them must be set):
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -211,7 +211,7 @@ pub mod dataset_delimited_text {
         pub null_value: pulumi_gestalt_rust::Output<Option<String>>,
         /// A map of parameters to associate with the Data Factory Dataset.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The quote character. Defaults to `"`.
         pub quote_character: pulumi_gestalt_rust::Output<Option<String>>,

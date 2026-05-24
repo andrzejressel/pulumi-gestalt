@@ -135,7 +135,7 @@ pub mod cache {
         /// A mapping of tags to assign to the HPC Cache.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -199,7 +199,7 @@ pub mod cache {
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the HPC Cache.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

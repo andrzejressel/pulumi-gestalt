@@ -205,7 +205,7 @@ pub mod network_manager_deployment {
         /// A mapping of key values pairs that can be used to keep the deployment up with the Network Manager configurations and rules.
         #[builder(into, default)]
         pub triggers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -225,7 +225,7 @@ pub mod network_manager_deployment {
         pub scope_access: pulumi_gestalt_rust::Output<String>,
         /// A mapping of key values pairs that can be used to keep the deployment up with the Network Manager configurations and rules.
         pub triggers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

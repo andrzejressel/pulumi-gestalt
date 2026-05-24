@@ -100,7 +100,7 @@ pub mod fleet {
         /// Map of tags to attach to AppStream instances.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Configuration block for the VPC configuration for the image builder. See below.
         #[builder(into, default)]
@@ -161,10 +161,10 @@ pub mod fleet {
         pub stream_view: pulumi_gestalt_rust::Output<String>,
         /// Map of tags to attach to AppStream instances.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Configuration block for the VPC configuration for the image builder. See below.
         pub vpc_config: pulumi_gestalt_rust::Output<

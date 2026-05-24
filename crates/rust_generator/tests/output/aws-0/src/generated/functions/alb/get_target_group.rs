@@ -23,7 +23,7 @@ pub mod get_target_group {
         /// > **NOTE:** When both `arn` and `name` are specified, `arn` takes precedence. `tags` has the lowest precedence.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -52,7 +52,9 @@ pub mod get_target_group {
         pub stickiness: pulumi_gestalt_rust::Output<
             super::super::super::types::alb::GetTargetGroupStickiness,
         >,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub target_type: pulumi_gestalt_rust::Output<String>,
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
     }

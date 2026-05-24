@@ -8,7 +8,7 @@ pub struct DataFlowSinkRejectedLinkedService {
     pub r#name: String,
     /// A map of parameters to associate with the Data Factory Linked Service.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataFlowSinkRejectedLinkedService {

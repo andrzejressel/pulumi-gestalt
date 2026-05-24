@@ -26,7 +26,7 @@ pub mod get_open_zfs_snapshot {
         /// List of Tag values, with a maximum of 50 elements.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -47,7 +47,9 @@ pub mod get_open_zfs_snapshot {
         pub snapshot_id: pulumi_gestalt_rust::Output<String>,
         pub snapshot_ids: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// List of Tag values, with a maximum of 50 elements.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// ID of the volume that the snapshot is of.
         pub volume_id: pulumi_gestalt_rust::Output<String>,
     }

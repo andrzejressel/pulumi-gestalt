@@ -11,7 +11,7 @@ pub mod get_virtual_cluster {
         /// Key-value mapping of resource tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the cluster.
         #[builder(into)]
@@ -36,7 +36,9 @@ pub mod get_virtual_cluster {
         /// Status of the EKS cluster. One of `RUNNING`, `TERMINATING`, `TERMINATED`, `ARRESTED`.
         pub state: pulumi_gestalt_rust::Output<String>,
         /// Key-value mapping of resource tags.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub virtual_cluster_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

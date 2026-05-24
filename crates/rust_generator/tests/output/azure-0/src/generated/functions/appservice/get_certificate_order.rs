@@ -56,7 +56,9 @@ pub mod get_certificate_order {
         /// Current order status.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Duration in years (must be between 1 and 3).
         pub validity_in_years: pulumi_gestalt_rust::Output<i32>,
     }

@@ -20,7 +20,7 @@ pub mod get_security_profile {
         /// Map of tags to assign to the Security Profile.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -39,7 +39,9 @@ pub mod get_security_profile {
         pub permissions: pulumi_gestalt_rust::Output<Vec<String>>,
         pub security_profile_id: pulumi_gestalt_rust::Output<String>,
         /// Map of tags to assign to the Security Profile.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

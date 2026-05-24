@@ -14,7 +14,7 @@ pub mod get_stack {
         /// Map of tags associated with this stack.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -34,14 +34,16 @@ pub mod get_stack {
         pub notification_arns: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Map of outputs from the stack.
         pub outputs: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Map of parameters that specify input parameters for the stack.
         pub parameters: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Map of tags associated with this stack.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Structure containing the template body.
         pub template_body: pulumi_gestalt_rust::Output<String>,
         /// Amount of time that can pass before the stack status becomes `CREATE_FAILED`

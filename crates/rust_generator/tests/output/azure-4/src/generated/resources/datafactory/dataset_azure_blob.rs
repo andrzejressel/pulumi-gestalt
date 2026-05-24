@@ -65,7 +65,7 @@ pub mod dataset_azure_blob {
         /// The following supported arguments are specific to Azure Blob Dataset:
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset.
         #[builder(into, default)]
@@ -97,7 +97,7 @@ pub mod dataset_azure_blob {
         /// A map of parameters to associate with the Data Factory Dataset.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The path of the Azure Blob.
         #[builder(into, default)]
@@ -119,7 +119,7 @@ pub mod dataset_azure_blob {
         ///
         /// The following supported arguments are specific to Azure Blob Dataset:
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -141,7 +141,7 @@ pub mod dataset_azure_blob {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of parameters to associate with the Data Factory Dataset.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The path of the Azure Blob.
         pub path: pulumi_gestalt_rust::Output<Option<String>>,

@@ -76,7 +76,7 @@ pub mod user_workloads_config_map {
         /// For details see: https://kubernetes.io/docs/concepts/configuration/configmap/
         #[builder(into, default)]
         pub data: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Environment where the Kubernetes ConfigMap will be stored and used.
         ///
@@ -105,7 +105,7 @@ pub mod user_workloads_config_map {
         /// The "data" field of Kubernetes ConfigMap, organized in key-value pairs.
         /// For details see: https://kubernetes.io/docs/concepts/configuration/configmap/
         pub data: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Environment where the Kubernetes ConfigMap will be stored and used.
         ///

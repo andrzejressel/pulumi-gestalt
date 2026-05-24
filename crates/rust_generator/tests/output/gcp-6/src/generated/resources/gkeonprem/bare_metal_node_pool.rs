@@ -193,7 +193,7 @@ pub mod bare_metal_node_pool {
         /// 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The cluster this node pool belongs to.
         #[builder(into)]
@@ -230,7 +230,7 @@ pub mod bare_metal_node_pool {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// 'effective_annotations' for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The cluster this node pool belongs to.
         pub bare_metal_cluster: pulumi_gestalt_rust::Output<String>,
@@ -241,7 +241,7 @@ pub mod bare_metal_node_pool {
         /// The display name for the Bare Metal Node Pool.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// This checksum is computed by the server based on the value of other
         /// fields, and may be sent on update and delete requests to ensure the

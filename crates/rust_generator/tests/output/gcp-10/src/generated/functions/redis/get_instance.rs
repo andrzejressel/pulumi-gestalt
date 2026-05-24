@@ -34,13 +34,13 @@ pub mod get_instance {
         pub customer_managed_key: pulumi_gestalt_rust::Output<String>,
         pub display_name: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub host: pulumi_gestalt_rust::Output<String>,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub location_id: pulumi_gestalt_rust::Output<String>,
         pub maintenance_policies: pulumi_gestalt_rust::Output<
@@ -62,13 +62,13 @@ pub mod get_instance {
         pub port: pulumi_gestalt_rust::Output<i32>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub read_endpoint: pulumi_gestalt_rust::Output<String>,
         pub read_endpoint_port: pulumi_gestalt_rust::Output<i32>,
         pub read_replicas_mode: pulumi_gestalt_rust::Output<String>,
         pub redis_configs: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub redis_version: pulumi_gestalt_rust::Output<String>,
         pub region: pulumi_gestalt_rust::Output<Option<String>>,

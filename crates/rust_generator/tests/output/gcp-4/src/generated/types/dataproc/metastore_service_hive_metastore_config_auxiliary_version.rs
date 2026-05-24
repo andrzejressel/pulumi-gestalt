@@ -6,7 +6,7 @@ pub struct MetastoreServiceHiveMetastoreConfigAuxiliaryVersion {
     /// A mapping of Hive metastore configuration key-value pairs to apply to the auxiliary Hive metastore (configured in hive-site.xml) in addition to the primary version's overrides.
     /// If keys are present in both the auxiliary version's overrides and the primary version's overrides, the value from the auxiliary version's overrides takes precedence.
     #[builder(into)]
-    pub r#config_overrides: Option<std::collections::HashMap<String, String>>,
+    pub r#config_overrides: Option<std::collections::BTreeMap<String, String>>,
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     pub r#key: String,

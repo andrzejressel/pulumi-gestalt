@@ -19,7 +19,7 @@ pub mod get_domain {
         /// Tags assigned to the domain.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -28,7 +28,7 @@ pub mod get_domain {
         pub access_policies: pulumi_gestalt_rust::Output<String>,
         /// Key-value string pairs to specify advanced configuration options.
         pub advanced_options: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Status of the OpenSearch domain's advanced security options. The block consists of the following attributes:
         pub advanced_security_options: pulumi_gestalt_rust::Output<
@@ -104,7 +104,9 @@ pub mod get_domain {
             Vec<super::super::super::types::opensearch::GetDomainSoftwareUpdateOption>,
         >,
         /// Tags assigned to the domain.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// VPC Options for private OpenSearch domains.
         pub vpc_options: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::opensearch::GetDomainVpcOption>,

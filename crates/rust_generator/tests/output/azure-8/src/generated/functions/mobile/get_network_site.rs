@@ -26,7 +26,9 @@ pub mod get_network_site {
         /// An array of Id of Network Functions deployed on the site.
         pub network_function_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A mapping of tags which should be assigned to the Mobile Network Site.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

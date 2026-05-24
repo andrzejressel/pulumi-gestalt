@@ -39,7 +39,9 @@ pub mod get_serverless_collection {
         /// Indicates whether standby replicas should be used for a collection.
         pub standby_replicas: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the collection.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Type of collection.
         pub type_: pulumi_gestalt_rust::Output<String>,
     }

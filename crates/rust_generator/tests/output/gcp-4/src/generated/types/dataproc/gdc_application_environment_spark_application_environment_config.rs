@@ -5,7 +5,7 @@
 pub struct GdcApplicationEnvironmentSparkApplicationEnvironmentConfig {
     /// A map of default Spark properties to apply to workloads in this application environment. These defaults may be overridden by per-application properties.
     #[builder(into)]
-    pub r#default_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#default_properties: Option<std::collections::BTreeMap<String, String>>,
     /// The default Dataproc version to use for applications submitted to this application environment
     #[builder(into)]
     pub r#default_version: Option<String>,

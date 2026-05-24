@@ -20,7 +20,7 @@ pub struct IdentityProviderConfigOidc {
     pub r#issuer_url: String,
     /// The key value pairs that describe required claims in the identity token.
     #[builder(into)]
-    pub r#required_claims: Option<std::collections::HashMap<String, String>>,
+    pub r#required_claims: Option<std::collections::BTreeMap<String, String>>,
     /// The JWT claim that the provider will use as the username.
     #[builder(into)]
     pub r#username_claim: Option<String>,

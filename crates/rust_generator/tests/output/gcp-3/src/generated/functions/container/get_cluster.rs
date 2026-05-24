@@ -67,7 +67,7 @@ pub mod get_cluster {
             Vec<super::super::super::types::container::GetClusterDnsConfig>,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub enable_autopilot: pulumi_gestalt_rust::Output<bool>,
         pub enable_cilium_clusterwide_network_policy: pulumi_gestalt_rust::Output<bool>,
@@ -163,14 +163,14 @@ pub mod get_cluster {
             Vec<super::super::super::types::container::GetClusterProtectConfig>,
         >,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub release_channels: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::container::GetClusterReleaseChannel>,
         >,
         pub remove_default_node_pool: pulumi_gestalt_rust::Output<bool>,
         pub resource_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub resource_usage_export_configs: pulumi_gestalt_rust::Output<
             Vec<

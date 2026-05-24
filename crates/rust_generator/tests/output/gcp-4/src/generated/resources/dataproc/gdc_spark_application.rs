@@ -204,7 +204,7 @@ pub mod gdc_spark_application {
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An ApplicationEnvironment from which to inherit configuration properties.
         #[builder(into, default)]
@@ -220,7 +220,7 @@ pub mod gdc_spark_application {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location of the spark application.
         #[builder(into)]
@@ -235,7 +235,7 @@ pub mod gdc_spark_application {
         /// application-specific properties.
         #[builder(into, default)]
         pub properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Represents the PySparkApplicationConfig.
         /// Structure is documented below.
@@ -293,7 +293,7 @@ pub mod gdc_spark_application {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An ApplicationEnvironment from which to inherit configuration properties.
         pub application_environment: pulumi_gestalt_rust::Output<Option<String>>,
@@ -304,17 +304,17 @@ pub mod gdc_spark_application {
         /// User-provided human-readable name to be used in user interfaces.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The labels to associate with this application. Labels may be used for filtering and billing tracking.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location of the spark application.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -331,12 +331,12 @@ pub mod gdc_spark_application {
         pub project: pulumi_gestalt_rust::Output<String>,
         /// application-specific properties.
         pub properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Represents the PySparkApplicationConfig.
         /// Structure is documented below.

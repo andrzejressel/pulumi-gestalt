@@ -14,7 +14,7 @@ pub struct GetLaunchPathsSummary {
     pub r#path_id: String,
     /// Tags associated with this product path.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetLaunchPathsSummary {

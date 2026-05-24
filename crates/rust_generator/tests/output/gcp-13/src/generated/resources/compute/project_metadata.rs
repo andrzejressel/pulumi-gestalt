@@ -67,7 +67,7 @@ pub mod project_metadata {
         /// - - -
         #[builder(into)]
         pub metadata: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
@@ -85,7 +85,7 @@ pub mod project_metadata {
         ///
         /// - - -
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.

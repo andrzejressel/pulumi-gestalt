@@ -26,7 +26,7 @@ pub mod get_standard {
         pub app_service_plan_id: pulumi_gestalt_rust::Output<String>,
         /// A map of key-value pairs for [App Settings](https://docs.microsoft.com/azure/azure-functions/functions-app-settings) and custom values.
         pub app_settings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Controls the allowed range for bundle versions.
         pub bundle_version: pulumi_gestalt_rust::Output<String>,
@@ -80,7 +80,9 @@ pub mod get_standard {
         /// The name of the share used by the logic app.
         pub storage_account_share_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Whether the logic app should use the bundled extension package.
         pub use_extension_bundle: pulumi_gestalt_rust::Output<bool>,
         /// The runtime version associated with the Logic App.

@@ -28,7 +28,7 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams {
     /// by the disks.setLabels method. This field is only
     /// applicable for persistent disks.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams {

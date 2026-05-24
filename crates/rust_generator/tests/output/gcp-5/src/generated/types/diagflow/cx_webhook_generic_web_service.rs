@@ -8,7 +8,7 @@ pub struct CxWebhookGenericWebService {
     pub r#allowed_ca_certs: Option<Vec<String>>,
     /// The HTTP request headers to send together with webhook requests.
     #[builder(into)]
-    pub r#request_headers: Option<std::collections::HashMap<String, String>>,
+    pub r#request_headers: Option<std::collections::BTreeMap<String, String>>,
     /// Whether to use speech adaptation for speech recognition.
     #[builder(into)]
     pub r#uri: String,

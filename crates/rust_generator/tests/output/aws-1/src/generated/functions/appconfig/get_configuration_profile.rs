@@ -17,7 +17,7 @@ pub mod get_configuration_profile {
         /// Map of tags for the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -38,7 +38,9 @@ pub mod get_configuration_profile {
         /// ARN of an IAM role with permission to access the configuration at the specified location_uri.
         pub retrieval_role_arn: pulumi_gestalt_rust::Output<String>,
         /// Map of tags for the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Type of validator. Valid values: JSON_SCHEMA and LAMBDA.
         pub type_: pulumi_gestalt_rust::Output<String>,
         /// Nested list of methods for validating the configuration.

@@ -5,7 +5,7 @@
 pub struct ListenerDefaultActionAuthenticateCognito {
     /// Query parameters to include in the redirect request to the authorization endpoint. Max: 10. See below.
     #[builder(into)]
-    pub r#authentication_request_extra_params: Option<std::collections::HashMap<String, String>>,
+    pub r#authentication_request_extra_params: Option<std::collections::BTreeMap<String, String>>,
     /// Behavior if the user is not authenticated. Valid values are `deny`, `allow` and `authenticate`.
     #[builder(into)]
     pub r#on_unauthenticated_request: Option<String>,

@@ -8,7 +8,7 @@ pub struct RulesetRuleActionParametersCacheKeyCustomKeyHeader {
     pub r#check_presences: Option<Vec<String>>,
     /// Dictionary of headers mapping to lists of values to check for presence in the custom key.
     #[builder(into)]
-    pub r#contains: Option<std::collections::HashMap<String, Vec<String>>>,
+    pub r#contains: Option<std::collections::BTreeMap<String, Vec<String>>>,
     /// Exclude the origin header from the custom key.
     #[builder(into)]
     pub r#exclude_origin: Option<bool>,

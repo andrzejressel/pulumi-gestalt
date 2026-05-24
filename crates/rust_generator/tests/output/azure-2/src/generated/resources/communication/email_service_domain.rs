@@ -63,7 +63,7 @@ pub mod email_service_domain {
         /// A mapping of tags which should be assigned to the Email Communication Service.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Describes user engagement tracking is enabled or disabled. Defaults to `false`.
         #[builder(into, default)]
@@ -88,7 +88,7 @@ pub mod email_service_domain {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Email Communication Service.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Describes user engagement tracking is enabled or disabled. Defaults to `false`.
         pub user_engagement_tracking_enabled: pulumi_gestalt_rust::Output<Option<bool>>,

@@ -14,7 +14,7 @@ pub mod get_map {
         /// Key-value map of resource tags for the map.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -33,7 +33,9 @@ pub mod get_map {
         pub map_arn: pulumi_gestalt_rust::Output<String>,
         pub map_name: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the map.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Timestamp for when the map resource was last updated in ISO 8601 format.
         pub update_time: pulumi_gestalt_rust::Output<String>,
     }

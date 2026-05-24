@@ -9,7 +9,7 @@ pub struct InstanceMemcacheParameters {
     pub r#id: Option<String>,
     /// User-defined set of parameters to use in the memcache process.
     #[builder(into)]
-    pub r#params: Option<std::collections::HashMap<String, String>>,
+    pub r#params: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for InstanceMemcacheParameters {

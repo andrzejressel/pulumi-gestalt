@@ -59,7 +59,7 @@ pub mod get_pool {
         /// The maximum number of tasks that can run concurrently on a single compute node in the pool.
         pub max_tasks_per_node: pulumi_gestalt_rust::Output<i32>,
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A `mount` block that describes mount configuration.
         pub mounts: pulumi_gestalt_rust::Output<

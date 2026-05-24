@@ -5,7 +5,7 @@
 pub struct SoftwareUpdateConfigurationPreTask {
     /// Specifies a map of parameters for the task.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// The name of the runbook for the pre task.
     #[builder(into)]
     pub r#source: Option<String>,

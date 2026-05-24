@@ -22,7 +22,7 @@ pub struct SubscriptionPushConfig {
     /// - v1beta1: uses the push format defined in the v1beta1 Pub/Sub API.
     /// - v1 or v1beta2: uses the push format defined in the v1 Pub/Sub API.
     #[builder(into)]
-    pub r#attributes: Option<std::collections::HashMap<String, String>>,
+    pub r#attributes: Option<std::collections::BTreeMap<String, String>>,
     /// When set, the payload to the push endpoint is not wrapped.Sets the
     /// `data` field as the HTTP body for delivery.
     /// Structure is documented below.

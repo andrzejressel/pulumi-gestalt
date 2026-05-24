@@ -68,7 +68,7 @@ pub mod database {
         /// Key-value map of custom metadata properties for the database definition.
         #[builder(into, default)]
         pub properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -98,7 +98,7 @@ pub mod database {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of custom metadata properties for the database definition.
         pub properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

@@ -89,7 +89,7 @@ pub mod user {
         /// A list of tags to be added to this resource. A tag is a key-value pair.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the user.
         #[builder(into)]
@@ -123,10 +123,10 @@ pub mod user {
         pub passwords: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// A list of tags to be added to this resource. A tag is a key-value pair.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the user.
         pub user_id: pulumi_gestalt_rust::Output<String>,

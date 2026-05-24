@@ -26,7 +26,9 @@ pub mod get_integration_account {
         /// The SKU name of the Logic App Integration Account.
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Logic App Integration Account.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

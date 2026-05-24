@@ -33,7 +33,9 @@ pub mod get_analytics_workspace {
         /// The SKU of the Log Analytics Workspace.
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Workspace (or Customer) ID for the Log Analytics Workspace.
         pub workspace_id: pulumi_gestalt_rust::Output<String>,
     }

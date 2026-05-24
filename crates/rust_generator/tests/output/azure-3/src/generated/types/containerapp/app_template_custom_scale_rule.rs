@@ -11,7 +11,7 @@ pub struct AppTemplateCustomScaleRule {
     pub r#custom_rule_type: String,
     /// A map of string key-value pairs to configure the Custom Scale Rule.
     #[builder(into)]
-    pub r#metadata: std::collections::HashMap<String, String>,
+    pub r#metadata: std::collections::BTreeMap<String, String>,
     /// The name of the Scaling Rule
     #[builder(into)]
     pub r#name: String,

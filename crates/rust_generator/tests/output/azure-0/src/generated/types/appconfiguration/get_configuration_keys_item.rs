@@ -20,7 +20,7 @@ pub struct GetConfigurationKeysItem {
     pub r#locked: bool,
     /// A mapping of tags assigned to the resource.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
     /// The type of the App Configuration Key. It can either be `kv` (simple [key/value](https://docs.microsoft.com/azure/azure-app-configuration/concept-key-value)) or `vault` (where the value is a reference to a [Key Vault Secret](https://azure.microsoft.com/en-gb/services/key-vault/).
     #[builder(into)]
     pub r#type_: String,

@@ -32,7 +32,7 @@ pub mod get_app_connection {
         pub connectors: pulumi_gestalt_rust::Output<Vec<String>>,
         pub display_name: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub gateways: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::beyondcorp::GetAppConnectionGateway>,
@@ -40,12 +40,12 @@ pub mod get_app_connection {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub region: pulumi_gestalt_rust::Output<Option<String>>,
         pub type_: pulumi_gestalt_rust::Output<String>,

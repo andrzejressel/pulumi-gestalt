@@ -45,7 +45,9 @@ pub mod get_scheduled_query_rules_alert {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// Severity of the alert.
         pub severity: pulumi_gestalt_rust::Output<i32>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Time for which alerts should be throttled or suppressed.
         pub throttling: pulumi_gestalt_rust::Output<i32>,
         /// Time window for which data needs to be fetched for query.

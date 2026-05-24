@@ -77,7 +77,7 @@ pub mod backup_vault {
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Required. The default and minimum enforced retention for each backup within the backup vault. The enforced retention for each backup can be extended.
         #[builder(into)]
@@ -123,7 +123,7 @@ pub mod backup_vault {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The GCP location for the backup vault.
         #[builder(into)]
@@ -151,7 +151,7 @@ pub mod backup_vault {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Output only. The number of backups in this backup vault.
         pub backup_count: pulumi_gestalt_rust::Output<String>,
@@ -171,11 +171,11 @@ pub mod backup_vault {
         /// Optional. The description of the BackupVault instance (2048 characters or less).
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Optional. Time after which the BackupVault resource is locked.
         pub effective_time: pulumi_gestalt_rust::Output<Option<String>>,
@@ -203,7 +203,7 @@ pub mod backup_vault {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The GCP location for the backup vault.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -215,7 +215,7 @@ pub mod backup_vault {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Output only. Service account used by the BackupVault Service for this BackupVault.  The user should grant this account permissions in their workload project to enable the service to run backups and restores there.
         pub service_account: pulumi_gestalt_rust::Output<String>,

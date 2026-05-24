@@ -53,7 +53,7 @@ pub mod subscription_template_deployment {
         /// A mapping of tags which should be assigned to the Subscription Template Deployment.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The contents of the ARM Template which should be deployed into this Subscription.
         #[builder(into, default)]
@@ -81,7 +81,7 @@ pub mod subscription_template_deployment {
         pub parameters_content: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Subscription Template Deployment.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The contents of the ARM Template which should be deployed into this Subscription.
         pub template_content: pulumi_gestalt_rust::Output<String>,

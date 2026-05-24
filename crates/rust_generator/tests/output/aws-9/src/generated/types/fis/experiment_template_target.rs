@@ -13,7 +13,7 @@ pub struct ExperimentTemplateTarget {
     /// 
     /// > **NOTE:** The `target` configuration block requires either `resource_arns` or `resource_tag`.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Set of ARNs of the resources to target with an action. Conflicts with `resource_tag`.
     #[builder(into)]
     pub r#resource_arns: Option<Vec<String>>,

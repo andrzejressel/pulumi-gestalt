@@ -47,7 +47,9 @@ pub mod get_job_definition {
         /// The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.
         pub scheduling_priority: pulumi_gestalt_rust::Output<i32>,
         pub status: pulumi_gestalt_rust::Output<Option<String>>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds.
         pub timeouts: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::batch::GetJobDefinitionTimeout>,

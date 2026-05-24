@@ -28,7 +28,9 @@ pub mod get_virtual_hub {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Virtual Hub.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Autonomous System Number of the Virtual Hub BGP router.
         pub virtual_router_asn: pulumi_gestalt_rust::Output<i32>,
         /// The IP addresses of the Virtual Hub BGP router.

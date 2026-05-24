@@ -11,7 +11,7 @@ pub struct ApiTokenPolicy {
     pub r#permission_groups: Vec<String>,
     /// Describes what operations against which resources are allowed or denied.
     #[builder(into)]
-    pub r#resources: std::collections::HashMap<String, String>,
+    pub r#resources: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ApiTokenPolicy {

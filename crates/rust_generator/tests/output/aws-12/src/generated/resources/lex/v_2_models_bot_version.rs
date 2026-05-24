@@ -47,7 +47,7 @@ pub mod v_2_models_bot_version {
         /// * `sourceBotVersion` - (Required) The version of a bot used for a bot locale. Valid values: `DRAFT`, a numeric version.
         #[builder(into)]
         pub locale_specification: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<
+            std::collections::BTreeMap<
                 String,
                 super::super::types::lex::V2ModelsBotVersionLocaleSpecification,
             >,
@@ -75,7 +75,7 @@ pub mod v_2_models_bot_version {
         /// The attribute value is a map with one or more entries, each of which has a locale name as the key and an object with the following attribute as the value:
         /// * `sourceBotVersion` - (Required) The version of a bot used for a bot locale. Valid values: `DRAFT`, a numeric version.
         pub locale_specification: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<
+            std::collections::BTreeMap<
                 String,
                 super::super::types::lex::V2ModelsBotVersionLocaleSpecification,
             >,

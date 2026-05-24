@@ -301,7 +301,7 @@ pub mod media_insights_pipeline_configuration {
         /// Key-value map of tags for the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -331,10 +331,10 @@ pub mod media_insights_pipeline_configuration {
         pub resource_access_role_arn: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of tags for the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

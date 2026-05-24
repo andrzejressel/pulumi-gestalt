@@ -14,7 +14,7 @@ pub struct BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNo
     /// An object containing a list of "key": value pairs.
     /// For example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// The list of machine addresses in the Bare Metal Node Pool.
     /// Structure is documented below.
     #[builder(into)]

@@ -22,12 +22,12 @@ pub mod get_membership_binding {
         pub create_time: pulumi_gestalt_rust::Output<String>,
         pub delete_time: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub location: pulumi_gestalt_rust::Output<String>,
         pub membership_binding_id: pulumi_gestalt_rust::Output<String>,
@@ -35,7 +35,7 @@ pub mod get_membership_binding {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub scope: pulumi_gestalt_rust::Output<String>,
         pub states: pulumi_gestalt_rust::Output<

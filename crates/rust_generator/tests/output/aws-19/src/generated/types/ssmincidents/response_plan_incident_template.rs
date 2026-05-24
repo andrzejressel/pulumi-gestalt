@@ -11,7 +11,7 @@ pub struct ResponsePlanIncidentTemplate {
     pub r#impact: i32,
     /// The tags assigned to an incident template. When an incident starts, Incident Manager assigns the tags specified in the template to the incident.
     #[builder(into)]
-    pub r#incident_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#incident_tags: Option<std::collections::BTreeMap<String, String>>,
     /// The Amazon Simple Notification Service (Amazon SNS) targets that this incident notifies when it is updated. The `notification_target` configuration block supports the following argument:
     #[builder(into)]
     pub r#notification_targets: Option<Vec<super::super::types::ssmincidents::ResponsePlanIncidentTemplateNotificationTarget>>,

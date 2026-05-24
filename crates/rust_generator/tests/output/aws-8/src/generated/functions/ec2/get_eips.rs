@@ -16,7 +16,7 @@ pub mod get_eips {
         /// Map of tags, each pair of which must exactly match a pair on the desired Elastic IPs.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -31,7 +31,7 @@ pub mod get_eips {
         /// List of all the Elastic IP addresses.
         pub public_ips: pulumi_gestalt_rust::Output<Vec<String>>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

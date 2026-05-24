@@ -5,7 +5,7 @@
 pub struct JobDefinitionEksPropertiesPodPropertiesMetadata {
     /// Key-value pairs used to identify, sort, and organize cube resources.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobDefinitionEksPropertiesPodPropertiesMetadata {

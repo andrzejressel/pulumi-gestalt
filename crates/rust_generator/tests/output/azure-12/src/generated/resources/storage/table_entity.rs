@@ -56,7 +56,7 @@ pub mod table_entity {
         /// A map of key/value pairs that describe the entity to be inserted/merged in to the storage table.
         #[builder(into)]
         pub entity: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The key for the partition where the entity will be inserted/merged. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -77,7 +77,7 @@ pub mod table_entity {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of key/value pairs that describe the entity to be inserted/merged in to the storage table.
         pub entity: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The key for the partition where the entity will be inserted/merged. Changing this forces a new resource to be created.
         pub partition_key: pulumi_gestalt_rust::Output<String>,

@@ -148,7 +148,7 @@ pub mod hl_7_store {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The resource name for the Hl7V2Store.
         /// ** Changing this property may recreate the Hl7v2 store (removing all data) **
@@ -196,7 +196,7 @@ pub mod hl_7_store {
         pub dataset: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// User-supplied key-value pairs used to organize HL7v2 stores.
         /// Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must
@@ -210,7 +210,7 @@ pub mod hl_7_store {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The resource name for the Hl7V2Store.
         /// ** Changing this property may recreate the Hl7v2 store (removing all data) **
@@ -238,7 +238,7 @@ pub mod hl_7_store {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Determines whether duplicate messages are allowed.
         pub reject_duplicate_message: pulumi_gestalt_rust::Output<Option<bool>>,

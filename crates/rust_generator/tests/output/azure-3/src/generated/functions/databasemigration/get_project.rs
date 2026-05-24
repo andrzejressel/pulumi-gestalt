@@ -30,7 +30,9 @@ pub mod get_project {
         /// The platform type of the migration source.
         pub source_platform: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The platform type of the migration target.
         pub target_platform: pulumi_gestalt_rust::Output<String>,
     }

@@ -152,7 +152,7 @@ pub mod frontdoor_firewall_policy {
         /// A mapping of tags to assign to the Front Door Firewall Policy.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -196,7 +196,7 @@ pub mod frontdoor_firewall_policy {
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the Front Door Firewall Policy.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

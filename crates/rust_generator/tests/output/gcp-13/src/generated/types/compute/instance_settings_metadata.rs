@@ -5,7 +5,7 @@
 pub struct InstanceSettingsMetadata {
     /// A metadata key/value items map. The total size of all keys and values must be less than 512KB
     #[builder(into)]
-    pub r#items: Option<std::collections::HashMap<String, String>>,
+    pub r#items: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for InstanceSettingsMetadata {

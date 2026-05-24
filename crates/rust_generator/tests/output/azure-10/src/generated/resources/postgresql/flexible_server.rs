@@ -224,7 +224,7 @@ pub mod flexible_server {
         /// A mapping of tags which should be assigned to the PostgreSQL Flexible Server.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of PostgreSQL Flexible Server to use. Possible values are `11`,`12`, `13`, `14`, `15` and `16`. Required when `create_mode` is `Default`.
         ///
@@ -325,7 +325,7 @@ pub mod flexible_server {
         pub storage_tier: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the PostgreSQL Flexible Server.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of PostgreSQL Flexible Server to use. Possible values are `11`,`12`, `13`, `14`, `15` and `16`. Required when `create_mode` is `Default`.
         ///

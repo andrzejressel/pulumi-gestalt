@@ -143,7 +143,7 @@ pub mod gallery_application_version {
         /// A mapping of tags to assign to the Gallery Application Version.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// One or more `target_region` blocks as defined below.
         #[builder(into)]
@@ -184,7 +184,7 @@ pub mod gallery_application_version {
         >,
         /// A mapping of tags to assign to the Gallery Application Version.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// One or more `target_region` blocks as defined below.
         pub target_regions: pulumi_gestalt_rust::Output<

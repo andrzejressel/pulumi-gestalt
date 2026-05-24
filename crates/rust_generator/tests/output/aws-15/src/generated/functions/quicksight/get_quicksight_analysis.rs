@@ -18,7 +18,7 @@ pub mod get_quicksight_analysis {
         pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -36,7 +36,9 @@ pub mod get_quicksight_analysis {
             Vec<super::super::super::types::quicksight::GetQuicksightAnalysisPermission>,
         >,
         pub status: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub theme_arn: pulumi_gestalt_rust::Output<String>,
     }
     ///

@@ -27,7 +27,7 @@ pub struct LifecyclePolicyPolicyDetails {
     /// 
     /// > Note: You cannot have overlapping lifecycle policies that share the same `target_tags`. Pulumi is unable to detect this at plan time but it will fail during apply.
     #[builder(into)]
-    pub r#target_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#target_tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LifecyclePolicyPolicyDetails {

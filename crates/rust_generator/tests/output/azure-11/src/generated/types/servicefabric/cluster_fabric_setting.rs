@@ -8,7 +8,7 @@ pub struct ClusterFabricSetting {
     pub r#name: String,
     /// A map containing settings for the specified Fabric Setting.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterFabricSetting {

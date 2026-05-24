@@ -173,7 +173,7 @@ pub mod attached_cluster {
         /// 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Configuration related to the cluster RBAC settings.
         #[builder(into, default)]
@@ -262,7 +262,7 @@ pub mod attached_cluster {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// 'effective_annotations' for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Configuration related to the cluster RBAC settings.
         pub authorization: pulumi_gestalt_rust::Output<
@@ -287,7 +287,7 @@ pub mod attached_cluster {
         /// or migrate any CNCF conformant cluster.
         pub distribution: pulumi_gestalt_rust::Output<String>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A set of errors found in the cluster.
         /// Structure is documented below.

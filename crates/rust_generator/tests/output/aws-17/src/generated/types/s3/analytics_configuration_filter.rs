@@ -8,7 +8,7 @@ pub struct AnalyticsConfigurationFilter {
     pub r#prefix: Option<String>,
     /// Set of object tags for filtering.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AnalyticsConfigurationFilter {

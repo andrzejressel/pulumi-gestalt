@@ -48,7 +48,9 @@ pub mod get_private_cloud {
         /// The Name of the SKU used for this Azure VMware Solution Private Cloud.
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Azure VMware Solution Private Cloud.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The thumbprint of the VMware vCenter Server SSL certificate.
         pub vcenter_certificate_thumbprint: pulumi_gestalt_rust::Output<String>,
         /// The endpoint for VMware vCenter Server Appliance.

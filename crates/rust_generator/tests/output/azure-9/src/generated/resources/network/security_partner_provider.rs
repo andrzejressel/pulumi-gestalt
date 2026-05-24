@@ -82,7 +82,7 @@ pub mod security_partner_provider {
         /// A mapping of tags which should be assigned to the Security Partner Provider.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Virtual Hub within which this Security Partner Provider should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -105,7 +105,7 @@ pub mod security_partner_provider {
         pub security_provider_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Security Partner Provider.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Virtual Hub within which this Security Partner Provider should be created. Changing this forces a new resource to be created.
         pub virtual_hub_id: pulumi_gestalt_rust::Output<Option<String>>,

@@ -33,14 +33,14 @@ pub mod get_repository {
             Vec<super::super::super::types::artifactregistry::GetRepositoryDockerConfig>,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub format: pulumi_gestalt_rust::Output<String>,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub kms_key_name: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub location: pulumi_gestalt_rust::Output<String>,
         pub maven_configs: pulumi_gestalt_rust::Output<
@@ -50,7 +50,7 @@ pub mod get_repository {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub remote_repository_configs: pulumi_gestalt_rust::Output<
             Vec<

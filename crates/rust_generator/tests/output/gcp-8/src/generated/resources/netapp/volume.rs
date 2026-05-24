@@ -115,7 +115,7 @@ pub mod volume {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Optional. Flag indicating if the volume will be a large capacity volume or a regular volume.
         #[builder(into, default)]
@@ -215,7 +215,7 @@ pub mod volume {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Reports the data-at-rest encryption type of the volume. Inherited from storage pool.
         pub encryption_type: pulumi_gestalt_rust::Output<String>,
@@ -235,7 +235,7 @@ pub mod volume {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Optional. Flag indicating if the volume will be a large capacity volume or a regular volume.
         pub large_capacity: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -269,7 +269,7 @@ pub mod volume {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Specifies the replica zone for regional volume.
         pub replica_zone: pulumi_gestalt_rust::Output<String>,

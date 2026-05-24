@@ -74,7 +74,7 @@ pub mod certificate_order {
         /// (Optional) A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Duration in years (must be between `1` and `3`). Defaults to `1`.
         #[builder(into, default)]
@@ -129,7 +129,7 @@ pub mod certificate_order {
         pub status: pulumi_gestalt_rust::Output<String>,
         /// (Optional) A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Duration in years (must be between `1` and `3`). Defaults to `1`.
         pub validity_in_years: pulumi_gestalt_rust::Output<Option<i32>>,

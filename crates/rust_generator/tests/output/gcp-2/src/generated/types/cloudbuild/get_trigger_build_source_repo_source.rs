@@ -28,7 +28,7 @@ pub struct GetTriggerBuildSourceRepoSource {
     pub r#repo_name: String,
     /// Substitutions to use in a triggered build. Should only be used with triggers.run
     #[builder(into)]
-    pub r#substitutions: std::collections::HashMap<String, String>,
+    pub r#substitutions: std::collections::BTreeMap<String, String>,
     /// Regex matching tags to build. Exactly one a of branch name, tag, or commit SHA must be provided.
     /// The syntax of the regular expressions accepted is the syntax accepted by RE2 and
     /// described at https://github.com/google/re2/wiki/Syntax

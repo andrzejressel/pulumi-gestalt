@@ -12,7 +12,7 @@ pub mod example_server {
         pub map_array_enum: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
-                    std::collections::HashMap<
+                    std::collections::BTreeMap<
                         String,
                         super::types::AnnotationStoreSchemaValueType,
                     >,
@@ -30,7 +30,7 @@ pub mod example_server {
         pub map_array_enum: pulumi_gestalt_rust::Output<
             Option<
                 Vec<
-                    std::collections::HashMap<
+                    std::collections::BTreeMap<
                         String,
                         super::types::AnnotationStoreSchemaValueType,
                     >,

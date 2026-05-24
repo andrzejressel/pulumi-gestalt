@@ -11,7 +11,7 @@ pub struct LaunchScheduledSplitsConfigStepSegmentOverride {
     pub r#segment: String,
     /// The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.
     #[builder(into)]
-    pub r#weights: std::collections::HashMap<String, i32>,
+    pub r#weights: std::collections::BTreeMap<String, i32>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LaunchScheduledSplitsConfigStepSegmentOverride {

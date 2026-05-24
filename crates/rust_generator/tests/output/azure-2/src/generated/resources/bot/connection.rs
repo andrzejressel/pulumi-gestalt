@@ -72,7 +72,7 @@ pub mod connection {
         /// A map of additional parameters to apply to the connection.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the resource group in which to create the Bot Connection. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -103,7 +103,7 @@ pub mod connection {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of additional parameters to apply to the connection.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the resource group in which to create the Bot Connection. Changing this forces a new resource to be created.
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,

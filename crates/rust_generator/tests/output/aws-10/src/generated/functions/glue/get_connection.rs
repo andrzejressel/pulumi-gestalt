@@ -15,7 +15,7 @@ pub mod get_connection {
         /// Tags assigned to the resource
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -25,7 +25,7 @@ pub mod get_connection {
         /// Catalog ID of the Glue Connection.
         pub catalog_id: pulumi_gestalt_rust::Output<String>,
         pub connection_properties: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Type of Glue Connection.
         pub connection_type: pulumi_gestalt_rust::Output<String>,
@@ -43,7 +43,9 @@ pub mod get_connection {
             >,
         >,
         /// Tags assigned to the resource
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

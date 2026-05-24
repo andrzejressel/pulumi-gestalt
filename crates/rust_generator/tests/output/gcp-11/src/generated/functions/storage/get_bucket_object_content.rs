@@ -43,7 +43,7 @@ pub mod get_bucket_object_content {
         pub md5hash: pulumi_gestalt_rust::Output<String>,
         pub media_link: pulumi_gestalt_rust::Output<String>,
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub output_name: pulumi_gestalt_rust::Output<String>,

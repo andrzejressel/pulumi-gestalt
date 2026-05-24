@@ -20,7 +20,7 @@ pub mod get_ontap_storage_virtual_machine {
         pub id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -60,7 +60,9 @@ pub mod get_ontap_storage_virtual_machine {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The SVM's subtype.
         pub subtype: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The SVM's UUID.
         pub uuid: pulumi_gestalt_rust::Output<String>,
     }

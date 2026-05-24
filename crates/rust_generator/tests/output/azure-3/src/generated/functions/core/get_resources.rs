@@ -14,7 +14,7 @@ pub mod get_resources {
         /// A mapping of tags which the resource has to have in order to be included in the result.
         #[builder(into, default)]
         pub required_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Resource group where the Resources are located.
         #[builder(into, default)]
@@ -30,7 +30,7 @@ pub mod get_resources {
         /// The name of this Resource.
         pub name: pulumi_gestalt_rust::Output<String>,
         pub required_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Resource Group in which this Resource exists.
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,

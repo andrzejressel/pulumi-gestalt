@@ -42,7 +42,7 @@ pub mod billing_group {
         /// Key-value mapping of resource tags
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -65,10 +65,10 @@ pub mod billing_group {
         >,
         /// Key-value mapping of resource tags
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The current version of the Billing Group record in the registry.
         pub version: pulumi_gestalt_rust::Output<i32>,

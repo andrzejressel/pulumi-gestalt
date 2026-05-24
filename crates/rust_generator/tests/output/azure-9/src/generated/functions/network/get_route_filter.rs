@@ -29,7 +29,9 @@ pub mod get_route_filter {
             Vec<super::super::super::types::network::GetRouteFilterRule>,
         >,
         /// A mapping of tags assigned to the Route Filter.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

@@ -141,7 +141,7 @@ pub mod frontdoor {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -157,11 +157,11 @@ pub mod frontdoor {
         >,
         /// A map/dictionary of Backend Pool Health Probe Names (key) to the Backend Pool Health Probe ID (value)
         pub backend_pool_health_probes_map: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A map/dictionary of Backend Pool Load Balancing Setting Names (key) to the Backend Pool Load Balancing Setting ID (value)
         pub backend_pool_load_balancing_settings_map: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A `backend_pool_load_balancing` block as defined below.
         pub backend_pool_load_balancings: pulumi_gestalt_rust::Output<
@@ -179,7 +179,7 @@ pub mod frontdoor {
         >,
         /// A map/dictionary of Backend Pool Names (key) to the Backend Pool ID (value)
         pub backend_pools_map: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The host that each frontendEndpoint must CNAME to.
         pub cname: pulumi_gestalt_rust::Output<String>,
@@ -194,7 +194,7 @@ pub mod frontdoor {
         >,
         /// A map/dictionary of Frontend Endpoint Names (key) to the Frontend Endpoint ID (value)
         pub frontend_endpoints_map: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The unique ID of the Front Door which is embedded into the incoming headers `X-Azure-FDID` attribute and maybe used to filter traffic sent by the Front Door to your backend.
         pub header_frontdoor_id: pulumi_gestalt_rust::Output<String>,
@@ -210,11 +210,11 @@ pub mod frontdoor {
         >,
         /// A map/dictionary of Routing Rule Names (key) to the Routing Rule ID (value)
         pub routing_rules_map: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

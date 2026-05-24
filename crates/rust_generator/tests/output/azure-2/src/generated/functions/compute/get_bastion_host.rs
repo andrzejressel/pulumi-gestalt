@@ -45,7 +45,9 @@ pub mod get_bastion_host {
         /// The SKU of the Bastion Host.
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Bastion Host.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Is Tunneling feature enabled for the Bastion Host.
         pub tunneling_enabled: pulumi_gestalt_rust::Output<bool>,
         /// A list of Availability Zones in which this Bastion Host is located.

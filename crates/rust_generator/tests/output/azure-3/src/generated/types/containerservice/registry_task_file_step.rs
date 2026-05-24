@@ -11,7 +11,7 @@ pub struct RegistryTaskFileStep {
     pub r#context_path: Option<String>,
     /// Specifies a map of secret values that can be passed when running a task.
     #[builder(into)]
-    pub r#secret_values: Option<std::collections::HashMap<String, String>>,
+    pub r#secret_values: Option<std::collections::BTreeMap<String, String>>,
     /// The task template file path relative to the source context.
     #[builder(into)]
     pub r#task_file_path: String,
@@ -20,7 +20,7 @@ pub struct RegistryTaskFileStep {
     pub r#value_file_path: Option<String>,
     /// Specifies a map of values that can be passed when running a task.
     #[builder(into)]
-    pub r#values: Option<std::collections::HashMap<String, String>>,
+    pub r#values: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RegistryTaskFileStep {

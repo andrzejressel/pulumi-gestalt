@@ -43,7 +43,9 @@ pub mod get_account {
         /// The ID of the Storage Account used for this Batch account.
         pub storage_account_id: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the Batch account.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

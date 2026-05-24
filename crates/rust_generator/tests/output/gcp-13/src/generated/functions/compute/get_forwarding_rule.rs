@@ -33,7 +33,7 @@ pub mod get_forwarding_rule {
         pub creation_timestamp: pulumi_gestalt_rust::Output<String>,
         pub description: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub forwarding_rule_id: pulumi_gestalt_rust::Output<i32>,
         /// The provider-assigned unique ID for this managed resource.
@@ -44,7 +44,7 @@ pub mod get_forwarding_rule {
         pub is_mirroring_collector: pulumi_gestalt_rust::Output<bool>,
         pub label_fingerprint: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub load_balancing_scheme: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -57,7 +57,7 @@ pub mod get_forwarding_rule {
         pub psc_connection_id: pulumi_gestalt_rust::Output<String>,
         pub psc_connection_status: pulumi_gestalt_rust::Output<String>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub recreate_closed_psc: pulumi_gestalt_rust::Output<bool>,
         pub region: pulumi_gestalt_rust::Output<Option<String>>,

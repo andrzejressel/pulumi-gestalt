@@ -472,7 +472,7 @@ pub mod metastore_service {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location where the metastore service should reside.
         /// The default value is `global`.
@@ -562,7 +562,7 @@ pub mod metastore_service {
         pub deletion_protection: pulumi_gestalt_rust::Output<Option<bool>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Information used to configure the Dataproc Metastore service to encrypt
         /// customer data at rest.
@@ -581,7 +581,7 @@ pub mod metastore_service {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location where the metastore service should reside.
         /// The default value is `global`.
@@ -616,7 +616,7 @@ pub mod metastore_service {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The release channel of the service. If unspecified, defaults to `STABLE`.
         /// Default value is `STABLE`.

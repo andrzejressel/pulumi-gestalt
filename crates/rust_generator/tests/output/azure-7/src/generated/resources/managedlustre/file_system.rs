@@ -105,7 +105,7 @@ pub mod file_system {
         /// A mapping of tags which should be assigned to the Azure Managed Lustre File System.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A list of availability zones for the Azure Managed Lustre File System. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -152,7 +152,7 @@ pub mod file_system {
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Azure Managed Lustre File System.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A list of availability zones for the Azure Managed Lustre File System. Changing this forces a new resource to be created.
         pub zones: pulumi_gestalt_rust::Output<Vec<String>>,

@@ -107,7 +107,7 @@ pub mod shared_image_version {
         /// A collection of tags which should be applied to this resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// One or more `target_region` blocks as documented below.
         #[builder(into)]
@@ -164,7 +164,7 @@ pub mod shared_image_version {
         pub storage_account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// A collection of tags which should be applied to this resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// One or more `target_region` blocks as documented below.
         pub target_regions: pulumi_gestalt_rust::Output<

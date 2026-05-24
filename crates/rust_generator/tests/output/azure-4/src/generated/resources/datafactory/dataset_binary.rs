@@ -72,7 +72,7 @@ pub mod dataset_binary {
         /// A map of additional properties to associate with the Data Factory Binary Dataset.
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Binary Dataset.
         #[builder(into, default)]
@@ -114,7 +114,7 @@ pub mod dataset_binary {
         /// The following supported locations for a Binary Dataset. One of these should be specified:
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `sftp_server_location` block as defined below.
         #[builder(into, default)]
@@ -131,7 +131,7 @@ pub mod dataset_binary {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Binary Dataset.
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Binary Dataset.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -163,7 +163,7 @@ pub mod dataset_binary {
         ///
         /// The following supported locations for a Binary Dataset. One of these should be specified:
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `sftp_server_location` block as defined below.
         pub sftp_server_location: pulumi_gestalt_rust::Output<

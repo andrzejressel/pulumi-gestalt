@@ -8,7 +8,7 @@ pub struct ThreatIntelligenceIndicatorExternalReference {
     pub r#description: Option<String>,
     /// The list of hashes of the external reference of the Threat Intelligence Indicator.
     #[builder(into)]
-    pub r#hashes: Option<std::collections::HashMap<String, String>>,
+    pub r#hashes: Option<std::collections::BTreeMap<String, String>>,
     /// The ID of the Sentinel Threat Intelligence Indicator.
     #[builder(into)]
     pub r#id: Option<String>,

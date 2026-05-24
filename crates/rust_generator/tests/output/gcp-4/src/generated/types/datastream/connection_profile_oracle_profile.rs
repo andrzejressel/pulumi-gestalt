@@ -5,7 +5,7 @@
 pub struct ConnectionProfileOracleProfile {
     /// Connection string attributes
     #[builder(into)]
-    pub r#connection_attributes: Option<std::collections::HashMap<String, String>>,
+    pub r#connection_attributes: Option<std::collections::BTreeMap<String, String>>,
     /// Database for the Oracle connection.
     #[builder(into)]
     pub r#database_service: String,

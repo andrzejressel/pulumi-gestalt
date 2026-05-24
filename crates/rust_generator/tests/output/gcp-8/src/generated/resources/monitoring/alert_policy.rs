@@ -201,7 +201,7 @@ pub mod alert_policy {
         /// can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter.
         #[builder(into, default)]
         pub user_labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -264,7 +264,7 @@ pub mod alert_policy {
         /// entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values
         /// can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter.
         pub user_labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

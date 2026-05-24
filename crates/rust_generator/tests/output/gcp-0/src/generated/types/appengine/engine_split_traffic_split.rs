@@ -7,7 +7,7 @@ pub struct EngineSplitTrafficSplit {
     /// 
     /// - - -
     #[builder(into)]
-    pub r#allocations: std::collections::HashMap<String, String>,
+    pub r#allocations: std::collections::BTreeMap<String, String>,
     /// Mechanism used to determine which version a request is sent to. The traffic selection algorithm will be stable for either type until allocations are changed.
     /// Possible values are: `UNSPECIFIED`, `COOKIE`, `IP`, `RANDOM`.
     #[builder(into)]

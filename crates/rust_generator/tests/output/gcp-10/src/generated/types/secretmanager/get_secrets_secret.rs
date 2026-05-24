@@ -5,20 +5,20 @@
 pub struct GetSecretsSecret {
     /// Custom metadata about the secret.
     #[builder(into)]
-    pub r#annotations: std::collections::HashMap<String, String>,
+    pub r#annotations: std::collections::BTreeMap<String, String>,
     /// The time at which the Secret was created.
     #[builder(into)]
     pub r#create_time: String,
     #[builder(into)]
-    pub r#effective_annotations: std::collections::HashMap<String, String>,
+    pub r#effective_annotations: std::collections::BTreeMap<String, String>,
     #[builder(into)]
-    pub r#effective_labels: std::collections::HashMap<String, String>,
+    pub r#effective_labels: std::collections::BTreeMap<String, String>,
     /// Timestamp in UTC when the Secret is scheduled to expire.
     #[builder(into)]
     pub r#expire_time: String,
     /// The labels assigned to this Secret.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The resource name of the Pub/Sub topic that will be published to.
     #[builder(into)]
     pub r#name: String,
@@ -28,7 +28,7 @@ pub struct GetSecretsSecret {
     /// The combination of labels configured directly on the resource
     ///  and default labels configured on the provider.
     #[builder(into)]
-    pub r#pulumi_labels: std::collections::HashMap<String, String>,
+    pub r#pulumi_labels: std::collections::BTreeMap<String, String>,
     /// The replication policy of the secret data attached to the Secret.
     /// Structure is documented below.
     #[builder(into)]
@@ -51,7 +51,7 @@ pub struct GetSecretsSecret {
     pub r#ttl: String,
     /// Mapping from version alias to version name.
     #[builder(into)]
-    pub r#version_aliases: std::collections::HashMap<String, String>,
+    pub r#version_aliases: std::collections::BTreeMap<String, String>,
     /// The version destroy ttl for the secret version.
     #[builder(into)]
     pub r#version_destroy_ttl: String,

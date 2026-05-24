@@ -23,7 +23,7 @@ pub struct RegisteredDomainTechContact {
     pub r#email: Option<String>,
     /// A key-value map of parameters required by certain top-level domains.
     #[builder(into)]
-    pub r#extra_params: Option<std::collections::HashMap<String, String>>,
+    pub r#extra_params: Option<std::collections::BTreeMap<String, String>>,
     /// Fax number of the contact. Phone number must be specified in the format "+[country dialing code].[number including any area code]".
     #[builder(into)]
     pub r#fax: Option<String>,

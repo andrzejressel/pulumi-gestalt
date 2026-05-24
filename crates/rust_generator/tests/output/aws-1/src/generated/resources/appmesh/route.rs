@@ -146,7 +146,7 @@ pub mod route {
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the virtual router in which to create the route. Must be between 1 and 255 characters in length.
         #[builder(into)]
@@ -177,11 +177,11 @@ pub mod route {
         pub spec: pulumi_gestalt_rust::Output<super::super::types::appmesh::RouteSpec>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Name of the virtual router in which to create the route. Must be between 1 and 255 characters in length.
         pub virtual_router_name: pulumi_gestalt_rust::Output<String>,

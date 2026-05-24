@@ -71,7 +71,7 @@ pub mod findings_filter {
         /// A map of key-value pairs that specifies the tags to associate with the filter.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -99,10 +99,10 @@ pub mod findings_filter {
         pub position: pulumi_gestalt_rust::Output<i32>,
         /// A map of key-value pairs that specifies the tags to associate with the filter.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

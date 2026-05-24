@@ -71,7 +71,7 @@ pub mod public_ip {
         /// > **Note** IP Tag `RoutingPreference` requires multiple `zones` and `Standard` SKU to be set.
         #[builder(into, default)]
         pub ip_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The IP Version to use, IPv6 or IPv4. Changing this forces a new resource to be created. Defaults to `IPv4`.
         ///
@@ -106,7 +106,7 @@ pub mod public_ip {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A collection containing the availability zone to allocate the Public IP in. Changing this forces a new resource to be created.
         ///
@@ -147,7 +147,7 @@ pub mod public_ip {
         ///
         /// > **Note** IP Tag `RoutingPreference` requires multiple `zones` and `Standard` SKU to be set.
         pub ip_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The IP Version to use, IPv6 or IPv4. Changing this forces a new resource to be created. Defaults to `IPv4`.
         ///
@@ -173,7 +173,7 @@ pub mod public_ip {
         pub sku_tier: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A collection containing the availability zone to allocate the Public IP in. Changing this forces a new resource to be created.
         ///

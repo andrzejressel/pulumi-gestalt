@@ -11,7 +11,7 @@ pub struct GetDataSourceBackupConfigInfo {
     pub r#gcp_backup_configs: Vec<super::super::types::backupdisasterrecovery::GetDataSourceBackupConfigInfoGcpBackupConfig>,
     /// If the last backup failed, this field has the error message.
     #[builder(into)]
-    pub r#last_backup_error: std::collections::HashMap<String, String>,
+    pub r#last_backup_error: std::collections::BTreeMap<String, String>,
     /// LastBackupstate tracks whether the last backup was not yet started, successful, failed, or could not be run because of the lack of permissions.
     #[builder(into)]
     pub r#last_backup_state: String,

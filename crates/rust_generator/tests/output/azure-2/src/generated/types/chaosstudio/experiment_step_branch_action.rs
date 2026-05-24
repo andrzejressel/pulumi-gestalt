@@ -11,7 +11,7 @@ pub struct ExperimentStepBranchAction {
     pub r#duration: Option<String>,
     /// A key-value map of additional parameters to configure the action. The values that are accepted by this depend on the `urn` i.e. the capability/fault that is applied. Possible parameter values can be found in this [documentation](https://learn.microsoft.com/azure/chaos-studio/chaos-studio-fault-library)
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// The name of the Selector to which this action should apply to. This must be specified if the `action_type` is `continuous` or `discrete`.
     #[builder(into)]
     pub r#selector_name: Option<String>,

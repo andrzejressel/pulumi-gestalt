@@ -55,7 +55,7 @@ pub mod resolver_firewall_rule_group_association {
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The unique identifier of the VPC that you want to associate with the rule group.
         #[builder(into)]
@@ -80,11 +80,11 @@ pub mod resolver_firewall_rule_group_association {
         pub priority: pulumi_gestalt_rust::Output<i32>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The unique identifier of the VPC that you want to associate with the rule group.
         pub vpc_id: pulumi_gestalt_rust::Output<String>,

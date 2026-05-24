@@ -8,7 +8,7 @@ pub struct PartitionStorageDescriptorSkewedInfo {
     pub r#skewed_column_names: Option<Vec<String>>,
     /// A list of values that appear so frequently as to be considered skewed.
     #[builder(into)]
-    pub r#skewed_column_value_location_maps: Option<std::collections::HashMap<String, String>>,
+    pub r#skewed_column_value_location_maps: Option<std::collections::BTreeMap<String, String>>,
     /// A map of skewed values to the columns that contain them.
     #[builder(into)]
     pub r#skewed_column_values: Option<Vec<String>>,

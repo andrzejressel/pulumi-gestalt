@@ -26,7 +26,7 @@ pub struct GroupContainerVolume {
     /// 
     /// > **Note:** The secret values must be supplied as Base64 encoded strings. The secret values are decoded to their original values when mounted in the volume on the container.
     #[builder(into)]
-    pub r#secret: Option<std::collections::HashMap<String, String>>,
+    pub r#secret: Option<std::collections::BTreeMap<String, String>>,
     /// The Azure storage share that is to be mounted as a volume. This must be created on the storage account specified as above. Changing this forces a new resource to be created.
     #[builder(into)]
     pub r#share_name: Option<String>,

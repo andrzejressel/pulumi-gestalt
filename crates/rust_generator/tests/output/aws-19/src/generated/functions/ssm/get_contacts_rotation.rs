@@ -27,7 +27,9 @@ pub mod get_contacts_rotation {
         /// The date and time, in RFC 3339 format, that the rotation goes into effect.
         pub start_time: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format.
         pub time_zone_id: pulumi_gestalt_rust::Output<String>,
     }

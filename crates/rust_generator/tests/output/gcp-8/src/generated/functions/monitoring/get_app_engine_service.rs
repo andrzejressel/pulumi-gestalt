@@ -38,7 +38,7 @@ pub mod get_app_engine_service {
             Vec<super::super::super::types::monitoring::GetAppEngineServiceTelemetry>,
         >,
         pub user_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

@@ -9,7 +9,7 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCusto
     pub r#token_url: String,
     /// Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.
     #[builder(into)]
-    pub r#token_url_custom_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#token_url_custom_properties: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCustomConnectorOauth2Properties {

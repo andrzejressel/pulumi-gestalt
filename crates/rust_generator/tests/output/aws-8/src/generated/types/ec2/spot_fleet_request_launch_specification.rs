@@ -41,7 +41,7 @@ pub struct SpotFleetRequestLaunchSpecification {
     pub r#subnet_id: Option<String>,
     /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     #[builder(into)]
     pub r#user_data: Option<String>,
     #[builder(into)]

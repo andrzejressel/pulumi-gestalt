@@ -65,7 +65,7 @@ pub mod spring_cloud_java_deployment {
         /// Specifies the environment variables of the Spring Cloud Deployment as a map of key-value pairs.
         #[builder(into, default)]
         pub environment_variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the required instance count of the Spring Cloud Deployment. Possible Values are between `1` and `500`. Defaults to `1` if not specified.
         #[builder(into, default)]
@@ -97,7 +97,7 @@ pub mod spring_cloud_java_deployment {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the environment variables of the Spring Cloud Deployment as a map of key-value pairs.
         pub environment_variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the required instance count of the Spring Cloud Deployment. Possible Values are between `1` and `500`. Defaults to `1` if not specified.
         pub instance_count: pulumi_gestalt_rust::Output<Option<i32>>,

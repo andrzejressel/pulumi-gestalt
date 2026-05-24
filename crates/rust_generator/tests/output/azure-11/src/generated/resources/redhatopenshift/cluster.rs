@@ -184,7 +184,7 @@ pub mod cluster {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `worker_profile` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -233,7 +233,7 @@ pub mod cluster {
         >,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `worker_profile` block as defined below. Changing this forces a new resource to be created.
         pub worker_profile: pulumi_gestalt_rust::Output<

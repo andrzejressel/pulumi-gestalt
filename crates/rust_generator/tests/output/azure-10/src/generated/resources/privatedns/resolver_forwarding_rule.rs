@@ -105,7 +105,7 @@ pub mod resolver_forwarding_rule {
         /// Metadata attached to the Private DNS Resolver Forwarding Rule.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the name which should be used for this Private DNS Resolver Forwarding Rule. Changing this forces a new Private DNS Resolver Forwarding Rule to be created.
         #[builder(into, default)]
@@ -131,7 +131,7 @@ pub mod resolver_forwarding_rule {
         pub enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Metadata attached to the Private DNS Resolver Forwarding Rule.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the name which should be used for this Private DNS Resolver Forwarding Rule. Changing this forces a new Private DNS Resolver Forwarding Rule to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

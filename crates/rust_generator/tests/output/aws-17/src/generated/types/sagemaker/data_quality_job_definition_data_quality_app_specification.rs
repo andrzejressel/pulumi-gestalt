@@ -5,7 +5,7 @@
 pub struct DataQualityJobDefinitionDataQualityAppSpecification {
     /// Sets the environment variables in the container that the monitoring job runs. A list of key value pairs.
     #[builder(into)]
-    pub r#environment: Option<std::collections::HashMap<String, String>>,
+    pub r#environment: Option<std::collections::BTreeMap<String, String>>,
     /// The container image that the data quality monitoring job runs.
     #[builder(into)]
     pub r#image_uri: String,

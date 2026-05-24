@@ -8,7 +8,7 @@ pub struct ClusterNodeType {
     pub r#application_ports: Option<Box<super::super::types::servicefabric::ClusterNodeTypeApplicationPorts>>,
     /// The capacity tags applied to the nodes in the node type, the cluster resource manager uses these tags to understand how much resource a node has.
     #[builder(into)]
-    pub r#capacities: Option<std::collections::HashMap<String, String>>,
+    pub r#capacities: Option<std::collections::BTreeMap<String, String>>,
     /// The Port used for the Client Endpoint for this Node Type.
     #[builder(into)]
     pub r#client_endpoint_port: i32,
@@ -38,7 +38,7 @@ pub struct ClusterNodeType {
     pub r#name: String,
     /// The placement tags applied to nodes in the node type, which can be used to indicate where certain services (workload) should run.
     #[builder(into)]
-    pub r#placement_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#placement_properties: Option<std::collections::BTreeMap<String, String>>,
     /// The Port used for the Reverse Proxy Endpoint for this Node Type. Changing this will upgrade the cluster.
     #[builder(into)]
     pub r#reverse_proxy_endpoint_port: Option<i32>,

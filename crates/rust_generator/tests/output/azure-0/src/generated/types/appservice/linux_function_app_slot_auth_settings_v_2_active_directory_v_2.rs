@@ -36,7 +36,7 @@ pub struct LinuxFunctionAppSlotAuthSettingsV2ActiveDirectoryV2 {
     pub r#jwt_allowed_groups: Option<Vec<String>>,
     /// A map of key-value pairs to send to the Authorisation Endpoint when a user logs in.
     #[builder(into)]
-    pub r#login_parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#login_parameters: Option<std::collections::BTreeMap<String, String>>,
     /// The Azure Tenant Endpoint for the Authenticating Tenant. e.g. `https://login.microsoftonline.com/{tenant-guid}/v2.0/`
     /// 
     /// > **NOTE:** [Here](https://learn.microsoft.com/en-us/entra/identity-platform/authentication-national-cloud#microsoft-entra-authentication-endpoints) is a list of possible authentication endpoints based on the cloud environment. [Here](https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad?tabs=workforce-tenant) is more information to better understand how to configure authentication for Azure App Service or Azure Functions.

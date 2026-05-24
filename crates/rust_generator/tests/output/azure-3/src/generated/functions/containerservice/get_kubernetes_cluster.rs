@@ -164,7 +164,9 @@ pub mod get_kubernetes_cluster {
             >,
         >,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A `windows_profile` block as documented below.
         pub windows_profiles: pulumi_gestalt_rust::Output<
             Vec<

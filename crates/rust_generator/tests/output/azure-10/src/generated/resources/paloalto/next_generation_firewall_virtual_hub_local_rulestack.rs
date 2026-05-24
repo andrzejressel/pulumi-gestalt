@@ -34,7 +34,7 @@ pub mod next_generation_firewall_virtual_hub_local_rulestack {
         pub rulestack_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -63,7 +63,7 @@ pub mod next_generation_firewall_virtual_hub_local_rulestack {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         pub rulestack_id: pulumi_gestalt_rust::Output<String>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

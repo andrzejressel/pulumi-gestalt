@@ -58,7 +58,7 @@ pub mod configuration {
         /// A mapping of properties to assign to the resource.
         #[builder(into, default)]
         pub properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Resource Group where the Maintenance Configuration should exist. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -69,7 +69,7 @@ pub mod configuration {
         /// A mapping of tags to assign to the resource. The key could not contain upper case letter.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The visibility of the Maintenance Configuration. The only allowable value is `Custom`. Defaults to `Custom`.
         #[builder(into, default)]
@@ -101,7 +101,7 @@ pub mod configuration {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of properties to assign to the resource.
         pub properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Resource Group where the Maintenance Configuration should exist. Changing this forces a new resource to be created.
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
@@ -109,7 +109,7 @@ pub mod configuration {
         pub scope: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource. The key could not contain upper case letter.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The visibility of the Maintenance Configuration. The only allowable value is `Custom`. Defaults to `Custom`.
         pub visibility: pulumi_gestalt_rust::Output<Option<String>>,

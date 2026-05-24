@@ -26,7 +26,9 @@ pub mod get_user_workloads_config_map {
     pub struct GetUserWorkloadsConfigMapResult {
         /// The "data" field of Kubernetes ConfigMap, organized in key-value pairs.
         /// For details see: https://kubernetes.io/docs/concepts/configuration/configmap/
-        pub data: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub data: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub environment: pulumi_gestalt_rust::Output<String>,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,

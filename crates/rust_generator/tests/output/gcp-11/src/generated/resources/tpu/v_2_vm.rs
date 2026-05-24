@@ -177,12 +177,12 @@ pub mod v_2_vm {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The immutable name of the TPU.
         #[builder(into, default)]
@@ -270,7 +270,7 @@ pub mod v_2_vm {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The health status of the TPU node.
         pub health: pulumi_gestalt_rust::Output<String>,
@@ -280,11 +280,11 @@ pub mod v_2_vm {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Whether the Node belongs to a Multislice group.
         pub multislice_node: pulumi_gestalt_rust::Output<bool>,
@@ -313,7 +313,7 @@ pub mod v_2_vm {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The qualified name of the QueuedResource that requested this Node.
         pub queued_resource: pulumi_gestalt_rust::Output<String>,

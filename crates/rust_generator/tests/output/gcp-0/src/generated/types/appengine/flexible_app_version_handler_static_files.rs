@@ -16,7 +16,7 @@ pub struct FlexibleAppVersionHandlerStaticFiles {
     /// HTTP headers to use for all responses from these URLs.
     /// An object containing a list of "key:value" value pairs.".
     #[builder(into)]
-    pub r#http_headers: Option<std::collections::HashMap<String, String>>,
+    pub r#http_headers: Option<std::collections::BTreeMap<String, String>>,
     /// MIME type used to serve all files served by this handler.
     /// Defaults to file-specific MIME types, which are derived from each file's filename extension.
     #[builder(into)]

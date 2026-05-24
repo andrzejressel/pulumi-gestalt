@@ -11,7 +11,7 @@ pub struct GetCatalogTableStorageDescriptorColumn {
     pub r#name: String,
     /// Map of initialization parameters for the SerDe, in key-value form.
     #[builder(into)]
-    pub r#parameters: std::collections::HashMap<String, String>,
+    pub r#parameters: std::collections::BTreeMap<String, String>,
     /// Datatype of data in the Column.
     #[builder(into)]
     pub r#type_: String,

@@ -5,13 +5,13 @@
 pub struct ConnectionProfileAlloydbSettingsPrimaryInstanceSettings {
     /// Database flags to pass to AlloyDB when DMS is creating the AlloyDB cluster and instances. See the AlloyDB documentation for how these can be used.
     #[builder(into)]
-    pub r#database_flags: Option<std::collections::HashMap<String, String>>,
+    pub r#database_flags: Option<std::collections::BTreeMap<String, String>>,
     /// The database username.
     #[builder(into)]
     pub r#id: String,
     /// Labels for the AlloyDB primary instance created by DMS.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Configuration for the machines that host the underlying database engine.
     /// Structure is documented below.
     #[builder(into)]

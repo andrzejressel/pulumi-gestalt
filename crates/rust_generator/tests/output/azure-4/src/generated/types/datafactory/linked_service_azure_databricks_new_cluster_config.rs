@@ -8,7 +8,7 @@ pub struct LinkedServiceAzureDatabricksNewClusterConfig {
     pub r#cluster_version: String,
     /// Tags for the cluster resource.
     #[builder(into)]
-    pub r#custom_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#custom_tags: Option<std::collections::BTreeMap<String, String>>,
     /// Driver node type for the cluster.
     #[builder(into)]
     pub r#driver_node_type: Option<String>,
@@ -29,10 +29,10 @@ pub struct LinkedServiceAzureDatabricksNewClusterConfig {
     pub r#node_type: String,
     /// User-specified Spark configuration variables key-value pairs.
     #[builder(into)]
-    pub r#spark_config: Option<std::collections::HashMap<String, String>>,
+    pub r#spark_config: Option<std::collections::BTreeMap<String, String>>,
     /// User-specified Spark environment variables key-value pairs.
     #[builder(into)]
-    pub r#spark_environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#spark_environment_variables: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LinkedServiceAzureDatabricksNewClusterConfig {

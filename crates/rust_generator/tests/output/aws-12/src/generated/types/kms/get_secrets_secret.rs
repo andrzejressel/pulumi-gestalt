@@ -5,7 +5,7 @@
 pub struct GetSecretsSecret {
     /// An optional mapping that makes up the Encryption Context for the secret.
     #[builder(into)]
-    pub r#context: Option<std::collections::HashMap<String, String>>,
+    pub r#context: Option<std::collections::BTreeMap<String, String>>,
     /// The encryption algorithm that will be used to decrypt the ciphertext. This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key. Valid Values: SYMMETRIC_DEFAULT | RSAES_OAEP_SHA_1 | RSAES_OAEP_SHA_256 | SM2PKE
     #[builder(into)]
     pub r#encryption_algorithm: Option<String>,

@@ -100,7 +100,7 @@ pub mod smart_detector_alert_rule {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the duration (in ISO8601 format) to wait before notifying on the alert rule again.
         #[builder(into, default)]
@@ -135,7 +135,7 @@ pub mod smart_detector_alert_rule {
         pub severity: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the duration (in ISO8601 format) to wait before notifying on the alert rule again.
         pub throttling_duration: pulumi_gestalt_rust::Output<Option<String>>,

@@ -11,7 +11,7 @@ pub mod get_user {
         /// Map of tags assigned to the user.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the user.
         #[builder(into)]
@@ -32,7 +32,9 @@ pub mod get_user {
         /// Minimum engine version supported for the user.
         pub minimum_engine_version: pulumi_gestalt_rust::Output<String>,
         /// Map of tags assigned to the user.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub user_name: pulumi_gestalt_rust::Output<String>,
     }
     ///

@@ -300,7 +300,7 @@ pub mod windows_virtual_machine {
         /// A mapping of tags which should be assigned to this Virtual Machine.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `termination_notification` block as defined below.
         #[builder(into, default)]
@@ -502,7 +502,7 @@ pub mod windows_virtual_machine {
         >,
         /// A mapping of tags which should be assigned to this Virtual Machine.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `termination_notification` block as defined below.
         pub termination_notification: pulumi_gestalt_rust::Output<

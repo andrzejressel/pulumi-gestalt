@@ -22,7 +22,7 @@ pub mod get_table_entity {
     pub struct GetTableEntityResult {
         /// A map of key/value pairs that describe the entity to be stored in the storage table.
         pub entity: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,

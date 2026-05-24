@@ -12,7 +12,7 @@ pub mod nursery {
         #[builder(into, default)]
         pub sizes: pulumi_gestalt_rust::Input<
             Option<
-                std::collections::HashMap<
+                std::collections::BTreeMap<
                     String,
                     super::super::super::types::tree::v1::TreeSize,
                 >,

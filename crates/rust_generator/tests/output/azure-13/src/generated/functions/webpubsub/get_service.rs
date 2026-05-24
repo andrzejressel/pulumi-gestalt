@@ -43,7 +43,9 @@ pub mod get_service {
         /// The publicly accessible port of the Web Pubsub service which is designed for customer server side use.
         pub server_port: pulumi_gestalt_rust::Output<i32>,
         pub sku: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub tls_client_cert_enabled: pulumi_gestalt_rust::Output<bool>,
         pub version: pulumi_gestalt_rust::Output<String>,
     }

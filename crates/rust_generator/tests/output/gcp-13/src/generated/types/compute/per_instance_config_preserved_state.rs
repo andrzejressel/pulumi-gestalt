@@ -17,7 +17,7 @@ pub struct PerInstanceConfigPreservedState {
     pub r#internal_ips: Option<Vec<super::super::types::compute::PerInstanceConfigPreservedStateInternalIp>>,
     /// Preserved metadata defined for this instance. This is a list of key->value pairs.
     #[builder(into)]
-    pub r#metadata: Option<std::collections::HashMap<String, String>>,
+    pub r#metadata: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PerInstanceConfigPreservedState {

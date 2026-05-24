@@ -87,7 +87,7 @@ pub mod instance_from_machine_image {
         /// the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The machine type to create.
         #[builder(into, default)]
@@ -95,7 +95,7 @@ pub mod instance_from_machine_image {
         /// Metadata key/value pairs made available within the instance.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Metadata startup scripts made available within the instance.
         #[builder(into, default)]
@@ -132,7 +132,7 @@ pub mod instance_from_machine_image {
         /// Partner Metadata Map made available within the instance.
         #[builder(into, default)]
         pub partner_metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither
         /// self_link nor project are provided, the provider project is used.
@@ -227,7 +227,7 @@ pub mod instance_from_machine_image {
         /// Desired status of the instance. Either "RUNNING", "SUSPENDED" or "TERMINATED".
         pub desired_status: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Whether the instance has virtual displays enabled.
         pub enable_display: pulumi_gestalt_rust::Output<bool>,
@@ -250,13 +250,13 @@ pub mod instance_from_machine_image {
         /// the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on
         /// the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The machine type to create.
         pub machine_type: pulumi_gestalt_rust::Output<String>,
         /// Metadata key/value pairs made available within the instance.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The unique fingerprint of the metadata.
         pub metadata_fingerprint: pulumi_gestalt_rust::Output<String>,
@@ -282,14 +282,14 @@ pub mod instance_from_machine_image {
         >,
         /// Partner Metadata Map made available within the instance.
         pub partner_metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither
         /// self_link nor project are provided, the provider project is used.
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Specifies the reservations that this instance can consume from.
         pub reservation_affinity: pulumi_gestalt_rust::Output<

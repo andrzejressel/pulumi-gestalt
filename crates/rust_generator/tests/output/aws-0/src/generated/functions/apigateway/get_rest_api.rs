@@ -14,7 +14,7 @@ pub mod get_rest_api {
         /// Key-value map of resource tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -43,7 +43,9 @@ pub mod get_rest_api {
         /// Set to the ID of the API Gateway Resource on the found REST API where the route matches '/'.
         pub root_resource_id: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

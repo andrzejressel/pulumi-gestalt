@@ -5,7 +5,7 @@
 pub struct FargateProfileSelector {
     /// Key-value map of Kubernetes labels for selection.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Kubernetes namespace for selection.
     /// 
     /// The following arguments are optional:

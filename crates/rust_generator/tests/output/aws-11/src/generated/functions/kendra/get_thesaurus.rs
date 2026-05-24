@@ -14,7 +14,7 @@ pub mod get_thesaurus {
         /// Metadata that helps organize the Thesaurus you create.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Identifier of the Thesaurus.
         #[builder(into)]
@@ -48,7 +48,9 @@ pub mod get_thesaurus {
         /// Number of synonym rules in the Thesaurus file.
         pub synonym_rule_count: pulumi_gestalt_rust::Output<i32>,
         /// Metadata that helps organize the Thesaurus you create.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Number of unique terms in the Thesaurus file. For example, the synonyms `a,b,c` and `a=>d`, the term count would be 4.
         pub term_count: pulumi_gestalt_rust::Output<i32>,
         pub thesaurus_id: pulumi_gestalt_rust::Output<String>,

@@ -132,7 +132,7 @@ pub mod access_point {
         pub domain_name: pulumi_gestalt_rust::Output<String>,
         /// VPC endpoints for the S3 Access Point.
         pub endpoints: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Indicates whether this access point currently has a policy that allows public access.
         pub has_public_access_policy: pulumi_gestalt_rust::Output<bool>,

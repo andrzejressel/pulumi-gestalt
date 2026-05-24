@@ -5,7 +5,7 @@
 pub struct ScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification {
     /// Dimensions of the metric.
     #[builder(into)]
-    pub r#dimensions: Option<std::collections::HashMap<String, String>>,
+    pub r#dimensions: Option<std::collections::BTreeMap<String, String>>,
     /// Name of the metric.
     #[builder(into)]
     pub r#metric_name: String,

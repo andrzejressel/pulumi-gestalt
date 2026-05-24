@@ -2,7 +2,7 @@ use crate::output::NodeValue;
 use crate::{Output, PulumiValue, PulumiValueContent};
 use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
-use std::collections::{BTreeMap, HashMap, HashSet};
+use std::collections::{BTreeMap, HashSet};
 use std::future::Future;
 
 pub type ToPulumiObjectFieldFuture<'a> = futures::future::BoxFuture<'a, (String, PulumiValue)>;
@@ -198,38 +198,6 @@ impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Box<T> {
 }
 
 impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for BTreeMap<String, T> {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
-        let futures: Vec<_> = self
-            .iter()
-            .map(|(key, value)| {
-                let key = key.clone();
-                let future = value.to_pulumi_value();
-                async move { (key, future.await) }
-            })
-            .collect();
-
-        async move {
-            let results = futures::future::join_all(futures).await;
-            let mut dependencies = HashSet::new();
-            let mut secret = false;
-            let mut content = Vec::new();
-
-            for (key, mut val) in results {
-                dependencies.extend(val.dependencies.drain());
-                secret |= val.secret;
-                content.push((key, val));
-            }
-
-            PulumiValue {
-                content: PulumiValueContent::Object(content),
-                secret,
-                dependencies,
-            }
-        }
-    }
-}
-
-impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for HashMap<String, T> {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         let futures: Vec<_> = self
             .iter()

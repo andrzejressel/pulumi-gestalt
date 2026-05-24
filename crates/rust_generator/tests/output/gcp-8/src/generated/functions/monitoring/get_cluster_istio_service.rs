@@ -53,7 +53,7 @@ pub mod get_cluster_istio_service {
             Vec<super::super::super::types::monitoring::GetClusterIstioServiceTelemetry>,
         >,
         pub user_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

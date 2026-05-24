@@ -11,7 +11,7 @@ pub struct NodePoolNodeConfigLinuxNodeConfig {
     pub r#hugepages_config: Option<Box<super::super::types::container::NodePoolNodeConfigLinuxNodeConfigHugepagesConfig>>,
     /// The Linux kernel parameters to be applied to the nodes and all pods running on the nodes.
     #[builder(into)]
-    pub r#sysctls: Option<std::collections::HashMap<String, String>>,
+    pub r#sysctls: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for NodePoolNodeConfigLinuxNodeConfig {

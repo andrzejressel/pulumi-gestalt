@@ -9,7 +9,7 @@ pub struct ModelContainer {
     /// Environment variables for the Docker container.
     /// A list of key value pairs.
     #[builder(into)]
-    pub r#environment: Option<std::collections::HashMap<String, String>>,
+    pub r#environment: Option<std::collections::BTreeMap<String, String>>,
     /// The registry path where the inference code image is stored in Amazon ECR.
     #[builder(into)]
     pub r#image: Option<String>,

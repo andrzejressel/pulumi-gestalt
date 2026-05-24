@@ -73,7 +73,7 @@ pub mod share_file {
         /// A mapping of metadata to assign to this file.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name (or path) of the File that should be created within this File Share. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -108,7 +108,7 @@ pub mod share_file {
         pub content_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of metadata to assign to this file.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name (or path) of the File that should be created within this File Share. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

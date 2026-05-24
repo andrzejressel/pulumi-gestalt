@@ -11,7 +11,7 @@ pub mod get_cipher_text {
         /// An optional mapping that makes up the encryption context.
         #[builder(into, default)]
         pub context: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Globally unique key ID for the customer master key.
         #[builder(into)]
@@ -25,7 +25,7 @@ pub mod get_cipher_text {
         /// Base64 encoded ciphertext
         pub ciphertext_blob: pulumi_gestalt_rust::Output<String>,
         pub context: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,

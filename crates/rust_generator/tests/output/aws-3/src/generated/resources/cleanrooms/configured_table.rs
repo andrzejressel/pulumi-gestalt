@@ -63,7 +63,7 @@ pub mod configured_table {
         /// Key value pairs which tag the configured table.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -93,10 +93,10 @@ pub mod configured_table {
         >,
         /// Key value pairs which tag the configured table.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The date and time the configured table was last updated.
         pub update_time: pulumi_gestalt_rust::Output<String>,

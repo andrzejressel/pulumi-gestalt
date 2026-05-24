@@ -20,7 +20,7 @@ pub mod get_shared_image_versions {
         /// A mapping of tags to filter the list of images against.
         #[builder(into, default)]
         pub tags_filter: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -35,7 +35,7 @@ pub mod get_shared_image_versions {
         >,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         pub tags_filter: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

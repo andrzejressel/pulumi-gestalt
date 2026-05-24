@@ -56,7 +56,9 @@ pub mod get_environment_v_3 {
         /// The ID of the v3 App Service Environment Subnet.
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the v3 App Service Environment.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Outbound addresses of Windows based Apps in this App Service Environment V3.
         pub windows_outbound_ip_addresses: pulumi_gestalt_rust::Output<Vec<String>>,
         pub zone_redundant: pulumi_gestalt_rust::Output<bool>,

@@ -22,7 +22,7 @@ pub struct GetKubernetesClusterAgentPoolProfile {
     #[builder(into)]
     pub r#name: String,
     #[builder(into)]
-    pub r#node_labels: std::collections::HashMap<String, String>,
+    pub r#node_labels: std::collections::BTreeMap<String, String>,
     /// If the Public IPs for the nodes in this Agent Pool are enabled.
     #[builder(into)]
     pub r#node_public_ip_enabled: bool,
@@ -42,7 +42,7 @@ pub struct GetKubernetesClusterAgentPoolProfile {
     pub r#os_type: String,
     /// A mapping of tags to assign to the resource.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
     /// The type of Managed Service Identity that is configured on this Kubernetes Cluster.
     #[builder(into)]
     pub r#type_: String,

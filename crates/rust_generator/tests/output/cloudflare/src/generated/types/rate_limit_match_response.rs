@@ -5,7 +5,7 @@
 pub struct RateLimitMatchResponse {
     /// List of HTTP headers maps to match the origin response on.
     #[builder(into)]
-    pub r#headers: Option<Vec<std::collections::HashMap<String, String>>>,
+    pub r#headers: Option<Vec<std::collections::BTreeMap<String, String>>>,
     /// Only count traffic that has come from your origin servers. If true, cached items that Cloudflare serve will not count towards rate limiting.
     #[builder(into)]
     pub r#origin_traffic: Option<bool>,

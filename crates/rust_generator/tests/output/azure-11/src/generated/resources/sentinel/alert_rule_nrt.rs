@@ -78,7 +78,7 @@ pub mod alert_rule_nrt {
         /// A map of string key-value pairs of columns to be attached to this Sentinel NRT Alert Rule. The key will appear as the field name in alerts and the value is the event parameter you wish to surface in the alerts.
         #[builder(into, default)]
         pub custom_details: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The description of this Sentinel NRT Alert Rule.
         #[builder(into, default)]
@@ -153,7 +153,7 @@ pub mod alert_rule_nrt {
         pub alert_rule_template_version: pulumi_gestalt_rust::Output<Option<String>>,
         /// A map of string key-value pairs of columns to be attached to this Sentinel NRT Alert Rule. The key will appear as the field name in alerts and the value is the event parameter you wish to surface in the alerts.
         pub custom_details: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The description of this Sentinel NRT Alert Rule.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,

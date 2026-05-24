@@ -196,7 +196,7 @@ pub mod kafka_cluster {
         /// A map of Tags which should be assigned to this HDInsight Kafka Cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the Tier which should be used for this HDInsight Kafka Cluster. Possible values are `Standard` or `Premium`. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -288,7 +288,7 @@ pub mod kafka_cluster {
         >,
         /// A map of Tags which should be assigned to this HDInsight Kafka Cluster.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the Tier which should be used for this HDInsight Kafka Cluster. Possible values are `Standard` or `Premium`. Changing this forces a new resource to be created.
         pub tier: pulumi_gestalt_rust::Output<String>,

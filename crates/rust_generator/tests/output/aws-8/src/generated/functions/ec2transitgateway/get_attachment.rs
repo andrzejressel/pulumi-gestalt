@@ -18,7 +18,7 @@ pub mod get_attachment {
         /// Key-value tags for the attachment.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the attachment.
         #[builder(into, default)]
@@ -50,7 +50,9 @@ pub mod get_attachment {
         /// Attachment state.
         pub state: pulumi_gestalt_rust::Output<String>,
         /// Key-value tags for the attachment.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub transit_gateway_attachment_id: pulumi_gestalt_rust::Output<String>,
         /// ID of the transit gateway.
         pub transit_gateway_id: pulumi_gestalt_rust::Output<String>,

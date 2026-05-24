@@ -78,7 +78,7 @@ pub mod discovery_virtual_instance {
         /// A mapping of tags which should be assigned to the SAP Discovery Virtual Instance.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -110,7 +110,7 @@ pub mod discovery_virtual_instance {
         pub sap_product: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the SAP Discovery Virtual Instance.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

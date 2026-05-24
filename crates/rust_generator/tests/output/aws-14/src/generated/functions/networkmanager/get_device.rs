@@ -17,7 +17,7 @@ pub mod get_device {
         /// Key-value tags for the device.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -45,7 +45,9 @@ pub mod get_device {
         /// ID of the site.
         pub site_id: pulumi_gestalt_rust::Output<String>,
         /// Key-value tags for the device.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Type of device.
         pub type_: pulumi_gestalt_rust::Output<String>,
         /// Vendor of the device.

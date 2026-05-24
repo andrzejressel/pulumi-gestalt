@@ -11,7 +11,7 @@ pub struct ServiceVolumeConfigurationManagedEbsVolumeTagSpecification {
     pub r#resource_type: String,
     /// The tags applied to this Amazon EBS volume. `AmazonECSCreated` and `AmazonECSManaged` are reserved tags that can't be used.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ServiceVolumeConfigurationManagedEbsVolumeTagSpecification {

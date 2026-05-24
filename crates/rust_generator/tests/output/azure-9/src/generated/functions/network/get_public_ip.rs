@@ -35,7 +35,7 @@ pub mod get_public_ip {
         pub ip_address: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assigned to the resource.
         pub ip_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The IP version being used, for example `IPv4` or `IPv6`.
         pub ip_version: pulumi_gestalt_rust::Output<String>,
@@ -48,7 +48,9 @@ pub mod get_public_ip {
         /// The SKU of the Public IP.
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A list of Availability Zones in which this Public IP is located.
         pub zones: pulumi_gestalt_rust::Output<Vec<String>>,
     }

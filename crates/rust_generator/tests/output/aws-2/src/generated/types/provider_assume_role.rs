@@ -26,7 +26,7 @@ pub struct ProviderAssumeRole {
     pub r#source_identity: Option<String>,
     /// Assume role session tags.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// Assume role session tag keys to pass to any subsequent sessions.
     #[builder(into)]
     pub r#transitive_tag_keys: Option<Vec<String>>,

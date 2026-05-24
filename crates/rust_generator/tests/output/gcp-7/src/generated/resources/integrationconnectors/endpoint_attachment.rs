@@ -71,7 +71,7 @@ pub mod endpoint_attachment {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Location in which Endpoint Attachment needs to be created.
         #[builder(into)]
@@ -103,7 +103,7 @@ pub mod endpoint_attachment {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Enable global access for endpoint attachment.
         pub endpoint_global_access: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -114,7 +114,7 @@ pub mod endpoint_attachment {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Location in which Endpoint Attachment needs to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -129,7 +129,7 @@ pub mod endpoint_attachment {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The path of the service attachment.
         pub service_attachment: pulumi_gestalt_rust::Output<String>,

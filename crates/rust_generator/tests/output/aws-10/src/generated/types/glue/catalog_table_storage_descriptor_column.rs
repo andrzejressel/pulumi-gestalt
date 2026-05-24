@@ -11,7 +11,7 @@ pub struct CatalogTableStorageDescriptorColumn {
     pub r#name: String,
     /// Key-value pairs defining properties associated with the column.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Datatype of data in the Column.
     #[builder(into)]
     pub r#type_: Option<String>,

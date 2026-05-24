@@ -23,7 +23,7 @@ pub mod get_direct_connect_gateway_attachment {
         /// Map of tags, each pair of which must exactly match a pair on the desired Transit Gateway Direct Connect Gateway Attachment.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Identifier of the EC2 Transit Gateway.
         #[builder(into, default)]
@@ -42,7 +42,9 @@ pub mod get_direct_connect_gateway_attachment {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Key-value tags for the EC2 Transit Gateway Attachment
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub transit_gateway_id: pulumi_gestalt_rust::Output<Option<String>>,
     }
     ///

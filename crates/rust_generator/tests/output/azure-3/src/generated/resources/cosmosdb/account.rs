@@ -200,7 +200,7 @@ pub mod account {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub virtual_network_rules: pulumi_gestalt_rust::Input<
@@ -318,7 +318,7 @@ pub mod account {
         pub secondary_sql_connection_string: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub virtual_network_rules: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::cosmosdb::AccountVirtualNetworkRule>>,

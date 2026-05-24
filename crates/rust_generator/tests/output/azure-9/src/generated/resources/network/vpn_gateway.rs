@@ -99,7 +99,7 @@ pub mod vpn_gateway {
         /// A mapping of tags to assign to the VPN Gateway.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Virtual Hub within which this VPN Gateway should be created. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -132,7 +132,7 @@ pub mod vpn_gateway {
         pub scale_unit: pulumi_gestalt_rust::Output<Option<i32>>,
         /// A mapping of tags to assign to the VPN Gateway.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Virtual Hub within which this VPN Gateway should be created. Changing this forces a new resource to be created.
         pub virtual_hub_id: pulumi_gestalt_rust::Output<String>,

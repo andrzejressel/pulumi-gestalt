@@ -14,7 +14,7 @@ pub mod get_instance {
         /// Map of tags, each pair of which must exactly match a pair on the desired instance.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -100,7 +100,9 @@ pub mod get_instance {
         pub storage_throughput: pulumi_gestalt_rust::Output<i32>,
         /// Storage type associated with DB instance.
         pub storage_type: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Time zone of the DB instance.
         pub timezone: pulumi_gestalt_rust::Output<String>,
         /// Provides a list of VPC security group elements that the DB instance belongs to.

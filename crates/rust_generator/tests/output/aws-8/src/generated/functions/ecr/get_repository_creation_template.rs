@@ -14,7 +14,7 @@ pub mod get_repository_creation_template {
         /// A map of tags to assign to any created repositories.
         #[builder(into, default)]
         pub resource_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -44,7 +44,7 @@ pub mod get_repository_creation_template {
         pub repository_policy: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to any created repositories.
         pub resource_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

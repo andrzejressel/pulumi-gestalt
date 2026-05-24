@@ -66,7 +66,7 @@ pub mod capacity {
         /// A mapping of tags to assign to the Fabric Capacity.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -88,7 +88,7 @@ pub mod capacity {
         pub sku: pulumi_gestalt_rust::Output<super::super::types::fabric::CapacitySku>,
         /// A mapping of tags to assign to the Fabric Capacity.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

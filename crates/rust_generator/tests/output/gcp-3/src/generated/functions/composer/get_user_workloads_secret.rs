@@ -24,7 +24,9 @@ pub mod get_user_workloads_secret {
     }
     #[allow(dead_code)]
     pub struct GetUserWorkloadsSecretResult {
-        pub data: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub data: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub environment: pulumi_gestalt_rust::Output<String>,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,

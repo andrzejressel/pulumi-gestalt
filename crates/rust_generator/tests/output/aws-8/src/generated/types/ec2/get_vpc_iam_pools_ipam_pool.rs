@@ -17,7 +17,7 @@ pub struct GetVpcIamPoolsIpamPool {
     pub r#allocation_min_netmask_length: i32,
     /// Tags that are required to create resources in using this pool.
     #[builder(into)]
-    pub r#allocation_resource_tags: std::collections::HashMap<String, String>,
+    pub r#allocation_resource_tags: std::collections::BTreeMap<String, String>,
     /// ARN of the pool
     #[builder(into)]
     pub r#arn: String,
@@ -53,7 +53,7 @@ pub struct GetVpcIamPoolsIpamPool {
     pub r#state: String,
     /// Map of tags to assigned to the resource.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetVpcIamPoolsIpamPool {

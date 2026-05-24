@@ -22,7 +22,7 @@ pub mod get_volume {
         /// Map of tags for the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -52,7 +52,9 @@ pub mod get_volume {
         /// Snapshot_id the EBS volume is based off.
         pub snapshot_id: pulumi_gestalt_rust::Output<String>,
         /// Map of tags for the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Throughput that the volume supports, in MiB/s.
         pub throughput: pulumi_gestalt_rust::Output<i32>,
         /// Volume ID (e.g., vol-59fcb34e).

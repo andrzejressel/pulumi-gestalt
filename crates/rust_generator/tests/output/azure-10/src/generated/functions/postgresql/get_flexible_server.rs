@@ -40,7 +40,9 @@ pub mod get_flexible_server {
         /// The max storage allowed for the PostgreSQL Flexible Server.
         pub storage_mb: pulumi_gestalt_rust::Output<i32>,
         /// A mapping of tags assigned to the PostgreSQL Flexible Server.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The version of PostgreSQL Flexible Server to use.
         pub version: pulumi_gestalt_rust::Output<String>,
     }

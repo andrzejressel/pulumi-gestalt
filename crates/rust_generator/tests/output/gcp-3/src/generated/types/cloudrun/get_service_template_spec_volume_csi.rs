@@ -15,7 +15,7 @@ pub struct GetServiceTemplateSpecVolumeCsi {
     ///   * gcsfuse.run.googleapis.com
     ///     * bucketName: The name of the Cloud Storage Bucket that backs this volume. The Cloud Run Service identity must have access to this bucket.
     #[builder(into)]
-    pub r#volume_attributes: std::collections::HashMap<String, String>,
+    pub r#volume_attributes: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetServiceTemplateSpecVolumeCsi {

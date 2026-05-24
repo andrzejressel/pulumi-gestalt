@@ -96,7 +96,7 @@ pub mod environment {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The profile of the workload to scope the container app execution. A `workload_profile` block as defined below.
         #[builder(into, default)]
@@ -160,7 +160,7 @@ pub mod environment {
         pub static_ip_address: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The profile of the workload to scope the container app execution. A `workload_profile` block as defined below.
         pub workload_profiles: pulumi_gestalt_rust::Output<

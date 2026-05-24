@@ -28,14 +28,14 @@ pub mod get_cloud_exadata_infrastructure {
         pub deletion_protection: pulumi_gestalt_rust::Output<bool>,
         pub display_name: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub entitlement_id: pulumi_gestalt_rust::Output<String>,
         pub gcp_oracle_zone: pulumi_gestalt_rust::Output<String>,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub location: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -46,7 +46,7 @@ pub mod get_cloud_exadata_infrastructure {
             >,
         >,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

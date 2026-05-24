@@ -11,7 +11,7 @@ pub struct V2ModelsIntentClosingSettingConditionalConditionalBranchNextStep {
     pub r#intent: Option<Box<super::super::types::lex::V2ModelsIntentClosingSettingConditionalConditionalBranchNextStepIntent>>,
     /// Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.
     #[builder(into)]
-    pub r#session_attributes: Option<std::collections::HashMap<String, String>>,
+    pub r#session_attributes: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2ModelsIntentClosingSettingConditionalConditionalBranchNextStep {

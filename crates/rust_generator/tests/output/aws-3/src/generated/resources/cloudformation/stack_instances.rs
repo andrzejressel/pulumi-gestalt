@@ -133,7 +133,7 @@ pub mod stack_instances {
         /// Key-value map of input parameters to override from the stack set for these instances. This argument's drift detection is limited to the first account and region since each instance can have unique parameters.
         #[builder(into, default)]
         pub parameter_overrides: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Regions where you want to create stack instances in the specified `accounts`.
         #[builder(into, default)]
@@ -170,7 +170,7 @@ pub mod stack_instances {
         >,
         /// Key-value map of input parameters to override from the stack set for these instances. This argument's drift detection is limited to the first account and region since each instance can have unique parameters.
         pub parameter_overrides: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Regions where you want to create stack instances in the specified `accounts`.
         pub regions: pulumi_gestalt_rust::Output<Vec<String>>,

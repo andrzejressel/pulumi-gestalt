@@ -14,7 +14,7 @@ pub mod get_configuration_set {
         /// Key-value map of resource tags for the container recipe.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -40,7 +40,9 @@ pub mod get_configuration_set {
             Vec<super::super::super::types::sesv2::GetConfigurationSetSuppressionOption>,
         >,
         /// Key-value map of resource tags for the container recipe.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// An object that defines the open and click tracking options for emails that you send using the configuration set.
         pub tracking_options: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::sesv2::GetConfigurationSetTrackingOption>,

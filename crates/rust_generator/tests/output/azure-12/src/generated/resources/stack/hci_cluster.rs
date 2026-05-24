@@ -74,7 +74,7 @@ pub mod hci_cluster {
         /// A mapping of tags which should be assigned to the Azure Stack HCI Cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Tenant ID of the Azure Active Directory which is used by the Azure Stack HCI Cluster. Changing this forces a new resource to be created.
         ///
@@ -111,7 +111,7 @@ pub mod hci_cluster {
         pub service_endpoint: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Azure Stack HCI Cluster.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Tenant ID of the Azure Active Directory which is used by the Azure Stack HCI Cluster. Changing this forces a new resource to be created.
         ///

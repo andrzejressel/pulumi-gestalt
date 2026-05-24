@@ -14,7 +14,7 @@ pub mod get_fleet {
         /// Mapping of Key-Value tags for the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -49,7 +49,9 @@ pub mod get_fleet {
             Vec<super::super::super::types::codebuild::GetFleetStatus>,
         >,
         /// Mapping of Key-Value tags for the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Nested attribute containing information about the VPC configuration.
         pub vpc_configs: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::codebuild::GetFleetVpcConfig>,

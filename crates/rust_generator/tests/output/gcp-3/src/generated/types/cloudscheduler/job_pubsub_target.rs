@@ -6,7 +6,7 @@ pub struct JobPubsubTarget {
     /// Attributes for PubsubMessage.
     /// Pubsub message must contain either non-empty data, or at least one attribute.
     #[builder(into)]
-    pub r#attributes: Option<std::collections::HashMap<String, String>>,
+    pub r#attributes: Option<std::collections::BTreeMap<String, String>>,
     /// The message payload for PubsubMessage.
     /// Pubsub message must contain either non-empty data, or at least one attribute.
     /// A base64-encoded string.

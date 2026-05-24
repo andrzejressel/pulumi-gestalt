@@ -7,7 +7,7 @@ pub struct GetLaunchTemplateTagSpecification {
     pub r#resource_type: String,
     /// Map of tags, each pair of which must exactly match a pair on the desired Launch Template.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetLaunchTemplateTagSpecification {

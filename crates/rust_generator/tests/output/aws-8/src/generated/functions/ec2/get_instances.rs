@@ -22,7 +22,7 @@ pub mod get_instances {
         /// exactly match a pair on desired instances.
         #[builder(into, default)]
         pub instance_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -36,7 +36,7 @@ pub mod get_instances {
         pub ids: pulumi_gestalt_rust::Output<Vec<String>>,
         pub instance_state_names: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         pub instance_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// IPv6 addresses of instances found through the filter
         pub ipv6_addresses: pulumi_gestalt_rust::Output<Vec<String>>,

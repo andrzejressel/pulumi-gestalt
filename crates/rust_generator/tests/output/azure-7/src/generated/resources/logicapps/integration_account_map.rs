@@ -63,7 +63,7 @@ pub mod integration_account_map {
         /// The metadata of the Logic App Integration Account Map.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Map. Changing this forces a new Logic App Integration Account Map to be created.
         #[builder(into, default)]
@@ -87,7 +87,7 @@ pub mod integration_account_map {
         pub map_type: pulumi_gestalt_rust::Output<String>,
         /// The metadata of the Logic App Integration Account Map.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Map. Changing this forces a new Logic App Integration Account Map to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

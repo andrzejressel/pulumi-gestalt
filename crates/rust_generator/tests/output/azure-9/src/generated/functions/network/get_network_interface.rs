@@ -47,7 +47,9 @@ pub mod get_network_interface {
         pub private_ip_addresses: pulumi_gestalt_rust::Output<Vec<String>>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// List the tags associated to the specified Network Interface.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The ID of the virtual machine that the specified Network Interface is attached to.
         pub virtual_machine_id: pulumi_gestalt_rust::Output<String>,
     }

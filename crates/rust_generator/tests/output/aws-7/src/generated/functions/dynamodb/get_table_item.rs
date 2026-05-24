@@ -10,7 +10,7 @@ pub mod get_table_item {
     pub struct GetTableItemArgs {
         #[builder(into, default)]
         pub expression_attribute_names: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of attribute names to AttributeValue objects, representing the primary key of the item to retrieve.
         /// For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.
@@ -29,7 +29,7 @@ pub mod get_table_item {
     #[allow(dead_code)]
     pub struct GetTableItemResult {
         pub expression_attribute_names: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,

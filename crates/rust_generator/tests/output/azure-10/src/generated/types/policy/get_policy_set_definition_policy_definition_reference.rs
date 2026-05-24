@@ -8,7 +8,7 @@ pub struct GetPolicySetDefinitionPolicyDefinitionReference {
     pub r#parameter_values: String,
     /// The mapping of the parameter values for the referenced policy rule. The keys are the parameter names.
     #[builder(into)]
-    pub r#parameters: std::collections::HashMap<String, String>,
+    pub r#parameters: std::collections::BTreeMap<String, String>,
     /// The ID of the policy definition or policy set definition that is included in this policy set definition.
     #[builder(into)]
     pub r#policy_definition_id: String,

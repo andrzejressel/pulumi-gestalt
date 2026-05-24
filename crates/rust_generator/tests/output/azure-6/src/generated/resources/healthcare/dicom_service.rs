@@ -58,7 +58,7 @@ pub mod dicom_service {
         /// A mapping of tags to assign to the Healthcare DICOM Service.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the id of the Healthcare Workspace where the Healthcare DICOM Service should exist. Changing this forces a new Healthcare DICOM Service to be created.
         #[builder(into)]
@@ -92,7 +92,7 @@ pub mod dicom_service {
         pub service_url: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the Healthcare DICOM Service.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the id of the Healthcare Workspace where the Healthcare DICOM Service should exist. Changing this forces a new Healthcare DICOM Service to be created.
         pub workspace_id: pulumi_gestalt_rust::Output<String>,

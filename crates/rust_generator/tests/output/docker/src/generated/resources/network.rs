@@ -84,7 +84,7 @@ pub mod network {
         /// Provide explicit options to the IPAM driver. Valid options vary with `ipam_driver` and refer to that driver's documentation for more details.
         #[builder(into, default)]
         pub ipam_options: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Enable IPv6 networking. Defaults to `false`.
         #[builder(into, default)]
@@ -98,7 +98,7 @@ pub mod network {
         /// Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
         #[builder(into, default)]
         pub options: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -126,7 +126,7 @@ pub mod network {
         pub ipam_driver: pulumi_gestalt_rust::Output<Option<String>>,
         /// Provide explicit options to the IPAM driver. Valid options vary with `ipam_driver` and refer to that driver's documentation for more details.
         pub ipam_options: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Enable IPv6 networking. Defaults to `false`.
         pub ipv6: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -136,7 +136,7 @@ pub mod network {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
         pub options: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Scope of the network. One of `swarm`, `global`, or `local`.
         pub scope: pulumi_gestalt_rust::Output<String>,

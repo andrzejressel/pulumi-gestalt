@@ -84,7 +84,7 @@ pub mod private_cloud {
         /// A mapping of tags which should be assigned to the Azure VMware Solution Private Cloud.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The password of the VMware vCenter Server cloudadmin. Changing this forces a new Azure VMware Solution Private Cloud to be created.
         #[builder(into, default)]
@@ -133,7 +133,7 @@ pub mod private_cloud {
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Azure VMware Solution Private Cloud.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The thumbprint of the VMware vCenter Server SSL certificate.
         pub vcenter_certificate_thumbprint: pulumi_gestalt_rust::Output<String>,

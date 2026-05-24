@@ -35,7 +35,9 @@ pub mod get_profiling_group {
             >,
         >,
         /// Mapping of Key-Value tags for the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Timestamp when Profiling Group was updated.
         pub updated_at: pulumi_gestalt_rust::Output<String>,
     }

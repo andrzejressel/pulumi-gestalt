@@ -80,7 +80,7 @@ pub mod spring_cloud_container_deployment {
         /// Specifies the environment variables of the Spring Cloud Deployment as a map of key-value pairs.
         #[builder(into, default)]
         pub environment_variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Container image of the custom container. This should be in the form of `<repository>:<tag>` without the server name of the registry.
         #[builder(into)]
@@ -125,7 +125,7 @@ pub mod spring_cloud_container_deployment {
         pub commands: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Specifies the environment variables of the Spring Cloud Deployment as a map of key-value pairs.
         pub environment_variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Container image of the custom container. This should be in the form of `<repository>:<tag>` without the server name of the registry.
         pub image: pulumi_gestalt_rust::Output<String>,

@@ -10,7 +10,7 @@ pub struct DatasetExternalCatalogDatasetOptions {
     /// A map of key value pairs defining the parameters and properties of the open source schema.
     /// Maximum size of 2Mib.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DatasetExternalCatalogDatasetOptions {

@@ -26,7 +26,7 @@ pub mod get_backup_vault {
         pub access_restriction: pulumi_gestalt_rust::Output<String>,
         pub allow_missing: pulumi_gestalt_rust::Output<bool>,
         pub annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub backup_count: pulumi_gestalt_rust::Output<String>,
         pub backup_minimum_enforced_retention_duration: pulumi_gestalt_rust::Output<
@@ -37,10 +37,10 @@ pub mod get_backup_vault {
         pub deletable: pulumi_gestalt_rust::Output<bool>,
         pub description: pulumi_gestalt_rust::Output<String>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub effective_time: pulumi_gestalt_rust::Output<String>,
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -51,13 +51,13 @@ pub mod get_backup_vault {
         pub ignore_backup_plan_references: pulumi_gestalt_rust::Output<bool>,
         pub ignore_inactive_datasources: pulumi_gestalt_rust::Output<bool>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub location: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub service_account: pulumi_gestalt_rust::Output<String>,
         pub state: pulumi_gestalt_rust::Output<String>,

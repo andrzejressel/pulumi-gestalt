@@ -56,7 +56,7 @@ pub mod frontdoor_endpoint {
         /// Specifies a mapping of tags which should be assigned to the Front Door Endpoint.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -76,7 +76,7 @@ pub mod frontdoor_endpoint {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Specifies a mapping of tags which should be assigned to the Front Door Endpoint.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

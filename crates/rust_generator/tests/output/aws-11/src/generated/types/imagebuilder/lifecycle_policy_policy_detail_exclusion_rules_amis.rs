@@ -17,7 +17,7 @@ pub struct LifecyclePolicyPolicyDetailExclusionRulesAmis {
     pub r#shared_accounts: Option<Vec<String>>,
     /// Lists tags that should be excluded from lifecycle actions for the AMIs that have them.
     #[builder(into)]
-    pub r#tag_map: Option<std::collections::HashMap<String, String>>,
+    pub r#tag_map: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LifecyclePolicyPolicyDetailExclusionRulesAmis {

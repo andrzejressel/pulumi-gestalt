@@ -79,7 +79,7 @@ pub mod spring_cloud_new_relic_application_performance_monitoring {
         /// Specifies a mapping of labels to be added to the New Relic application.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the license key associated with the New Relic account. This key binds your agent's data to your account in New Relic service.
         #[builder(into)]
@@ -116,7 +116,7 @@ pub mod spring_cloud_new_relic_application_performance_monitoring {
         pub globally_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies a mapping of labels to be added to the New Relic application.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the license key associated with the New Relic account. This key binds your agent's data to your account in New Relic service.
         pub license_key: pulumi_gestalt_rust::Output<String>,

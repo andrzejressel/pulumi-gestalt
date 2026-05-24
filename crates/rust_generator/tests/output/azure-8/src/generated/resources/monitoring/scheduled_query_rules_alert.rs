@@ -65,7 +65,7 @@ pub mod scheduled_query_rules_alert {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Time (in minutes) for which Alerts should be throttled or suppressed. Values must be between 0 and 10000 (inclusive).
         #[builder(into, default)]
@@ -117,7 +117,7 @@ pub mod scheduled_query_rules_alert {
         pub severity: pulumi_gestalt_rust::Output<Option<i32>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Time (in minutes) for which Alerts should be throttled or suppressed. Values must be between 0 and 10000 (inclusive).
         pub throttling: pulumi_gestalt_rust::Output<Option<i32>>,

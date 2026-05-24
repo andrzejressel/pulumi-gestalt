@@ -14,7 +14,7 @@ pub mod get_route_calculator {
         /// Key-value map of resource tags for the route calculator.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -31,7 +31,9 @@ pub mod get_route_calculator {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the route calculator.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Timestamp for when the route calculator resource was last updated in ISO 8601 format.
         pub update_time: pulumi_gestalt_rust::Output<String>,
     }

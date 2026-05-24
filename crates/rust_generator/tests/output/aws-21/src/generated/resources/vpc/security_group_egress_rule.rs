@@ -70,7 +70,7 @@ pub mod security_group_egress_rule {
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
         #[builder(into, default)]
@@ -105,11 +105,11 @@ pub mod security_group_egress_rule {
         pub security_group_rule_id: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
         pub to_port: pulumi_gestalt_rust::Output<Option<i32>>,

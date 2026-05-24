@@ -5,7 +5,7 @@
 pub struct VirtualNodeSpecServiceDiscoveryAwsCloudMap {
     /// String map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.
     #[builder(into)]
-    pub r#attributes: Option<std::collections::HashMap<String, String>>,
+    pub r#attributes: Option<std::collections::BTreeMap<String, String>>,
     /// Name of the AWS Cloud Map namespace to use.
     /// Use the `aws.servicediscovery.HttpNamespace` resource to configure a Cloud Map namespace. Must be between 1 and 1024 characters in length.
     #[builder(into)]

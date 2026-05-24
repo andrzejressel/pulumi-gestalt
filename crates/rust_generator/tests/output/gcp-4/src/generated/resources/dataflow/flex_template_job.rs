@@ -111,7 +111,7 @@ pub mod flex_template_job {
         /// labels will be ignored to prevent diffs on re-apply.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The machine type to use for launching the job. The default is n1-standard-1.
         #[builder(into, default)]
@@ -140,7 +140,7 @@ pub mod flex_template_job {
         /// **Note**: do not configure Dataflow options here in parameters.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The project in which the resource belongs. If it is not
         /// provided, the provider project is used.
@@ -169,7 +169,7 @@ pub mod flex_template_job {
         /// Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job.Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job.
         #[builder(into, default)]
         pub transform_name_mapping: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -189,7 +189,7 @@ pub mod flex_template_job {
         /// - - -
         pub container_spec_gcs_path: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Immutable. Indicates if the job should use the streaming engine feature.
         pub enable_streaming_engine: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -207,7 +207,7 @@ pub mod flex_template_job {
         /// that begin with `goog-dataflow-provided`. Unless explicitly set in config, these
         /// labels will be ignored to prevent diffs on re-apply.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The machine type to use for launching the job. The default is n1-standard-1.
         pub launcher_machine_type: pulumi_gestalt_rust::Output<String>,
@@ -228,14 +228,14 @@ pub mod flex_template_job {
         /// case-sensitive based on the language on which the pipeline is coded, mostly Java.
         /// **Note**: do not configure Dataflow options here in parameters.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The project in which the resource belongs. If it is not
         /// provided, the provider project is used.
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Immutable. The region in which the created job should run.
         pub region: pulumi_gestalt_rust::Output<String>,
@@ -254,7 +254,7 @@ pub mod flex_template_job {
         pub temp_location: pulumi_gestalt_rust::Output<String>,
         /// Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job.Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job.
         pub transform_name_mapping: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The type of this job, selected from the JobType enum.
         pub type_: pulumi_gestalt_rust::Output<String>,

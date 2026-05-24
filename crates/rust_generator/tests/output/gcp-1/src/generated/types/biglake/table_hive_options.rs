@@ -7,7 +7,7 @@ pub struct TableHiveOptions {
     /// list of "key": value pairs.
     /// Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Stores physical storage information on the data.
     /// Structure is documented below.
     #[builder(into)]

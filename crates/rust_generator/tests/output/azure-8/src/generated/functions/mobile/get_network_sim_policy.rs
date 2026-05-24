@@ -34,7 +34,9 @@ pub mod get_network_sim_policy {
             Vec<super::super::super::types::mobile::GetNetworkSimPolicySlice>,
         >,
         /// A mapping of tags which should be assigned to the Mobile Network Sim Policies.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A `user_equipment_aggregate_maximum_bit_rate` block as defined below.
         pub user_equipment_aggregate_maximum_bit_rates: pulumi_gestalt_rust::Output<
             Vec<

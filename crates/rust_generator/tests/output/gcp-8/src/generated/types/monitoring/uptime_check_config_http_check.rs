@@ -23,7 +23,7 @@ pub struct UptimeCheckConfigHttpCheck {
     pub r#custom_content_type: Option<String>,
     /// The list of headers to send as part of the uptime check request. If two headers have the same key and different values, they should be entered as a single header, with the value being a comma-separated list of all the desired values as described in [RFC 2616 (page 31)](https://www.w3.org/Protocols/rfc2616/rfc2616.txt). Entering two separate headers with the same key in a Create call will cause the first to be overwritten by the second. The maximum number of headers allowed is 100.
     #[builder(into)]
-    pub r#headers: Option<std::collections::HashMap<String, String>>,
+    pub r#headers: Option<std::collections::BTreeMap<String, String>>,
     /// Boolean specifying whether to encrypt the header information. Encryption should be specified for any headers related to authentication that you do not wish to be seen when retrieving the configuration. The server will be responsible for encrypting the headers. On Get/List calls, if `mask_headers` is set to `true` then the headers will be obscured with `******`.
     #[builder(into)]
     pub r#mask_headers: Option<bool>,

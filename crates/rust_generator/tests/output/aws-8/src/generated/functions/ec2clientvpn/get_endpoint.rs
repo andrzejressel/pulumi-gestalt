@@ -19,7 +19,7 @@ pub mod get_endpoint {
         /// Map of tags, each pair of which must exactly match a pair on the desired endpoint.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -72,7 +72,9 @@ pub mod get_endpoint {
         pub session_timeout_hours: pulumi_gestalt_rust::Output<i32>,
         /// Whether split-tunnel is enabled in the AWS Client VPN endpoint.
         pub split_tunnel: pulumi_gestalt_rust::Output<bool>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Transport protocol used by the Client VPN endpoint.
         pub transport_protocol: pulumi_gestalt_rust::Output<String>,
         /// ID of the VPC associated with the Client VPN endpoint.

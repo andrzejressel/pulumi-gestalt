@@ -18,7 +18,7 @@ pub mod get_replication_task {
         pub replication_task_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -46,7 +46,9 @@ pub mod get_replication_task {
         pub status: pulumi_gestalt_rust::Output<String>,
         /// An escaped JSON string that contains the table mappings. For information on table mapping see [Using Table Mapping with an AWS Database Migration Service Task to Select and Filter Data](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html)
         pub table_mappings: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Amazon Resource Name (ARN) string that uniquely identifies the target endpoint.
         pub target_endpoint_arn: pulumi_gestalt_rust::Output<String>,
     }

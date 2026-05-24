@@ -161,7 +161,7 @@ pub mod multicast_domain {
         /// Key-value tags for the EC2 Transit Gateway Multicast Domain. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// EC2 Transit Gateway identifier. The EC2 Transit Gateway must have `multicast_support` enabled.
         #[builder(into)]
@@ -186,11 +186,11 @@ pub mod multicast_domain {
         pub static_sources_support: pulumi_gestalt_rust::Output<Option<String>>,
         /// Key-value tags for the EC2 Transit Gateway Multicast Domain. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// EC2 Transit Gateway identifier. The EC2 Transit Gateway must have `multicast_support` enabled.
         pub transit_gateway_id: pulumi_gestalt_rust::Output<String>,

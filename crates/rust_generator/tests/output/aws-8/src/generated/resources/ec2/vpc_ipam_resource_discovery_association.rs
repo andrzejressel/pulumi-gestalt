@@ -43,7 +43,7 @@ pub mod vpc_ipam_resource_discovery_association {
         /// A map of tags to add to the IPAM resource discovery association resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -71,11 +71,11 @@ pub mod vpc_ipam_resource_discovery_association {
         pub state: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to add to the IPAM resource discovery association resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

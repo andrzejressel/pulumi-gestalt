@@ -12,7 +12,7 @@ pub struct JobHttpTarget {
     /// This map contains the header field names and values.
     /// Repeated headers are not supported, but a header value can contain commas.
     #[builder(into)]
-    pub r#headers: Option<std::collections::HashMap<String, String>>,
+    pub r#headers: Option<std::collections::BTreeMap<String, String>>,
     /// Which HTTP method to use for the request.
     #[builder(into)]
     pub r#http_method: Option<String>,

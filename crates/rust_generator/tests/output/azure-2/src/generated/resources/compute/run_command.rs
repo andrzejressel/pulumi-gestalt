@@ -274,7 +274,7 @@ pub mod run_command {
         /// A mapping of tags which should be assigned to the Virtual Machine Run Command.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the Virtual Machine ID within which this Virtual Machine Run Command should exist. Changing this forces a new Virtual Machine Run Command to be created.
         #[builder(into)]
@@ -324,7 +324,7 @@ pub mod run_command {
         >,
         /// A mapping of tags which should be assigned to the Virtual Machine Run Command.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the Virtual Machine ID within which this Virtual Machine Run Command should exist. Changing this forces a new Virtual Machine Run Command to be created.
         pub virtual_machine_id: pulumi_gestalt_rust::Output<String>,

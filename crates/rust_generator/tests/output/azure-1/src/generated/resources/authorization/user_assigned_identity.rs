@@ -63,7 +63,7 @@ pub mod user_assigned_identity {
         /// A mapping of tags which should be assigned to the User Assigned Identity.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -85,7 +85,7 @@ pub mod user_assigned_identity {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the User Assigned Identity.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Tenant which the Identity belongs to.
         pub tenant_id: pulumi_gestalt_rust::Output<String>,

@@ -23,7 +23,7 @@ pub mod get_transit_gateway {
         /// Key-value tags for the EC2 Transit Gateway
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -62,7 +62,9 @@ pub mod get_transit_gateway {
         /// Whether Security Group Referencing Support is enabled
         pub security_group_referencing_support: pulumi_gestalt_rust::Output<String>,
         /// Key-value tags for the EC2 Transit Gateway
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The list of associated CIDR blocks
         pub transit_gateway_cidr_blocks: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Whether VPN Equal Cost Multipath Protocol support is enabled

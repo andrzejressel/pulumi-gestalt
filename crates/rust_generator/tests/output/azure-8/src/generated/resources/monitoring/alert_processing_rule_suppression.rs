@@ -94,7 +94,7 @@ pub mod alert_processing_rule_suppression {
         /// A mapping of tags which should be assigned to the Alert Processing Rule.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -128,7 +128,7 @@ pub mod alert_processing_rule_suppression {
         pub scopes: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A mapping of tags which should be assigned to the Alert Processing Rule.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

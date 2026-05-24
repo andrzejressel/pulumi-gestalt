@@ -24,7 +24,9 @@ pub mod get_network_ddos_protection_plan {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A list of IDs of the Virtual Networks associated with this DDoS Protection Plan.
         pub virtual_network_ids: pulumi_gestalt_rust::Output<Vec<String>>,
     }

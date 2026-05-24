@@ -5,7 +5,7 @@
 pub struct WorkforceOidcConfig {
     /// A string to string map of identifiers specific to the custom identity provider (IdP) being used.
     #[builder(into)]
-    pub r#authentication_request_extra_params: Option<std::collections::HashMap<String, String>>,
+    pub r#authentication_request_extra_params: Option<std::collections::BTreeMap<String, String>>,
     /// The OIDC IdP authorization endpoint used to configure your private workforce.
     #[builder(into)]
     pub r#authorization_endpoint: String,

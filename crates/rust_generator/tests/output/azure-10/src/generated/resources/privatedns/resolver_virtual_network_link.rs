@@ -97,7 +97,7 @@ pub mod resolver_virtual_network_link {
         /// Metadata attached to the Private DNS Resolver Virtual Network Link.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the name which should be used for this Private DNS Resolver Virtual Network Link. Changing this forces a new Private DNS Resolver Virtual Network Link to be created.
         #[builder(into, default)]
@@ -117,7 +117,7 @@ pub mod resolver_virtual_network_link {
         pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::Output<String>,
         /// Metadata attached to the Private DNS Resolver Virtual Network Link.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the name which should be used for this Private DNS Resolver Virtual Network Link. Changing this forces a new Private DNS Resolver Virtual Network Link to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

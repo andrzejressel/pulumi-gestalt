@@ -46,7 +46,7 @@ pub struct VolumeGroupSapHanaVolume {
     pub r#subnet_id: String,
     /// A mapping of tags which should be assigned to the Application Volume Group.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// Throughput of this volume in Mibps.
     #[builder(into)]
     pub r#throughput_in_mibps: f64,

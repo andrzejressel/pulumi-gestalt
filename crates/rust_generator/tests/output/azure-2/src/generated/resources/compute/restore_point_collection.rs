@@ -108,7 +108,7 @@ pub mod restore_point_collection {
         /// A mapping of tags which should be assigned to this Virtual Machine Restore Point Collection.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -128,7 +128,7 @@ pub mod restore_point_collection {
         pub source_virtual_machine_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to this Virtual Machine Restore Point Collection.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

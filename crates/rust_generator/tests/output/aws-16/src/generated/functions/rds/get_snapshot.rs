@@ -36,7 +36,7 @@ pub mod get_snapshot {
         /// a pair on the desired DB snapshot.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -82,7 +82,9 @@ pub mod get_snapshot {
         pub status: pulumi_gestalt_rust::Output<String>,
         /// Storage type associated with DB snapshot.
         pub storage_type: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// ID of the VPC associated with the DB snapshot.
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
     }

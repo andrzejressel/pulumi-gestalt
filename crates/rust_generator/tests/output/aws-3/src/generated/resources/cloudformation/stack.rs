@@ -69,7 +69,7 @@ pub mod stack {
         /// A map of Parameter structures that specify input parameters for the stack.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Structure containing the stack policy body.
         /// Conflicts w/ `policy_url`.
@@ -82,7 +82,7 @@ pub mod stack {
         /// Map of resource tags to associate with this stack. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Structure containing the template body (max size: 51,200 bytes).
         #[builder(into, default)]
@@ -118,11 +118,11 @@ pub mod stack {
         pub on_failure: pulumi_gestalt_rust::Output<Option<String>>,
         /// A map of outputs from the stack.
         pub outputs: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A map of Parameter structures that specify input parameters for the stack.
         pub parameters: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Structure containing the stack policy body.
         /// Conflicts w/ `policy_url`.
@@ -132,11 +132,11 @@ pub mod stack {
         pub policy_url: pulumi_gestalt_rust::Output<Option<String>>,
         /// Map of resource tags to associate with this stack. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Structure containing the template body (max size: 51,200 bytes).
         pub template_body: pulumi_gestalt_rust::Output<String>,

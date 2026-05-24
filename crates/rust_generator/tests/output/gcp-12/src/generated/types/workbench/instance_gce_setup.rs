@@ -33,7 +33,7 @@ pub struct InstanceGceSetup {
     pub r#machine_type: Option<String>,
     /// Optional. Custom metadata to apply to this instance.
     #[builder(into)]
-    pub r#metadata: Option<std::collections::HashMap<String, String>>,
+    pub r#metadata: Option<std::collections::BTreeMap<String, String>>,
     /// The network interfaces for the VM. Supports only one interface.
     /// Structure is documented below.
     #[builder(into)]

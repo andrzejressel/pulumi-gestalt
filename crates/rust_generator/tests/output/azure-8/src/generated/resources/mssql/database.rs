@@ -270,7 +270,7 @@ pub mod database {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Threat detection policy configuration. The `threat_detection_policy` block supports fields documented below.
         #[builder(into, default)]
@@ -397,7 +397,7 @@ pub mod database {
         pub storage_account_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Threat detection policy configuration. The `threat_detection_policy` block supports fields documented below.
         pub threat_detection_policy: pulumi_gestalt_rust::Output<

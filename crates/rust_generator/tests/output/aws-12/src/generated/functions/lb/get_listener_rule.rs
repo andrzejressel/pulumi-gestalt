@@ -52,7 +52,9 @@ pub mod get_listener_rule {
         pub listener_arn: pulumi_gestalt_rust::Output<String>,
         pub priority: pulumi_gestalt_rust::Output<f64>,
         /// Tags assigned to the Listener Rule.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

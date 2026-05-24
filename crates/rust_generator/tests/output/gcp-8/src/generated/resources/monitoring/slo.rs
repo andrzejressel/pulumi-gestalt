@@ -313,7 +313,7 @@ pub mod slo {
         /// must begin with a letter.
         #[builder(into, default)]
         pub user_labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A windows-based SLI defines the criteria for time windows.
         /// good_service is defined based off the count of these time windows
@@ -388,7 +388,7 @@ pub mod slo {
         /// can contain only lowercase letters, numerals, underscores, and dashes. Keys
         /// must begin with a letter.
         pub user_labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A windows-based SLI defines the criteria for time windows.
         /// good_service is defined based off the count of these time windows

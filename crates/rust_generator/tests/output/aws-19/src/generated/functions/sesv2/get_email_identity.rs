@@ -14,7 +14,7 @@ pub mod get_email_identity {
         /// Key-value mapping of resource tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -32,7 +32,9 @@ pub mod get_email_identity {
         /// The email identity type. Valid values: `EMAIL_ADDRESS`, `DOMAIN`.
         pub identity_type: pulumi_gestalt_rust::Output<String>,
         /// Key-value mapping of resource tags.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Specifies whether or not the identity is verified.
         pub verified_for_sending_status: pulumi_gestalt_rust::Output<bool>,
     }

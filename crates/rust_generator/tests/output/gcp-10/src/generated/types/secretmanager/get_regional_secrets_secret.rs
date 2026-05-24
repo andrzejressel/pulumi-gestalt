@@ -5,7 +5,7 @@
 pub struct GetRegionalSecretsSecret {
     /// Custom metadata about the regional secret.
     #[builder(into)]
-    pub r#annotations: std::collections::HashMap<String, String>,
+    pub r#annotations: std::collections::BTreeMap<String, String>,
     /// The time at which the regional secret was created.
     #[builder(into)]
     pub r#create_time: String,
@@ -14,15 +14,15 @@ pub struct GetRegionalSecretsSecret {
     #[builder(into)]
     pub r#customer_managed_encryptions: Vec<super::super::types::secretmanager::GetRegionalSecretsSecretCustomerManagedEncryption>,
     #[builder(into)]
-    pub r#effective_annotations: std::collections::HashMap<String, String>,
+    pub r#effective_annotations: std::collections::BTreeMap<String, String>,
     #[builder(into)]
-    pub r#effective_labels: std::collections::HashMap<String, String>,
+    pub r#effective_labels: std::collections::BTreeMap<String, String>,
     /// Timestamp in UTC when the regional secret is scheduled to expire.
     #[builder(into)]
     pub r#expire_time: String,
     /// The labels assigned to this regional secret.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The location of the regional secret.
     #[builder(into)]
     pub r#location: String,
@@ -35,7 +35,7 @@ pub struct GetRegionalSecretsSecret {
     /// The combination of labels configured directly on the resource
     ///  and default labels configured on the provider.
     #[builder(into)]
-    pub r#pulumi_labels: std::collections::HashMap<String, String>,
+    pub r#pulumi_labels: std::collections::BTreeMap<String, String>,
     /// The rotation time and period for a regional secret.
     /// Structure is documented below.
     #[builder(into)]
@@ -53,7 +53,7 @@ pub struct GetRegionalSecretsSecret {
     pub r#ttl: String,
     /// Mapping from version alias to version name.
     #[builder(into)]
-    pub r#version_aliases: std::collections::HashMap<String, String>,
+    pub r#version_aliases: std::collections::BTreeMap<String, String>,
     /// The version destroy ttl for the regional secret version.
     #[builder(into)]
     pub r#version_destroy_ttl: String,

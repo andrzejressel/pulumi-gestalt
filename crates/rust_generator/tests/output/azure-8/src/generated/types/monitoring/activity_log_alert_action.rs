@@ -8,7 +8,7 @@ pub struct ActivityLogAlertAction {
     pub r#action_group_id: String,
     /// The map of custom string properties to include with the post operation. These data are appended to the webhook payload.
     #[builder(into)]
-    pub r#webhook_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#webhook_properties: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ActivityLogAlertAction {

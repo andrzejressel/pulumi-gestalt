@@ -32,7 +32,7 @@ pub struct RoutineSparkOptions {
     /// For more information, see Apache Spark and the procedure option list.
     /// An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// Python files to be placed on the PYTHONPATH for PySpark application. Supported file types: .py, .egg, and .zip. For more information about Apache Spark, see Apache Spark.
     #[builder(into)]
     pub r#py_file_uris: Option<Vec<String>>,

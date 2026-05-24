@@ -31,7 +31,7 @@ pub mod global_settings {
         /// A list of resources along with the opt-in preferences for the account.
         #[builder(into)]
         pub global_settings: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     #[allow(dead_code)]
@@ -43,7 +43,7 @@ pub mod global_settings {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of resources along with the opt-in preferences for the account.
         pub global_settings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

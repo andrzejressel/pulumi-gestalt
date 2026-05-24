@@ -29,7 +29,7 @@ pub mod get_nat_gateway {
         /// a pair on the desired NAT Gateway.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the VPC that the NAT Gateway resides in.
         #[builder(into, default)]
@@ -61,7 +61,9 @@ pub mod get_nat_gateway {
         pub secondary_private_ip_addresses: pulumi_gestalt_rust::Output<Vec<String>>,
         pub state: pulumi_gestalt_rust::Output<String>,
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

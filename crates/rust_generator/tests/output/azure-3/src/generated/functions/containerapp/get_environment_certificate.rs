@@ -30,7 +30,9 @@ pub mod get_environment_certificate {
         /// The Subject Name for the Certificate.
         pub subject_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Thumbprint of the Certificate.
         pub thumbprint: pulumi_gestalt_rust::Output<String>,
     }

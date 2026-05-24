@@ -18,7 +18,7 @@ pub mod get_apis {
         /// a pair on the desired APIs.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -30,7 +30,7 @@ pub mod get_apis {
         pub name: pulumi_gestalt_rust::Output<Option<String>>,
         pub protocol_type: pulumi_gestalt_rust::Output<Option<String>>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

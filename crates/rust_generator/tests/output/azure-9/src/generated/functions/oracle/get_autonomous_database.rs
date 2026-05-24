@@ -107,7 +107,9 @@ pub mod get_autonomous_database {
         /// The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
         pub supported_regions_to_clone_tos: pulumi_gestalt_rust::Output<Vec<i32>>,
         /// A mapping of tags assigned to the Autonomous Database.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The date and time the Autonomous Database was created.
         pub time_created: pulumi_gestalt_rust::Output<String>,
         /// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.

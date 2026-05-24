@@ -14,7 +14,7 @@ pub struct WorkflowTemplateJobPigJob {
     pub r#logging_config: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPigJobLoggingConfig>>,
     /// A mapping of property names to values, used to configure Pig. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/pig/conf/pig.properties, and classes in user code.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// The HCFS URI of the script that contains the Pig queries.
     #[builder(into)]
     pub r#query_file_uri: Option<String>,
@@ -23,7 +23,7 @@ pub struct WorkflowTemplateJobPigJob {
     pub r#query_list: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPigJobQueryList>>,
     /// Mapping of query variable names to values (equivalent to the Pig command: `name=`).
     #[builder(into)]
-    pub r#script_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#script_variables: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WorkflowTemplateJobPigJob {

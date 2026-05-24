@@ -32,20 +32,20 @@ pub mod get_instance {
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         pub edition: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub force_destroy: pulumi_gestalt_rust::Output<bool>,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub num_nodes: pulumi_gestalt_rust::Output<i32>,
         pub processing_units: pulumi_gestalt_rust::Output<i32>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub state: pulumi_gestalt_rust::Output<String>,
     }

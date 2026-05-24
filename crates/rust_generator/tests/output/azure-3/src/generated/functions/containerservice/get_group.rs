@@ -37,7 +37,9 @@ pub mod get_group {
         /// The subnet resource IDs for a container group.
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A mapping of tags assigned to the Container Group instance.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A list of Availability Zones in which this Container Group is located.
         pub zones: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
     }

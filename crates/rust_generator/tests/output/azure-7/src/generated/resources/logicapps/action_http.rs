@@ -58,7 +58,7 @@ pub mod action_http {
         /// Specifies a Map of Key-Value Pairs that should be sent to the `uri` when this HTTP Action is triggered.
         #[builder(into, default)]
         pub headers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -74,7 +74,7 @@ pub mod action_http {
         /// Specifies a Map of Key-Value Pairs that should be sent to the `uri` when this HTTP Action is triggered.
         #[builder(into, default)]
         pub queries: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the place of the HTTP Action in the Logic App Workflow. If not specified, the HTTP Action is right after the Trigger. A `run_after` block is as defined below.
         #[builder(into, default)]
@@ -96,7 +96,7 @@ pub mod action_http {
         pub body: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies a Map of Key-Value Pairs that should be sent to the `uri` when this HTTP Action is triggered.
         pub headers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
         pub logic_app_id: pulumi_gestalt_rust::Output<String>,
@@ -108,7 +108,7 @@ pub mod action_http {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Specifies a Map of Key-Value Pairs that should be sent to the `uri` when this HTTP Action is triggered.
         pub queries: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the place of the HTTP Action in the Logic App Workflow. If not specified, the HTTP Action is right after the Trigger. A `run_after` block is as defined below.
         pub run_afters: pulumi_gestalt_rust::Output<

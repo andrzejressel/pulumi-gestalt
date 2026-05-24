@@ -37,7 +37,7 @@ pub mod get_authority {
         pub deletion_protection: pulumi_gestalt_rust::Output<bool>,
         pub desired_state: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub gcs_bucket: pulumi_gestalt_rust::Output<String>,
         /// The provider-assigned unique ID for this managed resource.
@@ -47,7 +47,7 @@ pub mod get_authority {
             Vec<super::super::super::types::certificateauthority::GetAuthorityKeySpec>,
         >,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub lifetime: pulumi_gestalt_rust::Output<String>,
         pub location: pulumi_gestalt_rust::Output<Option<String>>,
@@ -59,7 +59,7 @@ pub mod get_authority {
         pub pool: pulumi_gestalt_rust::Output<Option<String>>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub skip_grace_period: pulumi_gestalt_rust::Output<bool>,
         pub state: pulumi_gestalt_rust::Output<String>,

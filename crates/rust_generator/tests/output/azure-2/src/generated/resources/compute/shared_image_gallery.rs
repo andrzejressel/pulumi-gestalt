@@ -60,7 +60,7 @@ pub mod shared_image_gallery {
         /// A mapping of tags to assign to the Shared Image Gallery.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -84,7 +84,7 @@ pub mod shared_image_gallery {
         >,
         /// A mapping of tags to assign to the Shared Image Gallery.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Unique Name for this Shared Image Gallery.
         pub unique_name: pulumi_gestalt_rust::Output<String>,

@@ -146,7 +146,7 @@ pub mod job {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `template` block as defined below.
         #[builder(into)]
@@ -208,7 +208,7 @@ pub mod job {
         >,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `template` block as defined below.
         pub template: pulumi_gestalt_rust::Output<

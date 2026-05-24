@@ -8,7 +8,7 @@ pub struct WindowsFunctionAppSlotAuthSettings {
     pub r#active_directory: Option<Box<super::super::types::appservice::WindowsFunctionAppSlotAuthSettingsActiveDirectory>>,
     /// Specifies a map of login Parameters to send to the OpenID Connect authorization endpoint when a user logs in.
     #[builder(into)]
-    pub r#additional_login_parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#additional_login_parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Specifies a list of External URLs that can be redirected to as part of logging in or logging out of the Windows Web App.
     #[builder(into)]
     pub r#allowed_external_redirect_urls: Option<Vec<String>>,

@@ -90,12 +90,12 @@ pub mod integration_response {
         /// Map of response parameters that can be read from the backend response. For example: `response_parameters = { "method.response.header.X-Some-Header" = "integration.response.header.X-Some-Other-Header" }`.
         #[builder(into, default)]
         pub response_parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of templates used to transform the integration response body.
         #[builder(into, default)]
         pub response_templates: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the associated REST API.
         #[builder(into)]
@@ -124,11 +124,11 @@ pub mod integration_response {
         pub resource_id: pulumi_gestalt_rust::Output<String>,
         /// Map of response parameters that can be read from the backend response. For example: `response_parameters = { "method.response.header.X-Some-Header" = "integration.response.header.X-Some-Other-Header" }`.
         pub response_parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of templates used to transform the integration response body.
         pub response_templates: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the associated REST API.
         pub rest_api: pulumi_gestalt_rust::Output<String>,

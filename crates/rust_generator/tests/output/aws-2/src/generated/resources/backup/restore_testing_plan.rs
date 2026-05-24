@@ -61,7 +61,7 @@ pub mod restore_testing_plan {
         pub start_window_hours: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -86,11 +86,11 @@ pub mod restore_testing_plan {
         /// The number of hours in the start window for the restore testing plan. Must be between 1 and 168.
         pub start_window_hours: pulumi_gestalt_rust::Output<i32>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

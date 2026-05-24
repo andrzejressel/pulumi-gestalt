@@ -238,7 +238,7 @@ pub mod authz_policy {
         /// present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location of the resource.
         #[builder(into)]
@@ -283,7 +283,7 @@ pub mod authz_policy {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A list of authorization HTTP rules to match against the incoming request.A policy match occurs when at least one HTTP
         /// rule matches the request or when no HTTP rules are specified in the policy. At least one HTTP Rule is required for Allow
@@ -295,7 +295,7 @@ pub mod authz_policy {
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location of the resource.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -305,7 +305,7 @@ pub mod authz_policy {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Specifies the set of resources to which this policy should be applied to.
         /// Structure is documented below.

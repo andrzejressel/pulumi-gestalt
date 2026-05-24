@@ -8,7 +8,7 @@ pub struct GetProjectProject {
     pub r#create_time: String,
     /// A set of key/value label pairs assigned on a project.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The Project lifecycle state.
     #[builder(into)]
     pub r#lifecycle_state: String,
@@ -20,7 +20,7 @@ pub struct GetProjectProject {
     pub r#number: String,
     /// An optional reference to a parent resource.
     #[builder(into)]
-    pub r#parent: std::collections::HashMap<String, String>,
+    pub r#parent: std::collections::BTreeMap<String, String>,
     /// The project id of the project.
     #[builder(into)]
     pub r#project_id: String,

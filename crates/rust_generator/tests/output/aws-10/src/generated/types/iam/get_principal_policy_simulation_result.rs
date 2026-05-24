@@ -14,7 +14,7 @@ pub struct GetPrincipalPolicySimulationResult {
     pub r#decision: String,
     /// A map of arbitrary metadata entries returned by the policy simulator for this request.
     #[builder(into)]
-    pub r#decision_details: std::collections::HashMap<String, String>,
+    pub r#decision_details: std::collections::BTreeMap<String, String>,
     /// A nested set of objects describing which policies contained statements that were relevant to this simulation request. Each object has attributes `source_policy_id` and `source_policy_type` to identify one of the policies.
     #[builder(into)]
     pub r#matched_statements: Vec<super::super::types::iam::GetPrincipalPolicySimulationResultMatchedStatement>,

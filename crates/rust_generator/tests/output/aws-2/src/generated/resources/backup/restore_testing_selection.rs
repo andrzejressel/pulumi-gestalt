@@ -78,7 +78,7 @@ pub mod restore_testing_selection {
         /// Override certain restore metadata keys. See the complete list of [restore testing inferred metadata](https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html) .
         #[builder(into, default)]
         pub restore_metadata_overrides: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the restore testing plan.
         #[builder(into)]
@@ -110,7 +110,7 @@ pub mod restore_testing_selection {
         pub protected_resource_type: pulumi_gestalt_rust::Output<String>,
         /// Override certain restore metadata keys. See the complete list of [restore testing inferred metadata](https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html) .
         pub restore_metadata_overrides: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The name of the restore testing plan.
         pub restore_testing_plan_name: pulumi_gestalt_rust::Output<String>,

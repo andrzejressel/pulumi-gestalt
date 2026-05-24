@@ -53,7 +53,9 @@ pub mod get_vpn_server_configuration {
         >,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the VPN Server Configuration.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The list of Authentication Types applicable for the VPN Server Configuration.
         pub vpn_authentication_types: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The list of VPN Protocols to use for the VPN Server Configuration.

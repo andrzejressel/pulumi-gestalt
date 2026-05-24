@@ -119,13 +119,13 @@ pub mod method {
         /// and value is either `Error`, `Empty` (built-in models) or `aws.apigateway.Model`'s `name`.
         #[builder(into, default)]
         pub request_models: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of request parameters (from the path, query string and headers) that should be passed to the integration. The boolean value indicates whether the parameter is required (`true`) or optional (`false`).
         /// For example: `request_parameters = {"method.request.header.X-Some-Header" = true "method.request.querystring.some-query-param" = true}` would define that the header `X-Some-Header` and the query string `some-query-param` must be provided in the request.
         #[builder(into, default)]
         pub request_parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, bool>>,
+            Option<std::collections::BTreeMap<String, bool>>,
         >,
         /// ID of a `aws.apigateway.RequestValidator`
         #[builder(into, default)]
@@ -160,12 +160,12 @@ pub mod method {
         /// where key is the content type (e.g., `application/json`)
         /// and value is either `Error`, `Empty` (built-in models) or `aws.apigateway.Model`'s `name`.
         pub request_models: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of request parameters (from the path, query string and headers) that should be passed to the integration. The boolean value indicates whether the parameter is required (`true`) or optional (`false`).
         /// For example: `request_parameters = {"method.request.header.X-Some-Header" = true "method.request.querystring.some-query-param" = true}` would define that the header `X-Some-Header` and the query string `some-query-param` must be provided in the request.
         pub request_parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, bool>>,
+            Option<std::collections::BTreeMap<String, bool>>,
         >,
         /// ID of a `aws.apigateway.RequestValidator`
         pub request_validator_id: pulumi_gestalt_rust::Output<Option<String>>,

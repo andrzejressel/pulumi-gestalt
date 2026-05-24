@@ -33,7 +33,7 @@ pub mod get {
         >,
         /// A `detected_properties` block as defined below.
         pub detected_properties: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Specifies the Azure Arc machine display name.
         pub display_name: pulumi_gestalt_rust::Output<String>,
@@ -85,7 +85,9 @@ pub mod get {
         /// The current status of the service.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Hybrid Compute.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Specifies the Azure Arc machine unique ID.
         pub vm_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Arc Machine's unique SMBIOS ID.

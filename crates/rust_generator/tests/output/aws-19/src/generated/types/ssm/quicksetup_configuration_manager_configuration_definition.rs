@@ -12,7 +12,7 @@ pub struct QuicksetupConfigurationManagerConfigurationDefinition {
     pub r#local_deployment_execution_role_name: Option<String>,
     /// Parameters for the configuration definition type. Parameters for configuration definitions vary based the configuration type. See the [AWS API documentation](https://docs.aws.amazon.com/quick-setup/latest/APIReference/API_ConfigurationDefinitionInput.html) for a complete list of parameters for each configuration type.
     #[builder(into)]
-    pub r#parameters: std::collections::HashMap<String, String>,
+    pub r#parameters: std::collections::BTreeMap<String, String>,
     /// Type of the Quick Setup configuration.
     #[builder(into)]
     pub r#type_: String,

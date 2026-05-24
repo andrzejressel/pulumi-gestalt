@@ -22,7 +22,7 @@ impl TypeExt for Type {
             }
             Type::Object(type_) => {
                 format!(
-                    "std::collections::HashMap<String, {}>",
+                    "std::collections::BTreeMap<String, {}>",
                     type_.get_rust_type(depth)
                 )
             }

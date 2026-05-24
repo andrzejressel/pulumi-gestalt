@@ -31,7 +31,9 @@ pub mod get_system_topic {
         /// The ID of the Event Grid System Topic ARM Source.
         pub source_arm_resource_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which are assigned to the Event Grid System Topic.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Topic Type of the Event Grid System Topic.
         pub topic_type: pulumi_gestalt_rust::Output<String>,
     }

@@ -77,7 +77,7 @@ pub mod virtual_machine_manager_virtual_network {
         /// A mapping of tags which should be assigned to the System Center Virtual Machine Manager Virtual Network.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -101,7 +101,7 @@ pub mod virtual_machine_manager_virtual_network {
         >,
         /// A mapping of tags which should be assigned to the System Center Virtual Machine Manager Virtual Network.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

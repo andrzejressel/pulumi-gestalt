@@ -5,7 +5,7 @@
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorCustom {
     /// A map that holds custom authentication credentials.
     #[builder(into)]
-    pub r#credentials_map: Option<std::collections::HashMap<String, String>>,
+    pub r#credentials_map: Option<std::collections::BTreeMap<String, String>>,
     /// The custom authentication type that the connector uses.
     #[builder(into)]
     pub r#custom_authentication_type: String,

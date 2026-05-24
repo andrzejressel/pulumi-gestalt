@@ -5,10 +5,10 @@
 pub struct GetJobDefinitionEksPropertyPodPropertyContainerResource {
     /// The type and quantity of the resources to reserve for the container.
     #[builder(into)]
-    pub r#limits: std::collections::HashMap<String, String>,
+    pub r#limits: std::collections::BTreeMap<String, String>,
     /// The type and quantity of the resources to request for the container.
     #[builder(into)]
-    pub r#requests: std::collections::HashMap<String, String>,
+    pub r#requests: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetJobDefinitionEksPropertyPodPropertyContainerResource {

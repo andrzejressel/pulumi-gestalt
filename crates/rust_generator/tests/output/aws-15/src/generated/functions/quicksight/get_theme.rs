@@ -14,7 +14,7 @@ pub mod get_theme {
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Identifier of the theme.
         ///
@@ -48,7 +48,9 @@ pub mod get_theme {
         /// The theme creation status.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub theme_id: pulumi_gestalt_rust::Output<String>,
         /// A description of the current theme version being created/updated.
         pub version_description: pulumi_gestalt_rust::Output<String>,

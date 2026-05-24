@@ -8,7 +8,7 @@ pub struct GetAmiBlockDeviceMapping {
     pub r#device_name: String,
     /// Map containing EBS information, if the device is EBS based. Unlike most object attributes, these are accessed directly (e.g., `ebs.volume_size` or `ebs["volume_size"]`) rather than accessed through the first element of a list (e.g., `ebs[0].volume_size`).
     #[builder(into)]
-    pub r#ebs: std::collections::HashMap<String, String>,
+    pub r#ebs: std::collections::BTreeMap<String, String>,
     /// Suppresses the specified device included in the block device mapping of the AMI.
     #[builder(into)]
     pub r#no_device: String,

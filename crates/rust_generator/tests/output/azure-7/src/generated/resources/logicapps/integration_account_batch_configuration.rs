@@ -67,7 +67,7 @@ pub mod integration_account_batch_configuration {
         /// A JSON mapping of any Metadata for this Logic App Integration Account Batch Configuration.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Batch Configuration. Only Alphanumeric characters allowed. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -94,7 +94,7 @@ pub mod integration_account_batch_configuration {
         pub integration_account_name: pulumi_gestalt_rust::Output<String>,
         /// A JSON mapping of any Metadata for this Logic App Integration Account Batch Configuration.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Batch Configuration. Only Alphanumeric characters allowed. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

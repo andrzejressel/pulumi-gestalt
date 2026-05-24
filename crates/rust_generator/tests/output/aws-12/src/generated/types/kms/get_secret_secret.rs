@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetSecretSecret {
     #[builder(into)]
-    pub r#context: Option<std::collections::HashMap<String, String>>,
+    pub r#context: Option<std::collections::BTreeMap<String, String>>,
     #[builder(into)]
     pub r#grant_tokens: Option<Vec<String>>,
     #[builder(into)]

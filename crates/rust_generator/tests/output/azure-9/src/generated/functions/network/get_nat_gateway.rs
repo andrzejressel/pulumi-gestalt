@@ -40,7 +40,9 @@ pub mod get_nat_gateway {
         /// The SKU used by the NAT Gateway.
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A list of Availability Zones which the NAT Gateway exists in.
         pub zones: pulumi_gestalt_rust::Output<Vec<String>>,
     }

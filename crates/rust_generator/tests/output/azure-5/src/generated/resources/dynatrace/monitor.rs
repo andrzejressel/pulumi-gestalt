@@ -79,7 +79,7 @@ pub mod monitor {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// User's information. A `user` block as defined below. Chainging this forces a new resource to be created.
         #[builder(into)]
@@ -114,7 +114,7 @@ pub mod monitor {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// User's information. A `user` block as defined below. Chainging this forces a new resource to be created.
         pub user: pulumi_gestalt_rust::Output<

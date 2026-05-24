@@ -79,7 +79,7 @@ pub mod group {
         /// Identity-mapped groups for Cloud Search have a label with a key of system/groups/external and an empty value.
         #[builder(into)]
         pub labels: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The resource name of the entity under which this Group resides in the
         /// Cloud Identity resource hierarchy.
@@ -121,7 +121,7 @@ pub mod group {
         /// Dynamic groups have a label with a key of cloudidentity.googleapis.com/groups.dynamic.
         /// Identity-mapped groups for Cloud Search have a label with a key of system/groups/external and an empty value.
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Resource name of the Group in the format: groups/{group_id}, where group_id
         /// is the unique ID assigned to the Group.

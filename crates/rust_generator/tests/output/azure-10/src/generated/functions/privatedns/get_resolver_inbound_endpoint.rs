@@ -30,7 +30,9 @@ pub mod get_resolver_inbound_endpoint {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub private_dns_resolver_id: pulumi_gestalt_rust::Output<String>,
         /// The tags assigned to the Private DNS Resolver Inbound Endpoint.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

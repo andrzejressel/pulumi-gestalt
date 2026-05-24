@@ -78,7 +78,7 @@ pub mod windows_function_app_slot {
         /// A map of key-value pairs for [App Settings](https://docs.microsoft.com/azure/azure-functions/functions-app-settings) and custom values.
         #[builder(into, default)]
         pub app_settings: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// an `auth_settings` block as detailed below.
         #[builder(into, default)]
@@ -193,7 +193,7 @@ pub mod windows_function_app_slot {
         /// A mapping of tags which should be assigned to the Windows Function App Slot.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -215,7 +215,7 @@ pub mod windows_function_app_slot {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of key-value pairs for [App Settings](https://docs.microsoft.com/azure/azure-functions/functions-app-settings) and custom values.
         pub app_settings: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// an `auth_settings` block as detailed below.
         pub auth_settings: pulumi_gestalt_rust::Output<
@@ -323,7 +323,7 @@ pub mod windows_function_app_slot {
         pub storage_uses_managed_identity: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A mapping of tags which should be assigned to the Windows Function App Slot.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub virtual_network_subnet_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Is container image pull over virtual network enabled? Defaults to `false`.
