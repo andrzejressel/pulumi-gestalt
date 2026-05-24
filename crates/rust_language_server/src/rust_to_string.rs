@@ -39,10 +39,7 @@ fn render_statement(stmt: &RustStatement) -> String {
 
 pub fn render_expr(expr: &RustExpr) -> String {
     match expr {
-        RustExpr::StringLiteral(s) => {
-            let lit = LitStr::new(s, proc_macro2::Span::call_site());
-            quote! { #lit }.to_string()
-        }
+        RustExpr::StringLiteral(s) => quote! { #s }.to_string(),
         RustExpr::NumberLiteral(n) => {
             if *n > (f32::MAX as f64) || *n < (f32::MIN as f64) {
                 format!("{}_f64", n)
