@@ -20,7 +20,7 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
     ctx.add_export("boolOutput", &pulumi_gestalt_rust::stdlib::to_json(&true));
     ctx.add_export(
         "arrayOutput",
-        &pulumi_gestalt_rust::stdlib::to_json(&vec!("x", "y", "z")),
+        &pulumi_gestalt_rust::stdlib::to_json(&vec!["x", "y", "z"]),
     );
     ctx.add_export(
         "objectOutput",
