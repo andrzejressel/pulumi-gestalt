@@ -1,3 +1,16 @@
+## [0.0.12](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.11...v0.0.12)
+### Changed
+- Fix deploy by adding description to pulumi_gestalt_model crate ([#2308](https://github.com/andrzejressel/pulumi-gestalt/pull/2308)) [67084af](https://github.com/andrzejressel/pulumi-gestalt/commit/67084afdfdc2082650b0771538d8ca0a7d1d5d6b)
+
+<details>
+<summary><h3>📝 Other Commits</h3></summary>
+
+- Update version to 0.0.12 [c8a8333](https://github.com/andrzejressel/pulumi-gestalt/commit/c8a8333b02436362d7f2ee81f261fbd458d8352f)
+- Add description to model crate ([#2308](https://github.com/andrzejressel/pulumi-gestalt/pull/2308)) [67084af](https://github.com/andrzejressel/pulumi-gestalt/commit/67084afdfdc2082650b0771538d8ca0a7d1d5d6b)
+- Fix some code scanning issues ([#2307](https://github.com/andrzejressel/pulumi-gestalt/pull/2307)) [55922a9](https://github.com/andrzejressel/pulumi-gestalt/commit/55922a98f6c94081d5f6581b496447f40a474d84)
+- Restore version to 0.0.0-DEV [b5f76c1](https://github.com/andrzejressel/pulumi-gestalt/commit/b5f76c1a4e58af0dafbab10b51f3ceff43d94465)
+</details>
+
 ## [0.0.11](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.10...v0.0.11)
 ### Align serialization and deserialization internals with official Pulumi language implementations
 Performed a significant internal refactor of serialization and deserialization logic
@@ -52,6 +65,8 @@ Migration:
 <details>
 <summary><h3>📝 Other Commits</h3></summary>
 
+- Release v0.0.11 [02d892f](https://github.com/andrzejressel/pulumi-gestalt/commit/02d892fb52828cc0247609ecdebc3d3690419fa1)
+- Update changelog for version 0.0.11 [c67adb8](https://github.com/andrzejressel/pulumi-gestalt/commit/c67adb8e4cd1c30d70cd657498fbd270efed4240)
 - Update version to 0.0.11 [513708b](https://github.com/andrzejressel/pulumi-gestalt/commit/513708bba6df4c74e6efdaa85c157da9e76b60b5)
 - Rework dynamic to typesafe ([#2300](https://github.com/andrzejressel/pulumi-gestalt/pull/2300)) [cd23346](https://github.com/andrzejressel/pulumi-gestalt/commit/cd23346da7073a52da7e85dc9c7d488ab0e5f755)
 - Remove add_export call in examples ([#2293](https://github.com/andrzejressel/pulumi-gestalt/pull/2293)) [411e1c0](https://github.com/andrzejressel/pulumi-gestalt/commit/411e1c068cc1e9f1010ea1331e610e5cfba64880)
