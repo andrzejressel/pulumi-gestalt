@@ -119,7 +119,7 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
 }
 
 fn create_provider_dependencies(
-    plugins: &Vec<PluginReference>,
+    plugins: &[PluginReference],
     local_dependencies: &HashMap<String, String>,
 ) -> Vec<Dependency> {
     plugins
