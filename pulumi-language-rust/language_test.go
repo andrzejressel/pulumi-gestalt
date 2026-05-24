@@ -75,7 +75,7 @@ func TestLanguage(t *testing.T) {
 		SnapshotEdits: []*testingrpc.PrepareLanguageTestsRequest_Replacement{
 			{
 				Path:        "Cargo.toml",
-				Pattern:     `(pulumi_(\w+)) = .*`,
+				Pattern:     `(pulumi_((\w|-|_)+)) = .*`,
 				Replacement: `$1 = "VERSION"`,
 			},
 		},
@@ -215,7 +215,6 @@ var expectedFailures = map[string]string{
 	"l2-provider-grpc-config-schema-secret":        "sdk snapshot validation for config-grpc: walk expected dir: lstat testdata/sdks/config-grpc-1.0.0: no such file or directory",
 	"l2-provider-grpc-config-secret":               "sdk snapshot validation for config-grpc: walk expected dir: lstat testdata/sdks/config-grpc-1.0.0: no such file or directory",
 	"l2-proxy-index":                               "sdk snapshot validation for ref-ref: walk expected dir: lstat testdata/sdks/ref-ref-12.0.0: no such file or directory",
-	"l2-ref-ref":                                   "sdk snapshot validation for ref-ref: walk expected dir: lstat testdata/sdks/ref-ref-12.0.0: no such file or directory",
 	"l2-resource-alpha":                            "sdk snapshot validation for alpha: walk expected dir: lstat testdata/sdks/alpha-3.0.0-alpha.1.internal+exp.sha.12345678: no such file or directory",
 	"l2-resource-asset-archive":                    "sdk snapshot validation for asset-archive: walk expected dir: lstat testdata/sdks/asset-archive-5.0.0: no such file or directory",
 	"l2-resource-config":                           "sdk snapshot validation for config: walk expected dir: lstat testdata/sdks/config-9.0.0: no such file or directory",

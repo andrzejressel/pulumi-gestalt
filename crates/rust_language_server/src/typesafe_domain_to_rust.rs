@@ -9,7 +9,12 @@ use crate::typesafe_domain_ir::{
     BinOp, ConfigBinding, ConfigType, Expr, ExprType, ExprValue, JsonValue, Program, ResourceInput,
     ResourceToken, Statement, StdlibFn, UnaryOp,
 };
+use pulumi_gestalt_generator::PropertyName;
+use pulumi_gestalt_schema::model::ElementId;
+use quote::quote;
 use rootcause::Result;
+use rootcause::compat::IntoRootcause;
+use rootcause::option_ext::OptionExt;
 use rootcause::prelude::ResultExt;
 
 pub fn lower(program: &Program) -> Result<RustFile> {
@@ -77,6 +82,7 @@ fn lower_resource(
 ) -> Result<RustStatement> {
     let (module_path, struct_name) =
         get_full_resource_path(token).context("Failed to resolve resource token")?;
+    let module_path = normalize_rust_ident(&module_path);
 
     // Build the args via the builder: ModulePath::TypeArgs::builder().field(val)...build_struct()
     let builder_start = RustExpr::FunctionCall {
@@ -93,9 +99,10 @@ fn lower_resource(
                 } else {
                     lowered
                 };
+                let proparty_name = PropertyName::new(name.clone());
                 RustExpr::MethodCall {
                     receiver: Box::new(acc),
-                    method: name.clone(),
+                    method: proparty_name.get_rust_field_name(),
                     type_params: vec![],
                     args: vec![input_val],
                 }
@@ -309,13 +316,7 @@ fn rust_config_type(ct: &ConfigType) -> String {
 
 fn lower_expr(expr: &Expr) -> RustExpr {
     match &expr.value {
-        ExprValue::String(s) => {
-            if requires_escaping(s) {
-                RustExpr::RawStringLiteral(s.clone())
-            } else {
-                RustExpr::StringLiteral(s.clone())
-            }
-        }
+        ExprValue::String(s) => RustExpr::StringLiteral(s.clone()),
         ExprValue::Number(n) => RustExpr::NumberLiteral(*n),
         ExprValue::Bool(b) => RustExpr::BoolLiteral(*b),
         ExprValue::Null => {
@@ -430,6 +431,15 @@ fn lower_expr(expr: &Expr) -> RustExpr {
             method: "new_output".to_string(),
             type_params: vec![],
             args: vec![RustExpr::Ref(Box::new(lower_expr(inner)))],
+        },
+        ExprValue::NewStruct { token, properties } => {
+            lower_new_struct_expr(token, properties).expect("Failed to lower NewStruct expression")
+        }
+        ExprValue::Map(entries) => RustExpr::BTreeMap {
+            entries: entries
+                .iter()
+                .map(|(k, v)| (RustExpr::StringLiteral(k.clone()), lower_expr(v)))
+                .collect(),
         },
         ExprValue::PulumiAny(json) => RustExpr::PulumiAny(lower_json_value(json)),
         ExprValue::StdlibCall { func, args } => lower_stdlib_call(func, args),
@@ -621,8 +631,53 @@ fn lower_json_value(json: &JsonValue) -> RustJsonExpr {
     }
 }
 
-fn requires_escaping(s: &str) -> bool {
-    s.contains('"') || s.contains('\\') || s.contains('\n') || s.contains('\r') || s.contains('\t')
+fn lower_new_struct_expr(token: &str, properties: &[(String, Expr)]) -> Result<RustExpr> {
+    let (pkg, element_id) = parse_package_type_token(token)
+        .context_with(|| format!("Failed to parse package type token [{}]", token))?;
+    let mut type_path = format!("pulumi_{}::types", normalize_rust_ident(&pkg));
+    for namespace in &element_id.namespace {
+        type_path.push_str("::");
+        type_path.push_str(&normalize_rust_ident(namespace));
+    }
+    type_path.push_str("::");
+    type_path.push_str(&element_id.name);
+
+    let builder = RustExpr::FunctionCall {
+        path: format!("{type_path}::builder"),
+        args: vec![],
+    };
+    let with_fields = properties.iter().fold(builder, |acc, (name, expr)| {
+        let proparty_name = PropertyName::new(name.clone());
+
+        RustExpr::MethodCall {
+            receiver: Box::new(acc),
+            method: proparty_name.get_rust_field_name().clone(),
+            type_params: vec![],
+            args: vec![lower_expr(expr)],
+        }
+    });
+
+    Ok(RustExpr::MethodCall {
+        receiver: Box::new(with_fields),
+        method: "build_struct".to_string(),
+        type_params: vec![],
+        args: vec![],
+    })
+}
+
+fn parse_package_type_token(token: &str) -> Result<(String, ElementId)> {
+    let mut parts = token.splitn(2, ':');
+    let package = parts
+        .next()
+        .context_with(|| format!("Token [{}] is missing package part", token))?;
+    let element_id = ElementId::new(token)
+        .into_rootcause()
+        .context_with(|| format!("Token [{}] is not a valid ElementId", token))?;
+    Ok((package.to_string(), element_id))
+}
+
+fn normalize_rust_ident(raw: &str) -> String {
+    raw.replace('-', "_")
 }
 
 fn bin_op_str(op: &BinOp) -> &'static str {
@@ -647,6 +702,71 @@ fn unary_op_str(op: &UnaryOp) -> &'static str {
     match op {
         UnaryOp::Not => "!",
         UnaryOp::Neg => "-",
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn lower_new_struct_expr_uses_types_builder_path() {
+        let expr = lower_new_struct_expr(
+            "ref-ref:index:Data",
+            &[(
+                "string".to_string(),
+                Expr {
+                    expr_type: ExprType::String,
+                    value: ExprValue::String("hello".to_string()),
+                },
+            )],
+        )
+        .expect("lower new struct");
+
+        let rendered = crate::rust_to_string::render_expr(&expr);
+        assert!(rendered.contains("pulumi_ref_ref::types::Data::builder()"));
+        assert!(rendered.contains(".string(\"hello\")"));
+        assert!(rendered.ends_with(".build_struct()"));
+    }
+
+    #[test]
+    fn lower_new_struct_expr_uses_namespaced_types_path() {
+        let expr = lower_new_struct_expr("aws:devicefarm/project:Project", &[])
+            .expect("lower namespaced new struct");
+        let rendered = crate::rust_to_string::render_expr(&expr);
+        assert_eq!(
+            rendered,
+            "pulumi_aws::types::devicefarm::Project::builder().build_struct()"
+        );
+    }
+
+    #[test]
+    fn lower_typed_map_renders_hash_map_from() {
+        let expr = Expr {
+            expr_type: ExprType::Map(Box::new(ExprType::String)),
+            value: ExprValue::Map(vec![(
+                "k".to_string(),
+                Expr {
+                    expr_type: ExprType::String,
+                    value: ExprValue::String("v".to_string()),
+                },
+            )]),
+        };
+        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
+        assert_eq!(
+            rendered,
+            "std::collections::BTreeMap::from([((\"k\").to_string(), (\"v\").to_string())])"
+        );
+    }
+
+    #[test]
+    fn lower_empty_typed_map_renders_hash_map_new() {
+        let expr = Expr {
+            expr_type: ExprType::Map(Box::new(ExprType::String)),
+            value: ExprValue::Map(vec![]),
+        };
+        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
+        assert_eq!(rendered, "std::collections::BTreeMap::new()");
     }
 }
 

@@ -1,0 +1,262 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "res",
+        "value": {
+          "FunctionCall": {
+            "path": "pulumi_ref_ref::resource::create",
+            "args": [
+              {
+                "Ref": {
+                  "Identifier": "ctx"
+                }
+              },
+              {
+                "StringLiteral": "res"
+              },
+              {
+                "MethodCall": {
+                  "receiver": {
+                    "MethodCall": {
+                      "receiver": {
+                        "FunctionCall": {
+                          "path": "pulumi_ref_ref::resource::ResourceArgs::builder",
+                          "args": []
+                        }
+                      },
+                      "method": "data",
+                      "type_params": [],
+                      "args": [
+                        {
+                          "MethodCall": {
+                            "receiver": {
+                              "MethodCall": {
+                                "receiver": {
+                                  "MethodCall": {
+                                    "receiver": {
+                                      "MethodCall": {
+                                        "receiver": {
+                                          "MethodCall": {
+                                            "receiver": {
+                                              "MethodCall": {
+                                                "receiver": {
+                                                  "MethodCall": {
+                                                    "receiver": {
+                                                      "MethodCall": {
+                                                        "receiver": {
+                                                          "FunctionCall": {
+                                                            "path": "pulumi_ref_ref::types::Data::builder",
+                                                            "args": []
+                                                          }
+                                                        },
+                                                        "method": "bool_array",
+                                                        "type_params": [],
+                                                        "args": [
+                                                          {
+                                                            "Vec": {
+                                                              "elements": [],
+                                                              "type_hint": null
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    },
+                                                    "method": "boolean",
+                                                    "type_params": [],
+                                                    "args": [
+                                                      {
+                                                        "BoolLiteral": true
+                                                      }
+                                                    ]
+                                                  }
+                                                },
+                                                "method": "float",
+                                                "type_params": [],
+                                                "args": [
+                                                  {
+                                                    "NumberLiteral": 4.5
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            "method": "inner_data",
+                                            "type_params": [],
+                                            "args": [
+                                              {
+                                                "MethodCall": {
+                                                  "receiver": {
+                                                    "MethodCall": {
+                                                      "receiver": {
+                                                        "MethodCall": {
+                                                          "receiver": {
+                                                            "MethodCall": {
+                                                              "receiver": {
+                                                                "MethodCall": {
+                                                                  "receiver": {
+                                                                    "MethodCall": {
+                                                                      "receiver": {
+                                                                        "MethodCall": {
+                                                                          "receiver": {
+                                                                            "FunctionCall": {
+                                                                              "path": "pulumi_ref_ref::types::InnerData::builder",
+                                                                              "args": []
+                                                                            }
+                                                                          },
+                                                                          "method": "bool_array",
+                                                                          "type_params": [],
+                                                                          "args": [
+                                                                            {
+                                                                              "Vec": {
+                                                                                "elements": [
+                                                                                  {
+                                                                                    "BoolLiteral": false
+                                                                                  },
+                                                                                  {
+                                                                                    "BoolLiteral": true
+                                                                                  }
+                                                                                ],
+                                                                                "type_hint": null
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      },
+                                                                      "method": "boolean",
+                                                                      "type_params": [],
+                                                                      "args": [
+                                                                        {
+                                                                          "BoolLiteral": false
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  },
+                                                                  "method": "float",
+                                                                  "type_params": [],
+                                                                  "args": [
+                                                                    {
+                                                                      "NumberLiteral": 2.17
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              },
+                                                              "method": "integer",
+                                                              "type_params": [],
+                                                              "args": [
+                                                                {
+                                                                  "NumberLiteral": -12.0
+                                                                }
+                                                              ]
+                                                            }
+                                                          },
+                                                          "method": "string",
+                                                          "type_params": [],
+                                                          "args": [
+                                                            {
+                                                              "StringLiteral": "Goodbye"
+                                                            }
+                                                          ]
+                                                        }
+                                                      },
+                                                      "method": "string_map",
+                                                      "type_params": [],
+                                                      "args": [
+                                                        {
+                                                          "BTreeMap": {
+                                                            "entries": [
+                                                              [
+                                                                {
+                                                                  "StringLiteral": "three"
+                                                                },
+                                                                {
+                                                                  "StringLiteral": "french hens"
+                                                                }
+                                                              ],
+                                                              [
+                                                                {
+                                                                  "StringLiteral": "two"
+                                                                },
+                                                                {
+                                                                  "StringLiteral": "turtle doves"
+                                                                }
+                                                              ]
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "method": "build_struct",
+                                                  "type_params": [],
+                                                  "args": []
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "method": "integer",
+                                        "type_params": [],
+                                        "args": [
+                                          {
+                                            "NumberLiteral": 1024.0
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "method": "string",
+                                    "type_params": [],
+                                    "args": [
+                                      {
+                                        "StringLiteral": "Hello"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "method": "string_map",
+                                "type_params": [],
+                                "args": [
+                                  {
+                                    "BTreeMap": {
+                                      "entries": [
+                                        [
+                                          {
+                                            "StringLiteral": "x"
+                                          },
+                                          {
+                                            "StringLiteral": "100"
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "StringLiteral": "y"
+                                          },
+                                          {
+                                            "StringLiteral": "200"
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            "method": "build_struct",
+                            "type_params": [],
+                            "args": []
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "method": "build_struct",
+                  "type_params": [],
+                  "args": []
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

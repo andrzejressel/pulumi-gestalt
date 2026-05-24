@@ -19,8 +19,6 @@ pub enum RustStatement {
 pub enum RustExpr {
     /// `"hello"` — regular string literal.
     StringLiteral(String),
-    /// `r#"hello"#` — raw string literal (no escape processing).
-    RawStringLiteral(String),
     /// Numeric literal. Emitted as `{value}` or `{value}_f64` for large values.
     NumberLiteral(f64),
     /// `true` / `false`.
@@ -36,6 +34,8 @@ pub enum RustExpr {
         elements: Vec<RustExpr>,
         type_hint: Option<String>,
     },
+    /// `std::collections::BTreeMap::from([(k, v), ...])` or `std::collections::BTreeMap::new()`.
+    BTreeMap { entries: Vec<(RustExpr, RustExpr)> },
     /// `format!("...", args...)`
     Format { fmt: String, args: Vec<RustExpr> },
     /// `path::to::func(args...)`
