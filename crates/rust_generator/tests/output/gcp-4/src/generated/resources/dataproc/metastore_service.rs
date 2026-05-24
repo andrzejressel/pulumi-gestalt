@@ -55,7 +55,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let cryptoKey = crypto_key::create(
@@ -97,7 +97,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let default = metastore_service::create(
@@ -147,7 +147,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let default = metastore_service::create(
@@ -197,7 +197,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let dpms2 = metastore_service::create(
@@ -272,7 +272,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let testResource = metastore_service::create(
@@ -309,7 +309,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let testResource = metastore_service::create(
@@ -347,7 +347,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let testResource = metastore_service::create(
@@ -384,7 +384,7 @@
 ///
 /// ```ignore
 /// use pulumi_gestalt_rust::Output;
-/// use pulumi_gestalt_rust::{add_export, pulumi_main};
+/// use pulumi_gestalt_rust::pulumi_main;
 /// #[pulumi_main]
 /// fn test_main() -> Result<(), Error> {
 ///     let testResource = metastore_service::create(

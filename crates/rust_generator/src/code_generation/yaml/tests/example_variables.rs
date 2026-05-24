@@ -79,7 +79,7 @@ pub fn get_rust_code() -> String {
     reformat_code(
         r#"
         use pulumi_gestalt_rust::Output;
-        use pulumi_gestalt_rust::{add_export, pulumi_main};
+        use pulumi_gestalt_rust::pulumi_main;
         #[pulumi_main]
         fn test_main() -> Result<(), Error> {
             let example = get_gateway_categories::invoke(
