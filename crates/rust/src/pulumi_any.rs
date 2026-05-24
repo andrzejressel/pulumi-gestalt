@@ -22,10 +22,10 @@ macro_rules! pulumi_any_v2_internal {
         )
     };
     ([$($tt:tt)*]) => {
-        $crate::pulumi_any_v2_internal_array!([] $($tt)*)
+        $crate::pulumi_any_v2_internal_array!([] $($tt)* ,)
     };
     ({$($tt:tt)*}) => {
-        $crate::pulumi_any_v2_internal_object!([] $($tt)*)
+        $crate::pulumi_any_v2_internal_object!([] $($tt)* ,)
     };
     ($other:expr) => {
         $crate::__private::pulumi_gestalt_model::__private::to_pulumi_value_middleware($other)
@@ -77,38 +77,6 @@ macro_rules! pulumi_any_v2_internal_array {
                 $crate::pulumi_any_v2_internal!($next),
             ]
             $($rest)*
-        )
-    };
-    ([$($elems:expr,)*] null) => {
-        $crate::pulumi_any_v2_internal_array!(
-            [
-                $($elems,)*
-                $crate::pulumi_any_v2_internal!(null),
-            ]
-        )
-    };
-    ([$($elems:expr,)*] [$($inner:tt)*]) => {
-        $crate::pulumi_any_v2_internal_array!(
-            [
-                $($elems,)*
-                $crate::pulumi_any_v2_internal!([$($inner)*]),
-            ]
-        )
-    };
-    ([$($elems:expr,)*] {$($inner:tt)*}) => {
-        $crate::pulumi_any_v2_internal_array!(
-            [
-                $($elems,)*
-                $crate::pulumi_any_v2_internal!({$($inner)*}),
-            ]
-        )
-    };
-    ([$($elems:expr,)*] $next:expr) => {
-        $crate::pulumi_any_v2_internal_array!(
-            [
-                $($elems,)*
-                $crate::pulumi_any_v2_internal!($next),
-            ]
         )
     };
 }
@@ -170,50 +138,6 @@ macro_rules! pulumi_any_v2_internal_object {
                 ),
             ]
             $($rest)*
-        )
-    };
-    ([$($fields:expr,)*] $key:tt : null) => {
-        $crate::pulumi_any_v2_internal_object!(
-            [
-                $($fields,)*
-                (
-                    ::std::convert::Into::<::std::string::String>::into($key),
-                    $crate::pulumi_any_v2_internal!(null),
-                ),
-            ]
-        )
-    };
-    ([$($fields:expr,)*] $key:tt : [$($inner:tt)*]) => {
-        $crate::pulumi_any_v2_internal_object!(
-            [
-                $($fields,)*
-                (
-                    ::std::convert::Into::<::std::string::String>::into($key),
-                    $crate::pulumi_any_v2_internal!([$($inner)*]),
-                ),
-            ]
-        )
-    };
-    ([$($fields:expr,)*] $key:tt : {$($inner:tt)*}) => {
-        $crate::pulumi_any_v2_internal_object!(
-            [
-                $($fields,)*
-                (
-                    ::std::convert::Into::<::std::string::String>::into($key),
-                    $crate::pulumi_any_v2_internal!({$($inner)*}),
-                ),
-            ]
-        )
-    };
-    ([$($fields:expr,)*] $key:tt : $value:expr) => {
-        $crate::pulumi_any_v2_internal_object!(
-            [
-                $($fields,)*
-                (
-                    ::std::convert::Into::<::std::string::String>::into($key),
-                    $crate::pulumi_any_v2_internal!($value),
-                ),
-            ]
         )
     };
 }
@@ -380,6 +304,76 @@ mod tests {
                 ),
                 ("unknown".to_string(), pv(PulumiValueContent::Nothing)),
             ]))
+        );
+    }
+
+    #[test]
+    fn pulumi_any_macro_nested_object_with_parenthesized_expr_values() {
+        let a_string = "name".to_string();
+        let a_list = vec!["x".to_string(), "y".to_string(), "z".to_string()];
+
+        let value = block_on(
+            pulumi_any!({
+                "anObject": {
+                    "items": ((a_list).clone()),
+                    "name": ((a_string).clone()),
+                },
+            })
+            .to_pulumi_value(),
+        );
+
+        let value_without_trailing_commas = block_on(
+            pulumi_any!({
+                "anObject": {
+                    "items": ((a_list).clone()),
+                    "name": ((a_string).clone())
+                }
+            })
+            .to_pulumi_value(),
+        );
+
+        assert_eq!(
+            value,
+            pv(PulumiValueContent::Object(vec![(
+                "anObject".to_string(),
+                pv(PulumiValueContent::Object(vec![
+                    (
+                        "items".to_string(),
+                        pv(PulumiValueContent::Array(vec![
+                            pv(PulumiValueContent::String("x".to_string())),
+                            pv(PulumiValueContent::String("y".to_string())),
+                            pv(PulumiValueContent::String("z".to_string())),
+                        ])),
+                    ),
+                    (
+                        "name".to_string(),
+                        pv(PulumiValueContent::String("name".to_string())),
+                    ),
+                ])),
+            )]))
+        );
+        assert_eq!(
+            value, value_without_trailing_commas,
+            "object literals should parse with or without trailing commas"
+        );
+    }
+
+    #[test]
+    fn pulumi_any_macro_array_without_trailing_comma() {
+        let value_with_trailing_comma = block_on(pulumi_any!([1, 2, 3,]).to_pulumi_value());
+        let value_without_trailing_comma = block_on(pulumi_any!([1, 2, 3]).to_pulumi_value());
+
+        assert_eq!(
+            value_with_trailing_comma,
+            pv(PulumiValueContent::Array(vec![
+                pv(PulumiValueContent::Integer(1)),
+                pv(PulumiValueContent::Integer(2)),
+                pv(PulumiValueContent::Integer(3)),
+            ]))
+        );
+        assert_eq!(
+            value_with_trailing_comma, value_without_trailing_comma,
+            "array literals should parse with or without trailing commas"
         );
     }
 

@@ -466,9 +466,7 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
         },
         StdlibFn::ToJson => RustExpr::FunctionCall {
             path: "pulumi_gestalt_rust::stdlib::to_json".to_string(),
-            args: vec![
-                RustExpr::Ref(Box::new(lowered_args[0].clone())),
-            ],
+            args: vec![RustExpr::Ref(Box::new(lowered_args[0].clone()))],
         },
         StdlibFn::Sha1 => RustExpr::FunctionCall {
             path: "pulumi_gestalt_rust::stdlib::sha1".to_string(),
@@ -617,7 +615,9 @@ fn lower_json_value(json: &JsonValue) -> RustJsonExpr {
         JsonValue::Array(items) => {
             RustJsonExpr::Array(items.iter().map(lower_json_value).collect())
         }
-        JsonValue::Expr(expr) => RustJsonExpr::Expr(Box::new(RustExpr::Clone(Box::new(lower_expr(expr))))),
+        JsonValue::Expr(expr) => {
+            RustJsonExpr::Expr(Box::new(RustExpr::Clone(Box::new(lower_expr(expr)))))
+        }
     }
 }
 

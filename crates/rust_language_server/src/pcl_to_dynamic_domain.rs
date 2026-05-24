@@ -744,10 +744,8 @@ fn ensure_arity(name: &str, got: usize, expected: usize) -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::pcl_model::{
-        ExpressionType, ObjectConsExpression,
-    };
-    use std::collections::BTreeMap;
+    use crate::pcl_model::ExpressionType;
+    
 
     fn lit_string(value: &str) -> Expression {
         Expression {
