@@ -161,6 +161,7 @@ pub enum JsonValue {
 pub enum StdlibFn {
     FromBase64,
     ToBase64,
+    ToJson,
     Sha1,
     ReadFile,
     FileBase64,

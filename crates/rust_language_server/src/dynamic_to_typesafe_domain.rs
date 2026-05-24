@@ -443,6 +443,7 @@ fn lower_stdlib_fn(func: dynamic::StdlibFn) -> typesafe::StdlibFn {
     match func {
         dynamic::StdlibFn::FromBase64 => typesafe::StdlibFn::FromBase64,
         dynamic::StdlibFn::ToBase64 => typesafe::StdlibFn::ToBase64,
+        dynamic::StdlibFn::ToJson => typesafe::StdlibFn::ToJson,
         dynamic::StdlibFn::Sha1 => typesafe::StdlibFn::Sha1,
         dynamic::StdlibFn::ReadFile => typesafe::StdlibFn::ReadFile,
         dynamic::StdlibFn::FileBase64 => typesafe::StdlibFn::FileBase64,

@@ -478,6 +478,10 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
             path: "pulumi_gestalt_rust::stdlib::to_base64".to_string(),
             args: lowered_args,
         },
+        StdlibFn::ToJson => RustExpr::FunctionCall {
+            path: "pulumi_gestalt_rust::stdlib::to_json".to_string(),
+            args: lowered_args,
+        },
         StdlibFn::Sha1 => RustExpr::FunctionCall {
             path: "pulumi_gestalt_rust::stdlib::sha1".to_string(),
             args: lowered_args,
@@ -681,5 +685,86 @@ fn unary_op_str(op: &UnaryOp) -> &'static str {
     match op {
         UnaryOp::Not => "!",
         UnaryOp::Neg => "-",
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn lower_new_struct_expr_uses_types_builder_path() {
+        let expr = lower_new_struct_expr(
+            "ref-ref:index:Data",
+            &[(
+                "string".to_string(),
+                Expr {
+                    expr_type: ExprType::String,
+                    value: ExprValue::String("hello".to_string()),
+                },
+            )],
+        )
+        .expect("lower new struct");
+
+        let rendered = crate::rust_to_string::render_expr(&expr);
+        assert!(rendered.contains("pulumi_ref_ref::types::Data::builder()"));
+        assert!(rendered.contains(".string(\"hello\")"));
+        assert!(rendered.ends_with(".build_struct()"));
+    }
+
+    #[test]
+    fn lower_new_struct_expr_uses_namespaced_types_path() {
+        let expr = lower_new_struct_expr("aws:devicefarm/project:Project", &[])
+            .expect("lower namespaced new struct");
+        let rendered = crate::rust_to_string::render_expr(&expr);
+        assert_eq!(
+            rendered,
+            "pulumi_aws::types::devicefarm::Project::builder().build_struct()"
+        );
+    }
+
+    #[test]
+    fn lower_typed_map_renders_hash_map_from() {
+        let expr = Expr {
+            expr_type: ExprType::Map(Box::new(ExprType::String)),
+            value: ExprValue::Map(vec![(
+                "k".to_string(),
+                Expr {
+                    expr_type: ExprType::String,
+                    value: ExprValue::String("v".to_string()),
+                },
+            )]),
+        };
+        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
+        assert_eq!(
+            rendered,
+            "std::collections::BTreeMap::from([((\"k\").to_string(), (\"v\").to_string())])"
+        );
+    }
+
+    #[test]
+    fn lower_empty_typed_map_renders_hash_map_new() {
+        let expr = Expr {
+            expr_type: ExprType::Map(Box::new(ExprType::String)),
+            value: ExprValue::Map(vec![]),
+        };
+        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
+        assert_eq!(rendered, "std::collections::BTreeMap::new()");
+    }
+
+    #[test]
+    fn lower_to_json_stdlib_call_renders_runtime_call() {
+        let expr = Expr {
+            expr_type: ExprType::String,
+            value: ExprValue::StdlibCall {
+                func: StdlibFn::ToJson,
+                args: vec![Expr {
+                    expr_type: ExprType::String,
+                    value: ExprValue::String("hello".to_string()),
+                }],
+            },
+        };
+        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
+        assert_eq!(rendered, "pulumi_gestalt_rust::stdlib::to_json(\"hello\")");
     }
 }

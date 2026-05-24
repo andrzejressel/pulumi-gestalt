@@ -1,0 +1,302 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "aString",
+        "config_type": "String",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "aNumber",
+        "config_type": "Number",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "aList",
+        "config_type": {
+          "List": "String"
+        },
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "aSecret",
+        "config_type": "String",
+        "default": null,
+        "secret": true
+      }
+    },
+    {
+      "Export": {
+        "name": "stringOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "ToJson",
+              "args": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "Variable": "aString"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "numberOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "ToJson",
+              "args": [
+                {
+                  "expr_type": "Number",
+                  "value": {
+                    "Variable": "aNumber"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "boolOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "ToJson",
+              "args": [
+                {
+                  "expr_type": "Bool",
+                  "value": {
+                    "Bool": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "arrayOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "ToJson",
+              "args": [
+                {
+                  "expr_type": {
+                    "Tuple": [
+                      "String",
+                      "String",
+                      "String"
+                    ]
+                  },
+                  "value": {
+                    "List": [
+                      {
+                        "expr_type": "String",
+                        "value": {
+                          "String": "x"
+                        }
+                      },
+                      {
+                        "expr_type": "String",
+                        "value": {
+                          "String": "y"
+                        }
+                      },
+                      {
+                        "expr_type": "String",
+                        "value": {
+                          "String": "z"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "objectOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "ToJson",
+              "args": [
+                {
+                  "expr_type": {
+                    "Object": {
+                      "count": "Int",
+                      "key": "String"
+                    }
+                  },
+                  "value": {
+                    "PulumiAny": {
+                      "Object": [
+                        [
+                          "count",
+                          {
+                            "Number": 1.0
+                          }
+                        ],
+                        [
+                          "key",
+                          {
+                            "Expr": {
+                              "expr_type": "String",
+                              "value": {
+                                "String": "value"
+                              }
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "LocalBinding": {
+        "name": "nestedObject",
+        "value": {
+          "expr_type": {
+            "Object": {
+              "a_secret": {
+                "Output": "String"
+              },
+              "anObject": {
+                "Object": {
+                  "items": {
+                    "List": "String"
+                  },
+                  "name": "String"
+                }
+              }
+            }
+          },
+          "value": {
+            "PulumiAny": {
+              "Object": [
+                [
+                  "a_secret",
+                  {
+                    "Expr": {
+                      "expr_type": {
+                        "Output": "String"
+                      },
+                      "value": {
+                        "Variable": "aSecret"
+                      }
+                    }
+                  }
+                ],
+                [
+                  "anObject",
+                  {
+                    "Object": [
+                      [
+                        "items",
+                        {
+                          "Expr": {
+                            "expr_type": {
+                              "List": "String"
+                            },
+                            "value": {
+                              "Variable": "aList"
+                            }
+                          }
+                        }
+                      ],
+                      [
+                        "name",
+                        {
+                          "Expr": {
+                            "expr_type": "String",
+                            "value": {
+                              "Variable": "aString"
+                            }
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "nestedOutput",
+        "value": {
+          "expr_type": {
+            "Output": "String"
+          },
+          "value": {
+            "StdlibCall": {
+              "func": "ToJson",
+              "args": [
+                {
+                  "expr_type": {
+                    "Object": {
+                      "a_secret": {
+                        "Output": "String"
+                      },
+                      "anObject": {
+                        "Object": {
+                          "items": {
+                            "List": "String"
+                          },
+                          "name": "String"
+                        }
+                      }
+                    }
+                  },
+                  "value": {
+                    "Variable": "nestedObject"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

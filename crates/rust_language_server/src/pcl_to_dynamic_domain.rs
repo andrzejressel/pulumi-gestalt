@@ -440,6 +440,16 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
                 },
             ))
         }
+        "toJSON" => {
+            ensure_arity(&call.name, arg_count, 1)?;
+            Ok(make_expr(
+                expr_type,
+                ExprValue::StdlibCall {
+                    func: StdlibFn::ToJson,
+                    args: args_lowered()?,
+                },
+            ))
+        }
         "sha1" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
@@ -729,4 +739,160 @@ fn ensure_arity(name: &str, got: usize, expected: usize) -> Result<()> {
         expected,
         got
     )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::pcl_model::{
+        CreateMapExpression, ExpressionType, NewPackageTypeExpression, ObjectConsExpression,
+    };
+    use std::collections::BTreeMap;
+
+    fn lit_string(value: &str) -> Expression {
+        Expression {
+            value: expression::Value::LiteralValueExpression(pcl_model::LiteralValueExpression {
+                value: literal_value_expression::Value::StringValue(value.to_string()),
+            }),
+            expression_type: Some(ExpressionType::String),
+        }
+    }
+
+    fn lit_bool(value: bool) -> Expression {
+        Expression {
+            value: expression::Value::LiteralValueExpression(pcl_model::LiteralValueExpression {
+                value: literal_value_expression::Value::BoolValue(value),
+            }),
+            expression_type: Some(ExpressionType::Bool),
+        }
+    }
+
+    #[test]
+    fn lower_new_package_type_to_new_struct_expr() {
+        let mut props = BTreeMap::new();
+        props.insert("string".to_string(), lit_string("hello"));
+        let expression = Expression {
+            value: expression::Value::NewPackageTypeExpression(NewPackageTypeExpression {
+                token: "ref-ref:index:Data".to_string(),
+                properties: props,
+            }),
+            expression_type: Some(ExpressionType::Dynamic),
+        };
+
+        let lowered = lower_expression(&expression).expect("lower expression");
+        match lowered.value {
+            ExprValue::NewStruct { token, properties } => {
+                assert_eq!(token, "ref-ref:index:Data");
+                assert_eq!(properties.len(), 1);
+                assert_eq!(properties[0].0, "string");
+            }
+            other => panic!("expected NewStruct, got {:?}", other),
+        }
+    }
+
+    #[test]
+    fn lower_new_package_type_in_json_context_wraps_expr() {
+        let mut nested_props = BTreeMap::new();
+        nested_props.insert("boolean".to_string(), lit_bool(true));
+        let nested_new_struct =
+            expression::Value::NewPackageTypeExpression(NewPackageTypeExpression {
+                token: "ref-ref:index:InnerData".to_string(),
+                properties: nested_props,
+            });
+
+        let mut root_props = BTreeMap::new();
+        root_props.insert(
+            "innerData".to_string(),
+            Expression {
+                value: nested_new_struct,
+                expression_type: Some(ExpressionType::Dynamic),
+            },
+        );
+        let root = Expression {
+            value: expression::Value::ObjectConsExpression(ObjectConsExpression {
+                properties: root_props,
+            }),
+            expression_type: Some(ExpressionType::Dynamic),
+        };
+
+        let lowered = lower_expression_to_json(&root).expect("lower object as json");
+        let JsonValue::Object(entries) = lowered else {
+            panic!("expected object json value");
+        };
+        let (_, value) = entries
+            .iter()
+            .find(|(k, _)| k == "innerData")
+            .expect("missing innerData key");
+        match value {
+            JsonValue::Expr(expr) => match &expr.value {
+                ExprValue::NewStruct { token, .. } => {
+                    assert_eq!(token, "ref-ref:index:InnerData");
+                }
+                other => panic!("expected NewStruct expression, got {:?}", other),
+            },
+            other => panic!("expected JsonValue::Expr, got {:?}", other),
+        }
+    }
+
+    #[test]
+    fn lower_create_map_to_typed_map() {
+        let mut props = BTreeMap::new();
+        props.insert("string".to_string(), lit_string("hello"));
+        let expression = Expression {
+            value: expression::Value::CreateMapExpression(CreateMapExpression {
+                properties: props,
+            }),
+            expression_type: Some(ExpressionType::Map(Box::new(ExpressionType::String))),
+        };
+
+        let lowered = lower_expression(&expression).expect("lower expression");
+        match lowered.value {
+            ExprValue::Map(entries) => {
+                assert_eq!(entries.len(), 1);
+                assert_eq!(entries[0].0, "string");
+            }
+            other => panic!("expected typed map, got {:?}", other),
+        }
+    }
+
+    #[test]
+    fn lower_to_json_function_call_succeeds() {
+        let expression = Expression {
+            value: expression::Value::FunctionCallExpression(FunctionCallExpression {
+                name: "toJSON".to_string(),
+                args: vec![crate::pcl_model::FunctionCallArgument {
+                    value: lit_string("hello"),
+                    r#type: crate::pcl_model::Type {
+                        value: crate::pcl_model::r#type::Value::StringType(
+                            crate::pcl_model::Empty {},
+                        ),
+                    },
+                }],
+            }),
+            expression_type: Some(ExpressionType::String),
+        };
+
+        let lowered = lower_expression(&expression).expect("lower toJSON call");
+        match lowered.value {
+            ExprValue::StdlibCall { func, args } => {
+                assert_eq!(func, StdlibFn::ToJson);
+                assert_eq!(args.len(), 1);
+            }
+            other => panic!("expected StdlibCall, got {:?}", other),
+        }
+    }
+
+    #[test]
+    fn lower_to_json_function_call_with_invalid_arity_fails() {
+        let expression = Expression {
+            value: expression::Value::FunctionCallExpression(FunctionCallExpression {
+                name: "toJSON".to_string(),
+                args: vec![],
+            }),
+            expression_type: Some(ExpressionType::String),
+        };
+
+        let err = lower_expression(&expression).expect_err("toJSON with invalid arity should fail");
+        assert!(err.to_string().contains("expected 1, got 0"));
+    }
 }
