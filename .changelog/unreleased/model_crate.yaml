@@ -1,2 +1,2 @@
-name: Fix deploy by adding description to pulumi_gestalt_model crate
 type: Changed
+title: Fix deploy by adding description to pulumi_gestalt_model crate
