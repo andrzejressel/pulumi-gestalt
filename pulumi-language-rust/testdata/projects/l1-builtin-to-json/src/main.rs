@@ -6,11 +6,11 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
     let aString = ctx
         .require_config(None, "aString")
         .expect("Expected config [aString] to exist");
-    let aNumber = ctx
-        .require_config_deserialize::<f64>(None, "aNumber")
+    let aNumber: f64 = ctx
+        .require_config_deserialize(None, "aNumber")
         .expect("Expected config [aNumber] to exist");
-    let aList = ctx
-        .require_config_deserialize::<Vec<String>>(None, "aList")
+    let aList: Vec<String> = ctx
+        .require_config_deserialize(None, "aList")
         .expect("Expected config [aList] to exist");
     let aSecret = ctx
         .require_config_secret(None, "aSecret")

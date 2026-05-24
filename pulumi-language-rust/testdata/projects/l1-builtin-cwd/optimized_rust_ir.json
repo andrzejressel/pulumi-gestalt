@@ -1,0 +1,33 @@
+{
+  "statements": [
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "cwdOutput"
+            },
+            {
+              "Ref": {
+                "Expect": {
+                  "expr": {
+                    "FunctionCall": {
+                      "path": "pulumi_gestalt_rust::stdlib::cwd",
+                      "args": []
+                    }
+                  },
+                  "message": "Failed to get current directory"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

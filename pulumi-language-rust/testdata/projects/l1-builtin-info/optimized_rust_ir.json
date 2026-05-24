@@ -1,0 +1,100 @@
+{
+  "statements": [
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "stackOutput"
+            },
+            {
+              "Ref": {
+                "ToStringCall": {
+                  "Ref": {
+                    "MethodCall": {
+                      "receiver": {
+                        "Identifier": "ctx"
+                      },
+                      "method": "get_stack",
+                      "type_params": [],
+                      "args": []
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "projectOutput"
+            },
+            {
+              "Ref": {
+                "ToStringCall": {
+                  "Ref": {
+                    "MethodCall": {
+                      "receiver": {
+                        "Identifier": "ctx"
+                      },
+                      "method": "get_project",
+                      "type_params": [],
+                      "args": []
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "organizationOutput"
+            },
+            {
+              "Ref": {
+                "ToStringCall": {
+                  "Ref": {
+                    "MethodCall": {
+                      "receiver": {
+                        "Identifier": "ctx"
+                      },
+                      "method": "get_organization",
+                      "type_params": [],
+                      "args": []
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

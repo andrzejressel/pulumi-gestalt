@@ -3,7 +3,7 @@
     {
       "Let": {
         "name": "aNumber",
-        "type_annotation": null,
+        "type_annotation": "f64",
         "value": {
           "Expect": {
             "expr": {
@@ -12,9 +12,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config_deserialize",
-                "type_params": [
-                  "f64"
-                ],
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -127,7 +125,7 @@
     {
       "Let": {
         "name": "anInt",
-        "type_annotation": null,
+        "type_annotation": "i64",
         "value": {
           "Expect": {
             "expr": {
@@ -136,9 +134,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config_deserialize",
-                "type_params": [
-                  "i64"
-                ],
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -379,7 +375,7 @@
     {
       "Let": {
         "name": "aBool",
-        "type_annotation": null,
+        "type_annotation": "bool",
         "value": {
           "Expect": {
             "expr": {
@@ -388,9 +384,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config_deserialize",
-                "type_params": [
-                  "bool"
-                ],
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
