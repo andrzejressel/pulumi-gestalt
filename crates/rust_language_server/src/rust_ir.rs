@@ -19,8 +19,6 @@ pub enum RustStatement {
 pub enum RustExpr {
     /// `"hello"` — regular string literal.
     StringLiteral(String),
-    /// `r#"hello"#` — raw string literal (no escape processing).
-    RawStringLiteral(String),
     /// Numeric literal. Emitted as `{value}` or `{value}_f64` for large values.
     NumberLiteral(f64),
     /// `true` / `false`.
