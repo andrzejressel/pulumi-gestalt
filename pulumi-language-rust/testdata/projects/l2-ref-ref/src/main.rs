@@ -15,7 +15,7 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
                     .float(4.5)
                     .inner_data(
                         pulumi_ref_ref::types::InnerData::builder()
-                            .bool_array(vec!(false, true))
+                            .bool_array(vec![false, true])
                             .boolean(false)
                             .float(2.17)
                             .integer(-12)

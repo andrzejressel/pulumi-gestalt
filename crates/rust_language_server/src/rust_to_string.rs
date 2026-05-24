@@ -79,7 +79,7 @@ pub fn render_expr(expr: &RustExpr) -> String {
                     .map(render_expr)
                     .collect::<Vec<_>>()
                     .join(", ");
-                format!("vec!({})", inner)
+                format!("vec![{}]", inner)
             }
         }
         RustExpr::BTreeMap { entries } => {
