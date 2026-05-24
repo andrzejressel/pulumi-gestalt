@@ -138,9 +138,6 @@ pub fn render_expr(expr: &RustExpr) -> String {
         RustExpr::UnaryOp { op, operand } => {
             format!("{}{}", op, render_expr(operand))
         }
-        RustExpr::MacroCall { path, body } => {
-            format!("{}({})", path, body)
-        }
         RustExpr::PulumiAny(value) => {
             format!(
                 "pulumi_gestalt_rust::pulumi_any!({})",
