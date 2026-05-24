@@ -939,31 +939,6 @@ mod tests {
             other => panic!("expected typed map, got {:?}", other),
         }
     }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use crate::pcl_model::ExpressionType;
-    
-
-    fn lit_string(value: &str) -> Expression {
-        Expression {
-            value: expression::Value::LiteralValueExpression(pcl_model::LiteralValueExpression {
-                value: literal_value_expression::Value::StringValue(value.to_string()),
-            }),
-            expression_type: Some(ExpressionType::String),
-        }
-    }
-
-    fn lit_bool(value: bool) -> Expression {
-        Expression {
-            value: expression::Value::LiteralValueExpression(pcl_model::LiteralValueExpression {
-                value: literal_value_expression::Value::BoolValue(value),
-            }),
-            expression_type: Some(ExpressionType::Bool),
-        }
-    }
 
     #[test]
     fn lower_to_json_function_call_succeeds() {

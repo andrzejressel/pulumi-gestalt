@@ -11,7 +11,6 @@ use crate::typesafe_domain_ir::{
 };
 use pulumi_gestalt_generator::PropertyName;
 use pulumi_gestalt_schema::model::ElementId;
-use quote::quote;
 use rootcause::Result;
 use rootcause::compat::IntoRootcause;
 use rootcause::option_ext::OptionExt;
@@ -768,11 +767,6 @@ mod tests {
         let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
         assert_eq!(rendered, "std::collections::BTreeMap::new()");
     }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
 
     #[test]
     fn lower_to_json_stdlib_call_renders_runtime_call() {
@@ -787,7 +781,7 @@ mod tests {
             },
         };
         let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
-        assert_eq!(rendered, "pulumi_gestalt_rust::stdlib::to_json(\"hello\")");
+        assert_eq!(rendered, "pulumi_gestalt_rust::stdlib::to_json(&\"hello\")");
     }
 
     #[test]
