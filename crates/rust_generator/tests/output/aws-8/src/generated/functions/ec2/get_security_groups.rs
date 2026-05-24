@@ -16,7 +16,7 @@ pub mod get_security_groups {
         /// Map of tags, each pair of which must exactly match for desired security groups.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -30,7 +30,9 @@ pub mod get_security_groups {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// IDs of the matches security groups.
         pub ids: pulumi_gestalt_rust::Output<Vec<String>>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// VPC IDs of the matched security groups. The data source's tag or filter *will span VPCs* unless the `vpc-id` filter is also used.
         pub vpc_ids: pulumi_gestalt_rust::Output<Vec<String>>,
     }

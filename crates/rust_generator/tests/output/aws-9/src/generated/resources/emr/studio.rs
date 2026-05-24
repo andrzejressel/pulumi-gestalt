@@ -71,7 +71,7 @@ pub mod studio {
         /// list of tags to apply to the EMR Cluster. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a User Role when you use Amazon Web Services SSO authentication. The permissions attached to the User Role can be scoped down for each user or group using session policies.
         #[builder(into, default)]
@@ -114,10 +114,10 @@ pub mod studio {
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// list of tags to apply to the EMR Cluster. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The unique access URL of the Amazon EMR Studio.
         pub url: pulumi_gestalt_rust::Output<String>,

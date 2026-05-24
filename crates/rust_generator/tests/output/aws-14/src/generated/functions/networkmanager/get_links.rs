@@ -20,7 +20,7 @@ pub mod get_links {
         /// Restricts the list to the links with these tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Link type to retrieve.
         #[builder(into, default)]
@@ -36,7 +36,7 @@ pub mod get_links {
         pub provider_name: pulumi_gestalt_rust::Output<Option<String>>,
         pub site_id: pulumi_gestalt_rust::Output<Option<String>>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub type_: pulumi_gestalt_rust::Output<Option<String>>,
     }

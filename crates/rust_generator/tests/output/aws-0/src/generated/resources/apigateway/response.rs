@@ -40,12 +40,12 @@ pub mod response {
         /// Map of parameters (paths, query strings and headers) of the Gateway Response.
         #[builder(into, default)]
         pub response_parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of templates used to transform the response body.
         #[builder(into, default)]
         pub response_templates: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Response type of the associated GatewayResponse.
         #[builder(into)]
@@ -66,11 +66,11 @@ pub mod response {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// Map of parameters (paths, query strings and headers) of the Gateway Response.
         pub response_parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of templates used to transform the response body.
         pub response_templates: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Response type of the associated GatewayResponse.
         pub response_type: pulumi_gestalt_rust::Output<String>,

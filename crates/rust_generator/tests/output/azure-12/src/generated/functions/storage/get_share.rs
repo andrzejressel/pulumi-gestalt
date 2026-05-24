@@ -16,7 +16,7 @@ pub mod get_share {
         /// A map of custom file share metadata.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the share.
         #[builder(into)]
@@ -40,7 +40,7 @@ pub mod get_share {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of custom file share metadata.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The quota of the File Share in GB.

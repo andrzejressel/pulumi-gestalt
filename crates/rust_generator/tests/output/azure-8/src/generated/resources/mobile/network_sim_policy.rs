@@ -131,7 +131,7 @@ pub mod network_sim_policy {
         /// A mapping of tags which should be assigned to the Mobile Network Sim Policies.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `user_equipment_aggregate_maximum_bit_rate` block as defined below.
         #[builder(into)]
@@ -166,7 +166,7 @@ pub mod network_sim_policy {
         >,
         /// A mapping of tags which should be assigned to the Mobile Network Sim Policies.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `user_equipment_aggregate_maximum_bit_rate` block as defined below.
         pub user_equipment_aggregate_maximum_bit_rate: pulumi_gestalt_rust::Output<

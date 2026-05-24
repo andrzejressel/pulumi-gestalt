@@ -20,7 +20,7 @@ pub struct PipeTargetParametersBatchJobParameters {
     pub r#job_name: String,
     /// Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters included here override any corresponding parameter defaults from the job definition. Detailed below.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// The retry strategy to use for failed jobs. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition. Detailed below.
     #[builder(into)]
     pub r#retry_strategy: Option<Box<super::super::types::pipes::PipeTargetParametersBatchJobParametersRetryStrategy>>,

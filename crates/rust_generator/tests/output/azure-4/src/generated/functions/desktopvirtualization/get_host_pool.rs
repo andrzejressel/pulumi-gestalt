@@ -46,7 +46,9 @@ pub mod get_host_pool {
         /// Returns `true` if the Start VM on Connection Feature is enabled.
         pub start_vm_on_connect: pulumi_gestalt_rust::Output<bool>,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The type of the Virtual Desktop Host Pool.
         pub type_: pulumi_gestalt_rust::Output<String>,
         /// Returns `true` if the Host Pool is in Validation mode.

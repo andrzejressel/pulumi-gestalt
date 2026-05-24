@@ -5,7 +5,7 @@
 pub struct GetDistributionConfigurationDistributionAmiDistributionConfiguration {
     /// Key-value map of tags to apply to distributed AMI.
     #[builder(into)]
-    pub r#ami_tags: std::collections::HashMap<String, String>,
+    pub r#ami_tags: std::collections::BTreeMap<String, String>,
     /// Description of the container distribution configuration.
     #[builder(into)]
     pub r#description: String,

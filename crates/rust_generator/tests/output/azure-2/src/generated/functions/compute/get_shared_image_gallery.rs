@@ -27,7 +27,9 @@ pub mod get_shared_image_gallery {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which are assigned to the Shared Image Gallery.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The unique name assigned to the Shared Image Gallery.
         pub unique_name: pulumi_gestalt_rust::Output<String>,
     }

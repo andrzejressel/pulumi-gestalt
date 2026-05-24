@@ -214,7 +214,7 @@ pub mod orchestrated_virtual_machine_scale_set {
         /// A mapping of tags which should be assigned to this Virtual Machine Scale Set.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `termination_notification` block as defined below.
         #[builder(into, default)]
@@ -374,7 +374,7 @@ pub mod orchestrated_virtual_machine_scale_set {
         >,
         /// A mapping of tags which should be assigned to this Virtual Machine Scale Set.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `termination_notification` block as defined below.
         pub termination_notification: pulumi_gestalt_rust::Output<

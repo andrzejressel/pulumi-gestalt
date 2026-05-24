@@ -20,7 +20,7 @@ pub mod get_multicast_domain {
         /// Key-value tags for the EC2 Transit Gateway Multicast Domain.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Identifier of the EC2 Transit Gateway Multicast Domain.
         #[builder(into, default)]
@@ -65,7 +65,9 @@ pub mod get_multicast_domain {
         /// Whether to enable support for statically configuring multicast group sources for the EC2 Transit Gateway Multicast Domain.
         pub static_sources_support: pulumi_gestalt_rust::Output<String>,
         /// Key-value tags for the EC2 Transit Gateway Multicast Domain.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The ID of the transit gateway attachment.
         pub transit_gateway_attachment_id: pulumi_gestalt_rust::Output<String>,
         /// EC2 Transit Gateway identifier.

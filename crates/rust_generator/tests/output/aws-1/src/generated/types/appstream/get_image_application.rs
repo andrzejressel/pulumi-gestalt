@@ -39,7 +39,7 @@ pub struct GetImageApplication {
     /// String to string map that contains additional attributes used to describe the application.
     /// * `Name` - Name of the application.
     #[builder(into)]
-    pub r#metadata: std::collections::HashMap<String, String>,
+    pub r#metadata: std::collections::BTreeMap<String, String>,
     /// Name of the image being searched for. Cannot be used with name_regex or arn.
     #[builder(into)]
     pub r#name: String,

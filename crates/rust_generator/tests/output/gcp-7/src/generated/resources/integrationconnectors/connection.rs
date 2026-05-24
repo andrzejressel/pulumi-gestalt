@@ -275,7 +275,7 @@ pub mod connection {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Location in which Connection needs to be created.
         #[builder(into)]
@@ -368,7 +368,7 @@ pub mod connection {
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Eventing Configuration of a connection
         /// Structure is documented below.
@@ -390,7 +390,7 @@ pub mod connection {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Location in which Connection needs to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -420,7 +420,7 @@ pub mod connection {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Service account needed for runtime plane to access Google Cloud resources.
         pub service_account: pulumi_gestalt_rust::Output<String>,

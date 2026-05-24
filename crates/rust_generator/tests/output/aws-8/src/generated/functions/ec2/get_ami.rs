@@ -46,7 +46,7 @@ pub mod get_ami {
         /// * `tags.#.value` - Value of the tag.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -129,12 +129,14 @@ pub mod get_ami {
         pub state: pulumi_gestalt_rust::Output<String>,
         /// Describes a state change. Fields are `UNSET` if not available.
         pub state_reason: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Any tags assigned to the image.
         /// * `tags.#.key` - Key name of the tag.
         /// * `tags.#.value` - Value of the tag.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// If the image is configured for NitroTPM support, the value is `v2.0`.
         pub tpm_support: pulumi_gestalt_rust::Output<String>,
         /// Operation of the Amazon EC2 instance and the billing code that is associated with the AMI.

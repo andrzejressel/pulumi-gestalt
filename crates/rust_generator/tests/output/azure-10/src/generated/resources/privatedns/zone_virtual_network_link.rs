@@ -75,7 +75,7 @@ pub mod zone_virtual_network_link {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Virtual Network that should be linked to the DNS Zone. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -98,7 +98,7 @@ pub mod zone_virtual_network_link {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Virtual Network that should be linked to the DNS Zone. Changing this forces a new resource to be created.
         pub virtual_network_id: pulumi_gestalt_rust::Output<String>,

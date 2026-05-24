@@ -7,7 +7,7 @@ pub struct RuntimeMetric {
     /// Contains runtime daemon metrics, such as OS and kernels and
     /// sessions stats.
     #[builder(into)]
-    pub r#system_metrics: Option<std::collections::HashMap<String, String>>,
+    pub r#system_metrics: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RuntimeMetric {

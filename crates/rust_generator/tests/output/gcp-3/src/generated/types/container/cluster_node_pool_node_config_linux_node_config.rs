@@ -19,7 +19,7 @@ pub struct ClusterNodePoolNodeConfigLinuxNodeConfig {
     /// Note that validations happen all server side. All attributes are optional.
     /// 
     #[builder(into)]
-    pub r#sysctls: Option<std::collections::HashMap<String, String>>,
+    pub r#sysctls: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterNodePoolNodeConfigLinuxNodeConfig {

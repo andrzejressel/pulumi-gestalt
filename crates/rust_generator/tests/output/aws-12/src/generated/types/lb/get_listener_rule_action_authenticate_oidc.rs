@@ -6,7 +6,7 @@ pub struct GetListenerRuleActionAuthenticateOidc {
     /// Set of additional parameters for the request.
     /// Detailed below.
     #[builder(into)]
-    pub r#authentication_request_extra_params: std::collections::HashMap<String, String>,
+    pub r#authentication_request_extra_params: std::collections::BTreeMap<String, String>,
     /// The authorization endpoint of the IdP.
     #[builder(into)]
     pub r#authorization_endpoint: String,

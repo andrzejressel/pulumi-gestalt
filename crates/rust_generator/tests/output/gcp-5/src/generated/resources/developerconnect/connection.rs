@@ -102,7 +102,7 @@ pub mod connection {
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Required. Id of the requesting object. If auto-generating Id server-side,
         /// remove this field and connection_id from the method_signature of Create RPC.
@@ -131,7 +131,7 @@ pub mod connection {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource
         /// within its parent collection as described in https://google.aip.dev/122. See documentation
@@ -155,7 +155,7 @@ pub mod connection {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Required. Id of the requesting object. If auto-generating Id server-side,
         /// remove this field and connection_id from the method_signature of Create RPC.
@@ -170,11 +170,11 @@ pub mod connection {
         /// Optional. If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled.
         pub disabled: pulumi_gestalt_rust::Output<Option<bool>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Optional. This checksum is computed by the server based on the value
         /// of other fields, and may be sent on update and delete requests to ensure the
@@ -196,7 +196,7 @@ pub mod connection {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource
         /// within its parent collection as described in https://google.aip.dev/122. See documentation
@@ -211,7 +211,7 @@ pub mod connection {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Output only. Set to true when the connection is being set up or updated
         /// in the background.

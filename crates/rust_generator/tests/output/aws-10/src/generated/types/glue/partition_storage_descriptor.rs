@@ -26,7 +26,7 @@ pub struct PartitionStorageDescriptor {
     pub r#output_format: Option<String>,
     /// User-supplied properties in key-value form.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Serialization/deserialization (SerDe) information.
     #[builder(into)]
     pub r#ser_de_info: Option<Box<super::super::types::glue::PartitionStorageDescriptorSerDeInfo>>,

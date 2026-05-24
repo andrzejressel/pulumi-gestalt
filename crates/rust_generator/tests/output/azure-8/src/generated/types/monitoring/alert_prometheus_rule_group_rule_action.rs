@@ -10,7 +10,7 @@ pub struct AlertPrometheusRuleGroupRuleAction {
     /// 
     /// > **Note:** `action_properties` can only be configured for IcM Connector Action Groups for now. Other public features will be supported in the future.
     #[builder(into)]
-    pub r#action_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#action_properties: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AlertPrometheusRuleGroupRuleAction {

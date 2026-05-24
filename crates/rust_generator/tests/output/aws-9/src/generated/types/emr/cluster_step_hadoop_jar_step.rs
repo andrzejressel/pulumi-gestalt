@@ -14,7 +14,7 @@ pub struct ClusterStepHadoopJarStep {
     pub r#main_class: Option<String>,
     /// Key-Value map of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterStepHadoopJarStep {

@@ -349,7 +349,7 @@ pub mod instance_template {
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The machine type to create.
         ///
@@ -362,7 +362,7 @@ pub mod instance_template {
         /// within instances created from this template.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An alternative to using the
         /// startup-script metadata key, mostly to match the compute_instance resource.
@@ -411,7 +411,7 @@ pub mod instance_template {
         /// Beta key/value pair represents partner metadata assigned to instance template where key represent a defined namespace and value is a json string represent the entries associted with the namespace.
         #[builder(into, default)]
         pub partner_metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
@@ -434,7 +434,7 @@ pub mod instance_template {
         /// A set of key/value resource manager tag pairs to bind to the instances. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456.
         #[builder(into, default)]
         pub resource_manager_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// - A list of self_links of resource policies to attach to the instance. Modifying this list will cause the instance to recreate. Currently a max of 1 resource policy is supported.
         #[builder(into, default)]
@@ -490,7 +490,7 @@ pub mod instance_template {
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable-instance-virtual-display#verify_display_driver) on this instance.
         /// **Note**: `allow_stopping_for_update` must be set to true in order to update this field.
@@ -510,7 +510,7 @@ pub mod instance_template {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The machine type to create.
         ///
@@ -521,7 +521,7 @@ pub mod instance_template {
         /// Metadata key/value pairs to make available from
         /// within instances created from this template.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The unique fingerprint of the metadata.
         pub metadata_fingerprint: pulumi_gestalt_rust::Output<String>,
@@ -565,14 +565,14 @@ pub mod instance_template {
         >,
         /// Beta key/value pair represents partner metadata assigned to instance template where key represent a defined namespace and value is a json string represent the entries associted with the namespace.
         pub partner_metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// An instance template is a global resource that is not
         /// bound to a zone or a region. However, you can still specify some regional
@@ -588,7 +588,7 @@ pub mod instance_template {
         >,
         /// A set of key/value resource manager tag pairs to bind to the instances. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456.
         pub resource_manager_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// - A list of self_links of resource policies to attach to the instance. Modifying this list will cause the instance to recreate. Currently a max of 1 resource policy is supported.
         pub resource_policies: pulumi_gestalt_rust::Output<Option<String>>,

@@ -50,7 +50,7 @@ pub struct KubernetesClusterDefaultNodePool {
     pub r#node_count: Option<i32>,
     /// A map of Kubernetes labels which should be applied to nodes in the Default Node Pool.
     #[builder(into)]
-    pub r#node_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#node_labels: Option<std::collections::BTreeMap<String, String>>,
     /// A `node_network_profile` block as documented below.
     #[builder(into)]
     pub r#node_network_profile: Option<Box<super::super::types::containerservice::KubernetesClusterDefaultNodePoolNodeNetworkProfile>>,
@@ -93,7 +93,7 @@ pub struct KubernetesClusterDefaultNodePool {
     /// 
     /// > At this time there's a bug in the AKS API where Tags for a Node Pool are not stored in the correct case - you may wish to use `ignore_changes` functionality to ignore changes to the casing until this is fixed in the AKS API.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// Specifies the name of the temporary node pool used to cycle the default node pool for VM resizing.
     #[builder(into)]
     pub r#temporary_name_for_rotation: Option<String>,

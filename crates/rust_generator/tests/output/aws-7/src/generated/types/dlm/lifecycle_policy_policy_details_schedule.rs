@@ -25,10 +25,10 @@ pub struct LifecyclePolicyPolicyDetailsSchedule {
     pub r#share_rule: Option<Box<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleShareRule>>,
     /// A map of tag keys and their values. DLM lifecycle policies will already tag the snapshot with the tags on the volume. This configuration adds extra tags on top of these.
     #[builder(into)]
-    pub r#tags_to_add: Option<std::collections::HashMap<String, String>>,
+    pub r#tags_to_add: Option<std::collections::BTreeMap<String, String>>,
     /// A map of tag keys and variable values, where the values are determined when the policy is executed. Only `$(instance-id)` or `$(timestamp)` are valid values. Can only be used when `resource_types` is `INSTANCE`.
     #[builder(into)]
-    pub r#variable_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#variable_tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LifecyclePolicyPolicyDetailsSchedule {

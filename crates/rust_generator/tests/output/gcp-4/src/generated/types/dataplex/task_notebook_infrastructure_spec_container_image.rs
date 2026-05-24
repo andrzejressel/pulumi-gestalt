@@ -11,7 +11,7 @@ pub struct TaskNotebookInfrastructureSpecContainerImage {
     pub r#java_jars: Option<Vec<String>>,
     /// Override to common configuration of open source components installed on the Dataproc cluster. The properties to set on daemon config files. Property keys are specified in prefix:property format, for example core:hadoop.tmp.dir. For more information, see Cluster properties.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// A list of python packages to be installed. Valid formats include Cloud Storage URI to a PIP installable library. For example, gs://bucket-name/my/path/to/lib.tar.gz
     #[builder(into)]
     pub r#python_packages: Option<Vec<String>>,

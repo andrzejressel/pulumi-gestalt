@@ -5,10 +5,10 @@
 pub struct SpringCloudBuildPackBindingLaunch {
     /// Specifies a map of non-sensitive properties for launchProperties.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// Specifies a map of sensitive properties for launchProperties.
     #[builder(into)]
-    pub r#secrets: Option<std::collections::HashMap<String, String>>,
+    pub r#secrets: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for SpringCloudBuildPackBindingLaunch {

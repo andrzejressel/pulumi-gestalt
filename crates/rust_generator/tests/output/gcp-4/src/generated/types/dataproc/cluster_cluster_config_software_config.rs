@@ -20,11 +20,11 @@ pub struct ClusterClusterConfigSoftwareConfig {
     /// a cluster. For a list of valid properties please see
     /// [Cluster properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties)
     #[builder(into)]
-    pub r#override_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#override_properties: Option<std::collections::BTreeMap<String, String>>,
     /// A list of the properties used to set the daemon config files.
     /// This will include any values supplied by the user via `cluster_config.software_config.override_properties`
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterClusterConfigSoftwareConfig {

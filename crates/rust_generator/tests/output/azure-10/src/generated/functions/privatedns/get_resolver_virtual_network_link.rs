@@ -22,7 +22,7 @@ pub mod get_resolver_virtual_network_link {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// The metadata attached to the Private DNS Resolver Virtual Network Link.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Virtual Network that is linked to the Private DNS Resolver Virtual Network Link.

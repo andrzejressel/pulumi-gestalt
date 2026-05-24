@@ -31,7 +31,7 @@ pub struct BudgetBudgetFilter {
     /// A single label and value pair specifying that usage from only
     /// this set of labeled resources should be included in the budget.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// A set of projects of the form projects/{project_number},
     /// specifying that usage from only this set of projects should be
     /// included in the budget. If omitted, the report will include

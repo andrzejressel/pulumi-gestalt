@@ -88,7 +88,9 @@ pub mod get_exadata_infrastructure {
         /// The software version of the storage servers (cells) in the Cloud Exadata Infrastructure.
         pub storage_server_version: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Cloud Exadata Infrastructure.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The date and time the Cloud Exadata Infrastructure resource was created.
         pub time_created: pulumi_gestalt_rust::Output<String>,
         /// The total storage allocated to the Cloud Exadata Infrastructure resource, in gigabytes (GB).

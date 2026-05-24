@@ -32,7 +32,9 @@ pub mod get_virtual_wan {
         /// Type of Virtual Wan (Basic or Standard).
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Virtual Wan.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A list of Virtual Hubs IDs attached to this Virtual WAN.
         pub virtual_hub_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A list of VPN Site IDs attached to this Virtual WAN.

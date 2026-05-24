@@ -73,7 +73,7 @@ pub mod application {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `template` name. IoT Central application template name. Defaults to `iotc-pnp-preview@1.0.0`. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -108,7 +108,7 @@ pub mod application {
         pub sub_domain: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `template` name. IoT Central application template name. Defaults to `iotc-pnp-preview@1.0.0`. Changing this forces a new resource to be created.
         pub template: pulumi_gestalt_rust::Output<Option<String>>,

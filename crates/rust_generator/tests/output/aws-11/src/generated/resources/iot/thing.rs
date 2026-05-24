@@ -32,7 +32,7 @@ pub mod thing {
         /// Map of attributes of the thing.
         #[builder(into, default)]
         pub attributes: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the thing.
         #[builder(into, default)]
@@ -52,7 +52,7 @@ pub mod thing {
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Map of attributes of the thing.
         pub attributes: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The default client ID.
         pub default_client_id: pulumi_gestalt_rust::Output<String>,

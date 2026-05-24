@@ -107,7 +107,7 @@ pub mod preset {
         /// Codec options for the video parameters
         #[builder(into, default)]
         pub video_codec_options: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Watermark parameters for the video parameters (documented below)
         #[builder(into, default)]
@@ -149,7 +149,7 @@ pub mod preset {
         >,
         /// Codec options for the video parameters
         pub video_codec_options: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Watermark parameters for the video parameters (documented below)
         pub video_watermarks: pulumi_gestalt_rust::Output<

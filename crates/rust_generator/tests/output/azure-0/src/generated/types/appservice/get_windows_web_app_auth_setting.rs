@@ -8,7 +8,7 @@ pub struct GetWindowsWebAppAuthSetting {
     pub r#active_directories: Vec<super::super::types::appservice::GetWindowsWebAppAuthSettingActiveDirectory>,
     /// A `additional_login_parameters` block as defined above.
     #[builder(into)]
-    pub r#additional_login_parameters: std::collections::HashMap<String, String>,
+    pub r#additional_login_parameters: std::collections::BTreeMap<String, String>,
     /// External URLs that can be redirected to as part of logging in or logging out of the app.
     #[builder(into)]
     pub r#allowed_external_redirect_urls: Vec<String>,

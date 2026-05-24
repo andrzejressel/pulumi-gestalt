@@ -8,7 +8,7 @@ pub struct PartitionStorageDescriptorSerDeInfo {
     pub r#name: Option<String>,
     /// A map of initialization parameters for the SerDe, in key-value form.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Usually the class that implements the SerDe. An example is: org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe.
     #[builder(into)]
     pub r#serialization_library: Option<String>,

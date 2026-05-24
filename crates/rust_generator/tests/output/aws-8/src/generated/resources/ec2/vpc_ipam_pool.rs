@@ -97,7 +97,7 @@ pub mod vpc_ipam_pool {
         /// Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.
         #[builder(into, default)]
         pub allocation_resource_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// If you include this argument, IPAM automatically imports any VPCs you have in your scope that fall
         /// within the CIDR range in the pool.
@@ -130,7 +130,7 @@ pub mod vpc_ipam_pool {
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -150,7 +150,7 @@ pub mod vpc_ipam_pool {
         pub allocation_min_netmask_length: pulumi_gestalt_rust::Output<Option<i32>>,
         /// Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.
         pub allocation_resource_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Amazon Resource Name (ARN) of IPAM
         pub arn: pulumi_gestalt_rust::Output<String>,
@@ -179,11 +179,11 @@ pub mod vpc_ipam_pool {
         pub state: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

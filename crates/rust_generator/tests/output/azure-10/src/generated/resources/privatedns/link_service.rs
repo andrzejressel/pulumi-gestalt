@@ -127,7 +127,7 @@ pub mod link_service {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A list of Subscription UUID/GUID's that will be able to see this Private Link Service.
         ///
@@ -168,7 +168,7 @@ pub mod link_service {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A list of Subscription UUID/GUID's that will be able to see this Private Link Service.
         ///

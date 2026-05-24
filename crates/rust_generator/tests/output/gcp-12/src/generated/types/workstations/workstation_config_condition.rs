@@ -10,7 +10,7 @@ pub struct WorkstationConfigCondition {
     /// (Output)
     /// A list of messages that carry the error details.
     #[builder(into)]
-    pub r#details: Option<Vec<std::collections::HashMap<String, String>>>,
+    pub r#details: Option<Vec<std::collections::BTreeMap<String, String>>>,
     /// (Output)
     /// Human readable message indicating details about the current status.
     #[builder(into)]

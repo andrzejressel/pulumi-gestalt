@@ -388,7 +388,7 @@ pub mod workload_identity_pool_provider {
         /// ```
         #[builder(into, default)]
         pub attribute_mapping: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An Amazon Web Services identity provider. Not compatible with the property oidc or saml.
         /// Structure is documented below.
@@ -508,7 +508,7 @@ pub mod workload_identity_pool_provider {
         /// {"google.subject": "assertion.sub"}
         /// ```
         pub attribute_mapping: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An Amazon Web Services identity provider. Not compatible with the property oidc or saml.
         /// Structure is documented below.

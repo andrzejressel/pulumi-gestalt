@@ -93,7 +93,7 @@ pub mod git_repository_link {
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Required. Git Clone URI.
         #[builder(into)]
@@ -116,7 +116,7 @@ pub mod git_repository_link {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122. See documentation for resource type `developerconnect.googleapis.com/GitRepositoryLink`.
         #[builder(into)]
@@ -140,7 +140,7 @@ pub mod git_repository_link {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Required. Git Clone URI.
         pub clone_uri: pulumi_gestalt_rust::Output<String>,
@@ -149,11 +149,11 @@ pub mod git_repository_link {
         /// Output only. [Output only] Delete timestamp
         pub delete_time: pulumi_gestalt_rust::Output<String>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Optional. This checksum is computed by the server based on the value of other
         /// fields, and may be sent on update and delete requests to ensure the
@@ -170,7 +170,7 @@ pub mod git_repository_link {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122. See documentation for resource type `developerconnect.googleapis.com/GitRepositoryLink`.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -185,7 +185,7 @@ pub mod git_repository_link {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Output only. Set to true when the connection is being set up or updated in the
         /// background.

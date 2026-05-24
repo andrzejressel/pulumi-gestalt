@@ -60,7 +60,9 @@ pub mod get_shared_image {
         /// Specifies that the Operating System used inside this Image has not been Generalized (for example, `sysprep` on Windows has not been run).
         pub specialized: pulumi_gestalt_rust::Output<bool>,
         /// A mapping of tags assigned to the Shared Image.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Specifies if Trusted Launch has to be enabled for the Virtual Machine created from the Shared Image.
         pub trusted_launch_enabled: pulumi_gestalt_rust::Output<bool>,
         /// Specifies if supports creation of both Trusted Launch virtual machines and Gen2 virtual machines with standard security created from the Shared Image.

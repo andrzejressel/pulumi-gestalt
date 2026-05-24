@@ -72,7 +72,7 @@ pub mod analytics_solution {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The full name of the Log Analytics workspace with which the solution will be linked. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -100,7 +100,7 @@ pub mod analytics_solution {
         pub solution_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The full name of the Log Analytics workspace with which the solution will be linked. Changing this forces a new resource to be created.
         pub workspace_name: pulumi_gestalt_rust::Output<String>,

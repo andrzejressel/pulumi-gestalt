@@ -19,7 +19,7 @@ pub struct SubscriptionRuleCorrelationFilter {
     /// 
     /// > **NOTE:** When creating a subscription rule of type `CorrelationFilter` at least one property must be set in the `correlation_filter` block.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// Address of the queue to reply to.
     #[builder(into)]
     pub r#reply_to: Option<String>,

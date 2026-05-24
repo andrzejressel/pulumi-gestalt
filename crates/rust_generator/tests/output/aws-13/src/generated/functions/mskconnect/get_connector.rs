@@ -14,7 +14,7 @@ pub mod get_connector {
         /// A map of tags assigned to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -27,7 +27,9 @@ pub mod get_connector {
         pub id: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Current version of the connector.
         pub version: pulumi_gestalt_rust::Output<String>,
     }

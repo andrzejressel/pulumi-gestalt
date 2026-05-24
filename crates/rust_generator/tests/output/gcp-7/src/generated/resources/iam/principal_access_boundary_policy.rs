@@ -58,7 +58,7 @@ pub mod principal_access_boundary_policy {
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Principal access boundary policy details
         /// Structure is documented below.
@@ -96,7 +96,7 @@ pub mod principal_access_boundary_policy {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Output only. The time when the principal access boundary policy was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
@@ -108,7 +108,7 @@ pub mod principal_access_boundary_policy {
         /// The description of the principal access boundary policy. Must be less than or equal to 63 characters.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The etag for the principal access boundary. If this is provided on update, it must match the server's etag.
         pub etag: pulumi_gestalt_rust::Output<String>,

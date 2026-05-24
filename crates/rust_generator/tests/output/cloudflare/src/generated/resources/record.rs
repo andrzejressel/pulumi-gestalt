@@ -111,7 +111,7 @@ pub mod record {
         pub hostname: pulumi_gestalt_rust::Output<String>,
         /// A key-value map of string metadata Cloudflare associates with the record.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The RFC3339 timestamp of when the record was last modified.
         pub modified_on: pulumi_gestalt_rust::Output<String>,

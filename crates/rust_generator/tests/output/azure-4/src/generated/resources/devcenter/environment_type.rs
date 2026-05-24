@@ -55,7 +55,7 @@ pub mod environment_type {
         /// A mapping of tags which should be assigned to the Dev Center Environment Type.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -71,7 +71,7 @@ pub mod environment_type {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Dev Center Environment Type.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

@@ -17,7 +17,7 @@ pub mod get_workspace {
         /// A mapping of tags to assign to the Databricks Workspace.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -48,7 +48,7 @@ pub mod get_workspace {
         >,
         /// A mapping of tags to assign to the Databricks Workspace.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Unique ID of this Databricks Workspace in Databricks management plane.
         pub workspace_id: pulumi_gestalt_rust::Output<String>,

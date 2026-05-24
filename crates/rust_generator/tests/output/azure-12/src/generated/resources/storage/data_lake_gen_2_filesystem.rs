@@ -72,7 +72,7 @@ pub mod data_lake_gen_2_filesystem {
         /// A mapping of Key to Base64-Encoded Values which should be assigned to this Data Lake Gen2 File System.
         #[builder(into, default)]
         pub properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the ID of the Storage Account in which the Data Lake Gen2 File System should exist. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -101,7 +101,7 @@ pub mod data_lake_gen_2_filesystem {
         pub owner: pulumi_gestalt_rust::Output<String>,
         /// A mapping of Key to Base64-Encoded Values which should be assigned to this Data Lake Gen2 File System.
         pub properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the ID of the Storage Account in which the Data Lake Gen2 File System should exist. Changing this forces a new resource to be created.
         pub storage_account_id: pulumi_gestalt_rust::Output<String>,

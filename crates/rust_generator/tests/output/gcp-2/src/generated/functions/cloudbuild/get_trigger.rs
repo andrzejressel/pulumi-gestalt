@@ -63,7 +63,7 @@ pub mod get_trigger {
             Vec<super::super::super::types::cloudbuild::GetTriggerSourceToBuild>,
         >,
         pub substitutions: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub tags: pulumi_gestalt_rust::Output<Vec<String>>,
         pub trigger_id: pulumi_gestalt_rust::Output<String>,

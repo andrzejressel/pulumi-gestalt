@@ -17,7 +17,7 @@ pub mod get_vocabulary {
         /// A map of tags to assign to the Vocabulary.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Returns information on a specific Vocabulary by Vocabulary id
         #[builder(into, default)]
@@ -42,7 +42,9 @@ pub mod get_vocabulary {
         /// The current state of the custom vocabulary. Valid values are `CREATION_IN_PROGRESS`, `ACTIVE`, `CREATION_FAILED`, `DELETE_IN_PROGRESS`.
         pub state: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the Vocabulary.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The identifier of the custom vocabulary.
         pub vocabulary_id: pulumi_gestalt_rust::Output<String>,
     }

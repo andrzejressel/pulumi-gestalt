@@ -14,28 +14,28 @@ pub struct PagesProjectDeploymentConfigsPreview {
     pub r#compatibility_flags: Option<Vec<String>>,
     /// D1 Databases used for Pages Functions. Defaults to `map[]`.
     #[builder(into)]
-    pub r#d_1_databases: Option<std::collections::HashMap<String, String>>,
+    pub r#d_1_databases: Option<std::collections::BTreeMap<String, String>>,
     /// Durable Object namespaces used for Pages Functions. Defaults to `map[]`.
     #[builder(into)]
-    pub r#durable_object_namespaces: Option<std::collections::HashMap<String, String>>,
+    pub r#durable_object_namespaces: Option<std::collections::BTreeMap<String, String>>,
     /// Environment variables for Pages Functions. Defaults to `map[]`.
     #[builder(into)]
-    pub r#environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#environment_variables: Option<std::collections::BTreeMap<String, String>>,
     /// Fail open used for Pages Functions. Defaults to `false`.
     #[builder(into)]
     pub r#fail_open: Option<bool>,
     /// KV namespaces used for Pages Functions. Defaults to `map[]`.
     #[builder(into)]
-    pub r#kv_namespaces: Option<std::collections::HashMap<String, String>>,
+    pub r#kv_namespaces: Option<std::collections::BTreeMap<String, String>>,
     /// Configuration for placement in the Cloudflare Pages project.
     #[builder(into)]
     pub r#placement: Option<Box<super::types::PagesProjectDeploymentConfigsPreviewPlacement>>,
     /// R2 Buckets used for Pages Functions. Defaults to `map[]`.
     #[builder(into)]
-    pub r#r_2_buckets: Option<std::collections::HashMap<String, String>>,
+    pub r#r_2_buckets: Option<std::collections::BTreeMap<String, String>>,
     /// Encrypted environment variables for Pages Functions. Defaults to `map[]`.
     #[builder(into)]
-    pub r#secrets: Option<std::collections::HashMap<String, String>>,
+    pub r#secrets: Option<std::collections::BTreeMap<String, String>>,
     /// Services used for Pages Functions.
     #[builder(into)]
     pub r#service_bindings: Option<Vec<super::types::PagesProjectDeploymentConfigsPreviewServiceBinding>>,

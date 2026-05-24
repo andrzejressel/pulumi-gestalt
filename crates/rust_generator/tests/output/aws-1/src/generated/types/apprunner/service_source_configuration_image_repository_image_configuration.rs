@@ -8,10 +8,10 @@ pub struct ServiceSourceConfigurationImageRepositoryImageConfiguration {
     pub r#port: Option<String>,
     /// Secrets and parameters available to your service as environment variables. A map of key/value pairs, where the key is the desired name of the Secret in the environment (i.e. it does not have to match the name of the secret in Secrets Manager or SSM Parameter Store), and the value is the ARN of the secret from AWS Secrets Manager or the ARN of the parameter in AWS SSM Parameter Store.
     #[builder(into)]
-    pub r#runtime_environment_secrets: Option<std::collections::HashMap<String, String>>,
+    pub r#runtime_environment_secrets: Option<std::collections::BTreeMap<String, String>>,
     /// Environment variables available to your running App Runner service. A map of key/value pairs. Keys with a prefix of `AWSAPPRUNNER` are reserved for system use and aren't valid.
     #[builder(into)]
-    pub r#runtime_environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#runtime_environment_variables: Option<std::collections::BTreeMap<String, String>>,
     /// Command App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.
     #[builder(into)]
     pub r#start_command: Option<String>,

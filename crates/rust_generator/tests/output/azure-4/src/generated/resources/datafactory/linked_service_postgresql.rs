@@ -56,7 +56,7 @@ pub mod linked_service_postgresql {
         /// A map of additional properties to associate with the Data Factory Linked Service PostgreSQL.
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service PostgreSQL.
         #[builder(into, default)]
@@ -79,7 +79,7 @@ pub mod linked_service_postgresql {
         /// A map of parameters to associate with the Data Factory Linked Service PostgreSQL.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -91,7 +91,7 @@ pub mod linked_service_postgresql {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Linked Service PostgreSQL.
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service PostgreSQL.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -107,7 +107,7 @@ pub mod linked_service_postgresql {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of parameters to associate with the Data Factory Linked Service PostgreSQL.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

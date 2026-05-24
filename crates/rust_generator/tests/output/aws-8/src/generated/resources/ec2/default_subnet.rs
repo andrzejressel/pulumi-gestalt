@@ -75,7 +75,7 @@ pub mod default_subnet {
         >,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -118,10 +118,10 @@ pub mod default_subnet {
         pub owner_id: pulumi_gestalt_rust::Output<String>,
         pub private_dns_hostname_type_on_launch: pulumi_gestalt_rust::Output<String>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the VPC the subnet is in
         pub vpc_id: pulumi_gestalt_rust::Output<String>,

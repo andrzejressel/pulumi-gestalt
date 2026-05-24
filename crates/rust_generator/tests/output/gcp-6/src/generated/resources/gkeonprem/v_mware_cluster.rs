@@ -233,7 +233,7 @@ pub mod v_mware_cluster {
         /// 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// AAGConfig specifies whether to spread VMware User Cluster nodes across at least three physical hosts in the datacenter.
         #[builder(into, default)]
@@ -330,7 +330,7 @@ pub mod v_mware_cluster {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// 'effective_annotations' for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// AAGConfig specifies whether to spread VMware User Cluster nodes across at least three physical hosts in the datacenter.
         pub anti_affinity_groups: pulumi_gestalt_rust::Output<
@@ -363,7 +363,7 @@ pub mod v_mware_cluster {
         /// Disable bundled ingress.
         pub disable_bundled_ingress: pulumi_gestalt_rust::Output<Option<bool>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Enable control plane V2. Default to false.
         pub enable_control_plane_v2: pulumi_gestalt_rust::Output<Option<bool>>,

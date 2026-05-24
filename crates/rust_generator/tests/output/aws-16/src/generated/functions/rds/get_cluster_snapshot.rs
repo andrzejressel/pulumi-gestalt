@@ -35,7 +35,7 @@ pub mod get_cluster_snapshot {
         /// a pair on the desired DB cluster snapshot.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -73,7 +73,9 @@ pub mod get_cluster_snapshot {
         /// Whether the DB cluster snapshot is encrypted.
         pub storage_encrypted: pulumi_gestalt_rust::Output<bool>,
         /// Map of tags for the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// VPC ID associated with the DB cluster snapshot.
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
     }

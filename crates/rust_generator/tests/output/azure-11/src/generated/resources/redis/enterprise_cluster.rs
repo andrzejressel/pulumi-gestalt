@@ -62,7 +62,7 @@ pub mod enterprise_cluster {
         /// A mapping of tags which should be assigned to the Redis Enterprise Cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies a list of Availability Zones in which this Redis Enterprise Cluster should be located. Changing this forces a new Redis Enterprise Cluster to be created.
         #[builder(into, default)]
@@ -89,7 +89,7 @@ pub mod enterprise_cluster {
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Redis Enterprise Cluster.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies a list of Availability Zones in which this Redis Enterprise Cluster should be located. Changing this forces a new Redis Enterprise Cluster to be created.
         pub zones: pulumi_gestalt_rust::Output<Option<Vec<String>>>,

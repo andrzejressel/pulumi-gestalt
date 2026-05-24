@@ -8,7 +8,7 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCusto
     pub r#oauth_2_properties: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCustomConnectorOauth2Properties>>,
     /// A map of properties that are required to create a profile for the custom connector.
     #[builder(into)]
-    pub r#profile_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#profile_properties: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCustomConnector {

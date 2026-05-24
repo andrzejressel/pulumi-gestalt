@@ -97,7 +97,7 @@ pub mod assessment {
         /// A map of additional data to associate with the assessment.
         #[builder(into, default)]
         pub additional_data: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the security Assessment policy to apply to this resource. Changing this forces a new security Assessment to be created.
         #[builder(into)]
@@ -120,7 +120,7 @@ pub mod assessment {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of additional data to associate with the assessment.
         pub additional_data: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the security Assessment policy to apply to this resource. Changing this forces a new security Assessment to be created.
         pub assessment_policy_id: pulumi_gestalt_rust::Output<String>,

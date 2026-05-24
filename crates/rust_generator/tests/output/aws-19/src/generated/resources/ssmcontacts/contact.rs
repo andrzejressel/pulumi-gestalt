@@ -59,7 +59,7 @@ pub mod contact {
         /// Map of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The type of contact engaged. A single contact is type PERSONAL and an escalation
         /// plan is type ESCALATION.
@@ -83,11 +83,11 @@ pub mod contact {
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Map of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The type of contact engaged. A single contact is type PERSONAL and an escalation
         /// plan is type ESCALATION.

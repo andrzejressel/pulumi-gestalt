@@ -57,7 +57,7 @@ pub mod snapshot_import {
         /// A map of tags to assign to the snapshot.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
         #[builder(into, default)]
@@ -101,11 +101,11 @@ pub mod snapshot_import {
         pub storage_tier: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the snapshot.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
         pub temporary_restore_days: pulumi_gestalt_rust::Output<Option<i32>>,

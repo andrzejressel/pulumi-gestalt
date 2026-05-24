@@ -11,10 +11,10 @@ pub struct TaskDefinitionVolumeDockerVolumeConfiguration {
     pub r#driver: Option<String>,
     /// Map of Docker driver specific options.
     #[builder(into)]
-    pub r#driver_opts: Option<std::collections::HashMap<String, String>>,
+    pub r#driver_opts: Option<std::collections::BTreeMap<String, String>>,
     /// Map of custom metadata to add to your Docker volume.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Scope for the Docker volume, which determines its lifecycle, either `task` or `shared`.  Docker volumes that are scoped to a `task` are automatically provisioned when the task starts and destroyed when the task stops. Docker volumes that are scoped as `shared` persist after the task stops.
     #[builder(into)]
     pub r#scope: Option<String>,

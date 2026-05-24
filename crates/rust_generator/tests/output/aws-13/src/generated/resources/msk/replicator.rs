@@ -43,7 +43,7 @@ pub mod replicator {
         pub service_execution_role_arn: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -71,10 +71,10 @@ pub mod replicator {
         /// The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters).
         pub service_execution_role_arn: pulumi_gestalt_rust::Output<String>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

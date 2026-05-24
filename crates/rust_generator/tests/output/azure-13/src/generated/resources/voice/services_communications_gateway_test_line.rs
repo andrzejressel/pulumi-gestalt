@@ -61,7 +61,7 @@ pub mod services_communications_gateway_test_line {
         /// A mapping of tags which should be assigned to the Voice Services Communications Gateway Test Line.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the ID of the Voice Services Communications Gateway. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -84,7 +84,7 @@ pub mod services_communications_gateway_test_line {
         pub purpose: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Voice Services Communications Gateway Test Line.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the ID of the Voice Services Communications Gateway. Changing this forces a new resource to be created.
         pub voice_services_communications_gateway_id: pulumi_gestalt_rust::Output<

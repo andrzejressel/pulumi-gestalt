@@ -14,7 +14,7 @@ pub mod get_http_namespace {
         /// Map of tags for the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -29,7 +29,9 @@ pub mod get_http_namespace {
         pub id: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Map of tags for the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

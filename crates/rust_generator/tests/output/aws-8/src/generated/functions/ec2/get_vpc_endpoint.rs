@@ -26,7 +26,7 @@ pub mod get_vpc_endpoint {
         /// a pair on the specific VPC Endpoint to retrieve.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the VPC in which the specific VPC Endpoint is used.
         ///
@@ -74,7 +74,9 @@ pub mod get_vpc_endpoint {
         pub state: pulumi_gestalt_rust::Output<String>,
         /// One or more subnets in which the VPC Endpoint is located. Applicable for endpoints of type `Interface`.
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// VPC Endpoint type, `Gateway` or `Interface`.
         pub vpc_endpoint_type: pulumi_gestalt_rust::Output<String>,
         pub vpc_id: pulumi_gestalt_rust::Output<String>,

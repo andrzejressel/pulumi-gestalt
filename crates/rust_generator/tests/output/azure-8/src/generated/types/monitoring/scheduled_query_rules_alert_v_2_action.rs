@@ -8,7 +8,7 @@ pub struct ScheduledQueryRulesAlertV2Action {
     pub r#action_groups: Option<Vec<String>>,
     /// Specifies the properties of an alert payload.
     #[builder(into)]
-    pub r#custom_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#custom_properties: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ScheduledQueryRulesAlertV2Action {

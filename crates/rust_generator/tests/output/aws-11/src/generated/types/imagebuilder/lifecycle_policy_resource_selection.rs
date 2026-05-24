@@ -8,7 +8,7 @@ pub struct LifecyclePolicyResourceSelection {
     pub r#recipes: Option<Vec<super::super::types::imagebuilder::LifecyclePolicyResourceSelectionRecipe>>,
     /// A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.
     #[builder(into)]
-    pub r#tag_map: Option<std::collections::HashMap<String, String>>,
+    pub r#tag_map: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LifecyclePolicyResourceSelection {

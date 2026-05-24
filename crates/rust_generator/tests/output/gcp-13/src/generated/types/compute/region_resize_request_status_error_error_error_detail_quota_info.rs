@@ -6,7 +6,7 @@ pub struct RegionResizeRequestStatusErrorErrorErrorDetailQuotaInfo {
     /// (Output)
     /// The map holding related quota dimensions
     #[builder(into)]
-    pub r#dimensions: Option<std::collections::HashMap<String, String>>,
+    pub r#dimensions: Option<std::collections::BTreeMap<String, String>>,
     /// (Output)
     /// Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
     #[builder(into)]

@@ -75,7 +75,7 @@ pub mod elasticsearch {
         /// A mapping of tags which should be assigned to the Elasticsearch resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -119,7 +119,7 @@ pub mod elasticsearch {
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Elasticsearch resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

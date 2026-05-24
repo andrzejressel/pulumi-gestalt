@@ -19,7 +19,7 @@ pub struct JobPrestoConfig {
     pub r#output_format: Option<String>,
     /// A mapping of property names to values. Used to set Presto session properties Equivalent to using the --session flag in the Presto CLI.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// The HCFS URI of the script that contains SQL queries.
     /// Conflicts with `query_list`
     #[builder(into)]

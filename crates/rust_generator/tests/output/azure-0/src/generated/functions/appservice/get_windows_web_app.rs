@@ -19,7 +19,7 @@ pub mod get_windows_web_app {
     pub struct GetWindowsWebAppResult {
         /// A map of key-value pairs of App Settings.
         pub app_settings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A `auth_settings` block as defined below.
         pub auth_settings: pulumi_gestalt_rust::Output<
@@ -103,7 +103,9 @@ pub mod get_windows_web_app {
             Vec<super::super::super::types::appservice::GetWindowsWebAppStorageAccount>,
         >,
         /// A mapping of tags assigned to the Windows Web App.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The subnet id which the Windows Web App is vNet Integrated with.
         pub virtual_network_subnet_id: pulumi_gestalt_rust::Output<String>,
         /// Are the default WebDeploy Basic Authentication publishing credentials enabled.

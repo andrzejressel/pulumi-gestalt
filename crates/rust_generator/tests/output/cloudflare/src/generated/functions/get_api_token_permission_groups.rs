@@ -8,20 +8,24 @@ pub mod get_api_token_permission_groups {
     pub struct GetApiTokenPermissionGroupsResult {
         /// Map of permissions for account level resources.
         pub account: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Checksum of permissions.
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Map of all permissions available. Should not be used as some permissions will overlap resource scope. Instead, use resource level specific attributes.
         pub permissions: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Map of permissions for r2 level resources.
-        pub r2: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub r2: pulumi_gestalt_rust::Output<std::collections::BTreeMap<String, String>>,
         /// Map of permissions for user level resources.
-        pub user: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub user: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Map of permissions for zone level resources.
-        pub zone: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub zone: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

@@ -25,7 +25,7 @@ pub mod get_certificate {
         /// A mapping of tags, each pair of which must exactly match a pair on the desired certificates.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of types on which to filter the returned list. Valid values are `AMAZON_ISSUED`, `PRIVATE`, and `IMPORTED`.
         #[builder(into, default)]
@@ -48,7 +48,9 @@ pub mod get_certificate {
         pub status: pulumi_gestalt_rust::Output<String>,
         pub statuses: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Mapping of tags for the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub types: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
     }
     ///

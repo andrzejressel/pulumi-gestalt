@@ -36,7 +36,9 @@ pub mod get_network_manager {
             Vec<super::super::super::types::network::GetNetworkManagerScope>,
         >,
         /// A mapping of tags assigned to the Network Manager.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

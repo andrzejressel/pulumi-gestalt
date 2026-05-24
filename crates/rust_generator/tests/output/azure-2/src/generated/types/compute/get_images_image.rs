@@ -17,7 +17,7 @@ pub struct GetImagesImage {
     pub r#os_disks: Vec<super::super::types::compute::GetImagesImageOsDisk>,
     /// A mapping of tags assigned to the Image.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
     /// Is zone resiliency enabled?
     #[builder(into)]
     pub r#zone_resilient: bool,

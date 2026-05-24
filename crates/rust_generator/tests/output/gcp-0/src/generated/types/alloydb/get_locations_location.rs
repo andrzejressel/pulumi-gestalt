@@ -8,13 +8,13 @@ pub struct GetLocationsLocation {
     pub r#display_name: String,
     /// Cross-service attributes for the location. For example `{"cloud.googleapis.com/region": "us-east1"}`.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The canonical id for this location. For example: "us-east1"..
     #[builder(into)]
     pub r#location_id: String,
     /// Service-specific metadata. For example the available capacity at the given location.
     #[builder(into)]
-    pub r#metadata: std::collections::HashMap<String, String>,
+    pub r#metadata: std::collections::BTreeMap<String, String>,
     /// Resource name for the location, which may vary between implementations. For example: "projects/example-project/locations/us-east1".
     #[builder(into)]
     pub r#name: String,

@@ -51,7 +51,9 @@ pub mod get_managed_disk {
         /// The storage account type for the Managed Disk.
         pub storage_account_type: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A list of Availability Zones where the Managed Disk exists.
         pub zones: pulumi_gestalt_rust::Output<Vec<String>>,
     }

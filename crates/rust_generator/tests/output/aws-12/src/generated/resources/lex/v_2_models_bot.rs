@@ -80,12 +80,12 @@ pub mod v_2_models_bot {
         /// List of tags to add to the bot. You can only add tags when you create a bot.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags to add to the test alias for a bot. You can only add tags when you create a bot.
         #[builder(into, default)]
         pub test_bot_alias_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub timeouts: pulumi_gestalt_rust::Input<
@@ -123,14 +123,14 @@ pub mod v_2_models_bot {
         pub role_arn: pulumi_gestalt_rust::Output<String>,
         /// List of tags to add to the bot. You can only add tags when you create a bot.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// List of tags to add to the test alias for a bot. You can only add tags when you create a bot.
         pub test_bot_alias_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub timeouts: pulumi_gestalt_rust::Output<
             Option<super::super::types::lex::V2ModelsBotTimeouts>,

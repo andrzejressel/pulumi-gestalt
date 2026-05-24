@@ -87,7 +87,13 @@ pub fn render_expr(expr: &RustExpr) -> String {
                 let inner = entries
                     .iter()
                     // FIXME
-                    .map(|(k, v)| format!("(({}).to_string(), ({}).to_string())", render_expr(k), render_expr(v)))
+                    .map(|(k, v)| {
+                        format!(
+                            "(({}).to_string(), ({}).to_string())",
+                            render_expr(k),
+                            render_expr(v)
+                        )
+                    })
                     .collect::<Vec<_>>()
                     .join(", ");
                 format!("std::collections::BTreeMap::from([{}])", inner)

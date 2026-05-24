@@ -62,7 +62,7 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     /// - TTLs must be >= 0 (where 0 is "always revalidate") and <= 86400s (1 day)
     /// Note that when specifying an explicit negativeCachingPolicy, you should take care to specify a cache TTL for all response codes that you wish to cache. The CDNPolicy will not apply any default negative caching when a policy exists.
     #[builder(into)]
-    pub r#negative_caching_policy: Option<std::collections::HashMap<String, String>>,
+    pub r#negative_caching_policy: Option<std::collections::BTreeMap<String, String>>,
     /// The EdgeCacheKeyset containing the set of public keys used to validate signed requests at the edge.
     #[builder(into)]
     pub r#signed_request_keyset: Option<String>,

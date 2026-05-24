@@ -14,7 +14,7 @@ pub mod get_image {
         /// Key-value map of resource tags for the image.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -59,7 +59,9 @@ pub mod get_image {
         /// Platform of the image.
         pub platform: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the image.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Version of the image.
         pub version: pulumi_gestalt_rust::Output<String>,
     }

@@ -14,7 +14,7 @@ pub mod get_public_ipv_4_pool {
         /// Any tags for the address pool.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -31,7 +31,9 @@ pub mod get_public_ipv_4_pool {
         >,
         pub pool_id: pulumi_gestalt_rust::Output<String>,
         /// Any tags for the address pool.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Total number of addresses in the pool.
         pub total_address_count: pulumi_gestalt_rust::Output<i32>,
         /// Total number of available addresses in the pool.

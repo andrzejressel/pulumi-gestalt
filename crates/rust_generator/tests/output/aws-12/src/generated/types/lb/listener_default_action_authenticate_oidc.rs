@@ -5,7 +5,7 @@
 pub struct ListenerDefaultActionAuthenticateOidc {
     /// Query parameters to include in the redirect request to the authorization endpoint. Max: 10.
     #[builder(into)]
-    pub r#authentication_request_extra_params: Option<std::collections::HashMap<String, String>>,
+    pub r#authentication_request_extra_params: Option<std::collections::BTreeMap<String, String>>,
     /// Authorization endpoint of the IdP.
     #[builder(into)]
     pub r#authorization_endpoint: String,

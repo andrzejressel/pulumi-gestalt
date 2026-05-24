@@ -14,7 +14,7 @@ pub mod get_directory {
         /// A map of tags assigned to the directory/connector.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -49,7 +49,9 @@ pub mod get_directory {
         /// (for `SimpleAD` and `ADConnector`) Size of the directory/connector (`Small` or `Large`).
         pub size: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the directory/connector.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Directory type (`SimpleAD`, `ADConnector` or `MicrosoftAD`).
         pub type_: pulumi_gestalt_rust::Output<String>,
         pub vpc_settings: pulumi_gestalt_rust::Output<

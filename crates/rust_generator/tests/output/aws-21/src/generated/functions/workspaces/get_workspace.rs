@@ -14,7 +14,7 @@ pub mod get_workspace {
         /// Tags for the WorkSpace.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// User name of the user for the WorkSpace. This user name must exist in the directory for the WorkSpace. You cannot combine this parameter with `workspace_id`.
         #[builder(into, default)]
@@ -36,7 +36,9 @@ pub mod get_workspace {
         pub root_volume_encryption_enabled: pulumi_gestalt_rust::Output<bool>,
         /// Operational state of the WorkSpace.
         pub state: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub user_name: pulumi_gestalt_rust::Output<String>,
         pub user_volume_encryption_enabled: pulumi_gestalt_rust::Output<bool>,
         pub volume_encryption_key: pulumi_gestalt_rust::Output<String>,

@@ -37,7 +37,7 @@ pub mod get_subnet {
         /// Map of tags, each pair of which must exactly match a pair on the desired subnet.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the VPC that the desired subnet belongs to.
         #[builder(into, default)]
@@ -89,7 +89,9 @@ pub mod get_subnet {
         /// The type of hostnames assigned to instances in the subnet at launch.
         pub private_dns_hostname_type_on_launch: pulumi_gestalt_rust::Output<String>,
         pub state: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

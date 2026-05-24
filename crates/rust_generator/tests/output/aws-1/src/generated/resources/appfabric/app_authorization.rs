@@ -62,7 +62,7 @@ pub mod app_authorization {
         >,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Contains information about an application tenant, such as the application display name and identifier.
         #[builder(into, default)]
@@ -100,10 +100,10 @@ pub mod app_authorization {
         /// The user persona of the app authorization.
         pub persona: pulumi_gestalt_rust::Output<String>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Contains information about an application tenant, such as the application display name and identifier.
         pub tenants: pulumi_gestalt_rust::Output<

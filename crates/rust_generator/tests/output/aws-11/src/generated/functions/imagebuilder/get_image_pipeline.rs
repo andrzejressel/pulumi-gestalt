@@ -14,7 +14,7 @@ pub mod get_image_pipeline {
         /// Key-value map of resource tags for the image pipeline.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -64,7 +64,9 @@ pub mod get_image_pipeline {
         /// Status of the image pipeline.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the image pipeline.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

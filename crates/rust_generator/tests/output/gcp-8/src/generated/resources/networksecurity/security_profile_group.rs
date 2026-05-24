@@ -65,7 +65,7 @@ pub mod security_profile_group {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location of the security profile group.
         /// The default value is `global`.
@@ -98,7 +98,7 @@ pub mod security_profile_group {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// This checksum is computed by the server based on the value of other fields,
         /// and may be sent on update and delete requests to ensure the client has an up-to-date
@@ -109,7 +109,7 @@ pub mod security_profile_group {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location of the security profile group.
         /// The default value is `global`.
@@ -125,7 +125,7 @@ pub mod security_profile_group {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Reference to a SecurityProfile with the threat prevention configuration for the SecurityProfileGroup.
         pub threat_prevention_profile: pulumi_gestalt_rust::Output<Option<String>>,

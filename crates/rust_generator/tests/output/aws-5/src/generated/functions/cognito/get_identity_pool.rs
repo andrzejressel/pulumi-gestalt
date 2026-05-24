@@ -14,7 +14,7 @@ pub mod get_identity_pool {
         /// A map of tags to assigned to the Identity Pool.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -42,10 +42,12 @@ pub mod get_identity_pool {
         pub saml_provider_arns: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Key-Value pairs mapping provider names to provider app IDs.
         pub supported_login_providers: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A map of tags to assigned to the Identity Pool.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

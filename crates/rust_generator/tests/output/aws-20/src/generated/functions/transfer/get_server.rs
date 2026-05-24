@@ -14,7 +14,7 @@ pub mod get_server {
         /// Map of tags assigned to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -45,7 +45,9 @@ pub mod get_server {
         /// A set of ARNs of destinations that will receive structured logs from the transfer server such as CloudWatch Log Group ARNs.
         pub structured_log_destinations: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Map of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// URL of the service endpoint used to authenticate users with an `identity_provider_type` of `API_GATEWAY`.
         pub url: pulumi_gestalt_rust::Output<String>,
     }

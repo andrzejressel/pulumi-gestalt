@@ -12,7 +12,7 @@ pub mod get_lbs {
         /// a pair on the desired Load Balancers.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -22,7 +22,7 @@ pub mod get_lbs {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

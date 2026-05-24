@@ -5,7 +5,7 @@
 pub struct WorkflowTemplatePlacementClusterSelector {
     /// Required. The cluster labels. Cluster must have all labels to match.
     #[builder(into)]
-    pub r#cluster_labels: std::collections::HashMap<String, String>,
+    pub r#cluster_labels: std::collections::BTreeMap<String, String>,
     /// The zone where workflow process executes. This parameter does not affect the selection of the cluster. If unspecified, the zone of the first cluster matching the selector is used.
     #[builder(into)]
     pub r#zone: Option<String>,

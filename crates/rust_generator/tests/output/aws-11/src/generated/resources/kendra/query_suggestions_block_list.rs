@@ -54,7 +54,7 @@ pub mod query_suggestions_block_list {
         >,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -81,11 +81,11 @@ pub mod query_suggestions_block_list {
         >,
         pub status: pulumi_gestalt_rust::Output<String>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the resource, including those inherited from the provider's default_tags configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

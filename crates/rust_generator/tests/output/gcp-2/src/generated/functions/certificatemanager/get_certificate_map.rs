@@ -23,7 +23,7 @@ pub mod get_certificate_map {
         pub create_time: pulumi_gestalt_rust::Output<String>,
         pub description: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub gclb_targets: pulumi_gestalt_rust::Output<
             Vec<
@@ -33,12 +33,12 @@ pub mod get_certificate_map {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub update_time: pulumi_gestalt_rust::Output<String>,
     }

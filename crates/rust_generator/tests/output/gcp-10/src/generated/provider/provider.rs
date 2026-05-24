@@ -161,7 +161,7 @@ pub struct ProviderArgs {
     pub datastream_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
     pub default_labels: pulumi_gestalt_rust::Input<
-        Option<std::collections::HashMap<String, String>>,
+        Option<std::collections::BTreeMap<String, String>>,
     >,
     #[builder(into, default)]
     pub deployment_manager_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
@@ -500,7 +500,7 @@ pub struct ProviderResult {
     pub dataproc_metastore_custom_endpoint: pulumi_gestalt_rust::Output<Option<String>>,
     pub datastream_custom_endpoint: pulumi_gestalt_rust::Output<Option<String>>,
     pub default_labels: pulumi_gestalt_rust::Output<
-        Option<std::collections::HashMap<String, String>>,
+        Option<std::collections::BTreeMap<String, String>>,
     >,
     pub deployment_manager_custom_endpoint: pulumi_gestalt_rust::Output<Option<String>>,
     pub developer_connect_custom_endpoint: pulumi_gestalt_rust::Output<Option<String>>,

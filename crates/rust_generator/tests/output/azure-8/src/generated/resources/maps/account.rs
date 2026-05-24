@@ -74,7 +74,7 @@ pub mod account {
         /// A mapping of tags to assign to the Azure Maps Account.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -114,7 +114,7 @@ pub mod account {
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the Azure Maps Account.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A unique identifier for the Maps Account.
         pub x_ms_client_id: pulumi_gestalt_rust::Output<String>,

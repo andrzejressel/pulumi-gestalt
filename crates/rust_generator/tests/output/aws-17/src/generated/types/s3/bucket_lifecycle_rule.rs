@@ -28,7 +28,7 @@ pub struct BucketLifecycleRule {
     pub r#prefix: Option<String>,
     /// Specifies object tags key and value.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// Specifies a period in the object's transitions (documented below).
     #[builder(into)]
     pub r#transitions: Option<Vec<super::super::types::s3::BucketLifecycleRuleTransition>>,

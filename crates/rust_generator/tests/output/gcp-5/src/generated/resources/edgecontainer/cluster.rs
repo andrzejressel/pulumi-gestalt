@@ -181,7 +181,7 @@ pub mod cluster {
         /// resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location of the resource.
         #[builder(into)]
@@ -251,7 +251,7 @@ pub mod cluster {
         pub default_max_pods_per_node: pulumi_gestalt_rust::Output<i32>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The IP address of the Kubernetes API server.
         pub endpoint: pulumi_gestalt_rust::Output<String>,
@@ -271,7 +271,7 @@ pub mod cluster {
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location of the resource.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -304,7 +304,7 @@ pub mod cluster {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The release channel a cluster is subscribed to. Possible values: ["RELEASE_CHANNEL_UNSPECIFIED", "NONE", "REGULAR"]
         pub release_channel: pulumi_gestalt_rust::Output<String>,

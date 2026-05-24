@@ -27,7 +27,9 @@ pub mod get_spatial_anchors_account {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// The Tags assigned to this Spatial Anchors Account.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

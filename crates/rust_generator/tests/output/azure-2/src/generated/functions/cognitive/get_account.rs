@@ -17,7 +17,7 @@ pub mod get_account {
         /// A mapping of tags to assigned to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -48,7 +48,7 @@ pub mod get_account {
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assigned to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

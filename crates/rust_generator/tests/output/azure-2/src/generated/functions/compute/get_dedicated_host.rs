@@ -28,7 +28,9 @@ pub mod get_dedicated_host {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Dedicated Host.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

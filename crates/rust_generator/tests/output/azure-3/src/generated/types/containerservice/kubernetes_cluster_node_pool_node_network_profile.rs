@@ -11,7 +11,7 @@ pub struct KubernetesClusterNodePoolNodeNetworkProfile {
     pub r#application_security_group_ids: Option<Vec<String>>,
     /// Specifies a mapping of tags to the instance-level public IPs. Changing this forces a new resource to be created.
     #[builder(into)]
-    pub r#node_public_ip_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#node_public_ip_tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KubernetesClusterNodePoolNodeNetworkProfile {

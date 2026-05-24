@@ -126,7 +126,7 @@ pub mod mongo_cluster {
         /// A mapping of tags to assign to the MongoDB Cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version for the MongoDB Cluster. Possibles values are `5.0`, `6.0` and `7.0`.
         #[builder(into, default)]
@@ -171,7 +171,7 @@ pub mod mongo_cluster {
         pub storage_size_in_gb: pulumi_gestalt_rust::Output<Option<i32>>,
         /// A mapping of tags to assign to the MongoDB Cluster.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version for the MongoDB Cluster. Possibles values are `5.0`, `6.0` and `7.0`.
         pub version: pulumi_gestalt_rust::Output<Option<String>>,

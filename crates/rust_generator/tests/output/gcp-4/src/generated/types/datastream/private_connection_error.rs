@@ -5,7 +5,7 @@
 pub struct PrivateConnectionError {
     /// A list of messages that carry the error details.
     #[builder(into)]
-    pub r#details: Option<std::collections::HashMap<String, String>>,
+    pub r#details: Option<std::collections::BTreeMap<String, String>>,
     /// A message containing more information about the error that occurred.
     #[builder(into)]
     pub r#message: Option<String>,

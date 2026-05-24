@@ -8,7 +8,7 @@ pub struct GetTableEntitiesItem {
     pub r#partition_key: String,
     /// A map of any additional properties in key-value format.
     #[builder(into)]
-    pub r#properties: std::collections::HashMap<String, String>,
+    pub r#properties: std::collections::BTreeMap<String, String>,
     /// Row Key of the Entity.
     #[builder(into)]
     pub r#row_key: String,

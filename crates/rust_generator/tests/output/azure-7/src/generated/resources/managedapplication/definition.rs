@@ -88,7 +88,7 @@ pub mod definition {
         /// > **NOTE:** If either `create_ui_definition` or `main_template` is set they both must be set.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -126,7 +126,7 @@ pub mod definition {
         ///
         /// > **NOTE:** If either `create_ui_definition` or `main_template` is set they both must be set.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

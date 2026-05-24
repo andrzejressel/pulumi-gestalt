@@ -69,7 +69,7 @@ pub mod virtual_machine_group {
         /// A mapping of tags which should be assigned to the Microsoft SQL Virtual Machine Group.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `wsfc_domain_profile` block as defined below.
         #[builder(into)]
@@ -96,7 +96,7 @@ pub mod virtual_machine_group {
         pub sql_image_sku: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Microsoft SQL Virtual Machine Group.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `wsfc_domain_profile` block as defined below.
         pub wsfc_domain_profile: pulumi_gestalt_rust::Output<

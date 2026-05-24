@@ -10,7 +10,7 @@ pub mod func_with_dict_param {
     pub struct FuncWithDictParamArgs {
         #[builder(into, default)]
         pub a: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub b: pulumi_gestalt_rust::Input<Option<String>>,

@@ -24,11 +24,11 @@ pub mod get_container_definition {
         pub disable_networking: pulumi_gestalt_rust::Output<bool>,
         /// Set docker labels
         pub docker_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Environment in use
         pub environment: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,

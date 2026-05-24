@@ -29,7 +29,9 @@ pub mod get_ns_record {
         pub records: pulumi_gestalt_rust::Output<Vec<String>>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Time To Live (TTL) of the DNS record in seconds.
         pub ttl: pulumi_gestalt_rust::Output<i32>,
         pub zone_name: pulumi_gestalt_rust::Output<String>,

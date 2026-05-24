@@ -7,7 +7,7 @@ pub struct IntegrationRuntimeSsisExpressCustomSetupCommandKeyKeyVaultPassword {
     pub r#linked_service_name: String,
     /// A map of parameters to associate with the Key Vault Data Factory Linked Service.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Specifies the secret name in Azure Key Vault.
     #[builder(into)]
     pub r#secret_name: String,

@@ -163,7 +163,7 @@ pub mod standard_app_version {
         /// Environment variables available to the application.
         #[builder(into, default)]
         pub env_variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An ordered list of URL-matching patterns that should be applied to incoming requests. The first matching URL handles the
         /// request and other request handlers are not attempted.
@@ -258,7 +258,7 @@ pub mod standard_app_version {
         >,
         /// Environment variables available to the application.
         pub env_variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An ordered list of URL-matching patterns that should be applied to incoming requests. The first matching URL handles the
         /// request and other request handlers are not attempted.

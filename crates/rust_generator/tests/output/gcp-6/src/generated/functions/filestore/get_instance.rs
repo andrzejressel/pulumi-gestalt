@@ -30,7 +30,7 @@ pub mod get_instance {
         pub deletion_protection_reason: pulumi_gestalt_rust::Output<String>,
         pub description: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub etag: pulumi_gestalt_rust::Output<String>,
         pub file_shares: pulumi_gestalt_rust::Output<
@@ -40,7 +40,7 @@ pub mod get_instance {
         pub id: pulumi_gestalt_rust::Output<String>,
         pub kms_key_name: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub location: pulumi_gestalt_rust::Output<Option<String>>,
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -53,7 +53,7 @@ pub mod get_instance {
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub protocol: pulumi_gestalt_rust::Output<String>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub tier: pulumi_gestalt_rust::Output<String>,
         pub zone: pulumi_gestalt_rust::Output<String>,

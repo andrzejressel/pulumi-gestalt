@@ -92,7 +92,7 @@ pub mod configuration_feature {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `targeting_filter` block as defined below.
         #[builder(into, default)]
@@ -139,7 +139,7 @@ pub mod configuration_feature {
         pub percentage_filter_value: pulumi_gestalt_rust::Output<Option<f64>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `targeting_filter` block as defined below.
         pub targeting_filters: pulumi_gestalt_rust::Output<

@@ -132,7 +132,7 @@ pub mod automation {
         /// Please refer to the field 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The delivery_pipeline for the resource
         #[builder(into)]
@@ -149,7 +149,7 @@ pub mod automation {
         /// resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
@@ -195,7 +195,7 @@ pub mod automation {
         /// details. **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field 'effective_annotations' for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Output only. Time at which the automation was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
@@ -204,11 +204,11 @@ pub mod automation {
         /// Optional. Description of the 'Automation'. Max length is 255 characters.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Optional. The weak etag of the `Automation` resource. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -220,7 +220,7 @@ pub mod automation {
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -230,7 +230,7 @@ pub mod automation {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Required. List of Automation rules associated with the Automation resource. Must have at least one rule and limited to 250 rules per Delivery Pipeline. Note: the order of the rules here is not the same as the order of execution.
         /// Structure is documented below.

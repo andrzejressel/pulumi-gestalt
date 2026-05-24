@@ -8,7 +8,7 @@ pub struct GetPoolStartTask {
     pub r#command_line: String,
     /// A map of strings (key,value) that represents the environment variables to set in the start task.
     #[builder(into)]
-    pub r#common_environment_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#common_environment_properties: Option<std::collections::BTreeMap<String, String>>,
     /// The settings for the container under which the start task runs.
     #[builder(into)]
     pub r#containers: Vec<super::super::types::batch::GetPoolStartTaskContainer>,

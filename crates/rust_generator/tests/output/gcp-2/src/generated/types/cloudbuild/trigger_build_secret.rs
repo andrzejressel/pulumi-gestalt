@@ -11,7 +11,7 @@ pub struct TriggerBuildSecret {
     /// and must be used by at least one build step. Values can be at most 64 KB in size.
     /// There can be at most 100 secret values across all of a build's secrets.
     #[builder(into)]
-    pub r#secret_env: Option<std::collections::HashMap<String, String>>,
+    pub r#secret_env: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TriggerBuildSecret {

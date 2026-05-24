@@ -32,7 +32,7 @@ pub mod get_region_disk {
             Vec<super::super::super::types::compute::GetRegionDiskDiskEncryptionKey>,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub guest_os_features: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::compute::GetRegionDiskGuestOsFeature>,
@@ -42,7 +42,7 @@ pub mod get_region_disk {
         pub interface: pulumi_gestalt_rust::Output<String>,
         pub label_fingerprint: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub last_attach_timestamp: pulumi_gestalt_rust::Output<String>,
         pub last_detach_timestamp: pulumi_gestalt_rust::Output<String>,
@@ -51,7 +51,7 @@ pub mod get_region_disk {
         pub physical_block_size_bytes: pulumi_gestalt_rust::Output<i32>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub region: pulumi_gestalt_rust::Output<Option<String>>,
         pub replica_zones: pulumi_gestalt_rust::Output<Vec<String>>,

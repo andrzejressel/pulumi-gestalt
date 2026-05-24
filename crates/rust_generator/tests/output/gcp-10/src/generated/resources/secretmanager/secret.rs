@@ -130,7 +130,7 @@ pub mod secret {
         /// present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Timestamp in UTC when the Secret is scheduled to expire. This is always provided on output, regardless of what was sent
         /// on input. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
@@ -147,7 +147,7 @@ pub mod secret {
         /// refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub project: pulumi_gestalt_rust::Input<Option<String>>,
@@ -183,7 +183,7 @@ pub mod secret {
         /// secret. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         #[builder(into, default)]
         pub version_aliases: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Secret Version TTL after destruction request. This is a part of the delayed delete feature on Secret Version. For secret
         /// with versionDestroyTtl>0, version destruction doesn't happen immediately on calling destroy instead the version goes to
@@ -207,16 +207,16 @@ pub mod secret {
         /// annotations present in your configuration. Please refer to the field 'effective_annotations' for all of the annotations
         /// present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The time at which the Secret was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Timestamp in UTC when the Secret is scheduled to expire. This is always provided on output, regardless of what was sent
         /// on input. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
@@ -231,7 +231,7 @@ pub mod secret {
         /// }. **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please
         /// refer to the field 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The resource name of the Secret. Format:
         /// `projects/{{project}}/secrets/{{secret_id}}`
@@ -240,7 +240,7 @@ pub mod secret {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The replication policy of the secret data attached to the Secret. It cannot be changed
         /// after the Secret has been created.
@@ -268,7 +268,7 @@ pub mod secret {
         /// must start with a letter and cannot be the string 'latest' or 'NEW'. No more than 50 aliases can be assigned to a given
         /// secret. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         pub version_aliases: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Secret Version TTL after destruction request. This is a part of the delayed delete feature on Secret Version. For secret
         /// with versionDestroyTtl>0, version destruction doesn't happen immediately on calling destroy instead the version goes to

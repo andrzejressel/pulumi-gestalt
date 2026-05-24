@@ -30,13 +30,15 @@ pub mod get_configuration {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The properties assigned to the resource.
         pub properties: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// The scope of the Maintenance Configuration.
         pub scope: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The visibility of the Maintenance Configuration.
         pub visibility: pulumi_gestalt_rust::Output<String>,
         /// A `window` block as defined below.

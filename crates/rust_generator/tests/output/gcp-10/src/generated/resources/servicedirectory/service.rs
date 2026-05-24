@@ -69,7 +69,7 @@ pub mod service {
         /// Metadata that goes beyond any these limits will be rejected.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The resource name of the namespace this service will belong to.
         #[builder(into)]
@@ -94,7 +94,7 @@ pub mod service {
         /// up to 2000 characters, spread across all key-value pairs.
         /// Metadata that goes beyond any these limits will be rejected.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The resource name for the service in the
         /// format `projects/*/locations/*/namespaces/*/services/*`.

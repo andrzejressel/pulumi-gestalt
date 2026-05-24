@@ -211,7 +211,9 @@ pub mod get_account {
         /// The encryption key type of the table.
         pub table_encryption_key_type: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

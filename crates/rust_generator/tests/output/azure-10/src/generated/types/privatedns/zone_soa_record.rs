@@ -29,7 +29,7 @@ pub struct ZoneSoaRecord {
     pub r#serial_number: Option<i32>,
     /// A mapping of tags to assign to the Record Set.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// The Time To Live of the SOA Record in seconds. Defaults to `3600`.
     #[builder(into)]
     pub r#ttl: Option<i32>,

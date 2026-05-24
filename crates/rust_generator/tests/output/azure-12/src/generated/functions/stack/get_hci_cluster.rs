@@ -38,7 +38,9 @@ pub mod get_hci_cluster {
         /// The region specific Data Path Endpoint of the Azure Stack HCI Cluster.
         pub service_endpoint: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Azure Stack HCI Cluster.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Tenant ID associated with this Managed Service Identity.
         pub tenant_id: pulumi_gestalt_rust::Output<String>,
     }

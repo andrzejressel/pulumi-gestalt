@@ -29,7 +29,9 @@ pub mod get_framework {
         pub framework_type: pulumi_gestalt_rust::Output<String>,
         pub id: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

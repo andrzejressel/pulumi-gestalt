@@ -8,7 +8,7 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigGceClusterConfig {
     pub r#internal_ip_only: Option<bool>,
     /// The Compute Engine metadata entries to add to all instances (see [About VM metadata](https://cloud.google.com/compute/docs/metadata/overview)).
     #[builder(into)]
-    pub r#metadata: Option<std::collections::HashMap<String, String>>,
+    pub r#metadata: Option<std::collections::BTreeMap<String, String>>,
     /// The Compute Engine network to be used for machine communications. Cannot be specified with subnetwork_uri. If neither `network_uri` nor `subnetwork_uri` is specified, the "default" network of the project is used, if it exists. Cannot be a "Custom Subnet Network" (see /regions/global/default` * `default`
     #[builder(into)]
     pub r#network: Option<String>,

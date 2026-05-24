@@ -154,7 +154,7 @@ pub mod workstation_cluster {
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Human-readable name for this resource.
         #[builder(into, default)]
@@ -170,7 +170,7 @@ pub mod workstation_cluster {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location where the workstation cluster should reside.
         #[builder(into, default)]
@@ -213,7 +213,7 @@ pub mod workstation_cluster {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Status conditions describing the current resource state.
         /// Structure is documented below.
@@ -236,11 +236,11 @@ pub mod workstation_cluster {
             Option<super::super::types::workstations::WorkstationClusterDomainConfig>,
         >,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Checksum computed by the server.
         /// May be sent on update and delete requests to ensure that the client has an up-to-date value before proceeding.
@@ -249,7 +249,7 @@ pub mod workstation_cluster {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location where the workstation cluster should reside.
         pub location: pulumi_gestalt_rust::Output<Option<String>>,
@@ -271,7 +271,7 @@ pub mod workstation_cluster {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Name of the Compute Engine subnetwork in which instances associated with this cluster will be created.
         /// Must be part of the subnetwork specified for this cluster.

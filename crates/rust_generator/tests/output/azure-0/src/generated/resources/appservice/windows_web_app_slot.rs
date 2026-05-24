@@ -69,7 +69,7 @@ pub mod windows_web_app_slot {
         /// A map of key-value pairs of App Settings.
         #[builder(into, default)]
         pub app_settings: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An `auth_settings` block as defined below.
         #[builder(into, default)]
@@ -156,7 +156,7 @@ pub mod windows_web_app_slot {
         /// A mapping of tags which should be assigned to the Windows Web App Slot.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -182,7 +182,7 @@ pub mod windows_web_app_slot {
         pub app_service_id: pulumi_gestalt_rust::Output<String>,
         /// A map of key-value pairs of App Settings.
         pub app_settings: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An `auth_settings` block as defined below.
         pub auth_settings: pulumi_gestalt_rust::Output<
@@ -269,7 +269,7 @@ pub mod windows_web_app_slot {
         >,
         /// A mapping of tags which should be assigned to the Windows Web App Slot.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub virtual_network_subnet_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Should the default WebDeploy Basic Authentication publishing credentials enabled. Defaults to `true`.

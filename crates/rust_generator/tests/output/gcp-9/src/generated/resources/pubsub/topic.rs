@@ -231,7 +231,7 @@ pub mod topic {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Indicates the minimum duration to retain a message after it is published
         /// to the topic. If this field is set, messages published to the topic in
@@ -277,7 +277,7 @@ pub mod topic {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Settings for ingestion from a data source into this topic.
         /// Structure is documented below.
@@ -295,7 +295,7 @@ pub mod topic {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Indicates the minimum duration to retain a message after it is published
         /// to the topic. If this field is set, messages published to the topic in
@@ -324,7 +324,7 @@ pub mod topic {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Settings for validating messages published against a schema.
         /// Structure is documented below.

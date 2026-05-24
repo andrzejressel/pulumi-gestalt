@@ -17,7 +17,7 @@ pub mod get_geofence_collection {
         /// Key-value map of resource tags for the geofence collection.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -34,7 +34,9 @@ pub mod get_geofence_collection {
         /// Key identifier for an AWS KMS customer managed key assigned to the Amazon Location resource.
         pub kms_key_id: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the geofence collection.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Timestamp for when the geofence collection resource was last updated in ISO 8601 format.
         pub update_time: pulumi_gestalt_rust::Output<String>,
     }

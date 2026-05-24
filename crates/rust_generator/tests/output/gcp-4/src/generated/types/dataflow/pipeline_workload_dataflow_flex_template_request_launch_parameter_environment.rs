@@ -10,7 +10,7 @@ pub struct PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironment
     /// 'Example: { "name": "wrench", "mass": "1kg", "count": "3" }.'
     /// 'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.'
     #[builder(into)]
-    pub r#additional_user_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#additional_user_labels: Option<std::collections::BTreeMap<String, String>>,
     /// Whether to enable Streaming Engine for the job.
     #[builder(into)]
     pub r#enable_streaming_engine: Option<bool>,

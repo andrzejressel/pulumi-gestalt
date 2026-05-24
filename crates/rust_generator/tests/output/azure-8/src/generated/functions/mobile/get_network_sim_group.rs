@@ -30,7 +30,9 @@ pub mod get_network_sim_group {
         pub mobile_network_id: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Mobile Network Sim Groups.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

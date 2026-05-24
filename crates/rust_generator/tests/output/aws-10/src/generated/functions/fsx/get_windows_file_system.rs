@@ -14,7 +14,7 @@ pub mod get_windows_file_system {
         /// The tags to associate with the file system.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -68,7 +68,9 @@ pub mod get_windows_file_system {
         /// Specifies the IDs of the subnets that the file system is accessible from.
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The tags to associate with the file system.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Throughput (megabytes per second) of the file system in power of 2 increments. Minimum of `8` and maximum of `2048`.
         pub throughput_capacity: pulumi_gestalt_rust::Output<i32>,
         /// The ID of the primary virtual private cloud (VPC) for the file system.

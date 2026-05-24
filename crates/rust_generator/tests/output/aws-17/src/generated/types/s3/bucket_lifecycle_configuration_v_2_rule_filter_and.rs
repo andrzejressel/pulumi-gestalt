@@ -14,7 +14,7 @@ pub struct BucketLifecycleConfigurationV2RuleFilterAnd {
     pub r#prefix: Option<String>,
     /// Key-value map of resource tags. All of these tags must exist in the object's tag set in order for the rule to apply.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BucketLifecycleConfigurationV2RuleFilterAnd {

@@ -8,7 +8,7 @@ pub struct ManagedClusterNodeType {
     pub r#application_port_range: String,
     /// Specifies a list of key/value pairs used to set capacity tags for this node type.
     #[builder(into)]
-    pub r#capacities: Option<std::collections::HashMap<String, String>>,
+    pub r#capacities: Option<std::collections::BTreeMap<String, String>>,
     /// The size of the data disk in gigabytes..
     #[builder(into)]
     pub r#data_disk_size_gb: i32,
@@ -29,7 +29,7 @@ pub struct ManagedClusterNodeType {
     pub r#name: String,
     /// Specifies a list of placement tags that can be used to indicate where services should run..
     #[builder(into)]
-    pub r#placement_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#placement_properties: Option<std::collections::BTreeMap<String, String>>,
     /// If set to true, system services will run on this node type. Only one node type should be marked as primary. Primary node type cannot be deleted or changed once they're created.
     #[builder(into)]
     pub r#primary: Option<bool>,

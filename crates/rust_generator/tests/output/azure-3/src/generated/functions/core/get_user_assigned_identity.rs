@@ -28,7 +28,9 @@ pub mod get_user_assigned_identity {
         pub principal_id: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the User Assigned Identity.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Tenant ID of the User Assigned Identity.
         pub tenant_id: pulumi_gestalt_rust::Output<String>,
     }

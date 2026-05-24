@@ -21,7 +21,7 @@ pub struct InstanceBootDiskInitializeParams {
     /// A set of key/value label pairs assigned to the disk. This
     /// field is only applicable for persistent disks.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Indicates how many IOPS to provision for the disk.
     /// This sets the number of I/O operations per second that the disk can handle.
     /// For more details,see the [Hyperdisk documentation](https://cloud.google.com/compute/docs/disks/hyperdisks).
@@ -42,7 +42,7 @@ pub struct InstanceBootDiskInitializeParams {
     pub r#provisioned_throughput: Option<i32>,
     /// A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
     #[builder(into)]
-    pub r#resource_manager_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#resource_manager_tags: Option<std::collections::BTreeMap<String, String>>,
     /// A list of self_links of resource policies to attach to the instance's boot disk. Modifying this list will cause the instance to recreate. Currently a max of 1 resource policy is supported.
     #[builder(into)]
     pub r#resource_policies: Option<String>,

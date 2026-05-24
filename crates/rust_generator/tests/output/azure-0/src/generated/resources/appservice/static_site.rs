@@ -50,7 +50,7 @@ pub mod static_site {
         /// A key-value pair of App Settings.
         #[builder(into, default)]
         pub app_settings: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
@@ -75,7 +75,7 @@ pub mod static_site {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -89,7 +89,7 @@ pub mod static_site {
         pub api_key: pulumi_gestalt_rust::Output<String>,
         /// A key-value pair of App Settings.
         pub app_settings: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The default host name of the Static Web App.
         pub default_host_name: pulumi_gestalt_rust::Output<String>,
@@ -109,7 +109,7 @@ pub mod static_site {
         pub sku_tier: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

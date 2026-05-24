@@ -9,7 +9,7 @@ pub struct BucketReplicationConfigurationRuleFilter {
     /// A map of tags that identifies subset of objects to which the rule applies.
     /// The rule applies only to objects having all the tags in its tagset.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BucketReplicationConfigurationRuleFilter {

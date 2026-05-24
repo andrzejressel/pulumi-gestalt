@@ -32,7 +32,7 @@ pub struct GetLinuxWebAppAuthSettingsV2ActiveDirectoryV2 {
     pub r#jwt_allowed_groups: Vec<String>,
     /// A map of key-value pairs sent to the Authorisation Endpoint when a user logs in.
     #[builder(into)]
-    pub r#login_parameters: std::collections::HashMap<String, String>,
+    pub r#login_parameters: std::collections::BTreeMap<String, String>,
     /// The Azure Tenant Endpoint for the Authenticating Tenant. e.g. `https://login.microsoftonline.com/{tenant-guid}/v2.0/`
     #[builder(into)]
     pub r#tenant_auth_endpoint: String,

@@ -150,7 +150,7 @@ pub mod consumer_quota_override {
         /// If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit.
         #[builder(into, default)]
         pub dimensions: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// If the new quota would decrease the existing quota by more than 10%, the request is rejected.
         /// If `force` is `true`, that safety check is ignored.
@@ -187,7 +187,7 @@ pub mod consumer_quota_override {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit.
         pub dimensions: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// If the new quota would decrease the existing quota by more than 10%, the request is rejected.
         /// If `force` is `true`, that safety check is ignored.

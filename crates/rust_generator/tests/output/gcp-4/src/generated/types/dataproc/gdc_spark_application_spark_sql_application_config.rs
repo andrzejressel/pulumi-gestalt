@@ -15,7 +15,7 @@ pub struct GdcSparkApplicationSparkSqlApplicationConfig {
     pub r#query_list: Option<Box<super::super::types::dataproc::GdcSparkApplicationSparkSqlApplicationConfigQueryList>>,
     /// Mapping of query variable names to values (equivalent to the Spark SQL command: SET `name="value";`).
     #[builder(into)]
-    pub r#script_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#script_variables: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GdcSparkApplicationSparkSqlApplicationConfig {

@@ -96,7 +96,7 @@ pub mod trigger {
         /// `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
@@ -141,7 +141,7 @@ pub mod trigger {
         pub channel: pulumi_gestalt_rust::Output<Option<String>>,
         /// Output only. The reason(s) why a trigger is in FAILED state.
         pub conditions: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Output only. The creation time.
         pub create_time: pulumi_gestalt_rust::Output<String>,
@@ -151,7 +151,7 @@ pub mod trigger {
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Output only. This checksum is computed by the server based on the value of other fields, and may be sent only on create requests to ensure the client has an up-to-date value before proceeding.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -162,7 +162,7 @@ pub mod trigger {
         /// non-authoritative, and will only manage the labels present in your configuration. Please refer to the field
         /// `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -176,7 +176,7 @@ pub mod trigger {
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Optional. The IAM service account email associated with the trigger. The service account represents the identity of the
         /// trigger. The principal who calls this API must have `iam.serviceAccounts.actAs` permission in the service account. See

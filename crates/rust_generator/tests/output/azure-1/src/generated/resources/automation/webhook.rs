@@ -78,7 +78,7 @@ pub mod webhook {
         /// Map of input parameters passed to runbook.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the resource group in which the Webhook is created. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -110,7 +110,7 @@ pub mod webhook {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Map of input parameters passed to runbook.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the resource group in which the Webhook is created. Changing this forces a new resource to be created.
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,

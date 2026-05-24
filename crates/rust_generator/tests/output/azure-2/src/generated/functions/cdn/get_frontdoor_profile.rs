@@ -28,7 +28,9 @@ pub mod get_frontdoor_profile {
         /// Specifies the SKU for this Front Door Profile.
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies a mapping of Tags assigned to this Front Door Profile.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

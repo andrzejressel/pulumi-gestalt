@@ -79,7 +79,7 @@ pub mod projects_policy_binding {
         /// configuration. Please refer to the field 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The
         /// syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: \"Summary
@@ -132,7 +132,7 @@ pub mod projects_policy_binding {
         /// limitations **Note**: This field is non-authoritative, and will only manage the annotations present in your
         /// configuration. Please refer to the field 'effective_annotations' for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The
         /// syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: \"Summary
@@ -152,7 +152,7 @@ pub mod projects_policy_binding {
         /// Optional. The description of the policy binding. Must be less than or equal to 63 characters.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Optional. The etag for the policy binding. If this is provided on update, it must match the server's etag.
         pub etag: pulumi_gestalt_rust::Output<String>,

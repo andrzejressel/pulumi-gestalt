@@ -18,7 +18,7 @@ pub mod get_connect_peer {
         /// Key-value tags for the EC2 Transit Gateway Connect Peer
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Identifier of the EC2 Transit Gateway Connect Peer.
         #[builder(into, default)]
@@ -46,7 +46,9 @@ pub mod get_connect_peer {
         /// IP addressed assigned to customer device, which is used as tunnel endpoint
         pub peer_address: pulumi_gestalt_rust::Output<String>,
         /// Key-value tags for the EC2 Transit Gateway Connect Peer
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The IP address assigned to Transit Gateway, which is used as tunnel endpoint.
         pub transit_gateway_address: pulumi_gestalt_rust::Output<String>,
         /// The Transit Gateway Connect

@@ -5,7 +5,7 @@
 pub struct GetTablesTable {
     /// User-provided table labels, in key/value pairs.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The name of the table.
     #[builder(into)]
     pub r#table_id: String,

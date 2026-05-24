@@ -14,7 +14,7 @@ pub mod get_directory {
         /// A map of tags assigned to the WorkSpaces directory.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -50,7 +50,9 @@ pub mod get_directory {
         /// Identifiers of the subnets where the directory resides.
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A map of tags assigned to the WorkSpaces directory.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// (Optional) Specifies which devices and operating systems users can use to access their WorkSpaces. Defined below.
         pub workspace_access_properties: pulumi_gestalt_rust::Output<
             Vec<

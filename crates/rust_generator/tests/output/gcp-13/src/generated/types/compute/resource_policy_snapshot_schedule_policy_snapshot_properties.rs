@@ -13,7 +13,7 @@ pub struct ResourcePolicySnapshotSchedulePolicySnapshotProperties {
     pub r#guest_flush: Option<bool>,
     /// A set of key-value pairs.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Cloud Storage bucket location to store the auto snapshot
     /// (regional or multi-regional)
     #[builder(into)]

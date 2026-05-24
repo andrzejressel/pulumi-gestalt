@@ -23,7 +23,9 @@ pub mod get_kubernetes_node_pool_snapshot {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the source Node Pool.
         pub source_node_pool_id: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

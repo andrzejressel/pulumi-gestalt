@@ -127,7 +127,7 @@ pub mod kubernetes_cluster_node_pool {
         /// A map of Kubernetes labels which should be applied to nodes in this Node Pool.
         #[builder(into, default)]
         pub node_labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `node_network_profile` block as documented below.
         #[builder(into, default)]
@@ -189,7 +189,7 @@ pub mod kubernetes_cluster_node_pool {
         /// > At this time there's a bug in the AKS API where Tags for a Node Pool are not stored in the correct case - you may wish to use [`ignoreChanges`](https://www.pulumi.com/docs/intro/concepts/programming-model/#ignorechanges) functionality to ignore changes to the casing until this is fixed in the AKS API.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Used to specify whether the UltraSSD is enabled in the Node Pool. Defaults to `false`. See [the documentation](https://docs.microsoft.com/azure/aks/use-ultra-disks) for more information. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -283,7 +283,7 @@ pub mod kubernetes_cluster_node_pool {
         pub node_count: pulumi_gestalt_rust::Output<i32>,
         /// A map of Kubernetes labels which should be applied to nodes in this Node Pool.
         pub node_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A `node_network_profile` block as documented below.
         pub node_network_profile: pulumi_gestalt_rust::Output<
@@ -329,7 +329,7 @@ pub mod kubernetes_cluster_node_pool {
         ///
         /// > At this time there's a bug in the AKS API where Tags for a Node Pool are not stored in the correct case - you may wish to use [`ignoreChanges`](https://www.pulumi.com/docs/intro/concepts/programming-model/#ignorechanges) functionality to ignore changes to the casing until this is fixed in the AKS API.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Used to specify whether the UltraSSD is enabled in the Node Pool. Defaults to `false`. See [the documentation](https://docs.microsoft.com/azure/aks/use-ultra-disks) for more information. Changing this forces a new resource to be created.
         pub ultra_ssd_enabled: pulumi_gestalt_rust::Output<Option<bool>>,

@@ -22,7 +22,7 @@ pub mod get_object {
         /// Map of tags assigned to the object.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specific version ID of the object returned (defaults to latest version)
         #[builder(into, default)]
@@ -71,7 +71,7 @@ pub mod get_object {
         pub last_modified: pulumi_gestalt_rust::Output<String>,
         /// Map of metadata stored with the object in S3. Keys are always returned in lowercase.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Indicates whether this object has an active [legal hold](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-legal-holds). This field is only returned if you have permission to view an object's legal hold status.
         pub object_lock_legal_hold_status: pulumi_gestalt_rust::Output<String>,
@@ -87,7 +87,9 @@ pub mod get_object {
         /// [Storage class](http://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html) information of the object. Available for all objects except for `Standard` storage class objects.
         pub storage_class: pulumi_gestalt_rust::Output<String>,
         /// Map of tags assigned to the object.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Latest version ID of the object returned.
         pub version_id: pulumi_gestalt_rust::Output<String>,
         /// If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.

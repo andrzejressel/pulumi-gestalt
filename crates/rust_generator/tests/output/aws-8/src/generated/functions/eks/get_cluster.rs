@@ -14,7 +14,7 @@ pub mod get_cluster {
         /// Key-value map of resource tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -71,7 +71,9 @@ pub mod get_cluster {
             Vec<super::super::super::types::eks::GetClusterStorageConfig>,
         >,
         /// Key-value map of resource tags.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Configuration block for the support policy to use for the cluster.
         pub upgrade_policies: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::eks::GetClusterUpgradePolicy>,

@@ -7,7 +7,7 @@ pub struct PatchDeploymentInstanceFilterGroupLabel {
     /// 
     /// - - -
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PatchDeploymentInstanceFilterGroupLabel {

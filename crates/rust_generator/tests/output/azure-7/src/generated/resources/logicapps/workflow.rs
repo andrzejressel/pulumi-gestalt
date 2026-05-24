@@ -75,7 +75,7 @@ pub mod workflow {
         /// > **NOTE:** Any parameters specified must exist in the Schema defined in `workflow_parameters`.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Resource Group in which the Logic App Workflow should be created. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -83,12 +83,12 @@ pub mod workflow {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies a map of Key-Value pairs of the Parameter Definitions to use for this Logic App Workflow. The key is the parameter name, and the value is a JSON encoded string of the parameter definition (see: <https://docs.microsoft.com/azure/logic-apps/logic-apps-workflow-definition-language#parameters>).
         #[builder(into, default)]
         pub workflow_parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the Schema to use for this Logic App Workflow. Defaults to `https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#`. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -136,13 +136,13 @@ pub mod workflow {
         ///
         /// > **NOTE:** Any parameters specified must exist in the Schema defined in `workflow_parameters`.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Resource Group in which the Logic App Workflow should be created. Changing this forces a new resource to be created.
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The list of access endpoint IP addresses of workflow.
         pub workflow_endpoint_ip_addresses: pulumi_gestalt_rust::Output<Vec<String>>,
@@ -150,7 +150,7 @@ pub mod workflow {
         pub workflow_outbound_ip_addresses: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Specifies a map of Key-Value pairs of the Parameter Definitions to use for this Logic App Workflow. The key is the parameter name, and the value is a JSON encoded string of the parameter definition (see: <https://docs.microsoft.com/azure/logic-apps/logic-apps-workflow-definition-language#parameters>).
         pub workflow_parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the Schema to use for this Logic App Workflow. Defaults to `https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#`. Changing this forces a new resource to be created.
         pub workflow_schema: pulumi_gestalt_rust::Output<Option<String>>,

@@ -16,7 +16,7 @@ pub mod get_connect {
         /// Key-value tags for the EC2 Transit Gateway Connect
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Identifier of the EC2 Transit Gateway Connect.
         #[builder(into, default)]
@@ -32,7 +32,9 @@ pub mod get_connect {
         /// Tunnel protocol
         pub protocol: pulumi_gestalt_rust::Output<String>,
         /// Key-value tags for the EC2 Transit Gateway Connect
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub transit_gateway_connect_id: pulumi_gestalt_rust::Output<String>,
         /// EC2 Transit Gateway identifier
         pub transit_gateway_id: pulumi_gestalt_rust::Output<String>,

@@ -23,7 +23,7 @@ pub struct AutomationRuleActionFindingFieldsUpdate {
     pub r#types: Option<Vec<String>>,
     /// The rule action updates the `UserDefinedFields` field of a finding.
     #[builder(into)]
-    pub r#user_defined_fields: Option<std::collections::HashMap<String, String>>,
+    pub r#user_defined_fields: Option<std::collections::BTreeMap<String, String>>,
     /// The rule action updates the `VerificationState` field of a finding. The allowed values are the following `UNKNOWN`, `TRUE_POSITIVE`, `FALSE_POSITIVE` and `BENIGN_POSITIVE`.
     #[builder(into)]
     pub r#verification_state: Option<String>,

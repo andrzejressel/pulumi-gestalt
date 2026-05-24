@@ -126,7 +126,7 @@ pub mod cassandra_cluster {
         /// A mapping of tags assigned to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of Cassandra what the Cluster converges to run. Possible values are `3.11` and `4.0`. Defaults to `3.11`. Changing this forces a new Cassandra Cluster to be created.
         #[builder(into, default)]
@@ -173,7 +173,7 @@ pub mod cassandra_cluster {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of Cassandra what the Cluster converges to run. Possible values are `3.11` and `4.0`. Defaults to `3.11`. Changing this forces a new Cassandra Cluster to be created.
         pub version: pulumi_gestalt_rust::Output<Option<String>>,

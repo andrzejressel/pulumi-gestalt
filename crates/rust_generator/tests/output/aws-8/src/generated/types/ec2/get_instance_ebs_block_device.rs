@@ -22,7 +22,7 @@ pub struct GetInstanceEbsBlockDevice {
     pub r#snapshot_id: String,
     /// Map of tags assigned to the Instance.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
     /// Throughput of the volume, in MiB/s.
     #[builder(into)]
     pub r#throughput: i32,

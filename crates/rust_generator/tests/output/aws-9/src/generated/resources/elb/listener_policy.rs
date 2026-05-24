@@ -101,7 +101,7 @@ pub mod listener_policy {
         /// Map of arbitrary keys and values that, when changed, will trigger an update.
         #[builder(into, default)]
         pub triggers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -119,7 +119,7 @@ pub mod listener_policy {
         pub policy_names: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Map of arbitrary keys and values that, when changed, will trigger an update.
         pub triggers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

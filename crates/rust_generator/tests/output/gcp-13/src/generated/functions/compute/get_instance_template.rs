@@ -55,7 +55,7 @@ pub mod get_instance_template {
             Vec<super::super::super::types::compute::GetInstanceTemplateDisk>,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable-instance-virtual-display#verify_display_driver) on this instance.
         /// **Note**: `allow_stopping_for_update` must be set to true in order to update this field.
@@ -75,14 +75,14 @@ pub mod get_instance_template {
         /// (Optional) A set of ket/value label pairs to assign to disk created from
         /// this template
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The machine type to create.
         pub machine_type: pulumi_gestalt_rust::Output<String>,
         /// Metadata key/value pairs to make available from
         /// within instances created from this template.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The unique fingerprint of the metadata.
         pub metadata_fingerprint: pulumi_gestalt_rust::Output<String>,
@@ -113,13 +113,13 @@ pub mod get_instance_template {
             >,
         >,
         pub partner_metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// An instance template is a global resource that is not
         /// bound to a zone or a region. However, you can still specify some regional
@@ -134,7 +134,7 @@ pub mod get_instance_template {
             >,
         >,
         pub resource_manager_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// (Optional) -- A list of short names of resource policies to attach to this disk for automatic snapshot creations. Currently a max of 1 resource policy is supported.
         pub resource_policies: pulumi_gestalt_rust::Output<Vec<String>>,

@@ -14,7 +14,7 @@ pub mod get_image_recipe {
         /// Key-value map of resource tags for the image recipe.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -45,7 +45,9 @@ pub mod get_image_recipe {
         /// Platform of the image recipe.
         pub platform: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the image recipe.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Base64 encoded contents of user data. Commands or a command script to run when build instance is launched.
         pub user_data_base64: pulumi_gestalt_rust::Output<String>,
         /// Version of the image recipe.

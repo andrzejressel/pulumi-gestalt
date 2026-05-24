@@ -198,7 +198,7 @@ pub mod metric {
         /// the same as for the valueExtractor field.
         #[builder(into, default)]
         pub label_extractors: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The optional metric descriptor associated with the logs-based metric.
         /// If unspecified, it uses a default metric descriptor with a DELTA metric kind,
@@ -262,7 +262,7 @@ pub mod metric {
         /// have an associated extractor expression in this map. The syntax of the extractor expression is
         /// the same as for the valueExtractor field.
         pub label_extractors: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The optional metric descriptor associated with the logs-based metric.
         /// If unspecified, it uses a default metric descriptor with a DELTA metric kind,

@@ -513,7 +513,7 @@ pub mod certificate {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The desired lifetime of the CA certificate. Used to create the "notBeforeTime" and
         /// "notAfterTime" fields inside an X.509 certificate. A duration in seconds with up to nine
@@ -576,7 +576,7 @@ pub mod certificate {
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The resource name of the issuing CertificateAuthority in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
         pub issuer_certificate_authority: pulumi_gestalt_rust::Output<String>,
@@ -585,7 +585,7 @@ pub mod certificate {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The desired lifetime of the CA certificate. Used to create the "notBeforeTime" and
         /// "notAfterTime" fields inside an X.509 certificate. A duration in seconds with up to nine
@@ -613,7 +613,7 @@ pub mod certificate {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Output only. Details regarding the revocation of this Certificate. This Certificate is
         /// considered revoked if and only if this field is present.

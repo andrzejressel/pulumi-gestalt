@@ -8,7 +8,7 @@ pub struct TriggerSchedulePipeline {
     pub r#name: String,
     /// The pipeline parameters that the trigger will act upon.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TriggerSchedulePipeline {

@@ -71,7 +71,7 @@ pub mod image {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Is zone resiliency enabled? Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -106,7 +106,7 @@ pub mod image {
         pub source_virtual_machine_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Is zone resiliency enabled? Defaults to `false`. Changing this forces a new resource to be created.
         pub zone_resilient: pulumi_gestalt_rust::Output<Option<bool>>,

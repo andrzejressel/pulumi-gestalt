@@ -8,7 +8,7 @@ pub struct CanaryRunConfig {
     pub r#active_tracing: Option<bool>,
     /// Map of environment variables that are accessible from the canary during execution. Please see [AWS Docs](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime) for variables reserved for Lambda.
     #[builder(into)]
-    pub r#environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#environment_variables: Option<std::collections::BTreeMap<String, String>>,
     /// Maximum amount of memory available to the canary while it is running, in MB. The value you specify must be a multiple of 64.
     #[builder(into)]
     pub r#memory_in_mb: Option<i32>,

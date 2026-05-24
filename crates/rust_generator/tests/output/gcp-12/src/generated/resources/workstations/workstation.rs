@@ -97,7 +97,7 @@ pub mod workstation {
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Human-readable name for this resource.
         #[builder(into, default)]
@@ -105,14 +105,14 @@ pub mod workstation {
         /// 'Client-specified environment variables passed to the workstation container's entrypoint.'
         #[builder(into, default)]
         pub env: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location where the workstation parent resources reside.
         ///
@@ -145,22 +145,22 @@ pub mod workstation {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Time when this resource was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Human-readable name for this resource.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// 'Client-specified environment variables passed to the workstation container's entrypoint.'
         pub env: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Host to which clients can send HTTPS traffic that will be received by the workstation.
         /// Authorized traffic will be received to the workstation as HTTP on port 80.
@@ -170,7 +170,7 @@ pub mod workstation {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location where the workstation parent resources reside.
         ///
@@ -185,7 +185,7 @@ pub mod workstation {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Current state of the workstation.
         pub state: pulumi_gestalt_rust::Output<String>,

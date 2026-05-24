@@ -96,7 +96,7 @@ pub mod standard_web_test {
         /// A mapping of tags which should be assigned to the Application Insights Standard WebTest.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Seconds until this WebTest will timeout and fail. Default is `30`.
         #[builder(into, default)]
@@ -142,7 +142,7 @@ pub mod standard_web_test {
         pub synthetic_monitor_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Application Insights Standard WebTest.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Seconds until this WebTest will timeout and fail. Default is `30`.
         pub timeout: pulumi_gestalt_rust::Output<Option<i32>>,

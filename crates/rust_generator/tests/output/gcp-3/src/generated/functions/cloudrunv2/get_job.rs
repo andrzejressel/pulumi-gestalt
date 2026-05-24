@@ -24,7 +24,7 @@ pub mod get_job {
     #[allow(dead_code)]
     pub struct GetJobResult {
         pub annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub binary_authorizations: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::cloudrunv2::GetJobBinaryAuthorization>,
@@ -39,10 +39,10 @@ pub mod get_job {
         pub delete_time: pulumi_gestalt_rust::Output<String>,
         pub deletion_protection: pulumi_gestalt_rust::Output<bool>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub etag: pulumi_gestalt_rust::Output<String>,
         pub execution_count: pulumi_gestalt_rust::Output<i32>,
@@ -51,7 +51,7 @@ pub mod get_job {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub last_modifier: pulumi_gestalt_rust::Output<String>,
         pub latest_created_executions: pulumi_gestalt_rust::Output<
@@ -63,7 +63,7 @@ pub mod get_job {
         pub observed_generation: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub reconciling: pulumi_gestalt_rust::Output<bool>,
         pub run_execution_token: pulumi_gestalt_rust::Output<String>,

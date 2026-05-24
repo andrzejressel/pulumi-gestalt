@@ -177,7 +177,7 @@ pub mod flexible_server {
         /// A mapping of tags which should be assigned to the MySQL Flexible Server.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of the MySQL Flexible Server to use. Possible values are `5.7`, and `8.0.21`. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
@@ -262,7 +262,7 @@ pub mod flexible_server {
         >,
         /// A mapping of tags which should be assigned to the MySQL Flexible Server.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of the MySQL Flexible Server to use. Possible values are `5.7`, and `8.0.21`. Changing this forces a new MySQL Flexible Server to be created.
         pub version: pulumi_gestalt_rust::Output<String>,

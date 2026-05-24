@@ -34,12 +34,12 @@ pub mod get_instance {
         /// exactly match a pair on the desired Instance.
         #[builder(into, default)]
         pub instance_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the Instance.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -91,7 +91,7 @@ pub mod get_instance {
         /// State of the instance. One of: `pending`, `running`, `shutting-down`, `terminated`, `stopping`, `stopped`. See [Instance Lifecycle](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html) for more information.
         pub instance_state: pulumi_gestalt_rust::Output<String>,
         pub instance_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Type of the Instance.
         pub instance_type: pulumi_gestalt_rust::Output<String>,
@@ -146,7 +146,9 @@ pub mod get_instance {
         /// VPC subnet ID.
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// Map of tags assigned to the Instance.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Tenancy of the instance: `dedicated`, `default`, `host`.
         pub tenancy: pulumi_gestalt_rust::Output<String>,
         /// SHA-1 hash of User Data supplied to the Instance.

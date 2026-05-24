@@ -17,7 +17,7 @@ pub mod get_zone {
         /// Used with `name` field. A map of tags, each pair of which must exactly match a pair on the desired Hosted Zone.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Used with `name` field to get a private Hosted Zone associated with the vpc_id (in this case, private_zone is not mandatory).
         #[builder(into, default)]
@@ -51,7 +51,9 @@ pub mod get_zone {
         /// The number of Record Set in the Hosted Zone.
         pub resource_record_set_count: pulumi_gestalt_rust::Output<i32>,
         /// A map of tags assigned to the Hosted Zone.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
         /// The Hosted Zone identifier.
         pub zone_id: pulumi_gestalt_rust::Output<String>,

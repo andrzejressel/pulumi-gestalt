@@ -102,7 +102,7 @@ pub mod route {
         /// Request models for the route. Supported only for WebSocket APIs.
         #[builder(into, default)]
         pub request_models: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Request parameters for the route. Supported only for WebSocket APIs.
         #[builder(into, default)]
@@ -147,7 +147,7 @@ pub mod route {
         pub operation_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Request models for the route. Supported only for WebSocket APIs.
         pub request_models: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Request parameters for the route. Supported only for WebSocket APIs.
         pub request_parameters: pulumi_gestalt_rust::Output<

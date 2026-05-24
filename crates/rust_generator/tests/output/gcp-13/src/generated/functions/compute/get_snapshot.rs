@@ -34,21 +34,21 @@ pub mod get_snapshot {
         pub description: pulumi_gestalt_rust::Output<String>,
         pub disk_size_gb: pulumi_gestalt_rust::Output<i32>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub filter: pulumi_gestalt_rust::Output<Option<String>>,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub label_fingerprint: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub licenses: pulumi_gestalt_rust::Output<Vec<String>>,
         pub most_recent: pulumi_gestalt_rust::Output<Option<bool>>,
         pub name: pulumi_gestalt_rust::Output<Option<String>>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub self_link: pulumi_gestalt_rust::Output<String>,
         pub snapshot_encryption_keys: pulumi_gestalt_rust::Output<

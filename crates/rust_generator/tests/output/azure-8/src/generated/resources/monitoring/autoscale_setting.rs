@@ -392,7 +392,7 @@ pub mod autoscale_setting {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the resource ID of the resource that the autoscale setting should be added to. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -427,7 +427,7 @@ pub mod autoscale_setting {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the resource ID of the resource that the autoscale setting should be added to. Changing this forces a new resource to be created.
         pub target_resource_id: pulumi_gestalt_rust::Output<String>,

@@ -86,7 +86,7 @@ pub mod resolver_rule {
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).
         /// This argument should only be specified for `FORWARD` type rules.
@@ -120,11 +120,11 @@ pub mod resolver_rule {
         pub share_status: pulumi_gestalt_rust::Output<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).
         /// This argument should only be specified for `FORWARD` type rules.

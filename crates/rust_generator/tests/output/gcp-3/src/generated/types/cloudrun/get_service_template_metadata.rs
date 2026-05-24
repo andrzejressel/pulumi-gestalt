@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetServiceTemplateMetadata {
     #[builder(into)]
-    pub r#annotations: std::collections::HashMap<String, String>,
+    pub r#annotations: std::collections::BTreeMap<String, String>,
     /// A sequence number representing a specific generation of the desired state.
     #[builder(into)]
     pub r#generation: i32,
     /// Map of string keys and values that can be used to organize and categorize
     /// (scope and select) objects.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The name of the Cloud Run Service.
     #[builder(into)]
     pub r#name: String,

@@ -26,17 +26,17 @@ pub mod get_environment {
             Vec<super::super::super::types::composer::GetEnvironmentConfig>,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub region: pulumi_gestalt_rust::Output<Option<String>>,
         pub storage_configs: pulumi_gestalt_rust::Output<

@@ -11,7 +11,7 @@ pub mod get_vpc_iam_pool {
         /// Tags that are required to create resources in using this pool.
         #[builder(into, default)]
         pub allocation_resource_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Custom filter block as described below.
         #[builder(into, default)]
@@ -27,7 +27,7 @@ pub mod get_vpc_iam_pool {
         /// Map of tags to assigned to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -42,7 +42,7 @@ pub mod get_vpc_iam_pool {
         pub allocation_min_netmask_length: pulumi_gestalt_rust::Output<i32>,
         /// Tags that are required to create resources in using this pool.
         pub allocation_resource_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// ARN of the pool
         pub arn: pulumi_gestalt_rust::Output<String>,
@@ -70,7 +70,9 @@ pub mod get_vpc_iam_pool {
         pub source_ipam_pool_id: pulumi_gestalt_rust::Output<String>,
         pub state: pulumi_gestalt_rust::Output<String>,
         /// Map of tags to assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

@@ -148,7 +148,7 @@ pub mod module {
         /// A mapping of tags which should be assigned to the Dedicated Hardware Security Module.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies a list of Availability Zones in which this Dedicated Hardware Security Module should be located. Changing this forces a new Dedicated Hardware Security Module to be created.
         #[builder(into, default)]
@@ -183,7 +183,7 @@ pub mod module {
         pub stamp_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the Dedicated Hardware Security Module.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies a list of Availability Zones in which this Dedicated Hardware Security Module should be located. Changing this forces a new Dedicated Hardware Security Module to be created.
         pub zones: pulumi_gestalt_rust::Output<Option<Vec<String>>>,

@@ -19,7 +19,7 @@ pub mod list_product_families {
         /// Dictionary of filterable properties on product family.
         #[builder(into)]
         pub filterable_properties: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<
+            std::collections::BTreeMap<
                 String,
                 Vec<super::super::types::FilterableProperty>,
             >,

@@ -33,7 +33,7 @@ pub mod get_object_signed_url {
         /// Any header starting with `x-goog-` is accepted but see the [Google Docs](https://cloud.google.com/storage/docs/xml-api/reference-headers) for list of headers that are supported by Google.
         #[builder(into, default)]
         pub extension_headers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// What HTTP Method will the signed URL allow (defaults to `GET`)
         #[builder(into, default)]
@@ -50,7 +50,7 @@ pub mod get_object_signed_url {
         pub credentials: pulumi_gestalt_rust::Output<Option<String>>,
         pub duration: pulumi_gestalt_rust::Output<Option<String>>,
         pub extension_headers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub http_method: pulumi_gestalt_rust::Output<Option<String>>,
         /// The provider-assigned unique ID for this managed resource.

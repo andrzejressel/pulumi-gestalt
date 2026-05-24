@@ -109,7 +109,7 @@ pub mod job {
         pub streaming_units: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into)]
         pub transformation_query: pulumi_gestalt_rust::Input<String>,
@@ -171,7 +171,7 @@ pub mod job {
         /// > **NOTE:** `streaming_units` must be set when `type` is `Cloud`.
         pub streaming_units: pulumi_gestalt_rust::Output<Option<i32>>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub transformation_query: pulumi_gestalt_rust::Output<String>,
         /// The type of the Stream Analytics Job. Possible values are `Cloud` and `Edge`. Defaults to `Cloud`. Changing this forces a new resource to be created.

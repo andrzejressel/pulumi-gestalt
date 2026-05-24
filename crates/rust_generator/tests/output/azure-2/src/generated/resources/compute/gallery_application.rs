@@ -82,7 +82,7 @@ pub mod gallery_application {
         /// A mapping of tags to assign to the Gallery Application.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -112,7 +112,7 @@ pub mod gallery_application {
         pub supported_os_type: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the Gallery Application.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

@@ -29,7 +29,9 @@ pub mod get_subscription {
         /// The subscription GUID.
         pub subscription_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Subscription.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The subscription tenant ID.
         pub tenant_id: pulumi_gestalt_rust::Output<String>,
     }

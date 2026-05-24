@@ -22,7 +22,7 @@ pub mod get_budget {
         /// Map of tags assigned to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -66,7 +66,9 @@ pub mod get_budget {
             Vec<super::super::super::types::budgets::GetBudgetPlannedLimit>,
         >,
         /// Map of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The end of the time period covered by the budget. There are no restrictions on the end date. Format: `2017-01-01_12:00`.
         pub time_period_end: pulumi_gestalt_rust::Output<String>,
         /// The start of the time period covered by the budget. If you don't specify a start date, AWS defaults to the start of your chosen time period. The start date must come before the end date. Format: `2017-01-01_12:00`.

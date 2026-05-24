@@ -95,7 +95,7 @@ pub mod hci_marketplace_gallery_image {
         /// A mapping of tags which should be assigned to the Azure Stack HCI Marketplace Gallery Image.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of the Azure Stack HCI Marketplace Gallery Image. Changing this forces a new Azure Stack HCI Marketplace Gallery Image to be created.
         #[builder(into)]
@@ -128,7 +128,7 @@ pub mod hci_marketplace_gallery_image {
         pub storage_path_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the Azure Stack HCI Marketplace Gallery Image.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of the Azure Stack HCI Marketplace Gallery Image. Changing this forces a new Azure Stack HCI Marketplace Gallery Image to be created.
         pub version: pulumi_gestalt_rust::Output<String>,

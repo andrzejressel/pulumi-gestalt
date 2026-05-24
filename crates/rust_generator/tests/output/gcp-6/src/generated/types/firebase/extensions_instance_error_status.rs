@@ -8,7 +8,7 @@ pub struct ExtensionsInstanceErrorStatus {
     pub r#code: Option<i32>,
     /// A list of messages that carry the error details.
     #[builder(into)]
-    pub r#details: Option<Vec<std::collections::HashMap<String, String>>>,
+    pub r#details: Option<Vec<std::collections::BTreeMap<String, String>>>,
     /// A developer-facing error message, which should be in English.
     #[builder(into)]
     pub r#message: Option<String>,

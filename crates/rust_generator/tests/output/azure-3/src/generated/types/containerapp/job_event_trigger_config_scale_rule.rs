@@ -11,7 +11,7 @@ pub struct JobEventTriggerConfigScaleRule {
     pub r#custom_rule_type: String,
     /// Metadata properties to describe the scale rule.
     #[builder(into)]
-    pub r#metadata: std::collections::HashMap<String, String>,
+    pub r#metadata: std::collections::BTreeMap<String, String>,
     /// Name of the scale rule.
     #[builder(into)]
     pub r#name: String,

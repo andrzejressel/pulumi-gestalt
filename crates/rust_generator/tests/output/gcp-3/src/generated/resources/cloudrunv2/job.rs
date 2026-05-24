@@ -417,7 +417,7 @@ pub mod job {
         /// present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Settings for the Binary Authorization feature.
         #[builder(into, default)]
@@ -442,7 +442,7 @@ pub mod job {
         /// 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The launch stage as defined by [Google Cloud Platform Launch
         /// Stages](https://cloud.google.com/products#product-launch-stages). Cloud Run supports ALPHA, BETA, and GA. If no value is
@@ -490,7 +490,7 @@ pub mod job {
         /// annotations present in your configuration. Please refer to the field 'effective_annotations' for all of the annotations
         /// present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Settings for the Binary Authorization feature.
         pub binary_authorization: pulumi_gestalt_rust::Output<
@@ -515,11 +515,11 @@ pub mod job {
         pub delete_time: pulumi_gestalt_rust::Output<String>,
         pub deletion_protection: pulumi_gestalt_rust::Output<Option<bool>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -538,7 +538,7 @@ pub mod job {
         /// non-authoritative, and will only manage the labels present in your configuration. Please refer to the field
         /// 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Email address of the last authenticated modifier.
         pub last_modifier: pulumi_gestalt_rust::Output<String>,
@@ -564,7 +564,7 @@ pub mod job {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Returns true if the Job is currently being acted upon by the system to bring it into the desired state.
         /// When a new Job is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the Job to the desired state. This process is called reconciliation. While reconciliation is in process, observedGeneration and latest_succeeded_execution, will have transient values that might mismatch the intended state: Once reconciliation is over (and this field is false), there are two possible outcomes: reconciliation succeeded and the state matches the Job, or there was an error, and reconciliation failed. This state can be found in terminalCondition.state.

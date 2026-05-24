@@ -5,7 +5,7 @@
 pub struct JobPrestoConfigLoggingConfig {
     /// Optional. The per-package log levels for the driver. This may include 'root' package name to configure rootLogger. Examples: 'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'.
     #[builder(into)]
-    pub r#driver_log_levels: std::collections::HashMap<String, String>,
+    pub r#driver_log_levels: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobPrestoConfigLoggingConfig {

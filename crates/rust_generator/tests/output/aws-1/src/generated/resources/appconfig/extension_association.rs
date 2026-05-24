@@ -77,7 +77,7 @@ pub mod extension_association {
         /// The parameter names and values defined for the association.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ARN of the application, configuration profile, or environment to associate with the extension.
         #[builder(into)]
@@ -98,7 +98,7 @@ pub mod extension_association {
         pub extension_version: pulumi_gestalt_rust::Output<i32>,
         /// The parameter names and values defined for the association.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ARN of the application, configuration profile, or environment to associate with the extension.
         pub resource_arn: pulumi_gestalt_rust::Output<String>,

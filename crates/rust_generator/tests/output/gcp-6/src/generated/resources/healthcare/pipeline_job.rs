@@ -321,7 +321,7 @@ pub mod pipeline_job {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Location where the Pipeline Job is to run
         #[builder(into)]
@@ -363,7 +363,7 @@ pub mod pipeline_job {
         pub disable_lineage: pulumi_gestalt_rust::Output<Option<bool>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// User-supplied key-value pairs used to organize Pipeline Jobs.
         /// Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of
@@ -379,7 +379,7 @@ pub mod pipeline_job {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Location where the Pipeline Job is to run
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -393,7 +393,7 @@ pub mod pipeline_job {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Specifies reconciliation configuration.
         /// Structure is documented below.

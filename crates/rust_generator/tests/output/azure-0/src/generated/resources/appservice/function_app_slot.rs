@@ -93,7 +93,7 @@ pub mod function_app_slot {
         /// > **Note:**  When using an App Service Plan in the `Free` or `Shared` Tiers `use_32_bit_worker_process` must be set to `true`.
         #[builder(into, default)]
         pub app_settings: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// An `auth_settings` block as defined below.
         #[builder(into, default)]
@@ -153,7 +153,7 @@ pub mod function_app_slot {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The runtime version associated with the Function App. Defaults to `~1`.
         #[builder(into, default)]
@@ -176,7 +176,7 @@ pub mod function_app_slot {
         ///
         /// > **Note:**  When using an App Service Plan in the `Free` or `Shared` Tiers `use_32_bit_worker_process` must be set to `true`.
         pub app_settings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// An `auth_settings` block as defined below.
         pub auth_settings: pulumi_gestalt_rust::Output<
@@ -232,7 +232,7 @@ pub mod function_app_slot {
         pub storage_account_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The runtime version associated with the Function App. Defaults to `~1`.
         pub version: pulumi_gestalt_rust::Output<Option<String>>,

@@ -18,7 +18,7 @@ pub struct GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     #[builder(into)]
     pub r#display_name: String,
     #[builder(into)]
-    pub r#effective_labels: std::collections::HashMap<String, String>,
+    pub r#effective_labels: std::collections::BTreeMap<String, String>,
     /// Entitlement ID of the private offer against which this infrastructure
     /// resource is provisioned.
     #[builder(into)]
@@ -31,7 +31,7 @@ pub struct GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
     /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The location of the resource.
     /// 
     /// - - -
@@ -51,7 +51,7 @@ pub struct GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     /// The combination of labels configured directly on the resource
     ///  and default labels configured on the provider.
     #[builder(into)]
-    pub r#pulumi_labels: std::collections::HashMap<String, String>,
+    pub r#pulumi_labels: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetCloudExadataInfrastructuresCloudExadataInfrastructure {

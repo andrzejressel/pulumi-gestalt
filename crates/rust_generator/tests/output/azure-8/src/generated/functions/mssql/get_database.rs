@@ -44,7 +44,9 @@ pub mod get_database {
         /// The storage account type used to store backups for this database.
         pub storage_account_type: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Whether or not Transparent Data Encryption is enabled.
         pub transparent_data_encryption_enabled: pulumi_gestalt_rust::Output<bool>,
         /// Whether or not TDE automatically rotates the encryption Key to latest version.

@@ -57,7 +57,7 @@ pub mod registry_webhook {
         /// Custom headers that will be added to the webhook notifications request.
         #[builder(into, default)]
         pub custom_headers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -83,7 +83,7 @@ pub mod registry_webhook {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -97,7 +97,7 @@ pub mod registry_webhook {
         pub actions: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Custom headers that will be added to the webhook notifications request.
         pub custom_headers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -115,7 +115,7 @@ pub mod registry_webhook {
         pub status: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

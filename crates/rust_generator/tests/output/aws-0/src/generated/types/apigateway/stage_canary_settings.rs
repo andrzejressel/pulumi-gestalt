@@ -11,7 +11,7 @@ pub struct StageCanarySettings {
     pub r#percent_traffic: Option<f64>,
     /// Map of overridden stage `variables` (including new variables) for the canary deployment.
     #[builder(into)]
-    pub r#stage_variable_overrides: Option<std::collections::HashMap<String, String>>,
+    pub r#stage_variable_overrides: Option<std::collections::BTreeMap<String, String>>,
     /// Whether the canary deployment uses the stage cache. Defaults to false.
     #[builder(into)]
     pub r#use_stage_cache: Option<bool>,

@@ -14,7 +14,7 @@ pub mod get_subnet_group {
         /// Tags associated to the Subnet Group
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -29,7 +29,9 @@ pub mod get_subnet_group {
         /// An array of VPC subnet IDs.
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Tags associated to the Subnet Group
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

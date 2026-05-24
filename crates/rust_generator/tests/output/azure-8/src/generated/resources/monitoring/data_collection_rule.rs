@@ -68,7 +68,7 @@ pub mod data_collection_rule {
         /// A mapping of tags which should be assigned to the Data Collection Rule.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -118,7 +118,7 @@ pub mod data_collection_rule {
         >,
         /// A mapping of tags which should be assigned to the Data Collection Rule.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

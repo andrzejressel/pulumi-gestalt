@@ -89,7 +89,7 @@ pub mod network_packet_core_data_plane {
         /// A mapping of tags which should be assigned to the Mobile Network Packet Core Data Plane.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The IPv4 address for the user plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
@@ -121,7 +121,7 @@ pub mod network_packet_core_data_plane {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Mobile Network Packet Core Data Plane.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The IPv4 address for the user plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         pub user_plane_access_ipv4_address: pulumi_gestalt_rust::Output<Option<String>>,

@@ -110,7 +110,7 @@ pub mod windows_file_system {
         /// A map of tags to apply to the file system's final backup.
         #[builder(into, default)]
         pub final_backup_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ARN for the KMS Key to encrypt the file system at rest. Defaults to an AWS managed KMS Key.
         #[builder(into, default)]
@@ -141,7 +141,7 @@ pub mod windows_file_system {
         /// A map of tags to assign to the file system. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Throughput (megabytes per second) of the file system. For valid values, refer to the [AWS documentation](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/performance.html).
         ///
@@ -187,7 +187,7 @@ pub mod windows_file_system {
         pub dns_name: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to apply to the file system's final backup.
         pub final_backup_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ARN for the KMS Key to encrypt the file system at rest. Defaults to an AWS managed KMS Key.
         pub kms_key_id: pulumi_gestalt_rust::Output<String>,
@@ -217,11 +217,11 @@ pub mod windows_file_system {
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A map of tags to assign to the file system. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Throughput (megabytes per second) of the file system. For valid values, refer to the [AWS documentation](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/performance.html).
         ///

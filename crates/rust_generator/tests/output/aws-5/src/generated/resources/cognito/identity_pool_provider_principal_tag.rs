@@ -26,7 +26,7 @@ pub mod identity_pool_provider_principal_tag {
         /// String to string map of variables.
         #[builder(into, default)]
         pub principal_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// use default (username and clientID) attribute mappings.
         #[builder(into, default)]
@@ -45,7 +45,7 @@ pub mod identity_pool_provider_principal_tag {
         pub identity_provider_name: pulumi_gestalt_rust::Output<String>,
         /// String to string map of variables.
         pub principal_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// use default (username and clientID) attribute mappings.
         pub use_defaults: pulumi_gestalt_rust::Output<Option<bool>>,

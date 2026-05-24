@@ -21,7 +21,7 @@ pub mod get_topic {
     #[allow(dead_code)]
     pub struct GetTopicResult {
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
@@ -30,7 +30,7 @@ pub mod get_topic {
         >,
         pub kms_key_name: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub message_retention_duration: pulumi_gestalt_rust::Output<String>,
         pub message_storage_policies: pulumi_gestalt_rust::Output<
@@ -39,7 +39,7 @@ pub mod get_topic {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub schema_settings: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::pubsub::GetTopicSchemaSetting>,

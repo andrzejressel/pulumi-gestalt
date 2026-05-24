@@ -14,7 +14,7 @@ pub mod get_container_recipe {
         /// Key-value map of resource tags for the container recipe.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -53,7 +53,9 @@ pub mod get_container_recipe {
         /// Platform of the container recipe.
         pub platform: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the container recipe.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Destination repository for the container image.
         pub target_repositories: pulumi_gestalt_rust::Output<
             Vec<

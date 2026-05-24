@@ -14,7 +14,7 @@ pub mod get_connection {
         /// Map of tags for the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -37,7 +37,9 @@ pub mod get_connection {
         /// Name of the service provider associated with the connection.
         pub provider_name: pulumi_gestalt_rust::Output<String>,
         /// Map of tags for the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The VLAN ID.
         pub vlan_id: pulumi_gestalt_rust::Output<i32>,
     }

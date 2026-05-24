@@ -81,7 +81,7 @@ pub mod secret {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the value of the Key Vault Secret. Changing this will create a new version of the Key Vault Secret.
         ///
@@ -112,7 +112,7 @@ pub mod secret {
         pub resource_versionless_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the value of the Key Vault Secret. Changing this will create a new version of the Key Vault Secret.
         ///

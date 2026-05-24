@@ -44,7 +44,9 @@ pub mod get_key {
         /// The Versionless ID of the Key Vault Key. This property allows other Azure Services (that support it) to auto-rotate their value when the Key Vault Key is updated.
         pub resource_versionless_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to this Key Vault Key.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The current version of the Key Vault Key.
         pub version: pulumi_gestalt_rust::Output<String>,
         /// The Base ID of the Key Vault Key.

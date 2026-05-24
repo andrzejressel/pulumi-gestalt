@@ -41,7 +41,7 @@ pub struct PipeTargetParametersEcsTaskParameters {
     pub r#reference_id: Option<String>,
     /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// The number of tasks to create based on TaskDefinition. The default is 1.
     #[builder(into)]
     pub r#task_count: Option<i32>,

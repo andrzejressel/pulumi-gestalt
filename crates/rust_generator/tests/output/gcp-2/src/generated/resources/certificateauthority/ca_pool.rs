@@ -170,7 +170,7 @@ pub mod ca_pool {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Location of the CaPool. A full list of valid locations can be found by
         /// running `gcloud privateca locations list`.
@@ -206,7 +206,7 @@ pub mod ca_pool {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The IssuancePolicy to control how Certificates will be issued from this CaPool.
         /// Structure is documented below.
@@ -220,7 +220,7 @@ pub mod ca_pool {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Location of the CaPool. A full list of valid locations can be found by
         /// running `gcloud privateca locations list`.
@@ -241,7 +241,7 @@ pub mod ca_pool {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The Tier of this CaPool.
         /// Possible values are: `ENTERPRISE`, `DEVOPS`.

@@ -19,7 +19,7 @@ pub mod get_linux_function_app {
     pub struct GetLinuxFunctionAppResult {
         /// A map of key-value pairs for [App Settings](https://docs.microsoft.com/azure/azure-functions/functions-app-settings) and custom values.
         pub app_settings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A `auth_settings` block as defined below.
         pub auth_settings: pulumi_gestalt_rust::Output<
@@ -117,7 +117,9 @@ pub mod get_linux_function_app {
         /// Does the Function App use Managed Identity to access the storage account?
         pub storage_uses_managed_identity: pulumi_gestalt_rust::Output<bool>,
         /// A mapping of tags which are assigned to the Linux Function App.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The current usage state. Possible values are `Normal` and `Exceeded`.
         pub usage: pulumi_gestalt_rust::Output<String>,
         /// The Virtual Network Subnet ID used for this IP Restriction.

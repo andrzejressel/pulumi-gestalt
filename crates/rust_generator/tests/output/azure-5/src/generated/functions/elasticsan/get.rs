@@ -33,7 +33,9 @@ pub mod get {
             Vec<super::super::super::types::elasticsan::GetSkus>,
         >,
         /// A mapping of tags assigned to the Elastic SAN.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Total Provisioned IOps of the Elastic SAN resource.
         pub total_iops: pulumi_gestalt_rust::Output<i32>,
         /// Total Provisioned MBps Elastic SAN resource.

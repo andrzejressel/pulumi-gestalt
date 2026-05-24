@@ -5,7 +5,7 @@
 pub struct TopicRuleErrorActionKafka {
     /// Properties of the Apache Kafka producer client. For more info, see the [AWS documentation](https://docs.aws.amazon.com/iot/latest/developerguide/apache-kafka-rule-action.html).
     #[builder(into)]
-    pub r#client_properties: std::collections::HashMap<String, String>,
+    pub r#client_properties: std::collections::BTreeMap<String, String>,
     /// The ARN of Kafka action's VPC `aws.iot.TopicRuleDestination`.
     #[builder(into)]
     pub r#destination_arn: String,

@@ -378,7 +378,7 @@ pub mod aws_node_pool {
         /// `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Autoscaler configuration for this node pool.
         #[builder(into)]
@@ -443,7 +443,7 @@ pub mod aws_node_pool {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Autoscaler configuration for this node pool.
         pub autoscaling: pulumi_gestalt_rust::Output<
@@ -458,7 +458,7 @@ pub mod aws_node_pool {
         /// Output only. The time at which this node pool was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Allows clients to perform consistent read-modify-writes through optimistic concurrency control. May be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
         pub etag: pulumi_gestalt_rust::Output<String>,

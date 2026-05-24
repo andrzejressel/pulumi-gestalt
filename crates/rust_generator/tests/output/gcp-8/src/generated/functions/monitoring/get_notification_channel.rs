@@ -15,7 +15,7 @@ pub mod get_notification_channel {
         /// NotificationChannelDescriptor schema) to filter the notification channels by.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
@@ -31,7 +31,7 @@ pub mod get_notification_channel {
         /// User-provided key-value labels to filter by.
         #[builder(into, default)]
         pub user_labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -46,7 +46,7 @@ pub mod get_notification_channel {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Configuration fields that define the channel and its behavior.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The full REST resource name for this channel. The syntax is:
         /// `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
@@ -60,7 +60,7 @@ pub mod get_notification_channel {
         pub type_: pulumi_gestalt_rust::Output<Option<String>>,
         /// User-supplied key/value data that does not need to conform to the corresponding NotificationChannelDescriptor's schema, unlike the labels field.
         pub user_labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Indicates whether this channel has been verified or not.
         pub verification_status: pulumi_gestalt_rust::Output<String>,

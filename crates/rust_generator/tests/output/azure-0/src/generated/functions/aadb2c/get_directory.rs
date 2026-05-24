@@ -30,7 +30,9 @@ pub mod get_directory {
         /// Billing SKU for the B2C tenant. See [official docs](https://aka.ms/b2cBilling) for more information.
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the AAD B2C Directory.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Tenant ID for the AAD B2C tenant.
         pub tenant_id: pulumi_gestalt_rust::Output<String>,
     }

@@ -20,7 +20,7 @@ pub struct GetSharedImageVersionsImage {
     pub r#name: String,
     /// A mapping of tags assigned to the Shared Image.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
     /// One or more `target_region` blocks as documented below.
     #[builder(into)]
     pub r#target_regions: Vec<super::super::types::compute::GetSharedImageVersionsImageTargetRegion>,

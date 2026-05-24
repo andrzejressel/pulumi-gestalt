@@ -8,7 +8,7 @@ pub struct ServiceConnectionPolicyPscConnectionErrorInfo {
     pub r#domain: Option<String>,
     /// Additional structured details about this error.
     #[builder(into)]
-    pub r#metadata: Option<std::collections::HashMap<String, String>>,
+    pub r#metadata: Option<std::collections::BTreeMap<String, String>>,
     /// The reason of the error.
     #[builder(into)]
     pub r#reason: Option<String>,

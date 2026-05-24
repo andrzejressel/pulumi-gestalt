@@ -25,7 +25,7 @@ pub mod get_key_pair {
         /// Any tags assigned to the Key Pair.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -49,7 +49,9 @@ pub mod get_key_pair {
         /// Public key material.
         pub public_key: pulumi_gestalt_rust::Output<String>,
         /// Any tags assigned to the Key Pair.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

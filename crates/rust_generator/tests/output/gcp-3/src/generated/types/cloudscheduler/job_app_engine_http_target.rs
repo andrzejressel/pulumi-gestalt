@@ -17,7 +17,7 @@ pub struct JobAppEngineHttpTarget {
     /// This map contains the header field names and values.
     /// Headers can be set when the job is created.
     #[builder(into)]
-    pub r#headers: Option<std::collections::HashMap<String, String>>,
+    pub r#headers: Option<std::collections::BTreeMap<String, String>>,
     /// Which HTTP method to use for the request.
     #[builder(into)]
     pub r#http_method: Option<String>,

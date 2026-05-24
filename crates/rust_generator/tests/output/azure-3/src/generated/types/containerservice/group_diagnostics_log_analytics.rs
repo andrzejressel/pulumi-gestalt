@@ -8,7 +8,7 @@ pub struct GroupDiagnosticsLogAnalytics {
     pub r#log_type: Option<String>,
     /// Any metadata required for Log Analytics. Changing this forces a new resource to be created.
     #[builder(into)]
-    pub r#metadata: Option<std::collections::HashMap<String, String>>,
+    pub r#metadata: Option<std::collections::BTreeMap<String, String>>,
     /// The Workspace ID of the Log Analytics Workspace. Changing this forces a new resource to be created.
     #[builder(into)]
     pub r#workspace_id: String,

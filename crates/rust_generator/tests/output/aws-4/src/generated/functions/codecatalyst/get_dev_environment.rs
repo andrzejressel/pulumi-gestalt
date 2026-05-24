@@ -34,7 +34,7 @@ pub mod get_dev_environment {
         pub space_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -76,7 +76,9 @@ pub mod get_dev_environment {
         pub status: pulumi_gestalt_rust::Output<String>,
         /// The reason for the status.
         pub status_reason: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

@@ -8,7 +8,7 @@ pub struct ContainerMountVolumeOptions {
     pub r#driver_name: Option<String>,
     /// key/value map of driver specific options.
     #[builder(into)]
-    pub r#driver_options: Option<std::collections::HashMap<String, String>>,
+    pub r#driver_options: Option<std::collections::BTreeMap<String, String>>,
     /// User-defined key/value metadata.
     #[builder(into)]
     pub r#labels: Option<Vec<super::types::ContainerMountVolumeOptionsLabel>>,

@@ -11,7 +11,7 @@ pub mod get_queue {
         /// A mapping of MetaData for this Queue.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Queue.
         #[builder(into)]
@@ -26,7 +26,7 @@ pub mod get_queue {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of MetaData for this Queue.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The Resource Manager ID of this Storage Queue.

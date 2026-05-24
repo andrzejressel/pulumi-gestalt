@@ -26,7 +26,7 @@ pub struct ConnectionProfileCloudsqlSettings {
     pub r#data_disk_type: Option<String>,
     /// The database flags passed to the Cloud SQL instance at startup.
     #[builder(into)]
-    pub r#database_flags: Option<std::collections::HashMap<String, String>>,
+    pub r#database_flags: Option<std::collections::BTreeMap<String, String>>,
     /// The database engine type and version.
     /// Currently supported values located at https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.connectionProfiles#sqldatabaseversion
     #[builder(into)]
@@ -59,7 +59,7 @@ pub struct ConnectionProfileCloudsqlSettings {
     pub r#tier: Option<String>,
     /// The resource labels for a Cloud SQL instance to use to annotate any related underlying resources such as Compute Engine VMs.
     #[builder(into)]
-    pub r#user_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#user_labels: Option<std::collections::BTreeMap<String, String>>,
     /// The Google Cloud Platform zone where your Cloud SQL datdabse instance is located.
     #[builder(into)]
     pub r#zone: Option<String>,

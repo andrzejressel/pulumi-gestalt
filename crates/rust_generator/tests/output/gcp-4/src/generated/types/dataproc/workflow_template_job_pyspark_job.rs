@@ -23,7 +23,7 @@ pub struct WorkflowTemplateJobPysparkJob {
     pub r#main_python_file_uri: String,
     /// A mapping of property names to values, used to configure PySpark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// HCFS file URIs of Python files to pass to the PySpark framework. Supported file types: .py, .egg, and .zip.
     #[builder(into)]
     pub r#python_file_uris: Option<Vec<String>>,

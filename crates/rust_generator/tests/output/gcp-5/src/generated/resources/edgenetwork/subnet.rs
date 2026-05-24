@@ -128,7 +128,7 @@ pub mod subnet {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Google Cloud region to which the target Distributed Cloud Edge zone belongs.
         #[builder(into)]
@@ -169,7 +169,7 @@ pub mod subnet {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ranges of ipv4 addresses that are owned by this subnetwork, in CIDR format.
         pub ipv4_cidrs: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -180,7 +180,7 @@ pub mod subnet {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Google Cloud region to which the target Distributed Cloud Edge zone belongs.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -196,7 +196,7 @@ pub mod subnet {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Current stage of the resource to the device by config push.
         pub state: pulumi_gestalt_rust::Output<String>,

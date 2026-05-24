@@ -158,7 +158,7 @@ pub mod scaling_plan {
         /// A mapping of tags which should be assigned to the Virtual Desktop Scaling Plan .
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the Time Zone which should be used by the Scaling Plan for time based events, [the possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/).
         #[builder(into)]
@@ -193,7 +193,7 @@ pub mod scaling_plan {
         >,
         /// A mapping of tags which should be assigned to the Virtual Desktop Scaling Plan .
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the Time Zone which should be used by the Scaling Plan for time based events, [the possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/).
         pub time_zone: pulumi_gestalt_rust::Output<String>,

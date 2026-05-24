@@ -28,7 +28,7 @@ pub mod get_function {
         >,
         pub description: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub environment: pulumi_gestalt_rust::Output<String>,
         pub event_triggers: pulumi_gestalt_rust::Output<
@@ -38,13 +38,13 @@ pub mod get_function {
         pub id: pulumi_gestalt_rust::Output<String>,
         pub kms_key_name: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub location: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub service_configs: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::cloudfunctionsv2::GetFunctionServiceConfig>,

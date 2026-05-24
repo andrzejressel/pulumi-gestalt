@@ -37,7 +37,9 @@ pub mod get_secret {
         /// The Versionless ID of the Key Vault Secret. This property allows other Azure Services (that support it) to auto-rotate their value when the Key Vault Secret is updated.
         pub resource_versionless_id: pulumi_gestalt_rust::Output<String>,
         /// Any tags assigned to this resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The value of the Key Vault Secret.
         pub value: pulumi_gestalt_rust::Output<String>,
         pub version: pulumi_gestalt_rust::Output<Option<String>>,

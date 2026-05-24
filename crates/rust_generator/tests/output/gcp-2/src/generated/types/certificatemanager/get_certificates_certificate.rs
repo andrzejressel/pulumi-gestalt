@@ -7,13 +7,13 @@ pub struct GetCertificatesCertificate {
     #[builder(into)]
     pub r#description: String,
     #[builder(into)]
-    pub r#effective_labels: std::collections::HashMap<String, String>,
+    pub r#effective_labels: std::collections::BTreeMap<String, String>,
     /// Set of label tags associated with the Certificate resource.
     /// 
     /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
     /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The Certificate Manager location. If not specified, "global" is used.
     #[builder(into)]
     pub r#location: String,
@@ -34,7 +34,7 @@ pub struct GetCertificatesCertificate {
     /// The combination of labels configured directly on the resource
     ///  and default labels configured on the provider.
     #[builder(into)]
-    pub r#pulumi_labels: std::collections::HashMap<String, String>,
+    pub r#pulumi_labels: std::collections::BTreeMap<String, String>,
     /// The list of Subject Alternative Names of dnsName type defined in the certificate (see RFC 5280 4.2.1.6)
     #[builder(into)]
     pub r#san_dnsnames: Vec<String>,

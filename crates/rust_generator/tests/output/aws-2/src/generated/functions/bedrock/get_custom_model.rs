@@ -20,7 +20,7 @@ pub mod get_custom_model {
         pub creation_time: pulumi_gestalt_rust::Output<String>,
         /// Hyperparameter values associated with this model.
         pub hyperparameters: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Job ARN associated with this model.
@@ -29,7 +29,7 @@ pub mod get_custom_model {
         pub job_name: pulumi_gestalt_rust::Output<String>,
         /// Key-value mapping of tags for the fine-tuning job.
         pub job_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// ARN associated with this model.
         pub model_arn: pulumi_gestalt_rust::Output<String>,
@@ -40,7 +40,7 @@ pub mod get_custom_model {
         pub model_name: pulumi_gestalt_rust::Output<String>,
         /// Key-value mapping of tags for the model.
         pub model_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Output data configuration associated with this custom model.
         pub output_data_configs: pulumi_gestalt_rust::Output<

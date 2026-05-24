@@ -26,7 +26,7 @@ pub struct GetSubscriptionsSubscription {
     pub r#subscription_id: String,
     /// A mapping of tags assigned to the resource.
     #[builder(into)]
-    pub r#tags: std::collections::HashMap<String, String>,
+    pub r#tags: std::collections::BTreeMap<String, String>,
     /// The subscription tenant ID.
     #[builder(into)]
     pub r#tenant_id: String,

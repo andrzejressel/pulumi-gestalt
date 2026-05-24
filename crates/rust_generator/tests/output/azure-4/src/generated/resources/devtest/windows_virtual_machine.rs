@@ -123,7 +123,7 @@ pub mod windows_virtual_machine {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Username associated with the local administrator on this Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -178,7 +178,7 @@ pub mod windows_virtual_machine {
         pub storage_type: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The unique immutable identifier of the Virtual Machine.
         pub unique_identifier: pulumi_gestalt_rust::Output<String>,

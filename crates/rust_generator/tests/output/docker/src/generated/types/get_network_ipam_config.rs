@@ -5,7 +5,7 @@
 pub struct GetNetworkIpamConfig {
     /// Auxiliary IPv4 or IPv6 addresses used by Network driver
     #[builder(into)]
-    pub r#aux_address: Option<std::collections::HashMap<String, String>>,
+    pub r#aux_address: Option<std::collections::BTreeMap<String, String>>,
     /// The IP address of the gateway
     #[builder(into)]
     pub r#gateway: Option<String>,

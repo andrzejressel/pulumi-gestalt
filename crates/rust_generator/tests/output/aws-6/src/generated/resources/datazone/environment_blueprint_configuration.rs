@@ -70,9 +70,9 @@ pub mod environment_blueprint_configuration {
         #[builder(into, default)]
         pub regional_parameters: pulumi_gestalt_rust::Input<
             Option<
-                std::collections::HashMap<
+                std::collections::BTreeMap<
                     String,
-                    std::collections::HashMap<String, String>,
+                    std::collections::BTreeMap<String, String>,
                 >,
             >,
         >,
@@ -99,9 +99,9 @@ pub mod environment_blueprint_configuration {
         /// Parameters for each region in which the blueprint is enabled
         pub regional_parameters: pulumi_gestalt_rust::Output<
             Option<
-                std::collections::HashMap<
+                std::collections::BTreeMap<
                     String,
-                    std::collections::HashMap<String, String>,
+                    std::collections::BTreeMap<String, String>,
                 >,
             >,
         >,

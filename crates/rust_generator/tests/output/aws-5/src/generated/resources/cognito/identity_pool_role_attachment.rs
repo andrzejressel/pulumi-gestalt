@@ -29,7 +29,9 @@ pub mod identity_pool_role_attachment {
         >,
         /// The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.
         #[builder(into)]
-        pub roles: pulumi_gestalt_rust::Input<std::collections::HashMap<String, String>>,
+        pub roles: pulumi_gestalt_rust::Input<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     #[allow(dead_code)]
     pub struct IdentityPoolRoleAttachmentResult {
@@ -48,7 +50,7 @@ pub mod identity_pool_role_attachment {
         >,
         /// The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.
         pub roles: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

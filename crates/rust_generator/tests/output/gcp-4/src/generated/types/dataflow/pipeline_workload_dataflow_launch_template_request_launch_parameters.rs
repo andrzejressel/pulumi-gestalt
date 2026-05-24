@@ -14,11 +14,11 @@ pub struct PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters {
     /// The runtime parameters to pass to the job.
     /// 'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.'
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job. Only applicable when updating a pipeline.
     /// 'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.'
     #[builder(into)]
-    pub r#transform_name_mapping: Option<std::collections::HashMap<String, String>>,
+    pub r#transform_name_mapping: Option<std::collections::BTreeMap<String, String>>,
     /// If set, replace the existing pipeline with the name specified by jobName with this pipeline, preserving state.
     #[builder(into)]
     pub r#update: Option<bool>,

@@ -14,7 +14,7 @@ pub mod get_access_point {
         /// Key-value mapping of resource tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -38,7 +38,9 @@ pub mod get_access_point {
             Vec<super::super::super::types::efs::GetAccessPointRootDirectory>,
         >,
         /// Key-value mapping of resource tags.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

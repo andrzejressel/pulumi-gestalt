@@ -169,7 +169,7 @@ pub mod service {
         /// Specifies a mapping of tags which should be assigned to this Search Service.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -241,7 +241,7 @@ pub mod service {
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// Specifies a mapping of tags which should be assigned to this Search Service.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

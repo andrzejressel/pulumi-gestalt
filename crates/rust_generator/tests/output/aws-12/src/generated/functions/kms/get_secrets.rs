@@ -20,7 +20,7 @@ pub mod get_secrets {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Map containing each `secret` `name` as the key with its decrypted plaintext value
         pub plaintext: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub secrets: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::kms::GetSecretsSecret>,

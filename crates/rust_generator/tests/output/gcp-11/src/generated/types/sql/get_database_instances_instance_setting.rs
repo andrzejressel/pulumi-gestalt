@@ -82,7 +82,7 @@ pub struct GetDatabaseInstancesInstanceSetting {
     pub r#time_zone: String,
     /// A set of key/value user label pairs to assign to the instance.
     #[builder(into)]
-    pub r#user_labels: std::collections::HashMap<String, String>,
+    pub r#user_labels: std::collections::BTreeMap<String, String>,
     /// Used to make sure changes to the settings block are atomic.
     #[builder(into)]
     pub r#version: i32,

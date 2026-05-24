@@ -5,7 +5,7 @@
 pub struct GroupContainerLivenessProbeHttpGet {
     /// A map of HTTP headers used to access on the container. Changing this forces a new resource to be created.
     #[builder(into)]
-    pub r#http_headers: Option<std::collections::HashMap<String, String>>,
+    pub r#http_headers: Option<std::collections::BTreeMap<String, String>>,
     /// Path to access on the HTTP server. Changing this forces a new resource to be created.
     #[builder(into)]
     pub r#path: Option<String>,

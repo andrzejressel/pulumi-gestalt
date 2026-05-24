@@ -5,10 +5,10 @@
 pub struct DeliveryPipelineSerialPipelineStageDeployParameter {
     /// Optional. Deploy parameters are applied to targets with match labels. If unspecified, deploy parameters are applied to all targets (including child targets of a multi-target).
     #[builder(into)]
-    pub r#match_target_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#match_target_labels: Option<std::collections::BTreeMap<String, String>>,
     /// Required. Values are deploy parameters in key-value pairs.
     #[builder(into)]
-    pub r#values: std::collections::HashMap<String, String>,
+    pub r#values: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DeliveryPipelineSerialPipelineStageDeployParameter {

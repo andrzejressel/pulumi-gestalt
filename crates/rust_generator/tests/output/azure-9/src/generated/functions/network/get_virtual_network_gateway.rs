@@ -53,7 +53,9 @@ pub mod get_virtual_network_gateway {
         /// Configuration of the size and capacity of the Virtual Network Gateway.
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The type of the Virtual Network Gateway.
         pub type_: pulumi_gestalt_rust::Output<String>,
         /// A `vpn_client_configuration` block which is documented below.

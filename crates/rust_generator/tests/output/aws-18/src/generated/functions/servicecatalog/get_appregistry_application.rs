@@ -16,7 +16,7 @@ pub mod get_appregistry_application {
     pub struct GetAppregistryApplicationResult {
         /// A map with a single tag key-value pair used to associate resources with the application.
         pub application_tag: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// ARN (Amazon Resource Name) of the application.
         pub arn: pulumi_gestalt_rust::Output<String>,
@@ -26,7 +26,9 @@ pub mod get_appregistry_application {
         /// Name of the application.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the Application. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

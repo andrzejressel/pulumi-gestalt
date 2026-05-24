@@ -53,7 +53,7 @@ pub struct WorkstationConfigHostGceInstance {
     /// Keys must be in the format `tagKeys/{tag_key_id}`, and
     /// values are in the format `tagValues/456`.
     #[builder(into)]
-    pub r#vm_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#vm_tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WorkstationConfigHostGceInstance {

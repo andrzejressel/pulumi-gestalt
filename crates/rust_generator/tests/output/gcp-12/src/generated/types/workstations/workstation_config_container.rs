@@ -12,7 +12,7 @@ pub struct WorkstationConfigContainer {
     /// Environment variables passed to the container.
     /// The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE".
     #[builder(into)]
-    pub r#env: Option<std::collections::HashMap<String, String>>,
+    pub r#env: Option<std::collections::BTreeMap<String, String>>,
     /// Docker image defining the container. This image must be accessible by the config's service account.
     #[builder(into)]
     pub r#image: Option<String>,

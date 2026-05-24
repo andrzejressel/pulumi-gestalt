@@ -25,7 +25,7 @@ pub mod get_coip_pool {
         /// which take the following arguments:
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -41,7 +41,9 @@ pub mod get_coip_pool {
         /// Set of CIDR blocks in pool
         pub pool_cidrs: pulumi_gestalt_rust::Output<Vec<String>>,
         pub pool_id: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

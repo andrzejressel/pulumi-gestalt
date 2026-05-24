@@ -5,7 +5,7 @@
 pub struct AliasRoutingConfig {
     /// A map that defines the proportion of events that should be sent to different versions of a lambda function.
     #[builder(into)]
-    pub r#additional_version_weights: Option<std::collections::HashMap<String, f64>>,
+    pub r#additional_version_weights: Option<std::collections::BTreeMap<String, f64>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AliasRoutingConfig {

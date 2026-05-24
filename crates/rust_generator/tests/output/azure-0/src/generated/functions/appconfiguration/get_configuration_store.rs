@@ -79,7 +79,9 @@ pub mod get_configuration_store {
         /// The number of days that items should be retained for once soft-deleted.
         pub soft_delete_retention_days: pulumi_gestalt_rust::Output<i32>,
         /// A mapping of tags assigned to the App Configuration.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

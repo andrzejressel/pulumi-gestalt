@@ -14,7 +14,7 @@ pub mod get_plan {
         /// Metadata that you can assign to help organize the plans you create.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -31,7 +31,9 @@ pub mod get_plan {
             Vec<super::super::super::types::backup::GetPlanRule>,
         >,
         /// Metadata that you can assign to help organize the plans you create.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Unique, randomly generated, Unicode, UTF-8 encoded string that serves as the version ID of the backup plan.
         pub version: pulumi_gestalt_rust::Output<String>,
     }

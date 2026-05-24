@@ -10,7 +10,7 @@ pub struct ClusterClusterConfigEndpointConfig {
     /// The map of port descriptions to URLs. Will only be populated if
     /// `enable_http_port_access` is true.
     #[builder(into)]
-    pub r#http_ports: Option<std::collections::HashMap<String, String>>,
+    pub r#http_ports: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterClusterConfigEndpointConfig {

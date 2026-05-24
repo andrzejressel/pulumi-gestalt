@@ -179,7 +179,7 @@ pub mod topic {
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Tracing mode of an Amazon SNS topic. Valid values: `"PassThrough"`, `"Active"`.
         #[builder(into, default)]
@@ -268,11 +268,11 @@ pub mod topic {
         pub sqs_success_feedback_sample_rate: pulumi_gestalt_rust::Output<Option<i32>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Tracing mode of an Amazon SNS topic. Valid values: `"PassThrough"`, `"Active"`.
         pub tracing_config: pulumi_gestalt_rust::Output<String>,

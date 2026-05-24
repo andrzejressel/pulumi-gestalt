@@ -14,7 +14,7 @@ pub struct MetastoreServiceHiveMetastoreConfig {
     /// A mapping of Hive metastore configuration key-value pairs to apply to the Hive metastore (configured in hive-site.xml).
     /// The mappings override system defaults (some keys cannot be overridden)
     #[builder(into)]
-    pub r#config_overrides: Option<std::collections::HashMap<String, String>>,
+    pub r#config_overrides: Option<std::collections::BTreeMap<String, String>>,
     /// The protocol to use for the metastore service endpoint. If unspecified, defaults to `THRIFT`.
     /// Default value is `THRIFT`.
     /// Possible values are: `THRIFT`, `GRPC`.

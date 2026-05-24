@@ -42,7 +42,7 @@ pub mod get_catalog_table {
         pub owner: pulumi_gestalt_rust::Output<String>,
         /// Map of initialization parameters for the SerDe, in key-value form.
         pub parameters: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Configuration block for a maximum of 3 partition indexes. See `partition_index` below.
         pub partition_indices: pulumi_gestalt_rust::Output<

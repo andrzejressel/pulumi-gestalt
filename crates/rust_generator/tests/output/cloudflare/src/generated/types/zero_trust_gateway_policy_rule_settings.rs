@@ -5,7 +5,7 @@
 pub struct ZeroTrustGatewayPolicyRuleSettings {
     /// Add custom headers to allowed requests in the form of key-value pairs.
     #[builder(into)]
-    pub r#add_headers: Option<std::collections::HashMap<String, String>>,
+    pub r#add_headers: Option<std::collections::BTreeMap<String, String>>,
     /// Allow parent MSP accounts to enable bypass their children's rules.
     #[builder(into)]
     pub r#allow_child_bypass: Option<bool>,

@@ -10,7 +10,7 @@ pub struct PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersEnvironm
     /// 'Example: { "name": "wrench", "mass": "1kg", "count": "3" }.'
     /// 'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.'
     #[builder(into)]
-    pub r#additional_user_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#additional_user_labels: Option<std::collections::BTreeMap<String, String>>,
     /// Whether to bypass the safety checks for the job's temporary directory. Use with caution.
     #[builder(into)]
     pub r#bypass_temp_dir_validation: Option<bool>,

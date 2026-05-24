@@ -10,7 +10,7 @@ pub struct RegionResizeRequestStatusErrorErrorErrorDetailErrorInfo {
     /// (Output)
     /// Additional structured details about this error.
     #[builder(into)]
-    pub r#metadatas: Option<std::collections::HashMap<String, String>>,
+    pub r#metadatas: Option<std::collections::BTreeMap<String, String>>,
     /// (Output)
     /// The reason of the error. This is a constant value that identifies the proximate cause of the error. Error reasons are unique within a particular domain of errors.
     #[builder(into)]

@@ -86,7 +86,7 @@ pub mod notification {
         /// A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription
         #[builder(into, default)]
         pub custom_attributes: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `"OBJECT_FINALIZE"`, `"OBJECT_METADATA_UPDATE"`, `"OBJECT_DELETE"`, `"OBJECT_ARCHIVE"`
         #[builder(into, default)]
@@ -117,7 +117,7 @@ pub mod notification {
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription
         pub custom_attributes: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `"OBJECT_FINALIZE"`, `"OBJECT_METADATA_UPDATE"`, `"OBJECT_DELETE"`, `"OBJECT_ARCHIVE"`
         pub event_types: pulumi_gestalt_rust::Output<Option<Vec<String>>>,

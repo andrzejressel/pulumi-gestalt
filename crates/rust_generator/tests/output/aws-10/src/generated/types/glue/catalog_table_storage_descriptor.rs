@@ -29,7 +29,7 @@ pub struct CatalogTableStorageDescriptor {
     pub r#output_format: Option<String>,
     /// User-supplied properties in key-value form.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Object that references a schema stored in the AWS Glue Schema Registry. When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference. See Schema Reference below.
     #[builder(into)]
     pub r#schema_reference: Option<Box<super::super::types::glue::CatalogTableStorageDescriptorSchemaReference>>,

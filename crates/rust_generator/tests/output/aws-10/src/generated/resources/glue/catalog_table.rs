@@ -100,7 +100,7 @@ pub mod catalog_table {
         /// Properties associated with this table, as a list of key-value pairs.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Configuration block for a maximum of 3 partition indexes. See `partition_index` below.
         #[builder(into, default)]
@@ -162,7 +162,7 @@ pub mod catalog_table {
         pub owner: pulumi_gestalt_rust::Output<Option<String>>,
         /// Properties associated with this table, as a list of key-value pairs.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Configuration block for a maximum of 3 partition indexes. See `partition_index` below.
         pub partition_indices: pulumi_gestalt_rust::Output<

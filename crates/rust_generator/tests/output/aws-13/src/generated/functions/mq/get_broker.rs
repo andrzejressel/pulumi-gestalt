@@ -16,7 +16,7 @@ pub mod get_broker {
         pub broker_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -54,7 +54,9 @@ pub mod get_broker {
         pub security_groups: pulumi_gestalt_rust::Output<Vec<String>>,
         pub storage_type: pulumi_gestalt_rust::Output<String>,
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub users: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::mq::GetBrokerUser>,
         >,

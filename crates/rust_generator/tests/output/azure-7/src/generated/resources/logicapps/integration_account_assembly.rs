@@ -69,7 +69,7 @@ pub mod integration_account_assembly {
         /// The metadata of the Logic App Integration Account Assembly.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Assembly Artifact. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -97,7 +97,7 @@ pub mod integration_account_assembly {
         pub integration_account_name: pulumi_gestalt_rust::Output<String>,
         /// The metadata of the Logic App Integration Account Assembly.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Assembly Artifact. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

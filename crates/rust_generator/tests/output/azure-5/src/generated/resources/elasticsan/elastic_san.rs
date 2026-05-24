@@ -73,7 +73,7 @@ pub mod elastic_san {
         /// A mapping of tags which should be assigned to the Elastic SAN resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Logical zone for the Elastic SAN resource. Changing this forces a new resource to be created.
         ///
@@ -108,7 +108,7 @@ pub mod elastic_san {
         >,
         /// A mapping of tags which should be assigned to the Elastic SAN resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Total Provisioned IOps of the Elastic SAN resource.
         pub total_iops: pulumi_gestalt_rust::Output<i32>,

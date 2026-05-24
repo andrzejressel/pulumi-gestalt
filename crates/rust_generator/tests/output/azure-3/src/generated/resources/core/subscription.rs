@@ -115,7 +115,7 @@ pub mod subscription {
         /// A mapping of tags to assign to the Subscription.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The workload type of the Subscription. Possible values are `Production` (default) and `DevTest`. Changing this forces a new Subscription to be created.
         #[builder(into, default)]
@@ -142,7 +142,7 @@ pub mod subscription {
         pub subscription_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the Subscription.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Tenant to which the subscription belongs.
         pub tenant_id: pulumi_gestalt_rust::Output<String>,

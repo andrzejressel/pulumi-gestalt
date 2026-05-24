@@ -65,7 +65,7 @@ pub mod watchlist_item {
         /// The key value pairs of the Sentinel Watchlist Item.
         #[builder(into)]
         pub properties: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the Sentinel Watchlist that this Item resides in. Changing this forces a new Sentinel Watchlist Item to be created.
         #[builder(into)]
@@ -82,7 +82,7 @@ pub mod watchlist_item {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The key value pairs of the Sentinel Watchlist Item.
         pub properties: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the Sentinel Watchlist that this Item resides in. Changing this forces a new Sentinel Watchlist Item to be created.
         pub watchlist_id: pulumi_gestalt_rust::Output<String>,

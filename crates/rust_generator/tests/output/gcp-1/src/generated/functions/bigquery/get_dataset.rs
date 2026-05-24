@@ -34,7 +34,7 @@ pub mod get_dataset {
         pub delete_contents_on_destroy: pulumi_gestalt_rust::Output<bool>,
         pub description: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub etag: pulumi_gestalt_rust::Output<String>,
         pub external_catalog_dataset_options: pulumi_gestalt_rust::Output<
@@ -50,17 +50,17 @@ pub mod get_dataset {
         pub id: pulumi_gestalt_rust::Output<String>,
         pub is_case_insensitive: pulumi_gestalt_rust::Output<bool>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub last_modified_time: pulumi_gestalt_rust::Output<i32>,
         pub location: pulumi_gestalt_rust::Output<String>,
         pub max_time_travel_hours: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub resource_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub self_link: pulumi_gestalt_rust::Output<String>,
         pub storage_billing_model: pulumi_gestalt_rust::Output<String>,

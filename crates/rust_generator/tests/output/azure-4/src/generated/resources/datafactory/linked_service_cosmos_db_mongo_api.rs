@@ -61,7 +61,7 @@ pub mod linked_service_cosmos_db_mongo_api {
         /// The following supported arguments are specific to CosmosDB Linked Service:
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         #[builder(into, default)]
@@ -87,7 +87,7 @@ pub mod linked_service_cosmos_db_mongo_api {
         /// A map of parameters to associate with the Data Factory Linked Service.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Whether API server version is 3.2 or higher. Defaults to `false`.
         #[builder(into, default)]
@@ -104,7 +104,7 @@ pub mod linked_service_cosmos_db_mongo_api {
         ///
         /// The following supported arguments are specific to CosmosDB Linked Service:
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -122,7 +122,7 @@ pub mod linked_service_cosmos_db_mongo_api {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of parameters to associate with the Data Factory Linked Service.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Whether API server version is 3.2 or higher. Defaults to `false`.
         pub server_version_is32_or_higher: pulumi_gestalt_rust::Output<Option<bool>>,

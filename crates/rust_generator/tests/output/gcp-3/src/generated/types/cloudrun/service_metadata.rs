@@ -24,13 +24,13 @@ pub struct ServiceMetadata {
     /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
     /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
     #[builder(into)]
-    pub r#annotations: Option<std::collections::HashMap<String, String>>,
+    pub r#annotations: Option<std::collections::BTreeMap<String, String>>,
     #[builder(into)]
-    pub r#effective_annotations: Option<std::collections::HashMap<String, String>>,
+    pub r#effective_annotations: Option<std::collections::BTreeMap<String, String>>,
     /// (Output)
     /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
     #[builder(into)]
-    pub r#effective_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#effective_labels: Option<std::collections::BTreeMap<String, String>>,
     /// (Output)
     /// A sequence number representing a specific generation of the desired state.
     #[builder(into)]
@@ -41,7 +41,7 @@ pub struct ServiceMetadata {
     /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
     /// Please refer to the field `effective_labels` for all of the labels present on the resource.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// In Cloud Run the namespace must be equal to either the
     /// project ID or project number.
     #[builder(into)]
@@ -50,7 +50,7 @@ pub struct ServiceMetadata {
     /// The combination of labels configured directly on the resource
     /// and default labels configured on the provider.
     #[builder(into)]
-    pub r#pulumi_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#pulumi_labels: Option<std::collections::BTreeMap<String, String>>,
     /// (Output)
     /// An opaque value that represents the internal version of this object that
     /// can be used by clients to determine when objects have changed. May be used

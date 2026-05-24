@@ -11,7 +11,7 @@ pub mod get_workspace {
         /// Tags assigned to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Prometheus workspace ID.
         #[builder(into)]
@@ -34,7 +34,9 @@ pub mod get_workspace {
         /// Status of the Prometheus workspace.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// Tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub workspace_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

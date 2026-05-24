@@ -14,7 +14,7 @@ pub struct JobTemplateJobTemplateData {
     pub r#job_driver: Box<super::super::types::emrcontainers::JobTemplateJobTemplateDataJobDriver>,
     /// The tags assigned to jobs started using the job template.
     #[builder(into)]
-    pub r#job_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#job_tags: Option<std::collections::BTreeMap<String, String>>,
     /// The release version of Amazon EMR.
     #[builder(into)]
     pub r#release_label: String,

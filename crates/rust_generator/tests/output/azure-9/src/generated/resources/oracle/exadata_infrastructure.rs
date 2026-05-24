@@ -82,7 +82,7 @@ pub mod exadata_infrastructure {
         /// A mapping of tags which should be assigned to the Cloud Exadata Infrastructure.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Cloud Exadata Infrastructure zones. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into)]
@@ -117,7 +117,7 @@ pub mod exadata_infrastructure {
         pub storage_count: pulumi_gestalt_rust::Output<i32>,
         /// A mapping of tags which should be assigned to the Cloud Exadata Infrastructure.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Cloud Exadata Infrastructure zones. Changing this forces a new Cloud Exadata Infrastructure to be created.
         pub zones: pulumi_gestalt_rust::Output<Vec<String>>,

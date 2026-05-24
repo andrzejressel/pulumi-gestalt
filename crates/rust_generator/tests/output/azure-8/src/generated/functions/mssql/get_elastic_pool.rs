@@ -45,7 +45,9 @@ pub mod get_elastic_pool {
             Vec<super::super::super::types::mssql::GetElasticPoolSkus>,
         >,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Whether or not this elastic pool is zone redundant.
         pub zone_redundant: pulumi_gestalt_rust::Output<bool>,
     }

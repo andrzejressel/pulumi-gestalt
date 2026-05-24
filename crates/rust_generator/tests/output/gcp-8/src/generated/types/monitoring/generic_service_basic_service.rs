@@ -6,7 +6,7 @@ pub struct GenericServiceBasicService {
     /// Labels that specify the resource that emits the monitoring data
     /// which is used for SLO reporting of this `Service`.
     #[builder(into)]
-    pub r#service_labels: Option<std::collections::HashMap<String, String>>,
+    pub r#service_labels: Option<std::collections::BTreeMap<String, String>>,
     /// The type of service that this basic service defines, e.g.
     /// APP_ENGINE service type
     #[builder(into)]

@@ -17,7 +17,7 @@ pub struct GetIndexDocumentMetadataConfigurationUpdateRelevance {
     pub r#rank_order: String,
     /// A list of values that should be given a different boost when they appear in the result list. For more information, refer to [ValueImportanceMap](https://docs.aws.amazon.com/kendra/latest/APIReference/API_Relevance.html#Kendra-Type-Relevance-ValueImportanceMap).
     #[builder(into)]
-    pub r#values_importance_map: std::collections::HashMap<String, i32>,
+    pub r#values_importance_map: std::collections::BTreeMap<String, i32>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetIndexDocumentMetadataConfigurationUpdateRelevance {

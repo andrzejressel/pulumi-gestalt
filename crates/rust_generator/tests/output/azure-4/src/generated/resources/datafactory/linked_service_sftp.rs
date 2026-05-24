@@ -61,7 +61,7 @@ pub mod linked_service_sftp {
         /// The following supported arguments are specific to SFTP Linked Service:
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         #[builder(into, default)]
@@ -90,7 +90,7 @@ pub mod linked_service_sftp {
         /// A map of parameters to associate with the Data Factory Linked Service.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Password to logon to the SFTP Server for Basic Authentication.
         #[builder(into)]
@@ -116,7 +116,7 @@ pub mod linked_service_sftp {
         ///
         /// The following supported arguments are specific to SFTP Linked Service:
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -136,7 +136,7 @@ pub mod linked_service_sftp {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of parameters to associate with the Data Factory Linked Service.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Password to logon to the SFTP Server for Basic Authentication.
         pub password: pulumi_gestalt_rust::Output<String>,

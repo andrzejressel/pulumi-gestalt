@@ -56,12 +56,12 @@ pub mod kubernetes_cluster_extension {
         /// Configuration settings that are sensitive, as name-value pairs for configuring this extension.
         #[builder(into, default)]
         pub configuration_protected_settings: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Configuration settings, as name-value pairs for configuring this extension.
         #[builder(into, default)]
         pub configuration_settings: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the type of extension. It must be one of the extension types registered with Microsoft.KubernetesConfiguration by the Extension publisher. For more information, please refer to [Available Extensions for AKS](https://learn.microsoft.com/en-us/azure/aks/cluster-extensions?tabs=azure-cli#currently-available-extensions). Changing this forces a new Kubernetes Cluster Extension to be created.
         #[builder(into)]
@@ -104,11 +104,11 @@ pub mod kubernetes_cluster_extension {
         pub cluster_id: pulumi_gestalt_rust::Output<String>,
         /// Configuration settings that are sensitive, as name-value pairs for configuring this extension.
         pub configuration_protected_settings: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Configuration settings, as name-value pairs for configuring this extension.
         pub configuration_settings: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The current version of the extension.
         pub current_version: pulumi_gestalt_rust::Output<String>,

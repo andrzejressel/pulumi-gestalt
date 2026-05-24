@@ -26,7 +26,7 @@ pub mod get_local_gateway_virtual_interface_group {
         /// Key-value map of resource tags, each pair of which must exactly match a pair on the desired local gateway route table.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -44,7 +44,9 @@ pub mod get_local_gateway_virtual_interface_group {
         pub local_gateway_virtual_interface_ids: pulumi_gestalt_rust::Output<
             Vec<String>,
         >,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

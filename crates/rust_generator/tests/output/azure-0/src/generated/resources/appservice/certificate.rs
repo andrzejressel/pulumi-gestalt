@@ -76,7 +76,7 @@ pub mod certificate {
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -122,7 +122,7 @@ pub mod certificate {
         /// The subject name of the certificate.
         pub subject_name: pulumi_gestalt_rust::Output<String>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The thumbprint for the certificate.
         pub thumbprint: pulumi_gestalt_rust::Output<String>,

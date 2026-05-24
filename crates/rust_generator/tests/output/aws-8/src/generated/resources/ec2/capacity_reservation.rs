@@ -72,7 +72,7 @@ pub mod capacity_reservation {
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Indicates the tenancy of the Capacity Reservation. Specify either `default` or `dedicated`.
         #[builder(into, default)]
@@ -113,11 +113,11 @@ pub mod capacity_reservation {
         pub placement_group_arn: pulumi_gestalt_rust::Output<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Indicates the tenancy of the Capacity Reservation. Specify either `default` or `dedicated`.
         pub tenancy: pulumi_gestalt_rust::Output<Option<String>>,

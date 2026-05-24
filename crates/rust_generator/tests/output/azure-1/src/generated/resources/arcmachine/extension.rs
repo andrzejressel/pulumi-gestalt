@@ -77,7 +77,7 @@ pub mod extension {
         /// A mapping of tags which should be assigned to the Hybrid Compute Machine Extension.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the type of the extension. For example `CustomScriptExtension` or `AzureMonitorLinuxAgent`. Changing this forces a new Hybrid Compute Machine Extension to be created.
         #[builder(into)]
@@ -117,7 +117,7 @@ pub mod extension {
         pub settings: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the Hybrid Compute Machine Extension.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the type of the extension. For example `CustomScriptExtension` or `AzureMonitorLinuxAgent`. Changing this forces a new Hybrid Compute Machine Extension to be created.
         pub type_: pulumi_gestalt_rust::Output<String>,

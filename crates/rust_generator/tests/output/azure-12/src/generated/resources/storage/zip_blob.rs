@@ -22,7 +22,7 @@ pub mod zip_blob {
         pub encryption_scope: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -55,7 +55,7 @@ pub mod zip_blob {
         pub content_type: pulumi_gestalt_rust::Output<Option<String>>,
         pub encryption_scope: pulumi_gestalt_rust::Output<Option<String>>,
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub parallelism: pulumi_gestalt_rust::Output<Option<i32>>,

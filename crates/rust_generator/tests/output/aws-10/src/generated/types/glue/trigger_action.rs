@@ -5,7 +5,7 @@
 pub struct TriggerAction {
     /// Arguments to be passed to the job. You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.
     #[builder(into)]
-    pub r#arguments: Option<std::collections::HashMap<String, String>>,
+    pub r#arguments: Option<std::collections::BTreeMap<String, String>>,
     /// The name of the crawler to be executed. Conflicts with `job_name`.
     #[builder(into)]
     pub r#crawler_name: Option<String>,

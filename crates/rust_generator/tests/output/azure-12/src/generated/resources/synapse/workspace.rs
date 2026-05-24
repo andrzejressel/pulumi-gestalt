@@ -251,7 +251,7 @@ pub mod workspace {
         /// A mapping of tags which should be assigned to the Synapse Workspace.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -271,7 +271,7 @@ pub mod workspace {
         pub compute_subnet_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// A list of Connectivity endpoints for this Synapse Workspace.
         pub connectivity_endpoints: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A `customer_managed_key` block as defined below.
         pub customer_managed_key: pulumi_gestalt_rust::Output<
@@ -319,7 +319,7 @@ pub mod workspace {
         pub storage_data_lake_gen2_filesystem_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Synapse Workspace.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

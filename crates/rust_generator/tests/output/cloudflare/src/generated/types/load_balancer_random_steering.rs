@@ -8,7 +8,7 @@ pub struct LoadBalancerRandomSteering {
     pub r#default_weight: Option<f64>,
     /// A mapping of pool IDs to custom weights. The weight is relative to other pools in the load balancer.
     #[builder(into)]
-    pub r#pool_weights: Option<std::collections::HashMap<String, f64>>,
+    pub r#pool_weights: Option<std::collections::BTreeMap<String, f64>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LoadBalancerRandomSteering {

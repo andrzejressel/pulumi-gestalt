@@ -40,7 +40,7 @@ pub struct GetInstanceTemplateDisk {
     /// (Optional) A set of ket/value label pairs to assign to disk created from
     /// this template
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The mode in which to attach this disk, either READ_WRITE
     /// or READ_ONLY. If you are attaching or creating a boot disk, this must
     /// read-write mode.
@@ -57,7 +57,7 @@ pub struct GetInstanceTemplateDisk {
     pub r#provisioned_throughput: i32,
     /// A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
     #[builder(into)]
-    pub r#resource_manager_tags: std::collections::HashMap<String, String>,
+    pub r#resource_manager_tags: std::collections::BTreeMap<String, String>,
     /// (Optional) -- A list of short names of resource policies to attach to this disk for automatic snapshot creations. Currently a max of 1 resource policy is supported.
     #[builder(into)]
     pub r#resource_policies: Vec<String>,

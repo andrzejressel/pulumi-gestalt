@@ -141,7 +141,7 @@ pub mod shared_image {
         /// A mapping of tags to assign to the Shared Image.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies if Trusted Launch has to be enabled for the Virtual Machine created from the Shared Image. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -219,7 +219,7 @@ pub mod shared_image {
         pub specialized: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A mapping of tags to assign to the Shared Image.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies if Trusted Launch has to be enabled for the Virtual Machine created from the Shared Image. Changing this forces a new resource to be created.
         pub trusted_launch_enabled: pulumi_gestalt_rust::Output<Option<bool>>,

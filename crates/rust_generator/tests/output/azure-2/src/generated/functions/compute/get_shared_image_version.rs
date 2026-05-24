@@ -30,7 +30,7 @@ pub mod get_shared_image_version {
         /// A mapping of tags assigned to the Shared Image.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -55,7 +55,7 @@ pub mod get_shared_image_version {
         pub sort_versions_by_semver: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A mapping of tags assigned to the Shared Image.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// One or more `target_region` blocks as documented below.
         pub target_regions: pulumi_gestalt_rust::Output<

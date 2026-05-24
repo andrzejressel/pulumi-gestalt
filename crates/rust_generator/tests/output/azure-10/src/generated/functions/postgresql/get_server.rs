@@ -34,7 +34,9 @@ pub mod get_server {
         /// The SKU name of the PostgreSQL Server.
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The version of the PostgreSQL Server.
         pub version: pulumi_gestalt_rust::Output<String>,
     }

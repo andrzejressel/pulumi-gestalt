@@ -36,7 +36,9 @@ pub mod get_lab {
         /// The type of storage used by the Dev Test Lab.
         pub storage_type: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The unique immutable identifier of the Dev Test Lab.
         pub unique_identifier: pulumi_gestalt_rust::Output<String>,
     }

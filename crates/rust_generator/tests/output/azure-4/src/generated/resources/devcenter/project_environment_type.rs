@@ -95,7 +95,7 @@ pub mod project_environment_type {
         /// A mapping of tags which should be assigned to the Dev Center Project Environment Type.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `user_role_assignment` block as defined below.
         #[builder(into, default)]
@@ -132,7 +132,7 @@ pub mod project_environment_type {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Dev Center Project Environment Type.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `user_role_assignment` block as defined below.
         pub user_role_assignments: pulumi_gestalt_rust::Output<

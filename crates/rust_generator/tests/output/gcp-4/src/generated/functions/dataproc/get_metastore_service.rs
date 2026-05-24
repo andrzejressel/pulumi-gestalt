@@ -27,7 +27,7 @@ pub mod get_metastore_service {
         pub database_type: pulumi_gestalt_rust::Output<String>,
         pub deletion_protection: pulumi_gestalt_rust::Output<bool>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub encryption_configs: pulumi_gestalt_rust::Output<
             Vec<
@@ -43,7 +43,7 @@ pub mod get_metastore_service {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub location: pulumi_gestalt_rust::Output<String>,
         pub maintenance_windows: pulumi_gestalt_rust::Output<
@@ -64,7 +64,7 @@ pub mod get_metastore_service {
         pub port: pulumi_gestalt_rust::Output<i32>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub release_channel: pulumi_gestalt_rust::Output<String>,
         pub scaling_configs: pulumi_gestalt_rust::Output<

@@ -117,7 +117,7 @@ pub mod app {
         /// A mapping of tags to assign to the Container App.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `template` block as detailed below.
         #[builder(into)]
@@ -179,7 +179,7 @@ pub mod app {
         >,
         /// A mapping of tags to assign to the Container App.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `template` block as detailed below.
         pub template: pulumi_gestalt_rust::Output<

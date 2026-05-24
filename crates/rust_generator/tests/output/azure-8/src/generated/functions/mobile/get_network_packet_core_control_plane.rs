@@ -57,7 +57,9 @@ pub mod get_network_packet_core_control_plane {
         /// The version of the packet core software that is deployed.
         pub software_version: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Mobile Network Packet Core Control Plane.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The MTU in bytes that can be sent to the user equipment.
         pub user_equipment_mtu_in_bytes: pulumi_gestalt_rust::Output<i32>,
     }

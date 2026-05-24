@@ -8,7 +8,7 @@ pub struct LaunchTemplateTagSpecification {
     pub r#resource_type: Option<String>,
     /// A map of tags to assign to the resource.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LaunchTemplateTagSpecification {

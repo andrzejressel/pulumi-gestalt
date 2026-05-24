@@ -80,7 +80,7 @@ pub mod connection {
         /// * `AzureServicePrincipal`: parameters `ApplicationId`, `CertificateThumbprint`, `SubscriptionId` and `TenantId`.
         #[builder(into)]
         pub values: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     #[allow(dead_code)]
@@ -108,7 +108,7 @@ pub mod connection {
         ///
         /// * `AzureServicePrincipal`: parameters `ApplicationId`, `CertificateThumbprint`, `SubscriptionId` and `TenantId`.
         pub values: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

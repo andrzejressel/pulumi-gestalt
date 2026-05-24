@@ -14,7 +14,7 @@ pub mod get_fhir_service {
         /// The map of tags assigned to the Healthcare FHIR Service.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The id of the Healthcare Workspace in which the Healthcare FHIR Service exists.
         #[builder(into)]
@@ -53,7 +53,7 @@ pub mod get_fhir_service {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The map of tags assigned to the Healthcare FHIR Service.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub workspace_id: pulumi_gestalt_rust::Output<String>,
     }

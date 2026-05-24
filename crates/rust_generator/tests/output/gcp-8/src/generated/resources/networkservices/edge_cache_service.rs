@@ -372,7 +372,7 @@ pub mod edge_cache_service {
         /// present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the logging options for the traffic served by this service. If logging is enabled, logs will be exported to
         /// Cloud Logging.
@@ -427,7 +427,7 @@ pub mod edge_cache_service {
         pub edge_ssl_certificates: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The IPv4 addresses associated with this service. Addresses are static for the lifetime of the service.
         pub ipv4_addresses: pulumi_gestalt_rust::Output<Vec<String>>,
@@ -437,7 +437,7 @@ pub mod edge_cache_service {
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the logging options for the traffic served by this service. If logging is enabled, logs will be exported to
         /// Cloud Logging.
@@ -452,7 +452,7 @@ pub mod edge_cache_service {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Require TLS (HTTPS) for all clients connecting to this service. Clients who connect over HTTP (port 80) will receive a
         /// HTTP 301 to the same URL over HTTPS (port 443). You must have at least one (1) edgeSslCertificate specified to enable

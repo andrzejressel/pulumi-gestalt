@@ -89,7 +89,7 @@ pub mod hosting_channel {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The number of previous releases to retain on the channel for rollback or other
         /// purposes. Must be a number between 1-100. Defaults to 10 for new channels.
@@ -118,7 +118,7 @@ pub mod hosting_channel {
         pub channel_id: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The time at which the channel will be automatically deleted. If null, the channel
         /// will not be automatically deleted. This field is present in the output whether it's
@@ -128,7 +128,7 @@ pub mod hosting_channel {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The fully-qualified resource name for the channel, in the format:
         /// sites/SITE_ID/channels/CHANNEL_ID
@@ -136,7 +136,7 @@ pub mod hosting_channel {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The number of previous releases to retain on the channel for rollback or other
         /// purposes. Must be a number between 1-100. Defaults to 10 for new channels.

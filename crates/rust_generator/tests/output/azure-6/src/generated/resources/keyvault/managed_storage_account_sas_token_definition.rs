@@ -130,7 +130,7 @@ pub mod managed_storage_account_sas_token_definition {
         /// A mapping of tags which should be assigned to the SAS Definition. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Validity period of SAS token. Value needs to be in [ISO 8601 duration format](https://en.wikipedia.org/wiki/ISO_8601#Durations).
         #[builder(into)]
@@ -155,7 +155,7 @@ pub mod managed_storage_account_sas_token_definition {
         pub secret_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the SAS Definition. Changing this forces a new resource to be created.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Validity period of SAS token. Value needs to be in [ISO 8601 duration format](https://en.wikipedia.org/wiki/ISO_8601#Durations).
         pub validity_period: pulumi_gestalt_rust::Output<String>,

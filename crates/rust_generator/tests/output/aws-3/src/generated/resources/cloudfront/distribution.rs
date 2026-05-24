@@ -279,7 +279,7 @@ pub mod distribution {
         pub staging: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into)]
         pub viewer_certificate: pulumi_gestalt_rust::Input<
@@ -348,11 +348,11 @@ pub mod distribution {
         /// Current status of the distribution. `Deployed` if the distribution's information is fully propagated throughout the Amazon CloudFront system.
         pub status: pulumi_gestalt_rust::Output<String>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// List of nested attributes for active trusted key groups, if the distribution is set up to serve private content with signed URLs.
         pub trusted_key_groups: pulumi_gestalt_rust::Output<

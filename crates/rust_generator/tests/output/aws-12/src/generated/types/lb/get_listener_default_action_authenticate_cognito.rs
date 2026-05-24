@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetListenerDefaultActionAuthenticateCognito {
     #[builder(into)]
-    pub r#authentication_request_extra_params: std::collections::HashMap<String, String>,
+    pub r#authentication_request_extra_params: std::collections::BTreeMap<String, String>,
     #[builder(into)]
     pub r#on_unauthenticated_request: String,
     #[builder(into)]

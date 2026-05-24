@@ -5,7 +5,7 @@
 pub struct AutoscaleSettingNotificationWebhook {
     /// A map of settings.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// The HTTPS URI which should receive scale notifications.
     #[builder(into)]
     pub r#service_uri: String,

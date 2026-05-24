@@ -82,7 +82,7 @@ pub mod trigger_blob_event {
         /// A map of additional properties to associate with the Data Factory Blob Event Trigger.
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Blob Event Trigger.
         #[builder(into, default)]
@@ -130,7 +130,7 @@ pub mod trigger_blob_event {
         pub activated: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A map of additional properties to associate with the Data Factory Blob Event Trigger.
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Blob Event Trigger.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,

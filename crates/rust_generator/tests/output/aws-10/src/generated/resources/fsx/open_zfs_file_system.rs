@@ -73,7 +73,7 @@ pub mod open_zfs_file_system {
         /// A map of tags to apply to the file system's final backup.
         #[builder(into, default)]
         pub final_backup_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ARN for the KMS Key to encrypt the file system at rest, Defaults to an AWS managed KMS Key.
         #[builder(into, default)]
@@ -107,7 +107,7 @@ pub mod open_zfs_file_system {
         /// A map of tags to assign to the file system. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Throughput (MB/s) of the file system. Valid values depend on `deployment_type`. Must be one of `64`, `128`, `256`, `512`, `1024`, `2048`, `3072`, `4096` for `SINGLE_AZ_1`. Must be one of `160`, `320`, `640`, `1280`, `2560`, `3840`, `5120`, `7680`, `10240` for `SINGLE_AZ_2`.
         ///
@@ -153,7 +153,7 @@ pub mod open_zfs_file_system {
         pub endpoint_ip_address_range: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to apply to the file system's final backup.
         pub final_backup_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ARN for the KMS Key to encrypt the file system at rest, Defaults to an AWS managed KMS Key.
         pub kms_key_id: pulumi_gestalt_rust::Output<String>,
@@ -183,11 +183,11 @@ pub mod open_zfs_file_system {
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A map of tags to assign to the file system. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Throughput (MB/s) of the file system. Valid values depend on `deployment_type`. Must be one of `64`, `128`, `256`, `512`, `1024`, `2048`, `3072`, `4096` for `SINGLE_AZ_1`. Must be one of `160`, `320`, `640`, `1280`, `2560`, `3840`, `5120`, `7680`, `10240` for `SINGLE_AZ_2`.
         ///

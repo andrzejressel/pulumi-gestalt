@@ -84,7 +84,9 @@ pub mod get_account {
         /// The secondary SQL connection string for the CosmosDB Account.
         pub secondary_sql_connection_string: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Subnets that are allowed to access this CosmosDB account.
         pub virtual_network_rules: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::cosmosdb::GetAccountVirtualNetworkRule>,

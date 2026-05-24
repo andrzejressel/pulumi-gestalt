@@ -46,7 +46,7 @@ pub mod identity_provider {
         /// The map of attribute mapping of user pool attributes. [AttributeMapping in AWS API documentation](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html#CognitoUserPools-CreateIdentityProvider-request-AttributeMapping)
         #[builder(into, default)]
         pub attribute_mapping: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The list of identity providers.
         #[builder(into, default)]
@@ -54,7 +54,7 @@ pub mod identity_provider {
         /// The map of identity details, such as access token
         #[builder(into)]
         pub provider_details: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The provider name
         #[builder(into)]
@@ -75,13 +75,13 @@ pub mod identity_provider {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// The map of attribute mapping of user pool attributes. [AttributeMapping in AWS API documentation](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html#CognitoUserPools-CreateIdentityProvider-request-AttributeMapping)
         pub attribute_mapping: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The list of identity providers.
         pub idp_identifiers: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The map of identity details, such as access token
         pub provider_details: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The provider name
         pub provider_name: pulumi_gestalt_rust::Output<String>,

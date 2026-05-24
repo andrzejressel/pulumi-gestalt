@@ -198,7 +198,7 @@ pub mod io_t_hub {
         pub sku: pulumi_gestalt_rust::Input<super::super::types::iot::IoTHubSku>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -272,7 +272,7 @@ pub mod io_t_hub {
         /// A `sku` block as defined below.
         pub sku: pulumi_gestalt_rust::Output<super::super::types::iot::IoTHubSku>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub type_: pulumi_gestalt_rust::Output<String>,
     }

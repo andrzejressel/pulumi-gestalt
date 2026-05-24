@@ -8,7 +8,7 @@ pub struct ConfigSignInPhoneNumber {
     pub r#enabled: bool,
     /// A map of <test phone number, fake code> that can be used for phone auth testing.
     #[builder(into)]
-    pub r#test_phone_numbers: Option<std::collections::HashMap<String, String>>,
+    pub r#test_phone_numbers: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ConfigSignInPhoneNumber {
