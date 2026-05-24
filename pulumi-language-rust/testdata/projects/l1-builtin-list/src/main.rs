@@ -25,10 +25,10 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
     ctx.add_export("splitOutput", &pulumi_gestalt_rust::stdlib::split("-", &aString));
     ctx.add_export(
         "singleOrNoneOutput",
-        &vec!(
+        &vec![
             pulumi_gestalt_rust::stdlib::single_or_none(singleOrNoneList)
             .expect("Should get first element")
-        ),
+        ],
     );
     Ok(())
 }
