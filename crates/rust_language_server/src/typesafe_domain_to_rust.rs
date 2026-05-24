@@ -798,7 +798,7 @@ mod tests {
         let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
         assert_eq!(
             rendered,
-            "std::collections::HashMap::from([(\"k\", \"v\")])"
+            "std::collections::BTreeMap::from([((\"k\").to_string(), (\"v\").to_string())])"
         );
     }
 
@@ -809,6 +809,6 @@ mod tests {
             value: ExprValue::Map(vec![]),
         };
         let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
-        assert_eq!(rendered, "std::collections::HashMap::new()");
+        assert_eq!(rendered, "std::collections::BTreeMap::new()");
     }
 }
