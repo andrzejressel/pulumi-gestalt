@@ -36,8 +36,8 @@ pub enum RustExpr {
         elements: Vec<RustExpr>,
         type_hint: Option<String>,
     },
-    /// `std::collections::HashMap::from([(k, v), ...])` or `std::collections::HashMap::new()`.
-    HashMap { entries: Vec<(RustExpr, RustExpr)> },
+    /// `std::collections::BTreeMap::from([(k, v), ...])` or `std::collections::BTreeMap::new()`.
+    BTreeMap { entries: Vec<(RustExpr, RustExpr)> },
     /// `format!("...", args...)`
     Format { fmt: String, args: Vec<RustExpr> },
     /// `path::to::func(args...)`

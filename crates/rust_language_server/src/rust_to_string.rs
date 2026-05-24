@@ -78,16 +78,17 @@ pub fn render_expr(expr: &RustExpr) -> String {
                 format!("vec!({})", inner)
             }
         }
-        RustExpr::HashMap { entries } => {
+        RustExpr::BTreeMap { entries } => {
             if entries.is_empty() {
-                "std::collections::HashMap::new()".to_string()
+                "std::collections::BTreeMap::new()".to_string()
             } else {
                 let inner = entries
                     .iter()
-                    .map(|(k, v)| format!("({}, {})", render_expr(k), render_expr(v)))
+                    // FIXME
+                    .map(|(k, v)| format!("(({}).to_string(), ({}).to_string())", render_expr(k), render_expr(v)))
                     .collect::<Vec<_>>()
                     .join(", ");
-                format!("std::collections::HashMap::from([{}])", inner)
+                format!("std::collections::BTreeMap::from([{}])", inner)
             }
         }
         RustExpr::Format { fmt, args } => {

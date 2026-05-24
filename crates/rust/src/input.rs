@@ -1,3 +1,4 @@
+use std::collections::BTreeMap;
 use crate::{Context, Output};
 
 /// Wrapper for either static value or [Output]
@@ -94,5 +95,11 @@ impl<const N: usize> From<[&str; N]> for Input<Vec<String>> {
 impl<const N: usize> From<[&str; N]> for Input<Option<Vec<String>>> {
     fn from(value: [&str; N]) -> Self {
         Input::StaticValue(Some(value.into_iter().map(|s| s.to_string()).collect()))
+    }
+}
+
+impl <V, V2: Into<V>> From<BTreeMap<&str, V2>> for Input<BTreeMap<String, V>> {
+    fn from(value: BTreeMap<&str, V2>) -> Self {
+        Input::StaticValue(value.into_iter().map(|(k, v)| (k.into(), v.into())).collect())
     }
 }

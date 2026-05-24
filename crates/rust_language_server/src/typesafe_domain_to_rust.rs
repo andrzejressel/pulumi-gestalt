@@ -448,7 +448,7 @@ fn lower_expr(expr: &Expr) -> RustExpr {
         ExprValue::NewStruct { token, properties } => {
             lower_new_struct_expr(token, properties).expect("Failed to lower NewStruct expression")
         }
-        ExprValue::Map(entries) => RustExpr::HashMap {
+        ExprValue::Map(entries) => RustExpr::BTreeMap {
             entries: entries
                 .iter()
                 .map(|(k, v)| (RustExpr::StringLiteral(k.clone()), lower_expr(v)))

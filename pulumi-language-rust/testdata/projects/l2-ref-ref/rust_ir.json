@@ -162,7 +162,7 @@
                                                       "type_params": [],
                                                       "args": [
                                                         {
-                                                          "HashMap": {
+                                                          "BTreeMap": {
                                                             "entries": [
                                                               [
                                                                 {
@@ -216,7 +216,7 @@
                                 "type_params": [],
                                 "args": [
                                   {
-                                    "HashMap": {
+                                    "BTreeMap": {
                                       "entries": [
                                         [
                                           {
