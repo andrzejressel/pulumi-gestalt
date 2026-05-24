@@ -182,38 +182,29 @@
                                 "stringMap",
                                 {
                                   "expr_type": {
-                                    "Object": {
-                                      "three": "String",
-                                      "two": "String"
-                                    }
+                                    "Map": "String"
                                   },
                                   "value": {
-                                    "PulumiAny": {
-                                      "Object": [
-                                        [
-                                          "three",
-                                          {
-                                            "Expr": {
-                                              "expr_type": "String",
-                                              "value": {
-                                                "String": "french hens"
-                                              }
-                                            }
+                                    "Map": [
+                                      [
+                                        "three",
+                                        {
+                                          "expr_type": "String",
+                                          "value": {
+                                            "String": "french hens"
                                           }
-                                        ],
-                                        [
-                                          "two",
-                                          {
-                                            "Expr": {
-                                              "expr_type": "String",
-                                              "value": {
-                                                "String": "turtle doves"
-                                              }
-                                            }
+                                        }
+                                      ],
+                                      [
+                                        "two",
+                                        {
+                                          "expr_type": "String",
+                                          "value": {
+                                            "String": "turtle doves"
                                           }
-                                        ]
+                                        }
                                       ]
-                                    }
+                                    ]
                                   }
                                 }
                               ]
@@ -244,38 +235,29 @@
                       "stringMap",
                       {
                         "expr_type": {
-                          "Object": {
-                            "x": "String",
-                            "y": "String"
-                          }
+                          "Map": "String"
                         },
                         "value": {
-                          "PulumiAny": {
-                            "Object": [
-                              [
-                                "x",
-                                {
-                                  "Expr": {
-                                    "expr_type": "String",
-                                    "value": {
-                                      "String": "100"
-                                    }
-                                  }
+                          "Map": [
+                            [
+                              "x",
+                              {
+                                "expr_type": "String",
+                                "value": {
+                                  "String": "100"
                                 }
-                              ],
-                              [
-                                "y",
-                                {
-                                  "Expr": {
-                                    "expr_type": "String",
-                                    "value": {
-                                      "String": "200"
-                                    }
-                                  }
+                              }
+                            ],
+                            [
+                              "y",
+                              {
+                                "expr_type": "String",
+                                "value": {
+                                  "String": "200"
                                 }
-                              ]
+                              }
                             ]
-                          }
+                          ]
                         }
                       }
                     ]

@@ -110,6 +110,7 @@ pub enum ExprValue {
         token: String,
         properties: Vec<(String, Expr)>,
     },
+    Map(Vec<(String, Expr)>),
     PulumiAny(JsonValue),
 
     // Stdlib

@@ -153,15 +153,8 @@
                             }
                           },
                           "type": {
-                            "objectType": {
-                              "properties": {
-                                "three": {
-                                  "stringType": {}
-                                },
-                                "two": {
-                                  "stringType": {}
-                                }
-                              }
+                            "mapType": {
+                              "stringType": {}
                             }
                           }
                         }
@@ -275,15 +268,8 @@
                       }
                     },
                     "type": {
-                      "objectType": {
-                        "properties": {
-                          "x": {
-                            "stringType": {}
-                          },
-                          "y": {
-                            "stringType": {}
-                          }
-                        }
+                      "mapType": {
+                        "stringType": {}
                       }
                     }
                   }

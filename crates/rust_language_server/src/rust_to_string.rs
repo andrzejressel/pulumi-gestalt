@@ -78,6 +78,18 @@ pub fn render_expr(expr: &RustExpr) -> String {
                 format!("vec!({})", inner)
             }
         }
+        RustExpr::HashMap { entries } => {
+            if entries.is_empty() {
+                "std::collections::HashMap::new()".to_string()
+            } else {
+                let inner = entries
+                    .iter()
+                    .map(|(k, v)| format!("({}, {})", render_expr(k), render_expr(v)))
+                    .collect::<Vec<_>>()
+                    .join(", ");
+                format!("std::collections::HashMap::from([{}])", inner)
+            }
+        }
         RustExpr::Format { fmt, args } => {
             if args.is_empty() {
                 "String::new()".to_string()

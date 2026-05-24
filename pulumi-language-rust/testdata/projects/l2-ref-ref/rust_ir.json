@@ -162,9 +162,25 @@
                                                       "type_params": [],
                                                       "args": [
                                                         {
-                                                          "MacroCall": {
-                                                            "path": "pulumi_gestalt_rust::pulumi_any!",
-                                                            "body": "{\"three\": (\"french hens\"), \"two\": (\"turtle doves\")}"
+                                                          "HashMap": {
+                                                            "entries": [
+                                                              [
+                                                                {
+                                                                  "StringLiteral": "three"
+                                                                },
+                                                                {
+                                                                  "StringLiteral": "french hens"
+                                                                }
+                                                              ],
+                                                              [
+                                                                {
+                                                                  "StringLiteral": "two"
+                                                                },
+                                                                {
+                                                                  "StringLiteral": "turtle doves"
+                                                                }
+                                                              ]
+                                                            ]
                                                           }
                                                         }
                                                       ]
@@ -200,9 +216,25 @@
                                 "type_params": [],
                                 "args": [
                                   {
-                                    "MacroCall": {
-                                      "path": "pulumi_gestalt_rust::pulumi_any!",
-                                      "body": "{\"x\": (\"100\"), \"y\": (\"200\")}"
+                                    "HashMap": {
+                                      "entries": [
+                                        [
+                                          {
+                                            "StringLiteral": "x"
+                                          },
+                                          {
+                                            "StringLiteral": "100"
+                                          }
+                                        ],
+                                        [
+                                          {
+                                            "StringLiteral": "y"
+                                          },
+                                          {
+                                            "StringLiteral": "200"
+                                          }
+                                        ]
+                                      ]
                                     }
                                   }
                                 ]

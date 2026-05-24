@@ -20,18 +20,17 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
                             .integer(-12)
                             .string("Goodbye")
                             .string_map(
-                                pulumi_gestalt_rust::pulumi_any!(
-                                    { "three" : ("french hens"), "two" : ("turtle doves") }
-                                ),
+                                std::collections::HashMap::from([
+                                    ("three", "french hens"),
+                                    ("two", "turtle doves"),
+                                ]),
                             )
                             .build_struct(),
                     )
                     .integer(1024)
                     .string("Hello")
                     .string_map(
-                        pulumi_gestalt_rust::pulumi_any!(
-                            { "x" : ("100"), "y" : ("200") }
-                        ),
+                        std::collections::HashMap::from([("x", "100"), ("y", "200")]),
                     )
                     .build_struct(),
             )

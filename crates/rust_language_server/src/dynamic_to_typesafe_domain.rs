@@ -356,6 +356,12 @@ fn lower_expr_value(value: &dynamic::ExprValue) -> typesafe::ExprValue {
                 .map(|(name, expr)| (name.clone(), lower_expr(expr)))
                 .collect(),
         },
+        dynamic::ExprValue::Map(entries) => typesafe::ExprValue::Map(
+            entries
+                .iter()
+                .map(|(name, expr)| (name.clone(), lower_expr(expr)))
+                .collect(),
+        ),
         dynamic::ExprValue::PulumiAny(json) => {
             typesafe::ExprValue::PulumiAny(lower_json_value(json))
         }

@@ -448,6 +448,12 @@ fn lower_expr(expr: &Expr) -> RustExpr {
         ExprValue::NewStruct { token, properties } => {
             lower_new_struct_expr(token, properties).expect("Failed to lower NewStruct expression")
         }
+        ExprValue::Map(entries) => RustExpr::HashMap {
+            entries: entries
+                .iter()
+                .map(|(k, v)| (RustExpr::StringLiteral(k.clone()), lower_expr(v)))
+                .collect(),
+        },
         ExprValue::PulumiAny(json) => {
             let body = render_json_value(json);
             RustExpr::MacroCall {
@@ -775,5 +781,34 @@ mod tests {
             rendered,
             "pulumi_aws::types::devicefarm::Project::builder().build_struct()"
         );
+    }
+
+    #[test]
+    fn lower_typed_map_renders_hash_map_from() {
+        let expr = Expr {
+            expr_type: ExprType::Map(Box::new(ExprType::String)),
+            value: ExprValue::Map(vec![(
+                "k".to_string(),
+                Expr {
+                    expr_type: ExprType::String,
+                    value: ExprValue::String("v".to_string()),
+                },
+            )]),
+        };
+        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
+        assert_eq!(
+            rendered,
+            "std::collections::HashMap::from([(\"k\", \"v\")])"
+        );
+    }
+
+    #[test]
+    fn lower_empty_typed_map_renders_hash_map_new() {
+        let expr = Expr {
+            expr_type: ExprType::Map(Box::new(ExprType::String)),
+            value: ExprValue::Map(vec![]),
+        };
+        let rendered = crate::rust_to_string::render_expr(&lower_expr(&expr));
+        assert_eq!(rendered, "std::collections::HashMap::new()");
     }
 }

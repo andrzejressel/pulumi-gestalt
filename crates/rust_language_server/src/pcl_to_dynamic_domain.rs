@@ -193,11 +193,20 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
             ),
         },
         expression::Value::CreateMapExpression(map) => match &expr_type {
-            ExprType::Dynamic
-            | ExprType::Map(_)
-            | ExprType::Object(_)
-            | ExprType::None
-            | ExprType::Union(_) => {
+            ExprType::Map(_) => {
+                let lowered = map
+                    .properties
+                    .iter()
+                    .map(|(key, val)| {
+                        let v = lower_expression(val)
+                            .context("Failed to lower CreateMapExpression property")?;
+                        Ok((key.clone(), v))
+                    })
+                    .collect::<Result<Vec<_>>>()
+                    .context("Failed to lower CreateMapExpression properties")?;
+                Ok(make_expr(expr_type, ExprValue::Map(lowered)))
+            }
+            ExprType::Dynamic | ExprType::Object(_) | ExprType::None | ExprType::Union(_) => {
                 let json = lower_map_to_json(map).context("Failed to lower CreateMapExpression")?;
                 Ok(make_expr(expr_type, ExprValue::PulumiAny(json)))
             }
@@ -901,7 +910,7 @@ mod tests {
     }
 
     #[test]
-    fn lower_create_map_to_pulumi_any() {
+    fn lower_create_map_to_typed_map() {
         let mut props = BTreeMap::new();
         props.insert("string".to_string(), lit_string("hello"));
         let expression = Expression {
@@ -913,11 +922,11 @@ mod tests {
 
         let lowered = lower_expression(&expression).expect("lower expression");
         match lowered.value {
-            ExprValue::PulumiAny(JsonValue::Object(entries)) => {
+            ExprValue::Map(entries) => {
                 assert_eq!(entries.len(), 1);
                 assert_eq!(entries[0].0, "string");
             }
-            other => panic!("expected PulumiAny object, got {:?}", other),
+            other => panic!("expected typed map, got {:?}", other),
         }
     }
 }

@@ -666,10 +666,10 @@ func transformResourceInputExpression(
 			properties[key] = transformedValue
 		}
 
-		expressionType, err := transformExpressionType(expr.Type())
+		expressionType, err := transformSchemaExpressionType(schemaType)
 		if err != nil {
 			return nil, fmt.Errorf(
-				"could not transform expression type for %T at %q: %w",
+				"could not transform schema map type for %T at %q: %w",
 				expr,
 				path,
 				err,
@@ -685,6 +685,90 @@ func transformResourceInputExpression(
 		}, nil
 	default:
 		return transformExpression(expr)
+	}
+}
+
+func transformSchemaExpressionType(t schema.Type) (*astproto.ExpressionType, error) {
+	t = codegen.UnwrapType(t)
+	switch t {
+	case nil:
+		return nil, fmt.Errorf("schema type is nil")
+	case schema.StringType:
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_StringType{StringType: &astproto.Empty{}},
+		}, nil
+	case schema.NumberType:
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_NumberType{NumberType: &astproto.Empty{}},
+		}, nil
+	case schema.IntType:
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_IntType{IntType: &astproto.Empty{}},
+		}, nil
+	case schema.BoolType:
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_BoolType{BoolType: &astproto.Empty{}},
+		}, nil
+	case schema.ArchiveType, schema.AssetType, schema.AnyType, schema.JSONType:
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_DynamicType{DynamicType: &astproto.Empty{}},
+		}, nil
+	}
+
+	switch t := t.(type) {
+	case *schema.ArrayType:
+		inner, err := transformSchemaExpressionType(t.ElementType)
+		if err != nil {
+			return nil, fmt.Errorf("could not transform array element type: %w", err)
+		}
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_ListType{ListType: inner},
+		}, nil
+	case *schema.MapType:
+		inner, err := transformSchemaExpressionType(t.ElementType)
+		if err != nil {
+			return nil, fmt.Errorf("could not transform map element type: %w", err)
+		}
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_MapType{MapType: inner},
+		}, nil
+	case *schema.ObjectType:
+		properties := make(map[string]*astproto.ExpressionType, len(t.Properties))
+		for _, prop := range t.Properties {
+			if prop == nil || prop.Type == nil {
+				continue
+			}
+			propType, err := transformSchemaExpressionType(prop.Type)
+			if err != nil {
+				return nil, fmt.Errorf("could not transform object property %q: %w", prop.Name, err)
+			}
+			properties[prop.Name] = propType
+		}
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_ObjectType{
+				ObjectType: &astproto.ObjectExpressionType{Properties: properties},
+			},
+		}, nil
+	case *schema.TokenType:
+		return transformSchemaExpressionType(t.UnderlyingType)
+	case *schema.EnumType:
+		return transformSchemaExpressionType(t.ElementType)
+	case *schema.UnionType:
+		elementTypes := make([]*astproto.ExpressionType, 0, len(t.ElementTypes))
+		for _, elem := range t.ElementTypes {
+			elemType, err := transformSchemaExpressionType(elem)
+			if err != nil {
+				return nil, fmt.Errorf("could not transform union element type: %w", err)
+			}
+			elementTypes = append(elementTypes, elemType)
+		}
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_UnionType{
+				UnionType: &astproto.UnionExpressionType{ElementTypes: elementTypes},
+			},
+		}, nil
+	default:
+		return nil, fmt.Errorf("unknown schema type: %T (%v)", t, t)
 	}
 }
 
