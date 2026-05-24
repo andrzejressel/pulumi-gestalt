@@ -1,5 +1,6 @@
 [package]
 name = "pulumi_gestalt_model"
+description = "Base models for Pulumi Gestalt"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

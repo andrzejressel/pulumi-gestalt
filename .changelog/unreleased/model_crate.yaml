@@ -1,0 +1,2 @@
+type: Changed
+title: Fix deploy by adding description to pulumi_gestalt_model crate
