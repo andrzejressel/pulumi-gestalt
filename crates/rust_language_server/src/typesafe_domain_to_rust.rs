@@ -317,13 +317,7 @@ fn rust_config_type(ct: &ConfigType) -> String {
 
 fn lower_expr(expr: &Expr) -> RustExpr {
     match &expr.value {
-        ExprValue::String(s) => {
-            if requires_escaping(s) {
-                RustExpr::RawStringLiteral(s.clone())
-            } else {
-                RustExpr::StringLiteral(s.clone())
-            }
-        }
+        ExprValue::String(s) => RustExpr::StringLiteral(s.clone()),
         ExprValue::Number(n) => RustExpr::NumberLiteral(*n),
         ExprValue::Bool(b) => RustExpr::BoolLiteral(*b),
         ExprValue::Null => {
@@ -653,10 +647,6 @@ fn render_json_value(json: &JsonValue) -> String {
             format!("({})", crate::rust_to_string::render_expr(&rust_expr))
         }
     }
-}
-
-fn requires_escaping(s: &str) -> bool {
-    s.contains('"') || s.contains('\\') || s.contains('\n') || s.contains('\r') || s.contains('\t')
 }
 
 fn bin_op_str(op: &BinOp) -> &'static str {
