@@ -67,8 +67,6 @@ pub enum RustExpr {
         op: &'static str,
         operand: Box<RustExpr>,
     },
-    /// `path!(body)` — macro invocation with a pre-rendered body.
-    MacroCall { path: String, body: String },
     /// `pulumi_gestalt_rust::pulumi_any!(...)` with typed JSON payload.
     PulumiAny(RustJsonExpr),
     /// `expr.expect("message")`
