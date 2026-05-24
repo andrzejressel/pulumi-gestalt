@@ -1,0 +1,271 @@
+{
+  "statements": [
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "empty"
+            },
+            {
+              "Ref": {
+                "PulumiAny": {
+                  "Object": []
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "strings"
+            },
+            {
+              "Ref": {
+                "PulumiAny": {
+                  "Object": [
+                    [
+                      "farewell",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "Goodbye, world!"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "greeting",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "Hello, world!"
+                          }
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "adversarialStrings"
+            },
+            {
+              "Ref": {
+                "PulumiAny": {
+                  "Object": [
+                    [
+                      "",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "empty key"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "__internal",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "dunder internal"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "__provider",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "dunder provider"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "__type",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "dunder type"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "__version",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "dunder version"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "dunder value",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "__dunder"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "empty value",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": ""
+                          }
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "numbers"
+            },
+            {
+              "Ref": {
+                "PulumiAny": {
+                  "Object": [
+                    [
+                      "1",
+                      {
+                        "Number": 1.0
+                      }
+                    ],
+                    [
+                      "2",
+                      {
+                        "Number": 2.0
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "keys"
+            },
+            {
+              "Ref": {
+                "PulumiAny": {
+                  "Object": [
+                    [
+                      "MYKEY",
+                      {
+                        "Number": 6.0
+                      }
+                    ],
+                    [
+                      "MY_KEY",
+                      {
+                        "Number": 4.0
+                      }
+                    ],
+                    [
+                      "my-key",
+                      {
+                        "Number": 2.0
+                      }
+                    ],
+                    [
+                      "my.key",
+                      {
+                        "Number": 1.0
+                      }
+                    ],
+                    [
+                      "my_key",
+                      {
+                        "Number": 3.0
+                      }
+                    ],
+                    [
+                      "mykey",
+                      {
+                        "Number": 5.0
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

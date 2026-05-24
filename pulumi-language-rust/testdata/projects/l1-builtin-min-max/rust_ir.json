@@ -3,6 +3,7 @@
     {
       "Let": {
         "name": "a",
+        "type_annotation": null,
         "value": {
           "Expect": {
             "expr": {
@@ -32,6 +33,7 @@
     {
       "Let": {
         "name": "b",
+        "type_annotation": null,
         "value": {
           "Expect": {
             "expr": {
@@ -61,6 +63,7 @@
     {
       "Let": {
         "name": "c",
+        "type_annotation": null,
         "value": {
           "Expect": {
             "expr": {
@@ -90,6 +93,7 @@
     {
       "Let": {
         "name": "d",
+        "type_annotation": null,
         "value": {
           "Expect": {
             "expr": {

@@ -3,6 +3,7 @@
     {
       "Let": {
         "name": "aMap",
+        "type_annotation": null,
         "value": {
           "Expect": {
             "expr": {

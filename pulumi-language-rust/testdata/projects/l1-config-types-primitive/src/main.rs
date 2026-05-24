@@ -3,16 +3,16 @@ fn main() {
     pulumi_gestalt_rust::run_with_packages(vec![], pulumi_main).unwrap();
 }
 fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
-    let aNumber = ctx
-        .require_config_deserialize::<f64>(None, "aNumber")
+    let aNumber: f64 = ctx
+        .require_config_deserialize(None, "aNumber")
         .expect("Expected config [aNumber] to exist");
     ctx.add_export("theNumber", &(aNumber + 1.25));
     let optionalNumber = ctx
         .require_config_deserialize::<f64>(None, "optionalNumber")
         .unwrap_or(41.5);
     ctx.add_export("defaultNumber", &(optionalNumber + 1.2));
-    let anInt = ctx
-        .require_config_deserialize::<i64>(None, "anInt")
+    let anInt: i64 = ctx
+        .require_config_deserialize(None, "anInt")
         .expect("Expected config [anInt] to exist");
     ctx.add_export("theInteger", &(anInt + 4));
     let optionalInt = ctx
@@ -27,8 +27,8 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
         .require_config(None, "optionalString")
         .unwrap_or_else(|_| "defaultStringValue".to_string());
     ctx.add_export("defaultString", &optionalString);
-    let aBool = ctx
-        .require_config_deserialize::<bool>(None, "aBool")
+    let aBool: bool = ctx
+        .require_config_deserialize(None, "aBool")
         .expect("Expected config [aBool] to exist");
     ctx.add_export("theBool", &(!aBool && true));
     let optionalBool = ctx

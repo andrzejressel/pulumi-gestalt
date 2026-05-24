@@ -24,6 +24,7 @@ mod package_model;
 mod pcl_model;
 mod pcl_to_dynamic_domain;
 mod rust_ir;
+mod rust_ir_optimize;
 mod rust_to_string;
 mod typesafe_domain_ir;
 mod typesafe_domain_to_rust;
@@ -103,6 +104,12 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
         files.push(FileWithContent {
             path: "rust_ir.json".to_string(),
             content: rust_ir_json,
+        });
+        let optimized_rust_ir_json = serde_json::to_vec_pretty(&result.optimized_rust_ir)
+            .context("Failed to serialize optimized Rust IR to JSON")?;
+        files.push(FileWithContent {
+            path: "optimized_rust_ir.json".to_string(),
+            content: optimized_rust_ir_json,
         });
     }
 
@@ -296,6 +303,18 @@ impl G2RCall for G2RCallImpl {
                     return GenerateProgramResult {
                         files_content: vec![],
                         error: format!("failed to serialize Rust IR to JSON: {error:?}"),
+                    };
+                }
+            }
+            match serde_json::to_vec_pretty(&result.optimized_rust_ir) {
+                Ok(json) => files.push(FileWithContent {
+                    path: "optimized_rust_ir.json".to_string(),
+                    content: json,
+                }),
+                Err(error) => {
+                    return GenerateProgramResult {
+                        files_content: vec![],
+                        error: format!("failed to serialize optimized Rust IR to JSON: {error:?}"),
                     };
                 }
             }

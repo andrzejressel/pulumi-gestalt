@@ -3,7 +3,7 @@
     {
       "Let": {
         "name": "aList",
-        "type_annotation": null,
+        "type_annotation": "Vec<String>",
         "value": {
           "Expect": {
             "expr": {
@@ -12,9 +12,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config_deserialize",
-                "type_params": [
-                  "Vec<String>"
-                ],
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -33,7 +31,7 @@
     {
       "Let": {
         "name": "singleOrNoneList",
-        "type_annotation": null,
+        "type_annotation": "Vec<String>",
         "value": {
           "Expect": {
             "expr": {
@@ -42,9 +40,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config_deserialize",
-                "type_params": [
-                  "Vec<String>"
-                ],
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
