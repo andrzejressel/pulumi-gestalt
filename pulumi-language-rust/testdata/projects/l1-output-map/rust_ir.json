@@ -14,9 +14,8 @@
             },
             {
               "Ref": {
-                "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
-                  "body": "{}"
+                "PulumiAny": {
+                  "Object": []
                 }
               }
             }
@@ -38,9 +37,29 @@
             },
             {
               "Ref": {
-                "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
-                  "body": "{\"farewell\": (\"Goodbye, world!\"), \"greeting\": (\"Hello, world!\")}"
+                "PulumiAny": {
+                  "Object": [
+                    [
+                      "farewell",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "Goodbye, world!"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "greeting",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "Hello, world!"
+                          }
+                        }
+                      }
+                    ]
+                  ]
                 }
               }
             }
@@ -62,9 +81,89 @@
             },
             {
               "Ref": {
-                "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
-                  "body": "{\"\": (\"empty key\"), \"Some ${common} \\\"characters\\\" 'that' need escaping: \\\\ (backslash), \\t (tab), \\u{1b} (escape), \\u{7} (bell), \\0 (null), \\u{e0021} (tag space)\": (\"Some ${common} \\\"characters\\\" 'that' need escaping: \\\\ (backslash), \\t (tab), \\u{1b} (escape), \\u{7} (bell), \\0 (null), \\u{e0021} (tag space)\"), \"__internal\": (\"dunder internal\"), \"__provider\": (\"dunder provider\"), \"__type\": (\"dunder type\"), \"__version\": (\"dunder version\"), \"dunder value\": (\"__dunder\"), \"empty value\": (\"\")}"
+                "PulumiAny": {
+                  "Object": [
+                    [
+                      "",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "empty key"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "__internal",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "dunder internal"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "__provider",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "dunder provider"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "__type",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "dunder type"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "__version",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "dunder version"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "dunder value",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": "__dunder"
+                          }
+                        }
+                      }
+                    ],
+                    [
+                      "empty value",
+                      {
+                        "Expr": {
+                          "Clone": {
+                            "StringLiteral": ""
+                          }
+                        }
+                      }
+                    ]
+                  ]
                 }
               }
             }
@@ -86,9 +185,21 @@
             },
             {
               "Ref": {
-                "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
-                  "body": "{\"1\": 1, \"2\": 2}"
+                "PulumiAny": {
+                  "Object": [
+                    [
+                      "1",
+                      {
+                        "Number": 1.0
+                      }
+                    ],
+                    [
+                      "2",
+                      {
+                        "Number": 2.0
+                      }
+                    ]
+                  ]
                 }
               }
             }
@@ -110,9 +221,45 @@
             },
             {
               "Ref": {
-                "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
-                  "body": "{\"MYKEY\": 6, \"MY_KEY\": 4, \"my-key\": 2, \"my.key\": 1, \"my_key\": 3, \"mykey\": 5}"
+                "PulumiAny": {
+                  "Object": [
+                    [
+                      "MYKEY",
+                      {
+                        "Number": 6.0
+                      }
+                    ],
+                    [
+                      "MY_KEY",
+                      {
+                        "Number": 4.0
+                      }
+                    ],
+                    [
+                      "my-key",
+                      {
+                        "Number": 2.0
+                      }
+                    ],
+                    [
+                      "my.key",
+                      {
+                        "Number": 1.0
+                      }
+                    ],
+                    [
+                      "my_key",
+                      {
+                        "Number": 3.0
+                      }
+                    ],
+                    [
+                      "mykey",
+                      {
+                        "Number": 5.0
+                      }
+                    ]
+                  ]
                 }
               }
             }

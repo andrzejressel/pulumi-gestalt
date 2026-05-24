@@ -29,9 +29,10 @@
                       "type_params": [],
                       "args": [
                         {
-                          "MacroCall": {
-                            "path": "pulumi_gestalt_rust::pulumi_any!",
-                            "body": "\"test\""
+                          "PulumiAny": {
+                            "Expr": {
+                              "StringLiteral": "test"
+                            }
                           }
                         }
                       ]
