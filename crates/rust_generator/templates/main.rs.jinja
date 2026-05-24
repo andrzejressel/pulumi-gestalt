@@ -27,3 +27,14 @@ static PULUMI_WASM_PROVIDER_{{ provider_name.replace("-", "_").to_ascii_uppercas
 pub(crate) fn get_version() -> String {
     "{{ provider_version }}".to_string()
 }
+
+pub fn package() -> pulumi_gestalt_rust::Package {
+    pulumi_gestalt_rust::Package {
+        name: "{{ provider_name }}".to_string(),
+        kind: "resource".to_string(),
+        version: "{{ provider_version }}".to_string(),
+        server: "{{ provider_server }}".to_string(),
+        checksums: std::collections::HashMap::new(),
+        parameterization: None,
+    }
+}

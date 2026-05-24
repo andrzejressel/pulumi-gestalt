@@ -35,3 +35,13 @@ static PULUMI_WASM_PROVIDER_EXAMPLE: [u8; 44] = *b"{\"version\":\"1.0.0\",\"plug
 pub(crate) fn get_version() -> String {
     "1.0.0".to_string()
 }
+pub fn package() -> pulumi_gestalt_rust::Package {
+    pulumi_gestalt_rust::Package {
+        name: "example".to_string(),
+        kind: "resource".to_string(),
+        version: "1.0.0".to_string(),
+        server: "".to_string(),
+        checksums: std::collections::HashMap::new(),
+        parameterization: None,
+    }
+}

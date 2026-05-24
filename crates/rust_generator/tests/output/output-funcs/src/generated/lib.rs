@@ -49,3 +49,13 @@ static PULUMI_WASM_PROVIDER_MYPKG: [u8; 44] = *b"{\"version\":\"0.0.1\",\"plugin
 pub(crate) fn get_version() -> String {
     "0.0.1".to_string()
 }
+pub fn package() -> pulumi_gestalt_rust::Package {
+    pulumi_gestalt_rust::Package {
+        name: "mypkg".to_string(),
+        kind: "resource".to_string(),
+        version: "0.0.1".to_string(),
+        server: "".to_string(),
+        checksums: std::collections::HashMap::new(),
+        parameterization: None,
+    }
+}

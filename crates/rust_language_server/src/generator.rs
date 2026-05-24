@@ -22,12 +22,35 @@ pub fn generate_main(model_program: &PclProtobufProgram) -> Result<GenerateResul
         .context("Failed to lower dynamic domain IR to typesafe domain IR")?;
     let rust_ir = crate::typesafe_domain_to_rust::lower(&typesafe_domain)
         .context("Failed to lower typesafe domain IR to Rust IR")?;
-    let main_rs =
-        crate::rust_to_string::render(&rust_ir).context("Failed to render Rust IR to string")?;
+    let packages_expr = render_packages_expr(model_program);
+    let main_rs = crate::rust_to_string::render(&rust_ir, &packages_expr)
+        .context("Failed to render Rust IR to string")?;
     Ok(GenerateResult {
         main_rs,
         dynamic_domain,
         typesafe_domain,
         rust_ir,
     })
+}
+
+fn render_packages_expr(model_program: &PclProtobufProgram) -> String {
+    let mut plugins = model_program
+        .plugins
+        .iter()
+        .filter(|plugin| plugin.name != "pulumi")
+        .map(|plugin| plugin.name.replace("-", "_"))
+        .collect::<Vec<_>>();
+    plugins.sort();
+    plugins.dedup();
+
+    if plugins.is_empty() {
+        return "vec![]".to_string();
+    }
+
+    let items = plugins
+        .into_iter()
+        .map(|name| format!("pulumi_{name}::package()"))
+        .collect::<Vec<_>>()
+        .join(", ");
+    format!("vec![{items}]")
 }
