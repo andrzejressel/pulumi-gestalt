@@ -21,7 +21,7 @@ pub mod get_customer_gateway {
         /// Map of key-value pairs assigned to the gateway.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -43,7 +43,9 @@ pub mod get_customer_gateway {
         /// IP address of the gateway's Internet-routable external interface.
         pub ip_address: pulumi_gestalt_rust::Output<String>,
         /// Map of key-value pairs assigned to the gateway.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Type of customer gateway. The only type AWS supports at this time is "ipsec.1".
         pub type_: pulumi_gestalt_rust::Output<String>,
     }

@@ -121,7 +121,7 @@ pub mod volume_replication {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of region for this resource. The resource needs to be created in the region of the destination volume.
         #[builder(into)]
@@ -175,7 +175,7 @@ pub mod volume_replication {
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Only replications with mirror_state=MIRRORED can be stopped. A replication in mirror_state=TRANSFERRING
         /// currently receives an update and stopping the update might be undesirable. Set this parameter to true
@@ -191,7 +191,7 @@ pub mod volume_replication {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of region for this resource. The resource needs to be created in the region of the destination volume.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -211,7 +211,7 @@ pub mod volume_replication {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Set to false to stop/break the mirror. Stopping the mirror makes the destination volume read-write
         /// and act independently from the source volume.

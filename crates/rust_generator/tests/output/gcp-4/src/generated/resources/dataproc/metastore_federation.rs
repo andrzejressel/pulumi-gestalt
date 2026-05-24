@@ -128,7 +128,7 @@ pub mod metastore_federation {
         /// resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location where the metastore federation should reside.
         #[builder(into, default)]
@@ -153,7 +153,7 @@ pub mod metastore_federation {
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The URI of the endpoint used to access the metastore federation.
         pub endpoint_uri: pulumi_gestalt_rust::Output<String>,
@@ -165,7 +165,7 @@ pub mod metastore_federation {
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location where the metastore federation should reside.
         pub location: pulumi_gestalt_rust::Output<Option<String>>,
@@ -175,7 +175,7 @@ pub mod metastore_federation {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The current state of the metastore federation.
         pub state: pulumi_gestalt_rust::Output<String>,

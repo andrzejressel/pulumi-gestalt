@@ -11,10 +11,10 @@ pub struct BackendCredentials {
     pub r#certificates: Option<Vec<String>>,
     /// A mapping of header parameters to pass to the backend host. The keys are the header names and the values are a comma separated string of header values. This is converted to a list before being passed to the API.
     #[builder(into)]
-    pub r#header: Option<std::collections::HashMap<String, String>>,
+    pub r#header: Option<std::collections::BTreeMap<String, String>>,
     /// A mapping of query parameters to pass to the backend host. The keys are the query names and the values are a comma separated string of query values. This is converted to a list before being passed to the API.
     #[builder(into)]
-    pub r#query: Option<std::collections::HashMap<String, String>>,
+    pub r#query: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BackendCredentials {

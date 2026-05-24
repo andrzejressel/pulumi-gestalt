@@ -77,7 +77,7 @@ pub mod virtual_machine_manager_server {
         /// A mapping of tags which should be assigned to the System Center Virtual Machine Manager Server.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The username that is used to connect to the System Center Virtual Machine Manager Server. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -106,7 +106,7 @@ pub mod virtual_machine_manager_server {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the System Center Virtual Machine Manager Server.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The username that is used to connect to the System Center Virtual Machine Manager Server. Changing this forces a new resource to be created.
         pub username: pulumi_gestalt_rust::Output<String>,

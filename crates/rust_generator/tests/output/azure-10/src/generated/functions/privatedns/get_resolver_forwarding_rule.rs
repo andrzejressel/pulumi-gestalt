@@ -26,7 +26,7 @@ pub mod get_resolver_forwarding_rule {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// The metadata attached to the Private DNS Resolver Forwarding Rule.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A list of `target_dns_servers` block as defined below.

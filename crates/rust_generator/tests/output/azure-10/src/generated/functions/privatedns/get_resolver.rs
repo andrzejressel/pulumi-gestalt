@@ -24,7 +24,9 @@ pub mod get_resolver {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// The tags assigned to the Private DNS Resolver.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The ID of the Virtual Network that is linked to the Private DNS Resolver.
         pub virtual_network_id: pulumi_gestalt_rust::Output<String>,
     }

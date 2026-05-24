@@ -131,7 +131,7 @@ pub mod registry_task {
         >,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub timeout_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -201,7 +201,7 @@ pub mod registry_task {
             Option<Vec<super::super::types::containerservice::RegistryTaskSourceTrigger>>,
         >,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub timeout_in_seconds: pulumi_gestalt_rust::Output<Option<i32>>,
         /// One or more `timer_trigger` blocks as defined below.

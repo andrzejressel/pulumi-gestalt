@@ -34,7 +34,9 @@ pub mod get_insights {
         /// The retention period in days.
         pub retention_in_days: pulumi_gestalt_rust::Output<i32>,
         /// Tags applied to the component.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The id of the associated Log Analytics workspace
         pub workspace_id: pulumi_gestalt_rust::Output<String>,
     }

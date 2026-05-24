@@ -8,7 +8,7 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerLogConfiguratio
     pub r#log_driver: String,
     /// The configuration options to send to the log driver.
     #[builder(into)]
-    pub r#options: std::collections::HashMap<String, String>,
+    pub r#options: std::collections::BTreeMap<String, String>,
     /// The secrets to pass to the log configuration.
     #[builder(into)]
     pub r#secret_options: Vec<super::super::types::batch::GetJobDefinitionNodePropertyNodeRangePropertyContainerLogConfigurationSecretOption>,

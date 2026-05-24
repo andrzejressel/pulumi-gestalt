@@ -8,7 +8,7 @@ pub struct FulfillmentGenericWebService {
     pub r#password: Option<String>,
     /// The HTTP request headers to send together with fulfillment requests.
     #[builder(into)]
-    pub r#request_headers: Option<std::collections::HashMap<String, String>>,
+    pub r#request_headers: Option<std::collections::BTreeMap<String, String>>,
     /// The fulfillment URI for receiving POST requests. It must use https protocol.
     #[builder(into)]
     pub r#uri: String,

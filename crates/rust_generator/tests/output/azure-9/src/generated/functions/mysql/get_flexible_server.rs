@@ -57,7 +57,9 @@ pub mod get_flexible_server {
             Vec<super::super::super::types::mysql::GetFlexibleServerStorage>,
         >,
         /// A mapping of tags which are assigned to the MySQL Flexible Server.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The version of the MySQL Flexible Server.
         pub version: pulumi_gestalt_rust::Output<String>,
         /// The Availability Zones where this MySQL Flexible Server is located.

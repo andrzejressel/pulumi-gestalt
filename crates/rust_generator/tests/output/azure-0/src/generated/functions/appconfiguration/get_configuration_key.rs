@@ -32,7 +32,9 @@ pub mod get_configuration_key {
         /// Is this App Configuration Key be Locked to prevent changes.
         pub locked: pulumi_gestalt_rust::Output<bool>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The type of the App Configuration Key. It can either be `kv` (simple [key/value](https://docs.microsoft.com/azure/azure-app-configuration/concept-key-value)) or `vault` (where the value is a reference to a [Key Vault Secret](https://azure.microsoft.com/en-gb/services/key-vault/).
         pub type_: pulumi_gestalt_rust::Output<String>,
         /// The value of the App Configuration Key.

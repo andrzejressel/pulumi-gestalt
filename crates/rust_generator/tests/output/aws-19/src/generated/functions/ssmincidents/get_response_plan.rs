@@ -14,7 +14,7 @@ pub mod get_response_plan {
         /// The tags applied to the response plan.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -44,7 +44,9 @@ pub mod get_response_plan {
         /// The name of the PagerDuty configuration.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The tags applied to the response plan.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

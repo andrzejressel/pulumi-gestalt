@@ -183,7 +183,7 @@ pub mod branch {
         /// Environment variables for the branch.
         #[builder(into, default)]
         pub environment_variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Framework for the branch.
         #[builder(into, default)]
@@ -197,7 +197,7 @@ pub mod branch {
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Content Time To Live (TTL) for the website in seconds.
         #[builder(into, default)]
@@ -242,7 +242,7 @@ pub mod branch {
         pub enable_pull_request_preview: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Environment variables for the branch.
         pub environment_variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Framework for the branch.
         pub framework: pulumi_gestalt_rust::Output<Option<String>>,
@@ -254,11 +254,11 @@ pub mod branch {
         pub stage: pulumi_gestalt_rust::Output<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Content Time To Live (TTL) for the website in seconds.
         pub ttl: pulumi_gestalt_rust::Output<Option<String>>,

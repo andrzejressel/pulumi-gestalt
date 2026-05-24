@@ -17,7 +17,7 @@ pub mod get_firewall_policy {
         /// Key-value tags for the firewall policy.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -35,7 +35,9 @@ pub mod get_firewall_policy {
         pub id: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Key-value tags for the firewall policy.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Token used for optimistic locking.
         pub update_token: pulumi_gestalt_rust::Output<String>,
     }

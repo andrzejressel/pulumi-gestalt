@@ -62,7 +62,7 @@ pub mod smsvoicev_2_phone_number {
         pub self_managed_opt_outs_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub timeouts: pulumi_gestalt_rust::Input<
@@ -105,11 +105,11 @@ pub mod smsvoicev_2_phone_number {
         /// When set to `false` an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the opt-out list. When set to true you’re responsible for responding to HELP and STOP requests. You’re also responsible for tracking and honoring opt-out request.
         pub self_managed_opt_outs_enabled: pulumi_gestalt_rust::Output<bool>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub timeouts: pulumi_gestalt_rust::Output<
             Option<super::super::types::pinpoint::Smsvoicev2PhoneNumberTimeouts>,

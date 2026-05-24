@@ -19,18 +19,18 @@ pub mod get_hosting_channel {
     pub struct GetHostingChannelResult {
         pub channel_id: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub expire_time: pulumi_gestalt_rust::Output<String>,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The fully-qualified resource name for the channel, in the format: `sites/{{site_id}}/channels/{{channel_id}}`.
         pub name: pulumi_gestalt_rust::Output<String>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub retained_release_count: pulumi_gestalt_rust::Output<i32>,
         pub site_id: pulumi_gestalt_rust::Output<String>,

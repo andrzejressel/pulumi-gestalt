@@ -20,7 +20,7 @@ pub mod get_contact_flow_module {
         /// Map of tags to assign to the Contact Flow Module.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -41,7 +41,9 @@ pub mod get_contact_flow_module {
         /// Status of the Contact Flow Module Module. Values are either `PUBLISHED` or `SAVED`.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// Map of tags to assign to the Contact Flow Module.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

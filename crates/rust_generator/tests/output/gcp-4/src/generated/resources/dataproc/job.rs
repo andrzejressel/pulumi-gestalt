@@ -83,7 +83,7 @@ pub mod job {
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The config of pag job.
         #[builder(into, default)]
@@ -151,7 +151,7 @@ pub mod job {
         ///
         /// * `scheduling.max_failures_total` - (Required) Maximum number of times in total a driver may be restarted as a result of driver exiting with non-zero code before job is reported failed.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// By default, you can only delete inactive jobs within
         /// Dataproc. Setting this to true, and calling destroy, will ensure that the
@@ -169,7 +169,7 @@ pub mod job {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The config of pag job.
         pub pig_config: pulumi_gestalt_rust::Output<
@@ -188,7 +188,7 @@ pub mod job {
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The config of pySpark job.
         pub pyspark_config: pulumi_gestalt_rust::Output<

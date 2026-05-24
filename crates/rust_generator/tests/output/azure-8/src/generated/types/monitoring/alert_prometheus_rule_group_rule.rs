@@ -14,7 +14,7 @@ pub struct AlertPrometheusRuleGroupRule {
     pub r#alert_resolution: Option<Box<super::super::types::monitoring::AlertPrometheusRuleGroupRuleAlertResolution>>,
     /// Specifies a set of informational labels that can be used to store longer additional information such as alert descriptions or runbook links.
     #[builder(into)]
-    pub r#annotations: Option<std::collections::HashMap<String, String>>,
+    pub r#annotations: Option<std::collections::BTreeMap<String, String>>,
     /// Is this rule enabled? Possible values are `true` and `false`.
     #[builder(into)]
     pub r#enabled: Option<bool>,
@@ -26,7 +26,7 @@ pub struct AlertPrometheusRuleGroupRule {
     pub r#for_: Option<String>,
     /// Specifies the labels to add or overwrite before storing the result.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Specifies the recorded metrics name.
     #[builder(into)]
     pub r#record: Option<String>,

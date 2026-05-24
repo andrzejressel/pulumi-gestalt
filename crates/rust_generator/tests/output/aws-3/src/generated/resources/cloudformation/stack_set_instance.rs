@@ -148,7 +148,7 @@ pub mod stack_set_instance {
         /// Key-value map of input parameters to override from the StackSet for this Instance.
         #[builder(into, default)]
         pub parameter_overrides: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Target AWS Region to create a Stack based on the StackSet. Defaults to current region.
         #[builder(into, default)]
@@ -187,7 +187,7 @@ pub mod stack_set_instance {
         pub organizational_unit_id: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of input parameters to override from the StackSet for this Instance.
         pub parameter_overrides: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Target AWS Region to create a Stack based on the StackSet. Defaults to current region.
         pub region: pulumi_gestalt_rust::Output<String>,

@@ -71,7 +71,7 @@ pub mod windows_function_app {
         /// Settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-app-settings) and custom values.
         #[builder(into, default)]
         pub app_settings: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `auth_settings` block as defined below.
         #[builder(into, default)]
@@ -190,7 +190,7 @@ pub mod windows_function_app {
         /// A mapping of tags which should be assigned to the Windows Function App.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -220,7 +220,7 @@ pub mod windows_function_app {
         /// A map of key-value pairs for [App
         /// Settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-app-settings) and custom values.
         pub app_settings: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `auth_settings` block as defined below.
         pub auth_settings: pulumi_gestalt_rust::Output<
@@ -330,7 +330,7 @@ pub mod windows_function_app {
         pub storage_uses_managed_identity: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A mapping of tags which should be assigned to the Windows Function App.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub virtual_network_subnet_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Is container image pull over virtual network enabled? Defaults to `false`.

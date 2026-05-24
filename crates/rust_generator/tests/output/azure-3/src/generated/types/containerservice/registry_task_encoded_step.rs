@@ -11,7 +11,7 @@ pub struct RegistryTaskEncodedStep {
     pub r#context_path: Option<String>,
     /// Specifies a map of secret values that can be passed when running a task.
     #[builder(into)]
-    pub r#secret_values: Option<std::collections::HashMap<String, String>>,
+    pub r#secret_values: Option<std::collections::BTreeMap<String, String>>,
     /// The (optionally base64 encoded) content of the build template.
     #[builder(into)]
     pub r#task_content: String,
@@ -20,7 +20,7 @@ pub struct RegistryTaskEncodedStep {
     pub r#value_content: Option<String>,
     /// Specifies a map of values that can be passed when running a task.
     #[builder(into)]
-    pub r#values: Option<std::collections::HashMap<String, String>>,
+    pub r#values: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RegistryTaskEncodedStep {

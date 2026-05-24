@@ -32,7 +32,9 @@ pub mod get_network_slice {
             >,
         >,
         /// A mapping of tags which are assigned to the Mobile Network Slice.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

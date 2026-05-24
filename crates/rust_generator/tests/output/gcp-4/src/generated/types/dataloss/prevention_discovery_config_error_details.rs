@@ -8,7 +8,7 @@ pub struct PreventionDiscoveryConfigErrorDetails {
     pub r#code: Option<i32>,
     /// A list of messages that carry the error details.
     #[builder(into)]
-    pub r#details: Option<Vec<std::collections::HashMap<String, String>>>,
+    pub r#details: Option<Vec<std::collections::BTreeMap<String, String>>>,
     /// A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.
     #[builder(into)]
     pub r#message: Option<String>,

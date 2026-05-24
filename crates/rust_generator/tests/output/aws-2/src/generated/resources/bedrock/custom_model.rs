@@ -59,7 +59,7 @@ pub mod custom_model {
         /// [Parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html) related to tuning the model.
         #[builder(into)]
         pub hyperparameters: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A name for the customization job.
         #[builder(into)]
@@ -75,7 +75,7 @@ pub mod custom_model {
         /// A map of tags to assign to the customization job and custom model. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub timeouts: pulumi_gestalt_rust::Input<
@@ -116,7 +116,7 @@ pub mod custom_model {
         pub customization_type: pulumi_gestalt_rust::Output<String>,
         /// [Parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html) related to tuning the model.
         pub hyperparameters: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ARN of the customization job.
         pub job_arn: pulumi_gestalt_rust::Output<String>,
@@ -132,11 +132,11 @@ pub mod custom_model {
         pub role_arn: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the customization job and custom model. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub timeouts: pulumi_gestalt_rust::Output<
             Option<super::super::types::bedrock::CustomModelTimeouts>,

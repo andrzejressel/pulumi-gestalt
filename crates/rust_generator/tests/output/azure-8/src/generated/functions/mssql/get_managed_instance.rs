@@ -55,7 +55,9 @@ pub mod get_managed_instance {
         /// The subnet resource ID that the SQL Managed Instance is associated with.
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The TimeZone ID that the SQL Managed Instance is running in.
         pub timezone_id: pulumi_gestalt_rust::Output<String>,
         /// Number of cores that are assigned to the SQL Managed Instance.

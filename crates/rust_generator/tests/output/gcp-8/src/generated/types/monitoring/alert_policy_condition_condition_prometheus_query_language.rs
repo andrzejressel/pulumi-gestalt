@@ -36,7 +36,7 @@ pub struct AlertPolicyConditionConditionPrometheusQueryLanguage {
     /// "__name__" and "value". "labels" may be empty. This field is intended to be
     /// used for organizing and identifying the AlertPolicy
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// The PromQL expression to evaluate. Every evaluation cycle this
     /// expression is evaluated at the current time, and all resultant time
     /// series become pending/firing alerts. This field must not be empty.

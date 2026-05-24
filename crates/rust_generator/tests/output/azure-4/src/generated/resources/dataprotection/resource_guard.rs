@@ -55,7 +55,7 @@ pub mod resource_guard {
         /// A mapping of tags which should be assigned to the Resource Guard.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A list of the critical operations which are not protected by this Resource Guard.
         #[builder(into, default)]
@@ -78,7 +78,7 @@ pub mod resource_guard {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Resource Guard.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A list of the critical operations which are not protected by this Resource Guard.
         pub vault_critical_operation_exclusion_lists: pulumi_gestalt_rust::Output<

@@ -170,7 +170,7 @@ pub mod v_mware_node_pool {
         /// the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The node configuration of the node pool.
         /// Structure is documented below.
@@ -212,7 +212,7 @@ pub mod v_mware_node_pool {
         /// only manage the annotations present in your configuration. Please refer to the field 'effective_annotations' for all of
         /// the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The node configuration of the node pool.
         /// Structure is documented below.
@@ -226,7 +226,7 @@ pub mod v_mware_node_pool {
         /// The display name for the node pool.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// This checksum is computed by the server based on the value of other
         /// fields, and may be sent on update and delete requests to ensure the

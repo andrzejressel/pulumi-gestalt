@@ -126,7 +126,7 @@ pub mod endpoint {
         /// Metadata that goes beyond any these limits will be rejected.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The URL to the network, such as projects/PROJECT_NUMBER/locations/global/networks/NETWORK_NAME.
         #[builder(into, default)]
@@ -159,7 +159,7 @@ pub mod endpoint {
         /// up to 512 characters, spread across all key-value pairs.
         /// Metadata that goes beyond any these limits will be rejected.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The resource name for the endpoint in the format
         /// `projects/*/locations/*/namespaces/*/services/*/endpoints/*`.

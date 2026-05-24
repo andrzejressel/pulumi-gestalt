@@ -25,7 +25,9 @@ pub mod get_template_spec_version {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Template.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The ARM Template body of the Template Spec Version.
         pub template_body: pulumi_gestalt_rust::Output<String>,
         pub version: pulumi_gestalt_rust::Output<String>,

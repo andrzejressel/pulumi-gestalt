@@ -30,7 +30,9 @@ pub mod get_application_group {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Application Group.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The type of Application Group (`RemoteApp` or `Desktop`).
         pub type_: pulumi_gestalt_rust::Output<String>,
         /// The Virtual Desktop Workspace ID the Application Group is associated to.

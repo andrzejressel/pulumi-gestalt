@@ -76,7 +76,7 @@ pub mod scope_rbac_role_binding {
         /// in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub project: pulumi_gestalt_rust::Input<Option<String>>,
@@ -111,7 +111,7 @@ pub mod scope_rbac_role_binding {
         pub delete_time: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Principal that is be authorized in the cluster (at least of one the oneof is required). Updating one will unset the
         /// other automatically. group is the group, as seen by the kubernetes cluster.
@@ -119,7 +119,7 @@ pub mod scope_rbac_role_binding {
         /// Labels for this ScopeRBACRoleBinding. **Note**: This field is non-authoritative, and will only manage the labels present
         /// in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The resource name for the RBAC Role Binding
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -127,7 +127,7 @@ pub mod scope_rbac_role_binding {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Role to bind to the principal.
         /// Structure is documented below.

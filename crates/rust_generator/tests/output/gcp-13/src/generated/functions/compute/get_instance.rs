@@ -58,7 +58,7 @@ pub mod get_instance {
         pub description: pulumi_gestalt_rust::Output<String>,
         pub desired_status: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Whether the instance has virtual displays enabled.
         pub enable_display: pulumi_gestalt_rust::Output<bool>,
@@ -77,13 +77,13 @@ pub mod get_instance {
         pub label_fingerprint: pulumi_gestalt_rust::Output<String>,
         /// A set of key/value label pairs assigned to the disk.
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The machine type to create.
         pub machine_type: pulumi_gestalt_rust::Output<String>,
         /// Metadata key/value pairs made available within the instance.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The unique fingerprint of the metadata.
         pub metadata_fingerprint: pulumi_gestalt_rust::Output<String>,
@@ -103,11 +103,11 @@ pub mod get_instance {
             Vec<super::super::super::types::compute::GetInstanceParam>,
         >,
         pub partner_metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub reservation_affinities: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::compute::GetInstanceReservationAffinity>,

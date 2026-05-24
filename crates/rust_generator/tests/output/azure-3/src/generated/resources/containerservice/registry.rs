@@ -196,7 +196,7 @@ pub mod registry {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Boolean value that indicated whether trust policy is enabled. Defaults to `false`.
         #[builder(into, default)]
@@ -268,7 +268,7 @@ pub mod registry {
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Boolean value that indicated whether trust policy is enabled. Defaults to `false`.
         pub trust_policy_enabled: pulumi_gestalt_rust::Output<Option<bool>>,

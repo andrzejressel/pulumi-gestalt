@@ -73,7 +73,7 @@ pub mod network_manager {
         /// A mapping of tags which should be assigned to the Network Managers.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -103,7 +103,7 @@ pub mod network_manager {
         pub scope_accesses: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A mapping of tags which should be assigned to the Network Managers.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

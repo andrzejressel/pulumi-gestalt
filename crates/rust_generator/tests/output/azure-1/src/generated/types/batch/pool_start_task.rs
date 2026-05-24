@@ -8,7 +8,7 @@ pub struct PoolStartTask {
     pub r#command_line: String,
     /// A map of strings (key,value) that represents the environment variables to set in the start task.
     #[builder(into)]
-    pub r#common_environment_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#common_environment_properties: Option<std::collections::BTreeMap<String, String>>,
     /// A `container` block is the settings for the container under which the start task runs as defined below. When this is specified, all directories recursively below the `AZ_BATCH_NODE_ROOT_DIR` (the root of Azure Batch directories on the node) are mapped into the container, all task environment variables are mapped into the container, and the task command line is executed in the container.
     #[builder(into)]
     pub r#containers: Option<Vec<super::super::types::batch::PoolStartTaskContainer>>,

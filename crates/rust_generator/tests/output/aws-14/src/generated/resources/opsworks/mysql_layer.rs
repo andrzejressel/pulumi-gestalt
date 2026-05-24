@@ -98,7 +98,7 @@ pub mod mysql_layer {
         /// lifecycle events, if custom cookbooks are enabled on the layer's stack:
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Whether to use EBS-optimized instances.
         #[builder(into, default)]
@@ -164,11 +164,11 @@ pub mod mysql_layer {
         /// custom Chef recipes to be applied to layer instances at the five different
         /// lifecycle events, if custom cookbooks are enabled on the layer's stack:
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Whether to use EBS-optimized instances.
         pub use_ebs_optimized_instances: pulumi_gestalt_rust::Output<Option<bool>>,

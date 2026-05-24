@@ -41,7 +41,7 @@ pub struct GetTriggerBuild {
     pub r#steps: Vec<super::super::types::cloudbuild::GetTriggerBuildStep>,
     /// Substitutions data for Build resource.
     #[builder(into)]
-    pub r#substitutions: std::collections::HashMap<String, String>,
+    pub r#substitutions: std::collections::BTreeMap<String, String>,
     /// Tags for annotation of a Build. These are not docker tags.
     #[builder(into)]
     pub r#tags: Vec<String>,

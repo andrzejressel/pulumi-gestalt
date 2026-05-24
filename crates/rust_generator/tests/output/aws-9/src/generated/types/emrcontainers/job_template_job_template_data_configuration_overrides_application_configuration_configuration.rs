@@ -8,7 +8,7 @@ pub struct JobTemplateJobTemplateDataConfigurationOverridesApplicationConfigurat
     pub r#classification: Option<String>,
     /// A set of properties specified within a configuration classification.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobTemplateJobTemplateDataConfigurationOverridesApplicationConfigurationConfiguration {

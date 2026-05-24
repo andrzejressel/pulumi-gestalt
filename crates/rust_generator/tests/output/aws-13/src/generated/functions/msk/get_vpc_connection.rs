@@ -14,7 +14,7 @@ pub mod get_vpc_connection {
         /// Map of key-value pairs assigned to the VPC Connection.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -29,7 +29,9 @@ pub mod get_vpc_connection {
         /// The security groups attached to the ENIs for the broker nodes.
         pub security_groups: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Map of key-value pairs assigned to the VPC Connection.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Amazon Resource Name (ARN) of the cluster.
         pub target_cluster_arn: pulumi_gestalt_rust::Output<String>,
         /// The VPC ID of the remote client.

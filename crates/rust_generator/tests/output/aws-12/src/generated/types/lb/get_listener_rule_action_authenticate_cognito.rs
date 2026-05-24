@@ -6,7 +6,7 @@ pub struct GetListenerRuleActionAuthenticateCognito {
     /// Set of additional parameters for the request.
     /// Detailed below.
     #[builder(into)]
-    pub r#authentication_request_extra_params: std::collections::HashMap<String, String>,
+    pub r#authentication_request_extra_params: std::collections::BTreeMap<String, String>,
     /// Behavior when the client is not authenticated.
     #[builder(into)]
     pub r#on_unauthenticated_request: String,

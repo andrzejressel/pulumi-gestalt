@@ -14,7 +14,7 @@ pub mod get_report_definition {
         /// Map of key-value pairs assigned to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -41,7 +41,9 @@ pub mod get_report_definition {
         /// Region of customer S3 bucket.
         pub s3_region: pulumi_gestalt_rust::Output<String>,
         /// Map of key-value pairs assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Frequency on which report data are measured and displayed.
         pub time_unit: pulumi_gestalt_rust::Output<String>,
     }

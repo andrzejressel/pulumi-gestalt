@@ -97,7 +97,7 @@ pub mod watcher {
         /// Specifies a list of key-vaule parameters. Changing this forces a new Automation watcher to be created.
         #[builder(into, default)]
         pub script_parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specify the name of the Hybrid work group the watcher will run on.
         #[builder(into)]
@@ -105,7 +105,7 @@ pub mod watcher {
         /// A mapping of tags which should be assigned to the Automation Watcher.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -131,7 +131,7 @@ pub mod watcher {
         pub script_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of key-vaule parameters. Changing this forces a new Automation watcher to be created.
         pub script_parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specify the name of the Hybrid work group the watcher will run on.
         pub script_run_on: pulumi_gestalt_rust::Output<String>,
@@ -139,7 +139,7 @@ pub mod watcher {
         pub status: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Automation Watcher.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

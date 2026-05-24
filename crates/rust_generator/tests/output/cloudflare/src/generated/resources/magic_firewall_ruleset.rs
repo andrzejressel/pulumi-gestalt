@@ -51,7 +51,7 @@ pub mod magic_firewall_ruleset {
         pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub rules: pulumi_gestalt_rust::Input<
-            Option<Vec<std::collections::HashMap<String, String>>>,
+            Option<Vec<std::collections::BTreeMap<String, String>>>,
         >,
     }
     #[allow(dead_code)]
@@ -68,7 +68,7 @@ pub mod magic_firewall_ruleset {
         /// The name of the ruleset.
         pub name: pulumi_gestalt_rust::Output<String>,
         pub rules: pulumi_gestalt_rust::Output<
-            Option<Vec<std::collections::HashMap<String, String>>>,
+            Option<Vec<std::collections::BTreeMap<String, String>>>,
         >,
     }
     ///

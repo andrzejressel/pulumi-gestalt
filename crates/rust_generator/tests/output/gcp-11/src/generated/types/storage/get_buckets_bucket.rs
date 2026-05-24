@@ -5,7 +5,7 @@
 pub struct GetBucketsBucket {
     /// User-provided bucket labels, in key/value pairs.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The location of the bucket.
     #[builder(into)]
     pub r#location: String,

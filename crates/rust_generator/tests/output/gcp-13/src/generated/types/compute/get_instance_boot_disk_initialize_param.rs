@@ -11,7 +11,7 @@ pub struct GetInstanceBootDiskInitializeParam {
     pub r#image: String,
     /// A set of key/value label pairs assigned to the disk.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle.
     #[builder(into)]
     pub r#provisioned_iops: i32,
@@ -20,7 +20,7 @@ pub struct GetInstanceBootDiskInitializeParam {
     pub r#provisioned_throughput: i32,
     /// A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
     #[builder(into)]
-    pub r#resource_manager_tags: std::collections::HashMap<String, String>,
+    pub r#resource_manager_tags: std::collections::BTreeMap<String, String>,
     /// A list of self_links to resource policies attached to the selected `boot_disk`
     #[builder(into)]
     pub r#resource_policies: Vec<String>,

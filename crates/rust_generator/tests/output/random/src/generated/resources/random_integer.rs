@@ -47,7 +47,7 @@ pub mod random_integer {
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         #[builder(into, default)]
         pub keepers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The maximum inclusive value of the range.
         #[builder(into)]
@@ -68,7 +68,7 @@ pub mod random_integer {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         pub keepers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The maximum inclusive value of the range.
         pub max: pulumi_gestalt_rust::Output<i32>,

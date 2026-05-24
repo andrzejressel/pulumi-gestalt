@@ -36,7 +36,9 @@ pub mod get_data_collection_endpoint {
         pub public_network_access_enabled: pulumi_gestalt_rust::Output<bool>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Data Collection Endpoint.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

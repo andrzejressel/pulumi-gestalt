@@ -79,7 +79,7 @@ pub mod backup_policy {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Provides the number of weekly backups to keep, defaults to `1` which is the minimum, maximum is 1019.
         #[builder(into, default)]
@@ -110,7 +110,7 @@ pub mod backup_policy {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Provides the number of weekly backups to keep, defaults to `1` which is the minimum, maximum is 1019.
         pub weekly_backups_to_keep: pulumi_gestalt_rust::Output<Option<i32>>,

@@ -21,7 +21,7 @@ pub mod get_app_service {
         pub app_service_plan_id: pulumi_gestalt_rust::Output<String>,
         /// A key-value pair of App Settings for the App Service.
         pub app_settings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Does the App Service send session affinity cookies, which route client requests in the same session to the same instance?
         pub client_affinity_enabled: pulumi_gestalt_rust::Output<bool>,
@@ -66,7 +66,9 @@ pub mod get_app_service {
             Vec<super::super::super::types::appservice::GetAppServiceSourceControl>,
         >,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

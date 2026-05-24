@@ -47,7 +47,9 @@ pub mod get_firewall {
         /// The SKU tier of the Azure Firewall.
         pub sku_tier: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Azure Firewall.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The operation mode for threat intelligence-based filtering.
         pub threat_intel_mode: pulumi_gestalt_rust::Output<String>,
         /// A `virtual_hub` block as defined below.

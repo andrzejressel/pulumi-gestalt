@@ -32,7 +32,9 @@ pub mod get_factory {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Azure Data Factory.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A `vsts_configuration` block as defined below.
         pub vsts_configurations: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::datafactory::GetFactoryVstsConfiguration>,

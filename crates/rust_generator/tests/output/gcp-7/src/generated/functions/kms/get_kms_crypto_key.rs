@@ -21,7 +21,7 @@ pub mod get_kms_crypto_key {
         pub crypto_key_backend: pulumi_gestalt_rust::Output<String>,
         pub destroy_scheduled_duration: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
@@ -33,14 +33,14 @@ pub mod get_kms_crypto_key {
         >,
         pub key_ring: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub primaries: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::kms::GetKmsCryptoKeyPrimary>,
         >,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Defines the cryptographic capabilities of the key.
         pub purpose: pulumi_gestalt_rust::Output<String>,

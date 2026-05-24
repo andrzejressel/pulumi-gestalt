@@ -8,7 +8,7 @@ pub struct ServiceServiceConnectConfigurationLogConfiguration {
     pub r#log_driver: String,
     /// Configuration options to send to the log driver.
     #[builder(into)]
-    pub r#options: Option<std::collections::HashMap<String, String>>,
+    pub r#options: Option<std::collections::BTreeMap<String, String>>,
     /// Secrets to pass to the log configuration. See below.
     #[builder(into)]
     pub r#secret_options: Option<Vec<super::super::types::ecs::ServiceServiceConnectConfigurationLogConfigurationSecretOption>>,

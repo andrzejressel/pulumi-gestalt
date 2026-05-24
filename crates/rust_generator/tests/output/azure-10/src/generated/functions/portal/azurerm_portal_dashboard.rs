@@ -33,7 +33,9 @@ pub mod azurerm_portal_dashboard {
         pub name: pulumi_gestalt_rust::Output<Option<String>>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the shared Azure Portal dashboard.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

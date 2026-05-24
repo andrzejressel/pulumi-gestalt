@@ -47,7 +47,9 @@ pub mod get_service {
         pub server_port: pulumi_gestalt_rust::Output<i32>,
         /// The serverless connection timeout of this SignalR service.
         pub serverless_connection_timeout_in_seconds: pulumi_gestalt_rust::Output<i32>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Is tls client cert enabled for this SignalR service?
         pub tls_client_cert_enabled: pulumi_gestalt_rust::Output<bool>,
     }

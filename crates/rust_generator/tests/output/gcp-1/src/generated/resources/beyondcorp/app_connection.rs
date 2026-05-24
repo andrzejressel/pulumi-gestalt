@@ -164,7 +164,7 @@ pub mod app_connection {
         /// resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the AppConnection.
         #[builder(into, default)]
@@ -198,7 +198,7 @@ pub mod app_connection {
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Gateway used by the AppConnection.
         pub gateway: pulumi_gestalt_rust::Output<
@@ -208,7 +208,7 @@ pub mod app_connection {
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the AppConnection.
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -216,7 +216,7 @@ pub mod app_connection {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The region of the AppConnection.
         pub region: pulumi_gestalt_rust::Output<Option<String>>,

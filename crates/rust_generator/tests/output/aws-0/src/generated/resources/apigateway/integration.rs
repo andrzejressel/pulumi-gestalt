@@ -251,12 +251,12 @@ pub mod integration {
         /// For example: `request_parameters = { "integration.request.header.X-Some-Other-Header" = "method.request.header.X-Some-Header" }`
         #[builder(into, default)]
         pub request_parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of the integration's request templates.
         #[builder(into, default)]
         pub request_templates: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// API resource ID.
         #[builder(into)]
@@ -314,11 +314,11 @@ pub mod integration {
         /// Map of request query string parameters and headers that should be passed to the backend responder.
         /// For example: `request_parameters = { "integration.request.header.X-Some-Other-Header" = "method.request.header.X-Some-Header" }`
         pub request_parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of the integration's request templates.
         pub request_templates: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// API resource ID.
         pub resource_id: pulumi_gestalt_rust::Output<String>,

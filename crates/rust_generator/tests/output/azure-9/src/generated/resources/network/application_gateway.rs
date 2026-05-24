@@ -243,7 +243,7 @@ pub mod application_gateway {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// One or more `trusted_client_certificate` blocks as defined below.
         #[builder(into, default)]
@@ -406,7 +406,7 @@ pub mod application_gateway {
         >,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// One or more `trusted_client_certificate` blocks as defined below.
         pub trusted_client_certificates: pulumi_gestalt_rust::Output<

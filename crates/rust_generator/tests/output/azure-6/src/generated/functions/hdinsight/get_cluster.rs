@@ -23,7 +23,7 @@ pub mod get_cluster {
         pub cluster_version: pulumi_gestalt_rust::Output<String>,
         /// A map of versions of software used on this HDInsights Cluster.
         pub component_versions: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The SSH Endpoint of the Edge Node for this HDInsight Cluster, if an Edge Node exists.
         pub edge_ssh_endpoint: pulumi_gestalt_rust::Output<String>,
@@ -47,7 +47,9 @@ pub mod get_cluster {
         /// The SSH Endpoint for this HDInsight Cluster.
         pub ssh_endpoint: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the HDInsight Cluster.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The SKU / Tier of this HDInsight Cluster.
         pub tier: pulumi_gestalt_rust::Output<String>,
         /// The minimal supported TLS version.

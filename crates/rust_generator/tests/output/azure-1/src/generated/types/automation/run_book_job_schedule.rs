@@ -10,7 +10,7 @@ pub struct RunBookJobSchedule {
     /// 
     /// > **NOTE:** The parameter keys/names must strictly be in lowercase, even if this is not the case in the runbook. This is due to a limitation in Azure Automation where the parameter names are normalized. The values specified don't have this limitation.
     #[builder(into)]
-    pub r#parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#parameters: Option<std::collections::BTreeMap<String, String>>,
     /// Name of a Hybrid Worker Group the Runbook will be executed on.
     #[builder(into)]
     pub r#run_on: Option<String>,

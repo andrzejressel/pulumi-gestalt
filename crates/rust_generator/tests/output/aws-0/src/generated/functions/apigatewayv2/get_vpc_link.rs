@@ -11,7 +11,7 @@ pub mod get_vpc_link {
         /// VPC Link Tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// VPC Link ID
         #[builder(into)]
@@ -30,7 +30,9 @@ pub mod get_vpc_link {
         /// List of subnets attached to the VPC Link.
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// VPC Link Tags.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub vpc_link_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

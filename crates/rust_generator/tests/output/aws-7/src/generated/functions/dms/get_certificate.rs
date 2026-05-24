@@ -13,7 +13,7 @@ pub mod get_certificate {
         pub certificate_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -35,7 +35,9 @@ pub mod get_certificate {
         pub key_length: pulumi_gestalt_rust::Output<i32>,
         /// The algorithm for the certificate.
         pub signing_algorithm: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The beginning date that the certificate is valid.
         pub valid_from_date: pulumi_gestalt_rust::Output<String>,
         /// The final date that the certificate is valid.

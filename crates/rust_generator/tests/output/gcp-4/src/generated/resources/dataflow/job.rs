@@ -130,7 +130,7 @@ pub mod job {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The machine type to use for the job.
         #[builder(into, default)]
@@ -152,7 +152,7 @@ pub mod job {
         /// **Note**: do not configure Dataflow options here in parameters.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The project in which the resource belongs. If it is not provided, the provider project is used.
         #[builder(into, default)]
@@ -180,7 +180,7 @@ pub mod job {
         /// Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job. This field is not used outside of update.
         #[builder(into, default)]
         pub transform_name_mapping: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The zone in which the created job should run. If it is not provided, the provider zone is used.
         #[builder(into, default)]
@@ -197,7 +197,7 @@ pub mod job {
         pub additional_experiments: pulumi_gestalt_rust::Output<Vec<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Enable/disable the use of [Streaming Engine](https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#streaming-engine) for the job. Note that Streaming Engine is enabled by default for pipelines developed against the Beam SDK for Python v2.21.0 or later when using Python 3.
         pub enable_streaming_engine: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -211,7 +211,7 @@ pub mod job {
         /// specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The machine type to use for the job.
         pub machine_type: pulumi_gestalt_rust::Output<Option<String>>,
@@ -227,13 +227,13 @@ pub mod job {
         /// case-sensitive based on the language on which the pipeline is coded, mostly Java.
         /// **Note**: do not configure Dataflow options here in parameters.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The project in which the resource belongs. If it is not provided, the provider project is used.
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The region in which the created job should run.
         pub region: pulumi_gestalt_rust::Output<Option<String>>,
@@ -253,7 +253,7 @@ pub mod job {
         pub template_gcs_path: pulumi_gestalt_rust::Output<String>,
         /// Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job. This field is not used outside of update.
         pub transform_name_mapping: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The type of this job, selected from the [JobType enum](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#Job.JobType)
         pub type_: pulumi_gestalt_rust::Output<String>,

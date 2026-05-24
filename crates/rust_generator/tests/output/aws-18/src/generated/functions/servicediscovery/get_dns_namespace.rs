@@ -14,7 +14,7 @@ pub mod get_dns_namespace {
         /// Map of tags for the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Type of the namespace. Allowed values are `DNS_PUBLIC` or `DNS_PRIVATE`.
         #[builder(into)]
@@ -32,7 +32,9 @@ pub mod get_dns_namespace {
         pub id: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Map of tags for the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub type_: pulumi_gestalt_rust::Output<String>,
     }
     ///

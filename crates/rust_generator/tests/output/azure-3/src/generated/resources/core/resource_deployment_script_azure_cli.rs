@@ -116,7 +116,7 @@ pub mod resource_deployment_script_azure_cli {
         /// A mapping of tags which should be assigned to the Resource Deployment Script.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Maximum allowed script execution time specified in ISO 8601 format. Needs to be greater than 0 and smaller than 1 day. Defaults to `P1D`. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
@@ -178,7 +178,7 @@ pub mod resource_deployment_script_azure_cli {
         pub supporting_script_uris: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// A mapping of tags which should be assigned to the Resource Deployment Script.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Maximum allowed script execution time specified in ISO 8601 format. Needs to be greater than 0 and smaller than 1 day. Defaults to `P1D`. Changing this forces a new Resource Deployment Script to be created.
         pub timeout: pulumi_gestalt_rust::Output<Option<String>>,

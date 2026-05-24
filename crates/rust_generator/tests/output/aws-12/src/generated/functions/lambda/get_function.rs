@@ -16,7 +16,7 @@ pub mod get_function {
         pub qualifier: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -87,7 +87,9 @@ pub mod get_function {
         pub source_code_hash: pulumi_gestalt_rust::Output<String>,
         /// Size in bytes of the function .zip file.
         pub source_code_size: pulumi_gestalt_rust::Output<i32>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Function execution time at which Lambda should terminate the function.
         pub timeout: pulumi_gestalt_rust::Output<i32>,
         /// Tracing settings of the function.

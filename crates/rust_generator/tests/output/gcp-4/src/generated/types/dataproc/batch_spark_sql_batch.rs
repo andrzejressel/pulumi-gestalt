@@ -11,7 +11,7 @@ pub struct BatchSparkSqlBatch {
     pub r#query_file_uri: Option<String>,
     /// Mapping of query variable names to values (equivalent to the Spark SQL command: SET name="value";).
     #[builder(into)]
-    pub r#query_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#query_variables: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BatchSparkSqlBatch {

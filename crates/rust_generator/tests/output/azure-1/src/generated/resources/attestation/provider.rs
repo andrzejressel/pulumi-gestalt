@@ -70,7 +70,7 @@ pub mod provider {
         /// A mapping of tags which should be assigned to the Attestation Provider.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the base64 URI Encoded RFC 7519 JWT that should be used for the Attestation Policy.
         #[builder(into, default)]
@@ -105,7 +105,7 @@ pub mod provider {
         pub sgx_enclave_policy_base64: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the Attestation Provider.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the base64 URI Encoded RFC 7519 JWT that should be used for the Attestation Policy.
         pub tpm_policy_base64: pulumi_gestalt_rust::Output<Option<String>>,

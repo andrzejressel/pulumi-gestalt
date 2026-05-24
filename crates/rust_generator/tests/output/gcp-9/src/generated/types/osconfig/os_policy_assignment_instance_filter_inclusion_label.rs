@@ -7,7 +7,7 @@ pub struct OsPolicyAssignmentInstanceFilterInclusionLabel {
     /// A VM should contain all the key/value pairs specified in this map to be
     /// selected.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsPolicyAssignmentInstanceFilterInclusionLabel {

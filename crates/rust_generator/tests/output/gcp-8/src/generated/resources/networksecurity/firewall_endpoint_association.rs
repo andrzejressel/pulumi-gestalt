@@ -55,7 +55,7 @@ pub mod firewall_endpoint_association {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location (zone) of the firewall endpoint association.
         ///
@@ -92,7 +92,7 @@ pub mod firewall_endpoint_association {
         pub disabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The URL of the firewall endpoint that is being associated.
         pub firewall_endpoint: pulumi_gestalt_rust::Output<String>,
@@ -101,7 +101,7 @@ pub mod firewall_endpoint_association {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location (zone) of the firewall endpoint association.
         ///
@@ -118,7 +118,7 @@ pub mod firewall_endpoint_association {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Whether reconciling is in progress, recommended per https://google.aip.dev/128.
         pub reconciling: pulumi_gestalt_rust::Output<bool>,

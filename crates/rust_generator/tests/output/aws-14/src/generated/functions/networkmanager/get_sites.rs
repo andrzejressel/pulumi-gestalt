@@ -14,7 +14,7 @@ pub mod get_sites {
         /// Restricts the list to the sites with these tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -25,7 +25,7 @@ pub mod get_sites {
         /// IDs of the sites.
         pub ids: pulumi_gestalt_rust::Output<Vec<String>>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

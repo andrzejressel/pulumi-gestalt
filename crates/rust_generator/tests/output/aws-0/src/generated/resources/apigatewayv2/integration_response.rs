@@ -53,7 +53,7 @@ pub mod integration_response {
         /// Map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client.
         #[builder(into, default)]
         pub response_templates: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The [template selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-template-selection-expressions) for the integration response.
         #[builder(into, default)]
@@ -76,7 +76,7 @@ pub mod integration_response {
         pub integration_response_key: pulumi_gestalt_rust::Output<String>,
         /// Map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client.
         pub response_templates: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The [template selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-template-selection-expressions) for the integration response.
         pub template_selection_expression: pulumi_gestalt_rust::Output<Option<String>>,

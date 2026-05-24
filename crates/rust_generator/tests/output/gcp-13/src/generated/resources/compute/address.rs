@@ -209,7 +209,7 @@ pub mod address {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the resource. The name must be 1-63 characters long, and
         /// comply with RFC1035. Specifically, the name must be 1-63 characters
@@ -288,7 +288,7 @@ pub mod address {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The IP Version that will be used by this address. The default value is `IPV4`.
         /// Possible values are: `IPV4`, `IPV6`.
@@ -306,7 +306,7 @@ pub mod address {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the resource. The name must be 1-63 characters long, and
         /// comply with RFC1035. Specifically, the name must be 1-63 characters
@@ -335,7 +335,7 @@ pub mod address {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The purpose of this resource, which can be one of the following values.
         /// * GCE_ENDPOINT for addresses that are used by VM instances, alias IP

@@ -5,10 +5,10 @@
 pub struct RegionInstanceGroupManagerAllInstancesConfig {
     /// The label key-value pairs that you want to patch onto the instance,
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata,
     #[builder(into)]
-    pub r#metadata: Option<std::collections::HashMap<String, String>>,
+    pub r#metadata: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RegionInstanceGroupManagerAllInstancesConfig {

@@ -48,7 +48,7 @@ pub mod get_bucket_object {
         /// (Computed) A url reference to download this object.
         pub media_link: pulumi_gestalt_rust::Output<String>,
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<Option<String>>,
         pub output_name: pulumi_gestalt_rust::Output<String>,

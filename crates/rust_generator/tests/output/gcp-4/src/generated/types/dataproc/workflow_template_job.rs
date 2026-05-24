@@ -11,7 +11,7 @@ pub struct WorkflowTemplateJob {
     pub r#hive_job: Option<Box<super::super::types::dataproc::WorkflowTemplateJobHiveJob>>,
     /// The labels to associate with this job. Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: {0,63} No more than 32 labels can be associated with a given job.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Job is a Pig job.
     #[builder(into)]
     pub r#pig_job: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPigJob>>,

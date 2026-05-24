@@ -14,7 +14,7 @@ pub mod get_ontap_file_system {
         /// The tags associated with the file system.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -60,7 +60,9 @@ pub mod get_ontap_file_system {
         /// Specifies the IDs of the subnets that the file system is accessible from. For the MULTI_AZ_1 file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby file server. The preferred file server subnet identified in the `preferred_subnet_id` property.
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The tags associated with the file system.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps). If the file system uses multiple HA pairs this will equal throuthput_capacity_per_ha_pair x ha_pairs
         pub throughput_capacity: pulumi_gestalt_rust::Output<i32>,
         /// The sustained throughput of each HA pair for an Amazon FSx file system in Megabytes per second (MBps).

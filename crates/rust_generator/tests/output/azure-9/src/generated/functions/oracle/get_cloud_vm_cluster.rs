@@ -115,7 +115,9 @@ pub mod get_cloud_vm_cluster {
         /// Operating system version of the image.
         pub system_version: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Cloud VM Cluster.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The date and time that the Cloud VM Cluster was created.
         pub time_created: pulumi_gestalt_rust::Output<String>,
         /// The time zone of the Cloud VM Cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.oracle.com/en-us/iaas/base-database/doc/manage-time-zone.html).

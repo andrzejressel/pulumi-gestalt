@@ -198,7 +198,7 @@ pub mod authority {
         /// your configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The desired lifetime of the CA certificate. Used to create the "notBeforeTime" and "notAfterTime" fields inside an X.509
         /// certificate. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
@@ -262,7 +262,7 @@ pub mod authority {
         pub desired_state: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The name of a Cloud Storage bucket where this CertificateAuthority will publish content, such as the CA certificate and
         /// CRLs. This must be a bucket name, without any prefixes (such as 'gs://') or suffixes (such as '.googleapis.com'). For
@@ -285,7 +285,7 @@ pub mod authority {
         /// "mass": "1.3kg", "count": "3" }. **Note**: This field is non-authoritative, and will only manage the labels present in
         /// your configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The desired lifetime of the CA certificate. Used to create the "notBeforeTime" and "notAfterTime" fields inside an X.509
         /// certificate. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
@@ -310,7 +310,7 @@ pub mod authority {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// If this flag is set, the Certificate Authority will be deleted as soon as possible without a 30-day grace period where
         /// undeletion would have been allowed. If you proceed, there will be no way to recover this CA. Use with care. Defaults to

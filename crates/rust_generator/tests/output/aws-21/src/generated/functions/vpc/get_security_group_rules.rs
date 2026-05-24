@@ -20,7 +20,7 @@ pub mod get_security_group_rules {
         /// which take the following arguments:
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -32,7 +32,7 @@ pub mod get_security_group_rules {
         /// List of all the security group rule IDs found.
         pub ids: pulumi_gestalt_rust::Output<Vec<String>>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

@@ -11,7 +11,7 @@ pub mod get_user {
         /// Map of key-value pairs associated with the user.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Friendly IAM user name to match.
         #[builder(into)]
@@ -28,7 +28,9 @@ pub mod get_user {
         /// The ARN of the policy that is used to set the permissions boundary for the user.
         pub permissions_boundary: pulumi_gestalt_rust::Output<String>,
         /// Map of key-value pairs associated with the user.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Unique ID assigned by AWS for this user.
         pub user_id: pulumi_gestalt_rust::Output<String>,
         /// Name associated to this User

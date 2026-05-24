@@ -12,7 +12,7 @@ pub struct GetPlanRule {
     #[builder(into)]
     pub r#lifecycles: Vec<super::super::types::backup::GetPlanRuleLifecycle>,
     #[builder(into)]
-    pub r#recovery_point_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#recovery_point_tags: Option<std::collections::BTreeMap<String, String>>,
     #[builder(into)]
     pub r#rule_name: String,
     #[builder(into)]

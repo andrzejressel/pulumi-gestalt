@@ -24,7 +24,7 @@ pub struct RuntimeVirtualMachineVirtualMachineConfig {
     /// guest attributes](https://cloud.google.com/compute/docs/
     /// storing-retrieving-metadata#guest_attributes)).
     #[builder(into)]
-    pub r#guest_attributes: Option<std::collections::HashMap<String, String>>,
+    pub r#guest_attributes: Option<std::collections::BTreeMap<String, String>>,
     /// If true, runtime will only have internal IP addresses. By default,
     /// runtimes are not restricted to internal IP addresses, and will
     /// have ephemeral external IP addresses assigned to each vm. This
@@ -40,7 +40,7 @@ pub struct RuntimeVirtualMachineVirtualMachineConfig {
     /// conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt). No
     /// more than 32 labels can be associated with a cluster.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// The Compute Engine machine type used for runtimes.
     #[builder(into)]
     pub r#machine_type: String,
@@ -49,7 +49,7 @@ pub struct RuntimeVirtualMachineVirtualMachineConfig {
     /// /compute/docs/storing-retrieving-metadata#project_and_instance
     /// _metadata)).
     #[builder(into)]
-    pub r#metadata: Option<std::collections::HashMap<String, String>>,
+    pub r#metadata: Option<std::collections::BTreeMap<String, String>>,
     /// The Compute Engine network to be used for machine communications.
     /// Cannot be specified with subnetwork. If neither `network` nor
     /// `subnet` is specified, the "default" network of the project is

@@ -79,7 +79,7 @@ pub mod virtual_hub {
         /// A mapping of tags to assign to the Virtual Hub.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Minimum instance capacity for the scaling configuration of the Virtual Hub Router. Defaults to `2`.
         #[builder(into, default)]
@@ -117,7 +117,7 @@ pub mod virtual_hub {
         pub sku: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags to assign to the Virtual Hub.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Autonomous System Number of the Virtual Hub BGP router.
         pub virtual_router_asn: pulumi_gestalt_rust::Output<i32>,

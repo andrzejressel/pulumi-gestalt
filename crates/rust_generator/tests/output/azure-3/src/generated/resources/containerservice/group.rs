@@ -148,7 +148,7 @@ pub mod group {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A list of Availability Zones in which this Container Group is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -236,7 +236,7 @@ pub mod group {
         pub subnet_ids: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A list of Availability Zones in which this Container Group is located. Changing this forces a new resource to be created.
         pub zones: pulumi_gestalt_rust::Output<Option<Vec<String>>>,

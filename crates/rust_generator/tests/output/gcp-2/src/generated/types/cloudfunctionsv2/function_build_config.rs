@@ -24,7 +24,7 @@ pub struct FunctionBuildConfig {
     pub r#entry_point: Option<String>,
     /// User-provided build-time environment variables for the function.
     #[builder(into)]
-    pub r#environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#environment_variables: Option<std::collections::BTreeMap<String, String>>,
     /// Security patches are only applied when a function is redeployed.
     /// Structure is documented below.
     #[builder(into)]

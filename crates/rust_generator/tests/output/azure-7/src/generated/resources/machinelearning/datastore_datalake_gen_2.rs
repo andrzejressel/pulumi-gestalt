@@ -110,7 +110,7 @@ pub mod datastore_datalake_gen_2 {
         /// A mapping of tags which should be assigned to the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Tenant which the Service Principal belongs to.
         #[builder(into, default)]
@@ -144,7 +144,7 @@ pub mod datastore_datalake_gen_2 {
         pub storage_container_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Tenant which the Service Principal belongs to.
         pub tenant_id: pulumi_gestalt_rust::Output<Option<String>>,

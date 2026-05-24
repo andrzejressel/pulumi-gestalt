@@ -86,7 +86,7 @@ pub mod resolver_outbound_endpoint {
         /// A mapping of tags which should be assigned to the Private DNS Resolver Outbound Endpoint.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -106,7 +106,7 @@ pub mod resolver_outbound_endpoint {
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Private DNS Resolver Outbound Endpoint.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

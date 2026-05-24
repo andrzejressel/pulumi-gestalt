@@ -70,7 +70,7 @@ pub mod zone {
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Whether to scan for DNS records on creation. Ignored after zone is created.
         pub jump_start: pulumi_gestalt_rust::Output<Option<bool>>,
-        pub meta: pulumi_gestalt_rust::Output<std::collections::HashMap<String, bool>>,
+        pub meta: pulumi_gestalt_rust::Output<std::collections::BTreeMap<String, bool>>,
         /// Cloudflare-assigned name servers. This is only populated for zones that use Cloudflare DNS.
         pub name_servers: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Whether this zone is paused (traffic bypasses Cloudflare). Defaults to `false`.

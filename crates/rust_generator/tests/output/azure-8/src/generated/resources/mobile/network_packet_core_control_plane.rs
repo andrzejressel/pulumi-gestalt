@@ -135,7 +135,7 @@ pub mod network_packet_core_control_plane {
         /// A mapping of tags which should be assigned to the Mobile Network Packet Core Control Plane.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the MTU in bytes that can be sent to the user equipment. The same MTU is set on the user plane data links for all data networks. The MTU set on the user plane access link will be 60 bytes greater than this value to allow for GTP encapsulation.
         #[builder(into, default)]
@@ -192,7 +192,7 @@ pub mod network_packet_core_control_plane {
         pub software_version: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the Mobile Network Packet Core Control Plane.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the MTU in bytes that can be sent to the user equipment. The same MTU is set on the user plane data links for all data networks. The MTU set on the user plane access link will be 60 bytes greater than this value to allow for GTP encapsulation.
         pub user_equipment_mtu_in_bytes: pulumi_gestalt_rust::Output<Option<i32>>,

@@ -8,7 +8,7 @@ pub struct LoggingConfigurationLoggingConfigurationLogDestinationConfig {
     /// * For a CloudWatch log group, specify the key `logGroup` with the name of the CloudWatch log group.
     /// * For a Kinesis Data Firehose delivery stream, specify the key `deliveryStream` with the name of the delivery stream.
     #[builder(into)]
-    pub r#log_destination: std::collections::HashMap<String, String>,
+    pub r#log_destination: std::collections::BTreeMap<String, String>,
     /// The location to send logs to. Valid values: `S3`, `CloudWatchLogs`, `KinesisDataFirehose`.
     #[builder(into)]
     pub r#log_destination_type: String,

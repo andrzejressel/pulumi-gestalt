@@ -133,7 +133,7 @@ pub mod workload {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
@@ -196,7 +196,7 @@ pub mod workload {
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Optional. Represents the Ekm Provisioning State of the given workload.
         pub ekm_provisioning_responses: pulumi_gestalt_rust::Output<
@@ -215,7 +215,7 @@ pub mod workload {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -241,7 +241,7 @@ pub mod workload {
         pub provisioned_resources_parent: pulumi_gestalt_rust::Output<Option<String>>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional.
         pub resource_settings: pulumi_gestalt_rust::Output<

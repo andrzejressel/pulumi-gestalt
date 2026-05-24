@@ -121,7 +121,7 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     pub r#rocket_loader: Option<bool>,
     /// Map of managed WAF rule ID to comma-delimited string of ruleset rule IDs. Example: `rules = { "efb7b8c949ac4650a09736fc376e9aee" = "5de7edfa648c4d6891dc3e7f84534ffa,e3a567afc347477d9702d9047e97d760" }`
     #[builder(into)]
-    pub r#rules: Option<std::collections::HashMap<String, String>>,
+    pub r#rules: Option<std::collections::BTreeMap<String, String>>,
     /// Which ruleset ID to target.
     #[builder(into)]
     pub r#ruleset: Option<String>,

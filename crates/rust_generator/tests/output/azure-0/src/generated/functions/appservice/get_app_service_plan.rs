@@ -42,7 +42,9 @@ pub mod get_app_service_plan {
             super::super::super::types::appservice::GetAppServicePlanSku,
         >,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// App Service Plan perform availability zone balancing.
         pub zone_redundant: pulumi_gestalt_rust::Output<bool>,
     }

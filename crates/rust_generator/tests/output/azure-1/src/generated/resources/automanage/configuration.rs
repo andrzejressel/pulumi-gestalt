@@ -126,7 +126,7 @@ pub mod configuration {
         pub status_change_alert_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -167,7 +167,7 @@ pub mod configuration {
         /// Whether the status change alert is enabled. Defaults to `false`.
         pub status_change_alert_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

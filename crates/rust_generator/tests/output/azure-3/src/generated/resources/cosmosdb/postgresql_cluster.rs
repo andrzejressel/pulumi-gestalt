@@ -122,7 +122,7 @@ pub mod postgresql_cluster {
         /// A mapping of tags which should be assigned to the Azure Cosmos DB for PostgreSQL Cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -190,7 +190,7 @@ pub mod postgresql_cluster {
         pub sql_version: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Azure Cosmos DB for PostgreSQL Cluster.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

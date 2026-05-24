@@ -11,7 +11,7 @@ pub struct WorkflowTemplatePlacementManagedCluster {
     pub r#config: Box<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfig>,
     /// The labels to associate with this cluster. Label keys must be between 1 and 63 characters long, and must conform to the following PCRE regular expression: {0,63} No more than 32 labels can be associated with a given cluster.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WorkflowTemplatePlacementManagedCluster {

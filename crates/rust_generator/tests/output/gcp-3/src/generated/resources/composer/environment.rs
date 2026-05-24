@@ -48,7 +48,7 @@ pub mod environment {
         /// resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the environment.
         #[builder(into, default)]
@@ -77,7 +77,7 @@ pub mod environment {
             super::super::types::composer::EnvironmentConfig,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// User-defined labels for this environment. The labels map can contain no more than 64 entries. Entries of the labels map
         /// are UTF8 strings that comply with the following restrictions: Label keys must be between 1 and 63 characters long and
@@ -87,7 +87,7 @@ pub mod environment {
         /// present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the environment.
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -95,7 +95,7 @@ pub mod environment {
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The location or Compute Engine region for the environment.
         pub region: pulumi_gestalt_rust::Output<String>,

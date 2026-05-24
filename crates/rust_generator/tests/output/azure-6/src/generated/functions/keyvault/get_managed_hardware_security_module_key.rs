@@ -34,7 +34,9 @@ pub mod get_managed_hardware_security_module_key {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub not_before_date: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to this Managed Hardware Security Module Key.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The current version of the Managed Hardware Security Module Key.
         pub version: pulumi_gestalt_rust::Output<String>,
         /// The versioned ID of the Managed Hardware Security Module Key.

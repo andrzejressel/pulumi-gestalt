@@ -8,7 +8,7 @@ pub struct LogMetricFilterMetricTransformation {
     pub r#default_value: Option<String>,
     /// Map of fields to use as dimensions for the metric. Up to 3 dimensions are allowed. Conflicts with `default_value`.
     #[builder(into)]
-    pub r#dimensions: Option<std::collections::HashMap<String, String>>,
+    pub r#dimensions: Option<std::collections::BTreeMap<String, String>>,
     /// The name of the CloudWatch metric to which the monitored log information should be published (e.g., `ErrorCount`)
     #[builder(into)]
     pub r#name: String,

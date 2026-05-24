@@ -14,7 +14,7 @@ pub mod get_cluster {
         /// Tags associated to the cluster
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -97,7 +97,9 @@ pub mod get_cluster {
         /// Folder inside the S3 bucket where the log files are stored
         pub s3_key_prefix: pulumi_gestalt_rust::Output<String>,
         /// Tags associated to the cluster
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// VPC Id associated with the cluster
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
         /// The VPC security group Ids associated with the cluster

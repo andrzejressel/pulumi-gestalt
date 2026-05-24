@@ -11,7 +11,7 @@ pub struct GetClusterNodeConfigLinuxNodeConfig {
     pub r#hugepages_configs: Vec<super::super::types::container::GetClusterNodeConfigLinuxNodeConfigHugepagesConfig>,
     /// The Linux kernel parameters to be applied to the nodes and all pods running on the nodes.
     #[builder(into)]
-    pub r#sysctls: std::collections::HashMap<String, String>,
+    pub r#sysctls: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetClusterNodeConfigLinuxNodeConfig {

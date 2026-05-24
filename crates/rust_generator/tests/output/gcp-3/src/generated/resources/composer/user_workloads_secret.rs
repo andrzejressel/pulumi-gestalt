@@ -74,7 +74,7 @@ pub mod user_workloads_secret {
         /// A map of the secret data.
         #[builder(into, default)]
         pub data: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Environment where the Kubernetes Secret will be stored and used.
         #[builder(into)]
@@ -99,7 +99,7 @@ pub mod user_workloads_secret {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of the secret data.
         pub data: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Environment where the Kubernetes Secret will be stored and used.
         pub environment: pulumi_gestalt_rust::Output<String>,

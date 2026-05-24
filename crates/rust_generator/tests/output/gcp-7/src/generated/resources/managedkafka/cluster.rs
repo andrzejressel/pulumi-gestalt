@@ -136,7 +136,7 @@ pub mod cluster {
         /// configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the location of the Kafka resource. See https://cloud.google.com/managed-kafka/docs/locations for a list of supported locations.
         #[builder(into)]
@@ -167,7 +167,7 @@ pub mod cluster {
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Configuration properties for a Kafka cluster deployed to Google Cloud Platform.
         /// Structure is documented below.
@@ -179,7 +179,7 @@ pub mod cluster {
         /// characters, and numbers. **Note**: This field is non-authoritative, and will only manage the labels present in your
         /// configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the location of the Kafka resource. See https://cloud.google.com/managed-kafka/docs/locations for a list of supported locations.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -189,7 +189,7 @@ pub mod cluster {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Defines rebalancing behavior of a Kafka cluster.
         pub rebalance_config: pulumi_gestalt_rust::Output<

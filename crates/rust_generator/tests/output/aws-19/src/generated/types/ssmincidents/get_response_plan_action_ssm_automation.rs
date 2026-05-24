@@ -11,7 +11,7 @@ pub struct GetResponsePlanActionSsmAutomation {
     pub r#document_version: String,
     /// The key-value pair used to resolve dynamic parameter values when processing a Systems Manager Automation runbook.
     #[builder(into)]
-    pub r#dynamic_parameters: std::collections::HashMap<String, String>,
+    pub r#dynamic_parameters: std::collections::BTreeMap<String, String>,
     /// The key-value pair parameters used when the automation document runs. The following values are supported:
     #[builder(into)]
     pub r#parameters: Vec<super::super::types::ssmincidents::GetResponsePlanActionSsmAutomationParameter>,

@@ -58,7 +58,7 @@ pub mod get_image {
         pub label_fingerprint: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A list of applicable license URI.
         pub licenses: pulumi_gestalt_rust::Output<Vec<String>>,

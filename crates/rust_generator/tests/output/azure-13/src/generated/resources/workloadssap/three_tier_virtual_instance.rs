@@ -52,7 +52,7 @@ pub mod three_tier_virtual_instance {
         /// A mapping of tags which should be assigned to the SAP Three Tier Virtual Instance.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `three_tier_configuration` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -89,7 +89,7 @@ pub mod three_tier_virtual_instance {
         pub sap_product: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the SAP Three Tier Virtual Instance.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `three_tier_configuration` block as defined below. Changing this forces a new resource to be created.
         pub three_tier_configuration: pulumi_gestalt_rust::Output<

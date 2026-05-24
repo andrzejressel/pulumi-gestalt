@@ -8,7 +8,7 @@ pub struct AccessApplicationSaasAppCustomClaimSource {
     pub r#name: String,
     /// A mapping from IdP ID to claim name.
     #[builder(into)]
-    pub r#name_by_idp: Option<std::collections::HashMap<String, String>>,
+    pub r#name_by_idp: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AccessApplicationSaasAppCustomClaimSource {

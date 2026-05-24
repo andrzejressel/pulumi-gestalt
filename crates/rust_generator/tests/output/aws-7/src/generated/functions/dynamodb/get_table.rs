@@ -17,7 +17,7 @@ pub mod get_table {
         >,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -54,7 +54,9 @@ pub mod get_table {
         pub stream_label: pulumi_gestalt_rust::Output<String>,
         pub stream_view_type: pulumi_gestalt_rust::Output<String>,
         pub table_class: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub ttl: pulumi_gestalt_rust::Output<
             super::super::super::types::dynamodb::GetTableTtl,
         >,

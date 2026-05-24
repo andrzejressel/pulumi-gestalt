@@ -38,7 +38,9 @@ pub mod get_control {
         pub description: pulumi_gestalt_rust::Output<String>,
         pub id: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub testing_information: pulumi_gestalt_rust::Output<String>,
         pub type_: pulumi_gestalt_rust::Output<String>,
     }

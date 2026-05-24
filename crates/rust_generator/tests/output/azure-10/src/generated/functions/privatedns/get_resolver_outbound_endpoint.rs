@@ -26,7 +26,9 @@ pub mod get_resolver_outbound_endpoint {
         /// The ID of the Subnet that is linked to the Private DNS Resolver Outbound Endpoint.
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// The tags assigned to the Private DNS Resolver Outbound Endpoint.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

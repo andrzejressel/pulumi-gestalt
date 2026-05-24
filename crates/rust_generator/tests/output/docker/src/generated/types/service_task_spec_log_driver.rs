@@ -8,7 +8,7 @@ pub struct ServiceTaskSpecLogDriver {
     pub r#name: String,
     /// The options for the logging driver
     #[builder(into)]
-    pub r#options: Option<std::collections::HashMap<String, String>>,
+    pub r#options: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ServiceTaskSpecLogDriver {

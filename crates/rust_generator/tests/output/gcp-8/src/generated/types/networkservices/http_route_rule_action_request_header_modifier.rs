@@ -5,13 +5,13 @@
 pub struct HttpRouteRuleActionRequestHeaderModifier {
     /// Add the headers with given map where key is the name of the header, value is the value of the header.
     #[builder(into)]
-    pub r#add: Option<std::collections::HashMap<String, String>>,
+    pub r#add: Option<std::collections::BTreeMap<String, String>>,
     /// Remove headers (matching by header names) specified in the list.
     #[builder(into)]
     pub r#removes: Option<Vec<String>>,
     /// Completely overwrite/replace the headers with given map where key is the name of the header, value is the value of the header.
     #[builder(into)]
-    pub r#set: Option<std::collections::HashMap<String, String>>,
+    pub r#set: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for HttpRouteRuleActionRequestHeaderModifier {

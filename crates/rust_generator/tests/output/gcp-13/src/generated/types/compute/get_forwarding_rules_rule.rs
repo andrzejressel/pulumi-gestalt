@@ -51,7 +51,7 @@ pub struct GetForwardingRulesRule {
     #[builder(into)]
     pub r#description: String,
     #[builder(into)]
-    pub r#effective_labels: std::collections::HashMap<String, String>,
+    pub r#effective_labels: std::collections::BTreeMap<String, String>,
     /// The unique identifier number for the resource. This identifier is defined by the server.
     #[builder(into)]
     pub r#forwarding_rule_id: i32,
@@ -136,7 +136,7 @@ pub struct GetForwardingRulesRule {
     /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
     /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// Specifies the forwarding rule type.
     /// 
     /// For more information about forwarding rules, refer to
@@ -248,7 +248,7 @@ pub struct GetForwardingRulesRule {
     /// The combination of labels configured directly on the resource
     ///  and default labels configured on the provider.
     #[builder(into)]
-    pub r#pulumi_labels: std::collections::HashMap<String, String>,
+    pub r#pulumi_labels: std::collections::BTreeMap<String, String>,
     #[builder(into)]
     pub r#recreate_closed_psc: bool,
     /// The region you want to get the forwarding rules from.

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetVirtualNodeSpecServiceDiscoveryAwsCloudMap {
     #[builder(into)]
-    pub r#attributes: std::collections::HashMap<String, String>,
+    pub r#attributes: std::collections::BTreeMap<String, String>,
     #[builder(into)]
     pub r#namespace_name: String,
     #[builder(into)]

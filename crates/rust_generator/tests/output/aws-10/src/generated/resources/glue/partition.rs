@@ -39,7 +39,7 @@ pub mod partition {
         /// Properties associated with this table, as a list of key-value pairs.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The values that define the partition.
         #[builder(into)]
@@ -71,7 +71,7 @@ pub mod partition {
         pub last_analyzed_time: pulumi_gestalt_rust::Output<String>,
         /// Properties associated with this table, as a list of key-value pairs.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The values that define the partition.
         pub partition_values: pulumi_gestalt_rust::Output<Vec<String>>,

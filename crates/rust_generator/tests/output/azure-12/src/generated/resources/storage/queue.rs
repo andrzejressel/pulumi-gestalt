@@ -55,7 +55,7 @@ pub mod queue {
         /// A mapping of MetaData which should be assigned to this Storage Queue.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Queue which should be created within the Storage Account. Must be unique within the storage account the queue is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -73,7 +73,7 @@ pub mod queue {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A mapping of MetaData which should be assigned to this Storage Queue.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Queue which should be created within the Storage Account. Must be unique within the storage account the queue is located. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

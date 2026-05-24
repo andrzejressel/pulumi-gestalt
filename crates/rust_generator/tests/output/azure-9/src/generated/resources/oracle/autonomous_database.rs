@@ -110,7 +110,7 @@ pub mod autonomous_database {
         /// A mapping of tags which should be assigned to the Autonomous Database.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the vnet associated with the cloud VM cluster. Changing this forces a new Autonomous Database to be created.
         #[builder(into)]
@@ -167,7 +167,7 @@ pub mod autonomous_database {
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Autonomous Database.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the vnet associated with the cloud VM cluster. Changing this forces a new Autonomous Database to be created.
         pub virtual_network_id: pulumi_gestalt_rust::Output<String>,

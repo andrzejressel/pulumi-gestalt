@@ -27,7 +27,7 @@ pub mod get_function {
         /// Available memory (in MB) to the function.
         pub available_memory_mb: pulumi_gestalt_rust::Output<i32>,
         pub build_environment_variables: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub build_service_account: pulumi_gestalt_rust::Output<String>,
         pub build_worker_pool: pulumi_gestalt_rust::Output<String>,
@@ -36,12 +36,12 @@ pub mod get_function {
         pub docker_registry: pulumi_gestalt_rust::Output<String>,
         pub docker_repository: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Name of a JavaScript function that will be executed when the Google Cloud Function is triggered.
         pub entry_point: pulumi_gestalt_rust::Output<String>,
         pub environment_variables: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A source that fires events in response to a condition in another service. Structure is documented below.
         pub event_triggers: pulumi_gestalt_rust::Output<
@@ -57,7 +57,7 @@ pub mod get_function {
         pub kms_key_name: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The limit on the maximum number of function instances that may coexist at a given time. If unset or set to `0`, the API default will be used.
         pub max_instances: pulumi_gestalt_rust::Output<i32>,
@@ -66,7 +66,7 @@ pub mod get_function {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub region: pulumi_gestalt_rust::Output<Option<String>>,
         /// The runtime in which the function is running.

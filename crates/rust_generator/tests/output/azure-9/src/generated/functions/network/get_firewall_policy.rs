@@ -30,7 +30,9 @@ pub mod get_firewall_policy {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         pub rule_collection_groups: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A mapping of tags assigned to the Firewall Policy.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub threat_intelligence_allowlists: pulumi_gestalt_rust::Output<
             Vec<
                 super::super::super::types::network::GetFirewallPolicyThreatIntelligenceAllowlist,

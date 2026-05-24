@@ -174,7 +174,7 @@ pub mod bare_metal_admin_cluster {
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A human readable description of this Bare Metal Admin Cluster.
         #[builder(into, default)]
@@ -279,7 +279,7 @@ pub mod bare_metal_admin_cluster {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A human readable description of this Bare Metal Admin Cluster.
         pub bare_metal_version: pulumi_gestalt_rust::Output<Option<String>>,
@@ -302,7 +302,7 @@ pub mod bare_metal_admin_cluster {
         /// A human readable description of this Bare Metal Admin Cluster.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The IP address name of Bare Metal Admin Cluster's API server.
         pub endpoint: pulumi_gestalt_rust::Output<String>,

@@ -176,7 +176,7 @@ pub mod scheduled_query_rules_alert_v_2 {
         /// A mapping of tags which should be assigned to the Monitor Scheduled Query Rule.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of resource type of the target resource(s) on which the alert is created/updated. For example if the scope is a resource group and targetResourceTypes is `Microsoft.Compute/virtualMachines`, then a different alert will be fired for each virtual machine in the resource group which meet the alert criteria.
         #[builder(into, default)]
@@ -251,7 +251,7 @@ pub mod scheduled_query_rules_alert_v_2 {
         pub skip_query_validation: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A mapping of tags which should be assigned to the Monitor Scheduled Query Rule.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of resource type of the target resource(s) on which the alert is created/updated. For example if the scope is a resource group and targetResourceTypes is `Microsoft.Compute/virtualMachines`, then a different alert will be fired for each virtual machine in the resource group which meet the alert criteria.
         pub target_resource_types: pulumi_gestalt_rust::Output<Option<Vec<String>>>,

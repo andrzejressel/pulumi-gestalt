@@ -20,7 +20,7 @@ pub struct BatchRuntimeInfo {
     /// (Output)
     /// Map of remote access endpoints (such as web interfaces and APIs) to their URIs.
     #[builder(into)]
-    pub r#endpoints: Option<std::collections::HashMap<String, String>>,
+    pub r#endpoints: Option<std::collections::BTreeMap<String, String>>,
     /// (Output)
     /// A URI pointing to the location of the stdout and stderr of the workload.
     #[builder(into)]

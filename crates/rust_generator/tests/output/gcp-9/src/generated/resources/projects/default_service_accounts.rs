@@ -93,7 +93,7 @@ pub mod default_service_accounts {
         pub restore_policy: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Service Accounts changed by this resource. It is used for `REVERT` the `action` on the destroy.
         pub service_accounts: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

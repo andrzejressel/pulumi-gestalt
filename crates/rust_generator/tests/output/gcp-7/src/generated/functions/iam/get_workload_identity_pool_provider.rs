@@ -27,7 +27,7 @@ pub mod get_workload_identity_pool_provider {
     pub struct GetWorkloadIdentityPoolProviderResult {
         pub attribute_condition: pulumi_gestalt_rust::Output<String>,
         pub attribute_mapping: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub aws: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::iam::GetWorkloadIdentityPoolProviderAw>,

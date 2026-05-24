@@ -5,7 +5,7 @@
 pub struct GuestPoliciesAssignmentGroupLabel {
     /// Google Compute Engine instance labels that must be present for an instance to be included in this assignment group.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GuestPoliciesAssignmentGroupLabel {

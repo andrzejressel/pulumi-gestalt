@@ -9,7 +9,7 @@ pub struct CxAgentAdvancedSettingsSpeechSettings {
     /// Mapping from language to Speech-to-Text model. The mapped Speech-to-Text model will be selected for requests from its corresponding language. For more information, see [Speech models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
     /// An object containing a list of **"key": value** pairs. Example: **{ "name": "wrench", "mass": "1.3kg", "count": "3" }**.
     #[builder(into)]
-    pub r#models: Option<std::collections::HashMap<String, String>>,
+    pub r#models: Option<std::collections::BTreeMap<String, String>>,
     /// Timeout before detecting no speech.
     /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
     #[builder(into)]

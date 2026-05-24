@@ -9,7 +9,7 @@ pub struct SubscriptionPricingExtension {
     /// 
     /// > **NOTE:** Changing the pricing tier to `Standard` affects all resources of the given type in the subscription and could be quite costly.
     #[builder(into)]
-    pub r#additional_extension_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#additional_extension_properties: Option<std::collections::BTreeMap<String, String>>,
     /// The name of extension.
     #[builder(into)]
     pub r#name: String,

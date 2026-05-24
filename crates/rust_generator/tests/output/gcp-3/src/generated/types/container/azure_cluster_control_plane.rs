@@ -26,7 +26,7 @@ pub struct AzureClusterControlPlane {
     pub r#subnet_id: String,
     /// Optional. A set of tags to apply to all underlying control plane Azure resources.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// The Kubernetes version to run on control plane replicas (e.g. `1.19.10-gke.1000`). You can list all supported versions on a given Google Cloud region by calling GetAzureServerConfig.
     #[builder(into)]
     pub r#version: String,

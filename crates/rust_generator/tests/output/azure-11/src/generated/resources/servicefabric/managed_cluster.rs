@@ -113,7 +113,7 @@ pub mod managed_cluster {
         /// A mapping of tags which should be assigned to the Resource Group.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Upgrade wave for the fabric runtime. Default is `Wave0`, allowed value must be one of `Wave0`, `Wave1`, or `Wave2`.
         #[builder(into, default)]
@@ -171,7 +171,7 @@ pub mod managed_cluster {
         pub sku: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the Resource Group.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Upgrade wave for the fabric runtime. Default is `Wave0`, allowed value must be one of `Wave0`, `Wave1`, or `Wave2`.
         pub upgrade_wave: pulumi_gestalt_rust::Output<Option<String>>,

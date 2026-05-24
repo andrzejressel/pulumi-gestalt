@@ -88,7 +88,7 @@ pub mod kmsconfig {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the policy location. CMEK policies apply to the whole region.
         #[builder(into)]
@@ -117,7 +117,7 @@ pub mod kmsconfig {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Access to the key needs to be granted. The instructions contain gcloud commands to run to grant access.
         /// To make the policy work, a CMEK policy check is required, which verifies key access.
@@ -127,7 +127,7 @@ pub mod kmsconfig {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the policy location. CMEK policies apply to the whole region.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -142,7 +142,7 @@ pub mod kmsconfig {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The Service account which needs to have access to the  provided KMS key.
         pub service_account: pulumi_gestalt_rust::Output<String>,

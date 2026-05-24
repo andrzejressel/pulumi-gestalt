@@ -29,7 +29,7 @@ pub struct GetGroupsGroup {
     /// Contains 'cloudidentity.googleapis.com/groups.discussion_forum': '' if the Group is a Google Group or
     /// 'system/groups/external': '' if the Group is an external-identity-mapped group.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// Resource name of the Group in the format: groups/{group_id}, where `group_id` is the unique ID assigned to the Group.
     #[builder(into)]
     pub r#name: String,

@@ -135,7 +135,7 @@ pub mod bastion_host {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Is Tunneling feature enabled for the Bastion Host. Defaults to `false`.
         ///
@@ -200,7 +200,7 @@ pub mod bastion_host {
         pub sku: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Is Tunneling feature enabled for the Bastion Host. Defaults to `false`.
         ///

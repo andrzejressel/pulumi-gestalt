@@ -69,7 +69,7 @@ pub mod namespace {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `topic_spaces_configuration` block as defined below.
         #[builder(into, default)]
@@ -108,7 +108,7 @@ pub mod namespace {
         pub sku: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `topic_spaces_configuration` block as defined below.
         pub topic_spaces_configurations: pulumi_gestalt_rust::Output<

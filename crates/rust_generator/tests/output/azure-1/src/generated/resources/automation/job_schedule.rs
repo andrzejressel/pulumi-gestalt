@@ -49,7 +49,7 @@ pub mod job_schedule {
         /// > **NOTE:** The parameter keys/names must strictly be in lowercase, even if this is not the case in the runbook. This is due to a limitation in Azure Automation where the parameter names are normalized. The values specified don't have this limitation.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the resource group in which the Job Schedule is created. Changing this forces a new resource to be created.
         #[builder(into)]
@@ -79,7 +79,7 @@ pub mod job_schedule {
         ///
         /// > **NOTE:** The parameter keys/names must strictly be in lowercase, even if this is not the case in the runbook. This is due to a limitation in Azure Automation where the parameter names are normalized. The values specified don't have this limitation.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the resource group in which the Job Schedule is created. Changing this forces a new resource to be created.
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,

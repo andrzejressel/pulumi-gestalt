@@ -56,12 +56,12 @@ pub mod deployment {
         /// Map of arbitrary keys and values that, when changed, will trigger a redeployment.
         #[builder(into, default)]
         pub triggers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map to set on the stage managed by the `stage_name` argument.
         #[builder(into, default)]
         pub variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -99,11 +99,11 @@ pub mod deployment {
         pub stage_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Map of arbitrary keys and values that, when changed, will trigger a redeployment.
         pub triggers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map to set on the stage managed by the `stage_name` argument.
         pub variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

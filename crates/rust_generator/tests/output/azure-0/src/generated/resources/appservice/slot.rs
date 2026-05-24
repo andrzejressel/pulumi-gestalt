@@ -146,7 +146,7 @@ pub mod slot {
         /// A key-value pair of App Settings.
         #[builder(into, default)]
         pub app_settings: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `auth_settings` block as defined below.
         #[builder(into, default)]
@@ -202,7 +202,7 @@ pub mod slot {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -218,7 +218,7 @@ pub mod slot {
         pub app_service_plan_id: pulumi_gestalt_rust::Output<String>,
         /// A key-value pair of App Settings.
         pub app_settings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A `auth_settings` block as defined below.
         pub auth_settings: pulumi_gestalt_rust::Output<
@@ -264,7 +264,7 @@ pub mod slot {
         >,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

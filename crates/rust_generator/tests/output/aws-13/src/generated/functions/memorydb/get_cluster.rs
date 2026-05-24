@@ -14,7 +14,7 @@ pub mod get_cluster {
         /// Map of tags assigned to the cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -73,7 +73,9 @@ pub mod get_cluster {
         /// The name of the subnet group used for the cluster.
         pub subnet_group_name: pulumi_gestalt_rust::Output<String>,
         /// Map of tags assigned to the cluster.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// When true, in-transit encryption is enabled for the cluster.
         pub tls_enabled: pulumi_gestalt_rust::Output<bool>,
     }

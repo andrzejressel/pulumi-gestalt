@@ -29,7 +29,7 @@ pub mod get_ai_index {
         pub description: pulumi_gestalt_rust::Output<String>,
         pub display_name: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub etag: pulumi_gestalt_rust::Output<String>,
         /// The provider-assigned unique ID for this managed resource.
@@ -39,7 +39,7 @@ pub mod get_ai_index {
         >,
         pub index_update_method: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub metadata_schema_uri: pulumi_gestalt_rust::Output<String>,
         pub metadatas: pulumi_gestalt_rust::Output<
@@ -48,7 +48,7 @@ pub mod get_ai_index {
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub region: pulumi_gestalt_rust::Output<String>,
         pub update_time: pulumi_gestalt_rust::Output<String>,

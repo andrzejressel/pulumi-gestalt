@@ -24,7 +24,7 @@ pub mod get_security_group {
         /// a pair on the desired security group.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Id of the VPC that the desired security group belongs to.
         ///
@@ -44,7 +44,9 @@ pub mod get_security_group {
         >,
         pub id: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

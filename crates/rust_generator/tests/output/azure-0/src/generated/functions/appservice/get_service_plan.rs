@@ -38,7 +38,9 @@ pub mod get_service_plan {
         /// The SKU for the Service Plan.
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Service Plan.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The number of Workers (instances) allocated.
         pub worker_count: pulumi_gestalt_rust::Output<i32>,
         /// Is the Service Plan balance across Availability Zones in the region?

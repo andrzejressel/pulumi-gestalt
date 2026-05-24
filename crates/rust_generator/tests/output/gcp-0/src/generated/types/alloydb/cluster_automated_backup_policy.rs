@@ -17,7 +17,7 @@ pub struct ClusterAutomatedBackupPolicy {
     pub r#encryption_config: Option<Box<super::super::types::alloydb::ClusterAutomatedBackupPolicyEncryptionConfig>>,
     /// Labels to apply to backups created using this configuration.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// The location where the backup will be stored. Currently, the only supported option is to store the backup in the same region as the cluster.
     #[builder(into)]
     pub r#location: Option<String>,

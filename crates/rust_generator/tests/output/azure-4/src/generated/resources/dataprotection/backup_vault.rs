@@ -85,7 +85,7 @@ pub mod backup_vault {
         /// A mapping of tags which should be assigned to the Backup Vault.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -125,7 +125,7 @@ pub mod backup_vault {
         pub soft_delete: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the Backup Vault.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

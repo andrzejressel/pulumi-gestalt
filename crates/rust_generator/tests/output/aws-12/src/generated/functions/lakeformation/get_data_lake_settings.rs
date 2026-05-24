@@ -43,7 +43,7 @@ pub mod get_data_lake_settings {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of additional configuration. `CROSS_ACCOUNT_VERSION` will be set to values `"1"`, `"2"`, `"3"`, or `"4"`. `SET_CONTEXT` will also be returned with a value of `TRUE`. In a fresh account, prior to configuring, `CROSS_ACCOUNT_VERSION` is `"1"`.
         pub parameters: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// List of ARNs of AWS Lake Formation principals (IAM users or roles) with only view access to the resources.
         pub read_only_admins: pulumi_gestalt_rust::Output<Vec<String>>,

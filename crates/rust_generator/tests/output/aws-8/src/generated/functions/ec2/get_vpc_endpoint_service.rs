@@ -27,7 +27,7 @@ pub mod get_vpc_endpoint_service {
         /// > **NOTE:** Specifying `service` will not work for non-AWS services or AWS services that don't follow the standard `service_name` pattern of `com.amazonaws.<region>.<service>`.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -61,7 +61,9 @@ pub mod get_vpc_endpoint_service {
         /// The supported IP address types.
         pub supported_ip_address_types: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Map of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Whether or not the service supports endpoint policies - `true` or `false`.
         pub vpc_endpoint_policy_supported: pulumi_gestalt_rust::Output<bool>,
     }

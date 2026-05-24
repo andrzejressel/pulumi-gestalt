@@ -63,7 +63,7 @@ pub mod iot_hub_device_update_account {
         /// A mapping of tags which should be assigned to the IoT Hub Device Update Account.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -91,7 +91,7 @@ pub mod iot_hub_device_update_account {
         pub sku: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the IoT Hub Device Update Account.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

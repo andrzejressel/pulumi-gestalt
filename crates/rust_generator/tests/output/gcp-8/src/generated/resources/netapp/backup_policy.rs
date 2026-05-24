@@ -81,7 +81,7 @@ pub mod backup_policy {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the region for the policy to apply to.
         #[builder(into)]
@@ -120,7 +120,7 @@ pub mod backup_policy {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// If enabled, make backups automatically according to the schedules.
         /// This will be applied to all volumes that have this policy attached and enforced on volume level.
@@ -130,7 +130,7 @@ pub mod backup_policy {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the region for the policy to apply to.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -147,7 +147,7 @@ pub mod backup_policy {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The state of the backup policy.
         pub state: pulumi_gestalt_rust::Output<String>,

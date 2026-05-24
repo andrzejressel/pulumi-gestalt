@@ -16,7 +16,7 @@ pub struct ClusterClusterConfigGceClusterConfig {
     /// A map of the Compute Engine metadata entries to add to all instances
     /// (see [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
     #[builder(into)]
-    pub r#metadata: Option<std::collections::HashMap<String, String>>,
+    pub r#metadata: Option<std::collections::BTreeMap<String, String>>,
     /// The name or self_link of the Google Compute Engine
     /// network to the cluster will be part of. Conflicts with `subnetwork`.
     /// If neither is specified, this defaults to the "default" network.

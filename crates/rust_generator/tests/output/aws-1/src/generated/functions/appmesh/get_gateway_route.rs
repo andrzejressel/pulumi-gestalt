@@ -20,7 +20,7 @@ pub mod get_gateway_route {
         /// Map of tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the virtual gateway in which the route exists.
         #[builder(into)]
@@ -46,7 +46,9 @@ pub mod get_gateway_route {
             Vec<super::super::super::types::appmesh::GetGatewayRouteSpec>,
         >,
         /// Map of tags.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub virtual_gateway_name: pulumi_gestalt_rust::Output<String>,
     }
     ///

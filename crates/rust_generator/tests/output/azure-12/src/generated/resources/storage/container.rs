@@ -61,7 +61,7 @@ pub mod container {
         /// A mapping of MetaData for this Container. All metadata keys should be lowercase.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Container which should be created within the Storage Account. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -96,7 +96,7 @@ pub mod container {
         pub has_legal_hold: pulumi_gestalt_rust::Output<bool>,
         /// A mapping of MetaData for this Container. All metadata keys should be lowercase.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The name of the Container which should be created within the Storage Account. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

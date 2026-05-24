@@ -17,7 +17,7 @@ pub mod get_user {
         /// A map of tags to assign to the User.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Returns information on a specific User by User id
         #[builder(into, default)]
@@ -49,7 +49,9 @@ pub mod get_user {
         /// A list of identifiers for the security profiles for the user.
         pub security_profile_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A map of tags to assign to the User.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub user_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

@@ -111,7 +111,7 @@ pub mod managed_certificate {
         /// A mapping of tags which should be assigned to the App Service Managed Certificate.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -139,7 +139,7 @@ pub mod managed_certificate {
         pub subject_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the App Service Managed Certificate.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Certificate Thumbprint.
         pub thumbprint: pulumi_gestalt_rust::Output<String>,

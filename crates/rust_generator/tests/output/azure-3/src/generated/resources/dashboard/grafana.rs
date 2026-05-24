@@ -95,7 +95,7 @@ pub mod grafana {
         /// A mapping of tags which should be assigned to the Dashboard Grafana.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Whether to enable the zone redundancy setting of the Grafana instance. Defaults to `false`. Changing this forces a new Dashboard Grafana to be created.
         #[builder(into, default)]
@@ -152,7 +152,7 @@ pub mod grafana {
         >,
         /// A mapping of tags which should be assigned to the Dashboard Grafana.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Whether to enable the zone redundancy setting of the Grafana instance. Defaults to `false`. Changing this forces a new Dashboard Grafana to be created.
         pub zone_redundancy_enabled: pulumi_gestalt_rust::Output<Option<bool>>,

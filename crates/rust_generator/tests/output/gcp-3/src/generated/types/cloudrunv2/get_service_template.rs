@@ -10,7 +10,7 @@ pub struct GetServiceTemplate {
     /// 
     /// This field follows Kubernetes annotations' namespacing, limits, and rules.
     #[builder(into)]
-    pub r#annotations: std::collections::HashMap<String, String>,
+    pub r#annotations: std::collections::BTreeMap<String, String>,
     /// Holds the containers that define the unit of execution for this Service.
     #[builder(into)]
     pub r#containers: Vec<super::super::types::cloudrunv2::GetServiceTemplateContainer>,
@@ -26,7 +26,7 @@ pub struct GetServiceTemplate {
     /// Cloud Run API v2 does not support labels with 'run.googleapis.com', 'cloud.googleapis.com', 'serving.knative.dev', or 'autoscaling.knative.dev' namespaces, and they will be rejected.
     /// All system labels in v1 now have a corresponding field in v2 RevisionTemplate.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// Sets the maximum number of requests that each serving instance can receive.
     /// If not specified or 0, defaults to 80 when requested CPU >= 1 and defaults to 1 when requested CPU < 1.
     #[builder(into)]

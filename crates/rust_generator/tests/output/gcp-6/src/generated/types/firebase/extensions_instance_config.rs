@@ -26,7 +26,7 @@ pub struct ExtensionsInstanceConfig {
     pub r#name: Option<String>,
     /// Environment variables that may be configured for the Extension
     #[builder(into)]
-    pub r#params: std::collections::HashMap<String, String>,
+    pub r#params: std::collections::BTreeMap<String, String>,
     /// (Output)
     /// Postinstall instructions to be shown for this Extension, with
     /// template strings representing function and parameter values substituted
@@ -42,7 +42,7 @@ pub struct ExtensionsInstanceConfig {
     /// functions. See a full list of system parameters at
     /// https://firebase.google.com/docs/extensions/publishers/parameters#system_parameters
     #[builder(into)]
-    pub r#system_params: Option<std::collections::HashMap<String, String>>,
+    pub r#system_params: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ExtensionsInstanceConfig {

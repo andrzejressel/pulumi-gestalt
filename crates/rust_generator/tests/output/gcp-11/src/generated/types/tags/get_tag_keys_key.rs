@@ -24,7 +24,7 @@ pub struct GetTagKeysKey {
     pub r#purpose: String,
     /// Purpose data corresponds to the policy system that the tag is intended for. See documentation for Purpose for formatting of this field.
     #[builder(into)]
-    pub r#purpose_data: std::collections::HashMap<String, String>,
+    pub r#purpose_data: std::collections::BTreeMap<String, String>,
     /// The user friendly name for a TagKey. The short name should be unique for TagKeys wihting the same tag namespace.
     #[builder(into)]
     pub r#short_name: String,

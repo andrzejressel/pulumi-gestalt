@@ -117,7 +117,7 @@ pub mod environment_v_3 {
         pub subnet_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Set to `true` to deploy the ASEv3 with availability zones supported. Zonal ASEs can be deployed in some regions, you can refer to [Availability Zone support for App Service Environments](https://docs.microsoft.com/azure/app-service/environment/zone-redundancy). You can only set either `dedicated_host_count` or `zone_redundant` but not both. Changing this forces a new resource to be created.
         ///
@@ -175,7 +175,7 @@ pub mod environment_v_3 {
         /// > **NOTE:** This Subnet requires a delegation to `Microsoft.Web/hostingEnvironments` as detailed in the example above.
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Outbound addresses of Windows based Apps in this App Service Environment V3.
         pub windows_outbound_ip_addresses: pulumi_gestalt_rust::Output<Vec<String>>,

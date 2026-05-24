@@ -17,7 +17,7 @@ pub mod get_node_group {
         /// Key-value map of resource tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -37,7 +37,7 @@ pub mod get_node_group {
         pub instance_types: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Key-value map of Kubernetes labels. Only labels that are applied with the EKS API are managed by this argument. Other Kubernetes labels applied to the EKS Node Group will not be managed.
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Nested attribute containing information about the launch template used to create the EKS Node Group.
         pub launch_templates: pulumi_gestalt_rust::Output<
@@ -65,7 +65,9 @@ pub mod get_node_group {
         /// Identifiers of EC2 Subnets to associate with the EKS Node Group.
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Key-value map of resource tags.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// List of objects containing information about taints applied to the nodes in the EKS Node Group.
         pub taints: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::eks::GetNodeGroupTaint>,

@@ -11,7 +11,7 @@ pub struct AppImageConfigCodeEditorAppImageConfigContainerConfig {
     pub r#container_entrypoints: Option<Vec<String>>,
     /// The environment variables to set in the container.
     #[builder(into)]
-    pub r#container_environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#container_environment_variables: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AppImageConfigCodeEditorAppImageConfigContainerConfig {

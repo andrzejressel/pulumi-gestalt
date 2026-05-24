@@ -14,7 +14,7 @@ pub struct GetAddressesAddress {
     pub r#description: String,
     /// A map containing IP labels.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The IP address name.
     #[builder(into)]
     pub r#name: String,

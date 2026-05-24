@@ -39,7 +39,9 @@ pub mod get_service {
         >,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The list of subscription(s) globally unique identifiers(GUID) that will be able to see the private link service.
         pub visibility_subscription_ids: pulumi_gestalt_rust::Output<Vec<String>>,
     }

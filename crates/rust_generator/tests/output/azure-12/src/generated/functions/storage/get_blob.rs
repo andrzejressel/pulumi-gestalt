@@ -11,7 +11,7 @@ pub mod get_blob {
         /// A map of custom blob metadata.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the Blob.
         #[builder(into)]
@@ -37,7 +37,7 @@ pub mod get_blob {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of custom blob metadata.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub storage_account_name: pulumi_gestalt_rust::Output<String>,

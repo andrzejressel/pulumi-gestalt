@@ -14,12 +14,12 @@ pub mod get_infrastructure_configuration {
         /// Key-value map of resource tags for the infrastructure created by the infrastructure configuration.
         #[builder(into, default)]
         pub resource_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Key-value map of resource tags for the infrastructure configuration.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -54,7 +54,7 @@ pub mod get_infrastructure_configuration {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the infrastructure created by the infrastructure configuration.
         pub resource_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Set of EC2 Security Group identifiers associated with the configuration.
         pub security_group_ids: pulumi_gestalt_rust::Output<Vec<String>>,
@@ -63,7 +63,9 @@ pub mod get_infrastructure_configuration {
         /// Identifier of the EC2 Subnet associated with the configuration.
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the infrastructure configuration.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Whether instances are terminated on failure.
         pub terminate_instance_on_failure: pulumi_gestalt_rust::Output<bool>,
     }

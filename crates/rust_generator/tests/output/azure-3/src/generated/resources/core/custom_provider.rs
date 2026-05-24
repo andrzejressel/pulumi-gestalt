@@ -71,7 +71,7 @@ pub mod custom_provider {
         /// A mapping of tags to assign to the resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Any number of `validation` block as defined below.
         #[builder(into, default)]
@@ -102,7 +102,7 @@ pub mod custom_provider {
         >,
         /// A mapping of tags to assign to the resource. Changing this forces a new resource to be created.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Any number of `validation` block as defined below.
         pub validations: pulumi_gestalt_rust::Output<

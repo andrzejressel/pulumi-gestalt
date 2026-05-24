@@ -34,7 +34,9 @@ pub mod get_managed_hardware_security_module {
         /// The number of days that items should be retained for soft-deleted.
         pub soft_delete_retention_days: pulumi_gestalt_rust::Output<i32>,
         /// A mapping of tags assigned to the Key Vault Managed Hardware Security Module.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Azure Active Directory Tenant ID used for authenticating requests to the Key Vault Managed Hardware Security Module.
         pub tenant_id: pulumi_gestalt_rust::Output<String>,
     }

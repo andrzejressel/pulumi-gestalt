@@ -31,7 +31,7 @@ pub mod get_subscription {
             Vec<super::super::super::types::pubsub::GetSubscriptionDeadLetterPolicy>,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub enable_exactly_once_delivery: pulumi_gestalt_rust::Output<bool>,
         pub enable_message_ordering: pulumi_gestalt_rust::Output<bool>,
@@ -42,13 +42,13 @@ pub mod get_subscription {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub message_retention_duration: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub push_configs: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::pubsub::GetSubscriptionPushConfig>,

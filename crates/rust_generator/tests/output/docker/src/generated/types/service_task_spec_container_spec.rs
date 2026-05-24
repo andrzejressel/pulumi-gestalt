@@ -20,7 +20,7 @@ pub struct ServiceTaskSpecContainerSpec {
     pub r#dns_config: Option<Box<super::types::ServiceTaskSpecContainerSpecDnsConfig>>,
     /// A list of environment variables in the form VAR="value"
     #[builder(into)]
-    pub r#env: Option<std::collections::HashMap<String, String>>,
+    pub r#env: Option<std::collections::BTreeMap<String, String>>,
     /// A list of additional groups that the container process will run as
     #[builder(into)]
     pub r#groups: Option<Vec<String>>,
@@ -62,7 +62,7 @@ pub struct ServiceTaskSpecContainerSpec {
     pub r#stop_signal: Option<String>,
     /// Sysctls config (Linux only)
     #[builder(into)]
-    pub r#sysctl: Option<std::collections::HashMap<String, String>>,
+    pub r#sysctl: Option<std::collections::BTreeMap<String, String>>,
     /// The user inside the container
     #[builder(into)]
     pub r#user: Option<String>,

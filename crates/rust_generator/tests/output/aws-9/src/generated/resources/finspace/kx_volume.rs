@@ -62,7 +62,7 @@ pub mod kx_volume {
         /// A list of key-value pairs to label the volume. You can add up to 50 tags to a volume
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The type of file system volume. Currently, FinSpace only supports the `NAS_1` volume type. When you select the `NAS_1` volume type, you must also provide `nas1_configuration`.
         #[builder(into)]
@@ -116,10 +116,10 @@ pub mod kx_volume {
         pub status_reason: pulumi_gestalt_rust::Output<String>,
         /// A list of key-value pairs to label the volume. You can add up to 50 tags to a volume
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The type of file system volume. Currently, FinSpace only supports the `NAS_1` volume type. When you select the `NAS_1` volume type, you must also provide `nas1_configuration`.
         pub type_: pulumi_gestalt_rust::Output<String>,

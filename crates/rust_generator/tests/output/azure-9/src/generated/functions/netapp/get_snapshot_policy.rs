@@ -44,7 +44,9 @@ pub mod get_snapshot_policy {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The name of the resource group where the NetApp Snapshot Policy should be created.
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Weekly snapshot schedule.
         pub weekly_schedules: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::netapp::GetSnapshotPolicyWeeklySchedule>,

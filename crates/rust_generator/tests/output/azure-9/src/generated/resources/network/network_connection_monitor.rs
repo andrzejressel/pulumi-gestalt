@@ -199,7 +199,7 @@ pub mod network_connection_monitor {
         /// A mapping of tags which should be assigned to the Network Connection Monitor.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `test_configuration` block as defined below.
         #[builder(into)]
@@ -237,7 +237,7 @@ pub mod network_connection_monitor {
         >,
         /// A mapping of tags which should be assigned to the Network Connection Monitor.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `test_configuration` block as defined below.
         pub test_configurations: pulumi_gestalt_rust::Output<

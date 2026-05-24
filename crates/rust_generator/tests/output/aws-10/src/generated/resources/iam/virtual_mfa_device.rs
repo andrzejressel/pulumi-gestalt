@@ -44,7 +44,7 @@ pub mod virtual_mfa_device {
         /// Map of resource tags for the virtual mfa device. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
         #[builder(into)]
@@ -69,11 +69,11 @@ pub mod virtual_mfa_device {
         pub qr_code_png: pulumi_gestalt_rust::Output<String>,
         /// Map of resource tags for the virtual mfa device. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The associated IAM User name if the virtual MFA device is enabled.
         pub user_name: pulumi_gestalt_rust::Output<String>,

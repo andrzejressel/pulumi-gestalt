@@ -330,7 +330,7 @@ pub mod dataset {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The geographic location where the dataset should reside.
         /// See [official docs](https://cloud.google.com/bigquery/docs/dataset-locations).
@@ -356,7 +356,7 @@ pub mod dataset {
         /// for more details.
         #[builder(into, default)]
         pub resource_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the storage billing model for the dataset.
         /// Set this flag value to LOGICAL to use logical bytes for storage billing,
@@ -438,7 +438,7 @@ pub mod dataset {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A hash of the resource.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -465,7 +465,7 @@ pub mod dataset {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The date when this dataset or any of its tables was last modified, in
         /// milliseconds since the epoch.
@@ -487,7 +487,7 @@ pub mod dataset {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The tags attached to this table. Tag keys are globally unique. Tag key is expected to be
         /// in the namespaced format, for example "123456789012/environment" where 123456789012 is the
@@ -495,7 +495,7 @@ pub mod dataset {
         /// to be the short name, for example "Production". See [Tag definitions](https://www.terraform.io/iam/docs/tags-access-control#definitions)
         /// for more details.
         pub resource_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The URI of the created resource.
         pub self_link: pulumi_gestalt_rust::Output<String>,

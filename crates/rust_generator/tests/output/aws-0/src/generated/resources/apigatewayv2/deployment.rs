@@ -34,7 +34,7 @@ pub mod deployment {
         /// Map of arbitrary keys and values that, when changed, will trigger a redeployment.
         #[builder(into, default)]
         pub triggers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -52,7 +52,7 @@ pub mod deployment {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Map of arbitrary keys and values that, when changed, will trigger a redeployment.
         pub triggers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

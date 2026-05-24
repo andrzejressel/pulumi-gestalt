@@ -17,7 +17,7 @@ pub mod get_traffic_manager_profile {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Indicates whether Traffic View is enabled for the Traffic Manager profile.
         #[builder(into, default)]
@@ -46,7 +46,7 @@ pub mod get_traffic_manager_profile {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the algorithm used to route traffic.
         pub traffic_routing_method: pulumi_gestalt_rust::Output<String>,

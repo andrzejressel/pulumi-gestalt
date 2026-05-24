@@ -22,7 +22,7 @@ pub mod get_launch_template {
         /// Map of tags, each pair of which must exactly match a pair on the desired Launch Template.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -110,7 +110,9 @@ pub mod get_launch_template {
         pub tag_specifications: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::ec2::GetLaunchTemplateTagSpecification>,
         >,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub user_data: pulumi_gestalt_rust::Output<String>,
         pub vpc_security_group_ids: pulumi_gestalt_rust::Output<Vec<String>>,
     }

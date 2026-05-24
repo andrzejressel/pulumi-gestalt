@@ -77,7 +77,7 @@ pub mod job {
         /// Specifies a map of common environment settings applied to this Batch Job. Changing this forces a new Batch Job to be created.
         #[builder(into, default)]
         pub common_environment_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The display name of this Batch Job. Changing this forces a new Batch Job to be created.
         #[builder(into, default)]
@@ -103,7 +103,7 @@ pub mod job {
         pub batch_pool_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a map of common environment settings applied to this Batch Job. Changing this forces a new Batch Job to be created.
         pub common_environment_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The display name of this Batch Job. Changing this forces a new Batch Job to be created.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,

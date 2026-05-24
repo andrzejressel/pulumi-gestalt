@@ -40,7 +40,7 @@ pub mod get_cluster_node_pool {
         pub node_count: pulumi_gestalt_rust::Output<i32>,
         /// A map of Kubernetes Labels applied to each Node in this Node Pool.
         pub node_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Do nodes in this Node Pool have a Public IP Address?
         pub node_public_ip_enabled: pulumi_gestalt_rust::Output<bool>,
@@ -64,7 +64,9 @@ pub mod get_cluster_node_pool {
         /// The maximum price being paid for Virtual Machines in this Scale Set. `-1` means the current on-demand price for a Virtual Machine.
         pub spot_max_price: pulumi_gestalt_rust::Output<f64>,
         /// A mapping of tags assigned to the Kubernetes Cluster Node Pool.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A `upgrade_settings` block as documented below.
         pub upgrade_settings: pulumi_gestalt_rust::Output<
             Vec<

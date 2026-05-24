@@ -8,7 +8,7 @@ pub struct AzureNodePoolConfig {
     pub r#image_type: Option<String>,
     /// Optional. The initial labels assigned to nodes of this node pool. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Proxy configuration for outbound HTTP(S) traffic.
     #[builder(into)]
     pub r#proxy_config: Option<Box<super::super::types::container::AzureNodePoolConfigProxyConfig>>,
@@ -20,7 +20,7 @@ pub struct AzureNodePoolConfig {
     pub r#ssh_config: Box<super::super::types::container::AzureNodePoolConfigSshConfig>,
     /// Optional. A set of tags to apply to all underlying Azure resources for this node pool. This currently only includes Virtual Machine Scale Sets. Specify at most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to 255 Unicode characters.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// Optional. The Azure VM size name. Example: `Standard_DS2_v2`. See (/anthos/clusters/docs/azure/reference/supported-vms) for options. When unspecified, it defaults to `Standard_DS2_v2`.
     #[builder(into)]
     pub r#vm_size: Option<String>,

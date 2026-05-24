@@ -23,10 +23,10 @@ pub struct InstanceEbsBlockDevice {
     pub r#snapshot_id: Option<String>,
     /// Map of tags to assign to the device.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
     #[builder(into)]
-    pub r#tags_all: Option<std::collections::HashMap<String, String>>,
+    pub r#tags_all: Option<std::collections::BTreeMap<String, String>>,
     /// Throughput to provision for a volume in mebibytes per second (MiB/s). This is only valid for `volume_type` of `gp3`.
     #[builder(into)]
     pub r#throughput: Option<i32>,

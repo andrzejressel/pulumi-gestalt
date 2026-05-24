@@ -29,7 +29,7 @@ pub struct GetCatalogTableStorageDescriptor {
     pub r#output_format: String,
     /// Map of initialization parameters for the SerDe, in key-value form.
     #[builder(into)]
-    pub r#parameters: std::collections::HashMap<String, String>,
+    pub r#parameters: std::collections::BTreeMap<String, String>,
     /// Object that references a schema stored in the AWS Glue Schema Registry. See `schema_reference` below.
     #[builder(into)]
     pub r#schema_references: Vec<super::super::types::glue::GetCatalogTableStorageDescriptorSchemaReference>,

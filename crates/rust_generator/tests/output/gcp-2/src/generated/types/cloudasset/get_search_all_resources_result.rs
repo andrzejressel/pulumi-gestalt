@@ -23,7 +23,7 @@ pub struct GetSearchAllResourcesResult {
     pub r#kms_keys: Vec<String>,
     /// Labels associated with this resource.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// Location can be `global`, regional like `us-east1`, or zonal like `us-west1-b`.
     #[builder(into)]
     pub r#location: String,

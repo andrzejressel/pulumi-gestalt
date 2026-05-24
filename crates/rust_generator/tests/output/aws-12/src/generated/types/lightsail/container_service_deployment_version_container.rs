@@ -11,13 +11,13 @@ pub struct ContainerServiceDeploymentVersionContainer {
     pub r#container_name: String,
     /// A key-value map of the environment variables of the container.
     #[builder(into)]
-    pub r#environment: Option<std::collections::HashMap<String, String>>,
+    pub r#environment: Option<std::collections::BTreeMap<String, String>>,
     /// The name of the image used for the container. Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (`:`). For example, `:container-service-1.mystaticwebsite.1`. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, `nginx:latest` or `nginx`.
     #[builder(into)]
     pub r#image: String,
     /// A key-value map of the open firewall ports of the container. Valid values: `HTTP`, `HTTPS`, `TCP`, `UDP`.
     #[builder(into)]
-    pub r#ports: Option<std::collections::HashMap<String, String>>,
+    pub r#ports: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ContainerServiceDeploymentVersionContainer {

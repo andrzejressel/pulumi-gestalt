@@ -17,7 +17,7 @@ pub struct PlanRule {
     pub r#lifecycle: Option<Box<super::super::types::backup::PlanRuleLifecycle>>,
     /// Metadata that you can assign to help organize the resources that you create.
     #[builder(into)]
-    pub r#recovery_point_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#recovery_point_tags: Option<std::collections::BTreeMap<String, String>>,
     /// An display name for a backup rule.
     #[builder(into)]
     pub r#rule_name: String,

@@ -76,7 +76,7 @@ pub mod infrastructure_configuration {
         /// Key-value map of resource tags to assign to infrastructure created by the configuration.
         #[builder(into, default)]
         pub resource_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Set of EC2 Security Group identifiers.
         #[builder(into, default)]
@@ -90,7 +90,7 @@ pub mod infrastructure_configuration {
         /// Key-value map of resource tags to assign to the configuration. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Enable if the instance should be terminated when the pipeline fails. Defaults to `false`.
         #[builder(into, default)]
@@ -133,7 +133,7 @@ pub mod infrastructure_configuration {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags to assign to infrastructure created by the configuration.
         pub resource_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Set of EC2 Security Group identifiers.
         pub security_group_ids: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -143,11 +143,11 @@ pub mod infrastructure_configuration {
         pub subnet_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Key-value map of resource tags to assign to the configuration. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Enable if the instance should be terminated when the pipeline fails. Defaults to `false`.
         pub terminate_instance_on_failure: pulumi_gestalt_rust::Output<Option<bool>>,

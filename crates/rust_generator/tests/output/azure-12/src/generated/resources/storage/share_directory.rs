@@ -61,7 +61,7 @@ pub mod share_directory {
         /// A mapping of metadata to assign to this Directory.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name (or path) of the Directory that should be created within this File Share. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -79,7 +79,7 @@ pub mod share_directory {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A mapping of metadata to assign to this Directory.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name (or path) of the Directory that should be created within this File Share. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

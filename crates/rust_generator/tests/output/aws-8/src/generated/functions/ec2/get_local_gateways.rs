@@ -20,7 +20,7 @@ pub mod get_local_gateways {
         /// a pair on the desired local_gateways.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -32,7 +32,9 @@ pub mod get_local_gateways {
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Set of all the Local Gateway identifiers
         pub ids: pulumi_gestalt_rust::Output<Vec<String>>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

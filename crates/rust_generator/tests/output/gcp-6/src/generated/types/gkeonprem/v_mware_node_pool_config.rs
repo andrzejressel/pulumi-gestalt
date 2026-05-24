@@ -27,7 +27,7 @@ pub struct VMwareNodePoolConfig {
     /// the Kubernetes version -- it's best to assume the behavior is undefined
     /// and conflicts should be avoided.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// The megabytes of memory for each node in the node pool.
     #[builder(into)]
     pub r#memory_mb: Option<i32>,

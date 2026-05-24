@@ -19,11 +19,11 @@ pub mod get_linux_web_app {
     pub struct GetLinuxWebAppResult {
         /// An `app_metadata` block as defined below.
         pub app_metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// An `app_settings` block as defined below.
         pub app_settings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// An `auth_settings` block as defined below.
         pub auth_settings: pulumi_gestalt_rust::Output<
@@ -110,7 +110,9 @@ pub mod get_linux_web_app {
             Vec<super::super::super::types::appservice::GetLinuxWebAppStorageAccount>,
         >,
         /// A mapping of tags assigned to the Linux Web App.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The current usage state. Possible values are `Normal` and `Exceeded`.
         pub usage: pulumi_gestalt_rust::Output<String>,
         /// The subnet id which the Linux Web App is vNet Integrated with.

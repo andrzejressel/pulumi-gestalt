@@ -35,7 +35,9 @@ pub mod get_dicom_service {
         /// The url of the Healthcare DICOM Services.
         pub service_url: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the Healthcare DICOM Service.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub workspace_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

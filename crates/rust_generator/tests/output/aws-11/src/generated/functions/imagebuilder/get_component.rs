@@ -14,7 +14,7 @@ pub mod get_component {
         /// Key-value map of resource tags for the component.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -43,7 +43,9 @@ pub mod get_component {
         /// Operating Systems (OSes) supported by the component.
         pub supported_os_versions: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Key-value map of resource tags for the component.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Type of the component.
         pub type_: pulumi_gestalt_rust::Output<String>,
         /// Version of the component.

@@ -292,7 +292,7 @@ pub mod instance {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The zone where the instance will be provisioned. If not provided,
         /// the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -343,7 +343,7 @@ pub mod instance {
         /// https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances#Instance.FIELDS.redis_configs
         #[builder(into, default)]
         pub redis_configs: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of Redis software. If not provided, latest supported
         /// version will be used. Please check the API documentation linked
@@ -428,7 +428,7 @@ pub mod instance {
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Hostname or IP address of the exposed Redis endpoint used by clients
         /// to connect to the service.
@@ -437,7 +437,7 @@ pub mod instance {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The zone where the instance will be provisioned. If not provided,
         /// the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -487,7 +487,7 @@ pub mod instance {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only.
         /// Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes
@@ -508,7 +508,7 @@ pub mod instance {
         /// Please check Memorystore documentation for the list of supported parameters:
         /// https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances#Instance.FIELDS.redis_configs
         pub redis_configs: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The version of Redis software. If not provided, latest supported
         /// version will be used. Please check the API documentation linked

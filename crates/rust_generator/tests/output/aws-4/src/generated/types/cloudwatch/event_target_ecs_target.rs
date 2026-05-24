@@ -35,7 +35,7 @@ pub struct EventTargetEcsTarget {
     pub r#propagate_tags: Option<String>,
     /// A map of tags to assign to ecs resources.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// The number of tasks to create based on the TaskDefinition. Defaults to `1`.
     #[builder(into)]
     pub r#task_count: Option<i32>,

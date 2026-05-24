@@ -45,7 +45,9 @@ pub mod get_key_vault {
         /// The Name of the SKU used for this Key Vault.
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the Key Vault.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Azure Active Directory Tenant ID used to authenticate requests for this Key Vault.
         pub tenant_id: pulumi_gestalt_rust::Output<String>,
         /// The URI of the vault for performing operations on keys and secrets.

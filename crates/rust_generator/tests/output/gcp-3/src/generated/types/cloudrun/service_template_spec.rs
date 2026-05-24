@@ -16,7 +16,7 @@ pub struct ServiceTemplateSpec {
     /// Use the following node selector keys to configure features on a Revision:
     /// - `run.googleapis.com/accelerator` sets the [type of GPU](https://cloud.google.com/run/docs/configuring/services/gpu) required by the Revision to run.
     #[builder(into)]
-    pub r#node_selector: Option<std::collections::HashMap<String, String>>,
+    pub r#node_selector: Option<std::collections::BTreeMap<String, String>>,
     /// Email address of the IAM service account associated with the revision of the
     /// service. The service account represents the identity of the running revision,
     /// and determines what permissions the revision has. If not provided, the revision

@@ -171,7 +171,7 @@ pub mod plan {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies if the App Service Plan should be Zone Redundant. Changing this forces a new resource to be created.
         ///
@@ -214,7 +214,7 @@ pub mod plan {
         pub sku: pulumi_gestalt_rust::Output<super::super::types::appservice::PlanSku>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies if the App Service Plan should be Zone Redundant. Changing this forces a new resource to be created.
         ///

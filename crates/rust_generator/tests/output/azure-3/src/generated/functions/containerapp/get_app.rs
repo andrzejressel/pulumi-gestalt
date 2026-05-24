@@ -54,7 +54,9 @@ pub mod get_app {
             Vec<super::super::super::types::containerapp::GetAppSecret>,
         >,
         /// A mapping of tags to assign to the Container App.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A `template` block as detailed below.
         pub templates: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::containerapp::GetAppTemplate>,

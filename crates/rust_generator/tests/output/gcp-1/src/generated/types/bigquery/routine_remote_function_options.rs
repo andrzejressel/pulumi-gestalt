@@ -22,7 +22,7 @@ pub struct RoutineRemoteFunctionOptions {
     /// An object containing a list of "key": value pairs. Example:
     /// `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
     #[builder(into)]
-    pub r#user_defined_context: Option<std::collections::HashMap<String, String>>,
+    pub r#user_defined_context: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RoutineRemoteFunctionOptions {

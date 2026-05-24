@@ -19,7 +19,7 @@ pub mod get_product {
         /// Tags applied to the product.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -49,7 +49,9 @@ pub mod get_product {
         /// Contact URL for product support.
         pub support_url: pulumi_gestalt_rust::Output<String>,
         /// Tags applied to the product.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Type of product.
         pub type_: pulumi_gestalt_rust::Output<String>,
     }

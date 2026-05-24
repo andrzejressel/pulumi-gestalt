@@ -5,7 +5,7 @@
 pub struct EventSourceMappingSelfManagedEventSource {
     /// A map of endpoints for the self managed source.  For Kafka self-managed sources, the key should be `KAFKA_BOOTSTRAP_SERVERS` and the value should be a string with a comma separated list of broker endpoints.
     #[builder(into)]
-    pub r#endpoints: std::collections::HashMap<String, String>,
+    pub r#endpoints: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EventSourceMappingSelfManagedEventSource {

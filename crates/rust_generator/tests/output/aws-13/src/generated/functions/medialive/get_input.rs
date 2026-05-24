@@ -49,7 +49,9 @@ pub mod get_input {
         /// The state of the input.
         pub state: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the Input.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The type of the input.
         pub type_: pulumi_gestalt_rust::Output<String>,
     }

@@ -215,7 +215,7 @@ pub mod region_disk {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Any applicable license URI.
         #[builder(into, default)]
@@ -321,7 +321,7 @@ pub mod region_disk {
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A list of features to enable on the guest operating system.
         /// Applicable only for bootable disks.
@@ -341,7 +341,7 @@ pub mod region_disk {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Last attach timestamp in RFC3339 text format.
         pub last_attach_timestamp: pulumi_gestalt_rust::Output<String>,
@@ -369,7 +369,7 @@ pub mod region_disk {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A reference to the region where the disk resides.
         pub region: pulumi_gestalt_rust::Output<String>,

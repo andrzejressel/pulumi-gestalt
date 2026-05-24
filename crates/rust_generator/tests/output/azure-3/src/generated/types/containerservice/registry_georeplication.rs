@@ -11,7 +11,7 @@ pub struct RegistryGeoreplication {
     pub r#regional_endpoint_enabled: Option<bool>,
     /// A mapping of tags to assign to this replication location.
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
     /// Whether zone redundancy is enabled for this replication location? Defaults to `false`.
     /// 
     /// > **NOTE:** Changing the `zone_redundancy_enabled` forces the a underlying replication to be created.

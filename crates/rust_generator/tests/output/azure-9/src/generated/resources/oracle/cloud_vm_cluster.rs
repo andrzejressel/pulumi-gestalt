@@ -98,7 +98,7 @@ pub mod cloud_vm_cluster {
         /// A mapping of tags which should be assigned to the Cloud VM Cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The time zone of the Cloud VM Cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
@@ -173,7 +173,7 @@ pub mod cloud_vm_cluster {
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Cloud VM Cluster.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The time zone of the Cloud VM Cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). Changing this forces a new Cloud VM Cluster to be created.
         pub time_zone: pulumi_gestalt_rust::Output<String>,

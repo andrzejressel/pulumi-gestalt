@@ -50,7 +50,7 @@ pub mod azure_traffic_collector {
         /// A mapping of tags which should be assigned to the Network Function Azure Traffic Collector.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -70,7 +70,7 @@ pub mod azure_traffic_collector {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Network Function Azure Traffic Collector.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Resource ID of virtual hub.
         pub virtual_hub_ids: pulumi_gestalt_rust::Output<Vec<String>>,

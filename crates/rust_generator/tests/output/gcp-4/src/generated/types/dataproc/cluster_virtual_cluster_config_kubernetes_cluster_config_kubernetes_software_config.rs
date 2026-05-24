@@ -7,11 +7,11 @@ pub struct ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareC
     /// KubernetesComponent enumeration. The value is the version of the software to be installed. At least one entry must be specified.
     /// * **NOTE** : `component_version[SPARK]` is mandatory to set, or the creation of the cluster will fail.
     #[builder(into)]
-    pub r#component_version: std::collections::HashMap<String, String>,
+    pub r#component_version: std::collections::BTreeMap<String, String>,
     /// The properties to set on daemon config files. Property keys are specified in prefix:property format, 
     /// for example spark:spark.kubernetes.container.image.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareConfig {

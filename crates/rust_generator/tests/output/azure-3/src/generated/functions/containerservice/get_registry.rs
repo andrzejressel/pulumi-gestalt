@@ -36,7 +36,9 @@ pub mod get_registry {
         /// The SKU of this Container Registry, such as `Basic`.
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the Container Registry.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

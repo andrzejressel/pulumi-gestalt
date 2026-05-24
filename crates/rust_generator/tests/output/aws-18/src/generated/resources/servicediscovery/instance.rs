@@ -84,7 +84,7 @@ pub mod instance {
         /// A map contains the attributes of the instance. Check the [doc](https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html#API_RegisterInstance_RequestSyntax) for the supported attributes and syntax.
         #[builder(into)]
         pub attributes: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the service instance.
         #[builder(into)]
@@ -102,7 +102,7 @@ pub mod instance {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map contains the attributes of the instance. Check the [doc](https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html#API_RegisterInstance_RequestSyntax) for the supported attributes and syntax.
         pub attributes: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The ID of the service instance.
         pub instance_id: pulumi_gestalt_rust::Output<String>,

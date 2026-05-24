@@ -14,7 +14,7 @@ pub mod random_terraform_config {
     #[allow(dead_code)]
     pub struct RandomTerraformConfigResult {
         pub result: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

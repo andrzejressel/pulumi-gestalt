@@ -129,7 +129,7 @@ pub mod function {
         /// A set of key/value environment variable pairs available during build time.
         #[builder(into, default)]
         pub build_environment_variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// If provided, the self-provided service account to use to build the function. The format of this field is `projects/{project}/serviceAccounts/{serviceAccountEmail}`
         #[builder(into, default)]
@@ -152,7 +152,7 @@ pub mod function {
         /// A set of key/value environment variable pairs to assign to the function.
         #[builder(into, default)]
         pub environment_variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A source that fires events in response to a condition in another service. Structure is documented below. Cannot be used with `trigger_http`.
         #[builder(into, default)]
@@ -181,7 +181,7 @@ pub mod function {
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The limit on the maximum number of function instances that may coexist at a given time.
         #[builder(into, default)]
@@ -257,7 +257,7 @@ pub mod function {
         pub available_memory_mb: pulumi_gestalt_rust::Output<Option<i32>>,
         /// A set of key/value environment variable pairs available during build time.
         pub build_environment_variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// If provided, the self-provided service account to use to build the function. The format of this field is `projects/{project}/serviceAccounts/{serviceAccountEmail}`
         pub build_service_account: pulumi_gestalt_rust::Output<String>,
@@ -271,13 +271,13 @@ pub mod function {
         pub docker_repository: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Name of the function that will be executed when the Google Cloud Function is triggered.
         pub entry_point: pulumi_gestalt_rust::Output<Option<String>>,
         /// A set of key/value environment variable pairs to assign to the function.
         pub environment_variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A source that fires events in response to a condition in another service. Structure is documented below. Cannot be used with `trigger_http`.
         pub event_trigger: pulumi_gestalt_rust::Output<
@@ -300,7 +300,7 @@ pub mod function {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The limit on the maximum number of function instances that may coexist at a given time.
         pub max_instances: pulumi_gestalt_rust::Output<i32>,
@@ -312,7 +312,7 @@ pub mod function {
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Region of function. If it is not provided, the provider region is used.
         pub region: pulumi_gestalt_rust::Output<String>,

@@ -66,12 +66,12 @@ pub mod replication_configuration_template {
         /// Set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.
         #[builder(into)]
         pub staging_area_tags: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Set of tags to be associated with the Replication Configuration Template resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub timeouts: pulumi_gestalt_rust::Input<
@@ -124,15 +124,15 @@ pub mod replication_configuration_template {
         pub staging_area_subnet_id: pulumi_gestalt_rust::Output<String>,
         /// Set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.
         pub staging_area_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Set of tags to be associated with the Replication Configuration Template resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub timeouts: pulumi_gestalt_rust::Output<
             Option<super::super::types::drs::ReplicationConfigurationTemplateTimeouts>,

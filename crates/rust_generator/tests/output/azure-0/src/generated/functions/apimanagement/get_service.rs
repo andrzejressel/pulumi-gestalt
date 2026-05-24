@@ -17,7 +17,7 @@ pub mod get_service {
         /// A mapping of tags assigned to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -70,7 +70,7 @@ pub mod get_service {
         pub sku_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `tenant_access` block as defined below.
         pub tenant_accesses: pulumi_gestalt_rust::Output<

@@ -29,7 +29,9 @@ pub mod get_aaaa_record {
         pub records: pulumi_gestalt_rust::Output<Vec<String>>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The Azure resource id of the target object from where the dns resource value is taken.
         pub target_resource_id: pulumi_gestalt_rust::Output<String>,
         /// The Time To Live (TTL) of the DNS record in seconds.

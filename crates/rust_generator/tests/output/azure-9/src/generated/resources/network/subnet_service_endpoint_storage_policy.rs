@@ -88,7 +88,7 @@ pub mod subnet_service_endpoint_storage_policy {
         /// A mapping of tags which should be assigned to the Subnet Service Endpoint Storage Policy.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -114,7 +114,7 @@ pub mod subnet_service_endpoint_storage_policy {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Subnet Service Endpoint Storage Policy.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

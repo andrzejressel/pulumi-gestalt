@@ -36,11 +36,13 @@ pub mod get_workflow {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of Key-Value pairs.
         pub parameters: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The list of access endpoint IP addresses of workflow.
         pub workflow_endpoint_ip_addresses: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The list of outgoing IP addresses of workflow.

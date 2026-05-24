@@ -48,12 +48,12 @@ pub mod region_settings {
         /// A map of services along with the management preferences for the Region. For more information, see the [AWS Documentation](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRegionSettings.html#API_UpdateRegionSettings_RequestSyntax).
         #[builder(into, default)]
         pub resource_type_management_preference: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, bool>>,
+            Option<std::collections::BTreeMap<String, bool>>,
         >,
         /// A map of services along with the opt-in preferences for the Region.
         #[builder(into)]
         pub resource_type_opt_in_preference: pulumi_gestalt_rust::Input<
-            std::collections::HashMap<String, bool>,
+            std::collections::BTreeMap<String, bool>,
         >,
     }
     #[allow(dead_code)]
@@ -65,11 +65,11 @@ pub mod region_settings {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of services along with the management preferences for the Region. For more information, see the [AWS Documentation](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRegionSettings.html#API_UpdateRegionSettings_RequestSyntax).
         pub resource_type_management_preference: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, bool>,
+            std::collections::BTreeMap<String, bool>,
         >,
         /// A map of services along with the opt-in preferences for the Region.
         pub resource_type_opt_in_preference: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, bool>,
+            std::collections::BTreeMap<String, bool>,
         >,
     }
     ///

@@ -16,7 +16,7 @@ pub struct FunctionServiceConfig {
     pub r#available_memory: Option<String>,
     /// Environment variables that shall be available during function execution.
     #[builder(into)]
-    pub r#environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#environment_variables: Option<std::collections::BTreeMap<String, String>>,
     /// (Output)
     /// URIs of the Service deployed
     #[builder(into)]

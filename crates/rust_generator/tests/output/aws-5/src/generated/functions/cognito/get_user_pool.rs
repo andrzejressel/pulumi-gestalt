@@ -65,11 +65,13 @@ pub mod get_user_pool {
         /// The contents of the SMS authentication message.
         pub sms_verification_message: pulumi_gestalt_rust::Output<String>,
         /// Map of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub user_pool_id: pulumi_gestalt_rust::Output<String>,
         /// (Deprecated) Map of tags assigned to the resource.
         pub user_pool_tags: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Specifies whether a user can use an email address or phone number as a username when they sign up.
         pub username_attributes: pulumi_gestalt_rust::Output<Vec<String>>,

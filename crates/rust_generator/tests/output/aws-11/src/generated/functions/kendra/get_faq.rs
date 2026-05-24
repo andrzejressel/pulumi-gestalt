@@ -17,7 +17,7 @@ pub mod get_faq {
         /// Metadata that helps organize the FAQs you create.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -49,7 +49,9 @@ pub mod get_faq {
         /// Status of the FAQ. It is ready to use when the status is ACTIVE.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// Metadata that helps organize the FAQs you create.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Date and time that the FAQ was last updated.
         pub updated_at: pulumi_gestalt_rust::Output<String>,
     }

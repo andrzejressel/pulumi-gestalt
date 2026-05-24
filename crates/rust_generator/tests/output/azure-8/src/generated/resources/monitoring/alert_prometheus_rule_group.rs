@@ -127,7 +127,7 @@ pub mod alert_prometheus_rule_group {
         /// A mapping of tags to assign to the Alert Management Prometheus Rule Group.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -159,7 +159,7 @@ pub mod alert_prometheus_rule_group {
         pub scopes: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A mapping of tags to assign to the Alert Management Prometheus Rule Group.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

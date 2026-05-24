@@ -20,7 +20,7 @@ pub mod get_contact_flow {
         /// Tags to assign to the Contact Flow.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Type of Contact Flow.
         #[builder(into, default)]
@@ -40,7 +40,9 @@ pub mod get_contact_flow {
         pub instance_id: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Tags to assign to the Contact Flow.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Type of Contact Flow.
         pub type_: pulumi_gestalt_rust::Output<Option<String>>,
     }

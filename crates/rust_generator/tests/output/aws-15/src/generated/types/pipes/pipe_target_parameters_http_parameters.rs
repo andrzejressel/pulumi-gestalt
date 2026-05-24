@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct PipeTargetParametersHttpParameters {
     #[builder(into)]
-    pub r#header_parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#header_parameters: Option<std::collections::BTreeMap<String, String>>,
     #[builder(into)]
     pub r#path_parameter_values: Option<String>,
     #[builder(into)]
-    pub r#query_string_parameters: Option<std::collections::HashMap<String, String>>,
+    pub r#query_string_parameters: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PipeTargetParametersHttpParameters {

@@ -108,7 +108,7 @@ pub mod workbook_template {
         /// A mapping of tags which should be assigned to the Application Insights Workbook Template.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Valid JSON object containing workbook template payload.
         #[builder(into)]
@@ -139,7 +139,7 @@ pub mod workbook_template {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Application Insights Workbook Template.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Valid JSON object containing workbook template payload.
         pub template_data: pulumi_gestalt_rust::Output<String>,

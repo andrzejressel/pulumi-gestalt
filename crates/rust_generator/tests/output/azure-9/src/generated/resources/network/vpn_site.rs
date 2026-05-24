@@ -92,7 +92,7 @@ pub mod vpn_site {
         /// A mapping of tags which should be assigned to the VPN Site.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Virtual Wan where this VPN site resides in. Changing this forces a new VPN Site to be created.
         #[builder(into)]
@@ -129,7 +129,7 @@ pub mod vpn_site {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the VPN Site.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Virtual Wan where this VPN site resides in. Changing this forces a new VPN Site to be created.
         pub virtual_wan_id: pulumi_gestalt_rust::Output<String>,

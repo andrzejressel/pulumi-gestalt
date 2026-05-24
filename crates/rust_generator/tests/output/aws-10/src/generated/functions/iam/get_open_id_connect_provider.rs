@@ -14,7 +14,7 @@ pub mod get_open_id_connect_provider {
         /// Map of resource tags for the IAM OIDC provider.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// URL of the OpenID Connect provider.
         #[builder(into, default)]
@@ -28,7 +28,9 @@ pub mod get_open_id_connect_provider {
         /// The provider-assigned unique ID for this managed resource.
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Map of resource tags for the IAM OIDC provider.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// List of server certificate thumbprints for the OpenID Connect (OIDC) identity provider's server certificate(s).
         pub thumbprint_lists: pulumi_gestalt_rust::Output<Vec<String>>,
         pub url: pulumi_gestalt_rust::Output<String>,

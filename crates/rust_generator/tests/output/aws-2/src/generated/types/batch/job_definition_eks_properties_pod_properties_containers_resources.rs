@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct JobDefinitionEksPropertiesPodPropertiesContainersResources {
     #[builder(into)]
-    pub r#limits: Option<std::collections::HashMap<String, String>>,
+    pub r#limits: Option<std::collections::BTreeMap<String, String>>,
     #[builder(into)]
-    pub r#requests: Option<std::collections::HashMap<String, String>>,
+    pub r#requests: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobDefinitionEksPropertiesPodPropertiesContainersResources {

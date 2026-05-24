@@ -75,7 +75,7 @@ pub mod custom_action_type {
         >,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into)]
         pub version: pulumi_gestalt_rust::Input<String>,
@@ -112,11 +112,11 @@ pub mod custom_action_type {
             Option<super::super::types::codepipeline::CustomActionTypeSettings>,
         >,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub version: pulumi_gestalt_rust::Output<String>,
     }

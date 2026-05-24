@@ -23,7 +23,7 @@ pub mod get_vpc_attachment {
         /// Key-value tags for the EC2 Transit Gateway VPC Attachment
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -48,7 +48,9 @@ pub mod get_vpc_attachment {
         /// Identifiers of EC2 Subnets.
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Key-value tags for the EC2 Transit Gateway VPC Attachment
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// EC2 Transit Gateway identifier
         pub transit_gateway_id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of EC2 VPC.

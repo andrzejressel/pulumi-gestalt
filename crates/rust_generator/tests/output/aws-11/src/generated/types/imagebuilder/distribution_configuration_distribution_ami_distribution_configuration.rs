@@ -5,7 +5,7 @@
 pub struct DistributionConfigurationDistributionAmiDistributionConfiguration {
     /// Key-value map of tags to apply to the distributed AMI.
     #[builder(into)]
-    pub r#ami_tags: Option<std::collections::HashMap<String, String>>,
+    pub r#ami_tags: Option<std::collections::BTreeMap<String, String>>,
     /// Description to apply to the distributed AMI.
     #[builder(into)]
     pub r#description: Option<String>,

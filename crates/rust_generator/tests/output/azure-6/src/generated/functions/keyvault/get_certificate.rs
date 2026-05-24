@@ -46,7 +46,9 @@ pub mod get_certificate {
         /// The ID of the associated Key Vault Secret.
         pub secret_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The X509 Thumbprint of the Key Vault Certificate represented as a hexadecimal string.
         pub thumbprint: pulumi_gestalt_rust::Output<String>,
         /// The current version of the Key Vault Certificate.

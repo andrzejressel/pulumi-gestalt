@@ -166,7 +166,7 @@ pub mod flexible_app_version {
         /// Metadata settings that are supplied to this version to enable beta runtime features.
         #[builder(into, default)]
         pub beta_settings: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding
         /// StaticFilesHandler does not specify its own expiration time.
@@ -192,7 +192,7 @@ pub mod flexible_app_version {
         >,
         #[builder(into, default)]
         pub env_variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Runtime settings for App Engine flexible environment.
         #[builder(into, default)]
@@ -305,7 +305,7 @@ pub mod flexible_app_version {
         >,
         /// Metadata settings that are supplied to this version to enable beta runtime features.
         pub beta_settings: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding
         /// StaticFilesHandler does not specify its own expiration time.
@@ -325,7 +325,7 @@ pub mod flexible_app_version {
             Option<super::super::types::appengine::FlexibleAppVersionEntrypoint>,
         >,
         pub env_variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Runtime settings for App Engine flexible environment.
         pub flexible_runtime_settings: pulumi_gestalt_rust::Output<

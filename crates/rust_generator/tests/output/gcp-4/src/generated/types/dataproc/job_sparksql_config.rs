@@ -13,7 +13,7 @@ pub struct JobSparksqlConfig {
     pub r#logging_config: Option<Box<super::super::types::dataproc::JobSparksqlConfigLoggingConfig>>,
     /// A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Cloud Dataproc API may be overwritten.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// The HCFS URI of the script that contains SQL queries.
     /// Conflicts with `query_list`
     #[builder(into)]
@@ -24,7 +24,7 @@ pub struct JobSparksqlConfig {
     pub r#query_lists: Option<Vec<String>>,
     /// Mapping of query variable names to values (equivalent to the Spark SQL command: `SET name="value";`).
     #[builder(into)]
-    pub r#script_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#script_variables: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobSparksqlConfig {

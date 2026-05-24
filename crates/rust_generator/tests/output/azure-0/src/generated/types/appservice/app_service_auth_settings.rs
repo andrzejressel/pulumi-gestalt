@@ -8,7 +8,7 @@ pub struct AppServiceAuthSettings {
     pub r#active_directory: Option<Box<super::super::types::appservice::AppServiceAuthSettingsActiveDirectory>>,
     /// Login parameters to send to the OpenID Connect authorization endpoint when a user logs in. Each parameter must be in the form "key=value".
     #[builder(into)]
-    pub r#additional_login_params: Option<std::collections::HashMap<String, String>>,
+    pub r#additional_login_params: Option<std::collections::BTreeMap<String, String>>,
     /// External URLs that can be redirected to as part of logging in or logging out of the app.
     #[builder(into)]
     pub r#allowed_external_redirect_urls: Option<Vec<String>>,

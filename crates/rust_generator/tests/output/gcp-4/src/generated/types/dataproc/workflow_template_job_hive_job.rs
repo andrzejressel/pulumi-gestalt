@@ -11,7 +11,7 @@ pub struct WorkflowTemplateJobHiveJob {
     pub r#jar_file_uris: Option<Vec<String>>,
     /// A mapping of property names and values, used to configure Hive. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/hive/conf/hive-site.xml, and classes in user code.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// The HCFS URI of the script that contains Hive queries.
     #[builder(into)]
     pub r#query_file_uri: Option<String>,
@@ -20,7 +20,7 @@ pub struct WorkflowTemplateJobHiveJob {
     pub r#query_list: Option<Box<super::super::types::dataproc::WorkflowTemplateJobHiveJobQueryList>>,
     /// Mapping of query variable names to values (equivalent to the Hive command: `SET name="value";`).
     #[builder(into)]
-    pub r#script_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#script_variables: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WorkflowTemplateJobHiveJob {

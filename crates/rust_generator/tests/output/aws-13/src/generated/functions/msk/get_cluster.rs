@@ -14,7 +14,7 @@ pub mod get_cluster {
         /// Map of key-value pairs assigned to the cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -49,7 +49,9 @@ pub mod get_cluster {
         /// Number of broker nodes in the cluster.
         pub number_of_broker_nodes: pulumi_gestalt_rust::Output<i32>,
         /// Map of key-value pairs assigned to the cluster.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A comma separated list of one or more hostname:port pairs to use to connect to the Apache Zookeeper cluster. The returned values are sorted alphbetically. The AWS API may not return all endpoints, so this value is not guaranteed to be stable across applies.
         pub zookeeper_connect_string: pulumi_gestalt_rust::Output<String>,
         /// A comma separated list of one or more hostname:port pairs to use to connect to the Apache Zookeeper cluster via TLS. The returned values are sorted alphabetically. The AWS API may not return all endpoints, so this value is not guaranteed to be stable across applies.

@@ -109,7 +109,7 @@ pub mod a_record {
         /// > **Note:** either `records` OR `target_resource_id` must be specified, but not both.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Azure resource id of the target object. Conflicts with `records`.
         #[builder(into, default)]
@@ -142,7 +142,7 @@ pub mod a_record {
         ///
         /// > **Note:** either `records` OR `target_resource_id` must be specified, but not both.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Azure resource id of the target object. Conflicts with `records`.
         pub target_resource_id: pulumi_gestalt_rust::Output<Option<String>>,

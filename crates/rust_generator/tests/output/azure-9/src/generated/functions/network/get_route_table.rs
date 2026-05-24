@@ -33,7 +33,9 @@ pub mod get_route_table {
         /// The collection of Subnets associated with this route table.
         pub subnets: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A mapping of tags assigned to the Route Table.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

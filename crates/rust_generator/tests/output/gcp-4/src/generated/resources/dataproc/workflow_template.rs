@@ -138,7 +138,7 @@ pub mod workflow_template {
         /// configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
@@ -182,7 +182,7 @@ pub mod workflow_template {
         /// the cluster is deleted.
         pub dag_timeout: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Required. The Directed Acyclic Graph of Jobs to submit.
         pub jobs: pulumi_gestalt_rust::Output<
@@ -195,7 +195,7 @@ pub mod workflow_template {
         /// associated with a template. **Note**: This field is non-authoritative, and will only manage the labels present in your
         /// configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The location for the resource
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -214,7 +214,7 @@ pub mod workflow_template {
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Output only. The time template was last updated.
         pub update_time: pulumi_gestalt_rust::Output<String>,

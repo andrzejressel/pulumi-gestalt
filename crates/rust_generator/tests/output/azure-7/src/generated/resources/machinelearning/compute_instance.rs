@@ -150,7 +150,7 @@ pub mod compute_instance {
         /// A mapping of tags which should be assigned to the Machine Learning Compute Instance. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Virtual Machine Size. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into)]
@@ -191,7 +191,7 @@ pub mod compute_instance {
         pub subnet_resource_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the Machine Learning Compute Instance. Changing this forces a new Machine Learning Compute Instance to be created.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Virtual Machine Size. Changing this forces a new Machine Learning Compute Instance to be created.
         pub virtual_machine_size: pulumi_gestalt_rust::Output<String>,

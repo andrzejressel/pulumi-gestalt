@@ -94,7 +94,7 @@ pub mod bucket_object {
         /// One of the following is required:
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the object. If you're interpolating the name of this object, see `output_name` instead.
         #[builder(into, default)]
@@ -163,7 +163,7 @@ pub mod bucket_object {
         ///
         /// One of the following is required:
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the object. If you're interpolating the name of this object, see `output_name` instead.
         pub name: pulumi_gestalt_rust::Output<String>,

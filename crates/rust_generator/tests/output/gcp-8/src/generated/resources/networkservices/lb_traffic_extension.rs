@@ -64,7 +64,7 @@ pub mod lb_traffic_extension {
         /// present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// All backend services and forwarding rules referenced by this extension must share the same load balancing scheme. For
         /// more information, refer to [Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service) and
@@ -93,7 +93,7 @@ pub mod lb_traffic_extension {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A set of ordered extension chains that contain the match conditions and extensions to execute.
         /// Match conditions for each extension chain are evaluated in sequence for a given request.
@@ -110,7 +110,7 @@ pub mod lb_traffic_extension {
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// All backend services and forwarding rules referenced by this extension must share the same load balancing scheme. For
         /// more information, refer to [Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service) and
@@ -126,7 +126,7 @@ pub mod lb_traffic_extension {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

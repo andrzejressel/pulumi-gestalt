@@ -164,7 +164,7 @@ pub mod node_template {
         /// instance scheduling.
         #[builder(into, default)]
         pub node_affinity_labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Node type to use for nodes group that are created from this template.
         /// Only one of nodeTypeFlexibility and nodeType can be specified.
@@ -227,7 +227,7 @@ pub mod node_template {
         /// Labels to use for node affinity, which will be used in
         /// instance scheduling.
         pub node_affinity_labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Node type to use for nodes group that are created from this template.
         /// Only one of nodeTypeFlexibility and nodeType can be specified.

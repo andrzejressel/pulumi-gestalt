@@ -14,7 +14,7 @@ pub struct GroupContainer {
     pub r#cpu_limit: Option<f64>,
     /// A list of environment variables to be set on the container. Specified as a map of name/value pairs. Changing this forces a new resource to be created.
     #[builder(into)]
-    pub r#environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#environment_variables: Option<std::collections::BTreeMap<String, String>>,
     /// The container image name. Changing this forces a new resource to be created.
     #[builder(into)]
     pub r#image: String,
@@ -38,7 +38,7 @@ pub struct GroupContainer {
     pub r#readiness_probe: Option<Box<super::super::types::containerservice::GroupContainerReadinessProbe>>,
     /// A list of sensitive environment variables to be set on the container. Specified as a map of name/value pairs. Changing this forces a new resource to be created.
     #[builder(into)]
-    pub r#secure_environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#secure_environment_variables: Option<std::collections::BTreeMap<String, String>>,
     /// The definition of the security context for this container as documented in the `security` block below. Changing this forces a new resource to be created.
     #[builder(into)]
     pub r#securities: Option<Vec<super::super::types::containerservice::GroupContainerSecurity>>,

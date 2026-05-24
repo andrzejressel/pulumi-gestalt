@@ -224,7 +224,7 @@ pub mod instance {
         /// Optional. User-provided engine configurations for the instance.
         #[builder(into, default)]
         pub engine_configs: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Optional. Immutable. Engine version of the instance.
         #[builder(into, default)]
@@ -247,7 +247,7 @@ pub mod instance {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122. See documentation for resource type `memorystore.googleapis.com/CertificateAuthority`.
         #[builder(into)]
@@ -323,13 +323,13 @@ pub mod instance {
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Endpoints for the instance.
         pub endpoints: pulumi_gestalt_rust::Output<Vec<Vec<String>>>,
         /// Optional. User-provided engine configurations for the instance.
         pub engine_configs: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Optional. Immutable. Engine version of the instance.
         pub engine_version: pulumi_gestalt_rust::Output<String>,
@@ -349,7 +349,7 @@ pub mod instance {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122. See documentation for resource type `memorystore.googleapis.com/CertificateAuthority`.
         pub location: pulumi_gestalt_rust::Output<String>,
@@ -390,7 +390,7 @@ pub mod instance {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Optional. Number of replica nodes per shard. If omitted the default is 0 replicas.
         pub replica_count: pulumi_gestalt_rust::Output<i32>,

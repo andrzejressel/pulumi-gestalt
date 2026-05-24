@@ -39,7 +39,9 @@ pub mod get_certificate_data {
         /// The Key Vault Certificate in PEM format.
         pub pem: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub version: pulumi_gestalt_rust::Output<String>,
     }
     ///

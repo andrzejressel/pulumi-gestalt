@@ -73,7 +73,7 @@ pub mod blob {
         /// A map of custom blob metadata.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the storage blob. Must be unique within the storage container the blob is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
@@ -126,7 +126,7 @@ pub mod blob {
         pub encryption_scope: pulumi_gestalt_rust::Output<Option<String>>,
         /// A map of custom blob metadata.
         pub metadata: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The name of the storage blob. Must be unique within the storage container the blob is located. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,

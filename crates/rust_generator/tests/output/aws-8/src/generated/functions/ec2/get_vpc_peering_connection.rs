@@ -47,7 +47,7 @@ pub mod get_vpc_peering_connection {
         /// which take the following arguments:
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// ID of the requester VPC of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
@@ -58,7 +58,7 @@ pub mod get_vpc_peering_connection {
         /// Configuration block that describes [VPC Peering Connection]
         /// (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the accepter VPC.
         pub accepter: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, bool>,
+            std::collections::BTreeMap<String, bool>,
         >,
         /// CIDR block associated to the VPC of the specific VPC Peering Connection.
         pub cidr_block: pulumi_gestalt_rust::Output<String>,
@@ -93,10 +93,12 @@ pub mod get_vpc_peering_connection {
         /// Configuration block that describes [VPC Peering Connection]
         /// (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the requester VPC.
         pub requester: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, bool>,
+            std::collections::BTreeMap<String, bool>,
         >,
         pub status: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

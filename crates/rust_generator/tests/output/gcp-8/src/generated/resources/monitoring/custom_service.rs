@@ -90,7 +90,7 @@ pub mod custom_service {
         /// the empty string may be supplied for the label value.
         #[builder(into, default)]
         pub user_labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -123,7 +123,7 @@ pub mod custom_service {
         /// label entries may be stored. For labels which do not have a semantic value,
         /// the empty string may be supplied for the label value.
         pub user_labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

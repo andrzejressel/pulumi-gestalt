@@ -125,7 +125,7 @@ pub mod worker_pool {
         /// configuration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
         pub annotations: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.
         #[builder(into, default)]
@@ -169,7 +169,7 @@ pub mod worker_pool {
         /// limitations. **Note**: This field is non-authoritative, and will only manage the annotations present in your
         /// configuration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         pub annotations: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Output only. Time at which the request to create the `WorkerPool` was received.
         pub create_time: pulumi_gestalt_rust::Output<String>,
@@ -178,7 +178,7 @@ pub mod worker_pool {
         /// A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The location for the resource
         pub location: pulumi_gestalt_rust::Output<String>,

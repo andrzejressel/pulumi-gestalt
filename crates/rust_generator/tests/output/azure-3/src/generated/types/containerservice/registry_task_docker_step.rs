@@ -5,7 +5,7 @@
 pub struct RegistryTaskDockerStep {
     /// Specifies a map of arguments to be used when executing this step.
     #[builder(into)]
-    pub r#arguments: Option<std::collections::HashMap<String, String>>,
+    pub r#arguments: Option<std::collections::BTreeMap<String, String>>,
     /// Should the image cache be enabled? Defaults to `true`.
     #[builder(into)]
     pub r#cache_enabled: Option<bool>,
@@ -26,7 +26,7 @@ pub struct RegistryTaskDockerStep {
     pub r#push_enabled: Option<bool>,
     /// Specifies a map of *secret* arguments to be used when executing this step.
     #[builder(into)]
-    pub r#secret_arguments: Option<std::collections::HashMap<String, String>>,
+    pub r#secret_arguments: Option<std::collections::BTreeMap<String, String>>,
     /// The name of the target build stage for the docker build.
     #[builder(into)]
     pub r#target: Option<String>,

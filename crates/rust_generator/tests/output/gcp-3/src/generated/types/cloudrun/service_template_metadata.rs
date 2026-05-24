@@ -24,7 +24,7 @@ pub struct ServiceTemplateMetadata {
     /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
     /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
     #[builder(into)]
-    pub r#annotations: Option<std::collections::HashMap<String, String>>,
+    pub r#annotations: Option<std::collections::BTreeMap<String, String>>,
     /// (Output)
     /// A sequence number representing a specific generation of the desired state.
     #[builder(into)]
@@ -35,7 +35,7 @@ pub struct ServiceTemplateMetadata {
     /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
     /// Please refer to the field `effective_labels` for all of the labels present on the resource.
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Name must be unique within a Google Cloud project and region.
     /// Is required when creating resources. Name is primarily intended
     /// for creation idempotence and configuration definition. Cannot be updated.

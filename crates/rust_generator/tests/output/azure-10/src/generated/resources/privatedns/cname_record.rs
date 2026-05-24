@@ -64,7 +64,7 @@ pub mod cname_record {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Time To Live (TTL) of the DNS record in seconds. Possible values are between `0` and `2147483647`.
         #[builder(into)]
@@ -90,7 +90,7 @@ pub mod cname_record {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Time To Live (TTL) of the DNS record in seconds. Possible values are between `0` and `2147483647`.
         pub ttl: pulumi_gestalt_rust::Output<i32>,

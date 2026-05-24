@@ -286,7 +286,7 @@ pub mod managed_zone {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// User assigned name for this resource.
         /// Must be unique within the project.
@@ -356,7 +356,7 @@ pub mod managed_zone {
         >,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Set this true to delete all records in the zone.
         pub force_destroy: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -372,7 +372,7 @@ pub mod managed_zone {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Unique identifier for the resource; defined by the server.
         pub managed_zone_id: pulumi_gestalt_rust::Output<String>,
@@ -402,7 +402,7 @@ pub mod managed_zone {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse
         /// lookup queries using automatically configured records for VPC resources. This only applies

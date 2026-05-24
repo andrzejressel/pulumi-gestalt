@@ -56,7 +56,7 @@ pub struct GetClusterNodeConfig {
     pub r#kubelet_configs: Vec<super::super::types::container::GetClusterNodeConfigKubeletConfig>,
     /// The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// Parameters that can be configured on Linux nodes.
     #[builder(into)]
     pub r#linux_node_configs: Vec<super::super::types::container::GetClusterNodeConfigLinuxNodeConfig>,
@@ -77,7 +77,7 @@ pub struct GetClusterNodeConfig {
     pub r#machine_type: String,
     /// The metadata key/value pairs assigned to instances in the cluster.
     #[builder(into)]
-    pub r#metadata: std::collections::HashMap<String, String>,
+    pub r#metadata: std::collections::BTreeMap<String, String>,
     /// Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform.
     #[builder(into)]
     pub r#min_cpu_platform: String,
@@ -95,10 +95,10 @@ pub struct GetClusterNodeConfig {
     pub r#reservation_affinities: Vec<super::super::types::container::GetClusterNodeConfigReservationAffinity>,
     /// The GCE resource labels (a map of key/value pairs) to be applied to the node pool.
     #[builder(into)]
-    pub r#resource_labels: std::collections::HashMap<String, String>,
+    pub r#resource_labels: std::collections::BTreeMap<String, String>,
     /// A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
     #[builder(into)]
-    pub r#resource_manager_tags: std::collections::HashMap<String, String>,
+    pub r#resource_manager_tags: std::collections::BTreeMap<String, String>,
     /// Sandbox configuration for this node.
     #[builder(into)]
     pub r#sandbox_configs: Vec<super::super::types::container::GetClusterNodeConfigSandboxConfig>,

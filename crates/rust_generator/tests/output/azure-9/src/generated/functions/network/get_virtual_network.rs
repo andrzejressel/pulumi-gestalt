@@ -32,10 +32,12 @@ pub mod get_virtual_network {
         /// The list of name of the subnets that are attached to this virtual network.
         pub subnets: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A mapping of tags to assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A mapping of name - virtual network id of the virtual network peerings.
         pub vnet_peerings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// A list of virtual network peerings IP addresses.
         pub vnet_peerings_addresses: pulumi_gestalt_rust::Output<Vec<String>>,

@@ -41,7 +41,9 @@ pub mod get_image {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         pub sort_descending: pulumi_gestalt_rust::Output<Option<bool>>,
         /// a mapping of tags to assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// is zone resiliency enabled?
         pub zone_resilient: pulumi_gestalt_rust::Output<bool>,
     }

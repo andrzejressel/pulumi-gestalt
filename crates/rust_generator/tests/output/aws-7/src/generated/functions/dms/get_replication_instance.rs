@@ -13,7 +13,7 @@ pub mod get_replication_instance {
         pub replication_instance_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -49,7 +49,9 @@ pub mod get_replication_instance {
         pub replication_instance_public_ips: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A subnet group to associate with the replication instance.
         pub replication_subnet_group_id: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A set of VPC security group IDs that are used with the replication instance.
         pub vpc_security_group_ids: pulumi_gestalt_rust::Output<Vec<String>>,
     }

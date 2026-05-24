@@ -11,7 +11,7 @@ pub struct IntegrationRuntimeSsisExpressCustomSetup {
     pub r#components: Option<Vec<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupComponent>>,
     /// The Environment Variables for the Azure-SSIS Integration Runtime.
     #[builder(into)]
-    pub r#environment: Option<std::collections::HashMap<String, String>>,
+    pub r#environment: Option<std::collections::BTreeMap<String, String>>,
     /// The version of Azure Powershell installed for the Azure-SSIS Integration Runtime.
     /// 
     /// > **NOTE** At least one of `env`, `powershell_version`, `component` and `command_key` should be specified.

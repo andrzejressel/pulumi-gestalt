@@ -37,7 +37,7 @@ pub mod custom_hostname {
         /// Custom metadata associated with custom hostname. Only supports primitive string values, all other values are accessible via the API directly.
         #[builder(into, default)]
         pub custom_metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The custom origin server used for certificates.
         #[builder(into, default)]
@@ -69,7 +69,7 @@ pub mod custom_hostname {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// Custom metadata associated with custom hostname. Only supports primitive string values, all other values are accessible via the API directly.
         pub custom_metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The custom origin server used for certificates.
         pub custom_origin_server: pulumi_gestalt_rust::Output<Option<String>>,
@@ -78,10 +78,10 @@ pub mod custom_hostname {
         /// Hostname you intend to request a certificate for. **Modifying this attribute will force creation of a new resource.**
         pub hostname: pulumi_gestalt_rust::Output<String>,
         pub ownership_verification: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub ownership_verification_http: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// SSL properties used when creating the custom hostname.
         pub ssls: pulumi_gestalt_rust::Output<

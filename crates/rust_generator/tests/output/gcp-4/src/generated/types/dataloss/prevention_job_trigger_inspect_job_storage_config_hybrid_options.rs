@@ -14,7 +14,7 @@ pub struct PreventionJobTriggerInspectJobStorageConfigHybridOptions {
     /// * `"environment" : "production"`
     /// * `"pipeline" : "etl"`
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// These are labels that each inspection request must include within their 'finding_labels' map. Request
     /// may contain others, but any missing one of these will be rejected.
     /// Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `a-z?`.

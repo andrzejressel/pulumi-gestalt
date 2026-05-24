@@ -17,7 +17,7 @@ pub struct WorkflowTemplateJobPrestoJob {
     pub r#output_format: Option<String>,
     /// A mapping of property names to values. Used to set Presto (https://prestodb.io/docs/current/sql/set-session.html) Equivalent to using the --session flag in the Presto CLI
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// The HCFS URI of the script that contains SQL queries.
     #[builder(into)]
     pub r#query_file_uri: Option<String>,

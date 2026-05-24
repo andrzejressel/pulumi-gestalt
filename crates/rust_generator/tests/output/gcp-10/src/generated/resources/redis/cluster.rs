@@ -454,7 +454,7 @@ pub mod cluster {
         /// https://cloud.google.com/memorystore/docs/cluster/supported-instance-configurations
         #[builder(into, default)]
         pub redis_configs: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the region of the Redis cluster.
         #[builder(into, default)]
@@ -543,7 +543,7 @@ pub mod cluster {
         /// documentation for the list of supported parameters:
         /// https://cloud.google.com/memorystore/docs/cluster/supported-instance-configurations
         pub redis_configs: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the region of the Redis cluster.
         pub region: pulumi_gestalt_rust::Output<String>,

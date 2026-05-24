@@ -11,7 +11,7 @@ pub struct ResizeRequestStatusLastAttemptErrorErrorErrorDetailErrorInfo {
     /// Additional structured details about this error.
     /// Keys must match /[a-z][a-zA-Z0-9-_]+/ but should ideally be lowerCamelCase. Also they must be limited to 64 characters in length. When identifying the current value of an exceeded limit, the units should be contained in the key, not the value. For example, rather than {"instanceLimit": "100/request"}, should be returned as, {"instanceLimitPerRequest": "100"}, if the client exceeds the number of instances that can be created in a single (batch) request.
     #[builder(into)]
-    pub r#metadatas: Option<std::collections::HashMap<String, String>>,
+    pub r#metadatas: Option<std::collections::BTreeMap<String, String>>,
     /// (Output)
     /// The reason of the error. This is a constant value that identifies the proximate cause of the error. Error reasons are unique within a particular domain of errors. This should be at most 63 characters and match a regular expression of [A-Z][A-Z0-9_]+[A-Z0-9], which represents UPPER_SNAKE_CASE.
     #[builder(into)]

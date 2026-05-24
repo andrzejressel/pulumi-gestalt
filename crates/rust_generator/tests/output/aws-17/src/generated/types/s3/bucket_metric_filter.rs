@@ -11,7 +11,7 @@ pub struct BucketMetricFilter {
     pub r#prefix: Option<String>,
     /// Object tags for filtering (up to 10).
     #[builder(into)]
-    pub r#tags: Option<std::collections::HashMap<String, String>>,
+    pub r#tags: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BucketMetricFilter {

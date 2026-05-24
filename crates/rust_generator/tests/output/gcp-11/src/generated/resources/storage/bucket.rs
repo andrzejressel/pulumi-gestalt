@@ -172,7 +172,7 @@ pub mod bucket {
         /// A map of key/value label pairs to assign to the bucket.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The bucket's [Lifecycle Rules](https://cloud.google.com/storage/docs/lifecycle#configuration) configuration. Multiple blocks of this type are permitted. Structure is documented below.
         #[builder(into, default)]
@@ -255,7 +255,7 @@ pub mod bucket {
         /// Whether or not to automatically apply an eventBasedHold to new objects added to the bucket.
         pub default_event_based_hold: pulumi_gestalt_rust::Output<Option<bool>>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Enables [object retention](https://cloud.google.com/storage/docs/object-lock) on a storage bucket.
         pub enable_object_retention: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -273,7 +273,7 @@ pub mod bucket {
         >,
         /// A map of key/value label pairs to assign to the bucket.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The bucket's [Lifecycle Rules](https://cloud.google.com/storage/docs/lifecycle#configuration) configuration. Multiple blocks of this type are permitted. Structure is documented below.
         pub lifecycle_rules: pulumi_gestalt_rust::Output<
@@ -298,7 +298,7 @@ pub mod bucket {
         pub public_access_prevention: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Enables [Requester Pays](https://cloud.google.com/storage/docs/requester-pays) on a storage bucket.
         pub requester_pays: pulumi_gestalt_rust::Output<Option<bool>>,

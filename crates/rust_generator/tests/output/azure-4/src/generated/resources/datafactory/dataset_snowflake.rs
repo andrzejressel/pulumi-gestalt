@@ -66,7 +66,7 @@ pub mod dataset_snowflake {
         /// A map of additional properties to associate with the Data Factory Dataset Snowflake.
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset Snowflake.
         #[builder(into, default)]
@@ -89,7 +89,7 @@ pub mod dataset_snowflake {
         /// A map of parameters to associate with the Data Factory Dataset Snowflake.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `schema_column` block as defined below.
         #[builder(into, default)]
@@ -112,7 +112,7 @@ pub mod dataset_snowflake {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Dataset Snowflake.
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset Snowflake.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -128,7 +128,7 @@ pub mod dataset_snowflake {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of parameters to associate with the Data Factory Dataset Snowflake.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `schema_column` block as defined below.
         pub schema_columns: pulumi_gestalt_rust::Output<

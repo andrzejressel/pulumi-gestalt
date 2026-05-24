@@ -38,7 +38,7 @@ pub mod usage_plan {
         >,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Throttling limits of the usage plan.
         #[builder(into, default)]
@@ -70,11 +70,11 @@ pub mod usage_plan {
             Option<super::super::types::apigateway::UsagePlanQuotaSettings>,
         >,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Throttling limits of the usage plan.
         pub throttle_settings: pulumi_gestalt_rust::Output<

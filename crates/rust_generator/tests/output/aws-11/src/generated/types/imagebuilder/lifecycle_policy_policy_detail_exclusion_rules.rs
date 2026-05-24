@@ -8,7 +8,7 @@ pub struct LifecyclePolicyPolicyDetailExclusionRules {
     pub r#amis: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRulesAmis>>,
     /// Contains a list of tags that Image Builder uses to skip lifecycle actions for Image Builder image resources that have them.
     #[builder(into)]
-    pub r#tag_map: Option<std::collections::HashMap<String, String>>,
+    pub r#tag_map: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LifecyclePolicyPolicyDetailExclusionRules {

@@ -281,7 +281,7 @@ pub mod workforce_pool_provider {
         /// Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
         #[builder(into, default)]
         pub attribute_mapping: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A user-specified description of the provider. Cannot exceed 256 characters.
         #[builder(into, default)]
@@ -390,7 +390,7 @@ pub mod workforce_pool_provider {
         /// An object containing a list of `"key": value` pairs.
         /// Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
         pub attribute_mapping: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A user-specified description of the provider. Cannot exceed 256 characters.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,

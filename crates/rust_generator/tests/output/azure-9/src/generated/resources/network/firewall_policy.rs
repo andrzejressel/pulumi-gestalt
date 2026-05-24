@@ -95,7 +95,7 @@ pub mod firewall_policy {
         /// A mapping of tags which should be assigned to the Firewall Policy.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `threat_intelligence_allowlist` block as defined below.
         #[builder(into, default)]
@@ -164,7 +164,7 @@ pub mod firewall_policy {
         pub sql_redirect_allowed: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A mapping of tags which should be assigned to the Firewall Policy.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `threat_intelligence_allowlist` block as defined below.
         pub threat_intelligence_allowlist: pulumi_gestalt_rust::Output<

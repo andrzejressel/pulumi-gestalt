@@ -65,7 +65,7 @@ pub mod linked_service_azure_search {
         /// The following supported arguments are specific to Azure Search Linked Service:
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         #[builder(into, default)]
@@ -85,7 +85,7 @@ pub mod linked_service_azure_search {
         /// A map of parameters to associate with the Data Factory Linked Service.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The key of the Azure Search Service.
         #[builder(into)]
@@ -105,7 +105,7 @@ pub mod linked_service_azure_search {
         ///
         /// The following supported arguments are specific to Azure Search Linked Service:
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -121,7 +121,7 @@ pub mod linked_service_azure_search {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of parameters to associate with the Data Factory Linked Service.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The key of the Azure Search Service.
         pub search_service_key: pulumi_gestalt_rust::Output<String>,

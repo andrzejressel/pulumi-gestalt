@@ -117,7 +117,7 @@ pub mod datastore_blobstorage {
         /// A mapping of tags which should be assigned to the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Machine Learning Workspace. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into)]
@@ -150,7 +150,7 @@ pub mod datastore_blobstorage {
         pub storage_container_id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Machine Learning Workspace. Changing this forces a new Machine Learning DataStore to be created.
         pub workspace_id: pulumi_gestalt_rust::Output<String>,

@@ -8,7 +8,7 @@ pub struct GetAppTemplateCustomScaleRule {
     #[builder(into)]
     pub r#custom_rule_type: String,
     #[builder(into)]
-    pub r#metadata: std::collections::HashMap<String, String>,
+    pub r#metadata: std::collections::BTreeMap<String, String>,
     /// The name of the Container App.
     #[builder(into)]
     pub r#name: String,

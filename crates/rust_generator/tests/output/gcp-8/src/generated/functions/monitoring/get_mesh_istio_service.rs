@@ -48,7 +48,7 @@ pub mod get_mesh_istio_service {
             Vec<super::super::super::types::monitoring::GetMeshIstioServiceTelemetry>,
         >,
         pub user_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

@@ -13,7 +13,7 @@ pub mod get_load_balancer {
         pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -44,7 +44,9 @@ pub mod get_load_balancer {
         pub source_security_group: pulumi_gestalt_rust::Output<String>,
         pub source_security_group_id: pulumi_gestalt_rust::Output<String>,
         pub subnets: pulumi_gestalt_rust::Output<Vec<String>>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub zone_id: pulumi_gestalt_rust::Output<String>,
     }
     ///

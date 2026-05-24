@@ -45,7 +45,9 @@ pub mod get_security_group_rule {
         pub security_group_id: pulumi_gestalt_rust::Output<String>,
         pub security_group_rule_id: pulumi_gestalt_rust::Output<String>,
         /// A map of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// (Optional) The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
         pub to_port: pulumi_gestalt_rust::Output<i32>,
     }

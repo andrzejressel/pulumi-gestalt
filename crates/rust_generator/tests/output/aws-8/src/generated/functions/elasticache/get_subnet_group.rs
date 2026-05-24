@@ -14,7 +14,7 @@ pub mod get_subnet_group {
         /// Map of tags assigned to the subnet group.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -30,7 +30,7 @@ pub mod get_subnet_group {
         pub subnet_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Map of tags assigned to the subnet group.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.
         pub vpc_id: pulumi_gestalt_rust::Output<String>,

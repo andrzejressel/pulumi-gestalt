@@ -14,7 +14,7 @@ pub mod get_signing_profile {
         /// List of tags associated with the signing profile.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -41,7 +41,9 @@ pub mod get_signing_profile {
         /// Status of the target signing profile.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// List of tags associated with the signing profile.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Current version of the signing profile.
         pub version: pulumi_gestalt_rust::Output<String>,
         /// Signing profile ARN, including the profile version.

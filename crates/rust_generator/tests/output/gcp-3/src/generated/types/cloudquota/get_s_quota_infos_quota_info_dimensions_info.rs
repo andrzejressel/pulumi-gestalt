@@ -11,7 +11,7 @@ pub struct GetSQuotaInfosQuotaInfoDimensionsInfo {
     pub r#details: Vec<super::super::types::cloudquota::GetSQuotaInfosQuotaInfoDimensionsInfoDetail>,
     /// The map of dimensions for this dimensions info. The key of a map entry is "region", "zone" or the name of a service specific dimension, and the value of a map entry is the value of the dimension. If a dimension does not appear in the map of dimensions, the dimensions info applies to all the dimension values except for those that have another DimenisonInfo instance configured for the specific value. Example: {"provider" : "Foo Inc"} where "provider" is a service specific dimension of a quota.
     #[builder(into)]
-    pub r#dimensions: std::collections::HashMap<String, String>,
+    pub r#dimensions: std::collections::BTreeMap<String, String>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetSQuotaInfosQuotaInfoDimensionsInfo {

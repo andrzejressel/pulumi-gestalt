@@ -1,0 +1,5 @@
+type: Changed
+title: Migrate Rust generator map outputs from HashMap to BTreeMap
+description: |
+  The Rust generator now emits `std::collections::BTreeMap` for schema object/map
+  types instead of `std::collections::HashMap`.

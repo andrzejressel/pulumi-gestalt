@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct GetServiceMetadata {
     #[builder(into)]
-    pub r#annotations: std::collections::HashMap<String, String>,
+    pub r#annotations: std::collections::BTreeMap<String, String>,
     #[builder(into)]
-    pub r#effective_annotations: std::collections::HashMap<String, String>,
+    pub r#effective_annotations: std::collections::BTreeMap<String, String>,
     #[builder(into)]
-    pub r#effective_labels: std::collections::HashMap<String, String>,
+    pub r#effective_labels: std::collections::BTreeMap<String, String>,
     /// A sequence number representing a specific generation of the desired state.
     #[builder(into)]
     pub r#generation: i32,
@@ -19,7 +19,7 @@ pub struct GetServiceMetadata {
     /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
     /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// In Cloud Run the namespace must be equal to either the
     /// project ID or project number.
     #[builder(into)]
@@ -27,7 +27,7 @@ pub struct GetServiceMetadata {
     /// The combination of labels configured directly on the resource
     ///  and default labels configured on the provider.
     #[builder(into)]
-    pub r#pulumi_labels: std::collections::HashMap<String, String>,
+    pub r#pulumi_labels: std::collections::BTreeMap<String, String>,
     /// An opaque value that represents the internal version of this object that
     /// can be used by clients to determine when objects have changed. May be used
     /// for optimistic concurrency, change detection, and the watch operation on a

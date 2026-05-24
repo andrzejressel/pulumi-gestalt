@@ -141,7 +141,7 @@ pub mod load_balancer {
         /// determines if the ELB exists in a VPC or in EC2-classic.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -206,11 +206,11 @@ pub mod load_balancer {
         /// Exactly one of `availability_zones` or `subnets` must be specified: this
         /// determines if the ELB exists in a VPC or in EC2-classic.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The canonical hosted zone ID of the ELB (to be used in a Route 53 Alias record)
         pub zone_id: pulumi_gestalt_rust::Output<String>,

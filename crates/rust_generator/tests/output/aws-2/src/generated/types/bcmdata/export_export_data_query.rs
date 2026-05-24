@@ -8,7 +8,7 @@ pub struct ExportExportDataQuery {
     pub r#query_statement: String,
     /// Table configuration.
     #[builder(into)]
-    pub r#table_configurations: Option<std::collections::HashMap<String, std::collections::HashMap<String, String>>>,
+    pub r#table_configurations: Option<std::collections::BTreeMap<String, std::collections::BTreeMap<String, String>>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ExportExportDataQuery {

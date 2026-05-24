@@ -17,7 +17,7 @@ pub mod get_file_system {
         /// Restricts the list to the file system with these tags.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -57,7 +57,9 @@ pub mod get_file_system {
         /// Current byte count used by the file system.
         pub size_in_bytes: pulumi_gestalt_rust::Output<i32>,
         /// A map of tags to assign to the file system.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Throughput mode for the file system.
         pub throughput_mode: pulumi_gestalt_rust::Output<String>,
     }

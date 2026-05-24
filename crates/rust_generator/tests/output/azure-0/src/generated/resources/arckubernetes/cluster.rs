@@ -70,7 +70,7 @@ pub mod cluster {
         /// A mapping of tags which should be assigned to the Arc Kubernetes Cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -104,7 +104,7 @@ pub mod cluster {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Arc Kubernetes Cluster.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Number of CPU cores present in the cluster resource.
         pub total_core_count: pulumi_gestalt_rust::Output<i32>,

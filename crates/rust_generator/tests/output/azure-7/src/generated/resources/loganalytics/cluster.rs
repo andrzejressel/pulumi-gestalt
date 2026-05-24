@@ -62,7 +62,7 @@ pub mod cluster {
         /// A mapping of tags which should be assigned to the Log Analytics Cluster.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -90,7 +90,7 @@ pub mod cluster {
         pub size_gb: pulumi_gestalt_rust::Output<Option<i32>>,
         /// A mapping of tags which should be assigned to the Log Analytics Cluster.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

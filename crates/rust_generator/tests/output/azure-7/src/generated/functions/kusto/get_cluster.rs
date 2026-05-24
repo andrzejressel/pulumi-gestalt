@@ -28,7 +28,9 @@ pub mod get_cluster {
         pub location: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The FQDN of the Azure Kusto Cluster.
         pub uri: pulumi_gestalt_rust::Output<String>,
     }

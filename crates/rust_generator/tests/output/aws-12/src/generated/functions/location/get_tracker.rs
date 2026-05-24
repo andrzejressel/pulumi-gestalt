@@ -11,7 +11,7 @@ pub mod get_tracker {
         /// Key-value map of resource tags for the tracker.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Name of the tracker resource.
         #[builder(into)]
@@ -30,7 +30,9 @@ pub mod get_tracker {
         /// Position filtering method of the tracker resource.
         pub position_filtering: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags for the tracker.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// ARN for the tracker resource. Used when you need to specify a resource across all AWS.
         pub tracker_arn: pulumi_gestalt_rust::Output<String>,
         pub tracker_name: pulumi_gestalt_rust::Output<String>,

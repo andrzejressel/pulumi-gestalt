@@ -208,7 +208,7 @@ pub mod managed_disk {
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         #[builder(into, default)]
         pub tier: pulumi_gestalt_rust::Input<Option<String>>,
@@ -334,7 +334,7 @@ pub mod managed_disk {
         pub storage_account_type: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the resource.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tier: pulumi_gestalt_rust::Output<String>,
         /// Specifies if Trusted Launch is enabled for the Managed Disk. Changing this forces a new resource to be created.

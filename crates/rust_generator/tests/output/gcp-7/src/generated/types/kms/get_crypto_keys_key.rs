@@ -12,7 +12,7 @@ pub struct GetCryptoKeysKey {
     #[builder(into)]
     pub r#destroy_scheduled_duration: String,
     #[builder(into)]
-    pub r#effective_labels: std::collections::HashMap<String, String>,
+    pub r#effective_labels: std::collections::BTreeMap<String, String>,
     #[builder(into)]
     pub r#id: String,
     /// Whether this key may contain imported versions only.
@@ -37,7 +37,7 @@ pub struct GetCryptoKeysKey {
     /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
     /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
     #[builder(into)]
-    pub r#labels: std::collections::HashMap<String, String>,
+    pub r#labels: std::collections::BTreeMap<String, String>,
     /// The resource name for the CryptoKey.
     #[builder(into)]
     pub r#name: Option<String>,
@@ -48,7 +48,7 @@ pub struct GetCryptoKeysKey {
     /// The combination of labels configured directly on the resource
     ///  and default labels configured on the provider.
     #[builder(into)]
-    pub r#pulumi_labels: std::collections::HashMap<String, String>,
+    pub r#pulumi_labels: std::collections::BTreeMap<String, String>,
     /// The immutable purpose of this CryptoKey. See the
     /// [purpose reference](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys#CryptoKeyPurpose)
     /// for possible inputs.

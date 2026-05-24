@@ -34,7 +34,9 @@ pub mod get_network_attached_data_network {
             >,
         >,
         /// A mapping of tags which should be assigned to the Mobile Network Attached Data Network.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         pub user_equipment_address_pool_prefixes: pulumi_gestalt_rust::Output<
             Vec<String>,
         >,

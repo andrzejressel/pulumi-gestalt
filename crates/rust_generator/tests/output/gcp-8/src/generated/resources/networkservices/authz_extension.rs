@@ -105,7 +105,7 @@ pub mod authz_extension {
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// All backend services and forwarding rules referenced by this extension must share the same load balancing scheme.
         /// For more information, refer to [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -122,7 +122,7 @@ pub mod authz_extension {
         /// {forwarding_rule_id} - substituted with the forwarding rule's fully qualified resource name.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Identifier. Name of the AuthzExtension resource.
         #[builder(into, default)]
@@ -160,7 +160,7 @@ pub mod authz_extension {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Determines how the proxy behaves if the call to the extension fails or times out.
         /// When set to TRUE, request or response processing continues without error. Any subsequent extensions in the extension chain are also executed. When set to FALSE or the default setting of FALSE is used, one of the following happens:
@@ -174,7 +174,7 @@ pub mod authz_extension {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// All backend services and forwarding rules referenced by this extension must share the same load balancing scheme.
         /// For more information, refer to [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -188,7 +188,7 @@ pub mod authz_extension {
         /// The metadata provided here is included as part of the metadata_context (of type google.protobuf.Struct) in the ProcessingRequest message sent to the extension server. The metadata is available under the namespace com.google.authz_extension.<resourceName>. The following variables are supported in the metadata Struct:
         /// {forwarding_rule_id} - substituted with the forwarding rule's fully qualified resource name.
         pub metadata: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Identifier. Name of the AuthzExtension resource.
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -198,7 +198,7 @@ pub mod authz_extension {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The reference to the service that runs the extension.
         /// To configure a callout extension, service must be a fully-qualified reference to a [backend service](https://cloud.google.com/compute/docs/reference/rest/v1/backendServices) in the format:

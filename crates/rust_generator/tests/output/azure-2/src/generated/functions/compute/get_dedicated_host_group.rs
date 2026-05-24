@@ -28,7 +28,9 @@ pub mod get_dedicated_host_group {
         pub platform_fault_domain_count: pulumi_gestalt_rust::Output<i32>,
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags assigned to the resource.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// A list of Availability Zones in which this Dedicated Host Group is located.
         pub zones: pulumi_gestalt_rust::Output<Vec<String>>,
     }

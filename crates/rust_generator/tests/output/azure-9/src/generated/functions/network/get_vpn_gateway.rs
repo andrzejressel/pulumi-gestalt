@@ -30,7 +30,9 @@ pub mod get_vpn_gateway {
         /// The Scale Unit of this VPN Gateway.
         pub scale_unit: pulumi_gestalt_rust::Output<i32>,
         /// A mapping of tags assigned to the VPN Gateway.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// The ID of the Virtual Hub within which this VPN Gateway has been created.
         pub virtual_hub_id: pulumi_gestalt_rust::Output<String>,
     }

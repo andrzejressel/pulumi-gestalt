@@ -8,10 +8,10 @@ pub struct RemoteImageBuild {
     pub r#auth_configs: Option<Vec<super::types::RemoteImageBuildAuthConfig>>,
     /// Set build-time variables
     #[builder(into)]
-    pub r#build_arg: Option<std::collections::HashMap<String, String>>,
+    pub r#build_arg: Option<std::collections::BTreeMap<String, String>>,
     /// Pairs for build-time variables in the form TODO
     #[builder(into)]
-    pub r#build_args: Option<std::collections::HashMap<String, String>>,
+    pub r#build_args: Option<std::collections::BTreeMap<String, String>>,
     /// BuildID is an optional identifier that can be passed together with the build request. The same identifier can be used to gracefully cancel the build with the cancel request.
     #[builder(into)]
     pub r#build_id: Option<String>,
@@ -53,10 +53,10 @@ pub struct RemoteImageBuild {
     pub r#isolation: Option<String>,
     /// Set metadata for an image
     #[builder(into)]
-    pub r#label: Option<std::collections::HashMap<String, String>>,
+    pub r#label: Option<std::collections::BTreeMap<String, String>>,
     /// User-defined key/value metadata
     #[builder(into)]
-    pub r#labels: Option<std::collections::HashMap<String, String>>,
+    pub r#labels: Option<std::collections::BTreeMap<String, String>>,
     /// Set memory limit for build
     #[builder(into)]
     pub r#memory: Option<i32>,

@@ -5,7 +5,7 @@
 pub struct ThingGroupPropertiesAttributePayload {
     /// Key-value map.
     #[builder(into)]
-    pub r#attributes: Option<std::collections::HashMap<String, String>>,
+    pub r#attributes: Option<std::collections::BTreeMap<String, String>>,
 }
 
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ThingGroupPropertiesAttributePayload {

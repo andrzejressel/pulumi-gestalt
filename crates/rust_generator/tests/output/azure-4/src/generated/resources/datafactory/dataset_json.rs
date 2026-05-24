@@ -73,7 +73,7 @@ pub mod dataset_json {
         /// The following supported arguments are specific to JSON Dataset:
         #[builder(into, default)]
         pub additional_properties: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset.
         #[builder(into, default)]
@@ -111,7 +111,7 @@ pub mod dataset_json {
         /// A map of parameters to associate with the Data Factory Dataset.
         #[builder(into, default)]
         pub parameters: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `schema_column` block as defined below.
         #[builder(into, default)]
@@ -130,7 +130,7 @@ pub mod dataset_json {
         ///
         /// The following supported arguments are specific to JSON Dataset:
         pub additional_properties: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -158,7 +158,7 @@ pub mod dataset_json {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A map of parameters to associate with the Data Factory Dataset.
         pub parameters: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A `schema_column` block as defined below.
         pub schema_columns: pulumi_gestalt_rust::Output<

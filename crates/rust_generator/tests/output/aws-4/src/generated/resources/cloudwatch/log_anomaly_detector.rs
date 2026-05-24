@@ -64,7 +64,7 @@ pub mod log_anomaly_detector {
         pub log_group_arn_lists: pulumi_gestalt_rust::Input<Vec<String>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -92,10 +92,10 @@ pub mod log_anomaly_detector {
         /// The following arguments are optional:
         pub log_group_arn_lists: pulumi_gestalt_rust::Output<Vec<String>>,
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
     }
     ///

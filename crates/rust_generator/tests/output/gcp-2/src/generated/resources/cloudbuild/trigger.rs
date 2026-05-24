@@ -742,7 +742,7 @@ pub mod trigger {
         /// Substitutions data for Build resource.
         #[builder(into, default)]
         pub substitutions: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Tags for annotation of a BuildTrigger
         #[builder(into, default)]
@@ -873,7 +873,7 @@ pub mod trigger {
         >,
         /// Substitutions data for Build resource.
         pub substitutions: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Tags for annotation of a BuildTrigger
         pub tags: pulumi_gestalt_rust::Output<Option<Vec<String>>>,

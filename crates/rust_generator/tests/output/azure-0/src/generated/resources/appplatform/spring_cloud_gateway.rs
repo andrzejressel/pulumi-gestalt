@@ -122,7 +122,7 @@ pub mod spring_cloud_gateway {
         /// Specifies the environment variables of the Spring Cloud Gateway as a map of key-value pairs.
         #[builder(into, default)]
         pub environment_variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// is only https is allowed?
         #[builder(into, default)]
@@ -158,7 +158,7 @@ pub mod spring_cloud_gateway {
         /// Specifies the sensitive environment variables of the Spring Cloud Gateway as a map of key-value pairs.
         #[builder(into, default)]
         pub sensitive_environment_variables: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Spring Cloud Service. Changing this forces a new Spring Cloud Gateway to be created.
         #[builder(into)]
@@ -200,7 +200,7 @@ pub mod spring_cloud_gateway {
         >,
         /// Specifies the environment variables of the Spring Cloud Gateway as a map of key-value pairs.
         pub environment_variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// is only https is allowed?
         pub https_only: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -228,7 +228,7 @@ pub mod spring_cloud_gateway {
         >,
         /// Specifies the sensitive environment variables of the Spring Cloud Gateway as a map of key-value pairs.
         pub sensitive_environment_variables: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The ID of the Spring Cloud Service. Changing this forces a new Spring Cloud Gateway to be created.
         pub spring_cloud_service_id: pulumi_gestalt_rust::Output<String>,

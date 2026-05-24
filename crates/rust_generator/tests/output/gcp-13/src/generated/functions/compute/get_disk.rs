@@ -36,7 +36,7 @@ pub mod get_disk {
         >,
         pub disk_id: pulumi_gestalt_rust::Output<String>,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub enable_confidential_compute: pulumi_gestalt_rust::Output<bool>,
         pub guest_os_features: pulumi_gestalt_rust::Output<
@@ -52,7 +52,7 @@ pub mod get_disk {
         pub label_fingerprint: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Last attach timestamp in RFC3339 text format.
         pub last_attach_timestamp: pulumi_gestalt_rust::Output<String>,
@@ -67,7 +67,7 @@ pub mod get_disk {
         pub provisioned_iops: pulumi_gestalt_rust::Output<i32>,
         pub provisioned_throughput: pulumi_gestalt_rust::Output<i32>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub resource_policies: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The URI of the created resource.

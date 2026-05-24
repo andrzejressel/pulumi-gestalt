@@ -19,7 +19,7 @@ pub mod get_static_web_app {
     pub struct GetStaticWebAppResult {
         pub api_key: pulumi_gestalt_rust::Output<String>,
         pub app_settings: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub basic_auths: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::appservice::GetStaticWebAppBasicAuth>,
@@ -38,7 +38,9 @@ pub mod get_static_web_app {
         pub resource_group_name: pulumi_gestalt_rust::Output<String>,
         pub sku_size: pulumi_gestalt_rust::Output<String>,
         pub sku_tier: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

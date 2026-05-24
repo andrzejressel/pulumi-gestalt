@@ -121,7 +121,7 @@ pub mod cluster {
         /// to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the cluster, unique within the project and
         /// zone.
@@ -160,14 +160,14 @@ pub mod cluster {
         /// instances in the cluster. GCP generates some itself including `goog-dataproc-cluster-name`
         /// which is the name of the cluster.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub graceful_decommission_timeout: pulumi_gestalt_rust::Output<Option<String>>,
         /// The list of the labels (key/value pairs) configured on the resource and to be applied to instances in the cluster.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer
         /// to the field 'effective_labels' for all of the labels present on the resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The name of the cluster, unique within the project and
         /// zone.
@@ -179,7 +179,7 @@ pub mod cluster {
         pub project: pulumi_gestalt_rust::Output<String>,
         /// The combination of labels configured directly on the resource and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The region in which the cluster and associated nodes will be created in.
         /// Defaults to `global`.

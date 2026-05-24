@@ -27,7 +27,7 @@ pub mod get_peering_attachment {
         /// which take the following arguments:
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -47,7 +47,9 @@ pub mod get_peering_attachment {
         /// Identifier of the peer EC2 Transit Gateway
         pub peer_transit_gateway_id: pulumi_gestalt_rust::Output<String>,
         pub state: pulumi_gestalt_rust::Output<String>,
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// Identifier of the local EC2 Transit Gateway
         pub transit_gateway_id: pulumi_gestalt_rust::Output<String>,
     }

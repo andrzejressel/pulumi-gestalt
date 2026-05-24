@@ -81,7 +81,7 @@ pub mod virtual_machine_manager_availability_set {
         /// A mapping of tags which should be assigned to the System Center Virtual Machine Manager Availability Set.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -105,7 +105,7 @@ pub mod virtual_machine_manager_availability_set {
         >,
         /// A mapping of tags which should be assigned to the System Center Virtual Machine Manager Availability Set.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

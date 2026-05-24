@@ -121,7 +121,7 @@ pub mod certificate_issuance_config {
         /// resource.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Lifetime of issued certificates. A duration in seconds with up to nine fractional digits, ending with 's'.
         /// Example: "1814400s". Valid values are from 21 days (1814400s) to 30 days (2592000s)
@@ -163,7 +163,7 @@ pub mod certificate_issuance_config {
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// Key algorithm to use when generating the private key.
         /// Possible values are: `RSA_2048`, `ECDSA_P256`.
@@ -173,7 +173,7 @@ pub mod certificate_issuance_config {
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         pub labels: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Lifetime of issued certificates. A duration in seconds with up to nine fractional digits, ending with 's'.
         /// Example: "1814400s". Valid values are from 21 days (1814400s) to 30 days (2592000s)
@@ -187,7 +187,7 @@ pub mod certificate_issuance_config {
         /// The combination of labels configured directly on the resource
         /// and default labels configured on the provider.
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// It specifies the percentage of elapsed time of the certificate lifetime to wait before renewing the certificate.
         /// Must be a number between 1-99, inclusive.

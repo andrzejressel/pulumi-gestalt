@@ -8,7 +8,7 @@ pub struct HostingVersionConfigHeader {
     pub r#glob: Option<String>,
     /// The additional headers to add to the response. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
     #[builder(into)]
-    pub r#headers: std::collections::HashMap<String, String>,
+    pub r#headers: std::collections::BTreeMap<String, String>,
     /// The user-supplied RE2 regular expression to match against the request URL path.
     #[builder(into)]
     pub r#regex: Option<String>,

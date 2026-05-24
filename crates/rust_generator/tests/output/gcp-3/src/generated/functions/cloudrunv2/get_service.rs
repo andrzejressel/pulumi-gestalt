@@ -24,7 +24,7 @@ pub mod get_service {
     #[allow(dead_code)]
     pub struct GetServiceResult {
         pub annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub binary_authorizations: pulumi_gestalt_rust::Output<
             Vec<super::super::super::types::cloudrunv2::GetServiceBinaryAuthorization>,
@@ -42,10 +42,10 @@ pub mod get_service {
         pub deletion_protection: pulumi_gestalt_rust::Output<bool>,
         pub description: pulumi_gestalt_rust::Output<String>,
         pub effective_annotations: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub effective_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub etag: pulumi_gestalt_rust::Output<String>,
         pub expire_time: pulumi_gestalt_rust::Output<String>,
@@ -55,7 +55,7 @@ pub mod get_service {
         pub ingress: pulumi_gestalt_rust::Output<String>,
         pub invoker_iam_disabled: pulumi_gestalt_rust::Output<bool>,
         pub labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub last_modifier: pulumi_gestalt_rust::Output<String>,
         pub latest_created_revision: pulumi_gestalt_rust::Output<String>,
@@ -66,7 +66,7 @@ pub mod get_service {
         pub observed_generation: pulumi_gestalt_rust::Output<String>,
         pub project: pulumi_gestalt_rust::Output<Option<String>>,
         pub pulumi_labels: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         pub reconciling: pulumi_gestalt_rust::Output<bool>,
         pub scalings: pulumi_gestalt_rust::Output<

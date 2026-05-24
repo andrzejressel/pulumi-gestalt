@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnector {
     #[builder(into)]
-    pub r#custom_properties: Option<std::collections::HashMap<String, String>>,
+    pub r#custom_properties: Option<std::collections::BTreeMap<String, String>>,
     #[builder(into)]
     pub r#entity_name: String,
     #[builder(into)]

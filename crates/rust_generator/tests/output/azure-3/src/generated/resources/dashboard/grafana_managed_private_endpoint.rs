@@ -85,7 +85,7 @@ pub mod grafana_managed_private_endpoint {
         /// A mapping of tags which should be assigned to the Dashboard Grafana Managed Private Endpoint.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -111,7 +111,7 @@ pub mod grafana_managed_private_endpoint {
         pub request_message: pulumi_gestalt_rust::Output<Option<String>>,
         /// A mapping of tags which should be assigned to the Dashboard Grafana Managed Private Endpoint.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

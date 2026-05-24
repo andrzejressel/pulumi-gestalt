@@ -63,7 +63,7 @@ pub mod network_data_network {
         /// A mapping of tags which should be assigned to the Mobile Network Data Network.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -83,7 +83,7 @@ pub mod network_data_network {
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags which should be assigned to the Mobile Network Data Network.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     ///

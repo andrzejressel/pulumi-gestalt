@@ -21,7 +21,7 @@ pub mod get_route_table {
         /// Key-value tags for the EC2 Transit Gateway Route Table
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
     }
     #[allow(dead_code)]
@@ -40,7 +40,9 @@ pub mod get_route_table {
         /// EC2 Transit Gateway Route Table identifier
         pub id: pulumi_gestalt_rust::Output<String>,
         /// Key-value tags for the EC2 Transit Gateway Route Table
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
         /// EC2 Transit Gateway identifier
         pub transit_gateway_id: pulumi_gestalt_rust::Output<String>,
     }

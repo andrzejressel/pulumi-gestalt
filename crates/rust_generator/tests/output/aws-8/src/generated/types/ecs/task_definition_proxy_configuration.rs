@@ -8,7 +8,7 @@ pub struct TaskDefinitionProxyConfiguration {
     pub r#container_name: String,
     /// Set of network configuration parameters to provide the Container Network Interface (CNI) plugin, specified a key-value mapping.
     #[builder(into)]
-    pub r#properties: Option<std::collections::HashMap<String, String>>,
+    pub r#properties: Option<std::collections::BTreeMap<String, String>>,
     /// Proxy type. The default value is `APPMESH`. The only supported value is `APPMESH`.
     #[builder(into)]
     pub r#type_: Option<String>,

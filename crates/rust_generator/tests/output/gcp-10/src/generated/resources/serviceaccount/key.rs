@@ -95,7 +95,7 @@ pub mod key {
         /// Arbitrary map of values that, when changed, will trigger a new key to be generated.
         #[builder(into, default)]
         pub keepers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The algorithm used to generate the key. KEY_ALG_RSA_2048 is the default algorithm.
         /// Valid values are listed at
@@ -130,7 +130,7 @@ pub mod key {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// Arbitrary map of values that, when changed, will trigger a new key to be generated.
         pub keepers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The algorithm used to generate the key. KEY_ALG_RSA_2048 is the default algorithm.
         /// Valid values are listed at

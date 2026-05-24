@@ -5,7 +5,7 @@
 pub struct MetricAlarmMetricQueryMetric {
     /// The dimensions for this metric.  For the list of available dimensions see the AWS documentation [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html).
     #[builder(into)]
-    pub r#dimensions: Option<std::collections::HashMap<String, String>>,
+    pub r#dimensions: Option<std::collections::BTreeMap<String, String>>,
     /// The name for this metric.
     /// See docs for [supported metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html).
     #[builder(into)]

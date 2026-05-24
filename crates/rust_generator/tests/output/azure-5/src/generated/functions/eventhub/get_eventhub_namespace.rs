@@ -53,7 +53,9 @@ pub mod get_eventhub_namespace {
         /// Defines which tier to use.
         pub sku: pulumi_gestalt_rust::Output<String>,
         /// A mapping of tags to assign to the EventHub Namespace.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

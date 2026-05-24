@@ -23,7 +23,7 @@ pub struct AppAutoBranchCreationConfig {
     pub r#enable_pull_request_preview: Option<bool>,
     /// Environment variables for the autocreated branch.
     #[builder(into)]
-    pub r#environment_variables: Option<std::collections::HashMap<String, String>>,
+    pub r#environment_variables: Option<std::collections::BTreeMap<String, String>>,
     /// Framework for the autocreated branch.
     #[builder(into)]
     pub r#framework: Option<String>,

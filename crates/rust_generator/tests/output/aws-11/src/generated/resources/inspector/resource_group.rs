@@ -23,7 +23,7 @@ pub mod resource_group {
     pub struct ResourceGroupArgs {
         /// Key-value map of tags that are used to select the EC2 instances to be included in an Amazon Inspector assessment target.
         #[builder(into)]
-        pub tags: pulumi_gestalt_rust::Input<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Input<std::collections::BTreeMap<String, String>>,
     }
     #[allow(dead_code)]
     pub struct ResourceGroupResult {
@@ -35,7 +35,9 @@ pub mod resource_group {
         /// The resource group ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of tags that are used to select the EC2 instances to be included in an Amazon Inspector assessment target.
-        pub tags: pulumi_gestalt_rust::Output<std::collections::HashMap<String, String>>,
+        pub tags: pulumi_gestalt_rust::Output<
+            std::collections::BTreeMap<String, String>,
+        >,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

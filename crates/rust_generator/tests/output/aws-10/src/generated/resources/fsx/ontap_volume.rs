@@ -84,7 +84,7 @@ pub mod ontap_volume {
         /// A map of tags to apply to the volume's final backup.
         #[builder(into, default)]
         pub final_backup_tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the location in the storage virtual machine's namespace where the volume is mounted. The junction_path must have a leading forward slash, such as `/vol3`
         #[builder(into, default)]
@@ -126,7 +126,7 @@ pub mod ontap_volume {
         /// A map of tags to assign to the volume. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The data tiering policy for an FSx for ONTAP volume. See `tiering_policy` Block for details.
         #[builder(into, default)]
@@ -163,7 +163,7 @@ pub mod ontap_volume {
         pub file_system_id: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to apply to the volume's final backup.
         pub final_backup_tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// Specifies the FlexCache endpoint type of the volume, Valid values are `NONE`, `ORIGIN`, `CACHE`. Default value is `NONE`. These can be set by the ONTAP CLI or API and are use with FlexCache feature.
         pub flexcache_endpoint_type: pulumi_gestalt_rust::Output<String>,
@@ -195,11 +195,11 @@ pub mod ontap_volume {
         pub storage_virtual_machine_id: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the volume. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         pub tags_all: pulumi_gestalt_rust::Output<
-            std::collections::HashMap<String, String>,
+            std::collections::BTreeMap<String, String>,
         >,
         /// The data tiering policy for an FSx for ONTAP volume. See `tiering_policy` Block for details.
         pub tiering_policy: pulumi_gestalt_rust::Output<

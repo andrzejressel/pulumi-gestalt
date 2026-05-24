@@ -36,7 +36,7 @@ pub mod random_pet {
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         #[builder(into, default)]
         pub keepers: pulumi_gestalt_rust::Input<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The length (in words) of the pet name. Defaults to 2
         #[builder(into, default)]
@@ -57,7 +57,7 @@ pub mod random_pet {
         pub urn: pulumi_gestalt_rust::Output<String>,
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         pub keepers: pulumi_gestalt_rust::Output<
-            Option<std::collections::HashMap<String, String>>,
+            Option<std::collections::BTreeMap<String, String>>,
         >,
         /// The length (in words) of the pet name. Defaults to 2
         pub length: pulumi_gestalt_rust::Output<i32>,
