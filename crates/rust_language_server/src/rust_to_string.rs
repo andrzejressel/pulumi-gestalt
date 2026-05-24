@@ -6,7 +6,6 @@ use crate::rust_ir::{RustExpr, RustFile, RustStatement};
 use quote::quote;
 use rootcause::Result;
 use rootcause::prelude::ResultExt;
-use syn::LitStr;
 
 pub fn render(file: &RustFile, packages_expr: &str) -> Result<String> {
     let statements = file
