@@ -79,7 +79,7 @@ fn lower_resource(
     name: &str,
     logical_name: &str,
     token: &ResourceToken,
-    inputs: &Vec<ResourceInput>,
+    inputs: &[ResourceInput],
 ) -> Result<RustStatement> {
     let (module_path, struct_name) =
         get_full_resource_path(token).context("Failed to resolve resource token")?;

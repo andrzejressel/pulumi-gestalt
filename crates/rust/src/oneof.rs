@@ -24,12 +24,10 @@ where
     A: Debug + ToPulumiValue + Sync,
     B: Debug + ToPulumiValue + Sync,
 {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
-        async move {
-            match self {
-                OneOf2::Left(a) => a.to_pulumi_value().await,
-                OneOf2::Right(b) => b.to_pulumi_value().await,
-            }
+    async fn to_pulumi_value(&self) -> PulumiValue {
+        match self {
+            OneOf2::Left(a) => a.to_pulumi_value().await,
+            OneOf2::Right(b) => b.to_pulumi_value().await,
         }
     }
 }
@@ -82,13 +80,11 @@ where
     B: Debug + ToPulumiValue + Sync,
     C: Debug + ToPulumiValue + Sync,
 {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
-        async move {
-            match self {
-                OneOf3::Left(a) => a.to_pulumi_value().await,
-                OneOf3::Middle(b) => b.to_pulumi_value().await,
-                OneOf3::Right(c) => c.to_pulumi_value().await,
-            }
+    async fn to_pulumi_value(&self) -> PulumiValue {
+        match self {
+            OneOf3::Left(a) => a.to_pulumi_value().await,
+            OneOf3::Middle(b) => b.to_pulumi_value().await,
+            OneOf3::Right(c) => c.to_pulumi_value().await,
         }
     }
 }
@@ -152,14 +148,12 @@ where
     C: Debug + ToPulumiValue + Sync,
     D: Debug + ToPulumiValue + Sync,
 {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
-        async move {
-            match self {
-                OneOf4::Left(a) => a.to_pulumi_value().await,
-                OneOf4::Middle1(b) => b.to_pulumi_value().await,
-                OneOf4::Middle2(c) => c.to_pulumi_value().await,
-                OneOf4::Right(d) => d.to_pulumi_value().await,
-            }
+    async fn to_pulumi_value(&self) -> PulumiValue {
+        match self {
+            OneOf4::Left(a) => a.to_pulumi_value().await,
+            OneOf4::Middle1(b) => b.to_pulumi_value().await,
+            OneOf4::Middle2(c) => c.to_pulumi_value().await,
+            OneOf4::Right(d) => d.to_pulumi_value().await,
         }
     }
 }
