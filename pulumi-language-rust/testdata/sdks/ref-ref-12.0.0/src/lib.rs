@@ -16,3 +16,13 @@ static PULUMI_WASM_PROVIDER_REF_REF: [u8; 45] = *b"{\"version\":\"12.0.0\",\"plu
 pub(crate) fn get_version() -> String {
     "12.0.0".to_string()
 }
+pub fn package() -> pulumi_gestalt_rust::Package {
+    pulumi_gestalt_rust::Package {
+        name: "ref-ref".to_string(),
+        kind: "resource".to_string(),
+        version: "12.0.0".to_string(),
+        server: "".to_string(),
+        checksums: std::collections::HashMap::new(),
+        parameterization: None,
+    }
+}
