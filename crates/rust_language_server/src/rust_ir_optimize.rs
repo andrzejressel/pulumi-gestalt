@@ -138,7 +138,6 @@ fn optimize_expr(expr: RustExpr) -> RustExpr {
             op,
             operand: Box::new(optimize_expr(*operand)),
         },
-        RustExpr::MacroCall { path, body } => RustExpr::MacroCall { path, body },
         RustExpr::PulumiAny(json) => RustExpr::PulumiAny(optimize_json_expr(json)),
         RustExpr::Expect { expr, message } => RustExpr::Expect {
             expr: Box::new(optimize_expr(*expr)),
