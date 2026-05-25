@@ -13,6 +13,7 @@ pub struct GenerateResult {
     pub dynamic_domain: DynamicProgram,
     pub typesafe_domain: TypesafeProgram,
     pub rust_ir: RustFile,
+    pub optimized_rust_ir: RustFile,
 }
 
 pub fn generate_main(model_program: &PclProtobufProgram) -> Result<GenerateResult> {
@@ -22,14 +23,16 @@ pub fn generate_main(model_program: &PclProtobufProgram) -> Result<GenerateResul
         .context("Failed to lower dynamic domain IR to typesafe domain IR")?;
     let rust_ir = crate::typesafe_domain_to_rust::lower(&typesafe_domain)
         .context("Failed to lower typesafe domain IR to Rust IR")?;
+    let optimized_rust_ir = crate::rust_ir_optimize::optimize(rust_ir.clone());
     let packages_expr = render_packages_expr(model_program);
-    let main_rs = crate::rust_to_string::render(&rust_ir, &packages_expr)
+    let main_rs = crate::rust_to_string::render(&optimized_rust_ir, &packages_expr)
         .context("Failed to render Rust IR to string")?;
     Ok(GenerateResult {
         main_rs,
         dynamic_domain,
         typesafe_domain,
         rust_ir,
+        optimized_rust_ir,
     })
 }
 

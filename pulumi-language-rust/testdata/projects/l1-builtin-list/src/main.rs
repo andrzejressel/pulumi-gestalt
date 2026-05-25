@@ -3,11 +3,11 @@ fn main() {
     pulumi_gestalt_rust::run_with_packages(vec![], pulumi_main).unwrap();
 }
 fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
-    let aList = ctx
-        .require_config_deserialize::<Vec<String>>(None, "aList")
+    let aList: Vec<String> = ctx
+        .require_config_deserialize(None, "aList")
         .expect("Expected config [aList] to exist");
-    let singleOrNoneList = ctx
-        .require_config_deserialize::<Vec<String>>(None, "singleOrNoneList")
+    let singleOrNoneList: Vec<String> = ctx
+        .require_config_deserialize(None, "singleOrNoneList")
         .expect("Expected config [singleOrNoneList] to exist");
     let aString = ctx
         .require_config(None, "aString")
@@ -25,10 +25,10 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
     ctx.add_export("splitOutput", &pulumi_gestalt_rust::stdlib::split("-", &aString));
     ctx.add_export(
         "singleOrNoneOutput",
-        &vec!(
+        &vec![
             pulumi_gestalt_rust::stdlib::single_or_none(singleOrNoneList)
             .expect("Should get first element")
-        ),
+        ],
     );
     Ok(())
 }

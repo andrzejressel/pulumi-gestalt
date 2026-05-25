@@ -2,8 +2,8 @@
   "statements": [
     {
       "Let": {
-        "name": "aSecret",
-        "type_annotation": null,
+        "name": "a",
+        "type_annotation": "f64",
         "value": {
           "Expect": {
             "expr": {
@@ -11,27 +11,27 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_secret",
+                "method": "require_config_deserialize",
                 "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
                   },
                   {
-                    "StringLiteral": "aSecret"
+                    "StringLiteral": "a"
                   }
                 ]
               }
             },
-            "message": "Expected config [aSecret] to exist"
+            "message": "Expected config [a] to exist"
           }
         }
       }
     },
     {
       "Let": {
-        "name": "notSecret",
-        "type_annotation": null,
+        "name": "b",
+        "type_annotation": "f64",
         "value": {
           "Expect": {
             "expr": {
@@ -39,19 +39,75 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config",
+                "method": "require_config_deserialize",
                 "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
                   },
                   {
-                    "StringLiteral": "notSecret"
+                    "StringLiteral": "b"
                   }
                 ]
               }
             },
-            "message": "Expected config [notSecret] to exist"
+            "message": "Expected config [b] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "c",
+        "type_annotation": "i64",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize",
+                "type_params": [],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "c"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [c] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "d",
+        "type_annotation": "i64",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize",
+                "type_params": [],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "d"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [d] to exist"
           }
         }
       }
@@ -66,119 +122,115 @@
           "type_params": [],
           "args": [
             {
-              "StringLiteral": "roundtripSecret"
-            },
-            {
-              "Ref": {
-                "Identifier": "aSecret"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "Expr": {
-        "MethodCall": {
-          "receiver": {
-            "Identifier": "ctx"
-          },
-          "method": "add_export",
-          "type_params": [],
-          "args": [
-            {
-              "StringLiteral": "roundtripNotSecret"
-            },
-            {
-              "Ref": {
-                "Identifier": "notSecret"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "Expr": {
-        "MethodCall": {
-          "receiver": {
-            "Identifier": "ctx"
-          },
-          "method": "add_export",
-          "type_params": [],
-          "args": [
-            {
-              "StringLiteral": "double"
+              "StringLiteral": "maxResult"
             },
             {
               "Ref": {
                 "MethodCall": {
                   "receiver": {
-                    "Identifier": "aSecret"
+                    "Identifier": "a"
                   },
-                  "method": "secret",
-                  "type_params": [],
-                  "args": []
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "Expr": {
-        "MethodCall": {
-          "receiver": {
-            "Identifier": "ctx"
-          },
-          "method": "add_export",
-          "type_params": [],
-          "args": [
-            {
-              "StringLiteral": "open"
-            },
-            {
-              "Ref": {
-                "MethodCall": {
-                  "receiver": {
-                    "Identifier": "aSecret"
-                  },
-                  "method": "unsecret",
-                  "type_params": [],
-                  "args": []
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "Expr": {
-        "MethodCall": {
-          "receiver": {
-            "Identifier": "ctx"
-          },
-          "method": "add_export",
-          "type_params": [],
-          "args": [
-            {
-              "StringLiteral": "close"
-            },
-            {
-              "Ref": {
-                "MethodCall": {
-                  "receiver": {
-                    "Identifier": "ctx"
-                  },
-                  "method": "new_secret",
+                  "method": "max",
                   "type_params": [],
                   "args": [
                     {
-                      "Ref": {
-                        "Identifier": "notSecret"
-                      }
+                      "Identifier": "b"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "minResult"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "a"
+                  },
+                  "method": "min",
+                  "type_params": [],
+                  "args": [
+                    {
+                      "Identifier": "b"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "intMaxResult"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "c"
+                  },
+                  "method": "max",
+                  "type_params": [],
+                  "args": [
+                    {
+                      "Identifier": "d"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "intMinResult"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "c"
+                  },
+                  "method": "min",
+                  "type_params": [],
+                  "args": [
+                    {
+                      "Identifier": "d"
                     }
                   ]
                 }

@@ -11,7 +11,11 @@ pub struct RustFile {
 
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub enum RustStatement {
-    Let { name: String, value: RustExpr },
+    Let {
+        name: String,
+        type_annotation: Option<String>,
+        value: RustExpr,
+    },
     Expr(RustExpr),
 }
 

@@ -1,0 +1,25 @@
+{
+  "statements": [
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "output_true"
+            },
+            {
+              "Ref": {
+                "BoolLiteral": true
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

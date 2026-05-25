@@ -32,9 +32,14 @@ pub fn render(file: &RustFile, packages_expr: &str) -> Result<String> {
 
 fn render_statement(stmt: &RustStatement) -> String {
     match stmt {
-        RustStatement::Let { name, value } => {
-            format!("let {} = {};", name, render_expr(value))
-        }
+        RustStatement::Let {
+            name,
+            type_annotation,
+            value,
+        } => match type_annotation {
+            Some(t) => format!("let {}: {} = {};", name, t, render_expr(value)),
+            None => format!("let {} = {};", name, render_expr(value)),
+        },
         RustStatement::Expr(expr) => {
             format!("{};", render_expr(expr))
         }
@@ -74,7 +79,7 @@ pub fn render_expr(expr: &RustExpr) -> String {
                     .map(render_expr)
                     .collect::<Vec<_>>()
                     .join(", ");
-                format!("vec!({})", inner)
+                format!("vec![{}]", inner)
             }
         }
         RustExpr::BTreeMap { entries } => {

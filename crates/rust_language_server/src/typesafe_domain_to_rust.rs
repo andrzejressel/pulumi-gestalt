@@ -30,6 +30,7 @@ fn lower_statement(stmt: &Statement) -> Result<RustStatement> {
         Statement::ConfigBinding(config) => Ok(lower_config_binding(config)),
         Statement::LocalBinding { name, value } => Ok(RustStatement::Let {
             name: name.clone(),
+            type_annotation: None,
             value: lower_expr(value),
         }),
         Statement::Export { name, value } => {
@@ -124,6 +125,7 @@ fn lower_resource(
 
     Ok(RustStatement::Let {
         name: name.to_string(),
+        type_annotation: None,
         value: create_call,
     })
 }
@@ -179,6 +181,7 @@ fn lower_config_binding(config: &ConfigBinding) -> RustStatement {
     };
     RustStatement::Let {
         name: name.clone(),
+        type_annotation: None,
         value,
     }
 }
