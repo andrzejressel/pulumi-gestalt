@@ -5,8 +5,8 @@ go 1.25.9
 require (
 	github.com/hashicorp/hcl/v2 v2.24.0
 	github.com/ihciah/rust2go v0.0.0-20260314034108-6f06b0697c1b
-	github.com/pulumi/pulumi/pkg/v3 v3.241.0
-	github.com/pulumi/pulumi/sdk/v3 v3.242.0
+	github.com/pulumi/pulumi/pkg/v3 v3.256.0
+	github.com/pulumi/pulumi/sdk/v3 v3.256.0
 	github.com/stretchr/testify v1.11.1
 	github.com/zclconf/go-cty v1.18.1
 	go.opentelemetry.io/otel v1.44.0
