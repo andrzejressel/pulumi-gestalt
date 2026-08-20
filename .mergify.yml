@@ -2,10 +2,9 @@ queue_rules:
   - name: default
     max_checks_retries: 3
     merge_method: squash
-    commit_message_template: |
-      {{ title }} (#{{ number }})
-        
-      {{ body }}
+    commit_message_format:
+      title: pr-title
+      body: pr-body
 pull_request_rules:
   - name: automatic merge for main when CI passes
     conditions:
